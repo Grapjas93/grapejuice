@@ -1,0 +1,13 @@
+{
+	"genericName": "Quick Thinking",
+	"cost": {
+		"food": 500,
+		"metal": 500
+	},
+	"requirements": { "tech": "phase_town" },
+	"requirementsTooltip": "Unlocked in Town Phase.",
+	"icon": "garrison_heal_field_camp.png",
+	"researchTime": 40,
+	"tooltip": "Doubles healers garrisoned healing rate for field camps",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

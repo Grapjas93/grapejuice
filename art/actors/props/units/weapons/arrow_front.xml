@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="100" name="Base">
+      <mesh>props/weap_arrow_front.dae</mesh>
+      <props>
+        <prop actor="particle/arrow_trail.xml" attachpoint="root"/>
+      </props>
+      <textures>
+        <texture file="props/prop_weap.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <material>default.xml</material>
+</actor>

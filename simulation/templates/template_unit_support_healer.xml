@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support">
+  <TrainingRestrictions>
+    <Category>CombatPriest</Category>
+  </TrainingRestrictions>
+  <Attack>
+    <Melee>
+      <AttackName>Mace</AttackName>
+      <Damage>
+        <Hack>2</Hack>
+        <Pierce>0</Pierce>
+        <Crush>2</Crush>
+      </Damage>
+      <MaxRange>2</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1500</RepeatTime>
+      <PreferredClasses datatype="tokens">!Ship</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Builder>
+    <Rate>0.50</Rate>
+    <Entities datatype="tokens">
+      structures/{civ}/camp
+    </Entities>
+  </Builder>
+  <Cost>
+    <BuildTime>15</BuildTime>
+    <Resources>
+      <food>250</food>
+    </Resources>
+  </Cost>
+   <Health>
+    <Max>85</Max>
+  </Health>
+  <Identity>
+    <Classes datatype="tokens">-ConquestCritical</Classes>
+    <VisibleClasses datatype="tokens">Healer</VisibleClasses>
+    <GenericName>Healer</GenericName>
+    <SelectionGroupName>template_unit_support_healer</SelectionGroupName>
+    <Rank>Basic</Rank>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Tooltip>Treats wounded soldiers in field camps.</Tooltip>
+  </Identity>
+  <Loot>
+    <xp>8</xp>
+    <food>25</food>
+  </Loot>
+  <Promotion>
+    <RequiredXp>150</RequiredXp>
+  </Promotion>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>128x128/plus.png</MainTexture>
+        <MainTextureMask>128x128/plus_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <trained>interface/alarm/alarm_create_priest.xml</trained>
+      <attack_melee>attack/weapon/sword_attack.xml</attack_melee>
+    </SoundGroups>
+  </Sound>
+  <Vision>
+    <Range>30</Range>
+  </Vision>
+</Entity>

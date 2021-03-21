@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry_ranged">
+  <Attack>
+    <Ranged>
+      <AttackName>Bow</AttackName>
+      <Damage>
+        <Hack>0</Hack>
+        <Pierce>9</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+      <MaxRange>45</MaxRange>
+      <MinRange>0</MinRange>
+      <PrepareTime>900</PrepareTime>
+      <RepeatTime>1700</RepeatTime>
+      <Delay>0</Delay>
+      <Projectile>
+        <Speed>100.0</Speed>
+        <Spread>3.5</Spread>
+        <Gravity>50.0</Gravity>
+        <FriendlyFire>false</FriendlyFire>
+        <LaunchPoint y="5"/>
+      </Projectile>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>50</wood>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Archer</VisibleClasses>
+    <GenericName>Cavalry Archer</GenericName>
+  </Identity>
+  <Sound>
+    <SoundGroups>
+      <attack_impact_ranged>attack/impact/arrow_impact.xml</attack_impact_ranged>
+      <attack_ranged>attack/weapon/bow_attack.xml</attack_ranged>
+    </SoundGroups>
+  </Sound>
+</Entity>

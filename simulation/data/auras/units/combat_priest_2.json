@@ -1,0 +1,11 @@
+{
+	"requiredTechnology": "garrison_heal_field_camp",
+	"type": "garrison",
+	"affects": ["FieldCamp"],
+	"modifications": [
+		{ "value": "GarrisonHolder/BuffHeal", "add": 0.5 }
+	],
+	"auraName": "Quick Thinking",
+	"auraDescription": "Doubles 'Surgeon' heal rate (requires the “Quick Thinking” technology).",
+	"stackable": true
+}

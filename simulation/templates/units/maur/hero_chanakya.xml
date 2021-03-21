@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_healer">
+  <Auras datatype="tokens">
+    units/heroes/maur_hero_chanakya_1
+    units/heroes/maur_hero_chanakya_2
+    units/heroes/hero_priest
+  </Auras>
+  <Attack>
+    <Melee>
+      <AttackName>Mace</AttackName>
+      <Damage>
+        <Hack>2</Hack>
+        <Pierce>0</Pierce>
+        <Crush>10</Crush>
+      </Damage>
+      <MaxRange>2</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1500</RepeatTime>
+      <PreferredClasses datatype="tokens">!Ship</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Builder>
+    <Rate>1.0</Rate>
+    <Entities datatype="tokens">
+      structures/{civ}/camp
+    </Entities>
+  </Builder>
+  <Identity>
+    <Civ>maur</Civ>
+    <GenericName>Acharya Chanakya</GenericName>
+    <SpecificName>Acharya Chāṇakya</SpecificName>
+    <Icon>units/maur_hero_chanakya.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/mauryas/hero_healer_chanakya.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_civic_field_camp">
+  <Footprint>
+    <Square width="12" depth="12"/>
+  </Footprint>
+  <Identity>
+    <Civ>sele</Civ>
+    <GenericName>Field Camp</GenericName>
+    <Tooltip>A resting place for wounded soldiers to heal</Tooltip>
+    <VisibleClasses datatype="tokens">FieldCamp</VisibleClasses>
+  </Identity>
+  <Obstruction>
+    <Static width="10" depth="10.0"/>
+  </Obstruction>
+  <VisualActor>
+    <Actor>structures/tent_sele.xml</Actor>
+    <FoundationActor>structures/fndn_2x2.xml</FoundationActor>
+  </VisualActor>
+</Entity>

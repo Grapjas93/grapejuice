@@ -1,0 +1,7 @@
+{
+	"name": "grapejuice",
+	"version": "2.0.2",
+	"label": "New maps, New atlas templates, New Skirmish Randomization, Rebalance, New particles, New Building, New Tech",
+	"description": "2 new maps. The mod adds player position randomnization for skirmish maps. Reworked some particles and added others. Some units have been rebalanced (mostly archer units). New building + new tech, Field Camp. Reworked priests.",
+	"dependencies": ["0ad=0.0.24"]
+}

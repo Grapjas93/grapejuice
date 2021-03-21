@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_camp_structure">
+  <Identity>
+    <Classes datatype="tokens">ConquestCritical</Classes>
+    <GenericName>Civic Structure</GenericName>
+    <VisibleClasses datatype="tokens">Civic</VisibleClasses>
+  </Identity>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>5</Hack>
+        <Pierce>10</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+    </Entity>
+    <Foundation>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>5</Pierce>
+        <Crush>1</Crush>
+      </Damage>
+    </Foundation>
+  </Resistance>
+</Entity>
