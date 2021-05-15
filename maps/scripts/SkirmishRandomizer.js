@@ -152,7 +152,8 @@ SkirmishRandomizer.Randomize = function(civilCentrePositions, g_atlasEditor, g_g
 			if (g_selectedPlayer == undefined) {
 				g_selectedTeam = g_selectedTeam +1; 
 				g_selectedPlayer = g_playersShuffledAsTeams[g_selectedTeam].shift();
-		}}
+			}
+		}
 		
 		// Organize organic entities in groups, for better control over repositioning
 		let supportUnits = TriggerHelper.GetPlayerEntitiesByClass(g_selectedPlayer, "Support"); // Females + Special starting unit
