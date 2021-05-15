@@ -45,8 +45,8 @@ Health.prototype.Reduce = function(amount)
 		var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 		cmpModifiersManager.AddModifiers("CriticallyWounded", {
 			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": 0.80 }],
-			"Attack/Melee/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.35 }],
-			"Attack/Ranged/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.35 }],
+			"Attack/Melee/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
+			"Attack/Ranged/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
 		}, this.entity);
 		}
 		return { "healthChange": this.hitpoints - oldHitpoints };
