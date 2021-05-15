@@ -1,0 +1,8 @@
+{
+	"type": "range",
+	"radius": 30,
+	"affects": ["Human"],
+	"auraName": "Re-arm (small)",
+	"auraDescription": "Archers, Javelineers and siege engines will fully re-arm every 3s (Forge required).",
+	"overlayIcon": "art/textures/ui/session/auras/ammo.png"
+}
