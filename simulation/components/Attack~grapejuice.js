@@ -298,15 +298,15 @@ var length = "";
 // Used to check if target is inside the rearm aura. Called from ReArmAura function.
 Attack.prototype.CheckTargetIsInAuraRange = function()
 {
-	entPlayer = TriggerHelper.GetOwner(this.entity);	
-	forge = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Forge");
-	colony = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Colony");
-	barracks = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Barracks");
-	stable = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Stable");
-	fortress = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Fortress");
-	arsenal = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Arsenal");
-	armyCamp = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "ArmyCamp");
-	colony = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Colony");
+	entPlayer = Helpers.GetOwner(this.entity);	
+	forge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
+	colony = Helpers.GetPlayerEntitiesByClass(entPlayer, "Colony");
+	barracks = Helpers.GetPlayerEntitiesByClass(entPlayer, "Barracks");
+	stable = Helpers.GetPlayerEntitiesByClass(entPlayer, "Stable");
+	fortress = Helpers.GetPlayerEntitiesByClass(entPlayer, "Fortress");
+	arsenal = Helpers.GetPlayerEntitiesByClass(entPlayer, "Arsenal");
+	armyCamp = Helpers.GetPlayerEntitiesByClass(entPlayer, "ArmyCamp");
+	colony = Helpers.GetPlayerEntitiesByClass(entPlayer, "Colony");
 	range30 = range30.concat(forge, colony, barracks, stable, arsenal);
 	range60 = range60.concat(fortress, armyCamp, colony);
 	length = range30.length;
@@ -452,7 +452,7 @@ Attack.prototype.GetPreference = function(target)
 			{
 				if (pref === 0)
 				{
-					let isStructure = TriggerHelper.MatchEntitiesByClass([this.entity], "Structure");
+					let isStructure = Helpers.MatchEntitiesByClass([this.entity], "Structure");
 					if (isStructure != "")
 					{
 						return minPref;
@@ -516,10 +516,10 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 		types.splice(rangeIndex);
 	}
 
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && TriggerHelper.MatchEntitiesByClass([this.entity], "Siege") == "")
+	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
 	{
 		// switch to melee if any of the blow is true
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange() || TriggerHelper.MatchEntitiesByClass([target], "Siege Palisade") != "") {
+		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange() || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "") {
 			types.splice(rangeIndex, 1);
 			types.splice(meleeIndex, 0);
 		}
