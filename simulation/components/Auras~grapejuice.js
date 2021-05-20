@@ -18,8 +18,8 @@ Auras.prototype.ApplyAura = function(name, ents)
 		{
 			let entity = ents.pop();
 			let ent = entity;
-			let entPlayer = TriggerHelper.GetOwner(ent);
-			let hasForge = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Forge");
+			let entPlayer = Helpers.GetOwner(ent);
+			let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
 			// If player has no forge, entities will not re-arm
 			if(hasForge.length >= 1)
 			{
