@@ -24,9 +24,11 @@ StatusBars.prototype.Sprites = [
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
 	let cmpHelpers = QueryMiragedInterface(this.entity, IID_Helpers);
-	if(Helpers.prototype.EntityMatchesClassList(this.entity, "Organic Siege"))
+	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege"))
 	{
 	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
+	if (cmpAttack == null)
+		return 0;
 	if (!this.enabled)
 		return 0;
 	if(cmpAttack.GetMaxAmmo() == "0")
@@ -46,7 +48,7 @@ StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
 	if (!this.enabled)
 		return 0;
 
-	if(Helpers.prototype.EntityMatchesClassList(this.entity, "Organic Siege") && cmpHealth != null)
+	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege") && cmpHealth != null)
 	{
 		let currentHp = cmpHealth.GetHitpoints();
 		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
