@@ -23,7 +23,7 @@ StatusBars.prototype.Sprites = [
 // Grapejuice ammoBar
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
-	if(TriggerHelper.EntityMatchesClassList(this.entity, "Organic") || TriggerHelper.EntityMatchesClassList(this.entity, "Siege"))
+	if(TriggerHelper.EntityMatchesClassList(this.entity, "Organic Siege"))
 	{
 	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
 	if (!this.enabled)
