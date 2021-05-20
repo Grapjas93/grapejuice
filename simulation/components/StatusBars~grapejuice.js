@@ -23,15 +23,16 @@ StatusBars.prototype.Sprites = [
 // Grapejuice ammoBar
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
-	if(TriggerHelper.EntityMatchesClassList(this.entity, "Organic Siege"))
+	let cmpHelpers = QueryMiragedInterface(this.entity, IID_Helpers);
+	if(Helpers.prototype.EntityMatchesClassList(this.entity, "Organic Siege"))
 	{
 	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
 	if (!this.enabled)
 		return 0;
 	if(cmpAttack.GetMaxAmmo() == "0")
-	return 0;
+		return 0;
 	if (cmpAttack.GetMaxAmmo() > "0"){
-	return this.AddBar(cmpOverlayRenderer, -0.3, "ammo", cmpAttack.ammo / cmpAttack.GetMaxAmmo(), 0.7);
+		return this.AddBar(cmpOverlayRenderer, -0.3, "ammo", cmpAttack.ammo / cmpAttack.GetMaxAmmo(), 0.7);
 	}
 	}
 
@@ -45,7 +46,7 @@ StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
 	if (!this.enabled)
 		return 0;
 
-	if(TriggerHelper.EntityMatchesClassList(this.entity, "Organic") && cmpHealth != null || TriggerHelper.EntityMatchesClassList(this.entity, "Siege") == true && cmpHealth != null)
+	if(Helpers.prototype.EntityMatchesClassList(this.entity, "Organic Siege") && cmpHealth != null)
 	{
 		let currentHp = cmpHealth.GetHitpoints();
 		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
