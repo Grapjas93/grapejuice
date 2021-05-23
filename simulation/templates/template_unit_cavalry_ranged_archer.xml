@@ -3,6 +3,7 @@
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
+      <Ammo>30</Ammo>
       <Damage>
         <Hack>0</Hack>
         <Pierce>9</Pierce>

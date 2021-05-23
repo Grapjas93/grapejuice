@@ -1,56 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_infantry">
+<Entity parent="template_unit_elephant">
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
-      <Ammo>24</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
+      <Ammo>30</Ammo>
       <Damage>
         <Hack>0</Hack>
-        <Pierce>23</Pierce>
+        <Pierce>14</Pierce>
         <Crush>0</Crush>
       </Damage>
       <MaxRange>60</MaxRange>
       <MinRange>0</MinRange>
       <PrepareTime>500</PrepareTime>
-      <RepeatTime>2000</RepeatTime>
+      <RepeatTime>1000</RepeatTime>
       <Delay>0</Delay>
       <Projectile>
         <Speed>100.0</Speed>
         <Spread>2.0</Spread>
         <Gravity>50.0</Gravity>
         <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="3"/>
+        <LaunchPoint y="9"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
   </Attack>
+  <Cost>
+    <BuildTime>20</BuildTime>
+    <Resources>
+      <food>175</food>
+      <wood>75</wood>
+    </Resources>
+  </Cost>
   <Health>
-    <Max>120</Max>
+    <Max>200</Max>
   </Health>
   <Identity>
+    <GenericName>Elephant Archer</GenericName>
     <VisibleClasses datatype="tokens">Ranged Archer</VisibleClasses>
-    <GenericName>Champion Archer</GenericName>
-    <Formations datatype="tokens">
-      special/formations/skirmish
-    </Formations>
   </Identity>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">-2</Hack>
-        <Pierce op="add">-2</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
+  <Loot>
+    <food>18</food>
+    <wood>7</wood>
+  </Loot>
   <Sound>
     <SoundGroups>
       <attack_impact_ranged>attack/impact/arrow_impact.xml</attack_impact_ranged>
       <attack_ranged>attack/weapon/bow_attack.xml</attack_ranged>
     </SoundGroups>
   </Sound>
-  <UnitMotion>
-    <WalkSpeed op="mul">1.2</WalkSpeed>
-  </UnitMotion>
 </Entity>

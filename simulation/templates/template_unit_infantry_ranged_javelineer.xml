@@ -3,12 +3,15 @@
   <Attack>
     <Ranged>
       <AttackName>Javelin</AttackName>
+      <Ammo>3</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <Damage>
         <Hack>0</Hack>
-        <Pierce>16</Pierce>
+        <Pierce>56</Pierce>
         <Crush>0</Crush>
       </Damage>
-      <MaxRange>30</MaxRange>
+      <MaxRange>20</MaxRange>
       <MinRange>0</MinRange>
       <PrepareTime>750</PrepareTime>
       <RepeatTime>1250</RepeatTime>
@@ -50,6 +53,6 @@
     </SoundGroups>
   </Sound>
   <UnitMotion>
-    <WalkSpeed op="mul">1.2</WalkSpeed>
+    <WalkSpeed op="mul">1.30</WalkSpeed>
   </UnitMotion>
 </Entity>

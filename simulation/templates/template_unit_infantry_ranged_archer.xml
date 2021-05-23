@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_infantry_ranged">
   <Attack>
-    <Ranged>
+    <Melee>
+      <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
+      <Damage>
+        <Hack>11</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+    </Melee>
+   <Ranged>
       <AttackName>Bow</AttackName>
+      <Ammo>24</Ammo>
       <Damage>
         <Hack>0</Hack>
         <Pierce>13</Pierce>

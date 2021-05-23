@@ -3,6 +3,7 @@
   <Attack>
     <Ranged>
       <AttackName>Javelin</AttackName>
+      <Ammo>3</Ammo>
       <Damage>
         <Hack>0</Hack>
         <Pierce>36</Pierce>

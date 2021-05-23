@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military">
+  <Auras datatype="tokens">
+    structures/refill_ammo_60range
+  </Auras>
+  <Attack>
+    <Ranged>
+      <AttackName>Bow</AttackName>
+      <Damage>
+        <Hack>0</Hack>
+        <Pierce>16</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+      <MaxRange>60</MaxRange>
+      <MinRange>0</MinRange>
+      <PrepareTime>1200</PrepareTime>
+      <RepeatTime>2000</RepeatTime>
+      <Delay>0</Delay>
+      <Projectile>
+        <Speed>100.0</Speed>
+        <Spread>1.5</Spread>
+        <Gravity>50.0</Gravity>
+        <FriendlyFire>false</FriendlyFire>
+        <LaunchPoint y="3"/>
+      </Projectile>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+      <RangeOverlay>
+        <LineTexture>outline_border.png</LineTexture>
+        <LineTextureMask>outline_border_mask.png</LineTextureMask>
+        <LineThickness>0.175</LineThickness>
+      </RangeOverlay>
+    </Ranged>
+  </Attack>
+  <BuildingAI>
+    <DefaultArrowCount>3</DefaultArrowCount>
+    <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
+    <GarrisonArrowClasses>Soldier</GarrisonArrowClasses>
+  </BuildingAI>
+  <BuildRestrictions>
+    <Category>Fortress</Category>
+    <Distance>
+      <FromClass>Fortress</FromClass>
+      <MinDistance>80</MinDistance>
+    </Distance>
+  </BuildRestrictions>
+  <Capturable>
+    <CapturePoints>4000</CapturePoints>
+    <RegenRate>10.0</RegenRate>
+  </Capturable>
+  <Cost>
+    <BuildTime>450</BuildTime>
+    <Resources>
+      <wood>300</wood>
+      <stone>600</stone>
+    </Resources>
+  </Cost>
+  <Footprint>
+    <Square width="30.0" depth="30.0"/>
+    <Height>8.0</Height>
+  </Footprint>
+  <GarrisonHolder>
+    <Max>20</Max>
+    <EjectHealth>0.075</EjectHealth>
+    <List datatype="tokens">Support Infantry Cavalry Siege</List>
+    <LoadingRange>6</LoadingRange>
+  </GarrisonHolder>
+  <Health>
+    <Max>5200</Max>
+    <SpawnEntityOnDeath>decay|rubble/rubble_stone_6x6</SpawnEntityOnDeath>
+  </Health>
+  <Identity>
+    <GenericName>Fortress</GenericName>
+    <SelectionGroupName>template_structure_military_fortress</SelectionGroupName>
+    <Tooltip>Territory root. Garrison Soldiers for additional arrows.</Tooltip>
+    <Classes datatype="tokens">GarrisonFortress</Classes>
+    <VisibleClasses datatype="tokens">Defensive City Fortress</VisibleClasses>
+    <Icon>structures/fortress.png</Icon>
+    <RequiredTechnology>phase_city</RequiredTechnology>
+  </Identity>
+  <Loot>
+    <wood>60</wood>
+    <stone>120</stone>
+  </Loot>
+  <Obstruction>
+    <Static width="25.0" depth="25.0"/>
+  </Obstruction>
+  <ProductionQueue>
+    <BatchTimeModifier>0.8</BatchTimeModifier>
+    <Technologies datatype="tokens">
+      attack_soldiers_will
+    </Technologies>
+  </ProductionQueue>
+  <Sound>
+    <SoundGroups>
+      <select>interface/select/building/sel_fortress.xml</select>
+      <constructed>interface/complete/building/complete_fortress.xml</constructed>
+      <attack_ranged>attack/weapon/bow_attack.xml</attack_ranged>
+      <attack_impact_ranged>attack/impact/arrow_impact.xml</attack_impact_ranged>
+    </SoundGroups>
+  </Sound>
+  <TerritoryInfluence>
+    <Root>true</Root>
+    <Radius>80</Radius>
+    <Weight>40000</Weight>
+  </TerritoryInfluence>
+  <Vision>
+    <Range>80</Range>
+  </Vision>
+  <VisualActor>
+    <FoundationActor>structures/fndn_8x8.xml</FoundationActor>
+  </VisualActor>
+</Entity>

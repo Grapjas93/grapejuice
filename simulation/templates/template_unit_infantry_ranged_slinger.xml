@@ -3,15 +3,18 @@
   <Attack>
     <Ranged>
       <AttackName>Sling</AttackName>
+      <Ammo>50</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <Damage>
         <Hack>0</Hack>
-        <Pierce>14.5</Pierce>
+        <Pierce>16.5</Pierce>
         <Crush>1.1</Crush>
       </Damage>
       <MaxRange>45</MaxRange>
       <MinRange>0</MinRange>
       <PrepareTime>750</PrepareTime>
-      <RepeatTime>1000</RepeatTime>
+      <RepeatTime>1500</RepeatTime>
       <Delay>0</Delay>
       <Projectile>
         <Speed>90.0</Speed>

@@ -2,6 +2,9 @@
 <Entity parent="template_unit_cavalry_ranged">
   <Attack>
     <Ranged>
+      <Ammo>3</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <AttackName>Javelin</AttackName>
       <Damage>
         <Hack>0</Hack>
