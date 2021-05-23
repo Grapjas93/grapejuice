@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_ranged_javelineer">
+<Attack>
+    <Melee>
+      <AttackName>Spear</AttackName>
+      <Damage>
+        <Hack>3.0</Hack>
+        <Pierce>2.5</Pierce>     
+       <Crush>0</Crush>
+      </Damage>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>1.75</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>625</PrepareTime>
+      <RepeatTime>1250</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+</Attack>
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <SelectionGroupName>units/sele/infantry_javelineer_b</SelectionGroupName>
+    <GenericName>Arab Javelineer</GenericName>
+    <SpecificName>Pezakontistès Aravikós</SpecificName>
+    <Icon>units/pers_infantry_javelinist.png</Icon>
+    <RequiredTechnology>phase_village</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/sele/infantry_javelineer_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/seleucids/infantry_javelinist_b.xml</Actor>
+  </VisualActor>
+</Entity>

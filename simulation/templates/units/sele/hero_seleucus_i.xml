@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_elephant_melee">
+  <Auras datatype="tokens">
+    units/heroes/sele_hero_seleucus_i
+  </Auras>
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Seleucus I</GenericName>
+    <SpecificName>Seleukos A' Nikatōr</SpecificName>
+    <Icon>units/sele_hero_seleucus.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/hero_elephantry_seleucus_victor_m.xml</Actor>
+  </VisualActor>
+</Entity>

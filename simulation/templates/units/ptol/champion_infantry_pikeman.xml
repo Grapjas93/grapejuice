@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_pikeman">
+  <Identity>
+    <Civ>ptol</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Royal Guard Infantry</GenericName>
+    <SpecificName>Phalangitès Agema</SpecificName>
+    <Icon>units/ptol_champion_infantry.png</Icon>
+    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/ptolemies/infantry_pikeman_c.xml</Actor>
+  </VisualActor>
+</Entity>

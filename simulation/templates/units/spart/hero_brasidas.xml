@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_swordsman">
+  <Attack>
+    <Melee>
+      <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
+      <Damage>
+        <Hack>11</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>900</RepeatTime>
+      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+    </Melee>
+    <Ranged>
+      <AttackName>Javelin</AttackName>
+      <Ammo>1</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
+      <Damage>
+        <Hack>0</Hack>
+        <Pierce>36</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+      <MaxRange>20</MaxRange>
+      <MinRange>0</MinRange>
+      <PrepareTime>750</PrepareTime>
+      <RepeatTime>1250</RepeatTime>
+      <Delay>0</Delay>
+      <Projectile>
+        <Speed>70.0</Speed>
+        <Spread>1.5</Spread>
+        <Gravity>35.0</Gravity>
+        <FriendlyFire>false</FriendlyFire>
+        <LaunchPoint y="3"/>
+      </Projectile>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Crush>5</Crush>
+        <Hack>11</Hack>
+        <Pierce>9</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <UnitMotion>
+    <WalkSpeed>8.0</WalkSpeed>
+    <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion>
+  <Auras datatype="tokens">
+    units/heroes/spart_hero_brasidas
+  </Auras>
+  <Identity>
+    <Civ>spart</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Brasidas</GenericName>
+    <SpecificName>Brasidas</SpecificName>
+    <Icon>units/spart_hero_brasidas.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/spartans/hero_infantry_swordsman_brasidas.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_elephant_melee">
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Armored War Elephant</GenericName>
+    <SpecificName>Thorakisménos Eléphantos</SpecificName>
+    <Classes datatype="tokens">IndianElephant</Classes>
+    <Icon>units/sele_champion_elephant.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/elephantry_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

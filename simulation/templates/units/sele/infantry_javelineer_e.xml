@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/sele/infantry_javelineer_a">
+<Attack>
+    <Melee>
+      <AttackName>Spear</AttackName>
+      <Damage>
+        <Hack>4.3</Hack>
+        <Pierce>3.6</Pierce>       
+       <Crush>0</Crush>
+      </Damage>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>1.75</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>625</PrepareTime>
+      <RepeatTime>1250</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+</Attack>
+  <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/seleucids/infantry_javelinist_e.xml</Actor>
+  </VisualActor>
+</Entity>

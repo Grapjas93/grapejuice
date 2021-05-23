@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_spearman">
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Seleucid Cataphract</GenericName>
+    <SpecificName>Seleukidón Kataphraktos</SpecificName>
+    <Icon>units/sele_champion_cavalry.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/cavalry_spearman_c_m.xml</Actor>
+  </VisualActor>
+</Entity>
