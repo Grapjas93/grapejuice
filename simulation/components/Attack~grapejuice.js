@@ -1,3 +1,4 @@
+function Attack() {}
 
 var g_AttackTypes = ["Melee", "Ranged", "Capture"];
 
@@ -92,35 +93,13 @@ Attack.prototype.Schema =
 				"<Pierce>0.0</Pierce>" +
 				"<Crush>0.0</Crush>" +
 			"</Damage>" +
+			"<RepeatTime>1000</RepeatTime>" +
 			"<MaxRange>4.0</MaxRange>" +
 		"</Slaughter>" +
 	"</a:example>" +
-	"<optional>" +
-		"<element name='Melee'>" +
-			"<interleave>" +
-				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
-					"<optional>" +
-						"<attribute name='context'>" +
-							"<text/>" +
-						"</attribute>" +
-					"</optional>" +
-					"<text/>" +
-				"</element>" +
-				Attacking.BuildAttackEffectsSchema() +
-				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
-				"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation'>" +
-					"<data type='nonNegativeInteger'/>" +
-				"</element>" +
-				"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
-					"<data type='positiveInteger'/>" +
-				"</element>" +
-				Attack.prototype.preferredClassesSchema +
-				Attack.prototype.restrictedClassesSchema +
-			"</interleave>" +
-		"</element>" +
-	"</optional>" +
-	"<optional>" +
-		"<element name='Ranged'>" +
+	"<oneOrMore>" +
+		"<element>" +
+			"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
 			"<interleave>" +
 				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
 				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
@@ -133,11 +112,13 @@ Attack.prototype.Schema =
 					"</optional>" +
 					"<text/>" +
 				"</element>" +
-				Attacking.BuildAttackEffectsSchema() +
+				AttackHelper.BuildAttackEffectsSchema() +
 				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
-				"<element name='MinRange' a:help='Minimum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
+				"<optional>" +
+					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
+				"</optional>" +
 				"<optional>"+
-					"<element name='ElevationBonus' a:help='give an elevation advantage (in meters)'><ref name='nonNegativeDecimal'/></element>" +
+					"<element name='ElevationBonus' a:help='The offset height from which the attack occurs, relative to the entity position. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
 				"</optional>" +
 				"<optional>" +
 					"<element name='RangeOverlay'>" +
@@ -148,99 +129,66 @@ Attack.prototype.Schema =
 						"</interleave>" +
 					"</element>" +
 				"</optional>" +
-				"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation'>" +
-					"<data type='nonNegativeInteger'/>" +
-				"</element>" +
-				"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" +
+				"<optional>" +
+					"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation. Defaults to 0.'>" +
+						"<data type='nonNegativeInteger'/>" +
+					"</element>" +
+				"</optional>" +
+				"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
 					"<data type='positiveInteger'/>" +
 				"</element>" +
-				"<element name='Delay' a:help='Delay of the damage in milliseconds'><ref name='nonNegativeDecimal'/></element>" +
+				"<optional>" +
+					"<element name='Delay' a:help='Delay of applying the effects in milliseconds after the attack has landed. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
+				"</optional>" +
 				"<optional>" +
 					"<element name='Splash'>" +
 						"<interleave>" +
 							"<element name='Shape' a:help='Shape of the splash damage, can be circular or linear'><text/></element>" +
 							"<element name='Range' a:help='Size of the area affected by the splash'><ref name='nonNegativeDecimal'/></element>" +
 							"<element name='FriendlyFire' a:help='Whether the splash damage can hurt non enemy units'><data type='boolean'/></element>" +
-							Attacking.BuildAttackEffectsSchema() +
+							AttackHelper.BuildAttackEffectsSchema() +
 						"</interleave>" +
 					"</element>" +
 				"</optional>" +
-				"<element name='Projectile'>" +
-					"<interleave>" +
-						"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
-							"<ref name='positiveDecimal'/>" +
-						"</element>" +
-						"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
-						"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
-							"<ref name='nonNegativeDecimal'/>" +
-						"</element>" +
-						"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
-						"<optional>" +
-							"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
-								"<attribute name='y'>" +
-									"<data type='decimal'/>" +
-								"</attribute>" +
-							"</element>" +
-						"</optional>" +
-						"<optional>" +
-							"<element name='ActorName' a:help='actor of the projectile animation.'>" +
-								"<text/>" +
-							"</element>" +
-						"</optional>" +
-						"<optional>" +
-							"<element name='ImpactActorName' a:help='actor of the projectile impact animation'>" +
-								"<text/>" +
-							"</element>" +
-							"<element name='ImpactAnimationLifetime' a:help='length of the projectile impact animation.'>" +
+				"<optional>" +
+					"<element name='Projectile'>" +
+						"<interleave>" +
+							"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
 								"<ref name='positiveDecimal'/>" +
 							"</element>" +
-						"</optional>" +
-					"</interleave>" +
-				"</element>" +
+							"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
+							"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
+								"<ref name='nonNegativeDecimal'/>" +
+							"</element>" +
+							"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
+							"<optional>" +
+								"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
+									"<attribute name='y'>" +
+										"<data type='decimal'/>" +
+									"</attribute>" +
+								"</element>" +
+							"</optional>" +
+							"<optional>" +
+								"<element name='ActorName' a:help='actor of the projectile animation.'>" +
+									"<text/>" +
+								"</element>" +
+							"</optional>" +
+							"<optional>" +
+								"<element name='ImpactActorName' a:help='actor of the projectile impact animation'>" +
+									"<text/>" +
+								"</element>" +
+								"<element name='ImpactAnimationLifetime' a:help='length of the projectile impact animation.'>" +
+									"<ref name='positiveDecimal'/>" +
+								"</element>" +
+							"</optional>" +
+						"</interleave>" +
+					"</element>" +
+				"</optional>" +
 				Attack.prototype.preferredClassesSchema +
 				Attack.prototype.restrictedClassesSchema +
 			"</interleave>" +
 		"</element>" +
-	"</optional>" +
-	"<optional>" +
-		"<element name='Capture'>" +
-			"<interleave>" +
-				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
-					"<optional>" +
-						"<attribute name='context'>" +
-							"<text/>" +
-						"</attribute>" +
-					"</optional>" +
-					"<text/>" +
-				"</element>" +
-				Attacking.BuildAttackEffectsSchema() +
-				"<element name='MaxRange' a:help='Maximum attack range (in meters)'><ref name='nonNegativeDecimal'/></element>" +
-				"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
-					"<data type='positiveInteger'/>" +
-				"</element>" +
-				Attack.prototype.preferredClassesSchema +
-				Attack.prototype.restrictedClassesSchema +
-			"</interleave>" +
-		"</element>" +
-	"</optional>" +
-	"<optional>" +
-		"<element name='Slaughter' a:help='A special attack to kill domestic animals'>" +
-			"<interleave>" +
-				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
-					"<optional>" +
-						"<attribute name='context'>" +
-							"<text/>" +
-						"</attribute>" +
-					"</optional>" +
-					"<text/>" +
-				"</element>" +
-				Attacking.BuildAttackEffectsSchema() +
-				"<element name='MaxRange'><ref name='nonNegativeDecimal'/></element>" + // TODO: how do these work?
-				Attack.prototype.preferredClassesSchema +
-				Attack.prototype.restrictedClassesSchema +
-			"</interleave>" +
-		"</element>" +
-	"</optional>";
+	"</oneOrMore>";
 
 Attack.prototype.Init = function()
 {
@@ -370,9 +318,40 @@ Attack.prototype.GetMaxAmmo = function()
 	return this.template["Ranged"].Ammo;
 }
 
+
+Attack.prototype.GetAttackTypes = function(wantedTypes)
+{
+	let types = g_AttackTypes.filter(type => !!this.template[type]);
+	if (!wantedTypes)
+		return types;
+
+	let wantedTypesReal = wantedTypes.filter(wtype => wtype.indexOf("!") != 0);
+	return types.filter(type => wantedTypes.indexOf("!" + type) == -1 &&
+	      (!wantedTypesReal || !wantedTypesReal.length || wantedTypesReal.indexOf(type) != -1));
+};
+
+Attack.prototype.GetPreferredClasses = function(type)
+{
+	if (this.template[type] && this.template[type].PreferredClasses &&
+	    this.template[type].PreferredClasses._string)
+		return this.template[type].PreferredClasses._string.split(/\s+/);
+
+	return [];
+};
+
+Attack.prototype.GetRestrictedClasses = function(type)
+{
+	if (this.template[type] && this.template[type].RestrictedClasses &&
+	    this.template[type].RestrictedClasses._string)
+		return this.template[type].RestrictedClasses._string.split(/\s+/);
+
+	return [];
+};
+
 Attack.prototype.CanAttack = function(target, wantedTypes)
 {
 	g_target = target;
+	g_target = +g_target;
 	let cmpFormation = Engine.QueryInterface(target, IID_Formation);
 	if (cmpFormation)
 		return true;
@@ -389,7 +368,7 @@ Attack.prototype.CanAttack = function(target, wantedTypes)
 	let cmpHealth = QueryMiragedInterface(target, IID_Health);
 	let targetClasses = cmpIdentity.GetClassesList();
 	if (targetClasses.indexOf("Domestic") != -1 && this.template.Slaughter && cmpHealth && cmpHealth.GetHitpoints() &&
-	   (!wantedTypes || !wantedTypes.filter(wType => wType.indexOf("!") != 0).length))
+	   (!wantedTypes || !wantedTypes.filter(wType => wType.indexOf("!") != 0).length || wantedTypes.indexOf("Slaughter") != -1))
 		return true;
 
 	let cmpEntityPlayer = QueryOwnerInterface(this.entity);
@@ -406,7 +385,6 @@ Attack.prototype.CanAttack = function(target, wantedTypes)
 	// If the relative height is bigger, it means they will never be able to
 	// reach each other, no matter how close they come.
 	let heightDiff = Math.abs(cmpThisPosition.GetHeightOffset() - cmpTargetPosition.GetHeightOffset());
-	this.GetBestAttackAgainst();
 
 	for (let type of types)
 	{
@@ -436,6 +414,7 @@ Attack.prototype.CanAttack = function(target, wantedTypes)
 Attack.prototype.GetPreference = function(target)
 {
 	g_target = target;
+	g_target = +g_target;
 	let cmpIdentity = Engine.QueryInterface(target, IID_Identity);
 	if (!cmpIdentity)
 		return undefined;
@@ -469,6 +448,45 @@ Attack.prototype.GetPreference = function(target)
 		}
 	}
 	return minPref;
+};
+
+/**
+ * Get the full range of attack using all available attack types.
+ */
+Attack.prototype.GetFullAttackRange = function()
+{
+	let ret = { "min": Infinity, "max": 0 };
+	for (let type of this.GetAttackTypes())
+	{
+		let range = this.GetRange(type);
+		ret.min = Math.min(ret.min, range.min);
+		ret.max = Math.max(ret.max, range.max);
+	}
+	return ret;
+};
+
+Attack.prototype.CheckTargetIsInMeleeRange = function()
+{
+	g_target = +g_target;
+	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
+	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+	if (!cmpVision)
+		return false;
+
+	let range = cmpVision.GetRange() / 7;
+	let distance = PositionHelper.DistanceBetweenEntities(this.entity, g_target);
+	let result = distance < range;
+
+	return distance < range;
+};
+
+
+Attack.prototype.GetAttackEffectsData = function(type, splash)
+{
+	let template = this.template[type];
+	if (splash)
+		template = template.Splash;
+	return AttackHelper.GetAttackEffectsData("Attack/" + type + (splash ? "/Splash" : ""), template, this.entity);
 };
 
 /**
@@ -525,24 +543,205 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 		}
 	}
 
-
 	return types.sort((a, b) =>
 		(types.indexOf(a) + (isPreferred(a) ? types.length : 0)) -
 		(types.indexOf(b) + (isPreferred(b) ? types.length : 0))).pop();
 };
 
-Attack.prototype.CheckTargetIsInMeleeRange = function()
+Attack.prototype.CompareEntitiesByPreference = function(a, b)
 {
-	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
-	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	if (!cmpVision)
+	let aPreference = this.GetPreference(a);
+	let bPreference = this.GetPreference(b);
+
+	if (aPreference === null && bPreference === null) return 0;
+	if (aPreference === null) return 1;
+	if (bPreference === null) return -1;
+	return aPreference - bPreference;
+};
+
+Attack.prototype.GetAttackName = function(type)
+{
+	return {
+		"name": this.template[type].AttackName._string || this.template[type].AttackName,
+		"context": this.template[type].AttackName["@context"]
+	};
+};
+
+Attack.prototype.GetRepeatTime = function(type)
+{
+	let repeatTime = 1000;
+
+	if (this.template[type] && this.template[type].RepeatTime)
+		repeatTime = +this.template[type].RepeatTime;
+
+	return ApplyValueModificationsToEntity("Attack/" + type + "/RepeatTime", repeatTime, this.entity);
+};
+
+Attack.prototype.GetTimers = function(type)
+{
+	return {
+		"prepare": ApplyValueModificationsToEntity("Attack/" + type + "/PrepareTime", +(this.template[type].PrepareTime || 0), this.entity),
+		"repeat": this.GetRepeatTime(type)
+	};
+};
+
+Attack.prototype.GetSplashData = function(type)
+{
+	if (!this.template[type].Splash)
+		return undefined;
+
+	return {
+		"attackData": this.GetAttackEffectsData(type, true),
+		"friendlyFire": this.template[type].Splash.FriendlyFire == "true",
+		"radius": ApplyValueModificationsToEntity("Attack/" + type + "/Splash/Range", +this.template[type].Splash.Range, this.entity),
+		"shape": this.template[type].Splash.Shape,
+	};
+};
+
+Attack.prototype.GetRange = function(type)
+{
+	if (!type)
+		return this.GetFullAttackRange();
+
+	let max = +this.template[type].MaxRange;
+	max = ApplyValueModificationsToEntity("Attack/" + type + "/MaxRange", max, this.entity);
+
+	let min = +(this.template[type].MinRange || 0);
+	min = ApplyValueModificationsToEntity("Attack/" + type + "/MinRange", min, this.entity);
+
+	let elevationBonus = +(this.template[type].ElevationBonus || 0);
+	elevationBonus = ApplyValueModificationsToEntity("Attack/" + type + "/ElevationBonus", elevationBonus, this.entity);
+
+	return { "max": max, "min": min, "elevationBonus": elevationBonus };
+};
+
+/**
+ * @param {number} target - The target to attack.
+ * @param {string} type - The type of attack to use.
+ * @param {number} callerIID - The IID to notify on specific events.
+ *
+ * @return {boolean} - Whether we started attacking.
+ */
+Attack.prototype.StartAttacking = function(target, type, callerIID)
+{
+	if (this.target)
+		this.StopAttacking();
+
+	if (!this.CanAttack(target, [type]))
 		return false;
 
-	let range = cmpVision.GetRange() / 7;
-	let distance = PositionHelper.DistanceBetweenEntities(this.entity, g_target);
-	let result = distance < range;
+	let cmpResistance = Engine.QueryInterface(target, IID_Resistance);
+	if (!cmpResistance || !cmpResistance.AddAttacker(this.entity))
+		return false;
 
-	return distance < range;
+	let timings = this.GetTimers(type);
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+
+	// If the repeat time since the last attack hasn't elapsed,
+	// delay the action to avoid attacking too fast.
+	let prepare = timings.prepare;
+	if (this.lastAttacked)
+	{
+		let repeatLeft = this.lastAttacked + timings.repeat - cmpTimer.GetTime();
+		prepare = Math.max(prepare, repeatLeft);
+	}
+
+	let cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
+	if (cmpVisual)
+	{
+		cmpVisual.SelectAnimation("attack_" + type.toLowerCase(), false, 1.0);
+		cmpVisual.SetAnimationSyncRepeat(timings.repeat);
+		cmpVisual.SetAnimationSyncOffset(prepare);
+	}
+
+	// If using a non-default prepare time, re-sync the animation when the timer runs.
+	this.resyncAnimation = prepare != timings.prepare;
+	this.target = target;
+	this.callerIID = callerIID;
+	this.timer = cmpTimer.SetInterval(this.entity, IID_Attack, "Attack", prepare, timings.repeat, type);
+
+	return true;
+};
+
+/**
+ * @param {string} reason - The reason why we stopped attacking.
+ */
+Attack.prototype.StopAttacking = function(reason)
+{
+	if (!this.target)
+		return;
+
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+	cmpTimer.CancelTimer(this.timer);
+	delete this.timer;
+
+	let cmpResistance = Engine.QueryInterface(this.target, IID_Resistance);
+	if (cmpResistance)
+		cmpResistance.RemoveAttacker(this.entity);
+
+	delete this.target;
+
+	let cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
+	if (cmpVisual)
+		cmpVisual.SelectAnimation("idle", false, 1.0);
+
+	// The callerIID component may start again,
+	// replacing the callerIID, hence save that.
+	let callerIID = this.callerIID;
+	delete this.callerIID;
+
+	if (reason && callerIID)
+	{
+		let component = Engine.QueryInterface(this.entity, callerIID);
+		if (component)
+			component.ProcessMessage(reason, null);
+	}
+};
+
+/**
+ * Attack our target entity.
+ * @param {string} data - The attack type to use.
+ * @param {number} lateness - The offset of the actual call and when it was expected.
+ */
+Attack.prototype.Attack = function(type, lateness)
+{
+	if (!this.CanAttack(this.target, [type]))
+	{
+		this.StopAttacking("TargetInvalidated");
+		return;
+	}
+
+	// ToDo: Enable entities to keep facing a target.
+	Engine.QueryInterface(this.entity, IID_UnitAI)?.FaceTowardsTarget(this.target);
+
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+	this.lastAttacked = cmpTimer.GetTime() - lateness;
+
+	// BuildingAI has its own attack routine.
+	if (!Engine.QueryInterface(this.entity, IID_BuildingAI))
+		this.PerformAttack(type, this.target);
+
+	if (!this.target)
+		return;
+
+	// We check the range after the attack to facilitate chasing.
+	if (!this.IsTargetInRange(this.target, type))
+	{
+		this.StopAttacking("OutOfRange");
+		return;
+	}
+
+	if (this.resyncAnimation)
+	{
+		let cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
+		if (cmpVisual)
+		{
+			let repeat = this.GetTimers(type).repeat;
+			cmpVisual.SetAnimationSyncRepeat(repeat);
+			cmpVisual.SetAnimationSyncOffset(repeat);
+		}
+		delete this.resyncAnimation;
+	}
 };
 
 /**
@@ -553,13 +752,36 @@ Attack.prototype.CheckTargetIsInMeleeRange = function()
 Attack.prototype.PerformAttack = function(type, target)
 {
 	g_target = target;
-	let attackerOwner = Engine.QueryInterface(this.entity, IID_Ownership).GetOwner();
-	// check if they need to perform a melee (if a unit is too close) or ranged attack
+	g_target = +g_target;
+	let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
+	if (!cmpPosition || !cmpPosition.IsInWorld())
+		return;
+	let selfPosition = cmpPosition.GetPosition();
 
-	// If this is a ranged attack, then launch a projectile
+	let cmpTargetPosition = Engine.QueryInterface(target, IID_Position);
+	if (!cmpTargetPosition || !cmpTargetPosition.IsInWorld())
+		return;
+	let targetPosition = cmpTargetPosition.GetPosition();
+
+	let cmpOwnership = Engine.QueryInterface(this.entity, IID_Ownership);
+	if (!cmpOwnership)
+		return;
+	let attackerOwner = cmpOwnership.GetOwner();
+
+	let data = {
+		"type": type,
+		"attackData": this.GetAttackEffectsData(type),
+		"splash": this.GetSplashData(type),
+		"attacker": this.entity,
+		"attackerOwner": attackerOwner,
+		"target": target,
+	};
+
+	let delay = +(this.template[type].Delay || 0);
+	
 	if (type == "Ranged")
 	{
-		this.GetBestAttackAgainst();
+		this.GetBestAttackAgainst(g_target);
 		this.ReArmAura();
 
 		if (!!this.template["Ranged"].Ammo) 
@@ -587,6 +809,10 @@ Attack.prototype.PerformAttack = function(type, target)
 				return;
 			}
 		}
+	}
+
+	if (this.template[type].Projectile)
+	{
 		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 		let turnLength = cmpTimer.GetLatestTurnLength()/1000;
 		// In the future this could be extended:
@@ -600,15 +826,6 @@ Attack.prototype.PerformAttack = function(type, target)
 		// We will try to estimate the position of the target, where we can hit it.
 		// We first estimate the time-till-hit by extrapolating linearly the movement
 		// of the last turn. We compute the time till an arrow will intersect the target.
-		let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
-		if (!cmpPosition || !cmpPosition.IsInWorld())
-			return;
-		let selfPosition = cmpPosition.GetPosition();
-		let cmpTargetPosition = Engine.QueryInterface(target, IID_Position);
-		if (!cmpTargetPosition || !cmpTargetPosition.IsInWorld())
-			return;
-		let targetPosition = cmpTargetPosition.GetPosition();
-
 		let targetVelocity = Vector3D.sub(targetPosition, cmpTargetPosition.GetPreviousPosition()).div(turnLength);
 
 		let timeToTarget = PositionHelper.PredictTimeToTarget(selfPosition, horizSpeed, targetPosition, targetVelocity);
@@ -643,31 +860,24 @@ Attack.prototype.PerformAttack = function(type, target)
 		let predictedHeight = cmpTargetPosition.GetHeightAt(predictedPosition.x, predictedPosition.z);
 
 		// Add inaccuracy based on spread.
-		let distanceModifiedSpread = ApplyValueModificationsToEntity("Attack/Ranged/Spread", +this.template[type].Projectile.Spread, this.entity) *
+		let distanceModifiedSpread = ApplyValueModificationsToEntity("Attack/" + type + "/Spread", +this.template[type].Projectile.Spread, this.entity) *
 			predictedPosition.horizDistanceTo(selfPosition) / 100;
 
 		let randNorm = randomNormal2D();
 		let offsetX = randNorm[0] * distanceModifiedSpread;
 		let offsetZ = randNorm[1] * distanceModifiedSpread;
 
-		let realTargetPosition = new Vector3D(predictedPosition.x + offsetX, predictedHeight, predictedPosition.z + offsetZ);
+		data.position = new Vector3D(predictedPosition.x + offsetX, predictedHeight, predictedPosition.z + offsetZ);
 
-		// Recalculate when the missile will hit the target position.
-		let realHorizDistance = realTargetPosition.horizDistanceTo(selfPosition);
+		let realHorizDistance = data.position.horizDistanceTo(selfPosition);
 		timeToTarget = realHorizDistance / horizSpeed;
+		delay += timeToTarget * 1000;
 
-		let missileDirection = Vector3D.sub(realTargetPosition, selfPosition).div(realHorizDistance);
+		data.direction = Vector3D.sub(data.position, selfPosition).div(realHorizDistance);
 
-		// Launch the graphical projectile.
-		let cmpProjectileManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ProjectileManager);
-
-		let actorName = "";
-		let impactActorName = "";
-		let impactAnimationLifetime = 0;
-
-		actorName = this.template[type].Projectile.ActorName || "";
-		impactActorName = this.template[type].Projectile.ImpactActorName || "";
-		impactAnimationLifetime = this.template[type].Projectile.ImpactAnimationLifetime || 0;
+		let actorName = this.template[type].Projectile.ActorName || "";
+		let impactActorName = this.template[type].Projectile.ImpactActorName || "";
+		let impactAnimationLifetime = this.template[type].Projectile.ImpactAnimationLifetime || 0;
 
 		// TODO: Use unit rotation to implement x/z offsets.
 		let deltaLaunchPoint = new Vector3D(0, +this.template[type].Projectile.LaunchPoint["@y"], 0);
@@ -686,32 +896,88 @@ Attack.prototype.PerformAttack = function(type, target)
 				launchPoint = visualActorLaunchPoint;
 		}
 
-		let id = cmpProjectileManager.LaunchProjectileAtPoint(launchPoint, realTargetPosition, horizSpeed, gravity, actorName, impactActorName, impactAnimationLifetime);
+		let cmpProjectileManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ProjectileManager);
+		data.projectileId = cmpProjectileManager.LaunchProjectileAtPoint(launchPoint, data.position, horizSpeed, gravity, actorName, impactActorName, impactAnimationLifetime);
 
-		let attackImpactSound = "";
 		let cmpSound = Engine.QueryInterface(this.entity, IID_Sound);
-		if (cmpSound)
-			attackImpactSound = cmpSound.GetSoundGroup("attack_impact_" + type.toLowerCase());
+		data.attackImpactSound = cmpSound ? cmpSound.GetSoundGroup("attack_impact_" + type.toLowerCase()) : "";
 
-		let data = {
-			"type": type,
-			"attackData": this.GetAttackEffectsData(type),
-			"target": target,
-			"attacker": this.entity,
-			"attackerOwner": attackerOwner,
-			"position": realTargetPosition,
-			"direction": missileDirection,
-			"projectileId": id,
-			"attackImpactSound": attackImpactSound,
-			"splash": this.GetSplashData(type),
-			"friendlyFire": this.template[type].Projectile.FriendlyFire == "true",
-		};
-
-		cmpTimer.SetTimeout(SYSTEM_ENTITY, IID_DelayedDamage, "MissileHit", +this.template[type].Delay + timeToTarget * 1000, data);
+		data.friendlyFire = this.template[type].Projectile.FriendlyFire == "true";
 	}
 	else
-		Attacking.HandleAttackEffects(target, type, this.GetAttackEffectsData(type), this.entity, attackerOwner);
-		
+	{
+		data.position = targetPosition;
+		data.direction = Vector3D.sub(targetPosition, selfPosition);
+	}
+	if (delay)
+	{
+		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+		cmpTimer.SetTimeout(SYSTEM_ENTITY, IID_DelayedDamage, "Hit", delay, data);
+	}
+	else
+		Engine.QueryInterface(SYSTEM_ENTITY, IID_DelayedDamage).Hit(data, 0);
+};
+
+/**
+ * @param {number} - The entity ID of the target to check.
+ * @return {boolean} - Whether this entity is in range of its target.
+ */
+Attack.prototype.IsTargetInRange = function(target, type)
+{
+	let range = this.GetRange(type);
+	if (type == "Ranged")
+	{
+		let cmpPositionTarget = Engine.QueryInterface(target, IID_Position);
+		if (!cmpPositionTarget || !cmpPositionTarget.IsInWorld())
+			return false;
+
+		let cmpPositionSelf = Engine.QueryInterface(this.entity, IID_Position);
+		if (!cmpPositionSelf || !cmpPositionSelf.IsInWorld())
+			return false;
+
+		let positionSelf = cmpPositionSelf.GetPosition();
+		let positionTarget = cmpPositionTarget.GetPosition();
+
+		let heightDifference = positionSelf.y + range.elevationBonus - positionTarget.y;
+		range.max = Math.sqrt(Math.square(range.max) + 2 * range.max * heightDifference);
+
+		if (range.max < 0)
+			return false;
+	}
+	let cmpObstructionManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ObstructionManager);
+	return cmpObstructionManager.IsInTargetRange(this.entity, target, range.min, range.max, false);
+};
+
+Attack.prototype.OnValueModification = function(msg)
+{
+	if (msg.component != "Attack")
+		return;
+
+	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+	if (!cmpUnitAI)
+		return;
+
+	if (this.GetAttackTypes().some(type =>
+	      msg.valueNames.indexOf("Attack/" + type + "/MaxRange") != -1))
+		cmpUnitAI.UpdateRangeQueries();
+};
+
+Attack.prototype.GetRangeOverlays = function(type = "Ranged")
+{
+	if (!this.template[type] || !this.template[type].RangeOverlay)
+		return [];
+
+	let range = this.GetRange(type);
+	let rangeOverlays = [];
+	for (let i in range)
+		if ((i == "min" || i == "max") && range[i])
+			rangeOverlays.push({
+				"radius": range[i],
+				"texture": this.template[type].RangeOverlay.LineTexture,
+				"textureMask": this.template[type].RangeOverlay.LineTextureMask,
+				"thickness": +this.template[type].RangeOverlay.LineThickness,
+			});
+	return rangeOverlays;
 };
 
 Engine.ReRegisterComponentType(IID_Attack, "Attack", Attack);
