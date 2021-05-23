@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_javelineer">
+  <Attack>
+    <Ranged>
+      <ApplyStatus>
+        <Burning>
+          <Interval>3000</Interval>
+          <Damage>
+            <Fire>2</Fire>
+          </Damage>
+          <Stackability>Stack</Stackability>
+          <Duration>9000</Duration>
+        </Burning>
+      </ApplyStatus>
+    </Ranged>
+  </Attack>
+  <Identity>
+    <Civ>iber</Civ>
+    <SpecificName>Leial Zalduneria</SpecificName>
+    <SelectionGroupName>units/iber/champion_cavalry</SelectionGroupName>
+    <Icon>units/iber_champion_cavalry.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/iberians/cavalry_javelinist_c_m.xml</Actor>
+  </VisualActor>
+</Entity>
