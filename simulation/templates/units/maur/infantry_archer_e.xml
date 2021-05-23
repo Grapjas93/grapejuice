@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/maur/infantry_archer_a">
+<Attack>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>7.9</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+    </Melee>
+</Attack>
+<Identity>
+<Rank>Elite</Rank>
+<Icon>units/maur_infantry_archer.png</Icon>
+</Identity>
+ <Promotion disable=""/>
+  <VisualActor>
+<Actor>units/mauryas/infantry_archer_e.xml</Actor>
+</VisualActor>
+</Entity>

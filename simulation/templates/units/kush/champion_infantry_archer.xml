@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_archer">
+<Attack>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>11.0</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+    </Melee>
+</Attack>
+  <Identity>
+    <Civ>kush</Civ>
+    <Lang>napatan</Lang>
+    <GenericName>Noble Archer</GenericName>
+    <SpecificName>Hry pdty</SpecificName>
+    <Icon>units/kush_champion_archer.png</Icon>
+    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/kushites/infantry_archer_c.xml</Actor>
+  </VisualActor>
+</Entity>

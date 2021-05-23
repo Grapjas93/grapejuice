@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/kush/infantry_archer_b">
+<Attack>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>7.8</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>6</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+    </Melee>
+</Attack>
+  <Identity>
+    <Rank>Advanced</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/kush/infantry_archer_e</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/kushites/infantry_archer_a.xml</Actor>
+  </VisualActor>
+</Entity>

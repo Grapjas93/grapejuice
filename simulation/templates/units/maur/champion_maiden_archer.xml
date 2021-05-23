@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_archer">
+  <Attack>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>11.0</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>700</RepeatTime>
+    </Melee>
+    <Ranged>
+      <ApplyStatus>
+        <Poisoned>
+          <Interval>1500</Interval>
+          <Damage>
+            <Poison>1.0</Poison>
+          </Damage>
+          <Stackability>Extend</Stackability>
+          <Duration>10000</Duration>
+        </Poisoned>
+      </ApplyStatus>
+    </Ranged>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Crush>0</Crush>
+        <Hack>0</Hack>
+        <Pierce>0</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <UnitMotion>
+    <WalkSpeed>12.0</WalkSpeed>
+    <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion>
+  <Identity>
+    <Civ>maur</Civ>
+    <Phenotype>female</Phenotype>
+    <GenericName>Maiden Guard Archer</GenericName>
+    <SpecificName>Visha Kanya</SpecificName>
+    <Icon>units/maur_champion_maiden_archer.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/mauryas/infantry_archer_c.xml</Actor>
+  </VisualActor>
+</Entity>
