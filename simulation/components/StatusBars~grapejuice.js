@@ -26,16 +26,16 @@ StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 	let cmpHelpers = QueryMiragedInterface(this.entity, IID_Helpers);
 	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege"))
 	{
-	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
-	if (cmpAttack == null)
-		return 0;
-	if (!this.enabled)
-		return 0;
-	if(cmpAttack.GetMaxAmmo() == "0")
-		return 0;
-	if (cmpAttack.GetMaxAmmo() > "0"){
-		return this.AddBar(cmpOverlayRenderer, -0.3, "ammo", cmpAttack.ammo / cmpAttack.GetMaxAmmo(), 0.7);
-	}
+		let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
+		if (cmpAttack == null)
+			return 0;
+		if (!this.enabled)
+			return 0;
+		if(cmpAttack.GetMaxAmmo() == "0")
+			return 0;
+		if (cmpAttack.GetMaxAmmo() > "0"){
+			return this.AddBar(cmpOverlayRenderer, -0.3, "ammo", cmpAttack.ammo / cmpAttack.GetMaxAmmo(), 0.7);
+		}
 	}
 
 };

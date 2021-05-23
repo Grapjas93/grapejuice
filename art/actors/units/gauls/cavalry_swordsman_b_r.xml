@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_armor_pants_tunic_long.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_celt.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="Celt-Shield-A-Boss">
+      <props>
+        <prop actor="props/units/shields/gaul_shield_cav_sw_hex_a_01.xml" attachpoint="shield_arm"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Celt-Shield-B-Boss">
+      <props>
+        <prop actor="props/units/shields/gaul_shield_cav_sw_oval_a_01.xml" attachpoint="shield_arm"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Celt-Shield-C-Boss">
+      <props>
+        <prop actor="props/units/shields/gaul_shield_cav_sw_oval_b_01.xml" attachpoint="shield_arm"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant name="tunic-1a">
+      <textures>
+        <texture file="skeletal/gaul_tunic_1_a.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="tunic-1b">
+      <textures>
+        <texture file="skeletal/gaul_tunic_1_b.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="tunic-1c">
+      <textures>
+        <texture file="skeletal/gaul_tunic_1_c.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="tunic-1d">
+      <textures>
+        <texture file="skeletal/gaul_tunic_1_d.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="tunic-1e">
+      <textures>
+        <texture file="skeletal/gaul_tunic_1_e.png" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant file="biped/rider/cavalry/base_swordsman_relax_shield.xml" name="Swordsman-Relax-Shield" frequency="1"/>
+    <variant file="biped/rider/carry_meat.xml"/>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
+    <variant file="biped/rider/promotion_shield.xml"/>
+    <variant file="biped/rider/attack_slaughter_shield_celt.xml"/>
+    <variant file="biped/gather_meat.xml"/>
+    <variant file="biped/rider/death_shield.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

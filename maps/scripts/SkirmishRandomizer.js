@@ -57,15 +57,15 @@ SkirmishRandomizer.Randomize = function(civilCentrePositions, g_atlasEditor, g_g
 		let playerTeam = g_cmpPlayer.GetTeam(g_selectedPlayer);
 		playerTeam = playerTeam+1;
 		if (playerTeam == 0) {
-			g_team0.push(g_selectedPlayer);
+				g_team0.push(g_selectedPlayer);
 			} else if (playerTeam == 1) {
-			g_team1.push(g_selectedPlayer);
+				g_team1.push(g_selectedPlayer);
 			} else if (playerTeam == 2) {
-			g_team2.push(g_selectedPlayer);
+				g_team2.push(g_selectedPlayer);
 			} else if (playerTeam == 3) {
-			g_team3.push(g_selectedPlayer);
+				g_team3.push(g_selectedPlayer);
 			} else if (playerTeam == 4) {
-			g_team4.push(g_selectedPlayer);
+				g_team4.push(g_selectedPlayer);
 			}
 	}
 
@@ -89,15 +89,15 @@ SkirmishRandomizer.Randomize = function(civilCentrePositions, g_atlasEditor, g_g
 	} 
 		
 		
-	// Check how many teams there are playing to find out how many arrays needs to be shuffle
+	// Check how many teams there are playing to find out how many arrays needs to be shuffled
 	// Then shuffle the team arrays inside the parent array for randomnization
 	let numberOfTeams = g_playersShuffledAsTeams.length;
 	if (numberOfTeams == 2) {
-		g_playersShuffledAsTeams = shuffleArray([g_team1, g_team2]);
+			g_playersShuffledAsTeams = shuffleArray([g_team1, g_team2]);
 		} else if (numberOfTeams == 3) {
-		g_playersShuffledAsTeams = shuffleArray([g_team1, g_team2, g_team3]);
+			g_playersShuffledAsTeams = shuffleArray([g_team1, g_team2, g_team3]);
 		} else if (numberOfTeams == 4) {
-		g_playersShuffledAsTeams = shuffleArray([g_team1, g_team2, g_team3, g_team4]);
+			g_playersShuffledAsTeams = shuffleArray([g_team1, g_team2, g_team3, g_team4]);
 		}
 	// Put the players without a team in the back of the array
 	g_team0 = shuffleArray(g_team0);

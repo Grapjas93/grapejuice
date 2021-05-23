@@ -23,8 +23,8 @@ Promotion.prototype.Promote = function(promotedTemplateName)
 	// Check for new targets if ammo is 0, otherwise unit would perform ranged attacks without ammo
 	if (currentAmmo == 0)
 	{
-	let cmpUnitAI = Engine.QueryInterface(this.promotedUnitEntity, IID_UnitAI);
-	cmpUnitAI.Stop();	
+		let cmpUnitAI = Engine.QueryInterface(this.promotedUnitEntity, IID_UnitAI);
+		cmpUnitAI.Stop();	
 	}
 	
 	// promoted units regain some health

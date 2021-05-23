@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_pants.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_lime.xml" attachpoint="head"/>
+        <prop actor="props/units/shields/celt_shield_sq_a_01.xml" attachpoint="shield"/>
+        <prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="skin 01">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_01.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 02">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_02.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 03">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_03.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 04">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_04.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 05">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_05.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 06">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_06.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 07">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_07.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 08">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_08.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 09">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_09.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 10">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_10.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="skin 11">
+      <textures>
+        <texture file="skeletal/celt_ijv_a_11.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant file="biped/base_slinger_ready.xml"/>
+    <variant file="biped/carry_food.xml"/>
+    <variant file="biped/carry_meat.xml"/>
+    <variant file="biped/carry_wood.xml"/>
+    <variant file="biped/carry_stone.xml"/>
+    <variant file="biped/carry_metal.xml"/>
+    <variant file="biped/approach_tree.xml"/>
+    <variant file="biped/approach_grain.xml"/>
+    <variant file="biped/approach_fruit.xml"/>
+    <variant file="biped/approach_meat.xml"/>
+    <variant file="biped/approach_rock.xml"/>
+    <variant file="biped/approach_ore.xml"/>
+    <variant file="biped/approach_ruins.xml"/>
+    <variant file="biped/approach_praise.xml"/>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
+    <variant file="biped/attack_ranged_slinger.xml">
+		<props>
+			<prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+			<prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+		</props>
+	</variant>
+   <variant file="biped/attack_melee_slinger.xml">
+		<props>
+			<prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
+			<prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
+			<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+		</props>
+	</variant>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/gather_tree.xml"/>
+    <variant file="biped/gather_grain.xml"/>
+    <variant file="biped/gather_fruit.xml"/>
+    <variant file="biped/gather_meat.xml"/>
+    <variant file="biped/gather_rock.xml"/>
+    <variant file="biped/gather_ore.xml"/>
+    <variant file="biped/gather_ruins.xml"/>
+    <variant file="biped/gather_praise.xml"/>
+    <variant file="biped/build.xml"/>
+    <variant file="biped/build_farm.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>
