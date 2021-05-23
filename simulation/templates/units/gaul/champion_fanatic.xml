@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_infantry_spearman">
+  <Attack>
+    <Melee>
+      <AttackName>Spear</AttackName>
+      <Damage>
+        <Hack>6</Hack>
+        <Pierce>5</Pierce>
+      </Damage>
+      <MaxRange>4</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>650</RepeatTime>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>3.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Crush>1</Crush>
+        <Hack>2</Hack>
+        <Pierce>3</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <UnitMotion>
+    <WalkSpeed>12.0</WalkSpeed>
+    <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion>
   <Identity>
     <Civ>gaul</Civ>
     <GenericName>Naked Fanatic</GenericName>
@@ -7,17 +39,6 @@
     <Icon>units/gaul_champion_fanatic.png</Icon>
     <RequiredTechnology>phase_town</RequiredTechnology>
   </Identity>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">-4</Hack>
-        <Pierce op="add">-4</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
-  <UnitMotion>
-    <WalkSpeed op="mul">1.4</WalkSpeed>
-  </UnitMotion>
   <VisualActor>
     <Actor>units/gauls/infantry_spearman_c.xml</Actor>
   </VisualActor>

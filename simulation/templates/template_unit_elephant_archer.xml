@@ -3,21 +3,19 @@
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
-      <Ammo>30</Ammo>
+      <Ammo>40</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <Damage>
-        <Hack>0</Hack>
         <Pierce>14</Pierce>
-        <Crush>0</Crush>
       </Damage>
       <MaxRange>60</MaxRange>
-      <MinRange>0</MinRange>
       <PrepareTime>500</PrepareTime>
       <RepeatTime>1000</RepeatTime>
-      <Delay>0</Delay>
       <Projectile>
-        <Speed>100.0</Speed>
-        <Spread>2.0</Spread>
-        <Gravity>50.0</Gravity>
+        <Speed>100</Speed>
+        <Spread>2.5</Spread>
+        <Gravity>50</Gravity>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="9"/>
       </Projectile>

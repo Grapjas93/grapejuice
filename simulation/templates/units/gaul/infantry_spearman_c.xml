@@ -9,17 +9,6 @@
 	<Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">-4</Hack>
-        <Pierce op="add">-4</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
-  <UnitMotion>
-    <WalkSpeed op="mul">1.4</WalkSpeed>
-  </UnitMotion>
   <VisualActor>
     <Actor>units/gauls/infantry_spearman_c.xml</Actor>
   </VisualActor>
