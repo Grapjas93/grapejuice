@@ -350,8 +350,6 @@ Attack.prototype.GetRestrictedClasses = function(type)
 
 Attack.prototype.CanAttack = function(target, wantedTypes)
 {
-	g_target = target;
-	g_target = +g_target;
 	let cmpFormation = Engine.QueryInterface(target, IID_Formation);
 	if (cmpFormation)
 		return true;
@@ -438,7 +436,7 @@ Attack.prototype.GetPreference = function(target)
 					}		
 						
 					let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-					cmpUnitAI.Stop();
+					cmpUnitAI.RespondToTargetedEntities([target]);
 					return pref;
 				}
 
@@ -473,7 +471,7 @@ Attack.prototype.CheckTargetIsInMeleeRange = function()
 	if (!cmpVision)
 		return false;
 
-	let range = cmpVision.GetRange() / 7;
+	let range = cmpVision.GetRange() / 6.5;
 	let distance = PositionHelper.DistanceBetweenEntities(this.entity, g_target);
 	let result = distance < range;
 
@@ -523,40 +521,25 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 			return "Capture";
 		types.splice(captureIndex, 1);
 	}
+	
+	let rangeIndex = types.indexOf("Ranged");
+	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
+	{
+				if (this.ammo == 0 || this.CheckTargetIsInMeleeRange() || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "")
+			{
+				types.splice(rangeIndex, 1);
+				return "Melee";
+			} else	{types.splice(rangeIndex, -1);
+			return "Ranged";
+			}
+	}
 
 	let targetClasses = cmpIdentity.GetClassesList();
 	let isPreferred = attackType => MatchesClassList(targetClasses, this.GetPreferredClasses(attackType));
 
-	let rangeIndex = types.indexOf("Ranged");
-	let meleeIndex = types.indexOf("Melee");
-	if (this.noRange)
-	{
-		types.splice(rangeIndex);
-	}
-
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
-	{
-		// switch to melee if any of the blow is true
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange() || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "") {
-			types.splice(rangeIndex, 1);
-			types.splice(meleeIndex, 0);
-		}
-	}
-
 	return types.sort((a, b) =>
 		(types.indexOf(a) + (isPreferred(a) ? types.length : 0)) -
 		(types.indexOf(b) + (isPreferred(b) ? types.length : 0))).pop();
-};
-
-Attack.prototype.CompareEntitiesByPreference = function(a, b)
-{
-	let aPreference = this.GetPreference(a);
-	let bPreference = this.GetPreference(b);
-
-	if (aPreference === null && bPreference === null) return 0;
-	if (aPreference === null) return 1;
-	if (bPreference === null) return -1;
-	return aPreference - bPreference;
 };
 
 Attack.prototype.GetAttackName = function(type)
@@ -751,8 +734,6 @@ Attack.prototype.Attack = function(type, lateness)
  */
 Attack.prototype.PerformAttack = function(type, target)
 {
-	g_target = target;
-	g_target = +g_target;
 	let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
 	if (!cmpPosition || !cmpPosition.IsInWorld())
 		return;
@@ -776,12 +757,11 @@ Attack.prototype.PerformAttack = function(type, target)
 		"attackerOwner": attackerOwner,
 		"target": target,
 	};
-
-	let delay = +(this.template[type].Delay || 0);
 	
+	let delay = +(this.template[type].Delay || 0);
+		
 	if (type == "Ranged")
 	{
-		this.GetBestAttackAgainst(g_target);
 		this.ReArmAura();
 
 		if (!!this.template["Ranged"].Ammo) 
@@ -795,18 +775,7 @@ Attack.prototype.PerformAttack = function(type, target)
 			else 
 			{
 				let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-				// re-apply stance if ammo is empty, so that the unit will switch to melee
-				
-				cmpUnitAI.SetStance(cmpUnitAI.GetStanceName());
-				
-				if (UnitAI.prototype.GetStanceName() == "standground")
-				{
-					cmpUnitAI.Stop();
-					warn("Stance is standground");
-				}
-				// If ammo is empty switch to melee by checking for new preference attack type to attack with
-				cmpUnitAI.Attack(g_target);
-				return;
+				cmpUnitAI.RespondToTargetedEntities([target]);
 			}
 		}
 	}

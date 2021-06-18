@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="civ/athen|hoplite|template_unit_infantry_melee_spearman">
+<UnitMotion>
+       <WalkSpeed> 10.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 550 </PrepareTime>
+           <RepeatTime> 700 </RepeatTime>
+       </Melee> 
+</Attack>       
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 4 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
   <Identity>
     <SelectionGroupName>units/athen/infantry_spearman_b</SelectionGroupName>
     <GenericName>Athenian Hoplite</GenericName>

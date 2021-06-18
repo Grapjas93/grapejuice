@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="hoplite|template_unit_champion_infantry_spearman">
+<UnitMotion>
+       <WalkSpeed> 8.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 850 </PrepareTime>
+           <RepeatTime> 1000 </RepeatTime>
+       </Melee> 
+</Attack>       
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 9 </Hack>
+               <Pierce> 8 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
   <Identity>
     <Civ>cart</Civ>
     <GenericName>Sacred Band Infantry</GenericName>

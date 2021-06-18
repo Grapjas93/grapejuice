@@ -1,56 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_cavalry_javelineer">
-  <Attack>
-    <Melee>
-      <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
-      <Damage>
-        <Hack>11</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0</Crush>
-      </Damage>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>900</RepeatTime>
-      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
-    </Melee>
-    <Ranged>
-      <AttackName>Javelin</AttackName>
-      <Ammo>3</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
-      <Damage>
-        <Hack>0</Hack>
-        <Pierce>56</Pierce>
-        <Crush>0</Crush>
-      </Damage>
-      <MaxRange>30</MaxRange>
-      <MinRange>0</MinRange>
-      <PrepareTime>750</PrepareTime>
-      <RepeatTime>1250</RepeatTime>
-      <Delay>0</Delay>
-      <Projectile>
-        <Speed>70.0</Speed>
-        <Spread>1.6</Spread>
-        <Gravity>35.0</Gravity>
-        <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="5"/>
-      </Projectile>
-      <PreferredClasses datatype="tokens">Human</PreferredClasses>
-    </Ranged>
-  </Attack>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Crush>5</Crush>
-        <Hack>11</Hack>
-        <Pierce>9</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
-  <UnitMotion>
-    <WalkSpeed>8.0</WalkSpeed>
-    <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion>
+<UnitMotion>
+       <WalkSpeed> 10 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1750 </PrepareTime>
+           <RepeatTime> 1900 </RepeatTime>
+       </Ranged> 
+</Attack>       
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
   <Auras datatype="tokens">
     units/heroes/brit_hero_boudicca
   </Auras>

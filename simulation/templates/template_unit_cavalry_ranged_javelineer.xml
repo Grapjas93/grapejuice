@@ -21,6 +21,17 @@
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>6.5</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>6</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+    </Melee>
   </Attack>
   <Cost>
     <Resources>

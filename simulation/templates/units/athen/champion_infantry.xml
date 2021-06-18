@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="civ/athen|hoplite|template_unit_champion_infantry_spearman">
+<UnitMotion>
+       <WalkSpeed> 9.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+</Attack>       
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
   <Identity>
     <GenericName>City Guard</GenericName>
     <SpecificName>Epílektos</SpecificName>

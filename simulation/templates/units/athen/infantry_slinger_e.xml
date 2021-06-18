@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/athen/infantry_slinger_a">
-<Attack>
-    <Melee>
-      <AttackName>Dagger</AttackName>
-      <Damage>
-        <Hack>7.9</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-    </Melee>
-</Attack>
+<UnitMotion>
+       <WalkSpeed> 11.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Ranged>
+           <AttackName> Slinger </AttackName>
+           <PrepareTime> 1550 </PrepareTime>
+           <RepeatTime> 1700 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 600 </PrepareTime>
+           <RepeatTime> 750 </RepeatTime>
+       </Melee> 
+</Attack> 
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
   <Identity>
     <Rank>Elite</Rank>
   </Identity>

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/brit/infantry_javelineer_b">
-<Attack>
-    <Melee>
-      <AttackName>Spear</AttackName>
-      <Damage>
-        <Hack>3.6</Hack>
-        <Pierce>3.0</Pierce>       
-        <Crush>0</Crush>
-      </Damage>
-      <Bonuses>
-        <BonusCavMelee>
-          <Classes>Cavalry</Classes>
-          <Multiplier>1.75</Multiplier>
-        </BonusCavMelee>
-      </Bonuses>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>625</PrepareTime>
-      <RepeatTime>1250</RepeatTime>
-      <PreferredClasses datatype="tokens">Human</PreferredClasses>
-    </Melee>
-</Attack>
+<UnitMotion>
+       <WalkSpeed> 11 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1600 </PrepareTime>
+           <RepeatTime> 1750 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+</Attack> 
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
   <Identity>
     <Rank>Advanced</Rank>
   </Identity>

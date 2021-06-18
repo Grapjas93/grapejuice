@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/cart/infantry_swordsman_gaul_b">
+<UnitMotion>
+       <WalkSpeed> 10 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion> 
+ <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 650 </PrepareTime>
+           <RepeatTime> 800 </RepeatTime>
+       </Melee> 
+</Attack>       
+ <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+</Resistance>
+  <Identity>
+    <Rank>Advanced</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/cart/infantry_swordsman_gaul_e</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/gauls/infantry_swordsman_a.xml</Actor>
+  </VisualActor>
+</Entity>

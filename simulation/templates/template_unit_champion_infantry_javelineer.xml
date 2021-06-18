@@ -7,7 +7,7 @@
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <Damage>
-        <Pierce>26</Pierce>
+        <Pierce>60</Pierce>
       </Damage>
       <MaxRange>30</MaxRange>
       <PrepareTime>500</PrepareTime>
@@ -21,6 +21,17 @@
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
+    <Melee>
+      <AttackName>Spear</AttackName>
+      <Damage>
+        <Hack>6</Hack>
+        <Pierce>5</Pierce>
+      </Damage>
+      <MaxRange>4</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>900</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
   </Attack>
   <Health>
     <Max>120</Max>
