@@ -229,11 +229,12 @@ Attack.prototype.CheckAmmoRefill = function()
 		return;
 }
 
-Attack.prototype.CheckTargetIsInAuraRange = function()
+Attack.prototype.CheckIsInAuraRange = function()
 {
-	let entPlayer = Helpers.GetOwner(this.entity);	
-	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Forge Barracks Stable Arsenal");
-	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Fortress ArmyCamp Colony");
+	let entityOwner = Helpers.GetOwner(this.entity);	
+	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal");
+	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Fortress ArmyCamp Colony");
+	
 	let length = range30.length;
 	for (let i = 0; i < length; i++) 
 	{
@@ -265,13 +266,13 @@ Attack.prototype.ReArmAura = function()
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 	
 
-	if (this.CheckTargetIsInAuraRange() == false || this.ammo == this.GetMaxAmmo())
+	if (this.CheckIsInAuraRange() == false || this.ammo == this.GetMaxAmmo())
 	{
 		cmpTimer.CancelTimer(this.ammoReffilTimer);
 		this.ammoReffilTimer =	undefined;
 		return;
 	} 
-	if (this.CheckTargetIsInAuraRange()  == true){
+	if (this.CheckIsInAuraRange()  == true){
 		cmpTimer.SetTimeout(this.entity, IID_Attack, "SetAmmo", this.refillTime, {});
 	}
 }
@@ -499,12 +500,14 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
 	{
-				if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "")
+		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "")
 			{
 				types.splice(rangeIndex, 1);
-				return "Melee";
-			} else	{types.splice(rangeIndex, -1);
-			return "Ranged";
+			} 
+		
+			else	
+			{
+				types.splice(rangeIndex, -1);
 			}
 	}
 
