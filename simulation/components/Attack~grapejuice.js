@@ -229,42 +229,19 @@ Attack.prototype.CheckAmmoRefill = function()
 		return;
 }
 
-var g_target = "";
-var entPlayer = "";	
-var forge = "";
-var civilCentre = "";
-var colony = "";
-var barracks = "";
-var stable = "";
-var fortress = "";
-var arsenal = "";
-var armyCamp = "";
-var range30 = [];
-var range60 = [];
-var length = "";
-
-// Used to check if target is inside the rearm aura. Called from ReArmAura function.
 Attack.prototype.CheckTargetIsInAuraRange = function()
 {
-	entPlayer = Helpers.GetOwner(this.entity);	
-	forge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
-	colony = Helpers.GetPlayerEntitiesByClass(entPlayer, "Colony");
-	barracks = Helpers.GetPlayerEntitiesByClass(entPlayer, "Barracks");
-	stable = Helpers.GetPlayerEntitiesByClass(entPlayer, "Stable");
-	fortress = Helpers.GetPlayerEntitiesByClass(entPlayer, "Fortress");
-	arsenal = Helpers.GetPlayerEntitiesByClass(entPlayer, "Arsenal");
-	armyCamp = Helpers.GetPlayerEntitiesByClass(entPlayer, "ArmyCamp");
-	colony = Helpers.GetPlayerEntitiesByClass(entPlayer, "Colony");
-	range30 = range30.concat(forge, colony, barracks, stable, arsenal);
-	range60 = range60.concat(fortress, armyCamp, colony);
-	length = range30.length;
+	let entPlayer = Helpers.GetOwner(this.entity);	
+	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Colony Forge Barracks Stable Arsenal");
+	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Fortress ArmyCamp Colony");
+	let length = range30.length;
 	for (let i = 0; i < length; i++) 
 	{
 		let pop = range30.pop();
 		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
 		if (distance < 30)
 		{
-			warn("InsideAura = true");
+			warn("InsideAura30 = true");
 			return true;
 		} 	
 	} 
@@ -275,7 +252,7 @@ Attack.prototype.CheckTargetIsInAuraRange = function()
 		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
 		if (distance < 60)
 		{
-			warn("InsideAura = true");
+			warn("InsideAura60 = true");
 			return true;
 		} 	
 	} 
@@ -411,8 +388,6 @@ Attack.prototype.CanAttack = function(target, wantedTypes)
  */
 Attack.prototype.GetPreference = function(target)
 {
-	g_target = target;
-	g_target = +g_target;
 	let cmpIdentity = Engine.QueryInterface(target, IID_Identity);
 	if (!cmpIdentity)
 		return undefined;
@@ -463,16 +438,15 @@ Attack.prototype.GetFullAttackRange = function()
 	return ret;
 };
 
-Attack.prototype.CheckTargetIsInMeleeRange = function()
+Attack.prototype.CheckTargetIsInMeleeRange = function(target)
 {
-	g_target = +g_target;
 	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 	if (!cmpVision)
 		return false;
 
 	let range = cmpVision.GetRange() / 6.5;
-	let distance = PositionHelper.DistanceBetweenEntities(this.entity, g_target);
+	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
 	let result = distance < range;
 
 	return distance < range;
@@ -525,7 +499,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
 	{
-				if (this.ammo == 0 || this.CheckTargetIsInMeleeRange() || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "")
+				if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "")
 			{
 				types.splice(rangeIndex, 1);
 				return "Melee";
@@ -766,7 +740,7 @@ Attack.prototype.PerformAttack = function(type, target)
 
 		if (!!this.template["Ranged"].Ammo) 
 		{
-			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange() == false) 
+			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false) 
 			{
 				this.ammo--;
 				let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
