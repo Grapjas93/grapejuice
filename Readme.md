@@ -5,7 +5,7 @@ Also check out [this spreadsheet](https://docs.google.com/spreadsheets/d/1g1GSy4
 
 Overview of new features so far:
 
-**Most units have 2 attack types**, ranged and melee along with the visuals that belong to it. Weapon swapping will **not** be manual. 
+**Most units have 2 attack types**, ranged and melee. Weapon swapping will **not** be manual. 
 The unit will swap to melee if 
 - It has no ammo
 - A targetted unit is fairly / getting to close
