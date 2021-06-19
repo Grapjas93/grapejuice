@@ -232,7 +232,7 @@ Attack.prototype.CheckAmmoRefill = function()
 Attack.prototype.CheckTargetIsInAuraRange = function()
 {
 	let entPlayer = Helpers.GetOwner(this.entity);	
-	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Colony Forge Barracks Stable Arsenal");
+	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Forge Barracks Stable Arsenal");
 	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entPlayer, "Fortress ArmyCamp Colony");
 	let length = range30.length;
 	for (let i = 0; i < length; i++) 
