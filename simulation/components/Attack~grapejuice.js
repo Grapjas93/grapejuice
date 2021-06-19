@@ -22,6 +22,7 @@ Attack.prototype.restrictedClassesSchema =
 		"</element>" +
 	"</optional>";
 
+// grapejuice, added <Ammo>, <RefillTime>, <RefillAmount>
 Attack.prototype.Schema =
 	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
 	"<a:example>" +
@@ -190,6 +191,7 @@ Attack.prototype.Schema =
 		"</element>" +
 	"</oneOrMore>";
 
+// grapejuice
 Attack.prototype.Init = function()
 {
 	this.ammo = 0;
@@ -205,11 +207,13 @@ Attack.prototype.Init = function()
 //		this.refillTime = +this.template["Ranged"].RefillTime;
 };
 
+// grapejuice
 Attack.prototype.SetNoRange = function()
 {
 	this.noRange = true;
 }
 
+// grapejuice
 Attack.prototype.SetAmmo = function()
 {
 	this.ammo = this.GetMaxAmmo();
@@ -219,6 +223,7 @@ Attack.prototype.SetAmmo = function()
 	
 }
 
+// grapejuice
 Attack.prototype.CheckAmmoRefill = function()
 {
 	if (this.ammoReffilTimer != undefined)
@@ -229,6 +234,22 @@ Attack.prototype.CheckAmmoRefill = function()
 		return;
 }
 
+// grapejuice
+Attack.prototype.CheckTargetIsInMeleeRange = function(target)
+{
+	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
+	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+	if (!cmpVision)
+		return false;
+
+	let range = cmpVision.GetRange() / 6.5;
+	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
+	let result = distance < range;
+
+	return distance < range;
+};
+
+// grapejuice
 Attack.prototype.CheckIsInAuraRange = function()
 {
 	let entityOwner = Helpers.GetOwner(this.entity);	
@@ -261,6 +282,7 @@ Attack.prototype.CheckIsInAuraRange = function()
 	return false;	
 };
 
+// grapejuice
 Attack.prototype.ReArmAura = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
@@ -277,6 +299,7 @@ Attack.prototype.ReArmAura = function()
 	}
 }
 
+// grapejuice
 Attack.prototype.HasLimitedAmmo = function()
 {
 	if (!this.template["Ranged"])
@@ -284,11 +307,13 @@ Attack.prototype.HasLimitedAmmo = function()
 	return !!this.template["Ranged"].Ammo && this.template["Ranged"].Ammo > 0;
 }
 
+// grapejuice
 Attack.prototype.GetAmmoLeft = function()
 {
 	return this.ammo;
 }
 
+// grapejuice
 Attack.prototype.GetMaxAmmo = function()
 {
 	if (!this.template["Ranged"] || !this.template["Ranged"].Ammo)
@@ -403,6 +428,7 @@ Attack.prototype.GetPreference = function(target)
 		{
 			if (MatchesClassList(targetClasses, preferredClasses[pref]))
 			{
+				// grapejuice
 				if (pref === 0)
 				{
 					let isStructure = Helpers.MatchEntitiesByClass([this.entity], "Structure");
@@ -438,21 +464,6 @@ Attack.prototype.GetFullAttackRange = function()
 	}
 	return ret;
 };
-
-Attack.prototype.CheckTargetIsInMeleeRange = function(target)
-{
-	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
-	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	if (!cmpVision)
-		return false;
-
-	let range = cmpVision.GetRange() / 6.5;
-	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
-	let result = distance < range;
-
-	return distance < range;
-};
-
 
 Attack.prototype.GetAttackEffectsData = function(type, splash)
 {
@@ -497,6 +508,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 		types.splice(captureIndex, 1);
 	}
 	
+	// grapejuice
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
 	{
@@ -736,7 +748,8 @@ Attack.prototype.PerformAttack = function(type, target)
 	};
 	
 	let delay = +(this.template[type].Delay || 0);
-		
+	
+	// grapejuice
 	if (type == "Ranged")
 	{
 		this.ReArmAura();
