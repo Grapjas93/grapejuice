@@ -8,7 +8,7 @@ Overview of new features so far:
 **Most units have 2 attack types**, ranged and melee. Weapon swapping will **not** be manual. 
 The unit will swap to melee if 
 - It has no ammo
-- A targetted unit is fairly / getting to close
+- A targetted unit is getting to close
 - The target is a wall
 - The target is a siege unit
 
