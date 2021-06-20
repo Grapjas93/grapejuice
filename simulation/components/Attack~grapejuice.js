@@ -208,12 +208,6 @@ Attack.prototype.Init = function()
 };
 
 // grapejuice
-Attack.prototype.SetNoRange = function()
-{
-	this.noRange = true;
-}
-
-// grapejuice
 Attack.prototype.SetAmmo = function()
 {
 	this.ammo = this.GetMaxAmmo();
@@ -221,17 +215,6 @@ Attack.prototype.SetAmmo = function()
 	cmpStatusBars.RegenerateSprites();
 	warn("Re-Arm");
 	
-}
-
-// grapejuice
-Attack.prototype.CheckAmmoRefill = function()
-{
-	if (this.ammoReffilTimer != undefined)
-		return;
-	if (!this.refillAmount || !this.refillTime || !this.HasLimitedAmmo())
-		return;
-	if (this.ammo == this.GetMaxAmmo())
-		return;
 }
 
 // grapejuice
@@ -297,20 +280,6 @@ Attack.prototype.ReArmAura = function()
 	if (this.CheckIsInAuraRange()  == true){
 		cmpTimer.SetTimeout(this.entity, IID_Attack, "SetAmmo", this.refillTime, {});
 	}
-}
-
-// grapejuice
-Attack.prototype.HasLimitedAmmo = function()
-{
-	if (!this.template["Ranged"])
-		return false;
-	return !!this.template["Ranged"].Ammo && this.template["Ranged"].Ammo > 0;
-}
-
-// grapejuice
-Attack.prototype.GetAmmoLeft = function()
-{
-	return this.ammo;
 }
 
 // grapejuice

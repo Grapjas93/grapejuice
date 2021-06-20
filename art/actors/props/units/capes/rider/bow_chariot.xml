@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Cape">
+      <mesh>props/new/capes/cape_hd_long.dae</mesh>
+      <textures>
+        <texture file="props/cape_hd.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
+	<variant file="biped/rider/cavalry/attack_melee_javelin.xml"/>
+    <variant file="biped/base_archer_chariot_ready.xml"/>
+    <variant file="biped/cape_attack_ranged_archer.xml"/>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/gather_praise.xml"/>
+    <variant file="biped/death_cape.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>
