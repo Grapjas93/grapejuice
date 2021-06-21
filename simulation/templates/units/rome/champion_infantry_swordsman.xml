@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_infantry_swordsman">
 <UnitMotion>
-       <WalkSpeed> 8 </WalkSpeed>
+       <WalkSpeed> 8.6 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
   </UnitMotion> 
  <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
-           <PrepareTime> 950 </PrepareTime>
-           <RepeatTime> 1100 </RepeatTime>
+           <PrepareTime> 875 </PrepareTime>
+           <RepeatTime> 1025 </RepeatTime>
        </Melee>  
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 500 </PrepareTime>
-           <RepeatTime> 2400 </RepeatTime>
+           <RepeatTime> 2325 </RepeatTime>
        </Ranged> 
 </Attack> 
  <Resistance>
         <Entity>
             <Damage>
                <Crush> 4 </Crush>
-               <Hack> 11 </Hack>
+               <Hack> 8 </Hack>
                <Pierce> 9 </Pierce>
             </Damage>
          </Entity>

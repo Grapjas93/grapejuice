@@ -32,8 +32,8 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="335.01" y="324.512" z="102.415"/>
-		<Rotation angle="0.710613"/>
+		<Position x="399.636" y="243.399" z="39.1749"/>
+		<Rotation angle="0"/>
 		<Declination angle="0.610865"/>
 	</Camera>
 	<ScriptSettings><![CDATA[
@@ -45,9 +45,14 @@
   "LockTeams": false,
   "Name": "test_map",
   "PlayerData": [
-    null,
     {
-      "Civ": "sele"
+      "PopulationLimit": 9999,
+      "Resources": {
+        "food": 9999,
+        "metal": 9999,
+        "stone": 9999,
+        "wood": 9999
+      }
     },
     {
       "Civ": "cart"
@@ -2958,6 +2963,34 @@
 			<Position x="543.67591" z="318.6136"/>
 			<Orientation y="2.30803"/>
 			<Actor seed="46840"/>
+		</Entity>
+		<Entity uid="4192">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="386.94105" z="132.31937"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4193">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="374.26029" z="118.28763"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4194">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="373.60981" z="149.5752"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4195">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="359.07212" z="135.24119"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="44842"/>
 		</Entity>
 	</Entities>
 	<Paths/>

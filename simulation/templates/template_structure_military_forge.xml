@@ -52,10 +52,8 @@
       soldier_attack_melee_02
       soldier_attack_ranged_01
       soldier_attack_ranged_02
-      soldier_resistance_hack_01
-      soldier_resistance_hack_02
-      soldier_resistance_pierce_01
-      soldier_resistance_pierce_02
+      soldier_resistance_01
+      soldier_resistance_02
     </Technologies>
   </ProductionQueue>
   <Sound>
