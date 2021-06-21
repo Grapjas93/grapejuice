@@ -16,7 +16,7 @@ The unit will swap to melee if
 
 **New aura called "Re-arm".** All military structures (Barracks, Stables, Arsenals, Fortresses, Armycamps, Colony's) and also the forge will have this aura. Units that require ammo, simply need to stay inside it for at least 3 seconds for a complete ammo refill. This aura will only work if you have at least 1 forge. Some of these military buildings will have a large aura, and most have a small aura.
 
-**Units will be rebalanced according to their visuals.** Check the balancing sheet for more info.
+**Units will be rebalanced according to their visuals.** Check this [balancing sheet](https://docs.google.com/spreadsheets/d/1g1GSy4thCCHUi5xWPgrDzG91Ty0kjowU_7ZluccuqoA/) for more info.
 
 **4th rank: Champion.** If there is a champion counterpart of the soldier, it will be able to promote as one. For example, the athenian hoplite will promote into a city guard.
 
