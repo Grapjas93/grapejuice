@@ -5,14 +5,14 @@ Also check out [this spreadsheet](https://docs.google.com/spreadsheets/d/1g1GSy4
 
 Overview of new features so far:
 
+**Units with ranged weapons have ammo.** Units with low ammo (jav) will have very high damage.
+
 **Most units have 2 attack types**, ranged and melee. Weapon swapping will **not** be manual. 
 The unit will swap to melee if 
 - It has no ammo
 - A targetted unit is getting to close
 - The target is a wall
 - The target is a siege unit
-
-**Units with ranged weapons have ammo.** Units with low ammo (jav) will have very high damage.
 
 **New aura called "Re-arm".** All military structures (Barracks, Stables, Arsenals, Fortresses, Armycamps, Colony's) and also the forge will have this aura. Units that require ammo, simply need to stay inside it for at least 3 seconds for a complete ammo refill. This aura will only work if you have at least 1 forge. Some of these military buildings will have a large aura, and most have a small aura.
 
