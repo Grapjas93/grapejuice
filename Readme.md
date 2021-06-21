@@ -20,4 +20,6 @@ The unit will swap to melee if
 
 **4th rank: Champion.** If there is a champion counterpart of the soldier, it will be able to promote as one. For example, the athenian hoplite will promote into a city guard.
 
-**Promotion rework.** Units will not get bonus armor on promotion. They will receive a small heal, and (originally) ranged units will get a x1.1 bonus attack damage for all weapons. Melee only units have their default attack bonus on promotion (x1.2)
+**Promotion rework.** Units will not get bonus armor on promotion. They will receive a small heal, and (originally) ranged units will get a x1.1 bonus attack damage for all weapons. Melee only units have their default attack bonus on promotion (x1.2).
+
+**Technology changes.** Instead of 4 defensive upgrades for units there are now just 2. They give both a positive and a negative bonus. Example: Soldiers +3 crush, +1 hack and pierce resistance. 50ms attack and 0.25 movement speed penalty. 
