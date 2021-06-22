@@ -14,7 +14,7 @@ The unit will swap to melee if
 - The target is a wall
 - The target is a siege unit
 
-**New aura called "Re-arm".** All military structures (Barracks, Stables, Arsenals, Fortresses, Armycamps, Colony's) and also the forge will have this aura. Units that require ammo, simply need to stay inside it for at least 3 seconds for a complete ammo refill. This aura will only work if you have at least 1 forge. Some of these military buildings will have a large aura, and most have a small aura. Armycamp has a limited ammo pool units can Re-Arm from, and the Armycamp consumes ammo from the pool while shooting arrows. Once the pool is empty, the armycamp can't shoot arrows, or Re-arm units.
+**New aura called "Re-arm".** All military structures *(Barracks, Stables, Arsenals, Fortresses, Armycamps, Colony's)* and also the forge will have this aura. Units that require ammo, simply need to stay inside it for at least 3 seconds for a complete ammo refill. This aura will only work if you have at least 1 forge. Some of these military buildings will have a large aura, and most have a small aura. Armycamp has a limited ammo pool units can Re-Arm from, and the Armycamp consumes ammo from the pool while shooting arrows. Once the pool is empty, the armycamp can't shoot arrows, or Re-arm units.
 
 **Units will be rebalanced according to their visuals.** Check this [balancing sheet](https://docs.google.com/spreadsheets/d/1g1GSy4thCCHUi5xWPgrDzG91Ty0kjowU_7ZluccuqoA/) for more info (also check the additional changes tab).
 
