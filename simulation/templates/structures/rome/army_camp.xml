@@ -5,6 +5,9 @@
   </Auras>
   <Attack>
     <Ranged>
+	  <Ammo> 500 </Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <AttackName>Bow</AttackName>
       <Damage>
         <Hack>0</Hack>

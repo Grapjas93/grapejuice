@@ -17,23 +17,19 @@
       <Ammo>1</Ammo>
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
-      <Damage>
-        <Hack>0</Hack>
-        <Pierce>36</Pierce>
-        <Crush>0</Crush>
-      </Damage>
-      <MaxRange>20</MaxRange>
-      <MinRange>0</MinRange>
-      <PrepareTime>750</PrepareTime>
-      <RepeatTime>1250</RepeatTime>
-      <Delay>0</Delay>
-      <Projectile>
-        <Speed>70.0</Speed>
-        <Spread>1.5</Spread>
-        <Gravity>35.0</Gravity>
-        <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="3"/>
-      </Projectile>
+	  <Damage>
+		<Pierce>60</Pierce>
+	  </Damage>
+	  <MaxRange>30</MaxRange>
+	  <PrepareTime>750</PrepareTime>
+	  <RepeatTime>1250</RepeatTime>
+	  <Projectile>
+		<Speed>70</Speed>
+		<Spread>1.5</Spread>
+		<Gravity>35</Gravity>
+		<FriendlyFire>false</FriendlyFire>
+		<LaunchPoint y="3"/>
+	  </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
 </Attack>

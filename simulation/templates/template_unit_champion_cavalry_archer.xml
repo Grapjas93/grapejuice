@@ -7,17 +7,17 @@
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <Damage>
-        <Pierce>14</Pierce>
+        <Pierce>16</Pierce>
       </Damage>
-      <MaxRange>60</MaxRange>
+      <MaxRange>45</MaxRange>
       <PrepareTime>500</PrepareTime>
       <RepeatTime>1000</RepeatTime>
       <Projectile>
-        <Speed>100</Speed>
-        <Spread>1</Spread>
+        <Speed>160</Speed>
+        <Spread>4.5</Spread>
         <Gravity>50</Gravity>
         <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="5"/>
+        <LaunchPoint y="3"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
@@ -33,7 +33,7 @@
     </Melee>
   </Attack>
   <Identity>
-    <VisibleClasses datatype="tokens">Ranged Archer</VisibleClasses>
+    <VisibleClasses datatype="tokens">Ranged Archer Ammo</VisibleClasses>
     <GenericName>Champion Cavalry Archer</GenericName>
     <Formations datatype="tokens">
       special/formations/skirmish

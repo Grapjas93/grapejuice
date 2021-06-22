@@ -7,7 +7,7 @@
 		{ "value": "Attack/Melee/Damage/Hack", "multiply": 1.2, "affects": "Melee" },
 		{ "value": "Attack/Melee/Damage/Pierce", "multiply": 1.2, "affects": "Melee" },
 		{ "value": "Attack/Melee/Damage/Crush", "multiply": 1.2, "affects": "Melee" },
-		{ "value": "Attack/Ranged/Spread", "multiply": 0.8, "affects": "Ranged" },
+		{ "value": "Attack/Ranged/Spread", "multiply": 0.85, "affects": "Ranged" },
 		{ "value": "Attack/Ranged/Damage/Hack", "multiply": 1.1, "affects": "Ranged" },
 		{ "value": "Attack/Ranged/Damage/Pierce", "multiply": 1.1, "affects": "Ranged" },
 		{ "value": "Attack/Ranged/Damage/Crush", "multiply": 1.1, "affects": "Ranged" },
@@ -25,5 +25,5 @@
 		{ "value": "Loot/xp", "multiply": 1.2 },
 		{ "value": "ResourceGatherer/BaseSpeed", "multiply": 0.7 }
 	],
-	"affects": ["Advanced Unit", "Elite Unit"]
+	"affects": ["Advanced Unit", "Elite Unit", "Champion Unit"]
 }

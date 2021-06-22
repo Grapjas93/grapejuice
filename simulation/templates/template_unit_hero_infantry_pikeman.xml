@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry">
+  <Attack>
+    <Melee>
+      <AttackName>Pike</AttackName>
+      <Damage>
+        <Pierce>10</Pierce>
+      </Damage>
+      <MaxRange>8</MaxRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>2000</RepeatTime>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>3.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Identity>
+    <GenericName>Hero Pikeman</GenericName>
+    <Tooltip>Counters: 3× vs Cavalry.</Tooltip>
+    <VisibleClasses datatype="tokens">Melee Pikeman</VisibleClasses>
+    <Formations datatype="tokens">
+      special/formations/syntagma
+    </Formations>
+  </Identity>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">9</Hack>
+        <Pierce op="add">9</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <Sound>
+    <SoundGroups>
+      <attack_melee>attack/weapon/pike_attack.xml</attack_melee>
+    </SoundGroups>
+  </Sound>
+
+</Entity>

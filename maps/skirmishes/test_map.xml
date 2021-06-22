@@ -32,7 +32,7 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="399.636" y="243.399" z="39.1749"/>
+		<Position x="527.03" y="246.916" z="124.503"/>
 		<Rotation angle="0"/>
 		<Declination angle="0.610865"/>
 	</Camera>
@@ -45,6 +45,7 @@
   "LockTeams": false,
   "Name": "test_map",
   "PlayerData": [
+    null,
     {
       "PopulationLimit": 9999,
       "Resources": {
@@ -216,21 +217,21 @@
 		<Entity uid="3691">
 			<Template>units/spart/champion_infantry_spear</Template>
 			<Player>2</Player>
-			<Position x="559.14368" z="258.83851"/>
+			<Position x="573.1883" z="302.71753"/>
 			<Orientation y="2.35622"/>
 			<Actor seed="19102"/>
 		</Entity>
 		<Entity uid="3692">
 			<Template>units/rome/champion_infantry_swordsman</Template>
 			<Player>2</Player>
-			<Position x="562.24366" z="256.39393"/>
+			<Position x="576.28827" z="300.27295"/>
 			<Orientation y="2.35622"/>
 			<Actor seed="62478"/>
 		</Entity>
 		<Entity uid="3693">
 			<Template>units/maur/champion_maiden_archer</Template>
 			<Player>2</Player>
-			<Position x="559.00953" z="254.34528"/>
+			<Position x="573.05414" z="298.22431"/>
 			<Orientation y="2.35622"/>
 			<Actor seed="42186"/>
 		</Entity>
@@ -2991,6 +2992,13 @@
 			<Position x="359.07212" z="135.24119"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4196">
+			<Template>structures/rome/army_camp</Template>
+			<Player>1</Player>
+			<Position x="519.68409" z="181.38386"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="48196"/>
 		</Entity>
 	</Entities>
 	<Paths/>

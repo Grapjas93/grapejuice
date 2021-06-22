@@ -63,6 +63,7 @@
     </DamageVariants>
   </Health>
   <Identity>
+    <VisibleClasses datatype="tokens">Melee Swordsman Ammo</VisibleClasses>
     <Civ>rome</Civ>
     <Lang>latin</Lang>
     <SelectionGroupName>units/rome/infantry_swordsman_b</SelectionGroupName>

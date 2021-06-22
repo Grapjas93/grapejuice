@@ -7,17 +7,17 @@
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <Damage>
-        <Pierce>36</Pierce>
+        <Pierce>60</Pierce>
       </Damage>
       <MaxRange>30</MaxRange>
       <PrepareTime>750</PrepareTime>
       <RepeatTime>1250</RepeatTime>
       <Projectile>
         <Speed>70</Speed>
-        <Spread>1.6</Spread>
+        <Spread>2.5</Spread>
         <Gravity>35</Gravity>
         <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="5"/>
+        <LaunchPoint y="3"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
@@ -33,7 +33,7 @@
     </Melee>
   </Attack>
   <Identity>
-    <GenericName>Champion Cavalry Javelineer</GenericName>
+    <GenericName>Champion Cavalry Javelineer Ammo</GenericName>
     <VisibleClasses datatype="tokens">Ranged Javelineer</VisibleClasses>
     <Formations datatype="tokens">
       special/formations/skirmish

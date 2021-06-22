@@ -24,7 +24,7 @@ StatusBars.prototype.Sprites = [
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
 	let cmpHelpers = QueryMiragedInterface(this.entity, IID_Helpers);
-	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege"))
+	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege ArmyCamp"))
 	{
 		let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
 		if (cmpAttack == null)

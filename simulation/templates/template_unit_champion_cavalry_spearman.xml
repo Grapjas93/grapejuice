@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry">
+  <Attack>
+    <Melee>
+      <AttackName>Spear</AttackName>
+      <Damage>
+        <Hack>8</Hack>
+        <Pierce>6</Pierce>
+      </Damage>
+      <MaxRange>4</MaxRange>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>1.75</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1250</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Health>
+    <Max>300</Max>
+  </Health>
+  <Identity>
+    <GenericName>Champion Cavalry Spearman</GenericName>
+    <Tooltip>Counters: 1.75× vs Cavalry.</Tooltip>
+    <VisibleClasses datatype="tokens">Melee Spearman</VisibleClasses>
+  </Identity>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">1</Hack>
+        <Pierce op="add">2</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <Sound>
+    <SoundGroups>
+      <attack_melee>attack/weapon/spear_attack.xml</attack_melee>
+    </SoundGroups>
+  </Sound>
+</Entity>

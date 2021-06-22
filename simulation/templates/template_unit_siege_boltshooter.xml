@@ -50,7 +50,7 @@
     <Max>200</Max>
   </Health>
   <Identity>
-    <VisibleClasses datatype="tokens">Ranged BoltShooter</VisibleClasses>
+    <VisibleClasses datatype="tokens">Ranged BoltShooter Ammo</VisibleClasses>
     <GenericName>Bolt Shooter</GenericName>
   </Identity>
   <Loot>

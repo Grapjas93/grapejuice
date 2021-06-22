@@ -43,7 +43,7 @@
     <Max>250</Max>
   </Health>
   <Identity>
-    <VisibleClasses datatype="tokens">Ranged StoneThrower</VisibleClasses>
+    <VisibleClasses datatype="tokens">Ranged StoneThrower Ammo</VisibleClasses>
     <GenericName>Siege Catapult</GenericName>
   </Identity>
   <Loot>

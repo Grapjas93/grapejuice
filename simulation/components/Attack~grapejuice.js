@@ -194,8 +194,8 @@ Attack.prototype.Schema =
 // grapejuice
 Attack.prototype.Init = function()
 {
+	
 	this.ammo = 0;
-	this.noRange = false;
 	this.refillTime = 3000;
 	this.refillAmount = 0;
 	this.ammoReffilTimer = undefined;
@@ -203,16 +203,106 @@ Attack.prototype.Init = function()
 		this.ammo = +this.template["Ranged"].Ammo;
 	if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillAmount)
 		this.refillAmount = +this.template["Ranged"].RefillAmount;
-//	if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillTime)
-//		this.refillTime = +this.template["Ranged"].RefillTime;
+
+	// grapejuice, start the automatic refill timer for slingers
+	if (this.ammo == 40)
+	{
+		if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillTime)
+		{
+			this.refillTime = +this.template["Ranged"].RefillTime;
+		}
+		
+		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+		cmpTimer.SetInterval(this.entity, IID_Attack, "AutoRefill", 0, this.refillTime, {});
+	}
+
 };
 
 // grapejuice
-Attack.prototype.SetAmmo = function()
+Attack.prototype.StopTimer = function()
 {
-	this.ammo = this.GetMaxAmmo();
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+	cmpTimer.CancelTimer(this.ammoReffilTimer);
+	this.ammoReffilTimer =	undefined;
+	return;
+};
+
+// grapejuice, called from init. Used by units that regain ammo slowly anywhere
+Attack.prototype.AutoRefill = function()
+{
+	if (this.ammo != this.GetMaxAmmo())
+	{
+		this.ammo = this.ammo + this.refillAmount;
+		warn("slinger reload");
+		let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
+		cmpStatusBars.RegenerateSprites();
+		return;
+	}
+	
+};
+
+// grapejuice
+Attack.prototype.SetAmmo = function(ammoGiver)
+{
 	let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
+	// if the entity is the armyCamp, don't reload and stop the timer
+	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp"))
+	{
+		this.StopTimer();
+		warn("this.entity = armyCamp");
+		return;
+	}
+
+	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);	
+			
+	// if the entity reloads from armycamp, draw ammo from armyCamp ammo pool
+	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp"))
+	{
+		let ammoNeeded = this.GetMaxAmmo() - this.ammo;
+		
+		// if the armyCamp has no ammo, stop timer
+		if (cmpAmmoGiver.ammo == 0)
+		{
+			this.StopTimer();
+			warn("armyCamp has no ammo");
+			return;
+		}
+		
+		// if the armycamp can't do a full reload for the unit, give all remaining ammo to unit
+		if (cmpAmmoGiver.ammo < ammoNeeded)
+		{
+			this.ammo = this.ammo + cmpAmmoGiver.ammo;
+			cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
+			cmpStatusBars.RegenerateSprites();
+			
+			cmpAmmoGiver.ammo = 0;
+			cmpStatusBars = Engine.QueryInterface(ammoGiver, IID_StatusBars);
+			cmpStatusBars.RegenerateSprites();
+			
+			this.StopTimer();
+			warn("Last Re-Arm");
+			return;
+		}
+		else 
+		{
+			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
+			this.ammo = this.GetMaxAmmo();
+			
+			cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
+			cmpStatusBars.RegenerateSprites();
+			cmpStatusBars = Engine.QueryInterface(ammoGiver, IID_StatusBars);
+			cmpStatusBars.RegenerateSprites();
+			
+			warn("ArmyCamp Re-Arm");
+			return;
+		} 
+	}
+	
+	// other buildings have infinite stock, simply reload the unit fully 
+	this.ammo = this.GetMaxAmmo();
+	cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
 	cmpStatusBars.RegenerateSprites();
+
 	warn("Re-Arm");
 	
 }
@@ -238,8 +328,8 @@ Attack.prototype.CheckIsInAuraRange = function()
 	let entityOwner = Helpers.GetOwner(this.entity);	
 	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal");
 	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Fortress ArmyCamp Colony");
-	
 	let length = range30.length;
+	
 	for (let i = 0; i < length; i++) 
 	{
 		let pop = range30.pop();
@@ -247,7 +337,7 @@ Attack.prototype.CheckIsInAuraRange = function()
 		if (distance < 30)
 		{
 			warn("InsideAura30 = true");
-			return true;
+			return pop;
 		} 	
 	} 
 	length = range60.length;
@@ -258,7 +348,7 @@ Attack.prototype.CheckIsInAuraRange = function()
 		if (distance < 60)
 		{
 			warn("InsideAura60 = true");
-			return true;
+			return pop;
 		} 	
 	} 
 	warn("InsideAura = false");
@@ -268,17 +358,19 @@ Attack.prototype.CheckIsInAuraRange = function()
 // grapejuice
 Attack.prototype.ReArmAura = function()
 {
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	
-
 	if (this.CheckIsInAuraRange() == false || this.ammo == this.GetMaxAmmo())
 	{
-		cmpTimer.CancelTimer(this.ammoReffilTimer);
-		this.ammoReffilTimer =	undefined;
+		warn("Is in aura Range = " + this.CheckIsInAuraRange());
+		this.StopTimer();
 		return;
 	} 
-	if (this.CheckIsInAuraRange()  == true){
-		cmpTimer.SetTimeout(this.entity, IID_Attack, "SetAmmo", this.refillTime, {});
+	
+	else
+	{
+		let ammoGiver = this.CheckIsInAuraRange();
+		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+		cmpTimer.SetTimeout(this.entity, IID_Attack, "SetAmmo", this.refillTime, ammoGiver);
+		return;
 	}
 }
 
@@ -400,8 +492,7 @@ Attack.prototype.GetPreference = function(target)
 				// grapejuice
 				if (pref === 0)
 				{
-					let isStructure = Helpers.MatchEntitiesByClass([this.entity], "Structure");
-					if (isStructure != "")
+					if (Helpers.EntityMatchesClassList(this.entity, "Structure") == true)
 					{
 						return minPref;
 					}		
@@ -479,9 +570,9 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	
 	// grapejuice
 	let rangeIndex = types.indexOf("Ranged");
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.MatchEntitiesByClass([this.entity], "Siege") == "")
+	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
 	{
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.MatchEntitiesByClass([target], "Siege Palisade") != "")
+		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Palisade") == true)
 			{
 				types.splice(rangeIndex, 1);
 			} 
@@ -734,6 +825,10 @@ Attack.prototype.PerformAttack = function(type, target)
 			else 
 			{
 				let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+				if(cmpUnitAI == null)
+				{
+					return;
+				}
 				cmpUnitAI.RespondToTargetedEntities([target]);
 			}
 		}

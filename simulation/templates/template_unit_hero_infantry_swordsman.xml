@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_infantry">
+<Entity parent="template_unit_hero_infantry">
   <Attack>
 		<Melee>
 		  <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
@@ -34,21 +34,21 @@
 		  <PreferredClasses datatype="tokens">Human</PreferredClasses>
 		</Ranged>
   </Attack>
-  <Health>
-    <Max>200</Max>
-  </Health>
+  <Cost>
+    <Resources>
+      <wood op="add">-50</wood>
+      <metal op="add">50</metal>
+    </Resources>
+  </Cost>
   <Identity>
-    <VisibleClasses datatype="tokens">Melee Swordsman Ammo</VisibleClasses>
-    <GenericName>Champion Swordsman</GenericName>
-    <Formations datatype="tokens">
-      special/formations/testudo
-    </Formations>
+    <VisibleClasses datatype="tokens">Melee Swordsman</VisibleClasses>
+    <GenericName>Hero Swordsman</GenericName>
   </Identity>
   <Resistance>
     <Entity>
       <Damage>
-        <Hack op="add">3</Hack>
-        <Pierce op="add">3</Pierce>
+        <Hack op="add">4</Hack>
+        <Pierce op="add">4</Pierce>
       </Damage>
     </Entity>
   </Resistance>
