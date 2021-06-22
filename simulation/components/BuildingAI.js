@@ -302,7 +302,7 @@ BuildingAI.prototype.FireArrows = function()
 		);
 	
 	// grapejuice, if defensive structure has no ammo, don't shoot arrows
-	if (Helpers.MatchEntitiesByClass([this.entity], "ArmyCamp") != "" && cmpAttack.ammo == 0)
+	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp") == true && cmpAttack.ammo == 0)
 	{
 		arrowsToFire = 0;
 	}

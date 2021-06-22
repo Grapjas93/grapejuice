@@ -94,7 +94,7 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 	for (let ent of ents)
 		for (let modifierPath in derivedModifiers)
 			cmpModifiersManager.RemoveModifier(modifierPath, modifName, ent);
-
+	
 	// re-arm aura
 	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range")
 	{
@@ -107,7 +107,6 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 			}
 		}
 	}
-
 };
 
 Engine.ReRegisterComponentType(IID_Auras, "Auras", Auras);

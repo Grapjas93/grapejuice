@@ -219,6 +219,13 @@ Attack.prototype.Init = function()
 };
 
 // grapejuice
+Attack.prototype.RefreshAmmoBar = function(ent)
+{
+	let cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
+	cmpStatusBars.RegenerateSprites();
+};
+
+// grapejuice
 Attack.prototype.StopTimer = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
@@ -233,10 +240,8 @@ Attack.prototype.AutoRefill = function()
 	if (this.ammo != this.GetMaxAmmo())
 	{
 		this.ammo = this.ammo + this.refillAmount;
+		this.RefreshAmmoBar(this.entity);
 		warn("slinger reload");
-		let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-		cmpStatusBars.RegenerateSprites();
-		return;
 	}
 	
 };
@@ -272,12 +277,10 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 		if (cmpAmmoGiver.ammo < ammoNeeded)
 		{
 			this.ammo = this.ammo + cmpAmmoGiver.ammo;
-			cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-			cmpStatusBars.RegenerateSprites();
+			this.RefreshAmmoBar(this.entity);
 			
 			cmpAmmoGiver.ammo = 0;
-			cmpStatusBars = Engine.QueryInterface(ammoGiver, IID_StatusBars);
-			cmpStatusBars.RegenerateSprites();
+			this.RefreshAmmoBar(ammoGiver);
 			
 			this.StopTimer();
 			warn("Last Re-Arm");
@@ -288,10 +291,8 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
 			this.ammo = this.GetMaxAmmo();
 			
-			cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-			cmpStatusBars.RegenerateSprites();
-			cmpStatusBars = Engine.QueryInterface(ammoGiver, IID_StatusBars);
-			cmpStatusBars.RegenerateSprites();
+			this.RefreshAmmoBar(this.entity);
+			this.RefreshAmmoBar(ammoGiver);
 			
 			warn("ArmyCamp Re-Arm");
 			return;
@@ -300,8 +301,7 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	
 	// other buildings have infinite stock, simply reload the unit fully 
 	this.ammo = this.GetMaxAmmo();
-	cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-	cmpStatusBars.RegenerateSprites();
+	this.RefreshAmmoBar(this.entity);
 
 	warn("Re-Arm");
 	
@@ -819,8 +819,7 @@ Attack.prototype.PerformAttack = function(type, target)
 			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false) 
 			{
 				this.ammo--;
-				let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-				cmpStatusBars.RegenerateSprites();
+				this.RefreshAmmoBar(this.entity);
 			}
 			else 
 			{
