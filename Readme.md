@@ -23,3 +23,5 @@ The unit will swap to melee if
 **Promotion rework.** Units will not get bonus armor on promotion. They will receive a small heal, and (originally) ranged units will get a 10% bonus attack damage for all weapons. Melee only units have their default attack bonus on promotion (20%).
 
 **Technology changes.** Instead of 4 defensive upgrades for units there are now just 2. They give both a positive and a negative bonus. Example: Soldiers +3 crush, +1 hack and pierce resistance. 50ms attack and 0.25 movement speed penalty. 
+
+**Healers.** They now provide healing in any structure they are garrisoned in. 
