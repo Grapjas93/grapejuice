@@ -17,7 +17,7 @@
     <Rank>Elite</Rank>
   </Identity>
   <Promotion>
-    <Entity>units/iber/champion_cavalry</Entity>
+    <Entity>units/iber/cavalry_javelineer_c</Entity>
   </Promotion>
   <VisualActor>
     <Actor>units/iberians/cavalry_javelinist_e_m.xml</Actor>

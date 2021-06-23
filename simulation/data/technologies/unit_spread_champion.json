@@ -1,0 +1,9 @@
+{
+	"autoResearch": true,
+	"icon": "upgrade_champion.png",
+	"tooltip": "Ranged units −10% spread.",
+	"modifications": [
+		{ "value": "Attack/Ranged/Spread", "multiply": 0.90, "affects": "Ranged" } 
+	],
+	"affects": ["Champion Unit"]
+}
