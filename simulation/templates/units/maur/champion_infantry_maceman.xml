@@ -1,53 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_infantry_maceman">
-  <Attack>
-    <Melee>
-      <AttackName>Mace</AttackName>
-      <Damage>
-        <Hack>0</Hack>
-        <Pierce>0</Pierce>
-        <Crush>14</Crush>
-      </Damage>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>500</PrepareTime>
-      <RepeatTime>1000</RepeatTime>
-      <PreferredClasses datatype="tokens">!Ship</PreferredClasses>
-    </Melee>
-    <Ranged>
-      <AttackName>Javelin</AttackName>
-      <Ammo>1</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
-      <Damage>
-        <Pierce>60</Pierce>
-      </Damage>
-      <MaxRange>30</MaxRange>
-      <PrepareTime>750</PrepareTime>
-      <RepeatTime>1250</RepeatTime>
-      <Projectile>
-        <Speed>70</Speed>
-        <Spread>1.5</Spread>
-        <Gravity>35</Gravity>
-        <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="3"/>
-      </Projectile>
-      <PreferredClasses datatype="tokens">Human</PreferredClasses>
-    </Ranged>
-  </Attack>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Crush>5</Crush>
-        <Hack>11</Hack>
-        <Pierce>9</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
-  <UnitMotion>
-    <WalkSpeed>8.0</WalkSpeed>
-    <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 9.5 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Mace </AttackName>
+           <PrepareTime> 775 </PrepareTime>
+           <RepeatTime> 925 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <VisibleClasses datatype="tokens">Melee Maceman Ammo</VisibleClasses>
     <Civ>maur</Civ>
     <GenericName>Warrior</GenericName>

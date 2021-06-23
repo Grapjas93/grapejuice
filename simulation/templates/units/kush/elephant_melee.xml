@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_elephant_melee">
+  <Identity>
+    <Civ>kush</Civ>
+    <Lang>napatan</Lang>
+    <GenericName>Meroitic War Elephant</GenericName>
+    <SpecificName>Abore ʿhȝ</SpecificName>
+    <Classes datatype="tokens">AfricanElephant</Classes>
+    <Icon>units/kush_champion_elephant.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/kushites/elephantry_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

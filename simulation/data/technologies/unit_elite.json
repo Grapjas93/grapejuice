@@ -1,7 +1,7 @@
 {
 	"autoResearch": true,
 	"icon": "upgrade_elite.png",
-	"tooltip": "Elite units +20% training time, +25% health, +0.8 capture attack strength, +20% loot, and −30% gather speed; Melee +20% attack strength.",
+	"tooltip": "Elite units +20% training time, +25% health, +0.8 capture attack strength, +20% loot, and −30% gather speed; Melee +20% attack strength.; Elephant archers receive 20% max ammo back.",
 	"modifications": [
 		{ "value": "Attack/Capture/Capture", "add": 0.8 },
 		{ "value": "Attack/Melee/Damage/Hack", "multiply": 1.2, "affects": "Melee" },
@@ -10,8 +10,9 @@
 		{ "value": "Attack/Melee/Damage/Hack", "multiply": 1.1, "affects": "Ranged" },
 		{ "value": "Attack/Melee/Damage/Pierce", "multiply": 1.1, "affects": "Ranged" },
 		{ "value": "Attack/Melee/Damage/Crush", "multiply": 1.1, "affects": "Ranged" },
+		{ "value": "Attack/Ranged/Ammo", "multiply": 1.1, "affects": "Elephant" },
 		{ "value": "Cost/BuildTime", "multiply": 1.2 },
-		{ "value": "Health/Max", "multiply": 1.25 },
+		{ "value": "Health/Max", "multiply": 1.25, "affects": "Human" },
 		{ "value": "Loot/food", "multiply": 1.2 },
 		{ "value": "Loot/wood", "multiply": 1.2 },
 		{ "value": "Loot/stone", "multiply": 1.2 },

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_healer">
-  <Auras datatype="tokens">
+   <UnitMotion>
+       <WalkSpeed> 12 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
     units/heroes/maur_hero_chanakya_1
     units/heroes/maur_hero_chanakya_2
     units/heroes/hero_priest

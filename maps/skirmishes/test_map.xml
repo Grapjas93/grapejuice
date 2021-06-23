@@ -32,8 +32,8 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="527.03" y="246.916" z="124.503"/>
-		<Rotation angle="0"/>
+		<Position x="272.238" y="233.58" z="292.424"/>
+		<Rotation angle="-0.589415"/>
 		<Declination angle="0.610865"/>
 	</Camera>
 	<ScriptSettings><![CDATA[
@@ -45,9 +45,9 @@
   "LockTeams": false,
   "Name": "test_map",
   "PlayerData": [
-    null,
     {
-      "PopulationLimit": 9999,
+      "Civ": "maur",
+      "PopulationLimit": 1000,
       "Resources": {
         "food": 9999,
         "metal": 9999,
@@ -311,13 +311,6 @@
 			<Position x="431.71601" z="181.02747"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="63470"/>
-		</Entity>
-		<Entity uid="3707">
-			<Template>units/sele/champion_elephant</Template>
-			<Player>1</Player>
-			<Position x="437.84159" z="186.39631"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="61796"/>
 		</Entity>
 		<Entity uid="3708">
 			<Template>units/sele/champion_infantry_pikeman</Template>
@@ -864,13 +857,6 @@
 			<Position x="378.81244" z="237.62601"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="23120"/>
-		</Entity>
-		<Entity uid="3839">
-			<Template>units/cart/champion_elephant</Template>
-			<Player>1</Player>
-			<Position x="381.34647" z="240.27524"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="48836"/>
 		</Entity>
 		<Entity uid="3840">
 			<Template>units/cart/champion_infantry</Template>
@@ -1453,13 +1439,6 @@
 			<Orientation y="2.35621"/>
 			<Actor seed="50732"/>
 		</Entity>
-		<Entity uid="3941">
-			<Template>units/kush/champion_elephant</Template>
-			<Player>1</Player>
-			<Position x="314.0088" z="289.79157"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="42748"/>
-		</Entity>
 		<Entity uid="3942">
 			<Template>units/kush/champion_infantry_amun</Template>
 			<Player>1</Player>
@@ -1859,13 +1838,6 @@
 			<Orientation y="2.35621"/>
 			<Actor seed="55272"/>
 		</Entity>
-		<Entity uid="4011">
-			<Template>units/maur/champion_elephant</Template>
-			<Player>1</Player>
-			<Position x="275.95615" z="330.30842"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="16766"/>
-		</Entity>
 		<Entity uid="4012">
 			<Template>units/maur/champion_infantry_maceman</Template>
 			<Player>1</Player>
@@ -2097,13 +2069,6 @@
 			<Orientation y="2.35621"/>
 			<Actor seed="798"/>
 		</Entity>
-		<Entity uid="4053">
-			<Template>units/pers/champion_elephant</Template>
-			<Player>1</Player>
-			<Position x="263.27131" z="358.84226"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="43376"/>
-		</Entity>
 		<Entity uid="4054">
 			<Template>units/pers/champion_infantry</Template>
 			<Player>1</Player>
@@ -2278,13 +2243,6 @@
 			<Position x="228.95402" z="369.95591"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="31914"/>
-		</Entity>
-		<Entity uid="4082">
-			<Template>units/ptol/champion_elephant</Template>
-			<Player>1</Player>
-			<Position x="232.04337" z="372.58927"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="54238"/>
 		</Entity>
 		<Entity uid="4083">
 			<Template>units/ptol/champion_infantry_pikeman</Template>
@@ -2999,6 +2957,55 @@
 			<Position x="519.68409" z="181.38386"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="48196"/>
+		</Entity>
+		<Entity uid="4197">
+			<Template>structures/maur/elephant_stable</Template>
+			<Player>1</Player>
+			<Position x="430.09568" z="73.4621"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="60812"/>
+		</Entity>
+		<Entity uid="4198">
+			<Template>units/kush/elephant_melee</Template>
+			<Player>1</Player>
+			<Position x="313.48282" z="290.3653"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="40622"/>
+		</Entity>
+		<Entity uid="4199">
+			<Template>units/maur/elephant_melee</Template>
+			<Player>1</Player>
+			<Position x="275.94663" z="330.22794"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="45090"/>
+		</Entity>
+		<Entity uid="4200">
+			<Template>units/pers/elephant_melee</Template>
+			<Player>1</Player>
+			<Position x="262.4668" z="359.14878"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="37080"/>
+		</Entity>
+		<Entity uid="4201">
+			<Template>units/ptol/elephant_melee</Template>
+			<Player>1</Player>
+			<Position x="230.75666" z="374.20475"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="53372"/>
+		</Entity>
+		<Entity uid="4202">
+			<Template>units/sele/elephant_melee</Template>
+			<Player>1</Player>
+			<Position x="444.44764" z="188.12577"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="61930"/>
+		</Entity>
+		<Entity uid="4203">
+			<Template>units/cart/elephant_melee</Template>
+			<Player>1</Player>
+			<Position x="382.64008" z="240.10322"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="24"/>
 		</Entity>
 	</Entities>
 	<Paths/>

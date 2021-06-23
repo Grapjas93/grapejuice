@@ -3,7 +3,7 @@
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
-      <Ammo>40</Ammo>
+      <Ammo>70</Ammo>
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <Damage>
@@ -11,7 +11,7 @@
       </Damage>
       <MaxRange>55</MaxRange>
       <PrepareTime>500</PrepareTime>
-      <RepeatTime>1000</RepeatTime>
+      <RepeatTime>1500</RepeatTime>
       <Projectile>
         <Speed>160</Speed>
         <Spread>4.5</Spread>
@@ -22,24 +22,10 @@
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
   </Attack>
-  <Cost>
-    <BuildTime>20</BuildTime>
-    <Resources>
-      <food>175</food>
-      <wood>75</wood>
-    </Resources>
-  </Cost>
-  <Health>
-    <Max>200</Max>
-  </Health>
   <Identity>
     <GenericName>Elephant Archer</GenericName>
     <VisibleClasses datatype="tokens">Ranged Archer Ammo</VisibleClasses>
   </Identity>
-  <Loot>
-    <food>18</food>
-    <wood>7</wood>
-  </Loot>
   <Sound>
     <SoundGroups>
       <attack_impact_ranged>attack/impact/arrow_impact.xml</attack_impact_ranged>

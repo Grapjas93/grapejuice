@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/maur/cavalry_swordsman_a">
+   <UnitMotion>
+       <WalkSpeed> 17.25 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 875 </PrepareTime>
+           <RepeatTime> 1025 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 2 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/mauryas/cavalry_swordsman_e_m.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_infantry_ranged_archer">
+<Entity parent="template_unit_champion_infantry_swordsman">
    <UnitMotion>
        <WalkSpeed> 12 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
@@ -25,23 +25,15 @@
             </Damage>
          </Entity>
    </Resistance>
-   <Builder>
-    <Entities datatype="tokens">
-      structures/maur/palace
-      structures/maur/pillar_ashoka
-    </Entities>
-  </Builder>
-  <Identity>
+   <Identity>
     <Civ>maur</Civ>
-    <SelectionGroupName>units/maur/infantry_archer_b</SelectionGroupName>
-    <GenericName>Longbowman</GenericName>
-    <SpecificName>Dhanurdhar</SpecificName>
-    <Icon>units/maur_infantry_archer.png</Icon>
+    <Phenotype>female</Phenotype>
+    <GenericName>Maiden Guard</GenericName>
+    <SpecificName>Visha Kanya</SpecificName>
+    <SelectionGroupName>units/maur/champion_maiden</SelectionGroupName>
+    <Icon>units/maur_champion_maiden.png</Icon>
   </Identity>
-  <Promotion>
-    <Entity>units/maur/infantry_archer_a</Entity>
-  </Promotion>
   <VisualActor>
-    <Actor>units/mauryas/infantry_archer_b.xml</Actor>
+    <Actor>units/mauryas/infantry_swordsman_c.xml</Actor>
   </VisualActor>
 </Entity>
