@@ -204,7 +204,7 @@ Attack.prototype.Init = function()
 	if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillAmount)
 		this.refillAmount = +this.template["Ranged"].RefillAmount;
 
-	// grapejuice, start the automatic refill timer for slingers
+	// start the automatic refill timer for slingers
 	if (this.ammo == 40)
 	{
 		if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillTime)
