@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_camp_structure">
+<Entity parent="template_structure">
+  <BuildRestrictions>
+    <PlacementType>land</PlacementType>
+    <Territory>neutral enemy</Territory>
+    <Category>Structure</Category>
+    <Category>FieldCamp</Category>
+  </BuildRestrictions>
   <Identity>
     <Classes datatype="tokens">ConquestCritical</Classes>
-    <GenericName>Civic Structure</GenericName>
-    <VisibleClasses datatype="tokens">Civic</VisibleClasses>
+    <GenericName>Camp</GenericName>
+    <SelectionGroupName>template_structure_civic_camp</SelectionGroupName>
+    <Tooltip>A resting place in neutral territory for wounded soldiers.</Tooltip>
+    <VisibleClasses datatype="tokens">Town Camp</VisibleClasses>
+    <Icon>structures/camp.png</Icon>
+    <RequiredTechnology>phase_village</RequiredTechnology>
   </Identity>
+  <Footprint>
+    <Square width="10.0" depth="10.5"/>
+    <Height>10.0</Height>
+  </Footprint>
   <Resistance>
     <Entity>
       <Damage>
         <Hack>5</Hack>
-        <Pierce>10</Pierce>
+        <Pierce>25</Pierce>
         <Crush>0</Crush>
       </Damage>
     </Entity>
@@ -17,8 +31,32 @@
       <Damage>
         <Hack>1</Hack>
         <Pierce>5</Pierce>
-        <Crush>1</Crush>
+        <Crush>0</Crush>
       </Damage>
     </Foundation>
   </Resistance>
+  <Vision>
+    <Range>20</Range>
+  </Vision>
+  <Sound>
+    <SoundGroups>
+      <select>interface/select/building/sel_house.xml</select>
+      <constructed>interface/complete/building/complete_house.xml</constructed>
+    </SoundGroups>
+  </Sound>
+  <Obstruction>
+    <Static width="10.5" depth="10.0"/>
+  </Obstruction>
+  <ProductionQueue>
+    <BatchTimeModifier>0.8</BatchTimeModifier>
+    <Technologies datatype="tokens">
+	garrison_heal_field_camp
+    </Technologies>
+  </ProductionQueue>
+  <VisualActor>
+    <FoundationActor>structures/fndn_2x2.xml</FoundationActor>
+  </VisualActor>
+  <Capturable disable="" />
+  <TerritoryInfluence disable=""/>
+  <TerritoryDecay disable="" />
 </Entity>

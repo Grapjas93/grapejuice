@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_structure_civic_camp">
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack>5</Hack>
-        <Pierce>15</Pierce>
-        <Crush>0</Crush>
-      </Damage>
-    </Entity>
-    <Foundation>
-      <Damage>
-        <Hack>1</Hack>
-        <Pierce>5</Pierce>
-        <Crush>0</Crush>
-      </Damage>
-    </Foundation>
-  </Resistance>
   <Cost>
-    <BuildTime>10</BuildTime>
+    <BuildTime>20</BuildTime>
     <Resources>
       <wood>200</wood>
       <metal>50</metal>
     </Resources>
   </Cost>
-  <Footprint>
-    <Square width="10.0" depth="10.5"/>
-    <Height>10.0</Height>
-  </Footprint>
   <GarrisonHolder>
     <Max>12</Max>
     <EjectHealth>0.1</EjectHealth>
@@ -36,47 +16,10 @@
     <LoadingRange>2</LoadingRange>
   </GarrisonHolder>
   <Health>
-    <Max>850</Max>
+    <Max>900</Max>
     <SpawnEntityOnDeath>decay|rubble/rubble_stone_2x2</SpawnEntityOnDeath>
   </Health>
-  <Identity>
-    <GenericName>Camp</GenericName>
-    <SelectionGroupName>template_structure_civic_camp</SelectionGroupName>
-    <Tooltip>A resting place in neutral territory for wounded soldiers.</Tooltip>
-    <VisibleClasses datatype="tokens">Town Camp</VisibleClasses>
-    <Icon>structures/camp.png</Icon>
-    <RequiredTechnology>phase_village</RequiredTechnology>
-  </Identity>
   <Loot>
-   <metal>50</metal>
+	<metal>50</metal>
   </Loot>
-  <Obstruction>
-    <Static width="10.5" depth="10.0"/>
-  </Obstruction>
-  <ProductionQueue>
-    <BatchTimeModifier>0.8</BatchTimeModifier>
-    <Entities datatype="tokens">
-      units/{civ}/support_healer_b
-    </Entities>
-    <Technologies datatype="tokens">
-	garrison_heal_field_camp
-    </Technologies>
-  </ProductionQueue>
-  <Sound>
-    <SoundGroups>
-      <select>interface/select/building/sel_house.xml</select>
-      <constructed>interface/complete/building/complete_house.xml</constructed>
-    </SoundGroups>
-  </Sound>
-  <TerritoryInfluence>
-    <Root>false</Root>
-    <Radius>0</Radius>
-    <Weight>30000</Weight>
-  </TerritoryInfluence>
-  <Vision>
-    <Range>20</Range>
-  </Vision>
-  <VisualActor>
-    <FoundationActor>structures/fndn_2x2.xml</FoundationActor>
-  </VisualActor>
 </Entity>
