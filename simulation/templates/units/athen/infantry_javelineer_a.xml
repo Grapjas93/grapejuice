@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/athen/infantry_javelineer_b">
-<UnitMotion>
+   <UnitMotion>
        <WalkSpeed> 11 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 1600 </PrepareTime>
@@ -15,8 +15,8 @@
            <PrepareTime> 700 </PrepareTime>
            <RepeatTime> 850 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 1 </Crush>
@@ -24,8 +24,8 @@
                <Pierce> 3 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Identity>
+   </Resistance>
+   <Identity>
     <Rank>Advanced</Rank>
   </Identity>
   <Promotion>

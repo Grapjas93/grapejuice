@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_infantry_swordsman">
-<UnitMotion>
-       <WalkSpeed> 8 </WalkSpeed>
+   <UnitMotion>
+       <WalkSpeed> 8.6 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 950 </PrepareTime>
@@ -15,17 +15,17 @@
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2400 </RepeatTime>
        </Ranged> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 4 </Crush>
-               <Hack> 11 </Hack>
+               <Hack> 8 </Hack>
                <Pierce> 9 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Auras datatype="tokens">
+   </Resistance>
+   <Auras datatype="tokens">
     units/heroes/athen_hero_themistocles_1
     units/heroes/athen_hero_themistocles_2
   </Auras>

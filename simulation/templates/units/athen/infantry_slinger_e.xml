@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/athen/infantry_slinger_a">
-<UnitMotion>
+   <UnitMotion>
        <WalkSpeed> 11.75 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Slinger </AttackName>
            <PrepareTime> 1550 </PrepareTime>
@@ -15,8 +15,8 @@
            <PrepareTime> 600 </PrepareTime>
            <RepeatTime> 750 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 3 </Crush>
@@ -24,8 +24,8 @@
                <Pierce> 1 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Identity>
+   </Resistance>
+   <Identity>
     <Rank>Elite</Rank>
   </Identity>
   <Promotion disable=""/>
