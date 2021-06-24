@@ -7,7 +7,7 @@
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <Damage>
-        <Pierce>60</Pierce>
+        <Pierce>75</Pierce>
       </Damage>
       <MaxRange>30</MaxRange>
       <PrepareTime>750</PrepareTime>

@@ -7,14 +7,14 @@
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <Damage>
-        <Pierce>16</Pierce>
+        <Pierce>18</Pierce>
       </Damage>
       <MaxRange>60</MaxRange>
       <PrepareTime>500</PrepareTime>
       <RepeatTime>1000</RepeatTime>
       <Projectile>
         <Speed>160</Speed>
-        <Spread>4.5</Spread>
+        <Spread>4.25</Spread>
         <Gravity>50</Gravity>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>

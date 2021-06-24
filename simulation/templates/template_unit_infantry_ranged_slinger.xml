@@ -7,8 +7,8 @@
 	  <RefillAmount>1</RefillAmount>
 	  <RefillTime>6000</RefillTime>
       <Damage>
-        <Pierce>8</Pierce>
-        <Crush>1.1</Crush>
+        <Pierce>5</Pierce>
+        <Crush>5</Crush>
       </Damage>
       <MaxRange>50</MaxRange>
       <PrepareTime>750</PrepareTime>

@@ -32,8 +32,8 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="272.238" y="233.58" z="292.424"/>
-		<Rotation angle="-0.589415"/>
+		<Position x="424.092" y="246.916" z="83.6156"/>
+		<Rotation angle="0"/>
 		<Declination angle="0.610865"/>
 	</Camera>
 	<ScriptSettings><![CDATA[
@@ -46,7 +46,6 @@
   "Name": "test_map",
   "PlayerData": [
     {
-      "Civ": "maur",
       "PopulationLimit": 1000,
       "Resources": {
         "food": 9999,

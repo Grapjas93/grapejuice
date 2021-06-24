@@ -19,10 +19,10 @@
 	  <RefillTime>0</RefillTime>
       <Damage>
         <Hack>0</Hack>
-        <Pierce>36</Pierce>
+        <Pierce>75</Pierce>
         <Crush>0</Crush>
       </Damage>
-      <MaxRange>20</MaxRange>
+      <MaxRange>25</MaxRange>
       <MinRange>0</MinRange>
       <PrepareTime>750</PrepareTime>
       <RepeatTime>1250</RepeatTime>
