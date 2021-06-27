@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 15.95 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 1100 </PrepareTime>
+           <RepeatTime> 1250 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 7 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>ptol</Civ>
+    <GenericName>Royal Guard Cavalry</GenericName>
+    <SpecificName>Ágēma Basiléōs</SpecificName>
+    <Icon>units/ptol_champion_cavalry.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/ptolemies/cavalry_spearman_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

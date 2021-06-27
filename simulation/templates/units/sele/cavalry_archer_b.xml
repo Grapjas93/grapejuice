@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_cavalry_ranged_archer">
-<Attack>
-    <Melee>
-      <AttackName>Sword</AttackName>
-      <Damage>
-        <Hack>6.5</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>6</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-    </Melee>
-</Attack>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 18 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1550 </PrepareTime>
+           <RepeatTime> 1700 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Civ>sele</Civ>
     <Lang>greek</Lang>
     <SelectionGroupName>units/sele/cavalry_archer_b</SelectionGroupName>

@@ -250,6 +250,7 @@ Attack.prototype.AutoRefill = function()
 Attack.prototype.SetAmmo = function(ammoGiver)
 {
 	let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
+	
 	// if the entity is the armyCamp, don't reload and stop the timer
 	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp"))
 	{
@@ -312,6 +313,7 @@ Attack.prototype.CheckTargetIsInMeleeRange = function(target)
 {
 	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+	
 	if (!cmpVision)
 		return false;
 
@@ -572,7 +574,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
 	{
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Palisade") == true)
+		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true)
 			{
 				types.splice(rangeIndex, 1);
 			} 

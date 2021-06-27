@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/ptol/cavalry_javelineer_merc_a">
-<Attack>
-    <Melee>
-      <AttackName>Sword</AttackName>
-      <Damage>
-        <Hack>9.4</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>6</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-    </Melee>
-</Attack>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 14.7 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 2025 </PrepareTime>
+           <RepeatTime> 2175 </RepeatTime>
+       </Ranged>  
+       <Ranged>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 1675 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 8.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Rank>Elite</Rank>
   </Identity>
   <Promotion disable=""/>

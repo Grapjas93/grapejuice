@@ -301,8 +301,8 @@ BuildingAI.prototype.FireArrows = function()
 		    this.arrowsLeft
 		);
 	
-	// grapejuice, if defensive structure has no ammo, don't shoot arrows
-	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp") == true && cmpAttack.ammo == 0)
+	// grapejuice, if the garrisoned entity has no ammo, don't shoot arrows
+	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp SiegeTower") == true && cmpAttack.ammo == 0)
 	{
 		arrowsToFire = 0;
 	}
@@ -350,7 +350,8 @@ BuildingAI.prototype.FireArrows = function()
 		let selectedTarget = targets.randomItem();
 
 		let targetCmpPosition = Engine.QueryInterface(selectedTarget, IID_Position);
-		if (targetCmpPosition && targetCmpPosition.IsInWorld() && this.CheckTargetVisible(selectedTarget))
+		// Grapejuice, don't waste ammo on structures
+		if (targetCmpPosition && targetCmpPosition.IsInWorld() && this.CheckTargetVisible(selectedTarget) && Helpers.EntityMatchesClassList(selectedTarget, "Structure") == false)
 		{
 			// Parabolic range compuation is the same as in UnitAI's MoveToTargetAttackRange.
 			// h is positive when I'm higher than the target.

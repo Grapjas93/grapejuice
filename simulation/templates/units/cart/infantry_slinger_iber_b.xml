@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="merc_inf|template_unit_infantry_ranged_slinger">
-<UnitMotion>
+   <UnitMotion>
        <WalkSpeed> 12 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Slinger </AttackName>
            <PrepareTime> 1500 </PrepareTime>
@@ -15,8 +15,8 @@
            <PrepareTime> 550 </PrepareTime>
            <RepeatTime> 700 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 0 </Crush>
@@ -24,8 +24,8 @@
                <Pierce> 0 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Builder>
+   </Resistance>
+   <Builder>
     <Entities datatype="tokens">
       structures/{civ}/super_dock
       structures/{civ}/embassy_celtic

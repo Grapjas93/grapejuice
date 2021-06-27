@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 10.7 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 575 </PrepareTime>
+           <RepeatTime> 725 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2025 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/iber_hero_caros_1
+    units/heroes/iber_hero_caros_2
+  </Auras>
+  <Identity>
+    <Civ>iber</Civ>
+    <SpecificName>Caros</SpecificName>
+    <Icon>units/iber_hero_caros.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/iberians/hero_infantry_swordsman_caros.xml</Actor>
+  </VisualActor>
+</Entity>

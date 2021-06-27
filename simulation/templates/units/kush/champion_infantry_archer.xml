@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_infantry_archer">
-<Attack>
-    <Melee>
-      <AttackName>Sword</AttackName>
-      <Damage>
-        <Hack>11.0</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-    </Melee>
-</Attack>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 10.4 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1850 </PrepareTime>
+           <RepeatTime> 2000 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 850 </PrepareTime>
+           <RepeatTime> 1000 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 4 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Civ>kush</Civ>
     <Lang>napatan</Lang>
     <GenericName>Noble Archer</GenericName>

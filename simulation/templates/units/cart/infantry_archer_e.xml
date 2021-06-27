@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/cart/infantry_archer_a">
-<UnitMotion>
-       <WalkSpeed> 11 </WalkSpeed>
+   <UnitMotion>
+       <WalkSpeed> 10.8 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Bow </AttackName>
-           <PrepareTime> 1700 </PrepareTime>
-           <RepeatTime> 1850 </RepeatTime>
+           <PrepareTime> 1750 </PrepareTime>
+           <RepeatTime> 1900 </RepeatTime>
        </Ranged>  
        <Melee>
            <AttackName> Sword </AttackName>
-           <PrepareTime> 700 </PrepareTime>
-           <RepeatTime> 850 </RepeatTime>
+           <PrepareTime> 750 </PrepareTime>
+           <RepeatTime> 900 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 3 </Crush>
-               <Hack> 4 </Hack>
-               <Pierce> 2 </Pierce>
+               <Hack> 3 </Hack>
+               <Pierce> 2.5 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Identity>
+   </Resistance>
+   <Identity>
     <Rank>Elite</Rank>
   </Identity>
   <Promotion disable=""/>

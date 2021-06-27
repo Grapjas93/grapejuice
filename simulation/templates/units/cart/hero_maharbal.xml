@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_cavalry_spearman">
-<UnitMotion>
-       <WalkSpeed> 15 </WalkSpeed>
+   <UnitMotion>
+       <WalkSpeed> 15.2 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Melee>
            <AttackName> Spear </AttackName>
-           <PrepareTime> 1200 </PrepareTime>
-           <RepeatTime> 1350 </RepeatTime>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
        </Melee> 
-</Attack>       
- <Resistance>
+   </Attack>       
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 5 </Crush>
-               <Hack> 10 </Hack>
-               <Pierce> 6 </Pierce>
+               <Hack> 7 </Hack>
+               <Pierce> 6.5 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Auras datatype="tokens">
+   </Resistance>
+   <Auras datatype="tokens">
     units/heroes/cart_hero_maharbal
   </Auras>
   <Identity>

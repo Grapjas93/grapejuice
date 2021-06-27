@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/sele/cavalry_spearman_merc_a">
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 15.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 1200 </PrepareTime>
+           <RepeatTime> 1350 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Rank>Elite</Rank>
   </Identity>
   <Promotion>

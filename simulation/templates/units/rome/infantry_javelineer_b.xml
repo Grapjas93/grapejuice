@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_ranged_javelineer">
+   <UnitMotion>
+       <WalkSpeed> 11 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1600 </PrepareTime>
+           <RepeatTime> 1750 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Builder>
+    <Entities datatype="tokens">
+      structures/rome/army_camp
+      structures/rome/temple_vesta
+    </Entities>
+  </Builder>
+  <Identity>
+    <Civ>rome</Civ>
+    <Lang>latin</Lang>
+    <SelectionGroupName>units/rome/infantry_javelineer_b</SelectionGroupName>
+    <GenericName>Roman Skirmisher</GenericName>
+    <SpecificName>Vēles</SpecificName>
+    <Icon>units/rome_infantry_javelinist.png</Icon>
+  </Identity>
+  <Promotion>
+    <Entity>units/rome/infantry_javelineer_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/romans/infantry_javelinist_b.xml</Actor>
+  </VisualActor>
+</Entity>

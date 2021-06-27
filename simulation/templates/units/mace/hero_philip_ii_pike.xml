@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_pikeman">
+  <Auras datatype="tokens">
+    units/heroes/mace_hero_philip_ii
+  </Auras>
+  <Identity>
+    <Civ>mace</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Philip II of Macedon</GenericName>
+    <SpecificName>Philippos B' ho Makedōn</SpecificName>
+    <Icon>units/mace_hero_philip.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/macedonians/hero_infantry_pikeman_philip.xml</Actor>
+  </VisualActor>
+</Entity>

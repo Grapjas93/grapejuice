@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_cavalry_spearman">
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 15.1 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 1275 </PrepareTime>
+           <RepeatTime> 1425 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 9 </Crush>
+               <Hack> 9 </Hack>
+               <Pierce> 7.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Civ>pers</Civ>
     <Lang>persian</Lang>
     <GenericName>Bactrian Heavy Lancer</GenericName>

@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_infantry_melee_swordsman">
-  <Attack>
-    <Melee>
-      <AttackName context="Name of an attack using a rhomphaia (ῥομφαία), a Thracian two-handed weapon capable of both thrusting and slashing.">Rhomphaia</AttackName>
-    </Melee>
-  </Attack>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 10.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Rhomphaia </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Civ>sele</Civ>
     <Lang>greek</Lang>
     <SelectionGroupName>units/sele/infantry_swordsman_merc_b</SelectionGroupName>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_elephant_melee">
+   <UnitMotion>
+       <WalkSpeed> 9 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Tusk </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 3.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/kush_hero_arakamani_1
+    units/heroes/kush_hero_arakamani_2
+    units/heroes/kush_hero_arakamani_3
+  </Auras>
+  <Identity>
+    <Civ>kush</Civ>
+    <Lang>napatan</Lang>
+    <GenericName>Arakamani</GenericName>
+    <SpecificName>I͗rk-k-I͗mn H̱nm-ı͗-Rʿ</SpecificName>
+    <Icon>units/kush_hero_arakamani.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/kushites/hero_elephantry_arakamani_m.xml</Actor>
+  </VisualActor>
+</Entity>

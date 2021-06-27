@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/pers/infantry_archer_b">
-<Attack>
-    <Melee>
-      <AttackName>Sword</AttackName>
-      <Damage>
-        <Hack>6.6</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-    </Melee>
-</Attack>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 11.5 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1625 </PrepareTime>
+           <RepeatTime> 1775 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 625 </PrepareTime>
+           <RepeatTime> 775 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Rank>Advanced</Rank>
   </Identity>
   <Promotion>

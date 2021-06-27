@@ -32,7 +32,7 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="424.092" y="246.916" z="83.6156"/>
+		<Position x="541.821" y="246.916" z="-14.1789"/>
 		<Rotation angle="0"/>
 		<Declination angle="0.610865"/>
 	</Camera>
@@ -45,6 +45,7 @@
   "LockTeams": false,
   "Name": "test_map",
   "PlayerData": [
+    null,
     {
       "PopulationLimit": 1000,
       "Resources": {
@@ -3005,6 +3006,13 @@
 			<Position x="382.64008" z="240.10322"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="24"/>
+		</Entity>
+		<Entity uid="4204">
+			<Template>units/mace/siege_tower</Template>
+			<Player>1</Player>
+			<Position x="535.86567" z="40.18133"/>
+			<Orientation y="0.85209"/>
+			<Actor seed="6944"/>
 		</Entity>
 	</Entities>
 	<Paths/>

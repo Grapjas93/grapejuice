@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_siege">
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
   <Attack>
     <Ranged>
-      <Ammo>14</Ammo>
+      <Ammo>20</Ammo>
 	  <RefillAmount>0</RefillAmount>
 	  <RefillTime>0</RefillTime>
       <AttackName>Stone</AttackName>
@@ -31,8 +40,8 @@
   <Cost>
     <BuildTime>25</BuildTime>
     <Resources>
-      <wood>400</wood>
-      <stone>250</stone>
+      <wood>500</wood>
+      <stone>100</stone>
     </Resources>
   </Cost>
   <Footprint replace="">
@@ -64,7 +73,7 @@
     <DefaultStance>standground</DefaultStance>
   </UnitAI>
   <UnitMotion>
-    <WalkSpeed op="mul">0.8</WalkSpeed>
+    <WalkSpeed>9</WalkSpeed>
   </UnitMotion>
   <Vision>
     <Range>100</Range>

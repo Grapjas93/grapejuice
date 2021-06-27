@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_infantry_swordsman">
-<UnitMotion>
-       <WalkSpeed> 9.75 </WalkSpeed>
+   <UnitMotion>
+       <WalkSpeed> 9.95 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 700 </PrepareTime>
@@ -15,17 +15,17 @@
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2150 </RepeatTime>
        </Ranged> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 5 </Crush>
-               <Hack> 6 </Hack>
+               <Hack> 5 </Hack>
                <Pierce> 6 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Auras datatype="tokens">
+   </Resistance>
+   <Auras datatype="tokens">
     units/heroes/brit_hero_caratacos
   </Auras>
   <Identity>

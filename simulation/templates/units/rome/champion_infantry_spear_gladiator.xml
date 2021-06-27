@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_spearman">
+   <UnitMotion>
+       <WalkSpeed> 9.4 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 800 </PrepareTime>
+           <RepeatTime> 950 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Builder>
+    <Entities datatype="tokens">
+      structures/rome/army_camp
+      structures/rome/temple_vesta
+    </Entities>
+  </Builder>
+  <Cost>
+    <Resources>
+      <food op="add">-10</food>
+      <metal op="add">20</metal>
+    </Resources>
+    <BuildTime op="add">5</BuildTime>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Gladiator</VisibleClasses>
+    <Civ>rome</Civ>
+    <Lang>latin</Lang>
+    <GenericName>Gladiator Spearman</GenericName>
+    <SpecificName>Hoplomachus</SpecificName>
+    <Rank>Elite</Rank>
+    <Icon>units/rome_champion_infantry_gladiator_spear.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Promotion disable=""/>
+  <TrainingRestrictions>
+    <Category>Gladiator</Category>
+  </TrainingRestrictions>
+  <Vision>
+    <Range op="mul">0.5</Range>
+  </Vision>
+  <VisualActor>
+    <Actor>units/romans/infantry_gladiator_spearman.xml</Actor>
+  </VisualActor>
+</Entity>

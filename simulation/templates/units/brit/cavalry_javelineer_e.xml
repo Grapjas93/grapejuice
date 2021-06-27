@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/brit/cavalry_javelineer_a">
-<UnitMotion>
-       <WalkSpeed> 16 </WalkSpeed>
+   <UnitMotion>
+       <WalkSpeed> 16.2 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 1750 </PrepareTime>
@@ -15,17 +15,17 @@
            <PrepareTime> 1250 </PrepareTime>
            <RepeatTime> 1400 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 2 </Crush>
-               <Hack> 5 </Hack>
+               <Hack> 4 </Hack>
                <Pierce> 5 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Identity>
+   </Resistance>
+   <Identity>
     <Rank>Elite</Rank>
   </Identity>
   <Promotion disable=""/>

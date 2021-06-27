@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_cavalry_archer">
-  <Attack>
-    <Melee>
-      <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
-      <Damage>
-        <Hack>13.0</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>6</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
-    </Melee>
-  </Attack>
-  <Identity>
+   <UnitMotion>
+       <WalkSpeed> 15.1 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 2075 </PrepareTime>
+           <RepeatTime> 2225 </RepeatTime>
+       </Ranged>  
+       <Ranged>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 1625 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 9 </Crush>
+               <Hack> 9 </Hack>
+               <Pierce> 7.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
     <Civ>pers</Civ>
     <Lang>persian</Lang>
     <GenericName>Bactrian Heavy Cavalry Archer</GenericName>

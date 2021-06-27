@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_cavalry_swordsman">
-  <Auras datatype="tokens">
+   <UnitMotion>
+       <WalkSpeed> 16.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1050 </PrepareTime>
+           <RepeatTime> 1200 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
     units/heroes/sele_hero_antiochus_iv
   </Auras>
   <Identity>

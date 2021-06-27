@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="hoplite|template_unit_hero_infantry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 8.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 9 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/spart_hero_leonidas
+  </Auras>
+  <Identity>
+    <Civ>spart</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Leonidas I</GenericName>
+    <SpecificName>Leōnidēs</SpecificName>
+    <Icon>units/spart_hero_leonidas.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/spartans/hero_infantry_spearman_leonidas.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_infantry_melee_spearman">
-<UnitMotion>
+   <UnitMotion>
        <WalkSpeed> 11 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Melee>
            <AttackName> Spear </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 650 </RepeatTime>
        </Melee> 
-</Attack>       
- <Resistance>
+   </Attack>       
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 1 </Crush>
@@ -19,8 +19,8 @@
                <Pierce> 3 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Identity>
+   </Resistance>
+   <Identity>
     <Civ>brit</Civ>
     <SelectionGroupName>units/brit/infantry_spearman_b</SelectionGroupName>
     <GenericName>Celtic Spearman</GenericName>

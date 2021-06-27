@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_infantry_ranged_archer">
-<Attack>
-    <Melee>
-      <AttackName>Sword</AttackName>
-      <Damage>
-        <Hack>5.5</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
-      </Damage>
-      <MaxRange>3</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-    </Melee>
-</Attack>
-  <Builder>
+   <UnitMotion>
+       <WalkSpeed> 12 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1550 </PrepareTime>
+           <RepeatTime> 1700 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 550 </PrepareTime>
+           <RepeatTime> 700 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Builder>
     <Entities datatype="tokens">
       structures/ptol/lighthouse
       structures/ptol/library

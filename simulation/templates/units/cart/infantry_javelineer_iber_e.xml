@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/cart/infantry_javelineer_iber_a">
-<UnitMotion>
+   <UnitMotion>
        <WalkSpeed> 10 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Javelin </AttackName>
-           <PrepareTime> 1750 </PrepareTime>
-           <RepeatTime> 1900 </RepeatTime>
+           <PrepareTime> 1800 </PrepareTime>
+           <RepeatTime> 1950 </RepeatTime>
        </Ranged>  
        <Melee>
            <AttackName> Spear </AttackName>
-           <PrepareTime> 850 </PrepareTime>
-           <RepeatTime> 1000 </RepeatTime>
+           <PrepareTime> 900 </PrepareTime>
+           <RepeatTime> 1050 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 4 </Crush>
-               <Hack> 7 </Hack>
-               <Pierce> 4 </Pierce>
+               <Hack> 5 </Hack>
+               <Pierce> 4.5 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Identity>
+   </Resistance>
+   <Identity>
     <Rank>Elite</Rank>
   </Identity>
   <Promotion disable=""/>

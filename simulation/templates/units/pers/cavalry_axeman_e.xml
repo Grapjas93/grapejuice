@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/pers/cavalry_axeman_a">
+   <UnitMotion>
+       <WalkSpeed> 14.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Axe </AttackName>
+           <PrepareTime> 1350 </PrepareTime>
+           <RepeatTime> 1500 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 10 </Crush>
+               <Hack> 10 </Hack>
+               <Pierce> 8.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/persians/cavalry_axeman_e_m.xml</Actor>
+  </VisualActor>
+</Entity>

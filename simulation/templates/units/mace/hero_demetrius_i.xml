@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 8.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2400 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 9 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/mace_hero_demetrius_i
+  </Auras>
+  <Identity>
+    <Civ>mace</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Demetrius I the Besieger</GenericName>
+    <SpecificName>Dēmētrios Poliorkētēs</SpecificName>
+    <Icon>units/mace_hero_demetrius.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/macedonians/hero_infantry_swordsman_demetrius.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/mace/infantry_pikeman_a">
+   <UnitMotion>
+       <WalkSpeed> 8.85 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Pike </AttackName>
+           <PrepareTime> 1175 </PrepareTime>
+           <RepeatTime> 1325 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/macedonians/infantry_pikeman_e.xml</Actor>
+  </VisualActor>
+</Entity>

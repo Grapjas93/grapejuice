@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_infantry_ranged_javelineer">
-<UnitMotion>
+   <UnitMotion>
        <WalkSpeed> 11.5 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-  </UnitMotion> 
- <Attack>
+   </UnitMotion> 
+   <Attack>
        <Ranged>
            <AttackName> Javelin </AttackName>
-           <PrepareTime> 1500 </PrepareTime>
-           <RepeatTime> 1650 </RepeatTime>
+           <PrepareTime> 1525 </PrepareTime>
+           <RepeatTime> 1675 </RepeatTime>
        </Ranged>  
        <Melee>
            <AttackName> Spear </AttackName>
-           <PrepareTime> 600 </PrepareTime>
-           <RepeatTime> 750 </RepeatTime>
+           <PrepareTime> 625 </PrepareTime>
+           <RepeatTime> 775 </RepeatTime>
        </Melee> 
-</Attack> 
- <Resistance>
+   </Attack> 
+   <Resistance>
         <Entity>
             <Damage>
                <Crush> 1 </Crush>
@@ -24,8 +24,8 @@
                <Pierce> 1 </Pierce>
             </Damage>
          </Entity>
-</Resistance>
-  <Health>
+   </Resistance>
+   <Health>
     <DamageVariants>
       <lightdamage>0.80</lightdamage>
       <mediumdamage>0.50</mediumdamage>
