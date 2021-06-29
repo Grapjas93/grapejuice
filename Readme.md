@@ -25,3 +25,5 @@ The unit will swap to melee if
 **Technology changes.** Instead of 4 defensive upgrades for units there are now just 2. They give both a positive and a negative bonus. Example: Soldiers +3 crush, +1 hack and pierce resistance. 50ms attack and 0.25 movement speed penalty. 
 
 **Healers.** They now provide healing in any structure they are garrisoned in. 
+
+**Spy tech rework.** All enemy unit and structure info is now hidden and cannot be inspected when clicked / hovered. When you buy the Espionage tech this information becomes available to you, showing you information like health and ammo when clicked or hovered.
