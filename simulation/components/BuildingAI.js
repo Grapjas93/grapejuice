@@ -350,8 +350,8 @@ BuildingAI.prototype.FireArrows = function()
 		let selectedTarget = targets.randomItem();
 
 		let targetCmpPosition = Engine.QueryInterface(selectedTarget, IID_Position);
-		// Grapejuice, don't waste ammo on structures
-		if (targetCmpPosition && targetCmpPosition.IsInWorld() && this.CheckTargetVisible(selectedTarget) && Helpers.EntityMatchesClassList(selectedTarget, "Structure") == false)
+		// Grapejuice, don't waste ammo on structures and don't shoot at siege
+		if (targetCmpPosition && targetCmpPosition.IsInWorld() && this.CheckTargetVisible(selectedTarget) && Helpers.EntityMatchesClassList(selectedTarget, "Structure Siege") == false)
 		{
 			// Parabolic range compuation is the same as in UnitAI's MoveToTargetAttackRange.
 			// h is positive when I'm higher than the target.

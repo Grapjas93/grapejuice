@@ -1,0 +1,13 @@
+{
+	"genericName": "Espionage",
+	"description": "Spies will be sent to gather information about enemy civilizations, providing you statistics of their equipment and structures.",
+	"cost": {
+		"food": 500,
+		"metal": 500
+	},
+	"requirements": { "tech": "phase_city" },
+	"icon": "spy_trader.png",
+	"researchTime": 60,
+	"tooltip": "Unlocks enemy unit and structure statistics when clicked and hovered. Making critical information like health and ammo visible to you.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}
