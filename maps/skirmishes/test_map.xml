@@ -32,8 +32,8 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="541.821" y="246.916" z="-14.1789"/>
-		<Rotation angle="0"/>
+		<Position x="444.727" y="254.21" z="381.712"/>
+		<Rotation angle="-0.733613"/>
 		<Declination angle="0.610865"/>
 	</Camera>
 	<ScriptSettings><![CDATA[
@@ -3013,6 +3013,335 @@
 			<Position x="535.86567" z="40.18133"/>
 			<Orientation y="0.85209"/>
 			<Actor seed="6944"/>
+		</Entity>
+		<Entity uid="4205">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="345.76722" z="89.54497"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4206">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="358.44797" z="103.57671"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4207">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="345.11673" z="120.83254"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4208">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="330.57905" z="106.49856"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4209">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="313.50742" z="124.68882"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4210">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="326.18818" z="138.72056"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4211">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="312.85694" z="155.97638"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4212">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="298.31925" z="141.6424"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4213">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="342.96549" z="152.04712"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4214">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="355.64625" z="166.07886"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4215">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="342.31501" z="183.3347"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4216">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="327.77732" z="169.00071"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4217">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="308.08463" z="187.67167"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4218">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="260.01252" z="208.10462"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4219">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="320.76539" z="201.7034"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4220">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="276.13935" z="252.71875"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4221">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="289.47059" z="235.4629"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4222">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="279.59156" z="158.92902"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4223">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="276.78983" z="221.43116"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4224">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="307.43415" z="218.95923"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4225">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="292.89646" z="204.62525"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4226">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="292.27231" z="172.96076"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4227">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="278.94108" z="190.21659"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4228">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="264.40339" z="175.8826"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4229">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="247.33176" z="194.07288"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4230">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="246.68128" z="225.36042"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4231">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="232.1436" z="211.02643"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4232">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="261.60166" z="238.38477"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4233">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="242.0717" z="256.76157"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4234">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="193.99958" z="277.19452"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4235">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="254.75245" z="270.79331"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4236">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="210.12641" z="321.80866"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4237">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="223.45765" z="304.5528"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4238">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="213.57862" z="228.01893"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4239">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="210.7769" z="290.52106"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4240">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="241.42121" z="288.04914"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4241">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="226.88352" z="273.71515"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4242">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="226.25937" z="242.05066"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="52614"/>
+		</Entity>
+		<Entity uid="4243">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="212.92814" z="259.3065"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4244">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="198.39045" z="244.97251"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4245">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="181.31882" z="263.16279"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="25346"/>
+		</Entity>
+		<Entity uid="4246">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="180.66834" z="294.45032"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="63114"/>
+		</Entity>
+		<Entity uid="4247">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="166.13065" z="280.11634"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4248">
+			<Template>skirmish/structures/default_house_10</Template>
+			<Player>1</Player>
+			<Position x="195.58872" z="307.47468"/>
+			<Orientation y="2.35622"/>
+			<Actor seed="44842"/>
+		</Entity>
+		<Entity uid="4249">
+			<Template>gaia/fauna_crocodile_nile</Template>
+			<Player>0</Player>
+			<Position x="359.09995" z="478.56727"/>
+			<Orientation y="-2.82116"/>
+			<Actor seed="47438"/>
+		</Entity>
+		<Entity uid="4250">
+			<Template>gaia/fauna_crocodile_nile</Template>
+			<Player>0</Player>
+			<Position x="355.34855" z="490.35178"/>
+			<Orientation y="2.35621"/>
+			<Actor seed="33738"/>
+		</Entity>
+		<Entity uid="4251">
+			<Template>gaia/fauna_crocodile_nile</Template>
+			<Player>0</Player>
+			<Position x="369.67658" z="487.97718"/>
+			<Orientation y="-2.7181"/>
+			<Actor seed="39638"/>
 		</Entity>
 	</Entities>
 	<Paths/>

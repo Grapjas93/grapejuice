@@ -1,11 +1,12 @@
 function GuiInterface() {}
 
-// modified for grapejuice
+// grapejuice, this is the only modified function here
 GuiInterface.prototype.SetStatusBars = function(player, cmd)
 {
 	let affectedEnts = new Set();
 	for (let ent of cmd.entities)
 	{
+		warn(Helpers.HasDealtWithTech(player, "unlock_spies"));
 		// grapejuice, don't display statusbars for enemies, unless they have the spy tech
 		if (player == Helpers.GetOwner(ent) || Helpers.HasDealtWithTech(player, "unlock_spies"))
 		{			
@@ -40,7 +41,6 @@ GuiInterface.prototype.SetStatusBars = function(player, cmd)
 	}
 };
 
-// modified for grapejuice (anything after this function hasn't been changed)
 /**
  * Get common entity info, often used in the gui.
  */
@@ -56,9 +56,6 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 	if (!template)
 		return null;
 	
-	// grapejuice, only show entity info if it's the players unit or has the spy tech
-	if (player == Helpers.GetOwner(ent) || Helpers.HasDealtWithTech(player, "unlock_spies"))
-	{	
 		let ret = {
 			"id": ent,
 			"player": INVALID_PLAYER,
@@ -389,7 +386,6 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 			};
 
 		return ret;
-	}
 };
 
 GuiInterface.prototype.Schema =
