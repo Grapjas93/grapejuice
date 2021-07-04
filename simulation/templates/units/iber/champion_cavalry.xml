@@ -36,6 +36,7 @@
          </Entity>
    </Resistance>  
   <Identity>
+    <VisibleClasses datatype="tokens">Raider</VisibleClasses>
     <Civ>iber</Civ>
     <SpecificName>Leial Zalduneria</SpecificName>
     <SelectionGroupName>units/iber/champion_cavalry</SelectionGroupName>

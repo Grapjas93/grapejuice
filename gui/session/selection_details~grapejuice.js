@@ -70,7 +70,7 @@ function blockDisplaySingle(entState)
 	let showHealth = entState.hitpoints;
 	let showResource = "";
 	let showCapture = entState.capturePoints;
-
+	Engine.GetGUIObjectByName("ammoStats").hidden = true;
 	let healthSection = Engine.GetGUIObjectByName("healthSection");
 	let captureSection = Engine.GetGUIObjectByName("captureSection");
 	let resourceSection = Engine.GetGUIObjectByName("resourceSection");
@@ -312,9 +312,8 @@ function displaySingle(entState)
 	});
 
 	// grapejuice, block entity information of unowned units unless the espionage tech has been researched
-	if (Engine.GetPlayerID() != entState.player)
-	{
-		
+	if (Engine.GetPlayerID() != entState.player && !entState.resourceSupply)
+	{	
 		if (technologyEnabled == false)
 		{
 			blockDisplaySingle(entState);
@@ -392,6 +391,7 @@ function displaySingle(entState)
 	let showHealth = entState.hitpoints;
 	let showResource = entState.resourceSupply;
 	let showCapture = entState.capturePoints;
+	let showAmmo = Engine.GetGUIObjectByName("ammoStats").hidden = true;
 
 	let healthSection = Engine.GetGUIObjectByName("healthSection");
 	let captureSection = Engine.GetGUIObjectByName("captureSection");
@@ -399,7 +399,17 @@ function displaySingle(entState)
 	let sectionPosTop = Engine.GetGUIObjectByName("sectionPosTop");
 	let sectionPosMiddle = Engine.GetGUIObjectByName("sectionPosMiddle");
 	let sectionPosBottom = Engine.GetGUIObjectByName("sectionPosBottom");
-
+	
+	// grapejuice
+	let	currentAmmo = 0;
+	let	maxAmmo = 0;
+	if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
+	{
+		currentAmmo = entState.attack["Ranged"].ammoLeft;
+		maxAmmo = entState.attack["Ranged"].ammoMax;
+		Engine.GetGUIObjectByName("ammoStats").hidden = false;		
+	} 
+	
 	// Hitpoints
 	healthSection.hidden = !showHealth;
 	if (showHealth)
@@ -412,6 +422,15 @@ function displaySingle(entState)
 			"hitpoints": Math.ceil(entState.hitpoints),
 			"maxHitpoints": Math.ceil(entState.maxHitpoints)
 		});
+		
+		// grapejuice
+		if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
+		{
+			Engine.GetGUIObjectByName("ammoStats").caption = sprintf(translate("%(currentAmmo)s / %(maxAmmo)s"), {
+				"currentAmmo": Math.ceil(currentAmmo),
+				"maxAmmo": Math.ceil(maxAmmo)
+			});
+		}
 
 		healthSection.size = sectionPosTop.size;
 		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;

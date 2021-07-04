@@ -194,7 +194,6 @@ Attack.prototype.Schema =
 // grapejuice
 Attack.prototype.Init = function()
 {
-	
 	this.ammo = 0;
 	this.refillTime = 3000;
 	this.refillAmount = 0;
@@ -241,7 +240,6 @@ Attack.prototype.AutoRefill = function()
 	{
 		this.ammo = this.ammo + this.refillAmount;
 		this.RefreshAmmoBar(this.entity);
-		warn("slinger reload");
 	}
 	
 };
@@ -255,7 +253,6 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp"))
 	{
 		this.StopTimer();
-		warn("this.entity = armyCamp");
 		return;
 	}
 
@@ -270,7 +267,6 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 		if (cmpAmmoGiver.ammo == 0)
 		{
 			this.StopTimer();
-			warn("armyCamp has no ammo");
 			return;
 		}
 		
@@ -284,7 +280,6 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 			this.RefreshAmmoBar(ammoGiver);
 			
 			this.StopTimer();
-			warn("Last Re-Arm");
 			return;
 		}
 		else 
@@ -295,7 +290,6 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 			this.RefreshAmmoBar(this.entity);
 			this.RefreshAmmoBar(ammoGiver);
 			
-			warn("ArmyCamp Re-Arm");
 			return;
 		} 
 	}
@@ -303,9 +297,6 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	// other buildings have infinite stock, simply reload the unit fully 
 	this.ammo = this.GetMaxAmmo();
 	this.RefreshAmmoBar(this.entity);
-
-	warn("Re-Arm");
-	
 }
 
 // grapejuice
@@ -338,7 +329,6 @@ Attack.prototype.CheckIsInAuraRange = function()
 		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
 		if (distance < 30)
 		{
-			warn("InsideAura30 = true");
 			return pop;
 		} 	
 	} 
@@ -349,11 +339,9 @@ Attack.prototype.CheckIsInAuraRange = function()
 		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
 		if (distance < 60)
 		{
-			warn("InsideAura60 = true");
 			return pop;
 		} 	
 	} 
-	warn("InsideAura = false");
 	return false;	
 };
 
@@ -362,7 +350,6 @@ Attack.prototype.ReArmAura = function()
 {
 	if (this.CheckIsInAuraRange() == false || this.ammo == this.GetMaxAmmo())
 	{
-		warn("Is in aura Range = " + this.CheckIsInAuraRange());
 		this.StopTimer();
 		return;
 	} 
@@ -574,7 +561,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
 	{
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true)
+		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false)
 			{
 				types.splice(rangeIndex, 1);
 			} 
@@ -814,7 +801,6 @@ Attack.prototype.PerformAttack = function(type, target)
 	// grapejuice
 	if (type == "Ranged")
 	{
-		this.ReArmAura();
 
 		if (!!this.template["Ranged"].Ammo) 
 		{
@@ -833,6 +819,7 @@ Attack.prototype.PerformAttack = function(type, target)
 				cmpUnitAI.RespondToTargetedEntities([target]);
 			}
 		}
+		this.ReArmAura();
 	}
 
 	if (this.template[type].Projectile)

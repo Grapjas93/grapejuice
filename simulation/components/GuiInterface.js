@@ -6,7 +6,6 @@ GuiInterface.prototype.SetStatusBars = function(player, cmd)
 	let affectedEnts = new Set();
 	for (let ent of cmd.entities)
 	{
-		warn(Helpers.HasDealtWithTech(player, "unlock_spies"));
 		// grapejuice, don't display statusbars for enemies, unless they have the spy tech
 		if (player == Helpers.GetOwner(ent) || Helpers.HasDealtWithTech(player, "unlock_spies"))
 		{			
@@ -275,6 +274,12 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 					ret.attack[type].elevationBonus = 0;
 					ret.attack[type].elevationAdaptedRange = ret.attack.maxRange;
 					continue;
+				}
+				// grapejuice
+				if (cmpAttack.GetMaxAmmo() != undefined)
+				{
+					ret.attack[type].ammoLeft = cmpAttack.ammo;
+					ret.attack[type].ammoMax = cmpAttack.GetMaxAmmo();
 				}
 
 				ret.attack[type].elevationBonus = range.elevationBonus;

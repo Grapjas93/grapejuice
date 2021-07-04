@@ -40,6 +40,60 @@ StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 
 };
 
+// grapejuice, slight alignment and size adjustments
+StatusBars.prototype.AddCaptureBar = function(cmpOverlayRenderer, yoffset)
+{
+	if (!this.enabled)
+		return 0;
+
+	let cmpCapturable = QueryMiragedInterface(this.entity, IID_Capturable);
+	if (!cmpCapturable)
+		return 0;
+
+	let cmpOwnership = QueryMiragedInterface(this.entity, IID_Ownership);
+	if (!cmpOwnership)
+		return 0;
+
+	let owner = cmpOwnership.GetOwner();
+	if (owner == INVALID_PLAYER)
+		return 0;
+
+	this.usedPlayerColors = true;
+	let capturePoints = cmpCapturable.GetCapturePoints();
+
+	// Size of health bar (in world-space units)
+	let width = +this.template.BarWidth;
+	let height = +this.template.BarHeight;
+
+	// World-space offset from the unit's position
+	let offset = { "x": 0, "y": +this.template.HeightOffset + 0.24, "z": 0 };
+
+	let setCaptureBarPart = function(playerID, startSize)
+	{
+		let c = QueryPlayerIDInterface(playerID).GetDisplayedColor();
+		let strColor = (c.r * 255) + " " + (c.g * 255) + " " + (c.b * 255) + " 255";
+		let size = width * capturePoints[playerID] / cmpCapturable.GetMaxCapturePoints();
+
+		cmpOverlayRenderer.AddSprite(
+			"art/textures/ui/session/icons/capture_bar.png",
+			{ "x": startSize, "y": yoffset },
+			{ "x": startSize + size, "y": 0.45 + yoffset },
+			offset,
+			strColor
+		);
+
+		return size + startSize;
+	};
+
+	// First handle the owner's points, to keep those points on the left for clarity
+	let size = setCaptureBarPart(owner, -width / 2);
+	for (let i in capturePoints)
+		if (i != owner && capturePoints[i] > 0)
+			size = setCaptureBarPart(i, size);
+
+	return height * 1.2;
+};
+
 // grapejuice wounded state icon
 StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
 {

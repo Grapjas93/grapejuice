@@ -33,8 +33,8 @@
     </Melee>
   </Attack>
   <Identity>
-    <GenericName>Champion Cavalry Javelineer Ammo</GenericName>
-    <VisibleClasses datatype="tokens">Ranged Javelineer</VisibleClasses>
+    <GenericName>Champion Cavalry Javelineer</GenericName>
+    <VisibleClasses datatype="tokens">Ranged Javelineer Ammo</VisibleClasses>
     <Formations datatype="tokens">
       special/formations/skirmish
     </Formations>
