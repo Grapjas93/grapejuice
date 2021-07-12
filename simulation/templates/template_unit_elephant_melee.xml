@@ -3,6 +3,7 @@
   <Attack>
     <Capture disable=""/>
     <Melee>
+	  <Energy>150</Energy>
       <AttackName>Trunk</AttackName>
       <Damage>
         <Pierce>120</Pierce>
@@ -17,7 +18,7 @@
   <Promotion disable="" />
   <Identity>
 	<Rank disable="" />
-    <VisibleClasses datatype="tokens">Melee</VisibleClasses>
+    <VisibleClasses datatype="tokens">Melee Charger</VisibleClasses>
   </Identity>
   <Sound>
     <SoundGroups>

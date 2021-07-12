@@ -40,7 +40,6 @@
 					<translatableAttribute id="tooltip">Health</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="healthStats" type="text" style="StatsTextRight" ghost="true"/>
-				<object size="0 0 100% 12" name="ammoStats" type="text" style="StatsTextLeft" ghost="true" hidden="false" />
 
 				<object size="1 14 100% 21" name="health" type="image" tooltip_style="sessionToolTip">
 					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
@@ -50,20 +49,64 @@
 				</object>
 			</object>
 
+			<!-- border section used by ammo, energy, capture sections -->
+			<object name="borderSection">
+				<object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
+					<object type="image" sprite="barBorder" name="barBorderFull" ghost="true"/>
+					<object type="image" sprite="barBorder" name="barBorderSplit1" size="0 0 48% 7" ghost="true"/>
+					<object type="image" sprite="barBorder" name="barBorderSplit2" size="122 0 50% 7" ghost="true"/>
+				</object>
+			</object>
+
+			<!-- Energy bar -->
+			<object name="energySection">
+				<object size="0 0 50% 12" name="energyLabel" type="text" style="StatsTextRight" ghost="true">
+					<translatableAttribute id="tooltip">Energy</translatableAttribute>
+				</object>
+				<object size="0 0 100% 12" name="energyStats" type="text" style="StatsTextRight" ghost="true"/>
+
+				<object size="124 14 50% 21" name="energy" type="image" tooltip_style="sessionToolTip">
+					<object type="image" sprite="energyBackground" ghost="true"/>
+					<object type="image" sprite="energyForeground" ghost="true" name="energyBar"/>
+				</object>
+			</object>
+
 			<!-- Capture bar -->
 			<object name="captureSection">
-				<object size="0 0 100% 12" name="captureLabel" type="text" style="StatsTextLeft" ghost="true">
+				<object size="0 0 50% 12" name="captureLabel" type="text" style="StatsTextLeft" ghost="true">
 					<translatableAttribute id="tooltip">Capture points</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="captureStats" type="text" style="StatsTextRight" ghost="true"/>
-				<object size="1 14 100% 21" name="capture" type="image" tooltip_style="sessionToolTip">
-					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
+				<object size="124 14 50% 21" name="capture" type="image" tooltip_style="sessionToolTip">
 					<repeat count="9">
 						<object type="image" sprite="playerColorBackground" ghost="true" name="captureBar[n]" hidden="true"/>
 					</repeat>
-					<object type="image" sprite="statsBarShaderHorizontal" ghost="true"/>
 				</object>
 			</object>
+
+			<!-- Ammo bar -->
+			<object name="ammoSection">
+				<object size="0 0 50% 12" name="ammoLabel" type="text" style="StatsTextLeft" ghost="true">
+					<translatableAttribute id="tooltip">Ammo</translatableAttribute>
+				</object>
+				<object size="0 0 50% 12" name="ammoStats" type="text" style="StatsTextLeft" ghost="true"/>
+
+				<object size="1 14 48% 21" name="ammo" type="image" tooltip_style="sessionToolTip">
+					<object type="image" sprite="barBorder" ghost="true" name="ammoBorder" size="0 0 100% 8"/>
+					<object type="image" sprite="ammoBackground" ghost="true"/>
+					<object type="image" sprite="ammoForeground" ghost="true" name="ammoBar"/>
+				</object>
+			</object>
+			
+			<!-- shader section used by ammo, energy, capture sections -->
+			<object name="shaderSection">
+				<object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
+					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderFull" ghost="true"/>
+					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit1" size="0 0 48% 7" ghost="true"/>
+					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit2" size="122 0 50% 7" ghost="true"/>
+				</object>
+			</object>
+			
 
 			<!-- Resource bar -->
 			<object name="resourceSection">

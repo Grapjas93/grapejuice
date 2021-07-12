@@ -8,12 +8,17 @@ Helpers.EntityMatchesClassList = function(entity, classes)
 
 Helpers.MatchEntitiesByClass = function(entities, classes)
 {
-	return entities.filter(ent => TriggerHelper.EntityMatchesClassList(ent, classes));
+	return entities.filter(ent => Helpers.EntityMatchesClassList(ent, classes));
 };
 
 Helpers.GetPlayerEntitiesByClass = function(playerID, classes)
 {
-	return TriggerHelper.MatchEntitiesByClass(TriggerHelper.GetEntitiesByPlayer(playerID), classes);
+	return Helpers.MatchEntitiesByClass(Helpers.GetEntitiesByPlayer(playerID), classes);
+};
+
+Helpers.GetEntitiesByPlayer = function(playerID)
+{
+	return Engine.QueryInterface(SYSTEM_ENTITY, IID_RangeManager).GetEntitiesByPlayer(playerID);
 };
 
 Helpers.GetEntityPosition2D = function(ent)
@@ -53,7 +58,7 @@ Helpers.SpawnUnits = function(source, template, count, owner)
 	}
 
 	if (owner == null)
-		owner = TriggerHelper.GetOwner(source);
+		owner = Helpers.GetOwner(source);
 
 	for (let i = 0; i < count; ++i)
 	{

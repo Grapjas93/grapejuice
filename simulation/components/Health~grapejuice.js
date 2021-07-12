@@ -1,4 +1,48 @@
 /**
+ * Called when an entity kills us.
+ * @param {number} attacker - The entityID of the killer.
+ * @param {number} attackerOwner - The playerID of the attacker.
+ */
+Health.prototype.KilledBy = function(attacker, attackerOwner)
+{
+	// grapejuice, stop chargetimers
+	let cmpAttack = Engine.QueryInterface(attacker, IID_Attack);
+	if(cmpAttack == null)
+	return; 
+	
+	cmpAttack.StopCanChargeTimer();
+	
+	// grapejuice, stop chargetimers
+	cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+	if(cmpAttack == null)
+	return; 
+
+	cmpAttack.StopCanChargeTimer();
+	
+	let cmpAttackerOwnership = Engine.QueryInterface(attacker, IID_Ownership);
+	if (cmpAttackerOwnership)
+	{
+		let currentAttackerOwner = cmpAttackerOwnership.GetOwner();
+		if (currentAttackerOwner != INVALID_PLAYER)
+			attackerOwner = currentAttackerOwner;
+	}
+
+	// Add to killer statistics.
+	let cmpKillerPlayerStatisticsTracker = QueryPlayerIDInterface(attackerOwner, IID_StatisticsTracker);
+	if (cmpKillerPlayerStatisticsTracker)
+		cmpKillerPlayerStatisticsTracker.KilledEntity(this.entity);
+
+	// Add to loser statistics.
+	let cmpTargetPlayerStatisticsTracker = QueryOwnerInterface(this.entity, IID_StatisticsTracker);
+	if (cmpTargetPlayerStatisticsTracker)
+		cmpTargetPlayerStatisticsTracker.LostEntity(this.entity);
+
+	let cmpLooter = Engine.QueryInterface(attacker, IID_Looter);
+	if (cmpLooter)
+		cmpLooter.Collect(this.entity);
+};
+
+/**
  * @param {number} amount - The amount of hitpoints to substract. Kills the entity if required.
  * @return {{ healthChange:number }} -  Number of health points lost.
  */
@@ -38,17 +82,24 @@ Health.prototype.Reduce = function(amount)
 	this.RegisterHealthChanged(oldHitpoints);
 
 	// Grapejuice modifiers, units below 1/3 of their max hp receive penalties
-	let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
-	let currentHp = cmpHealth.GetHitpoints();
-	let treshold = cmpHealth.GetMaxHitpoints() / 3; 
-	if( currentHp <= treshold ) {
-		var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-		cmpModifiersManager.AddModifiers("CriticallyWounded", {
-			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": 0.80 }],
-			"Attack/Melee/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
-			"Attack/Ranged/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
-		}, this.entity);
-		}
+	if (Helpers.EntityMatchesClassList(this.entity, "Siege Organic"))
+	{
+		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
+		let currentHp = cmpHealth.GetHitpoints();
+		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
+		if( currentHp <= treshold ) {
+			let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+			cmpAttack.energy = 0;
+			cmpAttack.wounded = true;
+			
+			var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+			cmpModifiersManager.AddModifiers("CriticallyWounded", {
+				"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": 0.80 }],
+				"Attack/Melee/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
+				"Attack/Ranged/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
+			}, this.entity);
+			}
+	}
 		return { "healthChange": this.hitpoints - oldHitpoints };
 };
 
@@ -79,12 +130,18 @@ Health.prototype.Increase = function(amount)
 	this.RegisterHealthChanged(old);
 
 	// Grapejuice modifiers, units above 1/3 of their max hp will get their penalties removed
-	let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
-	let currentHp = cmpHealth.GetHitpoints();
-	let treshold = cmpHealth.GetMaxHitpoints() / 3; 
-	if( currentHp > treshold ) {
-		var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-		cmpModifiersManager.RemoveAllModifiers("CriticallyWounded", this.entity);
+	if (Helpers.EntityMatchesClassList(this.entity, "Siege Organic"))
+	{
+		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
+		let currentHp = cmpHealth.GetHitpoints();
+		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
+		if( currentHp > treshold ) {
+			let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+			cmpAttack.wounded = false;
+			
+			var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+			cmpModifiersManager.RemoveAllModifiers("CriticallyWounded", this.entity);
+		}
 	}
 	return { "old": old, "new": this.hitpoints };
 

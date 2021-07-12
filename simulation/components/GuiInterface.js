@@ -1,6 +1,5 @@
 function GuiInterface() {}
 
-// grapejuice, this is the only modified function here
 GuiInterface.prototype.SetStatusBars = function(player, cmd)
 {
 	let affectedEnts = new Set();
@@ -267,6 +266,13 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 				let timers = cmpAttack.GetTimers(type);
 				ret.attack[type].prepareTime = timers.prepare;
 				ret.attack[type].repeatTime = timers.repeat;
+				
+				// grapejuice
+				if (cmpAttack.maxEnergy != undefined)
+				{
+					ret.attack[type].CurrentEnergy = cmpAttack.energy;
+					ret.attack[type].MaxEnergy = cmpAttack.maxEnergy;
+				}
 
 				if (type != "Ranged")
 				{
@@ -275,6 +281,7 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 					ret.attack[type].elevationAdaptedRange = ret.attack.maxRange;
 					continue;
 				}
+				
 				// grapejuice
 				if (cmpAttack.GetMaxAmmo() != undefined)
 				{

@@ -68,16 +68,95 @@ function blockDisplaySingle(entState)
 		Engine.GetGUIObjectByName("statusEffectsIcons").hidden = true;
 
 	let showHealth = entState.hitpoints;
-	let showResource = "";
+	let showEnergy = 0;
+	let showResource = entState.resourceSupply;
 	let showCapture = entState.capturePoints;
-	Engine.GetGUIObjectByName("ammoStats").hidden = true;
+	let showAmmo = 0;
+
+	// grapejuice, energy
+	let	CurrentEnergy = 0;
+	let	MaxEnergy = 0;
+	if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].MaxEnergy)
+	{
+		CurrentEnergy = entState.attack["Melee"].CurrentEnergy;
+		MaxEnergy = entState.attack["Melee"].MaxEnergy;
+		showEnergy = entState.attack["Melee"].MaxEnergy;	
+	}	
+	
+	// grapejuice, ammo
+	let	currentAmmo = 0;
+	let	maxAmmo = 0;
+	if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
+	{
+		currentAmmo = entState.attack["Ranged"].ammoLeft;
+		maxAmmo = entState.attack["Ranged"].ammoMax;
+		showAmmo = entState.attack["Ranged"].ammoMax;	
+	} 
+
+	let energySection = Engine.GetGUIObjectByName("energySection");
+	let borderSection = Engine.GetGUIObjectByName("borderSection");
+	let shaderSection = Engine.GetGUIObjectByName("shaderSection");
+	let ammoSection = Engine.GetGUIObjectByName("ammoSection");
 	let healthSection = Engine.GetGUIObjectByName("healthSection");
 	let captureSection = Engine.GetGUIObjectByName("captureSection");
 	let resourceSection = Engine.GetGUIObjectByName("resourceSection");
 	let sectionPosTop = Engine.GetGUIObjectByName("sectionPosTop");
 	let sectionPosMiddle = Engine.GetGUIObjectByName("sectionPosMiddle");
 	let sectionPosBottom = Engine.GetGUIObjectByName("sectionPosBottom");
+		
 
+	if (!showEnergy && !showAmmo && !showCapture)
+	{
+		borderSection.hidden = true;
+		shaderSection.hidden = true;
+	}
+	else if (showEnergy && showAmmo || showAmmo && showCapture)
+	{
+		borderSection.hidden = false;
+		shaderSection.hidden = false;
+
+		let barShaderFull = Engine.GetGUIObjectByName("barShaderFull");
+		barShaderFull.hidden = true;
+		let barShaderSplit1 = Engine.GetGUIObjectByName("barShaderSplit1");
+		barShaderSplit1.hidden = false;
+		let barShaderSplit2 = Engine.GetGUIObjectByName("barShaderSplit2");
+		barShaderSplit2.hidden = false;
+		
+		let barBorderFull = Engine.GetGUIObjectByName("barBorderFull");
+		barBorderFull.hidden = true;
+		let barBorderSplit1 = Engine.GetGUIObjectByName("barBorderSplit1");
+		barBorderSplit1.hidden = false;
+		let barBorderSplit2 = Engine.GetGUIObjectByName("barBorderSplit2");
+		barBorderSplit2.hidden = false;
+		
+	}
+	else
+	{
+		borderSection.hidden = false;
+		shaderSection.hidden = false;
+
+		let barShaderFull = Engine.GetGUIObjectByName("barShaderFull");
+		barShaderFull.hidden = false;
+		let barShaderSplit1 = Engine.GetGUIObjectByName("barShaderSplit1");
+		barShaderSplit1.hidden = true;
+		let barShaderSplit2 = Engine.GetGUIObjectByName("barShaderSplit2");
+		barShaderSplit2.hidden = true;
+
+		let barBorderFull = Engine.GetGUIObjectByName("barBorderFull");
+		barBorderFull.hidden = false;
+		let barBorderSplit1 = Engine.GetGUIObjectByName("barBorderSplit1");
+		barBorderSplit1.hidden = true;
+		let barBorderSplit2 = Engine.GetGUIObjectByName("barBorderSplit2");
+		barBorderSplit2.hidden = true;
+	}
+		borderSection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
+
+		shaderSection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;		
+	
 	// Hitpoints
 	healthSection.hidden = !showHealth;
 	if (showHealth)
@@ -90,7 +169,6 @@ function blockDisplaySingle(entState)
 			"hitpoints": "?",
 			"maxHitpoints": "?"
 		});
-
 		healthSection.size = sectionPosTop.size;
 		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
 		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
@@ -103,16 +181,77 @@ function blockDisplaySingle(entState)
 	else if (showCapture)
 		captureSection.size = sectionPosTop.size;
 
+
+	
+	// grapejuice, ammo
+	ammoSection.hidden = !showAmmo;
+	if (showAmmo)
+	{
+		let unitAmmoBar = Engine.GetGUIObjectByName("ammoBar");
+		let ammoSize = unitAmmoBar.size;	
+		
+		if (showEnergy || showCapture)
+		{
+			ammoSize.rright = 100;
+		}
+		else
+		{
+			ammoSize.rright = 210;
+		}
+		unitAmmoBar.size = ammoSize;
+		Engine.GetGUIObjectByName("ammoStats").caption = sprintf(translate("%(CurrentAmmo)s / %(MaxAmmo)s"), {
+			"CurrentAmmo": "?",
+			"MaxAmmo": "?"
+		});
+		ammoSection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
+	}
+
+	// grapejuice, energy
+	energySection.hidden = !showEnergy;
+	if (showEnergy)
+	{
+		let unitEnergyBar = Engine.GetGUIObjectByName("energyBar");
+		let energySize = unitEnergyBar.size;		
+		
+		if (showAmmo)
+		{
+			energySize.rright = 100;
+		}
+		else
+		{
+			energySize.rright = 196;
+		}
+		unitEnergyBar.size = energySize;
+		Engine.GetGUIObjectByName("energyStats").caption = sprintf(translate("%(CurrentEnergy)s / %(MaxEnergy)s"), {
+			"CurrentEnergy": "?",
+			"MaxEnergy": "?"
+		});
+		energySection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
+	}
+	
 	// CapturePoints
 	captureSection.hidden = !entState.capturePoints;
 	if (entState.capturePoints)
 	{
+		
 		let setCaptureBarPart = function(playerID, startSize) {
-			let unitCaptureBar = Engine.GetGUIObjectByName("captureBar[" + playerID + "]");
+			let unitCaptureBar = Engine.GetGUIObjectByName("captureBar[" + playerID + "]");		
 			let sizeObj = unitCaptureBar.size;
 			sizeObj.rleft = startSize;
 
-			let size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+			let size = 0;
+			if (showAmmo)
+			{
+				size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+			}
+			else
+			{
+				size = 196 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+			}
 			sizeObj.rright = startSize + size;
 			unitCaptureBar.size = sizeObj;
 			unitCaptureBar.sprite = "color:" + g_DiplomacyColors.getPlayerColor(playerID, 128);
@@ -389,26 +528,94 @@ function displaySingle(entState)
 		Engine.GetGUIObjectByName("statusEffectsIcons").hidden = true;
 
 	let showHealth = entState.hitpoints;
+	let showEnergy = 0;
 	let showResource = entState.resourceSupply;
 	let showCapture = entState.capturePoints;
-	let showAmmo = Engine.GetGUIObjectByName("ammoStats").hidden = true;
+	let showAmmo = 0;
 
-	let healthSection = Engine.GetGUIObjectByName("healthSection");
-	let captureSection = Engine.GetGUIObjectByName("captureSection");
-	let resourceSection = Engine.GetGUIObjectByName("resourceSection");
-	let sectionPosTop = Engine.GetGUIObjectByName("sectionPosTop");
-	let sectionPosMiddle = Engine.GetGUIObjectByName("sectionPosMiddle");
-	let sectionPosBottom = Engine.GetGUIObjectByName("sectionPosBottom");
+	// grapejuice, energy
+	let	CurrentEnergy = 0;
+	let	MaxEnergy = 0;
+	if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].MaxEnergy)
+	{
+		CurrentEnergy = entState.attack["Melee"].CurrentEnergy;
+		MaxEnergy = entState.attack["Melee"].MaxEnergy;
+		showEnergy = entState.attack["Melee"].MaxEnergy;	
+	}	
 	
-	// grapejuice
+	// grapejuice, ammo
 	let	currentAmmo = 0;
 	let	maxAmmo = 0;
 	if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
 	{
 		currentAmmo = entState.attack["Ranged"].ammoLeft;
 		maxAmmo = entState.attack["Ranged"].ammoMax;
-		Engine.GetGUIObjectByName("ammoStats").hidden = false;		
+		showAmmo = entState.attack["Ranged"].ammoMax;	
 	} 
+
+	let energySection = Engine.GetGUIObjectByName("energySection");
+	let borderSection = Engine.GetGUIObjectByName("borderSection");
+	let shaderSection = Engine.GetGUIObjectByName("shaderSection");
+	let ammoSection = Engine.GetGUIObjectByName("ammoSection");
+	let healthSection = Engine.GetGUIObjectByName("healthSection");
+	let captureSection = Engine.GetGUIObjectByName("captureSection");
+	let resourceSection = Engine.GetGUIObjectByName("resourceSection");
+	let sectionPosTop = Engine.GetGUIObjectByName("sectionPosTop");
+	let sectionPosMiddle = Engine.GetGUIObjectByName("sectionPosMiddle");
+	let sectionPosBottom = Engine.GetGUIObjectByName("sectionPosBottom");
+		
+
+	if (!showEnergy && !showAmmo && !showCapture)
+	{
+		borderSection.hidden = true;
+		shaderSection.hidden = true;
+	}
+	else if (showEnergy && showAmmo || showAmmo && showCapture)
+	{
+		borderSection.hidden = false;
+		shaderSection.hidden = false;
+
+		let barShaderFull = Engine.GetGUIObjectByName("barShaderFull");
+		barShaderFull.hidden = true;
+		let barShaderSplit1 = Engine.GetGUIObjectByName("barShaderSplit1");
+		barShaderSplit1.hidden = false;
+		let barShaderSplit2 = Engine.GetGUIObjectByName("barShaderSplit2");
+		barShaderSplit2.hidden = false;
+		
+		let barBorderFull = Engine.GetGUIObjectByName("barBorderFull");
+		barBorderFull.hidden = true;
+		let barBorderSplit1 = Engine.GetGUIObjectByName("barBorderSplit1");
+		barBorderSplit1.hidden = false;
+		let barBorderSplit2 = Engine.GetGUIObjectByName("barBorderSplit2");
+		barBorderSplit2.hidden = false;
+		
+	}
+	else
+	{
+		borderSection.hidden = false;
+		shaderSection.hidden = false;
+
+		let barShaderFull = Engine.GetGUIObjectByName("barShaderFull");
+		barShaderFull.hidden = false;
+		let barShaderSplit1 = Engine.GetGUIObjectByName("barShaderSplit1");
+		barShaderSplit1.hidden = true;
+		let barShaderSplit2 = Engine.GetGUIObjectByName("barShaderSplit2");
+		barShaderSplit2.hidden = true;
+
+		let barBorderFull = Engine.GetGUIObjectByName("barBorderFull");
+		barBorderFull.hidden = false;
+		let barBorderSplit1 = Engine.GetGUIObjectByName("barBorderSplit1");
+		barBorderSplit1.hidden = true;
+		let barBorderSplit2 = Engine.GetGUIObjectByName("barBorderSplit2");
+		barBorderSplit2.hidden = true;
+	}
+		borderSection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
+
+		shaderSection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;		
 	
 	// Hitpoints
 	healthSection.hidden = !showHealth;
@@ -422,16 +629,6 @@ function displaySingle(entState)
 			"hitpoints": Math.ceil(entState.hitpoints),
 			"maxHitpoints": Math.ceil(entState.maxHitpoints)
 		});
-		
-		// grapejuice
-		if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
-		{
-			Engine.GetGUIObjectByName("ammoStats").caption = sprintf(translate("%(currentAmmo)s / %(maxAmmo)s"), {
-				"currentAmmo": Math.ceil(currentAmmo),
-				"maxAmmo": Math.ceil(maxAmmo)
-			});
-		}
-
 		healthSection.size = sectionPosTop.size;
 		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
 		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
@@ -444,16 +641,77 @@ function displaySingle(entState)
 	else if (showCapture)
 		captureSection.size = sectionPosTop.size;
 
+
+	
+	// grapejuice, ammo
+	ammoSection.hidden = !showAmmo;
+	if (showAmmo)
+	{
+		let unitAmmoBar = Engine.GetGUIObjectByName("ammoBar");
+		let ammoSize = unitAmmoBar.size;	
+		
+		if (showEnergy || showCapture)
+		{
+			ammoSize.rright = 100 * Math.max(0, Math.min(1, entState.attack["Ranged"].ammoLeft / entState.attack["Ranged"].ammoMax));
+		}
+		else
+		{
+			ammoSize.rright = 210 * Math.max(0, Math.min(1, entState.attack["Ranged"].ammoLeft / entState.attack["Ranged"].ammoMax));
+		}
+		unitAmmoBar.size = ammoSize;
+		Engine.GetGUIObjectByName("ammoStats").caption = sprintf(translate("%(CurrentAmmo)s / %(MaxAmmo)s"), {
+			"CurrentAmmo": Math.ceil(entState.attack["Ranged"].ammoLeft),
+			"MaxAmmo": Math.ceil(entState.attack["Ranged"].ammoMax)
+		});
+		ammoSection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
+	}
+
+	// grapejuice, energy
+	energySection.hidden = !showEnergy;
+	if (showEnergy)
+	{
+		let unitEnergyBar = Engine.GetGUIObjectByName("energyBar");
+		let energySize = unitEnergyBar.size;		
+		
+		if (showAmmo)
+		{
+			energySize.rright = 100 * Math.max(0, Math.min(1, entState.attack["Melee"].CurrentEnergy / entState.attack["Melee"].MaxEnergy));
+		}
+		else
+		{
+			energySize.rright = 196 * Math.max(0, Math.min(1, entState.attack["Melee"].CurrentEnergy / entState.attack["Melee"].MaxEnergy));
+		}
+		unitEnergyBar.size = energySize;
+		Engine.GetGUIObjectByName("energyStats").caption = sprintf(translate("%(CurrentEnergy)s / %(MaxEnergy)s"), {
+			"CurrentEnergy": Math.ceil(entState.attack["Melee"].CurrentEnergy),
+			"MaxEnergy": Math.ceil(entState.attack["Melee"].MaxEnergy)
+		});
+		energySection.size = sectionPosBottom.size;
+		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
+		resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
+	}
+
 	// CapturePoints
 	captureSection.hidden = !entState.capturePoints;
 	if (entState.capturePoints)
 	{
+		
 		let setCaptureBarPart = function(playerID, startSize) {
-			let unitCaptureBar = Engine.GetGUIObjectByName("captureBar[" + playerID + "]");
+			let unitCaptureBar = Engine.GetGUIObjectByName("captureBar[" + playerID + "]");		
 			let sizeObj = unitCaptureBar.size;
 			sizeObj.rleft = startSize;
 
-			let size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+			let size = 0;
+			if (showAmmo)
+			{
+				size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+			}
+			else
+			{
+				size = 196 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+			}
 			sizeObj.rright = startSize + size;
 			unitCaptureBar.size = sizeObj;
 			unitCaptureBar.sprite = "color:" + g_DiplomacyColors.getPlayerColor(playerID, 128);

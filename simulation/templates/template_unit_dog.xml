@@ -15,6 +15,7 @@
    </Resistance>
   <Attack>
     <Melee>
+	  <Energy>200</Energy>
       <AttackName>Fangs</AttackName>
       <Damage>
         <Pierce>15</Pierce>
@@ -43,7 +44,7 @@
     <GenericName>War Dog</GenericName>
     <Tooltip>Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
     <Classes datatype="tokens">Human FastMoving</Classes>
-    <VisibleClasses datatype="tokens">Dog Melee</VisibleClasses>
+    <VisibleClasses datatype="tokens">Dog Melee Charger</VisibleClasses>
   </Identity>
   <Loot>
     <xp>100</xp>

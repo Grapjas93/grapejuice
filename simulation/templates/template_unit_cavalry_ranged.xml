@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_cavalry">
+  <Attack>
+    <Melee>
+	  <Energy>150</Energy>
+    </Melee>
+  </Attack>
   <Health>
     <Max>100</Max>
   </Health>
   <Identity>
-    <VisibleClasses datatype="tokens">Ranged Ammo</VisibleClasses>
+    <VisibleClasses datatype="tokens">Ranged Ammo Charger</VisibleClasses>
     <GenericName>Ranged Cavalry</GenericName>
     <Formations datatype="tokens">
       special/formations/skirmish
