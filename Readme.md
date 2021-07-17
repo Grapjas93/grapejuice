@@ -29,3 +29,5 @@ The unit will swap to melee if
 **Healers.** They now provide healing in any structure they are garrisoned in. 
 
 **Spy tech rework.** All enemy unit and structure info is now hidden and cannot be inspected when clicked / hovered. When you buy the Espionage tech this information becomes available to you, showing you information like health and ammo when clicked or hovered.
+
+**Charge attacks.** Units have energy and will use it to charge an enemy. Energy is consumed at a rate while charging the target. The first attack deals bonus damage but consumes all energy. Rams max energy / regeneration rate / bonus damage, is based on how many people are garrisoned inside.
