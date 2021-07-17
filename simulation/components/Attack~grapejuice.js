@@ -1,28 +1,5 @@
-function Attack() {}
 
-var g_AttackTypes = ["Melee", "Ranged", "Capture"];
-
-Attack.prototype.preferredClassesSchema =
-	"<optional>" +
-		"<element name='PreferredClasses' a:help='Space delimited list of classes preferred for attacking. If an entity has any of theses classes, it is preferred. The classes are in decending order of preference'>" +
-			"<attribute name='datatype'>" +
-				"<value>tokens</value>" +
-			"</attribute>" +
-			"<text/>" +
-		"</element>" +
-	"</optional>";
-
-Attack.prototype.restrictedClassesSchema =
-	"<optional>" +
-		"<element name='RestrictedClasses' a:help='Space delimited list of classes that cannot be attacked by this entity. If target entity has any of these classes, it cannot be attacked'>" +
-			"<attribute name='datatype'>" +
-				"<value>tokens</value>" +
-			"</attribute>" +
-			"<text/>" +
-		"</element>" +
-	"</optional>";
-
-// grapejuice, added <Ammo>, <RefillTime>, <RefillAmount>
+// grapejuice, added <Ammo>, <RefillTime>, <RefillAmount> <Energy>
 Attack.prototype.Schema =
 	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
 	"<a:example>" +
@@ -198,7 +175,7 @@ Attack.prototype.Init = function()
 	this.chargeCooldown = 0;
 	this.maxEnergy = undefined;
 	this.energy = undefined;
-	
+
 	// changed by the health component
 	this.wounded = false;
 
@@ -207,13 +184,22 @@ Attack.prototype.Init = function()
 	this.RechargeEnergyTimer = undefined;
 	
 	this.ammo = 0;
+	this.maxAmmo = 0;
 	this.refillTime = 3000;
 	this.refillAmount = 0;
 	this.ammoReffilTimer = undefined;
+	
 	if (!!this.template["Ranged"] && !!this.template["Ranged"].Ammo)
+	{
 		this.ammo = +this.template["Ranged"].Ammo;
-	if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillAmount)
-		this.refillAmount = +this.template["Ranged"].RefillAmount;
+		this.maxAmmo = +this.template["Ranged"].Ammo;
+	}
+	
+	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
+	{
+		this.ammo = +this.template["Melee"].Ammo;
+		this.maxAmmo = +this.template["Melee"].Ammo;
+	}
 		
 	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
 	{		
@@ -250,7 +236,7 @@ Attack.prototype.CanCharge = function(target)
 	
 	// if the unit is wounded it cant charge
 	if (this.wounded)
-		return;
+		return false;
 
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
 		return false;
@@ -258,6 +244,19 @@ Attack.prototype.CanCharge = function(target)
 	warn("CHARRGGEE!!");
 	return true;
 	
+};
+
+// grapejuice, stops the timer which checks every 500ms if we can Charge() our target
+Attack.prototype.StopCanChargeTimer = function()
+{
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+	cmpTimer.CancelTimer(this.canChargeTimer);
+	
+	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
+	
+	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+	cmpUnitAI.ResetSpeedMultiplier();
 };
 
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
@@ -274,6 +273,10 @@ Attack.prototype.Charge = function(target)
 	{
 		cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
 		cmpUnitAI.ResetSpeedMultiplier();
+		
+		// workaround fix for sprinting attacking soldiers in formation
+		if (cmpUnitAI.IsFormationMember())
+		cmpUnitAI.SetSpeedMultiplier(0.5); 
 
 		return;
 	}
@@ -282,7 +285,7 @@ Attack.prototype.Charge = function(target)
 	{
 		if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
 		{
-			this.energy = this.energy - 10;
+			this.energy = this.energy - 5;
 			this.RefreshStatusbars(this.entity);
 			return;
 		}
@@ -293,7 +296,7 @@ Attack.prototype.Charge = function(target)
 			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
 			let multiplier = 1 + cmpGarrisonHolder.OccupiedSlots() / 10;
 			
-			this.energy = this.energy - 10;
+			this.energy = this.energy - 5;
 			cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
 			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
@@ -304,32 +307,23 @@ Attack.prototype.Charge = function(target)
 			return;		
 		}
 
-		this.energy = this.energy - 10;
+		this.energy = this.energy - 5;
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
 		"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
 		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
 		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
 		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
-		
+				
 		cmpUnitAI.SetSpeedMultiplier(cmpUnitAI.GetRunMultiplier());
+		
+		// workaround fix for sprinting attacking soldiers in formation
+		if (cmpUnitAI.IsFormationMember())
+		cmpUnitAI.SetSpeedMultiplier(1); 
 		
 		return;
 	}
 	
-};
-
-// grapejuice, stops the timer which checks every 500ms if we can Charge() our target
-Attack.prototype.StopCanChargeTimer = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	cmpTimer.CancelTimer(this.canChargeTimer);
-	
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
-	
-	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	cmpUnitAI.ResetSpeedMultiplier();
 };
 
 // grapejuice, called by UnitAI~grapejuice.
@@ -350,6 +344,18 @@ Attack.prototype.CanRechargeEnergy = function()
 	
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 	this.CanRechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 1000, {});
+};
+
+// grapejuice, called by UnitAI~grapejuice, any unit order that is not "Stop" will stop the recharge timer
+Attack.prototype.StopRechargingEnergy = function()
+{
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+	
+	cmpTimer.CancelTimer(this.RechargeEnergyTimer);
+	cmpTimer.CancelTimer(this.CanRechargeEnergyTimer);
+	
+	this.RechargeEnergyTimer = undefined;
+	this.CanRechargeEnergyTimer = undefined;
 };
 
 // grapejuice, called by CanRechargeEnergy()
@@ -403,18 +409,6 @@ Attack.prototype.RechargeEnergy = function()
 
 };
 
-// grapejuice, called by UnitAI~grapejuice, any unit order that is not "Stop" will stop the recharge timer
-Attack.prototype.StopRechargingEnergy = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	
-	cmpTimer.CancelTimer(this.RechargeEnergyTimer);
-	cmpTimer.CancelTimer(this.CanRechargeEnergyTimer);
-	
-	this.RechargeEnergyTimer = undefined;
-	this.CanRechargeEnergyTimer = undefined;
-};
-
 // grapejuice
 Attack.prototype.StopReArming = function()
 {
@@ -434,7 +428,7 @@ Attack.prototype.RefreshStatusbars = function(ent)
 // grapejuice, called by Init. Used by units that regain ammo slowly anywhere
 Attack.prototype.AutoRefill = function()
 {
-	if (this.ammo != this.GetMaxAmmo())
+	if (this.ammo != this.maxAmmo)
 	{
 		this.ammo = this.ammo + this.refillAmount;
 		this.RefreshStatusbars(this.entity);
@@ -446,29 +440,28 @@ Attack.prototype.AutoRefill = function()
 Attack.prototype.SetAmmo = function(ammoGiver)
 {
 	let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
+	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);	
 	
-	// if the entity is the armyCamp, don't reload and stop the timer
-	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp"))
+	// if the entity is the ammoGiver, don't reload and stop the timer
+	if (ammoGiver == this.entity)
 	{
 		this.StopReArming();
 		return;
 	}
-
-	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);	
 			
-	// if the entity reloads from armycamp, draw ammo from armyCamp ammo pool
-	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp"))
+	// if the entity reloads from ammoGiver, draw ammo from ammoGiver ammo pool
+	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
 	{
-		let ammoNeeded = this.GetMaxAmmo() - this.ammo;
+		let ammoNeeded = this.maxAmmo - this.ammo;
 		
-		// if the armyCamp has no ammo, stop timer
+		// if the ammoGiver has no ammo, stop timer
 		if (cmpAmmoGiver.ammo == 0)
 		{
 			this.StopReArming();
 			return;
 		}
 		
-		// if the armycamp can't do a full reload for the unit, give all remaining ammo to unit
+		// if the ammoGiver can't do a full reload for the unit, give all remaining ammo to unit
 		if (cmpAmmoGiver.ammo < ammoNeeded)
 		{
 			this.ammo = this.ammo + cmpAmmoGiver.ammo;
@@ -483,7 +476,7 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 		else 
 		{
 			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
-			this.ammo = this.GetMaxAmmo();
+			this.ammo = this.maxAmmo;
 			
 			this.RefreshStatusbars(this.entity);
 			this.RefreshStatusbars(ammoGiver);
@@ -493,30 +486,17 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	}
 	
 	// other buildings have infinite stock, simply reload the unit fully 
-	this.ammo = this.GetMaxAmmo();
+	warn("beforemaxAmmo = " + this.ammo);
+	this.ammo = this.maxAmmo;
+	warn("maxAmmo = " + this.ammo);
 	this.RefreshStatusbars(this.entity);
 }
 
-// grapejuice, called by GetBestAttackAgainst() and PerformAttack()
-Attack.prototype.CheckTargetIsInMeleeRange = function(target)
-{
-	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
-	
-	if (!cmpVision)
-		return false;
-
-	let range = cmpVision.GetRange() / 6.5;
-	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
-	let result = distance < range;
-
-	return distance < range;
-};
-
-// grapejuice, called by ReArmAura()
+// grapejuice, called by ReArmAura() and the Auras component
 Attack.prototype.CheckIsInAuraRange = function()
 {
 	let entityOwner = Helpers.GetOwner(this.entity);	
-	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal");
+	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal Supply");
 	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Fortress ArmyCamp Colony");
 	let length = range30.length;
 	
@@ -545,7 +525,7 @@ Attack.prototype.CheckIsInAuraRange = function()
 // grapejuice, called by PerformAttack()
 Attack.prototype.ReArmAura = function()
 {
-	if (this.CheckIsInAuraRange() == false || this.ammo == this.GetMaxAmmo())
+	if (this.CheckIsInAuraRange() == false || this.ammo == this.maxAmmo)
 	{
 		this.StopReArming();
 		return;
@@ -560,13 +540,20 @@ Attack.prototype.ReArmAura = function()
 	}
 }
 
-// grapejuice
-Attack.prototype.GetMaxAmmo = function()
+// grapejuice, called by GetBestAttackAgainst() and PerformAttack()
+Attack.prototype.CheckTargetIsInMeleeRange = function(target)
 {
-	if (!this.template["Ranged"] || !this.template["Ranged"].Ammo)
-		return 0;
-	return this.template["Ranged"].Ammo;
-}
+	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
+	
+	if (!cmpVision)
+		return false;
+
+	let range = cmpVision.GetRange() / 6.5;
+	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
+	let result = distance < range;
+
+	return distance < range;
+};
 
 /**
  * Attack the target entity. This should only be called after a successful range check,
@@ -615,10 +602,9 @@ Attack.prototype.PerformAttack = function(type, target)
 			else 
 			{
 				let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-				if(cmpUnitAI == null)
-				{
+				if(!cmpUnitAI)
 					return;
-				}
+
 				cmpUnitAI.RespondToTargetedEntities([target]);
 			}
 		}
@@ -626,7 +612,7 @@ Attack.prototype.PerformAttack = function(type, target)
 	}
 	
 	// grapejuice
-	if (type == "Melee")
+	if (type == "Melee" && this.maxEnergy != undefined)
 	{	
 		this.energy = 0;
 		this.StopCanChargeTimer();
@@ -796,7 +782,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	this.StopCanChargeTimer();
 	
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 500, target);
+	this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
 
 	return types.sort((a, b) =>
 		(types.indexOf(a) + (isPreferred(a) ? types.length : 0)) -
@@ -841,365 +827,6 @@ Attack.prototype.GetPreference = function(target)
 		}
 	}
 	return minPref;
-};
-
-Attack.prototype.GetAttackTypes = function(wantedTypes)
-{
-	let types = g_AttackTypes.filter(type => !!this.template[type]);
-	if (!wantedTypes)
-		return types;
-
-	let wantedTypesReal = wantedTypes.filter(wtype => wtype.indexOf("!") != 0);
-	return types.filter(type => wantedTypes.indexOf("!" + type) == -1 &&
-	      (!wantedTypesReal || !wantedTypesReal.length || wantedTypesReal.indexOf(type) != -1));
-};
-
-Attack.prototype.GetPreferredClasses = function(type)
-{
-	if (this.template[type] && this.template[type].PreferredClasses &&
-	    this.template[type].PreferredClasses._string)
-		return this.template[type].PreferredClasses._string.split(/\s+/);
-
-	return [];
-};
-
-Attack.prototype.GetRestrictedClasses = function(type)
-{
-	if (this.template[type] && this.template[type].RestrictedClasses &&
-	    this.template[type].RestrictedClasses._string)
-		return this.template[type].RestrictedClasses._string.split(/\s+/);
-
-	return [];
-};
-
-Attack.prototype.CanAttack = function(target, wantedTypes)
-{
-	let cmpFormation = Engine.QueryInterface(target, IID_Formation);
-	if (cmpFormation)
-		return true;
-
-	let cmpThisPosition = Engine.QueryInterface(this.entity, IID_Position);
-	let cmpTargetPosition = Engine.QueryInterface(target, IID_Position);
-	if (!cmpThisPosition || !cmpTargetPosition || !cmpThisPosition.IsInWorld() || !cmpTargetPosition.IsInWorld())
-		return false;
-
-	let cmpIdentity = QueryMiragedInterface(target, IID_Identity);
-	if (!cmpIdentity)
-		return false;
-
-	let cmpHealth = QueryMiragedInterface(target, IID_Health);
-	let targetClasses = cmpIdentity.GetClassesList();
-	if (targetClasses.indexOf("Domestic") != -1 && this.template.Slaughter && cmpHealth && cmpHealth.GetHitpoints() &&
-	   (!wantedTypes || !wantedTypes.filter(wType => wType.indexOf("!") != 0).length || wantedTypes.indexOf("Slaughter") != -1))
-		return true;
-
-	let cmpEntityPlayer = QueryOwnerInterface(this.entity);
-	let cmpTargetPlayer = QueryOwnerInterface(target);
-	if (!cmpTargetPlayer || !cmpEntityPlayer)
-		return false;
-
-	let types = this.GetAttackTypes(wantedTypes);
-	let entityOwner = cmpEntityPlayer.GetPlayerID();
-	let targetOwner = cmpTargetPlayer.GetPlayerID();
-	let cmpCapturable = QueryMiragedInterface(target, IID_Capturable);
-
-	// Check if the relative height difference is larger than the attack range
-	// If the relative height is bigger, it means they will never be able to
-	// reach each other, no matter how close they come.
-	let heightDiff = Math.abs(cmpThisPosition.GetHeightOffset() - cmpTargetPosition.GetHeightOffset());
-
-	for (let type of types)
-	{
-		if (type != "Capture" && (!cmpEntityPlayer.IsEnemy(targetOwner) || !cmpHealth || !cmpHealth.GetHitpoints()))
-			continue;
-
-		if (type == "Capture" && (!cmpCapturable || !cmpCapturable.CanCapture(entityOwner)))
-			continue;
-
-		if (heightDiff > this.GetRange(type).max)
-			continue;
-
-		let restrictedClasses = this.GetRestrictedClasses(type);
-		if (!restrictedClasses.length)
-			return true;
-
-		if (!MatchesClassList(targetClasses, restrictedClasses))
-			return true;
-	}
-
-	return false;
-};
-
-/**
- * Get the full range of attack using all available attack types.
- */
-Attack.prototype.GetFullAttackRange = function()
-{
-	let ret = { "min": Infinity, "max": 0 };
-	for (let type of this.GetAttackTypes())
-	{
-		let range = this.GetRange(type);
-		ret.min = Math.min(ret.min, range.min);
-		ret.max = Math.max(ret.max, range.max);
-	}
-	return ret;
-};
-
-Attack.prototype.GetAttackEffectsData = function(type, splash)
-{
-	let template = this.template[type];
-	if (splash)
-		template = template.Splash;
-	return AttackHelper.GetAttackEffectsData("Attack/" + type + (splash ? "/Splash" : ""), template, this.entity);
-};
-
-Attack.prototype.GetAttackName = function(type)
-{
-	return {
-		"name": this.template[type].AttackName._string || this.template[type].AttackName,
-		"context": this.template[type].AttackName["@context"]
-	};
-};
-
-Attack.prototype.GetRepeatTime = function(type)
-{
-	let repeatTime = 1000;
-
-	if (this.template[type] && this.template[type].RepeatTime)
-		repeatTime = +this.template[type].RepeatTime;
-
-	return ApplyValueModificationsToEntity("Attack/" + type + "/RepeatTime", repeatTime, this.entity);
-};
-
-Attack.prototype.GetTimers = function(type)
-{
-	return {
-		"prepare": ApplyValueModificationsToEntity("Attack/" + type + "/PrepareTime", +(this.template[type].PrepareTime || 0), this.entity),
-		"repeat": this.GetRepeatTime(type)
-	};
-};
-
-Attack.prototype.GetSplashData = function(type)
-{
-	if (!this.template[type].Splash)
-		return undefined;
-
-	return {
-		"attackData": this.GetAttackEffectsData(type, true),
-		"friendlyFire": this.template[type].Splash.FriendlyFire == "true",
-		"radius": ApplyValueModificationsToEntity("Attack/" + type + "/Splash/Range", +this.template[type].Splash.Range, this.entity),
-		"shape": this.template[type].Splash.Shape,
-	};
-};
-
-Attack.prototype.GetRange = function(type)
-{
-	if (!type)
-		return this.GetFullAttackRange();
-
-	let max = +this.template[type].MaxRange;
-	max = ApplyValueModificationsToEntity("Attack/" + type + "/MaxRange", max, this.entity);
-
-	let min = +(this.template[type].MinRange || 0);
-	min = ApplyValueModificationsToEntity("Attack/" + type + "/MinRange", min, this.entity);
-
-	let elevationBonus = +(this.template[type].ElevationBonus || 0);
-	elevationBonus = ApplyValueModificationsToEntity("Attack/" + type + "/ElevationBonus", elevationBonus, this.entity);
-
-	return { "max": max, "min": min, "elevationBonus": elevationBonus };
-};
-
-/**
- * @param {number} target - The target to attack.
- * @param {string} type - The type of attack to use.
- * @param {number} callerIID - The IID to notify on specific events.
- *
- * @return {boolean} - Whether we started attacking.
- */
-Attack.prototype.StartAttacking = function(target, type, callerIID)
-{
-	if (this.target)
-		this.StopAttacking();
-
-	if (!this.CanAttack(target, [type]))
-		return false;
-
-	let cmpResistance = Engine.QueryInterface(target, IID_Resistance);
-	if (!cmpResistance || !cmpResistance.AddAttacker(this.entity))
-		return false;
-
-	let timings = this.GetTimers(type);
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-
-	// If the repeat time since the last attack hasn't elapsed,
-	// delay the action to avoid attacking too fast.
-	let prepare = timings.prepare;
-	if (this.lastAttacked)
-	{
-		let repeatLeft = this.lastAttacked + timings.repeat - cmpTimer.GetTime();
-		prepare = Math.max(prepare, repeatLeft);
-	}
-
-	let cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
-	if (cmpVisual)
-	{
-		cmpVisual.SelectAnimation("attack_" + type.toLowerCase(), false, 1.0);
-		cmpVisual.SetAnimationSyncRepeat(timings.repeat);
-		cmpVisual.SetAnimationSyncOffset(prepare);
-	}
-
-	// If using a non-default prepare time, re-sync the animation when the timer runs.
-	this.resyncAnimation = prepare != timings.prepare;
-	this.target = target;
-	this.callerIID = callerIID;
-	this.timer = cmpTimer.SetInterval(this.entity, IID_Attack, "Attack", prepare, timings.repeat, type);
-
-	return true;
-};
-
-/**
- * @param {string} reason - The reason why we stopped attacking.
- */
-Attack.prototype.StopAttacking = function(reason)
-{
-	warn("stopattacking");
-	this.StopCanChargeTimer();
-	if (!this.target)
-		return;
-
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	cmpTimer.CancelTimer(this.timer);
-	delete this.timer;
-
-	let cmpResistance = Engine.QueryInterface(this.target, IID_Resistance);
-	if (cmpResistance)
-		cmpResistance.RemoveAttacker(this.entity);
-
-	delete this.target;
-
-	let cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
-	if (cmpVisual)
-		cmpVisual.SelectAnimation("idle", false, 1.0);
-
-	// The callerIID component may start again,
-	// replacing the callerIID, hence save that.
-	let callerIID = this.callerIID;
-	delete this.callerIID;
-
-	if (reason && callerIID)
-	{
-		let component = Engine.QueryInterface(this.entity, callerIID);
-		if (component)
-			component.ProcessMessage(reason, null);
-	}
-};
-
-/**
- * Attack our target entity.
- * @param {string} data - The attack type to use.
- * @param {number} lateness - The offset of the actual call and when it was expected.
- */
-Attack.prototype.Attack = function(type, lateness)
-{
-	if (!this.CanAttack(this.target, [type]))
-	{
-		this.StopAttacking("TargetInvalidated");
-		return;
-	}
-
-	// ToDo: Enable entities to keep facing a target.
-	Engine.QueryInterface(this.entity, IID_UnitAI)?.FaceTowardsTarget(this.target);
-
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.lastAttacked = cmpTimer.GetTime() - lateness;
-
-	// BuildingAI has its own attack routine.
-	if (!Engine.QueryInterface(this.entity, IID_BuildingAI))
-		this.PerformAttack(type, this.target);
-
-	if (!this.target)
-		return;
-
-	// We check the range after the attack to facilitate chasing.
-	if (!this.IsTargetInRange(this.target, type))
-	{
-		this.StopAttacking("OutOfRange");
-		return;
-	}
-
-	if (this.resyncAnimation)
-	{
-		let cmpVisual = Engine.QueryInterface(this.entity, IID_Visual);
-		if (cmpVisual)
-		{
-			let repeat = this.GetTimers(type).repeat;
-			cmpVisual.SetAnimationSyncRepeat(repeat);
-			cmpVisual.SetAnimationSyncOffset(repeat);
-		}
-		delete this.resyncAnimation;
-	}
-};
-
-/**
- * @param {number} - The entity ID of the target to check.
- * @return {boolean} - Whether this entity is in range of its target.
- */
-Attack.prototype.IsTargetInRange = function(target, type)
-{
-	let range = this.GetRange(type);
-	if (type == "Ranged")
-	{
-		let cmpPositionTarget = Engine.QueryInterface(target, IID_Position);
-		if (!cmpPositionTarget || !cmpPositionTarget.IsInWorld())
-			return false;
-
-		let cmpPositionSelf = Engine.QueryInterface(this.entity, IID_Position);
-		if (!cmpPositionSelf || !cmpPositionSelf.IsInWorld())
-			return false;
-
-		let positionSelf = cmpPositionSelf.GetPosition();
-		let positionTarget = cmpPositionTarget.GetPosition();
-
-		let heightDifference = positionSelf.y + range.elevationBonus - positionTarget.y;
-		range.max = Math.sqrt(Math.square(range.max) + 2 * range.max * heightDifference);
-
-		if (range.max < 0)
-			return false;
-	}
-	let cmpObstructionManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ObstructionManager);
-	return cmpObstructionManager.IsInTargetRange(this.entity, target, range.min, range.max, false);
-};
-
-Attack.prototype.OnValueModification = function(msg)
-{
-	if (msg.component != "Attack")
-		return;
-
-	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	if (!cmpUnitAI)
-		return;
-
-	if (this.GetAttackTypes().some(type =>
-	      msg.valueNames.indexOf("Attack/" + type + "/MaxRange") != -1))
-		cmpUnitAI.UpdateRangeQueries();
-};
-
-Attack.prototype.GetRangeOverlays = function(type = "Ranged")
-{
-	if (!this.template[type] || !this.template[type].RangeOverlay)
-		return [];
-
-	let range = this.GetRange(type);
-	let rangeOverlays = [];
-	for (let i in range)
-		if ((i == "min" || i == "max") && range[i])
-			rangeOverlays.push({
-				"radius": range[i],
-				"texture": this.template[type].RangeOverlay.LineTexture,
-				"textureMask": this.template[type].RangeOverlay.LineTextureMask,
-				"thickness": +this.template[type].RangeOverlay.LineThickness,
-			});
-	return rangeOverlays;
 };
 
 Engine.ReRegisterComponentType(IID_Attack, "Attack", Attack);

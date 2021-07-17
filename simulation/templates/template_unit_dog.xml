@@ -15,7 +15,7 @@
    </Resistance>
   <Attack>
     <Melee>
-	  <Energy>200</Energy>
+	<Energy>200</Energy>
       <AttackName>Fangs</AttackName>
       <Damage>
         <Pierce>15</Pierce>

@@ -30,10 +30,13 @@ UnitAI.prototype.SetNextState = function(state)
 	warn(state);
 	this.UnitFsm.SetNextState(this, state);
 	
+	let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+	if (!cmpAttack)
+	return; 
+	
 	if (this.IsFormationController() == false)
 	{
-		let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
-		if (state == "IDLE" || state == "FORMATIONMEMBER.IDLE")
+		if (state == "IDLE" || state == "FORMATIONMEMBER.IDLE" || state == "ROAMING" || state == "LINGERING")
 		{
 			warn("IDLE")
 			cmpAttack.CanRechargeEnergy();		

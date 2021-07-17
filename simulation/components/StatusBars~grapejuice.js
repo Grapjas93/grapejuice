@@ -34,16 +34,12 @@ StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 	
 	if(Helpers.EntityMatchesClassList(this.entity, "Charger"))
 	{
-		
-		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
-		let currentHp = cmpHealth.GetHitpoints();
-		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
-		if( currentHp <= treshold  || cmpAttack.chargeCooldown != 0) 
+		if(cmpAttack.wounded == true  || cmpAttack.chargeCooldown != 0) 
 		{
 			return this.AddBar(cmpOverlayRenderer, yoffset, "energy", 0 / cmpAttack.maxEnergy, 2/3);	
 		}
 			
-			return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpAttack.energy / cmpAttack.maxEnergy, 2/3);	
+		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpAttack.energy / cmpAttack.maxEnergy, 2/3);	
 	}
 
 };
@@ -51,7 +47,6 @@ StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 // Grapejuice ammoBar
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
-	let cmpHelpers = QueryMiragedInterface(this.entity, IID_Helpers);
 	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege ArmyCamp"))
 	{
 		let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
@@ -59,10 +54,10 @@ StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 			return 0;
 		if (!this.enabled)
 			return 0;
-		if(cmpAttack.GetMaxAmmo() == "0")
+		if(cmpAttack.maxAmmo == "0")
 			return 0;
-		if (cmpAttack.GetMaxAmmo() > "0"){
-			return this.AddBar(cmpOverlayRenderer, yoffset, "ammo", cmpAttack.ammo / cmpAttack.GetMaxAmmo(), 2/3);
+		if (cmpAttack.maxAmmo > "0"){
+			return this.AddBar(cmpOverlayRenderer, yoffset, "ammo", cmpAttack.ammo / cmpAttack.maxAmmo, 2/3);
 		}
 	}
 

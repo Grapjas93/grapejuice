@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_ammo_cart">
+   <Attack>
+       <Melee>
+      <AttackName>Spear</AttackName>
+	   <PrepareTime> 925 </PrepareTime>
+	   <RepeatTime> 1075 </RepeatTime>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>4.5</Pierce>
+      </Damage>
+      <MaxRange>4</MaxRange>
+       </Melee>  
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 8.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Footprint replace="">
+    <Square width="3" depth="6"/>
+    <Height>4</Height>
+  </Footprint>
+  <Identity>
+    <Civ>brit</Civ>
+  </Identity>
+  <VisualActor>
+    <Actor>units/britons/ammo_cart.xml</Actor>
+  </VisualActor>
+</Entity>

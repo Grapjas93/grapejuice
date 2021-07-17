@@ -40,6 +40,12 @@
             </Damage>
          </Entity>
    </Resistance>
+  <Cost>
+    <Resources>
+      <wood>50</wood>
+      <metal>10</metal>
+    </Resources>
+  </Cost>
    <Builder>
     <Entities datatype="tokens">
       structures/rome/army_camp

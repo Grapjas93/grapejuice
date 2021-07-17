@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_ammo_cart">
+   <Attack>
+       <Melee>
+      <AttackName>Pike</AttackName>
+	   <PrepareTime> 1175 </PrepareTime>
+	   <RepeatTime> 1325 </RepeatTime>
+      <Damage>
+        <Hack>2</Hack>
+        <Pierce>3</Pierce>
+      </Damage>
+      <MaxRange>8</MaxRange>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+     </Melee>  
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Footprint replace="">
+    <Square width="5" depth="10"/>
+    <Height>4</Height>
+  </Footprint>
+  <Identity>
+    <Civ>mace</Civ>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
+  </Identity>
+  <VisualActor>
+    <Actor>units/macedonians/ammo_cart.xml</Actor>
+  </VisualActor>
+</Entity>

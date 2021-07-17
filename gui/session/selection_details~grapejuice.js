@@ -552,6 +552,12 @@ function displaySingle(entState)
 		maxAmmo = entState.attack["Ranged"].ammoMax;
 		showAmmo = entState.attack["Ranged"].ammoMax;	
 	} 
+	else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].ammoMax)
+	{
+		currentAmmo = entState.attack["Melee"].ammoLeft;
+		maxAmmo = entState.attack["Melee"].ammoMax;
+		showAmmo = entState.attack["Melee"].ammoMax;	
+	}  
 
 	let energySection = Engine.GetGUIObjectByName("energySection");
 	let borderSection = Engine.GetGUIObjectByName("borderSection");
@@ -652,16 +658,16 @@ function displaySingle(entState)
 		
 		if (showEnergy || showCapture)
 		{
-			ammoSize.rright = 100 * Math.max(0, Math.min(1, entState.attack["Ranged"].ammoLeft / entState.attack["Ranged"].ammoMax));
+			ammoSize.rright = 100 * Math.max(0, Math.min(1, currentAmmo / maxAmmo));
 		}
 		else
 		{
-			ammoSize.rright = 210 * Math.max(0, Math.min(1, entState.attack["Ranged"].ammoLeft / entState.attack["Ranged"].ammoMax));
+			ammoSize.rright = 210 * Math.max(0, Math.min(1, currentAmmo / maxAmmo));
 		}
 		unitAmmoBar.size = ammoSize;
 		Engine.GetGUIObjectByName("ammoStats").caption = sprintf(translate("%(CurrentAmmo)s / %(MaxAmmo)s"), {
-			"CurrentAmmo": Math.ceil(entState.attack["Ranged"].ammoLeft),
-			"MaxAmmo": Math.ceil(entState.attack["Ranged"].ammoMax)
+			"CurrentAmmo": Math.ceil(currentAmmo),
+			"MaxAmmo": Math.ceil(maxAmmo)
 		});
 		ammoSection.size = sectionPosBottom.size;
 		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;

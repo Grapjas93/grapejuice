@@ -32,8 +32,8 @@
 		</Postproc>
 	</Environment>
 	<Camera>
-		<Position x="444.727" y="254.21" z="381.712"/>
-		<Rotation angle="-0.733613"/>
+		<Position x="435.921" y="219.338" z="154.301"/>
+		<Rotation angle="0"/>
 		<Declination angle="0.610865"/>
 	</Camera>
 	<ScriptSettings><![CDATA[
@@ -3342,6 +3342,90 @@
 			<Position x="369.67658" z="487.97718"/>
 			<Orientation y="-2.7181"/>
 			<Actor seed="39638"/>
+		</Entity>
+		<Entity uid="4253">
+			<Template>units/athen/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="450.65531" z="196.7216"/>
+			<Orientation y="0.81391"/>
+			<Actor seed="23138"/>
+		</Entity>
+		<Entity uid="4254">
+			<Template>units/brit/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="442.76481" z="203.29624"/>
+			<Orientation y="0.72008"/>
+			<Actor seed="13120"/>
+		</Entity>
+		<Entity uid="4255">
+			<Template>units/cart/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="434.74918" z="210.44758"/>
+			<Orientation y="0.76613"/>
+			<Actor seed="56226"/>
+		</Entity>
+		<Entity uid="4256">
+			<Template>units/gaul/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="426.12833" z="218.1713"/>
+			<Orientation y="0.74767"/>
+			<Actor seed="30204"/>
+		</Entity>
+		<Entity uid="4257">
+			<Template>units/iber/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="417.55073" z="225.21552"/>
+			<Orientation y="0.72201"/>
+			<Actor seed="16750"/>
+		</Entity>
+		<Entity uid="4258">
+			<Template>units/kush/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="409.34452" z="232.89661"/>
+			<Orientation y="0.66205"/>
+			<Actor seed="16956"/>
+		</Entity>
+		<Entity uid="4259">
+			<Template>units/mace/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="400.75467" z="240.12027"/>
+			<Orientation y="0.68856"/>
+			<Actor seed="37710"/>
+		</Entity>
+		<Entity uid="4260">
+			<Template>units/maur/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="391.81623" z="248.51078"/>
+			<Orientation y="0.67788"/>
+			<Actor seed="49076"/>
+		</Entity>
+		<Entity uid="4262">
+			<Template>units/ptol/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="382.16468" z="255.1804"/>
+			<Orientation y="0.7418"/>
+			<Actor seed="29886"/>
+		</Entity>
+		<Entity uid="4263">
+			<Template>units/rome/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="372.17566" z="262.71125"/>
+			<Orientation y="0.69071"/>
+			<Actor seed="11880"/>
+		</Entity>
+		<Entity uid="4264">
+			<Template>units/sele/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="363.10758" z="270.26822"/>
+			<Orientation y="0.7701"/>
+			<Actor seed="28958"/>
+		</Entity>
+		<Entity uid="4265">
+			<Template>units/spart/ammo_cart</Template>
+			<Player>1</Player>
+			<Position x="353.12537" z="280.42957"/>
+			<Orientation y="0.78977"/>
+			<Actor seed="36196"/>
 		</Entity>
 	</Entities>
 	<Paths/>

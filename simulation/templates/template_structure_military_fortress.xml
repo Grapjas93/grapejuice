@@ -86,6 +86,9 @@
   </Obstruction>
   <ProductionQueue>
     <BatchTimeModifier>0.8</BatchTimeModifier>
+    <Entities datatype="tokens">
+      units/{civ}/ammo_cart
+    </Entities>
     <Technologies datatype="tokens">
       attack_soldiers_will
     </Technologies>

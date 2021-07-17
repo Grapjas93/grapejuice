@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_cavalry">
   <Attack>
-    <Melee>
+  <Melee>
 	  <Energy>150</Energy>
-    </Melee>
+  </Melee>
   </Attack>
   <Health>
     <Max>120</Max>

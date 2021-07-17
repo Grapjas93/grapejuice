@@ -25,6 +25,12 @@
             </Damage>
          </Entity>
    </Resistance>
+  <Cost>
+    <Resources>
+      <wood>50</wood>
+      <metal>10</metal>
+    </Resources>
+  </Cost>
    <Identity>
     <Rank>Elite</Rank>
   </Identity>

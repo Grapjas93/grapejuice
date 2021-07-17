@@ -11,14 +11,13 @@ Auras.prototype.ApplyAura = function(name, ents)
 		return;
 
 	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range")
+	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
 	{
 		let length = ents.length;
 		for (let i = 0; i < length; i++) 
 		{
 			let entity = ents.pop();
-			let ent = entity;
-			let entPlayer = Helpers.GetOwner(ent);
+			let entPlayer = Helpers.GetOwner(entity);
 			let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
 			// If player has no forge, entities will not re-arm
 			if(hasForge.length >= 1)
@@ -27,7 +26,8 @@ Auras.prototype.ApplyAura = function(name, ents)
 				if (cmpAttack != null){
 					cmpAttack.ReArmAura();
 				} 
-			} else
+			} 
+			else
 			return 0;
 		}
 	}
@@ -96,7 +96,7 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 			cmpModifiersManager.RemoveModifier(modifierPath, modifName, ent);
 	
 	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range")
+	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
 	{
 		let length = ents.length;
 		for (let i = 0; i < length; i++) {

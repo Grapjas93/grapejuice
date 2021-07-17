@@ -274,19 +274,19 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 					ret.attack[type].MaxEnergy = cmpAttack.maxEnergy;
 				}
 
+				// grapejuice
+				if (cmpAttack.maxAmmo != undefined)
+				{
+					ret.attack[type].ammoLeft = cmpAttack.ammo;
+					ret.attack[type].ammoMax = cmpAttack.maxAmmo;
+				}
+
 				if (type != "Ranged")
 				{
 					// Not a ranged attack, set some defaults.
 					ret.attack[type].elevationBonus = 0;
 					ret.attack[type].elevationAdaptedRange = ret.attack.maxRange;
 					continue;
-				}
-				
-				// grapejuice
-				if (cmpAttack.GetMaxAmmo() != undefined)
-				{
-					ret.attack[type].ammoLeft = cmpAttack.ammo;
-					ret.attack[type].ammoMax = cmpAttack.GetMaxAmmo();
 				}
 
 				ret.attack[type].elevationBonus = range.elevationBonus;

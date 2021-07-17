@@ -1,48 +1,4 @@
 /**
- * Called when an entity kills us.
- * @param {number} attacker - The entityID of the killer.
- * @param {number} attackerOwner - The playerID of the attacker.
- */
-Health.prototype.KilledBy = function(attacker, attackerOwner)
-{
-	// grapejuice, stop chargetimers
-	let cmpAttack = Engine.QueryInterface(attacker, IID_Attack);
-	if(cmpAttack == null)
-	return; 
-	
-	cmpAttack.StopCanChargeTimer();
-	
-	// grapejuice, stop chargetimers
-	cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
-	if(cmpAttack == null)
-	return; 
-
-	cmpAttack.StopCanChargeTimer();
-	
-	let cmpAttackerOwnership = Engine.QueryInterface(attacker, IID_Ownership);
-	if (cmpAttackerOwnership)
-	{
-		let currentAttackerOwner = cmpAttackerOwnership.GetOwner();
-		if (currentAttackerOwner != INVALID_PLAYER)
-			attackerOwner = currentAttackerOwner;
-	}
-
-	// Add to killer statistics.
-	let cmpKillerPlayerStatisticsTracker = QueryPlayerIDInterface(attackerOwner, IID_StatisticsTracker);
-	if (cmpKillerPlayerStatisticsTracker)
-		cmpKillerPlayerStatisticsTracker.KilledEntity(this.entity);
-
-	// Add to loser statistics.
-	let cmpTargetPlayerStatisticsTracker = QueryOwnerInterface(this.entity, IID_StatisticsTracker);
-	if (cmpTargetPlayerStatisticsTracker)
-		cmpTargetPlayerStatisticsTracker.LostEntity(this.entity);
-
-	let cmpLooter = Engine.QueryInterface(attacker, IID_Looter);
-	if (cmpLooter)
-		cmpLooter.Collect(this.entity);
-};
-
-/**
  * @param {number} amount - The amount of hitpoints to substract. Kills the entity if required.
  * @return {{ healthChange:number }} -  Number of health points lost.
  */

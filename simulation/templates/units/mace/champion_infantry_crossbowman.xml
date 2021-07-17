@@ -6,6 +6,19 @@
     <SpecificName>Gastraphetophoros</SpecificName>
     <Icon>units/mace_champion_infantry_crossbowman.png</Icon>
   </Identity>
+   <UnitMotion>
+       <WalkSpeed> 10.70 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>3</Hack>
+        <Pierce>3</Pierce>
+        <Crush>4</Crush>
+      </Damage>
+    </Entity>
+  </Resistance>
   <VisualActor>
     <Actor>units/macedonians/infantry_crossbowman_c.xml</Actor>
   </VisualActor>
