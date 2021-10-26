@@ -208,8 +208,6 @@ Attack.prototype.Init = function()
 		this.energy = +this.energy;
 		this.maxEnergy = +this.maxEnergy;
 		
-		warn("this.energy " + this.energy);
-		warn("this.maxEnergy " + this.maxEnergy);
 	}
 	
 	// start the automatic refill timer for units that regain ammo anywhere (slingers for now)
@@ -229,8 +227,6 @@ Attack.prototype.Init = function()
 // grapejuice, called by Charge()
 Attack.prototype.CanCharge = function(target)
 {
-	warn("canCharge?");
-
 	if (this.energy <= 0)
 		return false;
 	
@@ -241,7 +237,6 @@ Attack.prototype.CanCharge = function(target)
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
 		return false;
 	
-	warn("CHARRGGEE!!");
 	return true;
 	
 };
@@ -265,7 +260,6 @@ Attack.prototype.Charge = function(target)
 	if (this.energy == undefined)
 		return;
 		
-	warn(this.energy);
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 
@@ -404,7 +398,6 @@ Attack.prototype.RechargeEnergy = function()
 		}
 		this.RechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 500, {});
 		this.RefreshStatusbars(this.entity);
-		warn(this.energy);
 	}
 
 };
@@ -486,9 +479,7 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	}
 	
 	// other buildings have infinite stock, simply reload the unit fully 
-	warn("beforemaxAmmo = " + this.ammo);
 	this.ammo = this.maxAmmo;
-	warn("maxAmmo = " + this.ammo);
 	this.RefreshStatusbars(this.entity);
 }
 
@@ -763,7 +754,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	
 	// grapejuice
 	let rangeIndex = types.indexOf("Ranged");
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo  && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
+	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
 	{
 		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false)
 			{
@@ -811,7 +802,7 @@ Attack.prototype.GetPreference = function(target)
 				// grapejuice
 				if (pref === 0)
 				{
-					if (Helpers.EntityMatchesClassList(this.entity, "Structure") == true)
+					if (Helpers.EntityMatchesClassList(this.entity, "Structure Siege") == true)
 					{
 						return minPref;
 					}		

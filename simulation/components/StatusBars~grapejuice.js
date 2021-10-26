@@ -1,5 +1,14 @@
 const g_NaturalColor = "255 255 255 255"; // pure white
 
+StatusBars.prototype.RemoveAuraSource = function(source, auraName)
+{
+	let names = this.auraSources.get(source);
+	if (!names)
+		return;
+	names.splice(names.indexOf(auraName), 1);
+	this.RegenerateSprites();
+};
+
 /**
  * For every sprite, the code will call their "Add" method when regenerating
  * the sprites. Every sprite adder should return the height it needs.

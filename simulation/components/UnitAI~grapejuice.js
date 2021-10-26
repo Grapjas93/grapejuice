@@ -27,7 +27,6 @@ UnitAI.prototype.AddOrder = function(type, data, queued, pushFront)
 // Must be called from inside the FSM.
 UnitAI.prototype.SetNextState = function(state)
 {
-	warn(state);
 	this.UnitFsm.SetNextState(this, state);
 	
 	let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
@@ -38,7 +37,6 @@ UnitAI.prototype.SetNextState = function(state)
 	{
 		if (state == "IDLE" || state == "FORMATIONMEMBER.IDLE" || state == "ROAMING" || state == "LINGERING")
 		{
-			warn("IDLE")
 			cmpAttack.CanRechargeEnergy();		
 			cmpAttack.StopCanChargeTimer();	
 		}
@@ -48,7 +46,6 @@ UnitAI.prototype.SetNextState = function(state)
 		}
 		else 
 		{
-			warn("IS NOT COMBAT")
 			cmpAttack.StopRechargingEnergy();
 			cmpAttack.StopCanChargeTimer();	
 		}

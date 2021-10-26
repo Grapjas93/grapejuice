@@ -21,16 +21,6 @@
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
-    <Melee>
-      <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
-      <Damage>
-        <Hack>13</Hack>
-      </Damage>
-      <MaxRange>4</MaxRange>
-      <PrepareTime>375</PrepareTime>
-      <RepeatTime>750</RepeatTime>
-      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
-    </Melee>
   </Attack>
   <Identity>
     <GenericName>Champion Cavalry Javelineer</GenericName>

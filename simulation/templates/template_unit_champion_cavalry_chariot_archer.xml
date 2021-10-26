@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_hero_cavalry">
+<Entity parent="template_unit_champion_non_charger">
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
@@ -24,7 +24,7 @@
   </Attack>
   <Identity>
     <VisibleClasses datatype="tokens">Ranged Archer Ammo</VisibleClasses>
-    <GenericName>Hero Cavalry Archer</GenericName>
+    <GenericName>Champion Cavalry Archer</GenericName>
     <Formations datatype="tokens">
       special/formations/skirmish
     </Formations>

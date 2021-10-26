@@ -21,11 +21,16 @@
 		   </ApplyStatus>
        </Ranged>  
        <Melee>
-           <AttackName> Sword </AttackName>
-           <PrepareTime> 500 </PrepareTime>
-           <RepeatTime> 1550 </RepeatTime>
-       </Melee> 
-   </Attack> 
+		<AttackName> Sword </AttackName>
+		<PrepareTime> 500 </PrepareTime>
+		<RepeatTime> 1550 </RepeatTime>
+      <Damage>
+        <Hack>13</Hack>
+      </Damage>
+      <MaxRange>4</MaxRange>
+      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+    </Melee>
+  </Attack>
    <Resistance>
         <Entity>
             <Damage>
