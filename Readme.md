@@ -4,44 +4,28 @@ Mod Version: 2.0.2
 
 mod features:
 
-1. Player position randomnization for skirmish maps* (look for the maps with the grapejuice icon). 
-The randomnization keeps teams together and will not break the map maker's team layout design. 
-It aims for better replayability for skirmish maps and add an 'unpredictable' flavour to it.
+Units with ranged weapons have ammo. Units with low ammo (jav) will have very high damage. Slingers will regain ammo slowly anywhere.
 
-2. Arrows, slinger & ballista stones, and bolts now have a (slight) trail.
+Most units have 2 attack types, ranged and melee. Weapon swapping will not be manual. The unit will swap to melee if
 
-3. Redone flaming arrow/javs and siege particles (it was a fire trail, now it's more fireball with a smoke trail).
+It has no ammo
+A targetted unit is getting to close
+The target is a wall / building
+The target is a siege unit
+New aura called "Re-arm". All military structures (Barracks, Stables, Arsenals, Fortresses, Armycamps, Colony's) and also the forge will have this aura. Units that require ammo, simply need to stay inside it for at least 3 seconds for a complete ammo refill. This aura will only work if you have at least 1 forge. Some of these military buildings will have a large aura, and most have a small aura. Armycamp has a limited ammo pool units can Re-Arm from, and the Armycamp consumes ammo from the pool while shooting arrows. Once the pool is empty, the armycamp can't shoot arrows, or Re-arm units.
 
-4. New building: Field Camps. Available for all civs. They can only be build inside neutral and enemy territory (max 3). 
-Max 10 (12 for some civs) can be garrisoned. Units will slowly heal while garrisoned and the heal can be boosted by
-garrisoning priests/doctors/surgeons and even more with the new added tech "Quick Thinking". 
-The camp/tent can be destroyed easily even be a decent army of regular units, but cannot be captured.
+Units will be rebalanced according to their visuals. Check this balancing sheet for more info (also check the additional changes tab).
 
-5. Reworked priests. They can now build (and also help build, with reduced effectiveness) the new Field Camps and 
-can now attack, with weak power. They can no longer heal units on the battlefield, 
-they instead now boost healing done in field camps. Limit = 6.
+4th rank: Champion. If there is a champion counterpart of the soldier, it will be able to promote as one. For example, the athenian hoplite will promote into a city guard.
 
-6. Units now enter a wounded state when their health drops below a treshold. They will receive a movement and 
-attack speed penalty while in this state. Units in this state will receive a bandage icon on them.
+Promotion rework. Units will not get bonus armor on promotion. They will receive a small heal, and (originally) ranged units will get a 10% bonus attack damage for all weapons. Melee only units have their default attack bonus on promotion (20%).
 
-7. Some general changes to units: 
-- All units move a little faster.
-- Slingers, Javelineers became slightly more accurate, archers slightly less accurate.
-- Slingers received slightly more attack speed and damage. 
-- Ranged champions and heros now have the same attack speed and accuracy. 
-Archers including hero's and champions:
-- Attack damage is increased but they now shoot much slower, are less accurate, and take longer to aim.
-	(Logic: Some bows require considerable amount of power to draw, especially longbows)
-- Ranged archer cavalry (incl hero & champ) now have less range, accuracy and attack power compared to ranged infantry 
- archers but higher attack speed. 
-	(Logic: Cavalry archers actually used lighter bows than infantry)
-- Champion and hero archers aim/attack faster and have more damage (like usual but tweaked the numbers).
-Hero archers have the same aim/attack speed as champions but much more health (unmodded) and damage (tweaked). 
- 
+Technology changes. Instead of 4 defensive upgrades for units there are now just 2. They give both a positive and a negative bonus. Example: Soldiers +3 crush, +1 hack and pierce resistance. 50ms attack and 0.25 movement speed penalty.
 
-*A few skirmish maps are not included for randomnization for this mod for various reasons with them mainly being:
-- The map is more a scenario type of map (extra units/structures).
-- There is not much point in randomnization if the starting positions are or nearly are identical (or symmetrical),
-and would otherwise need slight modifications for the mod. 
+Healers. They now provide healing in any structure they are garrisoned in. They can also build tents in which they can treat the wounded.
 
-Look for the maps with my mod logo on them, they are the ones that work with randomnization. 
+Spy tech rework. All enemy unit and structure info is now hidden and cannot be inspected when clicked / hovered. When you buy the Espionage tech this information becomes available to you, showing you information like health and ammo when clicking or hovering over enemy / neutral soldiers.
+
+Charge attacks. Units have energy and will use it to charge an enemy. Energy is consumed at a rate while charging the target. The first attack deals bonus damage but consumes all energy. Rams max energy / regeneration rate / bonus damage, is based on how many people are garrisoned inside.
+
+And some more stuff. I guess you just have to find out by playing the mod!
