@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_elephant_melee">
+   <UnitMotion>
+       <WalkSpeed> 9 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Tusk </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>cart</Civ>
+    <GenericName>North African War Elephant</GenericName>
+    <SpecificName>Pil Malḥamit</SpecificName>
+    <Classes datatype="tokens">AfricanElephant</Classes>
+    <Icon>units/cart_champion_elephant.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/carthaginians/elephantry_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

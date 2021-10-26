@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 9.95 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2150 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/brit_hero_caratacos
+  </Auras>
+  <Identity>
+    <Civ>brit</Civ>
+    <GenericName>Caratacus</GenericName>
+    <SpecificName>Caratacos</SpecificName>
+    <Icon>units/brit_hero_caratacos.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/britons/hero_infantry_swordsman_caratacos.xml</Actor>
+  </VisualActor>
+</Entity>

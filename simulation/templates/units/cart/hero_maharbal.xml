@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 15.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 6.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/cart_hero_maharbal
+  </Auras>
+  <Identity>
+    <Civ>cart</Civ>
+    <GenericName>Maharbal</GenericName>
+    <SpecificName>Maharbaʿal</SpecificName>
+    <Icon>units/cart_hero_maharbal.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/carthaginians/hero_cavalry_spearman_maharbal_m.xml</Actor>
+  </VisualActor>
+</Entity>

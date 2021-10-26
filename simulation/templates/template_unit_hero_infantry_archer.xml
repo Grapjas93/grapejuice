@@ -3,28 +3,39 @@
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
+      <Ammo>24</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <Damage>
-        <Hack>0</Hack>
-        <Pierce>35</Pierce>
-        <Crush>0</Crush>
+        <Pierce>18</Pierce>
       </Damage>
       <MaxRange>60</MaxRange>
-      <MinRange>0</MinRange>
       <PrepareTime>500</PrepareTime>
-      <RepeatTime>2000</RepeatTime>
-      <Delay>0</Delay>
+      <RepeatTime>1000</RepeatTime>
       <Projectile>
-        <Speed>100.0</Speed>
-        <Spread>2.0</Spread>
-        <Gravity>50.0</Gravity>
+        <Speed>160</Speed>
+        <Spread>4.25</Spread>
+        <Gravity>50</Gravity>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
+	<Melee>
+	  <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
+	  <Damage>
+		<Hack>11</Hack>
+		<Pierce>0</Pierce>
+		<Crush>0</Crush>
+	  </Damage>
+	  <MaxRange>3</MaxRange>
+	  <PrepareTime>375</PrepareTime>
+	  <RepeatTime>900</RepeatTime>
+	  <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+	</Melee>
   </Attack>
   <Identity>
-    <VisibleClasses datatype="tokens">Ranged Archer</VisibleClasses>
+    <VisibleClasses datatype="tokens">Ranged Archer Ammo</VisibleClasses>
     <GenericName>Hero Archer</GenericName>
     <Formations datatype="tokens">
       special/formations/skirmish
@@ -44,4 +55,5 @@
       <attack_ranged>attack/weapon/bow_attack.xml</attack_ranged>
     </SoundGroups>
   </Sound>
+  <Turretable/>
 </Entity>

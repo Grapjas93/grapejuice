@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "Two factions find themselves perched safely atop large rocky plateaus.\n\nScout the lands to find free treasures and to secure new resources.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Greek Acropolis (2)",
   "PlayerData": [
     null,

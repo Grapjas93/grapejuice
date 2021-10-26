@@ -40,7 +40,7 @@
 {
   "CircularMap": false,
   "Description": "The African savanna is chocked full of animal life for hunting, while the nearby mineral deposits are plentiful. The dry season is approaching and the watering holes are drying up.\n\nNote: This is a very small \"fast and furious\" map. Iberians do not start with their custom circuit walls.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Watering Holes (4)",
   "PlayerData": [
     null,

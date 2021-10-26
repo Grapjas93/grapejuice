@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/gaul/infantry_javelineer_a">
+   <UnitMotion>
+       <WalkSpeed> 9.7 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1850 </PrepareTime>
+           <RepeatTime> 2000 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 8 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/gauls/infantry_javelinist_e.xml</Actor>
+  </VisualActor>
+</Entity>

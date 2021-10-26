@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_tunic_long.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_pers_a.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
+		<prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="headband">
+      <props>
+        <prop actor="props/units/helmets/headband_color.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant name="arab-tunic-1a">
+      <textures>
+        <texture file="skeletal/arab_tunic_1_a.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="arab-tunic-1b">
+      <textures>
+        <texture file="skeletal/arab_tunic_1_b.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="arab-tunic-1c">
+      <textures>
+        <texture file="skeletal/arab_tunic_1_c.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="judea-tunic-1a">
+      <textures>
+        <texture file="skeletal/judea_tunic_basic_1_a.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="judea-tunic-1b">
+      <textures>
+        <texture file="skeletal/judea_tunic_basic_1_b.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="judea-tunic-1c">
+      <textures>
+        <texture file="skeletal/judea_tunic_basic_1_c.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant name="judea-tunic-1d">
+      <textures>
+        <texture file="skeletal/judea_tunic_basic_1_d.png" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant file="biped/rider/camelry/base_archer_relax.xml"/>
+    <variant file="biped/rider/camelry/carry_meat.xml"/>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
+    <variant file="biped/rider/camelry/promotion.xml"/>
+    <variant file="biped/rider/camelry/attack_ranged_archer_right.xml"/>
+    <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
+		<props>
+			<prop actor="props/units/weapons/spatha.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+		</props>
+	</variant>	
+    <variant file="biped/rider/camelry/attack_slaughter.xml"/>
+    <variant file="biped/rider/camelry/gather_meat.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

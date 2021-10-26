@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "Two teams face off across a long, very large saltwater lake.\n\nFishing can be had in the central lake. The map is also well-endowed with Stone and Metal deposits.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Caspian Sea (2v2)",
   "PlayerData": [
     null,

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_javelineer">
+   <UnitMotion>
+       <WalkSpeed> 15.4 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1900 </PrepareTime>
+           <RepeatTime> 2050 </RepeatTime>
+		   <ApplyStatus>
+			 <Burning>
+			   <Interval>3000</Interval>
+			   <Damage>
+				 <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+		   </ApplyStatus>
+       </Ranged>  
+       <Melee>
+		<AttackName> Sword </AttackName>
+		<PrepareTime> 500 </PrepareTime>
+		<RepeatTime> 1550 </RepeatTime>
+      <Damage>
+        <Hack>13</Hack>
+      </Damage>
+      <MaxRange>4</MaxRange>
+      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+    </Melee>
+  </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>  
+  <Identity>
+    <VisibleClasses datatype="tokens">Raider</VisibleClasses>
+    <Civ>iber</Civ>
+    <SpecificName>Leial Zalduneria</SpecificName>
+    <SelectionGroupName>units/iber/champion_cavalry</SelectionGroupName>
+    <Icon>units/iber_champion_cavalry.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/iberians/cavalry_javelinist_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

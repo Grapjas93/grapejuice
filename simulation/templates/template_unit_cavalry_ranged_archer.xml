@@ -3,25 +3,35 @@
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
+      <Ammo>30</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <Damage>
-        <Hack>0</Hack>
-        <Pierce>9</Pierce>
-        <Crush>0</Crush>
+        <Pierce>18</Pierce>
       </Damage>
       <MaxRange>45</MaxRange>
-      <MinRange>0</MinRange>
-      <PrepareTime>900</PrepareTime>
-      <RepeatTime>1700</RepeatTime>
-      <Delay>0</Delay>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
       <Projectile>
-        <Speed>100.0</Speed>
-        <Spread>3.5</Spread>
-        <Gravity>50.0</Gravity>
+        <Speed>160</Speed>
+        <Spread>4.25</Spread>
+        <Gravity>50</Gravity>
         <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="5"/>
+        <LaunchPoint y="3"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
+	<Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>6.5</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>6</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+    </Melee>
   </Attack>
   <Cost>
     <Resources>

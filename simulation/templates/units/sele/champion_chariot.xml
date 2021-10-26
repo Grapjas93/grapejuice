@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_chariot_archer">
+   <UnitMotion>
+       <WalkSpeed> 15.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 2000 </PrepareTime>
+           <RepeatTime> 2150 </RepeatTime>
+       </Ranged> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Footprint replace="">
+    <Square width="11.0" depth="11.0"/>
+    <Height>6.0</Height>
+  </Footprint>
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Scythed Chariot</GenericName>
+    <SpecificName>Drepanèphoros</SpecificName>
+    <VisibleClasses datatype="tokens">Chariot</VisibleClasses>
+    <Icon>units/sele_champion_chariot.png</Icon>
+    <RequiredTechnology>unlock_champion_chariots</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/chariot_archer_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

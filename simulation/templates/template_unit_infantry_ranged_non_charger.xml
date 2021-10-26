@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry">
+  <Health>
+    <Max>50</Max>
+  </Health>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ranged Ammo</VisibleClasses>
+    <GenericName>Ranged</GenericName>
+    <Formations datatype="tokens">
+      special/formations/skirmish
+    </Formations>
+  </Identity>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>1</Pierce>
+        <Crush>10</Crush>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <Turretable/>
+</Entity>

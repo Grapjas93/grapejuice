@@ -1,10 +1,10 @@
 {
 	"type": "garrison",
-	"affects": ["FieldCamp"],
+	"affects": ["Structure"],
 	"modifications": [
-		{ "value": "GarrisonHolder/BuffHeal", "add": 5.0 }
+		{ "value": "GarrisonHolder/BuffHeal", "add": 3.0 }
 	],
 	"auraName": "Expert Surgeon",
-	"auraDescription": "Field Camp healing rate +5 while garrisoned",
+	"auraDescription": "Structure +3 heal rate per second while garrisoned.",
 	"stackable": true
 }

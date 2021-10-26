@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_chariot_archer">
+   <UnitMotion>
+       <WalkSpeed> 11.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1600 </PrepareTime>
+           <RepeatTime> 1750 </RepeatTime>
+       </Ranged> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/kush_hero_amanirenas
+  </Auras>
+  <Footprint replace="">
+    <Square width="6.0" depth="14.0"/>
+    <Height>6.0</Height>
+  </Footprint>
+  <Identity>
+    <Civ>kush</Civ>
+    <Lang>napatan</Lang>
+    <Phenotype>female</Phenotype>
+    <GenericName>Amanirenas</GenericName>
+    <SpecificName>Amnirense qore li kdwe li</SpecificName>
+    <VisibleClasses datatype="tokens">Chariot</VisibleClasses>
+    <Icon>units/kush_hero_amanirenas.png</Icon>
+  </Identity>
+  <Selectable>
+    <Overlay>
+      <Shape>
+        <Circle radius="5.0"/>
+      </Shape>
+    </Overlay>
+  </Selectable>
+  <VisualActor>
+    <Actor>units/kushites/hero_chariot_archer_amanirenas_m.xml</Actor>
+  </VisualActor>
+</Entity>

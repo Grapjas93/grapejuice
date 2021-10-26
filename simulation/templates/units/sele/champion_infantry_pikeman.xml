@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_pikeman">
+   <UnitMotion>
+       <WalkSpeed> 8.35 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Pike </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 9 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Silver Shield</GenericName>
+    <SpecificName>Argyraspis</SpecificName>
+    <Icon>units/sele_champion_pikeman.png</Icon>
+    <RequiredTechnology>traditional_army_sele</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/infantry_pikeman_c.xml</Actor>
+  </VisualActor>
+</Entity>

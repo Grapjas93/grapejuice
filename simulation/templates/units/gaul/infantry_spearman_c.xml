@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/gaul/champion_fanatic">
+  <Identity>
+    <Civ>gaul</Civ>
+    <GenericName>Naked Fanatic</GenericName>
+    <SpecificName>Bariogaisatos</SpecificName>
+    <Icon>units/gaul_champion_fanatic.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+	<Rank>Champion</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/gauls/infantry_spearman_c.xml</Actor>
+  </VisualActor>
+</Entity>

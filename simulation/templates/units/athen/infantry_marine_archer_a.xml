@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen/infantry_marine_archer_b">
+   <UnitMotion>
+       <WalkSpeed> 11.5 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1625 </PrepareTime>
+           <RepeatTime> 1775 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 625 </PrepareTime>
+           <RepeatTime> 775 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Advanced</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/athen/infantry_marine_archer_e</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/athenians/infantry_archer_a.xml</Actor>
+  </VisualActor>
+</Entity>

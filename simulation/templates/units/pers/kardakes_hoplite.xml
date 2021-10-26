@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="merc_inf|hoplite|template_unit_champion_infantry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 10.05 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 675 </PrepareTime>
+           <RepeatTime> 825 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 5.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>pers</Civ>
+    <Lang>persian</Lang>
+    <GenericName>Cardaces Hoplite</GenericName>
+    <SpecificName>Hoplites Kardakes</SpecificName>
+    <Icon>units/pers_kardakes.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/persians/infantry_spearman_c3.xml</Actor>
+  </VisualActor>
+</Entity>

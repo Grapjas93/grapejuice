@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1">
+      <mesh>skeletal/new/m_armor_tunic_long.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/rome_head_veteran.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_R"/>
+        <prop actor="props/units/weapons/gladius.xml" attachpoint="weapon_R"/>
+		<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
+      </props>
+      <textures>
+        <texture file="skeletal/rome_su4_imperial_legion.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="Scutum-01">
+      <props>
+        <prop actor="props/units/shields/scutum_rome_imp_rect_01.xml" attachpoint="shield"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Scutum-02">
+      <props>
+        <prop actor="props/units/shields/scutum_rome_imp_rect_02.xml" attachpoint="shield"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Scutum-03">
+      <props>
+        <prop actor="props/units/shields/scutum_rome_imp_rect_03.xml" attachpoint="shield"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Scutum-04">
+      <props>
+        <prop actor="props/units/shields/scutum_rome_imp_rect_04.xml" attachpoint="shield"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="Gallic-Type-B">
+      <props>
+        <prop actor="props/units/helmets/rome_gallic_type_b.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Gallic-Type-F">
+      <props>
+        <prop actor="props/units/helmets/rome_gallic_type_f.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Gallic-Type-H">
+      <props>
+        <prop actor="props/units/helmets/rome_gallic_type_h.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant file="biped/base_swordsman_shield_ready.xml"/>
+    <variant file="biped/attack_ranged_javelinist.xml">
+		<props>
+			<prop attachpoint="weapon_R"/>
+			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
+			<prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
+		</props>
+	</variant>	
+    <variant file="biped/formations/testudo_top.xml"/>
+    <variant file="biped/formations/testudo_front.xml"/>
+    <variant file="biped/formations/testudo_front_left.xml"/>
+    <variant file="biped/formations/testudo_front_right.xml"/>
+    <variant file="biped/formations/testudo_left.xml"/>
+    <variant file="biped/formations/testudo_right.xml"/>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry">
+  <Attack>
+  <Melee>
+	  <Energy>150</Energy>
+  </Melee>
+  </Attack>
+  <Health>
+    <Max>120</Max>
+  </Health>
+  <Identity>
+    <GenericName>Melee Cavalry</GenericName>
+    <VisibleClasses datatype="tokens">Melee Charger</VisibleClasses>
+  </Identity>
+</Entity>

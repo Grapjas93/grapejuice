@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 10.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 650 </PrepareTime>
+           <RepeatTime> 800 </RepeatTime>
+       </Melee>  
+       <Ranged>
+		  <AttackName>Javelin</AttackName>
+		  <Ammo>1</Ammo>
+		  <RefillAmount>0</RefillAmount>
+		  <RefillTime>0</RefillTime>
+		  <Damage>
+			<Pierce>75</Pierce>
+		  </Damage>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2100 </RepeatTime>
+		  <MaxRange>25</MaxRange>
+		  <Projectile>
+			<Speed>70</Speed>
+			<Spread>1.5</Spread>
+			<Gravity>35</Gravity>
+			<FriendlyFire>false</FriendlyFire>
+			<LaunchPoint y="3"/>
+		  </Projectile>
+		  <PreferredClasses datatype="tokens">Human</PreferredClasses>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Cost>
+    <Resources>
+      <wood>50</wood>
+      <metal>10</metal>
+    </Resources>
+  </Cost>
+   <Builder>
+    <Entities datatype="tokens">
+      structures/rome/army_camp
+      structures/rome/temple_vesta
+    </Entities>
+  </Builder>
+  <Health>
+    <DamageVariants>
+      <lightdamage>0.85</lightdamage>
+      <mediumdamage>0.45</mediumdamage>
+    </DamageVariants>
+  </Health>
+  <Identity>
+    <VisibleClasses datatype="tokens">Melee Swordsman Ammo</VisibleClasses>
+    <Civ>rome</Civ>
+    <Lang>latin</Lang>
+    <SelectionGroupName>units/rome/infantry_swordsman_b</SelectionGroupName>
+    <GenericName>Roman Swordsman</GenericName>
+    <SpecificName>Hastātus</SpecificName>
+    <Icon>units/rome_infantry_swordsman.png</Icon>
+  </Identity>
+  <Promotion>
+    <Entity>units/rome/infantry_swordsman_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/romans/infantry_swordsman_b.xml</Actor>
+  </VisualActor>
+</Entity>

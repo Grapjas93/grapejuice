@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_spearman">
+   <UnitMotion>
+       <WalkSpeed> 9.95 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Builder>
+    <Entities datatype="tokens">
+      structures/iber/monument
+    </Entities>
+  </Builder>
+  <Identity>
+    <Civ>iber</Civ>
+    <SelectionGroupName>units/iber/infantry_spearman_b</SelectionGroupName>
+    <SpecificName>Ezkutari</SpecificName>
+    <Icon>units/iber_infantry_spearman.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/iber/infantry_spearman_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/iberians/infantry_spearman_b.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,7 +1,7 @@
 {
 	"requiredTechnology": "garrison_heal_field_camp",
 	"type": "garrison",
-	"affects": ["FieldCamp"],
+	"affects": ["Structure"],
 	"modifications": [
 		{ "value": "GarrisonHolder/BuffHeal", "add": 0.5 }
 	],

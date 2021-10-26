@@ -1,0 +1,24 @@
+{
+	"genericName": "Wooden Shield",
+	"description": "Wooden shields are heavier but much better able to resist projectiles and blows than wicker-frame shields.",
+	"cost": {
+		"wood": 600,
+		"metal": 600
+	},
+	"supersedes": "soldier_resistance_01",
+	"requirements": { "tech": "phase_city" },
+	"requirementsTooltip": "Unlocked in City Phase.",
+	"icon": "shield_parma.png",
+	"researchTime": 60,
+	"tooltip": "Soldiers +1 crush, hack and pierce resistance. 75ms attack and 0.5 movement speed penalty.",
+	"modifications": [
+		{ "value": "Resistance/Entity/Damage/Crush", "add": 1 },
+		{ "value": "Resistance/Entity/Damage/Hack", "add": 1 },
+		{ "value": "Resistance/Entity/Damage/Pierce", "add": 1 },
+		{ "value": "Attack/Melee/RepeatTime", "add": 75 },
+		{ "value": "Attack/Ranged/RepeatTime", "add": 75 },
+		{ "value": "UnitMotion/WalkSpeed", "add": -0.50 }
+	],
+	"affects": ["Soldier"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

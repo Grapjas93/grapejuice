@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 9.25 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 825 </PrepareTime>
+           <RepeatTime> 975 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2275 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 7 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 7.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>brit</Civ>
+    <GenericName>Brythonic Champion</GenericName>
+    <SpecificName>Argos</SpecificName>
+    <Icon>units/brit_champion_infantry.png</Icon>
+    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/britons/infantry_swordsman_c.xml</Actor>
+  </VisualActor>
+</Entity>

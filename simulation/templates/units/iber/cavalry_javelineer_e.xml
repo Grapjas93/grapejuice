@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/iber/cavalry_javelineer_a">
+   <UnitMotion>
+       <WalkSpeed> 16.45 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1725 </PrepareTime>
+           <RepeatTime> 1875 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1225 </PrepareTime>
+           <RepeatTime> 1375 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 4 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/iber/cavalry_javelineer_c</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/iberians/cavalry_javelinist_e_m.xml</Actor>
+  </VisualActor>
+</Entity>

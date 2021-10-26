@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variant name="attack_melee">
+  <animations>
+    <animation file="biped/rider/cavalry/generic/attack_melee_01.dae" name="attack_melee" event="0.5" id="attack1" speed="60"/>
+    <animation file="biped/rider/cavalry/generic/attack_melee_02.dae" name="attack_melee" event="0.5" id="attack2" speed="60"/>
+    <animation file="biped/rider/cavalry/generic/attack_melee_03.dae" name="attack_melee" event="0.5" id="attack3" speed="60"/>
+  </animations>
+</variant>

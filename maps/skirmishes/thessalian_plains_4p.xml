@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "The rolling Thessalian plain is traversed with narrow streams, easily forded. Wide-open spaces allow for massive expansion, while each player starts the match safe atop a large plateau.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Thessalian Plains (4)",
   "PlayerData": [
     null,

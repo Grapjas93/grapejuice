@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "Situated Southside of the Atlas mountain range in North Africa.\n\nA somewhat open map with an abundance of animals and mineral resources, while wood is scarce.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Sahel (4)",
   "PlayerData": [
     null,

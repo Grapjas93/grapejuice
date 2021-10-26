@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen/infantry_spearman_a">
+   <UnitMotion>
+       <WalkSpeed> 8.7 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 925 </PrepareTime>
+           <RepeatTime> 1075 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 8.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/athen/infantry_spearman_c</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/athenians/infantry_spearman_e.xml</Actor>
+  </VisualActor>
+</Entity>

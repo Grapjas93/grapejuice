@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 16.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1050 </PrepareTime>
+           <RepeatTime> 1200 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/sele_hero_antiochus_iv
+  </Auras>
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Antiochus IV</GenericName>
+    <SpecificName>Antiokhos D' Epiphanēs</SpecificName>
+    <Icon>units/sele_hero_antiochus_the_righteous.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/ptolemies/hero_cavalry_swordsman_ptolemy_IV_m.xml</Actor>
+  </VisualActor>
+</Entity>

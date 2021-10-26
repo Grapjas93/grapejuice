@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry_ranged_archer">
+   <UnitMotion>
+       <WalkSpeed> 18 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1550 </PrepareTime>
+           <RepeatTime> 1700 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Footprint>
+    <Height>7.5</Height>
+  </Footprint>
+  <Identity>
+    <Civ>ptol</Civ>
+    <VisibleClasses datatype="tokens">Camel</VisibleClasses>
+    <SelectionGroupName>units/ptol/cavalry_archer</SelectionGroupName>
+    <GenericName>Nabataean Camel Archer</GenericName>
+    <SpecificName>Mutsābiq Gamal Nabatu</SpecificName>
+    <Icon>units/ptol_camel_archer.png</Icon>
+    <RequiredTechnology>phase_village</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/ptol/cavalry_archer_a</Entity>
+  </Promotion>
+  <Sound>
+    <SoundGroups>
+      <select>actor/fauna/animal/camel_select.xml</select>
+      <order_walk>actor/fauna/movement/camel_order.xml</order_walk>
+      <death>actor/fauna/death/death_camel.xml</death>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <HeightOffset>8.5</HeightOffset>
+  </StatusBars>
+  <VisualActor>
+    <Actor>units/ptolemies/camel_archer_b_m.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 15.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 1200 </PrepareTime>
+           <RepeatTime> 1350 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/mace_hero_philip_ii
+  </Auras>
+  <Identity>
+    <Civ>mace</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Philip II of Macedon</GenericName>
+    <SpecificName>Philippos B' ho Makedōn</SpecificName>
+    <Icon>units/mace_hero_philip.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/macedonians/hero_cavalry_spearman_philip_m.xml</Actor>
+  </VisualActor>
+</Entity>

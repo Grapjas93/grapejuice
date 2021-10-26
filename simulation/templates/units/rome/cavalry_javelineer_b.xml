@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry_ranged_javelineer">
+   <UnitMotion>
+       <WalkSpeed> 16.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1750 </PrepareTime>
+           <RepeatTime> 1900 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>rome</Civ>
+    <Lang>latin</Lang>
+    <GenericName>Allied Cavalry</GenericName>
+    <SpecificName>Eques Socius</SpecificName>
+    <SelectionGroupName>units/rome/cavalry_javelineer_b</SelectionGroupName>
+    <Icon>units/rome_cavalry_javelinist.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/rome/cavalry_javelineer_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/romans/cavalry_javelinist_b_m.xml</Actor>
+  </VisualActor>
+</Entity>

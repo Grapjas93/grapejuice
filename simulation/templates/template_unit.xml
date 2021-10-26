@@ -22,7 +22,9 @@
     <Circle radius="1.5"/>
     <Height>4.0</Height>
   </Footprint>
-  <Garrisonable/>
+  <Garrisonable>
+    <Size>1</Size>
+  </Garrisonable>
   <Guard/>
   <Health>
     <DeathType>corpse</DeathType>
@@ -70,7 +72,7 @@
     <Anchor>pitch</Anchor>
     <Floating>false</Floating>
     <FloatDepth>0.0</FloatDepth>
-    <TurnRate>8</TurnRate>
+    <TurnRate>14</TurnRate>
   </Position>
   <RangeOverlayManager/>
   <RangeOverlayRenderer/>
@@ -83,19 +85,6 @@
       </Damage>
     </Entity>
   </Resistance>
-  <ResourceGatherer>
-    <MaxDistance>2.0</MaxDistance>
-    <BaseSpeed>1.0</BaseSpeed>
-    <Rates>
-      <treasure>1</treasure>
-    </Rates>
-    <Capacities>
-      <food>10</food>
-      <wood>10</wood>
-      <stone>10</stone>
-      <metal>10</metal>
-    </Capacities>
-  </ResourceGatherer>
   <Selectable>
     <Overlay>
       <Texture>
@@ -110,6 +99,7 @@
       <attacked_gaia>interface/alarm/alarm_attacked_gaia.xml</attacked_gaia>
       <attacked_capture>interface/alarm/alarm_attackplayer.xml</attacked_capture>
       <attacked_capture_gaia>interface/alarm/alarm_attacked_gaia.xml</attacked_capture_gaia>
+      <order_collect_treasure>voice/{lang}/civ/civ_{phenotype}_collect_treasure.xml</order_collect_treasure>
     </SoundGroups>
   </Sound>
   <StatusBars>
@@ -118,6 +108,9 @@
     <HeightOffset>5.0</HeightOffset>
   </StatusBars>
   <StatusEffectsReceiver/>
+  <TreasureCollector>
+    <MaxDistance>2</MaxDistance>
+  </TreasureCollector>
   <UnitAI>
     <DefaultStance>aggressive</DefaultStance>
     <FleeDistance>12.0</FleeDistance>
@@ -130,7 +123,7 @@
   <UnitMotion>
     <FormationController>false</FormationController>
     <PassabilityClass>default</PassabilityClass>
-    <WalkSpeed>11.0</WalkSpeed>
+    <WalkSpeed>9.0</WalkSpeed>
     <RunMultiplier>1.67</RunMultiplier>
   </UnitMotion>
   <Visibility>

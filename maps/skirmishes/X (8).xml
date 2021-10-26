@@ -41,7 +41,7 @@
   "AISeed": 0,
   "CircularMap": true,
   "Description": "A balanced map with extra resources on islands around and shores in the middle. ",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "LockTeams": false,
   "Name": "X (8)",
   "PlayerData": [

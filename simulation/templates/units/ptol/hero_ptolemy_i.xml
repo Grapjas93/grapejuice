@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_elephant_melee">
+   <UnitMotion>
+       <WalkSpeed> 9 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Tusk </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/ptol_hero_ptolemy_i_1
+    units/heroes/ptol_hero_ptolemy_i_2
+  </Auras>
+  <Identity>
+    <Civ>ptol</Civ>
+    <GenericName>Ptolemy I</GenericName>
+    <SpecificName>Ptolemaios A' Sōter</SpecificName>
+    <Icon>units/ptol_hero_ptolemy_I.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/ptolemies/hero_elephantry_ptolemy_I_m.xml</Actor>
+  </VisualActor>
+</Entity>

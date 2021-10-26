@@ -8,7 +8,7 @@ Health.prototype.Reduce = function(amount)
 	// (The entity will exist a little while after calling DestroyEntity so this
 	// might get called multiple times)
 	// Likewise if the amount is 0.
-	if (!amount || !this.hitpoints)
+	if (!amount || !this.hitpoints )
 		return { "healthChange": 0 };
 
 	// Before changing the value, activate Fogging if necessary to hide changes
@@ -38,17 +38,28 @@ Health.prototype.Reduce = function(amount)
 	this.RegisterHealthChanged(oldHitpoints);
 
 	// Grapejuice modifiers, units below 1/3 of their max hp receive penalties
-	let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
-	let currentHp = cmpHealth.GetHitpoints();
-	let treshold = cmpHealth.GetMaxHitpoints() / 3; 
-	if( currentHp <= treshold ) {
-		var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-		cmpModifiersManager.AddModifiers("CriticallyWounded", {
-			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": 0.80 }],
-			"Attack/Melee/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.35 }],
-			"Attack/Ranged/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.35 }],
-		}, this.entity);
+	if (Helpers.EntityMatchesClassList(this.entity, "Siege Organic"))
+	{
+		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
+		let currentHp = cmpHealth.GetHitpoints();
+		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
+		if( currentHp <= treshold ) {
+			let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+			
+			if (cmpAttack)
+			{
+				cmpAttack.energy = 0;
+				cmpAttack.wounded = true;
+				
+				var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+				cmpModifiersManager.AddModifiers("CriticallyWounded", {
+					"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": 0.80 }],
+					"Attack/Melee/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
+					"Attack/Ranged/RepeatTime": [{ "affects": ["Unit"], "multiply": 1.30 }],
+				}, this.entity);
+			}
 		}
+	}
 		return { "healthChange": this.hitpoints - oldHitpoints };
 };
 
@@ -79,12 +90,21 @@ Health.prototype.Increase = function(amount)
 	this.RegisterHealthChanged(old);
 
 	// Grapejuice modifiers, units above 1/3 of their max hp will get their penalties removed
-	let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
-	let currentHp = cmpHealth.GetHitpoints();
-	let treshold = cmpHealth.GetMaxHitpoints() / 3; 
-	if( currentHp > treshold ) {
-		var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-		cmpModifiersManager.RemoveAllModifiers("CriticallyWounded", this.entity);
+	if (Helpers.EntityMatchesClassList(this.entity, "Siege Organic"))
+	{
+		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
+		let currentHp = cmpHealth.GetHitpoints();
+		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
+		if( currentHp > treshold ) {
+			let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+			if (cmpAttack)
+			{
+				cmpAttack.wounded = false;
+				
+				var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+				cmpModifiersManager.RemoveAllModifiers("CriticallyWounded", this.entity);
+			}
+		}
 	}
 	return { "old": old, "new": this.hitpoints };
 

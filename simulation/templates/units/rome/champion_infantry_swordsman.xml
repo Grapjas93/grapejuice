@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 9.15 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 850 </PrepareTime>
+           <RepeatTime> 1000 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2300 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 8 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Health>
+    <DamageVariants>
+      <lightdamage>0.85</lightdamage>
+      <mediumdamage>0.45</mediumdamage>
+    </DamageVariants>
+  </Health>
+  <Identity>
+    <Civ>rome</Civ>
+    <Lang>latin</Lang>
+    <GenericName>Italic Heavy Infantry</GenericName>
+    <SpecificName>Extrāōrdinārius</SpecificName>
+    <SelectionGroupName>units/rome/champion_infantry_swordsman</SelectionGroupName>
+    <Icon>units/rome_champion_infantry.png</Icon>
+    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/romans/infantry_swordsman_c.xml</Actor>
+  </VisualActor>
+</Entity>

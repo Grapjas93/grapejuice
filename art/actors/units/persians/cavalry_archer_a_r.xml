@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_pants.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_pers_a.xml" attachpoint="head"/>
+        <prop actor="props/units/helmets/pers_kidaris_loose_yellow.xml" attachpoint="helmet"/>
+        <prop actor="props/units/shields/pers_pelta_e_reverse.xml" attachpoint="back"/>
+        <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
+        <prop actor="props/units/pers_quiver_hip.xml" attachpoint="sheath_L"/>
+ 		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="Rider-Texture-1">
+      <textures>
+        <texture file="skeletal/pers_csw_a_01.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="Rider-Texture-2">
+      <textures>
+        <texture file="skeletal/pers_csw_a_02.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant file="biped/rider/cavalry/base_archer_relax_hip.xml" name="Archer-Relax-Hip" frequency="1"/>
+    <variant file="biped/rider/carry_meat.xml"/>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
+    <variant file="biped/rider/cavalry/attack_ranged_archer_hip.xml"/>
+    <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
+		<props>
+			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_01_L"/>
+		</props>
+	</variant>	
+    <variant file="biped/rider/promotion_shield.xml"/>
+    <variant file="biped/rider/attack_slaughter_shield_hele.xml"/>
+    <variant file="biped/gather_meat.xml"/>
+    <variant file="biped/rider/death_ranged.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

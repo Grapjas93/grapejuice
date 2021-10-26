@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/sele/infantry_swordsman_merc_b">
+   <UnitMotion>
+       <WalkSpeed> 10.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Rhomphaia </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Advanced</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/sele/infantry_swordsman_merc_e</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/seleucids/infantry_swordsman_a.xml</Actor>
+  </VisualActor>
+</Entity>

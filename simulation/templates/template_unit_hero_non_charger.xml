@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit">
+  <Attack>
+    <Capture>
+      <AttackName>Capture</AttackName>
+      <Capture>10</Capture>
+      <MaxRange>4</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Field Palisade Wall</RestrictedClasses>
+    </Capture>
+  </Attack>
+  <Auras datatype="tokens">
+    units/heroes/hero_garrison
+  </Auras>
+  <Cost>
+    <Population>0</Population>
+    <BuildTime>50</BuildTime>
+    <Resources>
+      <food>100</food>
+      <metal>250</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Classes datatype="tokens">Human</Classes>
+    <VisibleClasses datatype="tokens">Soldier Hero</VisibleClasses>
+    <GenericName>Hero</GenericName>
+    <Icon>technologies/laurel_wreath.png</Icon>
+    <RequiredTechnology>phase_city</RequiredTechnology>
+  </Identity>
+  <Loot>
+    <xp>400</xp>
+    <food>10</food>
+    <wood>0</wood>
+    <stone>0</stone>
+    <metal>25</metal>
+  </Loot>
+  <Minimap>
+    <Type>hero</Type>
+  </Minimap>
+  <Selectable>
+    <Overlay>
+      <AlwaysVisible/>
+      <Texture>
+        <MainTexture>256x256/star.png</MainTexture>
+        <MainTextureMask>256x256/star_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <order_attack>voice/{lang}/civ/civ_{phenotype}_attack.xml</order_attack>
+      <order_garrison>voice/{lang}/civ/civ_{phenotype}_garrison.xml</order_garrison>
+      <order_gather>voice/{lang}/civ/civ_{phenotype}_gather.xml</order_gather>
+      <order_walk>voice/{lang}/civ/civ_{phenotype}_walk.xml</order_walk>
+      <select>voice/{lang}/civ/civ_{phenotype}_select.xml</select>
+      <trained>interface/alarm/alarm_create_infantry.xml</trained>
+      <walk>actor/human/movement/walk.xml</walk>
+      <run>actor/human/movement/walk.xml</run>
+      <death>actor/human/death/{phenotype}_death.xml</death>
+    </SoundGroups>
+  </Sound>
+  <TrainingRestrictions>
+    <Category>Hero</Category>
+    <MatchLimit>1</MatchLimit>
+  </TrainingRestrictions>
+  <Vision>
+    <Range>100</Range>
+  </Vision>
+</Entity>

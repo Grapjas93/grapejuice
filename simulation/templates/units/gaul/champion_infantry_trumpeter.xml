@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_trumpeter">
+   <UnitMotion>
+       <WalkSpeed> 10.25 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 675 </PrepareTime>
+           <RepeatTime> 825 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 4.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/carnyx
+  </Auras>
+  <Identity>
+    <Civ>gaul</Civ>
+    <SpecificName>Carnucos</SpecificName>
+    <Icon>units/gaul_champion_swordsman_carnyx.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/gauls/infantry_carnyx_c.xml</Actor>
+  </VisualActor>
+</Entity>

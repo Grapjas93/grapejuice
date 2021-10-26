@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/pers/cavalry_javelineer_b">
+   <UnitMotion>
+       <WalkSpeed> 18 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1450 </PrepareTime>
+           <RepeatTime> 1600 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Identity>
+    <RequiredTechnology>equine_transports</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/pers/cavalry_javelineer_a_trireme</Entity>
+  </Promotion>
+</Entity>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 8.9 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 900 </PrepareTime>
+           <RepeatTime> 1050 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 9 </Crush>
+               <Hack> 8 </Hack>
+               <Pierce> 9 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/gaul_hero_viridomarus
+  </Auras>
+  <Identity>
+    <Civ>gaul</Civ>
+    <GenericName>Viridomarus</GenericName>
+    <SpecificName>Britomaros</SpecificName>
+    <Icon>units/gaul_hero_viridomarus.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/gauls/hero_infantry_spearman_viridomarus.xml</Actor>
+  </VisualActor>
+</Entity>

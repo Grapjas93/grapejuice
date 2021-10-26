@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 16.05 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1075 </PrepareTime>
+           <RepeatTime> 1225 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2525 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 5.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/brit_hero_cunobelin
+  </Auras>
+  <Identity>
+    <Civ>brit</Civ>
+    <GenericName>Cunobeline</GenericName>
+    <SpecificName>Cunobelinos</SpecificName>
+    <Icon>units/brit_hero_cunobelin.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/britons/hero_cavalry_swordsman_cunobelin_m.xml</Actor>
+  </VisualActor>
+</Entity>

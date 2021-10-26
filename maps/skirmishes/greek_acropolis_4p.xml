@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "Three factions find themselves perched safely atop large rocky plateaus, whereas the fourth one is separated from their foes by a river branch.\n\nScout the lands to find free treasures and to secure new resources..",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Greek Acropolis (4)",
   "PlayerData": [
     null,

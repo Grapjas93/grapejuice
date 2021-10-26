@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 10.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Rhomphaia </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <SelectionGroupName>units/sele/infantry_swordsman_merc_b</SelectionGroupName>
+    <GenericName>Thracian Mercenary Swordsman</GenericName>
+    <SpecificName>Rhomphaiaphoros Thrakikós</SpecificName>
+    <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
+    <Icon>units/sele_infantry_swordsman.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/sele/infantry_swordsman_merc_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/seleucids/infantry_swordsman_b.xml</Actor>
+  </VisualActor>
+</Entity>

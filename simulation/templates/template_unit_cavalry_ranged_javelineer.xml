@@ -3,25 +3,35 @@
   <Attack>
     <Ranged>
       <AttackName>Javelin</AttackName>
+      <Ammo>3</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
       <Damage>
-        <Hack>0</Hack>
-        <Pierce>18</Pierce>
-        <Crush>0</Crush>
+        <Pierce>75</Pierce>
       </Damage>
       <MaxRange>30</MaxRange>
-      <MinRange>0</MinRange>
       <PrepareTime>750</PrepareTime>
       <RepeatTime>1250</RepeatTime>
-      <Delay>0</Delay>
       <Projectile>
-        <Speed>70.0</Speed>
-        <Spread>3.0</Spread>
-        <Gravity>35.0</Gravity>
+        <Speed>70</Speed>
+        <Spread>2.5</Spread>
+        <Gravity>35</Gravity>
         <FriendlyFire>false</FriendlyFire>
-        <LaunchPoint y="5"/>
+        <LaunchPoint y="3"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>6.5</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>6</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+    </Melee>
   </Attack>
   <Cost>
     <Resources>

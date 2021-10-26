@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "A forest battle map where all players fight for supremacy and control over the middle.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Forest Battle (4)",
   "PlayerData": [
     null,

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit">
+   <UnitMotion>
+       <WalkSpeed> 16 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Attack>
+    <Melee>
+	<Energy>200</Energy>
+      <AttackName>Fangs</AttackName>
+      <Damage>
+        <Pierce>15</Pierce>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure Ship Siege</RestrictedClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <BuildTime>15</BuildTime>
+    <Population>0</Population>
+    <Resources>
+      <food>100</food>
+    </Resources>
+  </Cost>
+  <Footprint replace="">
+    <Square width="1.5" depth="3"/>
+    <Height>1.5</Height>
+  </Footprint>
+  <Health>
+    <Max>50</Max>
+  </Health>
+  <Identity>
+    <GenericName>War Dog</GenericName>
+    <Tooltip>Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
+    <Classes datatype="tokens">Human FastMoving</Classes>
+    <VisibleClasses datatype="tokens">Dog Melee Charger</VisibleClasses>
+  </Identity>
+  <Loot>
+    <xp>100</xp>
+    <food>10</food>
+  </Loot>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>128x256/ellipse.png</MainTexture>
+        <MainTextureMask>128x256/ellipse_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <order_attack>voice/global/civ_dog_move.xml</order_attack>
+      <order_walk>voice/global/civ_dog_move.xml</order_walk>
+      <select>voice/global/civ_dog_bark.xml</select>
+      <walk>actor/mounted/movement/walk.xml</walk>
+      <run>actor/mounted/movement/walk.xml</run>
+      <attack_melee>attack/weapon/sword.xml</attack_melee>
+      <death>actor/fauna/death/death_animal_gen.xml</death>
+      <trained>interface/complete/building/complete_kennel.xml</trained>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <HeightOffset>2.5</HeightOffset>
+  </StatusBars>
+  <TrainingRestrictions>
+    <Category>WarDog</Category>
+  </TrainingRestrictions>
+  <TreasureCollector disable=""/>
+  <Vision>
+    <Range>30</Range>
+  </Vision>
+</Entity>

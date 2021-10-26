@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 9.7 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 750 </PrepareTime>
+           <RepeatTime> 900 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2200 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 8 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 7 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/gaul_hero_brennus
+  </Auras>
+  <Identity>
+    <Civ>gaul</Civ>
+    <GenericName>Brennus</GenericName>
+    <SpecificName>Brennos</SpecificName>
+    <Icon>units/gaul_hero_brennus.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/gauls/hero_infantry_swordsman_brennus.xml</Actor>
+  </VisualActor>
+</Entity>

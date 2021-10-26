@@ -1,11 +1,11 @@
 {
 	"type": "garrison",
-	"affects": ["FieldCamp"],
+	"affects": ["Structure"],
 	"modifications": [
 		{ "value": "GarrisonHolder/BuffHeal", "add": 0.5 }
 	],
 	"requirements": { "tech": "garrison_heal_field_camp" },
 	"auraName": "Surgeon",
-	"auraDescription": "Field camp +0.5 garrisoned heal rate.",
+	"auraDescription": "Structure +0.5 heal rate per second while garrisoned.",
 	"stackable": true
 }

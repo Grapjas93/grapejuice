@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_chariot_javelineer">
+   <UnitMotion>
+       <WalkSpeed> 10.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1750 </PrepareTime>
+           <RepeatTime> 1900 </RepeatTime>
+       </Ranged> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Auras datatype="tokens">
+    units/heroes/brit_hero_boudicca
+  </Auras>
+  <Footprint replace="">
+    <Square width="5.0" depth="10.0"/>
+    <Height>6.0</Height>
+  </Footprint>
+  <Identity>
+    <Civ>brit</Civ>
+    <Phenotype>female</Phenotype>
+    <GenericName>Boudicca</GenericName>
+    <SpecificName>Boudica</SpecificName>
+    <VisibleClasses datatype="tokens">Chariot</VisibleClasses>
+    <Icon>units/brit_hero_boudicca.png</Icon>
+  </Identity>
+  <Selectable>
+    <Overlay>
+      <Shape>
+        <Circle radius="5.0"/>
+      </Shape>
+    </Overlay>
+  </Selectable>
+  <VisualActor>
+    <Actor>units/britons/hero_chariot_javelinist_boudicca_m.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_swordsman">
+   <UnitMotion>
+       <WalkSpeed> 9.95 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee>  
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2150 </RepeatTime>
+       </Ranged> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>athen</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Athenian Marine</GenericName>
+    <SpecificName>Epibátēs Athēnaîos</SpecificName>
+    <Icon>units/athen_champion_marine.png</Icon>
+    <RequiredTechnology>iphicratean_reforms</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/infantry_swordsman_c.xml</Actor>
+  </VisualActor>
+</Entity>

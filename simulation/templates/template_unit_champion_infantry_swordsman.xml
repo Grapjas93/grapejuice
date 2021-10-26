@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry">
+  <Attack>
+		<Melee>
+		  <AttackName context="Name of an attack using a double-edged sword.">Sword</AttackName>
+		  <Damage>
+			<Hack>11</Hack>
+			<Pierce>0</Pierce>
+			<Crush>0</Crush>
+		  </Damage>
+		  <MaxRange>3</MaxRange>
+		  <PrepareTime>375</PrepareTime>
+		  <RepeatTime>900</RepeatTime>
+		  <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+		</Melee>
+		<Ranged>
+		  <AttackName>Javelin</AttackName>
+		  <Ammo>1</Ammo>
+		  <RefillAmount>0</RefillAmount>
+		  <RefillTime>0</RefillTime>
+		  <Damage>
+			<Pierce>75</Pierce>
+		  </Damage>
+		  <MaxRange>25</MaxRange>
+		  <PrepareTime>750</PrepareTime>
+		  <RepeatTime>1250</RepeatTime>
+		  <Projectile>
+			<Speed>70</Speed>
+			<Spread>1.5</Spread>
+			<Gravity>35</Gravity>
+			<FriendlyFire>false</FriendlyFire>
+			<LaunchPoint y="3"/>
+		  </Projectile>
+		  <PreferredClasses datatype="tokens">Human</PreferredClasses>
+		</Ranged>
+  </Attack>
+  <Health>
+    <Max>200</Max>
+  </Health>
+  <Identity>
+    <VisibleClasses datatype="tokens">Melee Swordsman Ammo</VisibleClasses>
+    <GenericName>Champion Swordsman</GenericName>
+    <Formations datatype="tokens">
+      special/formations/testudo
+    </Formations>
+  </Identity>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">3</Hack>
+        <Pierce op="add">3</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <Sound>
+    <SoundGroups>
+      <attack_melee>attack/weapon/sword_attack.xml</attack_melee>
+    </SoundGroups>
+  </Sound>
+</Entity>

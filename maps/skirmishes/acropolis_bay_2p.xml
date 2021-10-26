@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "Each player starts the match atop a large flat plateau.\n\nTo the East lies a large bay with fishing opportunities. To the West is a rugged hinterland with an unclaimed plateau commanding the valley below.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Acropolis Bay (2)",
   "PlayerData": [
     null,

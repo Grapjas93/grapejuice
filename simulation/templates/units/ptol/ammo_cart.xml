@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_ammo_cart">
+   <Attack>
+       <Melee>
+      <AttackName>Pike</AttackName>
+	   <PrepareTime> 925 </PrepareTime>
+	   <RepeatTime> 1075 </RepeatTime>
+      <Damage>
+        <Hack>2</Hack>
+        <Pierce>3</Pierce>
+      </Damage>
+      <MaxRange>8</MaxRange>
+       <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+    </Melee>  
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 4 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Footprint replace="">
+    <Square width="3" depth="6"/>
+    <Height>6</Height>
+  </Footprint>
+  <Identity>
+    <Civ>ptol</Civ>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
+  </Identity>
+  <Sound>
+    <SoundGroups>
+      <select>actor/fauna/animal/camel_select.xml</select>
+      <order_walk>actor/fauna/movement/camel_order.xml</order_walk>
+      <death>actor/fauna/death/death_camel.xml</death>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <HeightOffset>7</HeightOffset>
+  </StatusBars>
+  <VisualActor>
+    <Actor>units/seleucids/ammo_cart.xml</Actor>
+  </VisualActor>
+</Entity>

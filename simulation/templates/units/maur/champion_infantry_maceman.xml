@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_maceman">
+   <UnitMotion>
+       <WalkSpeed> 9.5 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Mace </AttackName>
+           <PrepareTime> 775 </PrepareTime>
+           <RepeatTime> 925 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <VisibleClasses datatype="tokens">Melee Maceman Ammo</VisibleClasses>
+    <Civ>maur</Civ>
+    <GenericName>Warrior</GenericName>
+    <SpecificName>Yōddha</SpecificName>
+    <SelectionGroupName>units/maur/champion_infantry</SelectionGroupName>
+    <Icon>units/maur_champion_maceman.png</Icon>
+    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/mauryas/infantry_maceman_c.xml</Actor>
+  </VisualActor>
+</Entity>

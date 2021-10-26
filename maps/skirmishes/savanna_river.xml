@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "A large savanna is bisected by a narrow jungle stream.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Savanna River (2)",
   "PlayerData": [
     null,

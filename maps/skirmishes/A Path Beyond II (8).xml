@@ -40,9 +40,11 @@
 {
   "AISeed": 0,
   "Description": "A map with many shores and lots of strategic possibilities. ",
-  "Keywords": [],
+  "Keywords": [	
+  "grapejuice"
+  ],
   "LockTeams": false,
-  "Name": "A Path Beyond II",
+  "Name": "A Path Beyond II (8)",
   "PlayerData": [
     null,
     {},

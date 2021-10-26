@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/mace/cavalry_spearman_a">
+   <UnitMotion>
+       <WalkSpeed> 15.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 1200 </PrepareTime>
+           <RepeatTime> 1350 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/mace/cavalry_spearman_c</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/macedonians/cavalry_spearman_e_m.xml</Actor>
+  </VisualActor>
+</Entity>

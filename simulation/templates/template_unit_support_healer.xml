@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_support">
+   <UnitMotion>
+       <WalkSpeed> 12 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
   <TrainingRestrictions>
     <Category>CombatPriest</Category>
   </TrainingRestrictions>
@@ -12,8 +25,8 @@
         <Crush>2</Crush>
       </Damage>
       <MaxRange>2</MaxRange>
-      <PrepareTime>500</PrepareTime>
-      <RepeatTime>1500</RepeatTime>
+      <PrepareTime>800</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
       <PreferredClasses datatype="tokens">!Ship</PreferredClasses>
     </Melee>
   </Attack>
@@ -30,7 +43,7 @@
     </Resources>
   </Cost>
    <Health>
-    <Max>85</Max>
+    <Max>50</Max>
   </Health>
   <Identity>
     <Classes datatype="tokens">-ConquestCritical</Classes>
@@ -39,7 +52,7 @@
     <SelectionGroupName>template_unit_support_healer</SelectionGroupName>
     <Rank>Basic</Rank>
     <RequiredTechnology>phase_town</RequiredTechnology>
-    <Tooltip>Treats wounded soldiers in field camps.</Tooltip>
+    <Tooltip>Treats wounded units inside buildings. Can also build tents in neutral and enemy territory.</Tooltip>
   </Identity>
   <Loot>
     <xp>8</xp>

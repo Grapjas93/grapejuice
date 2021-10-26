@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_javelineer">
+   <UnitMotion>
+       <WalkSpeed> 11 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1625 </PrepareTime>
+           <RepeatTime> 1775 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 725 </PrepareTime>
+           <RepeatTime> 875 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 7 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>pers</Civ>
+    <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
+    <Lang>persian</Lang>
+    <GenericName>Cardaces Skirmisher</GenericName>
+    <SpecificName>Peltastes Kardakes</SpecificName>
+    <Icon>units/pers_kardakes_skirmisher.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/persians/infantry_javelinist_c.xml</Actor>
+  </VisualActor>
+</Entity>

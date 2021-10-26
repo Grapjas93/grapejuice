@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/maur/infantry_archer_a">
+   <UnitMotion>
+       <WalkSpeed> 11.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1600 </PrepareTime>
+           <RepeatTime> 1750 </RepeatTime>
+       </Ranged>  
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 600 </PrepareTime>
+           <RepeatTime> 750 </RepeatTime>
+       </Melee> 
+   </Attack> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+<Rank>Elite</Rank>
+<Icon>units/maur_infantry_archer.png</Icon>
+</Identity>
+ <Promotion disable=""/>
+  <VisualActor>
+<Actor>units/mauryas/infantry_archer_e.xml</Actor>
+</VisualActor>
+</Entity>

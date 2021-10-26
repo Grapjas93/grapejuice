@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_chariot_archer">
+   <UnitMotion>
+       <WalkSpeed> 17.3 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1675 </PrepareTime>
+           <RepeatTime> 1825 </RepeatTime>
+       </Ranged> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 1.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Footprint replace="">
+    <Square width="8.0" depth="11.0"/>
+    <Height>6.0</Height>
+  </Footprint>
+  <Identity>
+    <Civ>maur</Civ>
+    <GenericName>War Chariot</GenericName>
+    <SpecificName>Rath</SpecificName>
+    <SelectionGroupName>units/maur/champion_chariot</SelectionGroupName>
+    <VisibleClasses datatype="tokens">Chariot</VisibleClasses>
+    <Icon>units/maur_champion_chariot.png</Icon>
+    <RequiredTechnology>unlock_champion_chariots</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/mauryas/chariot_archer_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

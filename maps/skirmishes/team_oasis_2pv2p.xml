@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "An oasis surrounded by mountains and desert. Farmlands near the water's edge provide much-needed boost in farming, but foraging and hunting are in short supply.",
-  "Keywords": [],
+  "Keywords": ["grapejuice"],
   "Name": "Team Oasis (2v2)",
   "PlayerData": [
     null,
