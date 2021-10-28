@@ -36,7 +36,7 @@
 
 			<!-- Health bar -->
 			<object name="healthSection">
-				<object size="0 0 100% 12" name="healthLabel" type="text" style="StatsTextLeft" ghost="true">
+				<object size="0 0 100% 12" name="healthLabel" type="text" tooltip_style="sessionToolTip">
 					<translatableAttribute id="tooltip">Health</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="healthStats" type="text" style="StatsTextRight" ghost="true"/>
@@ -60,7 +60,7 @@
 
 			<!-- Energy bar -->
 			<object name="energySection">
-				<object size="0 0 50% 12" name="energyLabel" type="text" style="StatsTextRight" ghost="true">
+				<object size="0 0 100% 12" name="energyLabel" type="text" tooltip_style="sessionToolTip">
 					<translatableAttribute id="tooltip">Energy</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="energyStats" type="text" style="StatsTextRight" ghost="true"/>
@@ -73,7 +73,7 @@
 
 			<!-- Capture bar -->
 			<object name="captureSection">
-				<object size="0 0 50% 12" name="captureLabel" type="text" style="StatsTextLeft" ghost="true">
+				<object size="0 0 100% 12" name="captureLabel" type="text" tooltip_style="sessionToolTip">
 					<translatableAttribute id="tooltip">Capture points</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="captureStats" type="text" style="StatsTextRight" ghost="true"/>
@@ -86,7 +86,7 @@
 
 			<!-- Ammo bar -->
 			<object name="ammoSection">
-				<object size="0 0 50% 12" name="ammoLabel" type="text" style="StatsTextLeft" ghost="true">
+				<object size="0 0 50% 12" name="ammoLabel" type="text" tooltip_style="sessionToolTip">
 					<translatableAttribute id="tooltip">Ammo</translatableAttribute>
 				</object>
 				<object size="0 0 50% 12" name="ammoStats" type="text" style="StatsTextLeft" ghost="true"/>
