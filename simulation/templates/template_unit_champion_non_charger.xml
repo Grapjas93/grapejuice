@@ -9,14 +9,38 @@
       <RestrictedClasses datatype="tokens">Field Palisade Wall</RestrictedClasses>
     </Capture>
   </Attack>
+  <Cost>
+    <BuildTime>25</BuildTime>
+    <Resources>
+      <food>150</food>
+      <wood>80</wood>
+      <metal>100</metal>
+    </Resources>
+  </Cost>
+  <Footprint replace="">
+    <Square width="3.0" depth="6.0"/>
+    <Height>6.0</Height>
+  </Footprint>
+  <Health>
+    <Max>240</Max>
+  </Health>
   <Identity>
-    <Classes datatype="tokens">Human</Classes>
-    <VisibleClasses datatype="tokens">Soldier Champion</VisibleClasses>
-    <GenericName>Champion Unit</GenericName>
-    <RequiredTechnology>phase_city</RequiredTechnology>
+    <Classes datatype="tokens">FastMoving</Classes>
+    <VisibleClasses datatype="tokens">Cavalry</VisibleClasses>
+    <GenericName>Champion Cavalry</GenericName>
+    <Formations datatype="tokens">
+      special/formations/wedge
+    </Formations>
+    <RequiredTechnology>unlock_champion_cavalry</RequiredTechnology>
   </Identity>
+  <Loot>
+    <xp>200</xp>
+    <food>15</food>
+    <wood>8</wood>
+    <metal>10</metal>
+  </Loot>
   <Position>
-    <TurnRate>8</TurnRate>
+    <TurnRate>5</TurnRate>
   </Position>
   <Selectable>
     <Overlay>
@@ -28,11 +52,16 @@
   </Selectable>
   <Sound>
     <SoundGroups>
-      <order_attack>voice/{lang}/civ/civ_{phenotype}_attack.xml</order_attack>
-      <order_garrison>voice/{lang}/civ/civ_{phenotype}_garrison.xml</order_garrison>
-      <order_gather>voice/{lang}/civ/civ_{phenotype}_gather.xml</order_gather>
-      <order_walk>voice/{lang}/civ/civ_{phenotype}_walk.xml</order_walk>
-      <select>voice/{lang}/civ/civ_{phenotype}_select.xml</select>
+      <walk>actor/mounted/movement/walk.xml</walk>
+      <run>actor/mounted/movement/walk.xml</run>
+      <death>actor/fauna/death/death_horse.xml</death>
+      <trained>interface/alarm/alarm_create_cav.xml</trained>
     </SoundGroups>
   </Sound>
+  <StatusBars>
+    <HeightOffset>7.0</HeightOffset>
+  </StatusBars>
+  <Vision>
+    <Range>96</Range>
+  </Vision>
 </Entity>

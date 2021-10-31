@@ -50,10 +50,14 @@
     <Technologies datatype="tokens">
       soldier_attack_melee_01
       soldier_attack_melee_02
+      soldier_attack_melee_03
+      soldier_attack_melee_03_variant
       soldier_attack_ranged_01
       soldier_attack_ranged_02
+      soldier_attack_ranged_03
       soldier_resistance_01
       soldier_resistance_02
+      archer_attack_spread
     </Technologies>
   </ProductionQueue>
   <Sound>
