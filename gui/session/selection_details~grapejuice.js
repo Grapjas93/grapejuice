@@ -451,7 +451,7 @@ function displaySingle(entState)
 	});
 
 	// grapejuice, block entity information of unowned units unless the espionage tech has been researched
-	if (Engine.GetPlayerID() != entState.player && !entState.resourceSupply)
+	if (Engine.GetPlayerID() != entState.player && !entState.resourceSupply && Engine.GetPlayerID() != -1)
 	{	
 		if (technologyEnabled == false)
 		{
