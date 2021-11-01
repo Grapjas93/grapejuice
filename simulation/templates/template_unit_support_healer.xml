@@ -52,7 +52,7 @@
     <SelectionGroupName>template_unit_support_healer</SelectionGroupName>
     <Rank>Basic</Rank>
     <RequiredTechnology>phase_town</RequiredTechnology>
-    <Tooltip>Treats wounded units inside buildings. Can also build tents in neutral and enemy territory.</Tooltip>
+    <Tooltip>Treats wounded units inside buildings. Can also build field camps.</Tooltip>
   </Identity>
   <Loot>
     <xp>8</xp>
