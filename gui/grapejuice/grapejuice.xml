@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<objects>
+
+	<script directory="gui/common/"/>
+	<script directory="gui/grapejuice/"/>
+
+	<!-- Add a translucent black background to fade out the menu page -->
+	<object type="image" sprite="ModernFade"/>
+
+	<object type="image" style="ModernDialog" size="50%-466 50%-316 50%+466 50%+316">
+		<object name="title" style="ModernLabelText" type="text" size="50%-128 -18 50%+128 14">
+			<translatableAttribute id="caption">Mod Info</translatableAttribute>
+		</object>
+
+		<object type="image" sprite="ModernFade" size="20 20 100%-20 100%-58">
+			<object name="mainText" type="text" style="ModernTextPanel" />
+		</object>
+
+		<object type="button" style="ModernButtonRed" tooltip_style="snToolTip" size="100%-908 100%-52 100%-718 100%-24" hotkey="cancel">
+			<translatableAttribute id="caption">Close</translatableAttribute>
+			<action on="Press">Engine.PopGuiPage();</action>
+		</object>
+
+		<object type="button" style="ModernButtonRed" size="120%-796 100%-52 115%-607 100%-24">
+			<translatableAttribute id="caption">Balance Sheet</translatableAttribute>
+			<action on="Press">openURL("https://docs.google.com/spreadsheets/d/1g1GSy4thCCHUi5xWPgrDzG91Ty0kjowU_7ZluccuqoA");</action>
+		</object>
+
+		<object type="button" style="ModernButtonRed" size="115%-602 100%-52 110%-412 100%-24">
+			<translatableAttribute id="caption">Github</translatableAttribute>
+			<action on="Press">openURL("https://github.com/Grapjas93/grapejuice/tree/main");</action>
+		</object>
+
+		<object type="button" style="ModernButtonRed" size="110%-408 100%-52 105%-218 100%-24">
+			<translatableAttribute id="caption">Mod.io</translatableAttribute>
+			<action on="Press">openURL("https://0ad.mod.io/grapejuice");</action>
+		</object>
+
+		<object name="url" type="button" style="ModernButtonRed" size="105%-214 100%-52 100%-24 100%-24">
+			<translatableAttribute id="caption">Forum</translatableAttribute>
+			<action on="Press">openURL("https://wildfiregames.com/forum/topic/35914-mod-grapejuice");</action>
+		</object>
+	</object>
+
+</objects>

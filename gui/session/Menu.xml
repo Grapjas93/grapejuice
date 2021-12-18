@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="menuButtonPanel"
+	style="StonePanelThinBorder"
+	type="image"
+	z="70"
+
+	size="100%-164 0 100% 0"
+>		<object
+			type="button"
+			size="4 4 100%-4 32"
+			style="Grapejuice"
+			tooltip_style="sessionToolTip"
+			hidden="true"
+		/>
+
+	<repeat count="15">
+		<object
+			type="button"
+			size="4 4 100%-4 32"
+			style="StoneButtonFancy"
+			tooltip_style="sessionToolTip"
+			hidden="true"
+		/>
+	</repeat>
+</object>

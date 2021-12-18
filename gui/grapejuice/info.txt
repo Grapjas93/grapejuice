@@ -1,0 +1,139 @@
+[font="sans-bold-20"]About Grapejuice[font="sans-bold-12"] [color="235 184 0"] v3.1.3 [font="sans-14"][color="255 255 255"]
+
+This mod aims to bring interesting new mechanics to the player, and- to some extend- increase realism. It started out simple with just adding 2 maps and randomnization. Then quickly became quite larger. 
+
+The name mods name "Grapejuice" is inspired by people that misunderstand my nickname Grapjas for Grapejuice or think it's in any way related to it. Even though it's not i think it's quite a funny misunderstanding to me, so i embrace it. Grapjas is a Dutch word and means "Joker" (not as in batman joker though, lol). 
+
+No doubt about it, this mod has much room for improvement, and may run things in an suboptimal way because i'm still learning alot. But i'll try to improve. 
+
+[font="sans-bold-14"][color="134 0 48"]Please report any issues you may find on the forum or open a new issue on Github.[font="sans-14"][color="255 255 255"]
+
+
+[font="sans-bold-14"]TL;DR version of what Grapejuice adds: [font="sans-14"]
+•    Total rebalance of all units, per civ and even per rank. 
+•    Ranged units have ammo.
+•    With the new ammo feature, theres a new re-arm aura at military buildings.  
+•    Units can charge the enemy for bonus damage. 
+•    Units enter a wounded state when their health is low.
+•    Various units have secondary weapons.
+•    Espionage tech has been reworked.
+•    Promotion has been reworked.
+•    Some techs have been reworked.
+•    Priests have been reworked and they can make a building that's new, "Field Camp".
+•    Some particle effects have been added and others have been reworked.
+•    2 New skirmish maps.
+•    Player position randomnization for supported skirmish maps.
+
+For the more detailed version of these changes read further down below (in the same order).
+
+
+[font="sans-bold-20"]Total Rebalance[font="sans-14"]
+
+Every single unit has received individual balance changes based on their appearance ingame. The result of this is that civilizations feel much more unique. It makes Mauryans the quick moving and agile attackers, the Romans the well equipped but less mobile force and so on.
+In short the balance goes as follows: 
+•    [font="sans-bold-14"]Lightweight units[font="sans-14"] have low armor, but are fast movers and attackers. 
+•    [font="sans-bold-14"]Heavyweight units[font="sans-14"] move and attack slow but can endure much more damage. 
+The weight of weapons and shield size is being taken into account aswell. For the full in-dept view of the rebalance click on the balance sheet button. 
+
+[font="sans-bold-16"]There are however, also some general balance changes:[font="sans-14"]
+•    [font="sans-bold-14"]Pikemen[font="sans-14"] got their hack damage removed and now have a 5x cavalry bonus damage instead of 3x.
+•    [font="sans-bold-14"]Spearmen[font="sans-14"] got their cavalry bonus damage removed. Increased their piercing damage and lowered their hack damage.
+•    [font="sans-bold-14"]Soldier melee cavalry[font="sans-14"] got their health reduced by 40 hp.
+•    [font="sans-bold-14"]Support units:[font="sans-14"] 
+    •    Females now have twice as much health. 
+    •    Females/priests/traders have the defense/speed of an unarmored unit. 
+    •    War dogs have much less health now, though still very fast and gave them more attack.
+•    [font="sans-bold-14"]Siege changes:[font="sans-14"] 
+    •    Rams only cost (alot) of wood, siege towers/throwers/shooters mostly cost wood and some stone/metal. 
+    •    All types of elephants can be trained at the town phase and only cost (alot) of food. 
+         Melee elephants are no longer siege units like they were but more of a shock unit with high pierce damage. 
+         Elephant archers have much more ammo than horse archers. 
+    •    Siege tower now shoots equal amount of arrows to number of garrisoned RANGED units (was capped before) and have an ammo pool. 
+    •    All siege units now have much less pierce ressistance, because human ranged units (and also defense structures) 
+         can't attack siege with ranged weapons anymore.
+    •    Bolt shooters can now quite effectively counter siege units (as intended). 
+    •    Mechanical siege units received some hack ressistance buffs, making it equal to the new pierce ressistance.
+•    [font="sans-bold-14"]Ranged units[font="sans-14"]  will recieve 10% weapon damage bonus for both weapons per rank. 
+     Melee units will receive 20% weapon damage bonus per rank. 
+     Elephant archers regain 20% of their ammo back on rank up.
+•    [font="sans-bold-14"]Ranged units attack damage changes:[font="sans-14"] 
+    •    Javelin: Very high attack, low range, low ammo, low projectile speed, low spread - Cavalry have increased spread. 
+    •    Bow: Good attack, high range, decent ammo, very high projectile speed, high spread - cavalry have less range. 
+    •    Slingers: Low attack, medium-high range, plenty ammo, medium-high projectile speed, medium spread.
+•    Heroes and champions now have the same attack damage per weapon type. 
+
+
+[font="sans-bold-20"]Ammo[font="sans-14"]
+
+Ranged units, including siege units, have ammo and will need to reload their ammo at the new re-arm aura. Slingers will regain ammo slowly anywhere. 
+The pink statusbar represents the unit ammo.
+
+
+[font="sans-bold-20"]Re-Arm Aura[font="sans-14"]
+
+Military buildings and also the forge have the new re-arm aura. Ranged units inside it will fully restock their ammo every 3s. You need to have at least 1 forge on the field for the aura to work, meaning that the forge now plays a very important role and capturing it can severely weaken the enemy. Some military buildings have a bigger aura than others. 
+
+
+[font="sans-bold-20"]Charge Attack[font="sans-14"]
+
+All human military units and also rams have energy and will use it automatically to charge their target within a certain range. While charging, the unit will consume energy at a rate. If they had energy left when reaching their target, they will deal bonus damage on that blow and consume the energy they had left. Rams total energy and bonus damage is based on the number of garrisoned units inside it. Units will only recharge energy is they are completely idle.
+The yellow statusbar represents the units energy.
+
+
+[font="sans-bold-20"]Wounded State[font="sans-14"]
+
+All units (even wildlife, siege etc), will enter a wounded state when their health drops below a certain treshold. This will make you think twice before commiting your army to fight because retreating may not be so easy anymore. They will receive movement and attack speed penalties while in this state. The state gets removed when units are healed/repaired to above that treshold.
+
+
+[font="sans-bold-20"]Secondary Weapons[font="sans-14"]
+
+Pretty much all ranged units and some melee units have secondary weapons. They will automatically switch to melee weapons and otherwise use ranged based on these conditions:
+•    If the targetted unit is getting to close.
+•    The target is a siege unit or a wall.
+•    The unit is out of ammo.
+
+
+[font="sans-bold-20"]Espionage Tech Rework[font="sans-14"]
+
+Players will no longer be able to automatically see enemy unit stats. They will need to send spies via the espionage tech that will gather information about their infastructure and equipment. After buying the tech this information becomes available to you.
+
+
+[font="sans-bold-20"]Promotion Rework[font="sans-14"]
+
+If there is a champion version of a unit type available, soldiers of that unit type will be able to promote as one. This means there are 4 promotion ranks available to some units. For example: If you play as the Athenians, the Athenian hoplite soldiers (unit type: spearmen) will be able to promote to city guards (unit type: spearmen) in the 4th rank. Can you make your men survive long enough to see them get promoted to champion status?
+
+
+[font="sans-bold-20"]Defensive Techs Rework[font="sans-14"]
+
+Instead of 4 upgrades there are now just 2. They both give a positive and a negative bonus. Example: Soldiers +3 crush, +1 hack and pierce ressistance. 50ms attack and 0.25 movement speed penalty.
+
+
+[font="sans-bold-20"]Priest Rework[font="sans-14"]
+
+Priests can no longer perform fantasy heals. They instead heal garrisoned units at a rate (stacks) in the structure they are in. In addition to this, they are the only one who can be appointed to make the new "Field Camp" building that is available to all civs. This building can be created in all territories and serves as a resting place for soldiers. Soldiers will heal slowly and can be increased by adding priests. But be aware, even though it cannot be captured, it's destroyed really easily.
+
+
+[font="sans-bold-20"]Particle Reworks And Additions[font="sans-14"]
+
+Arrows now have slightly visible trails. Flaming projectiles like javelins, arrows and siege stones got their particles reworked.
+
+
+[font="sans-bold-20"]2 New Skirmish maps[font="sans-14"]
+
+"A Path Beyond II" and "X". Both are 8 player maps. For a more visual presentation check the forum post.
+
+
+[font="sans-bold-20"]Player Position Randomnization[font="sans-14"]
+
+Supported maps can be found under the grapejuice filter, or you can simply check if they have my mod logo on them in the preview. Normally, skirmish map positions are always divided the same. For example: If you would always be in slot 2 at the game setup, you would always get the same starting position on that map. 
+
+The new randomnization aims to make a change to that. No matter in which slot you are, players will be randomly placed across the available starting positions. It will keep teams together and it will NOT break the maps design (for instance if a map has 2 islands, it will make sure the teams are divided correctly between the islands).
+
+
+[font="sans-bold-20"]Outro[font="sans-14"]
+
+Hopefully, you'll have fun playing the mod. 
+There are some changes i didn't  mention here, i guess you just have to play and find out for yourself :)
+
+Once again, if you encounter any bugs/issues (i'm sure there are some) please be sure to report them to me on the forum. I'll do my best to fix them.
+
