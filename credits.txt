@@ -1,8 +1,0 @@
-Excluding the skirmish maps "X" and "A Path Beyond II", 
-i did not make or do i own any of the other maps involved in this mod. 
-I only made slight modifications to them (player position randomnization).
-
-The credits for the creation of those maps go to the member(s) of wildfiregames for making them.
-@Langbart: The game setup map filter for Grapejuice compatible maps.
-@Stan: Champion rank icon.
-

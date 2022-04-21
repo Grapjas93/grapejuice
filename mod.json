@@ -1,7 +1,28 @@
-{
-	"name": "grapejuice SVN",
-	"version": "2.1.0",
-	"label": "New maps, New atlas templates, New Skirmish Randomization, Rebalance, New particles, New Building, New Tech",
-	"description": "2 new maps. The mod adds player position randomnization for skirmish maps. Reworked some particles and added others. Some units have been rebalanced (mostly archer units). New building + new tech, Field Camp. Reworked priests.",
-	"dependencies": ["0ad=0.0.25"]
-}
+{
+
+
+
+	"name": "grapejuice",
+
+
+
+	"version": "3.1.6",
+
+
+
+	"label": "gameplay overhaul, total rebalance, new skirmish randomization/maps/mechanics/particles/building/tech and more",
+
+
+
+	"description": "A gameplay overhaul mod that aims to increase realism. Units can charge attack, can get wounded, ranged units require and use ammo, various units have secondary weapons and every single unit has been rebalanced, even per rank. Also includes new maps, player position randomnization for skirmish maps, and more.",
+
+
+
+	"dependencies": ["0ad=0.0.25"]
+
+
+
+}
+
+
+

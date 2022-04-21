@@ -24,11 +24,9 @@
 	<Melee>
       <AttackName>Sword</AttackName>
       <Damage>
-        <Hack>6.5</Hack>
-        <Pierce>0</Pierce>
-        <Crush>0.0</Crush>
+        <Hack>5.5</Hack>
       </Damage>
-      <MaxRange>6</MaxRange>
+      <MaxRange>3</MaxRange>
       <PrepareTime>375</PrepareTime>
       <RepeatTime>750</RepeatTime>
     </Melee>

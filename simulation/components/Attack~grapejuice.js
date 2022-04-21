@@ -423,7 +423,7 @@ Attack.prototype.AutoRefill = function()
 {
 	if (this.ammo != this.maxAmmo)
 	{
-		this.ammo = this.ammo + this.refillAmount;
+		this.ammo = this.ammo + 1;
 		this.RefreshStatusbars(this.entity);
 	}
 	

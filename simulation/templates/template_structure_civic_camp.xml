@@ -2,7 +2,7 @@
 <Entity parent="template_structure">
   <BuildRestrictions>
     <PlacementType>land</PlacementType>
-    <Territory>neutral enemy</Territory>
+    <Territory>neutral enemy own</Territory>
     <Category>Structure</Category>
     <Category>FieldCamp</Category>
   </BuildRestrictions>
@@ -10,7 +10,7 @@
     <Classes datatype="tokens">ConquestCritical</Classes>
     <GenericName>Camp</GenericName>
     <SelectionGroupName>template_structure_civic_camp</SelectionGroupName>
-    <Tooltip>A resting place in neutral territory for wounded soldiers.</Tooltip>
+    <Tooltip>A resting place for wounded soldiers.</Tooltip>
     <VisibleClasses datatype="tokens">Town Camp</VisibleClasses>
     <Icon>structures/camp.png</Icon>
     <RequiredTechnology>phase_village</RequiredTechnology>

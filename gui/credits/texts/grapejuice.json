@@ -1,0 +1,22 @@
+{
+	"Title": "Grapejuice Credits",
+	"Content": [
+		{
+			"Title": "Thanks For Guidance",
+			"List": [
+				{ "nick": "Wraitii" },
+				{ "nick": "Stan" },
+				{ "nick": "Nani" },
+				{ "nick": "Freagerach" },
+				{ "nick": "Baduso" }
+			]
+		},
+		{
+			"Title": "Contributors",
+			"List": [
+				{ "nick": "Langbart - grapejuice map filter, bug fix" },
+				{ "nick": "Stan - champion rank icon" }
+			]
+		}
+	]
+}
