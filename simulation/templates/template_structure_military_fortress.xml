@@ -7,19 +7,15 @@
     <Ranged>
       <AttackName>Bow</AttackName>
       <Damage>
-        <Hack>0</Hack>
-        <Pierce>16</Pierce>
-        <Crush>0</Crush>
+        <Pierce>10</Pierce>
       </Damage>
       <MaxRange>60</MaxRange>
-      <MinRange>0</MinRange>
       <PrepareTime>1200</PrepareTime>
       <RepeatTime>2000</RepeatTime>
-      <Delay>0</Delay>
       <Projectile>
-        <Speed>100.0</Speed>
+        <Speed>100</Speed>
         <Spread>1.5</Spread>
-        <Gravity>50.0</Gravity>
+        <Gravity>50</Gravity>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
       </Projectile>
@@ -31,11 +27,6 @@
       </RangeOverlay>
     </Ranged>
   </Attack>
-  <BuildingAI>
-    <DefaultArrowCount>3</DefaultArrowCount>
-    <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
-    <GarrisonArrowClasses>Soldier</GarrisonArrowClasses>
-  </BuildingAI>
   <BuildRestrictions>
     <Category>Fortress</Category>
     <Distance>
@@ -43,8 +34,13 @@
       <MinDistance>80</MinDistance>
     </Distance>
   </BuildRestrictions>
+  <BuildingAI>
+    <DefaultArrowCount>4</DefaultArrowCount>
+    <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
+    <GarrisonArrowClasses>Soldier</GarrisonArrowClasses>
+  </BuildingAI>
   <Capturable>
-    <CapturePoints>4000</CapturePoints>
+    <CapturePoints op="mul">8</CapturePoints>
     <RegenRate>10.0</RegenRate>
   </Capturable>
   <Cost>
@@ -71,9 +67,9 @@
   <Identity>
     <GenericName>Fortress</GenericName>
     <SelectionGroupName>template_structure_military_fortress</SelectionGroupName>
-    <Tooltip>Territory root. Garrison Soldiers for additional arrows.</Tooltip>
+    <Tooltip>Garrison Soldiers for additional arrows.</Tooltip>
     <Classes datatype="tokens">GarrisonFortress</Classes>
-    <VisibleClasses datatype="tokens">Defensive City Fortress</VisibleClasses>
+    <VisibleClasses datatype="tokens">Defensive Fortress</VisibleClasses>
     <Icon>structures/fortress.png</Icon>
     <RequiredTechnology>phase_city</RequiredTechnology>
   </Identity>
@@ -84,15 +80,15 @@
   <Obstruction>
     <Static width="25.0" depth="25.0"/>
   </Obstruction>
-  <ProductionQueue>
-    <BatchTimeModifier>0.8</BatchTimeModifier>
-    <Entities datatype="tokens">
-      units/{civ}/ammo_cart
-    </Entities>
+  <ProductionQueue/>
+  <Researcher>
     <Technologies datatype="tokens">
       attack_soldiers_will
+      art_of_war
+      poison_arrows
+      poison_blades
     </Technologies>
-  </ProductionQueue>
+  </Researcher>
   <Sound>
     <SoundGroups>
       <select>interface/select/building/sel_fortress.xml</select>
@@ -101,13 +97,17 @@
       <attack_impact_ranged>attack/impact/arrow_impact.xml</attack_impact_ranged>
     </SoundGroups>
   </Sound>
+  <TerritoryDecay>
+    <DecayRate op="mul">2</DecayRate>
+  </TerritoryDecay>
   <TerritoryInfluence>
-    <Root>true</Root>
     <Radius>80</Radius>
-    <Weight>40000</Weight>
   </TerritoryInfluence>
+  <Trainer>
+    <BatchTimeModifier>0.8</BatchTimeModifier>
+  </Trainer>
   <Vision>
-    <Range>80</Range>
+    <Range>90</Range>
   </Vision>
   <VisualActor>
     <FoundationActor>structures/fndn_8x8.xml</FoundationActor>

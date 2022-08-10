@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure">
+  <Auras datatype="tokens">
+    structures/refill_ammo_30range
+  </Auras>
+  <GarrisonHolder>
+    <EjectHealth>0.1</EjectHealth>
+    <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
+    <BuffHeal>0</BuffHeal>
+    <LoadingRange>2</LoadingRange>
+  </GarrisonHolder>
+  <Identity>
+    <GenericName>Military Structure</GenericName>
+    <Classes datatype="tokens">ConquestCritical</Classes>
+    <VisibleClasses datatype="tokens">Military</VisibleClasses>
+  </Identity>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>20</Hack>
+        <Pierce>35</Pierce>
+        <Crush>3</Crush>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <TerritoryInfluence>
+    <Root>false</Root>
+    <Radius>50</Radius>
+    <Weight>40000</Weight>
+  </TerritoryInfluence>
+</Entity>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<setup>
+	<icon name="icon_focusattacked"
+		sprite="stretched:session/icons/focus-attacked.png"
+		size="14 14"
+	/>
+	<icon name="icon_alert"
+		sprite="stretched:session/icons/bell_level1.png"
+		size="14 14"
+	/>
+</setup>
