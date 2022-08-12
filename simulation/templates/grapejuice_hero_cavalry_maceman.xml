@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_maceman">
+  <Attack>
+    <Melee>
+      <Damage>
+        <Crush>16</Crush>
+      </Damage>
+      <MaxRange>4</MaxRange>
+    </Melee>
+  </Attack>
+</Entity>

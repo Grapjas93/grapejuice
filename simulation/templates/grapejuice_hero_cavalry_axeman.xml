@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry_axeman">
+  <Attack>
+    <Melee>
+      <Damage>
+        <Hack>13.8</Hack>
+        <Crush>4.6</Crush>
+      </Damage>
+     <MaxRange>4</MaxRange>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Pierce op="add">1</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

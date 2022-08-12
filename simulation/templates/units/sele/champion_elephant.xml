@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice_elephant_melee">
+   <UnitMotion>
+       <WalkSpeed> 8 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Tusk </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 7.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Armored War Elephant</GenericName>
+    <SpecificName>Thorakisménos Eléphantos</SpecificName>
+    <Classes datatype="tokens">IndianElephant</Classes>
+    <Icon>units/sele_champion_elephant.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/elephantry_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

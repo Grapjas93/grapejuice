@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_trader">
+   <UnitMotion>
+       <WalkSpeed> 9 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Cost>
+    <BuildTime>15</BuildTime>
+    <Resources>
+      <food>100</food>
+      <metal>80</metal>
+    </Resources>
+  </Cost>
+  <Health>
+    <Max>100</Max>
+  </Health>
+  <Identity>
+    <Classes datatype="tokens">-ConquestCritical</Classes>
+    <VisibleClasses datatype="tokens">Trader Bribable</VisibleClasses>
+    <GenericName>Trader</GenericName>
+    <SelectionGroupName>template_unit_support_trader</SelectionGroupName>
+    <Tooltip>Trade resources between your own markets and those of your allies.</Tooltip>
+    <Formations disable=""/>
+  </Identity>
+  <Loot>
+    <xp>10</xp>
+    <food>10</food>
+    <metal>8</metal>
+  </Loot>
+  <Position>
+    <Anchor>pitch</Anchor>
+  </Position>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>128x256/ellipse.png</MainTexture>
+        <MainTextureMask>128x256/ellipse_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <order_trade>voice/{lang}/civ/civ_{phenotype}_trade.xml</order_trade>
+      <trained>interface/alarm/alarm_create_worker.xml</trained>
+    </SoundGroups>
+  </Sound>
+  <Trader>
+    <GainMultiplier>0.75</GainMultiplier>
+  </Trader>
+  <UnitAI>
+    <CanGuard>false</CanGuard>
+    <CanPatrol>false</CanPatrol>
+  </UnitAI>
+  <Vision>
+    <Range>60</Range>
+  </Vision>
+  <VisionSharing>
+    <Bribable>true</Bribable>
+  </VisionSharing>
+</Entity>

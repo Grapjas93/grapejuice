@@ -18,9 +18,9 @@
 		</object>
 
 		<!-- Primary and secondary names. -->
-		<object>
-			<object size="0 2 100% 22" name="primary" ghost="true" type="text" style="PrimaryNameCentered"/>
-			<object size="0 17 100% 37" name="secondary" ghost="true" type="text" style="SecondaryNameCentered"/>
+		<object size="0 3 100% 37">
+			<object size="0 0 100% 50%" name="primary" ghost="true" type="text" style="PrimaryNameCentered"/>
+			<object size="0 50%-1 100% 100%" name="secondary" ghost="true" type="text" style="SecondaryNameCentered"/>
 		</object>
 	</object>
 
@@ -40,7 +40,6 @@
 					<translatableAttribute id="tooltip">Health</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="healthStats" type="text" style="StatsTextRight" ghost="true"/>
-
 				<object size="1 14 100% 21" name="health" type="image" tooltip_style="sessionToolTip">
 					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
 					<object type="image" sprite="healthBackground" ghost="true"/>
@@ -73,14 +72,16 @@
 
 			<!-- Capture bar -->
 			<object name="captureSection">
-				<object size="0 0 50% 12" name="captureLabel" type="text" style="StatsTextLeft" ghost="true">
+				<object size="0 0 100% 12" name="captureLabel" type="text" style="StatsTextLeft" ghost="true">
 					<translatableAttribute id="tooltip">Capture points</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="captureStats" type="text" style="StatsTextRight" ghost="true"/>
-				<object size="124 14 50% 21" name="capture" type="image" tooltip_style="sessionToolTip">
+				<object size="1 14 100% 21" name="capture" type="image" tooltip_style="sessionToolTip">
+					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
 					<repeat count="9">
 						<object type="image" sprite="playerColorBackground" ghost="true" name="captureBar[n]" hidden="true"/>
 					</repeat>
+					<object type="image" sprite="statsBarShaderHorizontal" ghost="true"/>
 				</object>
 			</object>
 
@@ -97,7 +98,7 @@
 					<object type="image" sprite="ammoForeground" ghost="true" name="ammoBar"/>
 				</object>
 			</object>
-			
+
 			<!-- shader section used by ammo, energy, capture sections -->
 			<object name="shaderSection">
 				<object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
@@ -106,7 +107,6 @@
 					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit2" size="122 0 50% 7" ghost="true"/>
 				</object>
 			</object>
-			
 
 			<!-- Resource bar -->
 			<object name="resourceSection">

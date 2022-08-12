@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="civ/athen|hoplite|template_unit_hero_infantry_spearman">
+<Entity parent="civ/athen|hoplite|grapejuice_hero_infantry_spearman">
    <UnitMotion>
        <WalkSpeed> 9.15 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>

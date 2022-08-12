@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice_elephant_melee">
+   <UnitMotion>
+       <WalkSpeed> 9 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion> 
+   <Attack>
+       <Melee>
+           <AttackName> Tusk </AttackName>
+           <PrepareTime> 1250 </PrepareTime>
+           <RepeatTime> 1400 </RepeatTime>
+       </Melee> 
+   </Attack>       
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+   <Identity>
+    <Civ>ptol</Civ>
+    <GenericName>Towered War Elephant</GenericName>
+    <SpecificName>Polémou Eléphantos</SpecificName>
+    <Classes datatype="tokens">AfricanElephant</Classes>
+    <Icon>units/ptol_champion_elephant.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/ptolemies/elephantry_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

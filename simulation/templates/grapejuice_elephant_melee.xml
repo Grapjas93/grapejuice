@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_elephant_melee">
+  <Attack>
+    <Melee>
+      <Damage>
+        <Pierce>120</Pierce>
+        <Crush>20</Crush>
+      </Damage>
+      <MaxRange>5</MaxRange>
+    </Melee>
+  </Attack>
+  <Cost>
+    <Resources>
+      <food>1000</food>
+      <wood>0</wood>
+      <metal>0</metal>
+    </Resources>
+  </Cost>
+</Entity>

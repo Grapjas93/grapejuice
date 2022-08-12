@@ -3,14 +3,14 @@
    <UnitMotion>
        <WalkSpeed> 9.5 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Spear </AttackName>
            <PrepareTime> 775 </PrepareTime>
            <RepeatTime> 925 </RepeatTime>
-       </Melee> 
-   </Attack>       
+       </Melee>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -20,7 +20,7 @@
             </Damage>
          </Entity>
    </Resistance>
-   <Builder>
+  <Builder>
     <Entities datatype="tokens">
       structures/rome/army_camp
       structures/rome/temple_vesta
@@ -40,13 +40,15 @@
     <SpecificName>Triārius</SpecificName>
     <Icon>units/rome_infantry_spearman.png</Icon>
     <RequiredTechnology>phase_town</RequiredTechnology>
-    <Formations datatype="tokens">
-      special/formations/anti_cavalry
-    </Formations>
   </Identity>
   <Promotion>
     <Entity>units/rome/infantry_spearman_a</Entity>
   </Promotion>
+  <UnitAI>
+    <Formations datatype="tokens">
+      special/formations/anti_cavalry
+    </Formations>
+  </UnitAI>
   <VisualActor>
     <Actor>units/romans/infantry_spearman_b.xml</Actor>
   </VisualActor>

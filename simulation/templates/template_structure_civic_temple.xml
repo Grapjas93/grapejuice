@@ -39,7 +39,6 @@
   <Obstruction>
     <Static width="17.5" depth="30.0"/>
   </Obstruction>
-  <ProductionQueue/>
   <Researcher>
     <Technologies datatype="tokens">
 	    garrison_heal_field_camp

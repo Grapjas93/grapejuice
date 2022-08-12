@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_cavalry_ranged_archer">
+<Entity parent="grapejuice_cavalry_ranged_archer">
    <UnitMotion>
        <WalkSpeed> 18 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>

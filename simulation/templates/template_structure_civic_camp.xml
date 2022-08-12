@@ -6,6 +6,11 @@
     <Category>Structure</Category>
     <Category>FieldCamp</Category>
   </BuildRestrictions>
+  <Capturable disable=""/>
+  <Footprint>
+    <Square width="10.0" depth="10.5"/>
+    <Height>10.0</Height>
+  </Footprint>
   <Identity>
     <Classes datatype="tokens">ConquestCritical</Classes>
     <GenericName>Camp</GenericName>
@@ -15,10 +20,14 @@
     <Icon>structures/camp.png</Icon>
     <RequiredTechnology>phase_village</RequiredTechnology>
   </Identity>
-  <Footprint>
-    <Square width="10.0" depth="10.5"/>
-    <Height>10.0</Height>
-  </Footprint>
+  <Obstruction>
+    <Static width="10.5" depth="10.0"/>
+  </Obstruction>
+  <Researcher>
+    <Technologies datatype="tokens">
+	garrison_heal_field_camp
+    </Technologies>
+  </Researcher>
   <Resistance>
     <Entity>
       <Damage>
@@ -35,28 +44,21 @@
       </Damage>
     </Foundation>
   </Resistance>
-  <Vision>
-    <Range>20</Range>
-  </Vision>
   <Sound>
     <SoundGroups>
       <select>interface/select/building/sel_house.xml</select>
       <constructed>interface/complete/building/complete_house.xml</constructed>
     </SoundGroups>
   </Sound>
-  <Obstruction>
-    <Static width="10.5" depth="10.0"/>
-  </Obstruction>
-  <ProductionQueue>
+  <TerritoryDecay disable=""/>
+  <TerritoryInfluence disable=""/>
+  <Trainer>
     <BatchTimeModifier>0.8</BatchTimeModifier>
-    <Technologies datatype="tokens">
-	garrison_heal_field_camp
-    </Technologies>
-  </ProductionQueue>
+  </Trainer>
+  <Vision>
+    <Range>20</Range>
+  </Vision>
   <VisualActor>
     <FoundationActor>structures/fndn_2x2.xml</FoundationActor>
   </VisualActor>
-  <Capturable disable="" />
-  <TerritoryInfluence disable=""/>
-  <TerritoryDecay disable="" />
 </Entity>

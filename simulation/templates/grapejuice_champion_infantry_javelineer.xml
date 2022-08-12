@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_javelineer">
+  <Attack>
+    <Ranged>
+      <Ammo>3</Ammo>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
+      <Damage>
+        <Pierce>75</Pierce>
+      </Damage>
+      <MaxRange>30</MaxRange>
+      <Projectile>
+        <Speed>70</Speed>
+        <Spread>1.5</Spread>
+      </Projectile>
+    </Ranged>
+    <Melee>
+      <Damage>
+        <Hack>2</Hack>
+        <Pierce>9</Pierce>
+      </Damage>
+      <MaxRange>4</MaxRange>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">-2</Hack>
+        <Pierce op="add">-2</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

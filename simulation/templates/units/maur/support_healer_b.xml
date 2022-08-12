@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_support_healer">
+<Entity parent="grapejuice_support_healer">
   <Auras datatype="tokens">
     units/combat_priest_1
     units/combat_priest_2

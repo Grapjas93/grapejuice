@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_structure_military">
-  <Auras datatype="tokens">
-    structures/refill_ammo_60range
-  </Auras>
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
@@ -27,6 +24,9 @@
       </RangeOverlay>
     </Ranged>
   </Attack>
+  <Auras datatype="tokens">
+    structures/refill_ammo_60range
+  </Auras>
   <BuildRestrictions>
     <Category>Fortress</Category>
     <Distance>
@@ -80,7 +80,6 @@
   <Obstruction>
     <Static width="25.0" depth="25.0"/>
   </Obstruction>
-  <ProductionQueue/>
   <Researcher>
     <Technologies datatype="tokens">
       attack_soldiers_will
@@ -103,6 +102,12 @@
   <TerritoryInfluence>
     <Radius>80</Radius>
   </TerritoryInfluence>
+  <Trainer>
+    <BatchTimeModifier>0.8</BatchTimeModifier>
+    <Entities datatype="tokens">
+      units/{civ}/ammo_cart
+    </Entities>
+  </Trainer>
   <Trainer>
     <BatchTimeModifier>0.8</BatchTimeModifier>
   </Trainer>

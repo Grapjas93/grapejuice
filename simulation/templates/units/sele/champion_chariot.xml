@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_cavalry_chariot_archer">
+<Entity parent="template_unit_champion_cavalry_archer">
    <UnitMotion>
        <WalkSpeed> 15.6 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Ranged>
            <AttackName> Bow </AttackName>
            <PrepareTime> 2000 </PrepareTime>
            <RepeatTime> 2150 </RepeatTime>
-       </Ranged> 
-   </Attack>       
+       </Ranged>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_pikeman">
+  <Attack>
+    <Melee>
+      <Damage>
+        <Pierce>10</Pierce>
+      </Damage>
+      <MaxRange>8</MaxRange>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">9</Hack>
+        <Pierce op="add">9</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

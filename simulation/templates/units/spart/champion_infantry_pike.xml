@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_infantry_pikeman">
+<Entity parent="grapejuice_champion_infantry_pikeman">
    <UnitMotion>
        <WalkSpeed> 9.4 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>

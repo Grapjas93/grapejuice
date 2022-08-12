@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="hoplite|template_unit_champion_infantry_spearman">
+<Entity parent="hoplite|grapejuice_champion_infantry_spearman">
    <UnitMotion>
        <WalkSpeed> 8.6 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Spear </AttackName>
            <PrepareTime> 950 </PrepareTime>
            <RepeatTime> 1100 </RepeatTime>
-       </Melee> 
-   </Attack>       
+       </Melee>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>

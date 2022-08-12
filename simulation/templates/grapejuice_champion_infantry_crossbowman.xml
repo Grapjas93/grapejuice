@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_crossbowman">
+  <Attack>
+    <Ranged>
+      <Damage>
+        <Pierce>40</Pierce>
+      </Damage>
+      <MaxRange>60</MaxRange>
+      <Projectile>
+        <Speed>120</Speed>
+        <Spread>0.8</Spread>
+      </Projectile>
+    </Ranged>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">-2</Hack>
+        <Pierce op="add">-2</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

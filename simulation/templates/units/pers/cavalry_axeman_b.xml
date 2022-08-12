@@ -3,14 +3,14 @@
    <UnitMotion>
        <WalkSpeed> 17 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Axe </AttackName>
            <PrepareTime> 925 </PrepareTime>
            <RepeatTime> 1075 </RepeatTime>
-       </Melee> 
-   </Attack>       
+       </Melee>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -19,7 +19,7 @@
                <Pierce> 3 </Pierce>
             </Damage>
          </Entity>
-   </Resistance>  
+   </Resistance>
    <Identity>
     <Civ>pers</Civ>
     <Lang>persian</Lang>

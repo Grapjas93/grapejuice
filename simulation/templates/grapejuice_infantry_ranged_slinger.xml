@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_ranged_slinger">
+  <Attack>
+    <Ranged>
+      <Ammo>40</Ammo>
+	  <RefillAmount>1</RefillAmount>
+	  <RefillTime>6000</RefillTime>
+      <Damage>
+        <Pierce>5</Pierce>
+        <Crush>5</Crush>
+      </Damage>
+      <MaxRange>50</MaxRange>
+      <Projectile>
+        <Speed>90</Speed>
+        <Spread>2.5</Spread>
+      </Projectile>
+    </Ranged>
+    <Melee>
+      <Damage>
+        <Hack>5.5</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0.0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>1</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice_siege_ram">
+  <Identity>
+    <Civ>iber</Civ>
+    <SpecificName>Ahariburu</SpecificName>
+    <Icon>units/iber_siege_ram.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>structures/iberians/siege_ram.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry_archer">
+  <Attack>
+    <Ranged>
+      <Ammo>30</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
+      <Damage>
+        <Pierce>18</Pierce>
+      </Damage>
+      <MaxRange>45</MaxRange>
+      <Projectile>
+        <Speed>160</Speed>
+        <Spread>4.25</Spread>
+      </Projectile>
+    </Ranged>
+    <Melee>
+      <Damage>
+        <Hack>13</Hack>
+      </Damage>
+      <MaxRange>4</MaxRange>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">-2</Hack>
+        <Pierce op="add">-2</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

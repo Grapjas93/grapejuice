@@ -1,173 +1,189 @@
 
 // grapejuice, added <Ammo>, <RefillTime>, <RefillAmount> <Energy>
 Attack.prototype.Schema =
-	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
-	"<a:example>" +
-		"<Melee>" +
-			"<AttackName>Spear</AttackName>" +
-			"<Damage>" +
-				"<Hack>10.0</Hack>" +
-				"<Pierce>0.0</Pierce>" +
-				"<Crush>5.0</Crush>" +
-			"</Damage>" +
-			"<MaxRange>4.0</MaxRange>" +
-			"<RepeatTime>1000</RepeatTime>" +
-			"<Bonuses>" +
-				"<Bonus1>" +
-					"<Civ>pers</Civ>" +
-					"<Classes>Infantry</Classes>" +
-					"<Multiplier>1.5</Multiplier>" +
-				"</Bonus1>" +
-				"<BonusCavMelee>" +
-					"<Classes>Cavalry Melee</Classes>" +
-					"<Multiplier>1.5</Multiplier>" +
-				"</BonusCavMelee>" +
-			"</Bonuses>" +
-			"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
-			"<PreferredClasses datatype=\"tokens\">Cavalry Infantry</PreferredClasses>" +
-		"</Melee>" +
-		"<Ranged>" +
-			"<AttackName>Bow</AttackName>" +
+"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
+"<a:example>" +
+	"<Melee>" +
+		"<AttackName>Spear</AttackName>" +
+		"<Damage>" +
+			"<Hack>10.0</Hack>" +
+			"<Pierce>0.0</Pierce>" +
+			"<Crush>5.0</Crush>" +
+		"</Damage>" +
+		"<MaxRange>4.0</MaxRange>" +
+		"<RepeatTime>1000</RepeatTime>" +
+		"<Bonuses>" +
+			"<Bonus1>" +
+				"<Civ>pers</Civ>" +
+				"<Classes>Infantry</Classes>" +
+				"<Multiplier>1.5</Multiplier>" +
+			"</Bonus1>" +
+			"<BonusCavMelee>" +
+				"<Classes>Cavalry Melee</Classes>" +
+				"<Multiplier>1.5</Multiplier>" +
+			"</BonusCavMelee>" +
+		"</Bonuses>" +
+		"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
+		"<PreferredClasses datatype=\"tokens\">Cavalry Infantry</PreferredClasses>" +
+	"</Melee>" +
+	"<Ranged>" +
+		"<AttackName>Bow</AttackName>" +
+		"<Damage>" +
+			"<Hack>0.0</Hack>" +
+			"<Pierce>10.0</Pierce>" +
+			"<Crush>0.0</Crush>" +
+		"</Damage>" +
+		"<MaxRange>44.0</MaxRange>" +
+		"<MinRange>20.0</MinRange>" +
+		"<Origin>" +
+			"<X>0</X>" +
+			"<Y>10.0</Y>" +
+			"<Z>0</Z>" +
+		"</Origin>" +
+		"<PrepareTime>800</PrepareTime>" +
+		"<RepeatTime>1600</RepeatTime>" +
+		"<EffectDelay>1000</EffectDelay>" +
+		"<Bonuses>" +
+			"<Bonus1>" +
+				"<Classes>Cavalry</Classes>" +
+				"<Multiplier>2</Multiplier>" +
+			"</Bonus1>" +
+		"</Bonuses>" +
+		"<Projectile>" +
+			"<Speed>50.0</Speed>" +
+			"<Spread>2.5</Spread>" +
+			"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
+			"<ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>" +
+			"<ImpactAnimationLifetime>0.1</ImpactAnimationLifetime>" +
+			"<FriendlyFire>false</FriendlyFire>" +
+		"</Projectile>" +
+		"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
+		"<Splash>" +
+			"<Shape>Circular</Shape>" +
+			"<Range>20</Range>" +
+			"<FriendlyFire>false</FriendlyFire>" +
 			"<Damage>" +
 				"<Hack>0.0</Hack>" +
 				"<Pierce>10.0</Pierce>" +
 				"<Crush>0.0</Crush>" +
 			"</Damage>" +
-			"<MaxRange>44.0</MaxRange>" +
-			"<MinRange>20.0</MinRange>" +
-			"<ElevationBonus>15.0</ElevationBonus>" +
-			"<PrepareTime>800</PrepareTime>" +
-			"<RepeatTime>1600</RepeatTime>" +
-			"<Delay>1000</Delay>" +
-			"<Bonuses>" +
-				"<Bonus1>" +
-					"<Classes>Cavalry</Classes>" +
-					"<Multiplier>2</Multiplier>" +
-				"</Bonus1>" +
-			"</Bonuses>" +
-			"<Projectile>" +
-				"<Speed>50.0</Speed>" +
-				"<Spread>2.5</Spread>" +
-				"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
-				"<ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>" +
-				"<ImpactAnimationLifetime>0.1</ImpactAnimationLifetime>" +
-				"<FriendlyFire>false</FriendlyFire>" +
-			"</Projectile>" +
-			"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
-			"<Splash>" +
-				"<Shape>Circular</Shape>" +
-				"<Range>20</Range>" +
-				"<FriendlyFire>false</FriendlyFire>" +
-				"<Damage>" +
-					"<Hack>0.0</Hack>" +
-					"<Pierce>10.0</Pierce>" +
-					"<Crush>0.0</Crush>" +
-				"</Damage>" +
-			"</Splash>" +
-		"</Ranged>" +
-		"<Slaughter>" +
-			"<Damage>" +
-				"<Hack>1000.0</Hack>" +
-				"<Pierce>0.0</Pierce>" +
-				"<Crush>0.0</Crush>" +
-			"</Damage>" +
-			"<RepeatTime>1000</RepeatTime>" +
-			"<MaxRange>4.0</MaxRange>" +
-		"</Slaughter>" +
-	"</a:example>" +
-	"<oneOrMore>" +
-		"<element>" +
-			"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
-			"<interleave>" +
-				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
-				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
-					"<optional>" +
-						"<attribute name='context'>" +
-							"<text/>" +
-						"</attribute>" +
-					"</optional>" +
-					"<text/>" +
+		"</Splash>" +
+	"</Ranged>" +
+	"<Slaughter>" +
+		"<Damage>" +
+			"<Hack>1000.0</Hack>" +
+			"<Pierce>0.0</Pierce>" +
+			"<Crush>0.0</Crush>" +
+		"</Damage>" +
+		"<RepeatTime>1000</RepeatTime>" +
+		"<MaxRange>4.0</MaxRange>" +
+	"</Slaughter>" +
+"</a:example>" +
+"<oneOrMore>" +
+	"<element>" +
+		"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
+		"<interleave>" +
+			"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
+			"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
+			"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
+			"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
+			"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
+				"<optional>" +
+					"<attribute name='context'>" +
+						"<text/>" +
+					"</attribute>" +
+				"</optional>" +
+				"<text/>" +
+			"</element>" +
+			AttackHelper.BuildAttackEffectsSchema() +
+			"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
+			"<optional>" +
+				"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
+			"</optional>" +
+			"<optional>"+
+				"<element name='Origin' a:help='The offset from which the attack occurs, relative to the entity position. Defaults to {0,0,0}.'>" +
+					"<interleave>" +
+						"<element name='X'>" +
+							"<ref name='nonNegativeDecimal'/>" +
+						"</element>" +
+						"<element name='Y'>" +
+							"<ref name='nonNegativeDecimal'/>" +
+						"</element>" +
+						"<element name='Z'>" +
+							"<ref name='nonNegativeDecimal'/>" +
+						"</element>" +
+					"</interleave>" +
 				"</element>" +
-				AttackHelper.BuildAttackEffectsSchema() +
-				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
-				"<optional>" +
-					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
-				"</optional>" +
-				"<optional>"+
-					"<element name='ElevationBonus' a:help='The offset height from which the attack occurs, relative to the entity position. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
-				"</optional>" +
-				"<optional>" +
-					"<element name='RangeOverlay'>" +
-						"<interleave>" +
-							"<element name='LineTexture'><text/></element>" +
-							"<element name='LineTextureMask'><text/></element>" +
-							"<element name='LineThickness'><ref name='nonNegativeDecimal'/></element>" +
-						"</interleave>" +
-					"</element>" +
-				"</optional>" +
-				"<optional>" +
-					"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation. Defaults to 0.'>" +
-						"<data type='nonNegativeInteger'/>" +
-					"</element>" +
-				"</optional>" +
-				"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
-					"<data type='positiveInteger'/>" +
+			"</optional>" +
+			"<optional>" +
+				"<element name='RangeOverlay'>" +
+					"<interleave>" +
+						"<element name='LineTexture'><text/></element>" +
+						"<element name='LineTextureMask'><text/></element>" +
+						"<element name='LineThickness'><ref name='nonNegativeDecimal'/></element>" +
+					"</interleave>" +
 				"</element>" +
-				"<optional>" +
-					"<element name='Delay' a:help='Delay of applying the effects in milliseconds after the attack has landed. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
-				"</optional>" +
-				"<optional>" +
-					"<element name='Splash'>" +
-						"<interleave>" +
-							"<element name='Shape' a:help='Shape of the splash damage, can be circular or linear'><text/></element>" +
-							"<element name='Range' a:help='Size of the area affected by the splash'><ref name='nonNegativeDecimal'/></element>" +
-							"<element name='FriendlyFire' a:help='Whether the splash damage can hurt non enemy units'><data type='boolean'/></element>" +
-							AttackHelper.BuildAttackEffectsSchema() +
-						"</interleave>" +
-					"</element>" +
-				"</optional>" +
-				"<optional>" +
-					"<element name='Projectile'>" +
-						"<interleave>" +
-							"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
+			"</optional>" +
+			"<optional>" +
+				"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation. Defaults to 0.'>" +
+					"<data type='nonNegativeInteger'/>" +
+				"</element>" +
+			"</optional>" +
+			"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
+				"<data type='positiveInteger'/>" +
+			"</element>" +
+			"<optional>" +
+				"<element name='EffectDelay' a:help='Delay of applying the effects, in milliseconds after the attack has landed. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
+			"</optional>" +
+			"<optional>" +
+				"<element name='Splash'>" +
+					"<interleave>" +
+						"<element name='Shape' a:help='Shape of the splash damage, can be circular or linear'><text/></element>" +
+						"<element name='Range' a:help='Size of the area affected by the splash'><ref name='nonNegativeDecimal'/></element>" +
+						"<element name='FriendlyFire' a:help='Whether the splash damage can hurt non enemy units'><data type='boolean'/></element>" +
+						AttackHelper.BuildAttackEffectsSchema() +
+					"</interleave>" +
+				"</element>" +
+			"</optional>" +
+			"<optional>" +
+				"<element name='Projectile'>" +
+					"<interleave>" +
+						"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
+							"<ref name='positiveDecimal'/>" +
+						"</element>" +
+						"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
+						"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
+							"<ref name='nonNegativeDecimal'/>" +
+						"</element>" +
+						"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
+						"<optional>" +
+							"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
+								"<attribute name='y'>" +
+									"<data type='decimal'/>" +
+								"</attribute>" +
+							"</element>" +
+						"</optional>" +
+						"<optional>" +
+							"<element name='ActorName' a:help='actor of the projectile animation.'>" +
+								"<text/>" +
+							"</element>" +
+						"</optional>" +
+						"<optional>" +
+							"<element name='ImpactActorName' a:help='actor of the projectile impact animation'>" +
+								"<text/>" +
+							"</element>" +
+							"<element name='ImpactAnimationLifetime' a:help='length of the projectile impact animation.'>" +
 								"<ref name='positiveDecimal'/>" +
 							"</element>" +
-							"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
-							"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
-								"<ref name='nonNegativeDecimal'/>" +
-							"</element>" +
-							"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
-							"<optional>" +
-								"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
-									"<attribute name='y'>" +
-										"<data type='decimal'/>" +
-									"</attribute>" +
-								"</element>" +
-							"</optional>" +
-							"<optional>" +
-								"<element name='ActorName' a:help='actor of the projectile animation.'>" +
-									"<text/>" +
-								"</element>" +
-							"</optional>" +
-							"<optional>" +
-								"<element name='ImpactActorName' a:help='actor of the projectile impact animation'>" +
-									"<text/>" +
-								"</element>" +
-								"<element name='ImpactAnimationLifetime' a:help='length of the projectile impact animation.'>" +
-									"<ref name='positiveDecimal'/>" +
-								"</element>" +
-							"</optional>" +
-						"</interleave>" +
-					"</element>" +
-				"</optional>" +
-				Attack.prototype.preferredClassesSchema +
-				Attack.prototype.restrictedClassesSchema +
-			"</interleave>" +
-		"</element>" +
-	"</oneOrMore>";
+						"</optional>" +
+					"</interleave>" +
+				"</element>" +
+			"</optional>" +
+			Attack.prototype.preferredClassesSchema +
+			Attack.prototype.restrictedClassesSchema +
+		"</interleave>" +
+	"</element>" +
+"</oneOrMore>";
 
 // grapejuice
 Attack.prototype.Init = function()
@@ -182,34 +198,34 @@ Attack.prototype.Init = function()
 	this.canChargeTimer = 0;
 	this.CanRechargeEnergyTimer = undefined;
 	this.RechargeEnergyTimer = undefined;
-	
+
 	this.ammo = 0;
 	this.maxAmmo = 0;
 	this.refillTime = 3000;
 	this.refillAmount = 0;
 	this.ammoReffilTimer = undefined;
-	
+
 	if (!!this.template["Ranged"] && !!this.template["Ranged"].Ammo)
 	{
 		this.ammo = +this.template["Ranged"].Ammo;
 		this.maxAmmo = +this.template["Ranged"].Ammo;
 	}
-	
+
 	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
 	{
 		this.ammo = +this.template["Melee"].Ammo;
 		this.maxAmmo = +this.template["Melee"].Ammo;
 	}
-		
+
 	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
-	{		
+	{
 		this.energy = this.template["Melee"].Energy;
 		this.maxEnergy = this.template["Melee"].Energy;
 		this.energy = +this.energy;
 		this.maxEnergy = +this.maxEnergy;
-		
+
 	}
-	
+
 	// start the automatic refill timer for units that regain ammo anywhere (slingers for now)
 	if (this.ammo == 40)
 	{
@@ -217,7 +233,7 @@ Attack.prototype.Init = function()
 		{
 			this.refillTime = +this.template["Ranged"].RefillTime;
 		}
-		
+
 		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 		cmpTimer.SetInterval(this.entity, IID_Attack, "AutoRefill", 0, this.refillTime, {});
 	}
@@ -229,16 +245,16 @@ Attack.prototype.CanCharge = function(target)
 {
 	if (this.energy <= 0)
 		return false;
-	
+
 	// if the unit is wounded it cant charge
 	if (this.wounded)
 		return false;
 
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
 		return false;
-	
+
 	return true;
-	
+
 };
 
 // grapejuice, stops the timer which checks every 500ms if we can Charge() our target
@@ -246,10 +262,10 @@ Attack.prototype.StopCanChargeTimer = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 	cmpTimer.CancelTimer(this.canChargeTimer);
-	
+
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
-	
+
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 	cmpUnitAI.ResetSpeedMultiplier();
 };
@@ -259,7 +275,7 @@ Attack.prototype.Charge = function(target)
 {
 	if (this.energy == undefined)
 		return;
-		
+
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 
@@ -267,14 +283,14 @@ Attack.prototype.Charge = function(target)
 	{
 		cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
 		cmpUnitAI.ResetSpeedMultiplier();
-		
+
 		// workaround fix for sprinting attacking soldiers in formation
 		if (cmpUnitAI.IsFormationMember())
-		cmpUnitAI.SetSpeedMultiplier(0.5); 
+		cmpUnitAI.SetSpeedMultiplier(0.5);
 
 		return;
 	}
-	
+
 	else
 	{
 		if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
@@ -283,13 +299,13 @@ Attack.prototype.Charge = function(target)
 			this.RefreshStatusbars(this.entity);
 			return;
 		}
-		
+
 		// rams have multipliers based on how many are garrisoned
 		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
 		{
 			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
 			let multiplier = 1 + cmpGarrisonHolder.OccupiedSlots() / 10;
-			
+
 			this.energy = this.energy - 5;
 			cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
@@ -298,7 +314,7 @@ Attack.prototype.Charge = function(target)
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
 			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
 			}, this.entity);
-			return;		
+			return;
 		}
 
 		this.energy = this.energy - 5;
@@ -308,16 +324,16 @@ Attack.prototype.Charge = function(target)
 		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
 		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
-				
+
 		cmpUnitAI.SetSpeedMultiplier(cmpUnitAI.GetRunMultiplier());
-		
+
 		// workaround fix for sprinting attacking soldiers in formation
 		if (cmpUnitAI.IsFormationMember())
-		cmpUnitAI.SetSpeedMultiplier(1); 
-		
+		cmpUnitAI.SetSpeedMultiplier(1);
+
 		return;
 	}
-	
+
 };
 
 // grapejuice, called by UnitAI~grapejuice.
@@ -326,16 +342,16 @@ Attack.prototype.CanRechargeEnergy = function()
 {
 	if (this.energy == undefined)
 		return;
-		
+
 	if (this.wounded)
 	return;
 
 	// quick return if we already have a valid running timer
 	if (this.CanRechargeEnergyTimer != undefined)
 		return;
-	
+
 	this.StopRechargingEnergy();
-	
+
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 	this.CanRechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 1000, {});
 };
@@ -344,10 +360,10 @@ Attack.prototype.CanRechargeEnergy = function()
 Attack.prototype.StopRechargingEnergy = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	
+
 	cmpTimer.CancelTimer(this.RechargeEnergyTimer);
 	cmpTimer.CancelTimer(this.CanRechargeEnergyTimer);
-	
+
 	this.RechargeEnergyTimer = undefined;
 	this.CanRechargeEnergyTimer = undefined;
 };
@@ -356,8 +372,8 @@ Attack.prototype.StopRechargingEnergy = function()
 Attack.prototype.RechargeEnergy = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	
-	
+
+
 	if (this.wounded)
 	{
 		this.StopRechargingEnergy();
@@ -368,15 +384,15 @@ Attack.prototype.RechargeEnergy = function()
 	{
 		if (this.energy < 0)
 			this.energy = 0;
-			
+
 		if (this.energy + 5 > this.maxEnergy || this.energy > this.maxEnergy)
 		{
 			this.energy = this.maxEnergy;
 			this.RefreshStatusbars(this.entity);
-			this.StopRechargingEnergy();	
+			this.StopRechargingEnergy();
 			return;
 		}
-		
+
 		// make sure that the ram regen rate increases the more units are garrisoned in it
 		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
 		{
@@ -385,16 +401,16 @@ Attack.prototype.RechargeEnergy = function()
 			{
 				this.energy = this.maxEnergy;
 				this.RefreshStatusbars(this.entity);
-				this.StopRechargingEnergy();	
+				this.StopRechargingEnergy();
 			}
-			else 
+			else
 			{
 				this.energy += 5 * cmpGarrisonHolder.OccupiedSlots();
-			}		
+			}
 		}
-		else 
+		else
 		{
-			this.energy = this.energy + 5;			
+			this.energy = this.energy + 5;
 		}
 		this.RechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 500, {});
 		this.RefreshStatusbars(this.entity);
@@ -426,59 +442,59 @@ Attack.prototype.AutoRefill = function()
 		this.ammo = this.ammo + 1;
 		this.RefreshStatusbars(this.entity);
 	}
-	
+
 };
 
 // grapejuice, called by ReArmAura()
 Attack.prototype.SetAmmo = function(ammoGiver)
 {
 	let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);	
-	
+	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
+
 	// if the entity is the ammoGiver, don't reload and stop the timer
 	if (ammoGiver == this.entity)
 	{
 		this.StopReArming();
 		return;
 	}
-			
+
 	// if the entity reloads from ammoGiver, draw ammo from ammoGiver ammo pool
 	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
 	{
 		let ammoNeeded = this.maxAmmo - this.ammo;
-		
+
 		// if the ammoGiver has no ammo, stop timer
 		if (cmpAmmoGiver.ammo == 0)
 		{
 			this.StopReArming();
 			return;
 		}
-		
+
 		// if the ammoGiver can't do a full reload for the unit, give all remaining ammo to unit
 		if (cmpAmmoGiver.ammo < ammoNeeded)
 		{
 			this.ammo = this.ammo + cmpAmmoGiver.ammo;
 			this.RefreshStatusbars(this.entity);
-			
+
 			cmpAmmoGiver.ammo = 0;
 			this.RefreshStatusbars(ammoGiver);
-			
+
 			this.StopReArming();
 			return;
 		}
-		else 
+		else
 		{
 			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
 			this.ammo = this.maxAmmo;
-			
+
 			this.RefreshStatusbars(this.entity);
 			this.RefreshStatusbars(ammoGiver);
-			
+
 			return;
-		} 
+		}
 	}
-	
-	// other buildings have infinite stock, simply reload the unit fully 
+
+	// other buildings have infinite stock, simply reload the unit fully
 	this.ammo = this.maxAmmo;
 	this.RefreshStatusbars(this.entity);
 }
@@ -486,31 +502,31 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 // grapejuice, called by ReArmAura() and the Auras component
 Attack.prototype.CheckIsInAuraRange = function()
 {
-	let entityOwner = Helpers.GetOwner(this.entity);	
+	let entityOwner = Helpers.GetOwner(this.entity);
 	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal Supply");
 	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Fortress ArmyCamp Colony");
 	let length = range30.length;
-	
-	for (let i = 0; i < length; i++) 
+
+	for (let i = 0; i < length; i++)
 	{
 		let pop = range30.pop();
 		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
 		if (distance < 30)
 		{
 			return pop;
-		} 	
-	} 
+		}
+	}
 	length = range60.length;
-	for (let i = 0; i < length; i++) 
+	for (let i = 0; i < length; i++)
 	{
 		let pop = range60.pop();
 		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
 		if (distance < 60)
 		{
 			return pop;
-		} 	
-	} 
-	return false;	
+		}
+	}
+	return false;
 };
 
 // grapejuice, called by PerformAttack()
@@ -520,8 +536,8 @@ Attack.prototype.ReArmAura = function()
 	{
 		this.StopReArming();
 		return;
-	} 
-	
+	}
+
 	else
 	{
 		let ammoGiver = this.CheckIsInAuraRange();
@@ -535,7 +551,7 @@ Attack.prototype.ReArmAura = function()
 Attack.prototype.CheckTargetIsInMeleeRange = function(target)
 {
 	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
-	
+
 	if (!cmpVision)
 		return false;
 
@@ -576,21 +592,21 @@ Attack.prototype.PerformAttack = function(type, target)
 		"attackerOwner": attackerOwner,
 		"target": target,
 	};
-	
+
 	let delay = +(this.template[type].Delay || 0);
-	
+
 	// grapejuice
 	if (type == "Ranged")
 	{
 
-		if (!!this.template["Ranged"].Ammo) 
+		if (!!this.template["Ranged"].Ammo)
 		{
-			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false) 
+			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
 			{
 				this.ammo--;
 				this.RefreshStatusbars(this.entity);
 			}
-			else 
+			else
 			{
 				let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 				if(!cmpUnitAI)
@@ -601,10 +617,10 @@ Attack.prototype.PerformAttack = function(type, target)
 		}
 		this.ReArmAura();
 	}
-	
+
 	// grapejuice
 	if (type == "Melee" && this.maxEnergy != undefined)
-	{	
+	{
 		this.energy = 0;
 		this.StopCanChargeTimer();
 		this.RefreshStatusbars(this.entity);
@@ -751,7 +767,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 			return "Capture";
 		types.splice(captureIndex, 1);
 	}
-	
+
 	// grapejuice
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
@@ -759,9 +775,9 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false)
 			{
 				types.splice(rangeIndex, 1);
-			} 
-		
-			else	
+			}
+
+			else
 			{
 				types.splice(rangeIndex, -1);
 			}
@@ -769,9 +785,9 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 
 	let targetClasses = cmpIdentity.GetClassesList();
 	let isPreferred = attackType => MatchesClassList(targetClasses, this.GetPreferredClasses(attackType));
-	
+
 	this.StopCanChargeTimer();
-	
+
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 	this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
 
@@ -805,8 +821,8 @@ Attack.prototype.GetPreference = function(target)
 					if (Helpers.EntityMatchesClassList(this.entity, "Structure Siege") == true)
 					{
 						return minPref;
-					}		
-						
+					}
+
 					let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 					cmpUnitAI.RespondToTargetedEntities([target]);
 					return pref;

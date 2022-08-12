@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_hero_infantry_swordsman">
+<Entity parent="grapejuice_hero_infantry_swordsman">
   <Auras datatype="tokens">
     units/heroes/rome_hero_marcellus_1
     units/heroes/rome_hero_marcellus_2

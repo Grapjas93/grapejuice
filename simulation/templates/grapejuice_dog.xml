@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_dog">
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Attack>
+    <Melee>
+      <Damage>
+        <Pierce>15</Pierce>
+      </Damage>
+      <MaxRange>3</MaxRange>
+    </Melee>
+  </Attack>
+</Entity>

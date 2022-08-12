@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_ranged_javelineer">
+  <Attack>
+    <Ranged>
+      <Ammo>3</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
+      <Damage>
+        <Pierce>75</Pierce>
+      </Damage>
+      <MaxRange>30</MaxRange>
+      <Projectile>
+        <Speed>70</Speed>
+        <Spread>1.5</Spread>
+      </Projectile>
+    </Ranged>
+	<Melee>
+      <Damage>
+        <Hack>1.0</Hack>
+        <Pierce>4.5</Pierce>     
+       <Crush>0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+    </Melee>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>1</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

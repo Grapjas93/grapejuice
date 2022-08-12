@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_hero_cavalry_swordsman">
+<Entity parent="grapejuice_hero_cavalry_swordsman">
    <UnitMotion>
        <WalkSpeed> 16.95 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>

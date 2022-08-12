@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_cavalry_javelineer">
+<Entity parent="grapejuice_champion_cavalry_javelineer">
    <UnitMotion>
        <WalkSpeed> 15.4 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>

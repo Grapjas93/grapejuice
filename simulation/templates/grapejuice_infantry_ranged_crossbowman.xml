@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_ranged_crossbowman">
+  <Attack>
+    <Ranged>
+	  <Ammo>30</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
+      <Damage>
+        <Pierce>35</Pierce>
+      </Damage>
+      <MaxRange>60</MaxRange>
+      <Projectile>
+        <Speed>120</Speed>
+        <Spread>4</Spread>
+      </Projectile>
+    </Ranged>
+  </Attack>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>1</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+</Entity>

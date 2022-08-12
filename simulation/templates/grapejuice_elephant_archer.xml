@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_elephant_archer">
+  <Attack>
+    <Ranged>
+      <Ammo>70</Ammo>
+	  <RefillAmount>0</RefillAmount>
+	  <RefillTime>0</RefillTime>
+      <Damage>
+        <Pierce>18</Pierce>
+      </Damage>
+      <MaxRange>55</MaxRange>
+      <Projectile>
+        <Speed>160</Speed>
+        <Spread>4.5</Spread>
+      </Projectile>
+    </Ranged>
+  </Attack>
+</Entity>
