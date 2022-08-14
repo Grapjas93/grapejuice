@@ -18,17 +18,17 @@
   <group>
     <variant frequency="1" name="brasidas-tunic-1">
       <textures>
-        <texture file="skeletal/hele_tunic_4_a.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_4_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="3" name="brasidas-armor-1">
       <textures>
-        <texture file="skeletal/spart_hero_brasidas_01.png" name="baseTex"/>
+        <texture file="skeletal/spart/hero_02rasidas_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="2" name="brasidas-armor-2">
       <textures>
-        <texture file="skeletal/spart_hero_brasidas_02.png" name="baseTex"/>
+        <texture file="skeletal/spart/hero_02rasidas_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

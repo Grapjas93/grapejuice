@@ -14,24 +14,24 @@
         <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
       <textures>
-        <texture file="skeletal/mace_ijv_b.png" name="baseTex"/>
+        <texture file="skeletal/mace/ijv_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant frequency="1" name="tunic-boots-1a">
       <textures>
-        <texture file="skeletal/mace_tunic_hellenistic_sleeveless_boots_1_a.png" name="baseTex"/>
+        <texture file="skeletal/mace/tunic_hellenistic_sleeveless_02oots_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="3" name="tunic-boots-1b">
       <textures>
-        <texture file="skeletal/mace_tunic_hellenistic_sleeveless_boots_1_b.png" name="baseTex"/>
+        <texture file="skeletal/mace/tunic_hellenistic_sleeveless_02oots_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="2" name="tunic-boots-1c">
       <textures>
-        <texture file="skeletal/mace_tunic_hellenistic_sleeveless_boots_1_c.png" name="baseTex"/>
+        <texture file="skeletal/mace/tunic_hellenistic_sleeveless_02oots_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

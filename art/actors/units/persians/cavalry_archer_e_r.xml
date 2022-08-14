@@ -13,7 +13,7 @@
  		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/pers_su1_anusiya_iron.dds" name="baseTex"/>
+        <texture file="skeletal/pers/su1_01nusiya_iron.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

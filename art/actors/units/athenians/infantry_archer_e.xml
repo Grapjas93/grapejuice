@@ -10,8 +10,11 @@
         <prop actor="props/units/weapons/bow_short.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/quiver_greek_back.xml" attachpoint="back"/>
         <prop actor="props/units/shields/pelte_cretan_bronze_02.xml" attachpoint="shield_arm"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
+      <textures>
+        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+      </textures>
     </variant>
   </group>
   <group>
@@ -67,50 +70,29 @@
     </variant>
   </group>
   <group>
-    <variant name="psiloi-original">
-      <mesh>skeletal/new/m_tunic_long.dae</mesh>
+    <variant name="psiloi_padded_01_02">
       <textures>
-        <texture file="skeletal/hele_iar_e.png" name="baseTex"/>
+        <texture file="skeletal/hele/padded_psiloi_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-1">
+    <variant name="psiloi_padded_01_03">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_a.png" name="baseTex"/>
+        <texture file="skeletal/hele/padded_psiloi_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-2">
+    <variant name="epilektos_03">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_b.png" name="baseTex"/>
+        <texture file="skeletal/athen/epilektos_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-3">
+    <variant name="epilektos_08">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_c.png" name="baseTex"/>
+        <texture file="skeletal/athen/epilektos_08.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-4">
+    <variant name="epilektos_09">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_d.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant name="psiloi-5">
-      <textures>
-        <texture file="skeletal/hele_epilektoi_7.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant name="psiloi-6">
-      <textures>
-        <texture file="skeletal/hele_epilektoi_4.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant name="psiloi-7">
-      <textures>
-        <texture file="skeletal/hele_epilektoi_9.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant name="psiloi-8">
-      <textures>
-        <texture file="skeletal/hele_epilektoi_10.png" name="baseTex"/>
+        <texture file="skeletal/athen/epilektos_09.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -133,18 +115,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_archer.xml">
-		<props>
-			<prop actor="" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
-		</props>
-	</variant>
-    <variant file="biped/attack_melee_archer.xml">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
+      </props>
+    </variant>
+      <variant file="biped/attack_melee_archer.xml">
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
@@ -159,5 +141,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

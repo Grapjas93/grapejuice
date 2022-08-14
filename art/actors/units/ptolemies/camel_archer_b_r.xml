@@ -21,37 +21,37 @@
   <group>
     <variant name="arab-tunic-1a">
       <textures>
-        <texture file="skeletal/arab_tunic_1_a.png" name="baseTex"/>
+        <texture file="skeletal/arab/tunic_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="arab-tunic-1b">
       <textures>
-        <texture file="skeletal/arab_tunic_1_b.png" name="baseTex"/>
+        <texture file="skeletal/arab/tunic_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="arab-tunic-1c">
       <textures>
-        <texture file="skeletal/arab_tunic_1_c.png" name="baseTex"/>
+        <texture file="skeletal/arab/tunic_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="judea-tunic-1a">
       <textures>
-        <texture file="skeletal/judea_tunic_basic_1_a.png" name="baseTex"/>
+        <texture file="skeletal/judea_tunic_02asic_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="judea-tunic-1b">
       <textures>
-        <texture file="skeletal/judea_tunic_basic_1_b.png" name="baseTex"/>
+        <texture file="skeletal/judea_tunic_02asic_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="judea-tunic-1c">
       <textures>
-        <texture file="skeletal/judea_tunic_basic_1_c.png" name="baseTex"/>
+        <texture file="skeletal/judea_tunic_02asic_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="judea-tunic-1d">
       <textures>
-        <texture file="skeletal/judea_tunic_basic_1_d.png" name="baseTex"/>
+        <texture file="skeletal/judea_tunic_02asic_01_d.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

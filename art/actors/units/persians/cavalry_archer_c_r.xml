@@ -17,8 +17,8 @@
   <group>
     <variant frequency="1" name="Rider-Armour-Iron">
       <textures>
-        <texture file="skeletal/pers_champ_cav_r_1.png" name="baseTex"/>
-        <texture file="skeletal/pers_champ_cav_r_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/champ_03av_r_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/champ_03av_r_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_iron.xml" attachpoint="root"/>
@@ -26,8 +26,8 @@
     </variant>
     <variant frequency="1" name="Rider-Armour-Bronze">
       <textures>
-        <texture file="skeletal/pers_champ_cav_r_2.png" name="baseTex"/>
-        <texture file="skeletal/pers_champ_cav_r_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/champ_03av_r_02.png" name="baseTex"/>
+        <texture file="skeletal/pers/champ_03av_r_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_bronze.xml" attachpoint="root"/>
@@ -35,8 +35,8 @@
     </variant>
     <variant frequency="1" name="scale-sleeve-full-1a">
       <textures>
-        <texture file="skeletal/pers_scale_sleeve_full_1_a.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_sleeve_full_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_sleeve_full_01_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_sleeve_full_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_bronze.xml" attachpoint="root"/>
@@ -44,8 +44,8 @@
     </variant>
     <variant frequency="1" name="scale-sleeve-full-1b">
       <textures>
-        <texture file="skeletal/pers_scale_sleeve_full_1_b.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_sleeve_full_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_sleeve_full_01_02.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_sleeve_full_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_iron.xml" attachpoint="root"/>
@@ -53,8 +53,8 @@
     </variant>
     <variant frequency="1" name="scale-armband-full-1a">
       <textures>
-        <texture file="skeletal/pers_scale_amband_full_1_a.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_amband_full_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_01mband_full_01_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_01mband_full_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_bronze.xml" attachpoint="root"/>
@@ -62,8 +62,8 @@
     </variant>
     <variant frequency="1" name="scale-armband-full-1b">
       <textures>
-        <texture file="skeletal/pers_scale_amband_full_1_b.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_amband_full_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_01mband_full_01_02.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_01mband_full_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_iron.xml" attachpoint="root"/>
@@ -71,8 +71,8 @@
     </variant>
     <variant frequency="1" name="scale-sleeve-top-1a">
       <textures>
-        <texture file="skeletal/pers_scale_sleeve_top_1_a.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_sleeve_top_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_sleeve_top_01_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_sleeve_top_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_bronze.xml" attachpoint="root"/>
@@ -80,8 +80,8 @@
     </variant>
     <variant frequency="1" name="scale-sleeve-top-1b">
       <textures>
-        <texture file="skeletal/pers_scale_sleeve_top_1_b.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_sleeve_top_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_sleeve_top_01_02.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_sleeve_top_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_iron.xml" attachpoint="root"/>
@@ -89,8 +89,8 @@
     </variant>
     <variant frequency="1" name="scale-sleeve-bottom-1a">
       <textures>
-        <texture file="skeletal/pers_scale_sleeve_bottom_1_a.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_sleeve_full_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_sleeve_02ottom_01_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_sleeve_full_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_bronze.xml" attachpoint="root"/>
@@ -98,8 +98,8 @@
     </variant>
     <variant frequency="1" name="scale-sleeve-bottom-1b">
       <textures>
-        <texture file="skeletal/pers_scale_sleeve_bottom_1_b.png" name="baseTex"/>
-        <texture file="skeletal/pers_scale_sleeve_bottom_1_spec.png" name="specTex"/>
+        <texture file="skeletal/pers/scale_sleeve_02ottom_01_02.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_sleeve_02ottom_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/armor/pers_neckguard_iron.xml" attachpoint="root"/>

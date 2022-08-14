@@ -18,20 +18,20 @@
   <group>
     <variant frequency="1" name="Kushite Elite Archer Infantry Leather 01">
       <textures>
-        <texture file="skeletal/kush_iar_e_01.png" name="baseTex"/>
-        <texture file="skeletal/kush_iar_e_01_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/iar_e_01.png" name="baseTex"/>
+        <texture file="skeletal/kush/iar_e_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Kushite Elite Archer Infantry Cloth 01">
       <textures>
-        <texture file="skeletal/kush_merc_cavalry_r_01.png" name="baseTex"/>
-        <texture file="skeletal/kush_merc_cavalry_r_01_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/merc_03avalry_r_01.png" name="baseTex"/>
+        <texture file="skeletal/kush/merc_03avalry_r_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Kushite Elite Archer Infantry Cloth 02">
       <textures>
-        <texture file="skeletal/kush_merc_cavalry_r_02.png" name="baseTex"/>
-        <texture file="skeletal/kush_merc_cavalry_r_02_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/merc_03avalry_r_02.png" name="baseTex"/>
+        <texture file="skeletal/kush/merc_03avalry_r_02_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>

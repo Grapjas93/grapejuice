@@ -11,8 +11,8 @@
         <prop actor="props/units/shields/maur_tall_roundtop_maiden.xml" attachpoint="shield"/>
       </props>
       <textures>
-        <texture file="skeletal/maur_fem_d.png" name="baseTex"/>
-        <texture file="skeletal/maur_fem_d_spec.png" name="specTex"/>
+        <texture file="skeletal/maur/fem_d.png" name="baseTex"/>
+        <texture file="skeletal/maur/fem_d_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>

@@ -11,7 +11,7 @@
  		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/maur_iar_a.png" name="baseTex"/>
+        <texture file="skeletal/maur/iar_01.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

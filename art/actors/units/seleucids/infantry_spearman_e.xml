@@ -28,28 +28,28 @@
     <variant frequency="1" name="tunic-hellenistic-1">
       <mesh>skeletal/new/m_tunic_long.dae</mesh>
       <textures>
-        <texture file="skeletal/ptol_thureophoros_e_1.png" name="baseTex"/>
-        <texture file="skeletal/ptol_thureophoros_e_1_spec.png" name="specTex"/>
+        <texture file="skeletal/ptol/thureophoros_e_01.png" name="baseTex"/>
+        <texture file="skeletal/ptol/thureophoros_e_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-hellenistic-2">
       <textures>
-        <texture file="skeletal/hele_tunic_hellenistic_elite_1.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_hellenistic_elite_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-hellenistic-3">
       <textures>
-        <texture file="skeletal/hele_tunic_hellenistic_elite_2.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_hellenistic_elite_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-hellenistic-4">
       <textures>
-        <texture file="skeletal/hele_tunic_hellenistic_elite_3.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_hellenistic_elite_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-hellenistic-5">
       <textures>
-        <texture file="skeletal/hele_tunic_hellenistic_elite_4.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_hellenistic_elite_4.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

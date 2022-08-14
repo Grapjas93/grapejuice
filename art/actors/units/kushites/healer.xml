@@ -5,8 +5,8 @@
     <variant file="biped/base_healer_male.xml">
       <mesh>skeletal/new/m_tunic_long.dae</mesh>
       <textures>
-        <texture file="skeletal/kush_healer.png" name="baseTex"/>
-        <texture file="skeletal/kush_healer_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/healer.png" name="baseTex"/>
+        <texture file="skeletal/kush/healer_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/heads/head_kush_healer.xml" attachpoint="head"/>

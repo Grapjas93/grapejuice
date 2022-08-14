@@ -12,7 +12,7 @@
 		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/hele_tunic.dds" name="baseTex"/>
+        <texture file="skeletal/hele/tunic.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

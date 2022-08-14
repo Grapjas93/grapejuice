@@ -7,38 +7,29 @@
       <props>
         <prop actor="props/units/heads/new/head_hele_e.xml" attachpoint="head"/>
         <prop actor="props/units/helmets/hele_straw_01.xml" attachpoint="helmet"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
-      <textures>
-        <texture file="skeletal/hele_iar_e.png" name="baseTex"/>
-      </textures>
     </variant>
   </group>
   <group>
-    <variant name="psiloi-original">
-      <mesh>skeletal/new/m_tunic_long.dae</mesh>
-      <textures>
-        <texture file="skeletal/hele_iar_e.png" name="baseTex"/>
-      </textures>
-    </variant>
     <variant name="psiloi-padded-1a">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_a.png" name="baseTex"/>
+        <texture file="skeletal/hele/padded_psiloi_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="psiloi-padded-1b">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_b.png" name="baseTex"/>
+        <texture file="skeletal/hele/padded_psiloi_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="psiloi-padded-1c">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_c.png" name="baseTex"/>
+        <texture file="skeletal/hele/padded_psiloi_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="psiloi-padded-1d">
       <textures>
-        <texture file="skeletal/hele_psiloi_padded_1_d.png" name="baseTex"/>
+        <texture file="skeletal/hele/padded_psiloi_01_04.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -61,18 +52,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
-		</props>
-	</variant>
-   <variant file="biped/attack_melee_slinger.xml">
-		<props>
-		<prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+    <variant file="biped/attack_melee_slinger.xml">
+      <props>
+      <prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

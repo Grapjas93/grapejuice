@@ -17,27 +17,27 @@
   <group>
     <variant frequency="1" name="tunic-lydian-1a">
       <textures>
-        <texture file="skeletal/pers_tunic_lydian_1_a.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_lydian_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-lydian-1b">
       <textures>
-        <texture file="skeletal/pers_tunic_lydian_1_b.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_lydian_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-lydian-1c">
       <textures>
-        <texture file="skeletal/pers_tunic_lydian_1_c.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_lydian_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-lydian-1d">
       <textures>
-        <texture file="skeletal/pers_tunic_lydian_1_d.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_lydian_01_d.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-lydian-1e">
       <textures>
-        <texture file="skeletal/pers_tunic_lydian_1_e.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_lydian_01_e.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

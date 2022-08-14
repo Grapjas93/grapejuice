@@ -13,7 +13,7 @@
 		<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
       </props>
       <textures>
-        <texture file="skeletal/celt_caradoc.dds" name="baseTex"/>
+        <texture file="skeletal/celt/caradoc.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

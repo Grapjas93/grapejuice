@@ -11,7 +11,7 @@
 		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/hele_cjv_e_1.dds" name="baseTex"/>
+        <texture file="skeletal/hele/cjv_e_01.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

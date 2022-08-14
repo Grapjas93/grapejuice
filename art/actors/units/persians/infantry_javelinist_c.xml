@@ -18,12 +18,12 @@
   <group>
     <variant frequency="1" name="Mail Iron">
       <textures>
-        <texture file="skeletal/pers_kardakes_1.png" name="baseTex"/>
+        <texture file="skeletal/pers/kardakes_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Mail Bronze">
       <textures>
-        <texture file="skeletal/pers_kardakes_2.png" name="baseTex"/>
+        <texture file="skeletal/pers/kardakes_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

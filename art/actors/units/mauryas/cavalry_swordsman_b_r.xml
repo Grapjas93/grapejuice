@@ -12,7 +12,7 @@
         <prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/maur_isp_b.png" name="baseTex"/>
+        <texture file="skeletal/maur/isp_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

@@ -11,39 +11,39 @@
 		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
       <textures>
-        <texture file="skeletal/hele_isp_b_2.dds" name="baseTex"/>
+        <texture file="skeletal/hele/isp_02_02.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant name="illy-tunic-basic-01-d">
       <textures>
-        <texture file="skeletal/illy_tunic_01_basic_d.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_01_02asic_d.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="illy-tunic-basic-01-e">
       <textures>
-        <texture file="skeletal/illy_tunic_01_basic_e.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_01_02asic_e.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="illy-tunic-basic-01-f">
       <textures>
-        <texture file="skeletal/illy_tunic_01_basic_f.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_01_02asic_f.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-tunic-marine-1a">
       <textures>
-        <texture file="skeletal/hele_tunic_marine_1_a.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_marine_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-tunic-marine-1b">
       <textures>
-        <texture file="skeletal/hele_tunic_marine_1_b.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_marine_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-tunic-marine-1c">
       <textures>
-        <texture file="skeletal/hele_tunic_marine_1_c.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_marine_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

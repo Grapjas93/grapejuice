@@ -14,12 +14,12 @@
   <group>
     <variant frequency="1" name="tunic1">
       <textures>
-        <texture file="skeletal/kart_cjv_b_1.dds" name="baseTex"/>
+        <texture file="skeletal/kart_03jv_02_01.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic2">
       <textures>
-        <texture file="skeletal/kart_cjv_b_2.dds" name="baseTex"/>
+        <texture file="skeletal/kart_03jv_02_02.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

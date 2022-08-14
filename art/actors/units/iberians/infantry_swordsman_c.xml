@@ -16,25 +16,25 @@
     <variant frequency="1" name="armour-pectoral-1">
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber_su_inf_1.dds" name="baseTex"/>
+        <texture file="skeletal/iber/su_inf_01.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="armour-pectoral-2">
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber_su_inf_2.dds" name="baseTex"/>
+        <texture file="skeletal/iber/su_inf_02.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="armour-chainmail">
       <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber_champ_inf_3.dds" name="baseTex"/>
+        <texture file="skeletal/iber/champ_inf_03.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="padded-scale-1a">
       <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber_padded_scale_1_a.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_scale_01_01.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

@@ -13,7 +13,7 @@
 		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
       <textures>
-        <texture file="skeletal/hele_iar_e.png" name="baseTex"/>
+        <texture file="skeletal/hele/iar_e.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

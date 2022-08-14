@@ -80,22 +80,22 @@
     <variant frequency="1" name="tunic-old">
       <mesh>skeletal/new/m_tunic_long.dae</mesh>
       <textures>
-        <texture file="skeletal/mace_ijv_e.png" name="baseTex"/>
+        <texture file="skeletal/mace/ijv_e.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-greaves-1a">
       <textures>
-        <texture file="skeletal/mace_tunic_hellenistic_greaves_1_a.png" name="baseTex"/>
+        <texture file="skeletal/mace/tunic_hellenistic_greaves_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-greaves-1b">
       <textures>
-        <texture file="skeletal/mace_tunic_hellenistic_greaves_1_b.png" name="baseTex"/>
+        <texture file="skeletal/mace/tunic_hellenistic_greaves_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-greaves-1c">
       <textures>
-        <texture file="skeletal/mace_tunic_hellenistic_greaves_1_c.png" name="baseTex"/>
+        <texture file="skeletal/mace/tunic_hellenistic_greaves_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

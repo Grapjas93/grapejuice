@@ -15,22 +15,22 @@
   <group>
     <variant frequency="1" name="healer-outfit-1">
       <textures>
-        <texture file="skeletal/celt_druid_1.png" name="baseTex"/>
+        <texture file="skeletal/celt/druid_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="healer-outfit-2">
       <textures>
-        <texture file="skeletal/celt_druid_2.png" name="baseTex"/>
+        <texture file="skeletal/celt/druid_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="healer-outfit-3">
       <textures>
-        <texture file="skeletal/celt_druid_3.png" name="baseTex"/>
+        <texture file="skeletal/celt/druid_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="healer-outfit-4">
       <textures>
-        <texture file="skeletal/celt_druid_4.png" name="baseTex"/>
+        <texture file="skeletal/celt/druid_4.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

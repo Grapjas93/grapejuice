@@ -13,8 +13,8 @@
 		<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
       </props>
       <textures>
-        <texture file="skeletal/ptol_hero_cuirass_1_a.png" name="baseTex"/>
-        <texture file="skeletal/mace_cuirass_vergina_spec.png" name="specTex"/>
+        <texture file="skeletal/ptol/hero_03uirass_01_01.png" name="baseTex"/>
+        <texture file="skeletal/mace/cuirass_vergina_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>

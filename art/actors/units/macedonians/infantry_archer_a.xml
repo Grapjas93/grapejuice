@@ -17,12 +17,12 @@
   <group>
     <variant frequency="1" name="Tunic-Sleeves">
       <textures>
-        <texture file="skeletal/hele_isp_b.dds" name="baseTex"/>
+        <texture file="skeletal/hele/isp_02.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless">
       <textures>
-        <texture file="skeletal/hele_isp_b_2.dds" name="baseTex"/>
+        <texture file="skeletal/hele/isp_02_02.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

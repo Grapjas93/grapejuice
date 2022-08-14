@@ -41,37 +41,37 @@
   <group>
     <variant name="pants-original">
       <textures>
-        <texture file="skeletal/celt_ijv_b_01.dds" name="baseTex"/>
+        <texture file="skeletal/celt/ijv_02_01.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant name="pants-basic-1">
       <textures>
-        <texture file="skeletal/gaul_pants_basic_1.png" name="baseTex"/>
+        <texture file="skeletal/gaul/pants_02asic_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="pants-basic-2">
       <textures>
-        <texture file="skeletal/gaul_pants_basic_2.png" name="baseTex"/>
+        <texture file="skeletal/gaul/pants_02asic_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="pants-basic-3">
       <textures>
-        <texture file="skeletal/gaul_pants_basic_3.png" name="baseTex"/>
+        <texture file="skeletal/gaul/pants_02asic_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="pants-basic-4">
       <textures>
-        <texture file="skeletal/gaul_pants_basic_4.png" name="baseTex"/>
+        <texture file="skeletal/gaul/pants_02asic_4.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="pants-basic-5">
       <textures>
-        <texture file="skeletal/gaul_pants_basic_5.png" name="baseTex"/>
+        <texture file="skeletal/gaul/pants_02asic_5.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="pants-basic-6">
       <textures>
-        <texture file="skeletal/gaul_pants_basic_6.png" name="baseTex"/>
+        <texture file="skeletal/gaul/pants_02asic_6.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

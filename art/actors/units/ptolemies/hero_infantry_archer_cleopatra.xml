@@ -12,7 +12,7 @@
         <prop actor="props/units/quiver_back.xml" attachpoint="back"/>
       </props>
       <textures>
-        <texture file="skeletal/ptol_cleopatra.png" name="baseTex"/>
+        <texture file="skeletal/ptol/cleopatra.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

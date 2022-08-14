@@ -12,7 +12,7 @@
 		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
       <textures>
-        <texture file="skeletal/kart_iar_b.dds" name="baseTex"/>
+        <texture file="skeletal/kart_iar_02.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

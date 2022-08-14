@@ -12,7 +12,7 @@
         <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
       <textures>
-        <texture file="skeletal/mace_ijv_b.png" name="baseTex"/>
+        <texture file="skeletal/mace/ijv_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

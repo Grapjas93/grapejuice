@@ -16,17 +16,17 @@
   <group>
     <variant frequency="3" name="cardiopylax-javelinist-1a">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_javelinist_1_a.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_javelinist_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="cardiopylax-javelinist-1b">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_javelinist_1_b.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_javelinist_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="cardiopylax-javelinist-1c">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_javelinist_1_c.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_javelinist_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

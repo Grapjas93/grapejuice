@@ -11,7 +11,7 @@
  			<prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
      </props>
       <textures>
-        <texture file="skeletal/celt_ijv_b_01.dds" name="baseTex"/>
+        <texture file="skeletal/celt/ijv_02_01.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

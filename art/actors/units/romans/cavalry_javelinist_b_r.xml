@@ -48,22 +48,22 @@
   <group>
     <variant frequency="1" name="Tunic-1">
       <textures>
-        <texture file="skeletal/kart_csp_b_1.dds" name="baseTex"/>
+        <texture file="skeletal/kart_03sp_02_01.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Tunic-2">
       <textures>
-        <texture file="skeletal/kart_csp_b_2.dds" name="baseTex"/>
+        <texture file="skeletal/kart_03sp_02_02.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Tunic-3">
       <textures>
-        <texture file="skeletal/kart_csp_b_3.dds" name="baseTex"/>
+        <texture file="skeletal/kart_03sp_02_03.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Tunic-4">
       <textures>
-        <texture file="skeletal/kart_csp_b_4.dds" name="baseTex"/>
+        <texture file="skeletal/kart_03sp_02_4.dds" name="baseTex"/>
       </textures>
     </variant>
   </group>

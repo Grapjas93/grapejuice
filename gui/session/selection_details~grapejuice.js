@@ -290,15 +290,8 @@ function displaySingle(entState)
 			let sizeObj = unitCaptureBar.size;
 			sizeObj.rleft = startSize;
 
-			let size = 0;
-			if (showAmmo)
-			{
-				size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
-			}
-			else
-			{
-				size = 196 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
-			}
+			let size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
+
 			sizeObj.rright = startSize + size;
 			unitCaptureBar.size = sizeObj;
 			unitCaptureBar.sprite = "color:" + g_DiplomacyColors.getPlayerColor(playerID, 128);

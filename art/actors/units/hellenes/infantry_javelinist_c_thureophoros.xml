@@ -17,22 +17,22 @@
   <group>
     <variant name="hele-tunic-3-psiloi-b">
       <textures>
-        <texture file="skeletal/hele_tunic_3_psiloi_b.png" name="baseTex"/>
+        <texture file="skeletal/hele/tunic_03_psiloi_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-epilektoi-2">
       <textures>
-        <texture file="skeletal/hele_epilektoi_2.png" name="baseTex"/>
+        <texture file="skeletal/hele/epilektoi_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-epilektoi-6">
       <textures>
-        <texture file="skeletal/hele_epilektoi_6.png" name="baseTex"/>
+        <texture file="skeletal/hele/epilektoi_6.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-epilektoi-9">
       <textures>
-        <texture file="skeletal/hele_epilektoi_9.png" name="baseTex"/>
+        <texture file="skeletal/hele/epilektoi_9.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

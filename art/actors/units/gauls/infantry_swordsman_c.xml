@@ -60,33 +60,33 @@
   <group>
     <variant frequency="3" name="chainmail-1">
       <textures>
-        <texture file="skeletal/celt_chain_01.png" name="baseTex"/>
-        <texture file="skeletal/celt_chain_01_spec.png" name="specTex"/>
+        <texture file="skeletal/celt/chain_01.png" name="baseTex"/>
+        <texture file="skeletal/celt/chain_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-1f">
       <textures>
-        <texture file="skeletal/gaul_linothorax_1_f.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_f.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-1g">
       <textures>
-        <texture file="skeletal/gaul_linothorax_1_g.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_g.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-1h">
       <textures>
-        <texture file="skeletal/gaul_linothorax_1_h.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_h.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-1i">
       <textures>
-        <texture file="skeletal/gaul_linothorax_1_i.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_i.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-1j">
       <textures>
-        <texture file="skeletal/gaul_linothorax_1_j.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_j.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

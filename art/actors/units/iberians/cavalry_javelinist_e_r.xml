@@ -16,42 +16,42 @@
   <group>
     <variant frequency="1" name="Iberian-Tunic-brown">
       <textures>
-        <texture file="skeletal/iber_isp_a_1.dds" name="baseTex"/>
+        <texture file="skeletal/iber/isp_01_01.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Iberian-Tunic-pect">
       <textures>
-        <texture file="skeletal/iber_isw_e_1.dds" name="baseTex"/>
+        <texture file="skeletal/iber/isw_e_01.dds" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Padded-cardiopylax-1a">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_1_a.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Padded-cardiopylax-1b">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_1_b.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Padded-cardiopylax-1c">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_1_c.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="padded-cardiopylax-champion-1a">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_champion_1_a.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_03hampion_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="padded-cardiopylax-champion-1b">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_champion_1_b.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_03hampion_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="padded-cardiopylax-champion-1c">
       <textures>
-        <texture file="skeletal/iber_padded_cardiopylax_champion_1_c.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_03ardiopylax_03hampion_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

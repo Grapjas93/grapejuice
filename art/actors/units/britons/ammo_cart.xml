@@ -17,7 +17,7 @@
         <prop actor="props/special/eyecandy/crate_a.xml" attachpoint="goodsa"/>
         <prop actor="props/special/eyecandy/barrel_a.xml" attachpoint="goodsb"/>
       </props>
-      <textures><texture file="structural/rome_ram.png" name="baseTex"/></textures>
+      <textures><texture file="structural/rome/ram.png" name="baseTex"/></textures>
     </variant>
   </group>
   <material>player_trans.xml</material>
