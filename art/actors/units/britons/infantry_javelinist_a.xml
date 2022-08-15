@@ -8,7 +8,6 @@
         <prop actor="props/units/heads/new/head_lime.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-        <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
@@ -25,59 +24,29 @@
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="skin 01">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-01">
       <textures>
-        <texture file="skeletal/celt/ijv_01_01.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 02">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-02">
       <textures>
-        <texture file="skeletal/celt/ijv_01_02.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 03">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-03">
       <textures>
-        <texture file="skeletal/celt/ijv_01_03.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 04">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-04">
       <textures>
-        <texture file="skeletal/celt/ijv_01_04.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_04.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 05">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-05">
       <textures>
-        <texture file="skeletal/celt/ijv_01_05.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 06">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_06.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 07">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_07.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 08">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_08.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 09">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_09.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 10">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_010.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 11">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_011.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_05.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -99,20 +68,8 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
-    <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

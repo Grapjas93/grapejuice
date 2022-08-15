@@ -12,59 +12,29 @@
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="skin 01">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-01">
       <textures>
-        <texture file="skeletal/celt/ijv_01_01.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 02">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-02">
       <textures>
-        <texture file="skeletal/celt/ijv_01_02.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 03">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-03">
       <textures>
-        <texture file="skeletal/celt/ijv_01_03.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 04">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-04">
       <textures>
-        <texture file="skeletal/celt/ijv_01_04.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_04.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="skin 05">
+    <variant frequency="1" name="Celtic-Tunic-Sleeveles-05">
       <textures>
-        <texture file="skeletal/celt/ijv_01_05.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 06">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_06.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 07">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_07.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 08">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_08.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 09">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_09.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 10">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_010.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="skin 11">
-      <textures>
-        <texture file="skeletal/celt/ijv_01_011.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_05.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -87,18 +57,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
-		</props>
-	</variant>
-   <variant file="biped/attack_melee_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
-			<prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+    <variant file="biped/attack_melee_slinger.xml">
+      <props>
+        <prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
+        <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

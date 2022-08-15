@@ -11,7 +11,6 @@
         <prop actor="props/units/shields/pelta_thra_elite.xml" attachpoint="shield_arm"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/capes/cape_thracian_skirmisher.xml" attachpoint="root"/>
-        <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
@@ -45,20 +44,8 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-      <props>
-        <prop attachpoint="weapon_R"/>
-        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-        <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-      </props>
-    </variant>
-      <variant file="biped/attack_melee_javelinist.xml">
-      <props>
-        <prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-        <prop actor="" attachpoint="back"/>
-      </props>
-    </variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
