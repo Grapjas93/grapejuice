@@ -56,24 +56,14 @@
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="linothorax-1b">
+    <variant frequency="1" name="Gallic-Linothorax-01-02">
       <textures>
         <texture file="skeletal/gaul/linothorax_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="linothorax-1c">
+    <variant frequency="1" name="Gallic-Linothorax-01-03">
       <textures>
         <texture file="skeletal/gaul/linothorax_01_03.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="padded-1b">
-      <textures>
-        <texture file="skeletal/gaul/padded_01_02.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="padded-1c">
-      <textures>
-        <texture file="skeletal/gaul/padded_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -84,18 +74,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/cavalry/attack_ranged_javelin.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
-    <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+      <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
+      <props>
+        <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml"/>
     <variant file="biped/rider/attack_slaughter_shield_celt.xml"/>
     <variant file="biped/gather_meat.xml"/>
