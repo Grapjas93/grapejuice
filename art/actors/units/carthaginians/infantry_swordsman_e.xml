@@ -1,109 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <actor version="1">
   <castshadow/>
   <group>
-    <variant file="biped/base_swordsman_shield_relax.xml">
+    <variant>
+      <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/shields/samn_scutum_elite.xml" attachpoint="shield"/>
         <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/heads/new/head_hele_e.xml" attachpoint="head"/>
-		<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
       </props>
+      <textures>
+        <texture file="skeletal/hele/cuirass_02_spec.png" name="specTex"/>
+      </textures>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Camelus_Samnite-Attic-01">
+    <variant frequency="1" name="Samnite-Attic-01">
       <props>
         <prop actor="props/units/helmets/hele_attic_e1.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Camelus_Samnite-Attic-02">
+    <variant frequency="1" name="Samnite-Attic-02">
       <props>
         <prop actor="props/units/helmets/hele_attic_e2.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Camelus_Samnite-Attic-03">
+    <variant frequency="1" name="Samnite-Attic-03">
       <props>
         <prop actor="props/units/helmets/hele_attic_e3.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Camelus_Samnite-Attic-04">
+    <variant frequency="1" name="Samnite-Attic-04">
       <props>
         <prop actor="props/units/helmets/hele_attic_e4.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Camelus_Samnite-Phrygian-01">
+    <variant frequency="1" name="Samnite-Phrygian-01">
       <props>
         <prop actor="props/units/helmets/hele_phrygian_e11.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Camelus_Rome-Montefortino-01">
+    <variant frequency="1" name="Rome-Montefortino-01">
       <props>
         <prop actor="props/units/helmets/samnite_helmet_montefortino.xml" attachpoint="helmet"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Camelus_Greave-01">
-      <props>
-        <prop actor="props/units/armor/greave_07_bronze_l.xml" attachpoint="leg_L"/>
-        <prop actor="props/units/armor/greave_07_bronze_r.xml" attachpoint="leg_R"/>
-      </props>
-    </variant>
-    <variant frequency="1" name="Camelus_Greave-02">
-      <props>
-        <prop actor="props/units/armor/greave_12_bronze_l.xml" attachpoint="leg_L"/>
-        <prop actor="props/units/armor/greave_12_bronze_r.xml" attachpoint="leg_R"/>
-      </props>
-    </variant>
-    <variant frequency="1" name="Camelus_Greave-03">
-      <props>
-        <prop actor="props/units/armor/greave_09_bronze_l.xml" attachpoint="leg_L"/>
-        <prop actor="props/units/armor/greave_09_bronze_r.xml" attachpoint="leg_R"/>
-      </props>
-    </variant>
-    <variant frequency="1" name="Camelus_Greave-04">
-      <props>
-        <prop actor="props/units/armor/greave_02_bronze_l.xml" attachpoint="leg_L"/>
-        <prop actor="props/units/armor/greave_02_bronze_r.xml" attachpoint="leg_R"/>
-      </props>
-    </variant>
-  </group>
-  <group>
-    <variant frequency="6" name="Camelus_Cuirass">
-      <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
+    <variant frequency="1" name="cuirass_01_01">
       <textures>
-        <texture file="skeletal/samnite_isp_e_01.dds" name="baseTex"/>
+        <texture file="skeletal/ital/cuirass_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="2" name="Camelus_pectoral-tripledisc">
-      <mesh>skeletal/new/m_tunic_short.dae</mesh>
+    <variant frequency="1" name="cuirass_01_02">
       <textures>
-        <texture file="skeletal/kart_03sp_01_01.dds" name="baseTex"/>
+        <texture file="skeletal/ital/cuirass_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="2" name="Camelus_pectoral-square">
-      <mesh>skeletal/new/m_tunic_short.dae</mesh>
+    <variant frequency="1" name="cuirass_01_03">
       <textures>
-        <texture file="skeletal/kart_03sp_01_02.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="2" name="Camelus_pectoral-muscle">
-      <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
-      <textures>
-        <texture file="skeletal/kart_03sp_01_03.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="2" name="Camelus_Roman Scale Mail">
-      <mesh>skeletal/new/m_armor_tunic_long.dae</mesh>
-      <textures>
-        <texture file="skeletal/rome/su1_extraordinarii.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="Camelus_Roman Chainmail">
-      <mesh>skeletal/new/m_tunic_short.dae</mesh>
-      <textures>
-        <texture file="skeletal/rome/su3_marian_legion.dds" name="baseTex"/>
+        <texture file="skeletal/ital/cuirass_01_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -139,5 +96,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

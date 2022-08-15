@@ -3,12 +3,12 @@
   <castshadow/>
   <group>
     <variant frequency="1" name="Base">
-      <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
+      <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_hele_a.xml" attachpoint="head"/>
         <prop actor="props/units/shields/samn_scutum_adv.xml" attachpoint="shield"/>
         <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-		<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
@@ -40,28 +40,22 @@
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="ital-linothorax-1a">
+    <variant frequency="1" name="cardiopylax_01_01">
       <textures>
-        <texture file="skeletal/ital/linothorax_01_01.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+        <texture file="skeletal/ital/cardiopylax_01_01.png" name="baseTex"/>
+        <texture file="skeletal/ital/cardiopylax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="ital-linothorax-1b">
+    <variant frequency="1" name="cardiopylax_01_02">
       <textures>
-        <texture file="skeletal/ital/linothorax_01_02.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+        <texture file="skeletal/ital/cardiopylax_01_02.png" name="baseTex"/>
+        <texture file="skeletal/ital/cardiopylax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="ital-linothorax-1b">
+    <variant frequency="1" name="cardiopylax_01_03">
       <textures>
-        <texture file="skeletal/ital/linothorax_01_02.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="ital-linothorax-1d">
-      <textures>
-        <texture file="skeletal/ital/linothorax_01_d.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+        <texture file="skeletal/ital/cardiopylax_01_03.png" name="baseTex"/>
+        <texture file="skeletal/ital/cardiopylax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
