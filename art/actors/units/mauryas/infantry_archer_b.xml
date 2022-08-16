@@ -10,11 +10,11 @@
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_bamboo_long.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/quiver_back_bamboo.xml" attachpoint="back"/>
-		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/maur/iar_02.png" name="baseTex"/>
-        <texture file="skeletal/maur/isp_02_spec.png" name="specTex"/>
+        <texture file="skeletal/maur/skirt_01_02.png" name="baseTex"/>
+        <texture file="skeletal/maur/skirt_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -36,19 +36,19 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-	<variant file="biped/attack_ranged_archer.xml">
-		<props>
-			<prop actor="" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_archer.xml">
+      <props>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_archer.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

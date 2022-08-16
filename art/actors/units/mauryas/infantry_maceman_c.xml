@@ -10,37 +10,38 @@
         <prop actor="props/units/heads/maur_helmet_metal_plyr.xml" attachpoint="helmet"/>
         <prop actor="props/units/heads/maur_earrings_2.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/mace_mauryan.xml" attachpoint="weapon_R"/>
-		<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
       </props>
     </variant>
   </group>
   <group>
     <variant frequency="3" name="Scale Iron">
       <textures>
-        <texture file="skeletal/maur/champion_infantry.png" name="baseTex"/>
-        <texture file="skeletal/maur/champion_infantry_spec.png" name="specTex"/>
+        <texture file="skeletal/maur/scale_01_01.png" name="baseTex"/>
+        <texture file="skeletal/maur/scale_01_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="2" name="Scale Gold">
+    <variant frequency="2" name="Scale Brass">
       <textures>
-        <texture file="skeletal/maur/champion_infantry_02.png" name="baseTex"/>
-        <texture file="skeletal/maur/champion_infantry_spec.png" name="specTex"/>
+        <texture file="skeletal/maur/scale_01_02.png" name="baseTex"/>
+        <texture file="skeletal/maur/scale_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-			<prop actor="props/units/weapons/mace_mauryan.xml" attachpoint="weapon_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
+        <prop actor="props/units/weapons/mace_mauryan.xml" attachpoint="weapon_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
   <material>player_trans_spec.xml</material>

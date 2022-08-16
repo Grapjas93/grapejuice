@@ -8,10 +8,11 @@
         <prop actor="props/units/heads/new/head_indian_a.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/shields/maur_small_b.xml" attachpoint="shield"/>
- 		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
-        <texture file="skeletal/maur/isp_e.png" name="baseTex"/>
+        <texture file="skeletal/maur/tunic_leather_01_02.png" name="baseTex"/>
+        <texture file="skeletal/maur/tunic_leather_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -22,22 +23,22 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/cavalry/attack_ranged_javelin.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
     <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml" />
     <variant file="biped/rider/attack_slaughter_shield_maur.xml"/>
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>
