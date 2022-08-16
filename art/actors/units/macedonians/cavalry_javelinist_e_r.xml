@@ -8,7 +8,7 @@
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/shields/thra_thureos_elite.xml" attachpoint="shield"/>
         <prop actor="props/units/heads/new/head_hele_a.xml" attachpoint="head"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
@@ -53,8 +53,8 @@
   <group>
     <variant frequency="1" name="hele-scale-old">
       <textures>
-        <texture file="skeletal/hele/linothorax_scale.dds" name="baseTex"/>
-        <texture file="skeletal/hele/scale_01_spec.png" name="specTex"/>
+        <texture file="skeletal/hele/scale_06_01.png" name="baseTex"/>
+        <texture file="skeletal/hele/scale_06_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="hele-scale-1a">
@@ -83,8 +83,8 @@
     </variant>
     <variant frequency="1" name="mace-scale-4a">
       <textures>
-        <texture file="skeletal/mace/scale_4_01.png" name="baseTex"/>
-        <texture file="skeletal/hele/scale_4_spec.png" name="specTex"/>
+        <texture file="skeletal/mace/scale_04_01.png" name="baseTex"/>
+        <texture file="skeletal/hele/scale_04_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="mace-lamellar-1a">
@@ -102,18 +102,18 @@
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/attack_slaughter_shield_hele.xml"/>
     <variant file="biped/rider/cavalry/attack_ranged_javelin.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
-    <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+      <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml"/>
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>

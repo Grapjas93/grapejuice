@@ -7,15 +7,19 @@
       <props>
         <prop actor="props/units/heads/new/head_hele_e.xml" attachpoint="head"/>
         <prop actor="props/units/helmets/hele_kausia_cap_player.xml" attachpoint="helmet"/>
+        <prop actor="props/units/shields/pelte_cretan_bronze_02.xml" attachpoint="shield"/>
         <prop actor="props/units/mace_sling_pouch.xml" attachpoint="sheath_L"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
+      <textures>
+        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+      </textures>
     </variant>
   </group>
   <group>
-    <variant frequency="3" name="hele-padded-marine-1a">
+    <variant frequency="2" name="padded_marine_01_01">
       <textures>
-        <texture file="skeletal/hele/padded_marine_01_01.png" name="baseTex"/>
+        <texture file="skeletal/athen/padded_marine_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="illy-linothorax-01-a">
@@ -53,18 +57,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
-		</props>
-	</variant>
-   <variant file="biped/attack_melee_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+    <variant file="biped/attack_melee_slinger.xml">
+      <props>
+        <prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
@@ -79,5 +83,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

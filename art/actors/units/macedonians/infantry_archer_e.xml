@@ -5,15 +5,15 @@
     <variant frequency="1" name="Base">
       <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
       <props>
-        <prop actor="props/units/heads/new/head_hele_e.xml" attachpoint="head"/>
+        <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
-        <prop actor="props/units/weapons/bow_short.xml" attachpoint="weapon_bow"/>
+        <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/quiver_greek_back.xml" attachpoint="back"/>
-        <prop actor="props/units/shields/iberian_buckler_adv.xml" attachpoint="shield_arm"/>
- 		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
-     </props>
+        <prop actor="props/units/shields/pelte_cretan_bronze_02.xml" attachpoint="shield_arm"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
+      </props>
       <textures>
-        <texture file="skeletal/hele/iar_e.png" name="baseTex"/>
+        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -70,50 +70,39 @@
     </variant>
   </group>
   <group>
-    <variant name="psiloi-original">
-      <mesh>skeletal/new/m_tunic_long.dae</mesh>
+    <variant frequency="1" name="mace-linothorax-1a">
       <textures>
-        <texture file="skeletal/hele/iar_e.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-1">
+    <variant frequency="1" name="mace-linothorax-1b">
       <textures>
-        <texture file="skeletal/hele/psiloi_padded_01_01.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-2">
+    <variant frequency="1" name="mace-linothorax-1c">
       <textures>
-        <texture file="skeletal/hele/psiloi_padded_01_02.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-3">
+    <variant frequency="1" name="mace-linothorax-1d">
       <textures>
-        <texture file="skeletal/hele/psiloi_padded_01_03.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_04.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-4">
+    <variant frequency="1" name="mace-linothorax-1e">
       <textures>
-        <texture file="skeletal/hele/psiloi_padded_01_d.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_05.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-5">
+    <variant frequency="1" name="mace-linothorax-1f">
       <textures>
-        <texture file="skeletal/hele/epilektoi_7.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_06.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant name="psiloi-6">
+    <variant frequency="1" name="mace-linothorax-1g">
       <textures>
-        <texture file="skeletal/hele/epilektoi_4.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant name="psiloi-7">
-      <textures>
-        <texture file="skeletal/hele/epilektoi_9.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant name="psiloi-8">
-      <textures>
-        <texture file="skeletal/hele/epilektoi_010.png" name="baseTex"/>
+        <texture file="skeletal/mace/linothorax_01_07.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -136,18 +125,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_archer.xml">
-		<props>
-			<prop actor="" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
-		</props>
-	</variant>
-    <variant file="biped/attack_melee_archer.xml">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
+      </props>
+    </variant>
+      <variant file="biped/attack_melee_archer.xml">
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
@@ -162,5 +151,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

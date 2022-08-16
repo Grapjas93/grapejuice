@@ -6,27 +6,38 @@
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
+        <prop actor="props/units/helmets/headband_generic.xml" attachpoint="helmet"/>
         <prop actor="props/units/mace_sling_pouch.xml" attachpoint="sheath_L"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Heaband">
+    <variant frequency="1" name="shield leather">
       <props>
-        <prop actor="props/units/helmets/headband_color.xml" attachpoint="helmet"/>
+        <prop actor="props/units/shields/pelte_round_leather.xml" attachpoint="shield"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="shield wood">
+      <props>
+        <prop actor="props/units/shields/pelte_round_wood.xml" attachpoint="shield"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="3" name="illy-tunic-basic-01-a">
+    <variant frequency="3" name="illy-tunic_basic_01_01">
       <textures>
-        <texture file="skeletal/illy/tunic_01_02asic_01.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_basic_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="3" name="illy-tunic-basic-01-b">
+    <variant frequency="3" name="illy-tunic_basic_01_02">
       <textures>
-        <texture file="skeletal/illy/tunic_01_02asic_02.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_basic_01_02.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="3" name="illy-tunic_basic_01_03">
+      <textures>
+        <texture file="skeletal/illy/tunic_basic_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="hele-tunic-02-a">
@@ -64,18 +75,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
-		</props>
-	</variant>
-   <variant file="biped/attack_melee_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+    <variant file="biped/attack_melee_slinger.xml">
+      <props>
+        <prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

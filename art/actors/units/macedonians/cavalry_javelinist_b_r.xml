@@ -9,84 +9,49 @@
         <prop actor="props/units/helmets/hele_thracian_cap_player.xml" attachpoint="helmet"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/shields/thra_thureos_elite.xml" attachpoint="shield"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="tunic-thracian-1d">
+    <variant frequency="1" name="tunic_advanced_01_03">
       <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_01_d.png" name="baseTex"/>
+        <texture file="skeletal/thrac/tunic_advanced_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-thracian-1e">
+    <variant frequency="1" name="tunic_advanced_02_02">
       <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_01_e.png" name="baseTex"/>
+        <texture file="skeletal/thrac/tunic_advanced_02_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-thracian-1f">
+    <variant frequency="1" name="tunic_advanced_04_03">
       <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_01_f.png" name="baseTex"/>
+        <texture file="skeletal/thrac/tunic_advanced_04_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-thracian-2d">
+    <variant frequency="1" name="tunic_advanced_03_01">
       <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_02_d.png" name="baseTex"/>
+        <texture file="skeletal/thrac/tunic_advanced_03_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-thracian-2e">
+    <variant frequency="1" name="tunic_advanced_04_02">
       <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_02_e.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-2f">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_02_f.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-3d">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_03_d.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-3e">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_03_e.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-3f">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_03_f.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-4d">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_4_d.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-4e">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_4_e.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-thracian-4f">
-      <textures>
-        <texture file="skeletal/thrac/tunic_01dvanced_4_f.png" name="baseTex"/>
+        <texture file="skeletal/thrac/tunic_advanced_04_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-illyrian-advanced-01-c">
       <textures>
-        <texture file="skeletal/illy/tunic_01_01dvanced_03.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_advanced_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-illyrian-advanced-01-d">
       <textures>
-        <texture file="skeletal/illy/tunic_01_01dvanced_d.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_advanced_02_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-illyrian-advanced-01-e">
       <textures>
-        <texture file="skeletal/illy/tunic_01_01dvanced_e.png" name="baseTex"/>
+        <texture file="skeletal/illy/tunic_advanced_02_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -98,18 +63,18 @@
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/attack_slaughter_shield_hele.xml"/>
     <variant file="biped/rider/cavalry/attack_ranged_javelin.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
-    <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+      <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml"/>
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
