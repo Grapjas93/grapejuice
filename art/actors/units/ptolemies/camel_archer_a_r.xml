@@ -7,14 +7,8 @@
       <props>
         <prop actor="props/units/heads/new/head_pers_a.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
-		<prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_01_L"/>
-      </props>
-    </variant>
-  </group>
-  <group>
-    <variant frequency="1" name="headband">
-      <props>
-        <prop actor="props/units/helmets/headband_color.xml" attachpoint="helmet"/>
+        <prop actor="props/units/helmets/pers_conical_b1.xml" attachpoint="helmet"/>
+        <prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
@@ -44,11 +38,11 @@
     <variant file="biped/rider/camelry/promotion.xml"/>
     <variant file="biped/rider/camelry/attack_ranged_archer_right.xml"/>
     <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/spatha.xml" attachpoint="weapon_R"/>
-        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/spatha.xml" attachpoint="weapon_R"/>
+          <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/camelry/attack_slaughter.xml"/>
     <variant file="biped/rider/camelry/gather_meat.xml"/>
   </group>

@@ -11,36 +11,19 @@
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/capes/cape_long_player_skirmisher.xml" attachpoint="root"/>
-		<prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
+        <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="tunic-hellenistic-1">
-      <mesh>skeletal/new/m_tunic_long.dae</mesh>
+    <variant frequency="1" name="Padded-Thureophoroi-01">
       <textures>
-        <texture file="skeletal/ptol/thureophoros_e_01.png" name="baseTex"/>
-        <texture file="skeletal/ptol/thureophoros_e_01_spec.png" name="specTex"/>
+        <texture file="skeletal/ptol/padded_thureophoroi_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-hellenistic-2">
+    <variant frequency="1" name="Padded-Thureophoroi-02">
       <textures>
-        <texture file="skeletal/hele/tunic_hellenistic_elite_01.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-hellenistic-3">
-      <textures>
-        <texture file="skeletal/hele/tunic_hellenistic_elite_02.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-hellenistic-4">
-      <textures>
-        <texture file="skeletal/hele/tunic_hellenistic_elite_03.png" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="tunic-hellenistic-5">
-      <textures>
-        <texture file="skeletal/hele/tunic_hellenistic_elite_4.png" name="baseTex"/>
+        <texture file="skeletal/ptol/padded_thureophoroi_02.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -63,19 +46,19 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+      <props>
+        <prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
+        <prop actor="" attachpoint="back"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

@@ -3,56 +3,33 @@
   <castshadow/>
   <group>
     <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_armor_pants_tunic_long.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_lime.xml" attachpoint="head"/>
         <prop actor="props/units/shields/ptol_thureos_galatian_a.xml" attachpoint="shield"/>
-        <prop actor="props/units/capes/cape_long_gaul.xml" attachpoint="root"/>
         <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
-		<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/capes/cape_long_gaul.xml" attachpoint="root"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Tattoos-1">
-      <mesh>skeletal/new/m_naked.dae</mesh>
+    <variant frequency="1" name="leather_thorax_01_02">
       <textures>
-        <texture file="skeletal/celt/ijv_e_01.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_02.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_02_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Tattoos-2">
-      <mesh>skeletal/new/m_naked.dae</mesh>
+    <variant frequency="1" name="leather_thorax_01_03">
       <textures>
-        <texture file="skeletal/celt/ijv_e_02.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_03.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_03_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="3" name="Tattoos-3">
-      <mesh>skeletal/new/m_naked.dae</mesh>
+    <variant frequency="1" name="leather_thorax_01_04">
       <textures>
-        <texture file="skeletal/kart_isw_01_01.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="3" name="Tattoos-4">
-      <mesh>skeletal/new/m_naked.dae</mesh>
-      <textures>
-        <texture file="skeletal/kart_isw_01_02.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="10" name="Trousers-1">
-      <mesh>skeletal/new/m_pants.dae</mesh>
-      <textures>
-        <texture file="skeletal/kart_isw_01_03.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="10" name="Trousers-2">
-      <mesh>skeletal/new/m_pants.dae</mesh>
-      <textures>
-        <texture file="skeletal/kart_isw_01_04.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="20" name="Trousers-3">
-      <mesh>skeletal/new/m_pants.dae</mesh>
-      <textures>
-        <texture file="skeletal/kart_isw_01_05.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_04.png" name="baseTex"/>
+        <texture file="skeletal/gaul/linothorax_01_03_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -88,5 +65,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_cape_gaul.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

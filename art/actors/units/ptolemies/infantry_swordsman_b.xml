@@ -6,32 +6,32 @@
       <mesh>skeletal/new/m_pants.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_celt.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/shields/ptol_thureos_galatian_b.xml" attachpoint="shield"/>
         <prop actor="props/units/capes/cape_long_gaul.xml" attachpoint="root"/>
-        <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
-		<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Pants-1">
+    <variant frequency="1" name="tunic_sleeveless_01_01">
       <textures>
-        <texture file="skeletal/celt/ijv_01_01.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Pants-2">
+    <variant frequency="1" name="tunic_sleeveless_01_02">
       <textures>
-        <texture file="skeletal/celt/ijv_01_02.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Pants-3">
+    <variant frequency="1" name="tunic_sleeveless_01_03">
       <textures>
-        <texture file="skeletal/celt/ijv_01_03.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Pants-4">
+    <variant frequency="1" name="tunic_sleeveless_01_04">
       <textures>
-        <texture file="skeletal/celt/ijv_01_04.dds" name="baseTex"/>
+        <texture file="skeletal/gaul/tunic_sleeveless_01_04.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

@@ -5,16 +5,16 @@
     <variant>
       <mesh>skeletal/new/m_armor_tunic_long.dae</mesh>
       <props>
-        <prop actor="props/units/heads/new/head_hele_a.xml" attachpoint="head"/>
+        <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
         <prop actor="props/units/helmets/props/laurel_head.xml" attachpoint="helmet"/>
-        <prop actor="props/units/weapons/csword.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/shields/aspis_ptol_iv.xml" attachpoint="shield_arm"/>
         <prop actor="props/units/capes/rider/cape_long_player.xml" attachpoint="root"/>
-		<prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
       </props>
       <textures>
-        <texture file="skeletal/ptol/hero_03uirass_01_01.png" name="baseTex"/>
-        <texture file="skeletal/mace/cuirass_vergina_spec.png" name="specTex"/>
+        <texture file="skeletal/ptol/cuirass_gold_01.png" name="baseTex"/>
+        <texture file="skeletal/mace/cuirass_vergina_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>

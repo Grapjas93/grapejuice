@@ -8,7 +8,7 @@
         <prop actor="props/units/heads/new/head_pers_a.xml" attachpoint="head"/>
         <prop actor="props/units/shields/iberian_buckler_basic.xml" attachpoint="shield"/>
         <prop actor="props/units/mace_sling_pouch.xml" attachpoint="sheath_L"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
@@ -60,18 +60,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
-		</props>
-	</variant>
-   <variant file="biped/attack_melee_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
+    <variant file="biped/attack_melee_slinger.xml">
+      <props>
+        <prop actor="props/units/weapons/dagger.xml" attachpoint="weapon_L"/>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
