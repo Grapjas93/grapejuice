@@ -7,29 +7,30 @@
       <props>
         <prop actor="props/units/heads/new/rome_head_veteran.xml" attachpoint="head"/>
         <prop actor="props/units/helmets/rome_gallic_type_h_cent_transversal.xml" attachpoint="helmet"/>
-        <prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_R"/>
+        <prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_L"/>
         <prop actor="props/units/weapons/gladius.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/shields/scutum_rome_imp_marian.xml" attachpoint="shield"/>
         <prop actor="props/units/capes/cape_long_player.xml" attachpoint="root"/>
-		<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
       </props>
       <textures>
-        <texture file="skeletal/imp/infantry_swordsman_03_01.dds" name="baseTex"/>
-        <texture file="skeletal/imp/infantry_swordsman_03_01_spec.png" name="specTex"/>
+        <texture file="skeletal/imp/scale_centurion_01_01.dds" name="baseTex"/>
+        <texture file="skeletal/imp/scale_centurion_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant file="biped/base_swordsman_shield_ready.xml" name="Swordsman-Shield-Ready" frequency="1"/>
     <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-			<prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
+        <prop attachpoint="ammo"/>
+      </props>
+    </variant>
     <variant file="biped/formations/testudo_top.xml"/>
     <variant file="biped/formations/testudo_front.xml"/>
     <variant file="biped/formations/testudo_front_left.xml"/>
@@ -38,6 +39,7 @@
     <variant file="biped/formations/testudo_right.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
   <material>player_trans_spec.xml</material>

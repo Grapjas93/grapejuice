@@ -8,7 +8,7 @@
         <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_R"/>
         <prop actor="props/units/weapons/gladius.xml" attachpoint="weapon_R"/>
-		<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
       </props>
     </variant>
   </group>
@@ -81,16 +81,6 @@
     </variant>
   </group>
   <group>
-    <variant frequency="0" name="chain hauberk">
-      <textures>
-        <texture file="skeletal/rome/isw_01.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="0" name="chain thorax">
-      <textures>
-        <texture file="skeletal/rome/isw_e.dds" name="baseTex"/>
-      </textures>
-    </variant>
     <variant frequency="1" name="rome-chainmail-2a">
       <textures>
         <texture file="skeletal/rome/chainmail_02_01.png" name="baseTex"/>
@@ -129,59 +119,75 @@
     </variant>
     <variant frequency="1" name="rome-chainmail-4a">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_01.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_01.png" name="baseTex"/>
         <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="rome-chainmail-4b">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_02.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_02.png" name="baseTex"/>
         <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="rome-chainmail-4c">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_03.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_03.png" name="baseTex"/>
         <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="rome-chainmail-4d">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_d.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_04.png" name="baseTex"/>
         <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="rome-chainmail-4e">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_e.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_05.png" name="baseTex"/>
         <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="rome-chainmail-4f">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_f.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_06.png" name="baseTex"/>
         <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="rome-chainmail-4-padded-a">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_padded_01.png" name="baseTex"/>
+        <texture file="skeletal/rome/chainmail_04_padded_01.png" name="baseTex"/>
         <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant file="biped/base_swordsman_shield_relax_rome.xml"/>
+    <variant file="biped/carry_food.xml"/>
+    <variant file="biped/carry_meat.xml"/>
+    <variant file="biped/carry_wood.xml"/>
+    <variant file="biped/carry_stone.xml"/>
+    <variant file="biped/carry_metal.xml"/>
+    <variant file="biped/approach_tree.xml"/>
+    <variant file="biped/approach_grain.xml"/>
+    <variant file="biped/approach_fruit.xml"/>
+    <variant file="biped/approach_meat.xml"/>
+    <variant file="biped/approach_rock.xml"/>
+    <variant file="biped/approach_ore.xml"/>
+    <variant file="biped/approach_ruins.xml"/>
+    <variant file="biped/approach_praise.xml"/>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
-			<prop attachpoint="ammo"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
+        <prop attachpoint="ammo"/>
+      </props>
+    </variant>
     <variant file="biped/formations/testudo_top.xml"/>
     <variant file="biped/formations/testudo_front.xml"/>
     <variant file="biped/formations/testudo_front_left.xml"/>
@@ -201,22 +207,6 @@
     <variant file="biped/gather_praise.xml"/>
     <variant file="biped/build.xml"/>
     <variant file="biped/build_farm.xml"/>
-    <variant file="biped/carry_food.xml"/>
-    <variant file="biped/carry_meat.xml"/>
-    <variant file="biped/carry_wood.xml"/>
-    <variant file="biped/carry_stone.xml"/>
-    <variant file="biped/carry_metal.xml"/>
-    <variant file="biped/approach_tree.xml"/>
-    <variant file="biped/approach_grain.xml"/>
-    <variant file="biped/approach_fruit.xml"/>
-    <variant file="biped/approach_meat.xml"/>
-    <variant file="biped/approach_rock.xml"/>
-    <variant file="biped/approach_ore.xml"/>
-    <variant file="biped/approach_ruins.xml"/>
-    <variant file="biped/approach_praise.xml"/>
-  </group>
-  <group>
-    <variant name="Idle"/>
   </group>
   <material>player_trans_spec.xml</material>
 </actor>

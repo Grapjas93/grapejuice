@@ -10,51 +10,15 @@
         <prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_R"/>
         <prop actor="props/units/weapons/gladius.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/shields/scutum_rome_imp_01.xml" attachpoint="shield"/>
-		<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="rome-chainmail-marian">
-      <textures>
-        <texture file="skeletal/rome/su3_marian_legion.dds" name="baseTex"/>
-        <texture file="skeletal/rome/su3_marian_legion_spec.png" name="specTex"/>
-      </textures>
-    </variant>
     <variant frequency="1" name="rome-chainmail-4a">
       <textures>
-        <texture file="skeletal/rome/chainmail_4_01.png" name="baseTex"/>
-        <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="rome-chainmail-4b">
-      <textures>
-        <texture file="skeletal/rome/chainmail_4_02.png" name="baseTex"/>
-        <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="rome-chainmail-4c">
-      <textures>
-        <texture file="skeletal/rome/chainmail_4_03.png" name="baseTex"/>
-        <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="rome-chainmail-4d">
-      <textures>
-        <texture file="skeletal/rome/chainmail_4_d.png" name="baseTex"/>
-        <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="rome-chainmail-4e">
-      <textures>
-        <texture file="skeletal/rome/chainmail_4_e.png" name="baseTex"/>
-        <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="rome-chainmail-4f">
-      <textures>
-        <texture file="skeletal/rome/chainmail_4_f.png" name="baseTex"/>
-        <texture file="skeletal/celt/chainmail_02_spec.png" name="specTex"/>
+        <texture file="skeletal/imp/chain_03_01.png" name="baseTex"/>
+        <texture file="skeletal/imp/chain_03_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -71,18 +35,20 @@
     </variant>
   </group>
   <group>
-    <variant file="biped/base_swordsman_shield_relax.xml"/>
+    <variant file="biped/base_swordsman_shield_relax_celt.xml"/>
     <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-			<prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
+        <prop attachpoint="ammo"/>
+      </props>
+    </variant>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_infantry.xml"/>
     <variant file="biped/formations/testudo_top.xml"/>
     <variant file="biped/formations/testudo_front.xml"/>

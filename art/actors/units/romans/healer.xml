@@ -16,15 +16,15 @@
         <prop actor="props/units/heads/hele_hood_priest.xml" attachpoint="helmet"/>
       </props>
       <textures>
-        <texture file="skeletal/rome/healer_01.png" name="baseTex"/>
+        <texture file="skeletal/rome/robes_healer_01.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_slaughter.xml"/>
-    <variant file="biped/death_infantry.xml"/>
+    <variant file="biped/attack_melee_archer.xml"/>
     <variant file="biped/build.xml"/>
+    <variant file="biped/death_infantry.xml"/>
   </group>
   <material>player_trans.xml</material>
 </actor>

@@ -8,8 +8,11 @@
         <prop actor="props/units/heads/new/head_hele_a.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/shields/samn_scutum_adv.xml" attachpoint="shield"/>
-		<prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
+        <prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
       </props>
+      <textures>
+        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+      </textures>
     </variant>
   </group>
   <group>
@@ -48,25 +51,21 @@
     <variant frequency="1" name="ital-linothorax-1a">
       <textures>
         <texture file="skeletal/ital/linothorax_01_01.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="ital-linothorax-1b">
       <textures>
         <texture file="skeletal/ital/linothorax_01_02.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="ital-linothorax-1c">
       <textures>
         <texture file="skeletal/ital/linothorax_01_03.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="ital-linothorax-1d">
       <textures>
-        <texture file="skeletal/ital/linothorax_01_d.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+        <texture file="skeletal/ital/linothorax_01_04.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -77,18 +76,18 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/cavalry/attack_ranged_javelin.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
     <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/gladius.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/gladius.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_gladius_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml"/>
     <variant file="biped/rider/attack_slaughter_shield_rome.xml"/>
     <variant file="biped/gather_meat.xml"/>
