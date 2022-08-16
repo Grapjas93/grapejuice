@@ -1,72 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <actor version="1">
   <castshadow/>
   <group>
     <variant frequency="1" name="Base">
       <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
       <props>
-        <prop actor="props/units/heads/new/head_hele_e.xml" attachpoint="head"/>
+        <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/quiver_greek_back.xml" attachpoint="back"/>
-        <prop actor="props/units/shields/iberian_buckler_adv.xml" attachpoint="shield_arm"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/shields/pelte_cretan_bronze_02.xml" attachpoint="shield_arm"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_02_L"/>
       </props>
       <textures>
-        <texture file="skeletal/mace/thorakites_02.png" name="baseTex"/>
+        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Hele Pilos Helmet-01">
+    <variant frequency="1" name="thracian b2">
       <props>
-        <prop actor="props/units/helmets/hele_pilos.xml" attachpoint="helmet"/>
+        <prop actor="props/units/helmets/hele_thracian_b2.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Hele Boeotian Helmet-02">
+    <variant frequency="1" name="thracian b8">
       <props>
-        <prop actor="props/units/helmets/hele_boeotian.xml" attachpoint="helmet"/>
+        <prop actor="props/units/helmets/hele_thracian_b8.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Hele Chalcidean Helmet-01">
+    <variant frequency="1" name="thracian b9">
       <props>
-        <prop actor="props/units/helmets/hele_chalcidean_b1.xml" attachpoint="helmet"/>
+        <prop actor="props/units/helmets/hele_thracian_b9.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Hele Chalcidean Helmet-02">
-      <props>
-        <prop actor="props/units/helmets/hele_chalcidean_b2.xml" attachpoint="helmet"/>
-      </props>
+  </group>
+  <group>
+    <variant frequency="1" name="mace-linothorax-1a">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_01.png" name="baseTex"/>
+      </textures>
     </variant>
-    <variant frequency="1" name="Hele Chalcidean Helmet-03">
-      <props>
-        <prop actor="props/units/helmets/hele_chalcidean_b3.xml" attachpoint="helmet"/>
-      </props>
+    <variant frequency="1" name="mace-linothorax-1b">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_02.png" name="baseTex"/>
+      </textures>
     </variant>
-    <variant frequency="1" name="Hele Chalcidean Helmet-04">
-      <props>
-        <prop actor="props/units/helmets/hele_chalcidean_b4.xml" attachpoint="helmet"/>
-      </props>
+    <variant frequency="1" name="mace-linothorax-1c">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_03.png" name="baseTex"/>
+      </textures>
     </variant>
-    <variant frequency="1" name="Hele Chalcidean Helmet-05">
-      <props>
-        <prop actor="props/units/helmets/hele_chalcidean_b5.xml" attachpoint="helmet"/>
-      </props>
+    <variant frequency="1" name="mace-linothorax-1d">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_04.png" name="baseTex"/>
+      </textures>
     </variant>
-    <variant frequency="1" name="Hele Illyrian Helmet-01">
-      <props>
-        <prop actor="props/units/helmets/hele_illyrian_b1_crested.xml" attachpoint="helmet"/>
-      </props>
+    <variant frequency="1" name="mace-linothorax-1e">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_05.png" name="baseTex"/>
+      </textures>
     </variant>
-    <variant frequency="1" name="Hele Illyrian Helmet-02">
-      <props>
-        <prop actor="props/units/helmets/hele_illyrian_b2_crested.xml" attachpoint="helmet"/>
-      </props>
+    <variant frequency="1" name="mace-linothorax-1f">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_06.png" name="baseTex"/>
+      </textures>
     </variant>
-    <variant frequency="1" name="Hele Illyrian Helmet-03">
-      <props>
-        <prop actor="props/units/helmets/hele_illyrian_b3_crested.xml" attachpoint="helmet"/>
-      </props>
+    <variant frequency="1" name="mace-linothorax-1g">
+      <textures>
+        <texture file="skeletal/mace/linothorax_01_07.png" name="baseTex"/>
+      </textures>
     </variant>
   </group>
   <group>
@@ -87,19 +89,19 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-	<variant file="biped/attack_ranged_archer.xml">
-		<props>
-			<prop actor="" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_archer.xml">
+      <props>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_archer.xml">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
@@ -114,5 +116,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

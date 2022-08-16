@@ -9,22 +9,42 @@
         <prop actor="props/units/shields/sele_thureos_romanized_face.xml" attachpoint="shield"/>
         <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/capes/cape_long_player.xml" attachpoint="root"/>
-		<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="ammo"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="ammo"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Hele Thracian Helmet-02">
+    <variant frequency="1" name="Helmet-hele_thracian_a8">
+      <props>
+        <prop actor="props/units/helmets/hele_thracian_a8.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Helmet-hele_thracian_b2_crested">
+      <props>
+        <prop actor="props/units/helmets/hele_thracian_b2_crested.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Helmet-hele_thracian_b3_crested">
+      <props>
+        <prop actor="props/units/helmets/hele_thracian_b3_crested.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Helmet-hele_thracian_p3_crested">
       <props>
         <prop actor="props/units/helmets/hele_thracian_p3_crested.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Hele Thracian Helmet-03">
+    <variant frequency="1" name="Helmet-hele_thracian_b4_crested">
+      <props>
+        <prop actor="props/units/helmets/hele_thracian_b4_crested.xml" attachpoint="helmet"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Helmet-hele_thracian_romanized_b2_crested">
       <props>
         <prop actor="props/units/helmets/hele_thracian_romanized_b2_crested.xml" attachpoint="helmet"/>
       </props>
     </variant>
-    <variant frequency="1" name="Hele Thracian Helmet-04">
+    <variant frequency="1" name="Helmet-hele_thracian_romanized_s2_crested">
       <props>
         <prop actor="props/units/helmets/hele_thracian_romanized_s2_crested.xml" attachpoint="helmet"/>
       </props>
@@ -49,37 +69,32 @@
         <texture file="skeletal/rome/chainmail_03_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="mace-linothorax-1e">
+    <variant frequency="1" name="scale_03_02">
       <textures>
-        <texture file="skeletal/mace/linothorax_01_e.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="mace-linothorax-1g">
-      <textures>
-        <texture file="skeletal/mace/linothorax_01_g.png" name="baseTex"/>
-        <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
+        <texture file="skeletal/mace/scale_03_02.png" name="baseTex"/>
+        <texture file="skeletal/hele/scale_03_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
   <group>
     <variant file="biped/base_swordsman_shield_ready.xml" frequency="1" name="Swordsman-Shield-Ready">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop attachpoint="ammo"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+        <prop attachpoint="ammo"/>
+      </props>
+    </variant>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
   <material>player_trans_spec.xml</material>
