@@ -6,12 +6,37 @@
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_pers_b.xml" attachpoint="head"/>
+        <prop actor="props/units/helmets/hele_thracian_cap_leather.xml" attachpoint="helmet"/>
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/pers_quiver_hip.xml" attachpoint="sheath_L"/>
- 		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="tunic_coat_01_01">
       <textures>
-        <texture file="skeletal/pers/csw_02_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_coat_01_01.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="tunic_coat_01_02">
+      <textures>
+        <texture file="skeletal/pers/tunic_coat_01_02.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="tunic_coat_01_03">
+      <textures>
+        <texture file="skeletal/pers/tunic_coat_01_03.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="tunic_coat_01_04">
+      <textures>
+        <texture file="skeletal/pers/tunic_coat_01_04.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="tunic_coat_01_05">
+      <textures>
+        <texture file="skeletal/pers/tunic_coat_01_05.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -23,11 +48,11 @@
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/cavalry/attack_ranged_archer_hip.xml"/>
     <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml"/>
     <variant file="biped/rider/attack_slaughter_shield_hele.xml"/>
     <variant file="biped/gather_meat.xml"/>

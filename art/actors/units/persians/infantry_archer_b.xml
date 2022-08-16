@@ -6,37 +6,38 @@
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_pers_a.xml" attachpoint="head"/>
+        <prop actor="props/units/helmets/hele_thracian_cap_leather.xml" attachpoint="helmet"/>
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/quiver_hip.xml" attachpoint="sheath_L"/>
-		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="scyth-tunic-2a">
+    <variant frequency="1" name="scyth-tunic-coat-01-01">
       <textures>
-        <texture file="skeletal/scyth/tunic_02asic_01_01.png" name="baseTex"/>
+        <texture file="skeletal/scyth/tunic_coat_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="scyth-tunic-2b">
+    <variant frequency="1" name="scyth-tunic-coat-01-02">
       <textures>
-        <texture file="skeletal/scyth/tunic_02asic_01_02.png" name="baseTex"/>
+        <texture file="skeletal/scyth/tunic_coat_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="scyth-tunic-2c">
+    <variant frequency="1" name="scyth-tunic-coat-01-03">
       <textures>
-        <texture file="skeletal/scyth/tunic_02asic_01_03.png" name="baseTex"/>
+        <texture file="skeletal/scyth/tunic_coat_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-basic-1g">
+    <variant frequency="3" name="tunic-basic-1g">
       <textures>
-        <texture file="skeletal/pers/tunic_02asic_01_g.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_basic_01_07.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-basic-1h">
+    <variant frequency="3" name="tunic-basic-1h">
       <textures>
-        <texture file="skeletal/pers/tunic_02asic_01_h.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_basic_01_08.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -58,19 +59,19 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-	<variant file="biped/attack_ranged_archer.xml">
-		<props>
-			<prop actor="" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_archer.xml">
+      <props>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_archer.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

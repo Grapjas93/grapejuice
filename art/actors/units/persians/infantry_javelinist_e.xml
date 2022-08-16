@@ -11,24 +11,28 @@
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/capes/cape_long_player_skirmisher.xml" attachpoint="root"/>
-        <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="pers_isp_a_padded_1g">
+    <variant frequency="1" name="padded_01_01">
       <textures>
-        <texture file="skeletal/pers/padded_01_g.png" name="baseTex"/>
+        <texture file="skeletal/pers/padded_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="pers_isp_a_padded_1h">
+    <variant frequency="1" name="padded_01_06">
       <textures>
-        <texture file="skeletal/pers/padded_01_h.png" name="baseTex"/>
+        <texture file="skeletal/pers/padded_01_06.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="pers_isp_a_padded_1i">
+    <variant frequency="1" name="padded_01_07">
       <textures>
-        <texture file="skeletal/pers/padded_01_i.png" name="baseTex"/>
+        <texture file="skeletal/pers/padded_01_07.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="padded_01_08">
+      <textures>
+        <texture file="skeletal/pers/padded_01_08.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -50,20 +54,8 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
-    <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

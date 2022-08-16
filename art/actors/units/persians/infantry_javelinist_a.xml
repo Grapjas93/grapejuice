@@ -10,34 +10,33 @@
         <prop actor="props/units/shields/pelta_thra_basic.xml" attachpoint="shield_arm"/>
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-        <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="tunic-lydian-1a">
+    <variant frequency="1" name="tunic_coat_01_01">
       <textures>
-        <texture file="skeletal/pers/tunic_lydian_01_01.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_coat_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-lydian-1b">
+    <variant frequency="1" name="tunic_coat_01_02">
       <textures>
-        <texture file="skeletal/pers/tunic_lydian_01_02.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_coat_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-lydian-1c">
+    <variant frequency="1" name="tunic_coat_01_03">
       <textures>
-        <texture file="skeletal/pers/tunic_lydian_01_03.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_coat_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-lydian-1d">
+    <variant frequency="1" name="tunic_coat_01_04">
       <textures>
-        <texture file="skeletal/pers/tunic_lydian_01_d.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_coat_01_04.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-lydian-1e">
+    <variant frequency="1" name="tunic_coat_01_05">
       <textures>
-        <texture file="skeletal/pers/tunic_lydian_01_e.png" name="baseTex"/>
+        <texture file="skeletal/pers/tunic_coat_01_05.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -59,20 +58,8 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
-    <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

@@ -12,7 +12,7 @@
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/quiver_hip.xml" attachpoint="sheath_L"/>
         <prop actor="props/units/shields/pers_pelta_a_b_reverse.xml" attachpoint="back"/>
-		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_01_L"/>
       </props>
       <textures>
         <texture file="skeletal/pers/scale_02_spec.png" name="specTex"/>
@@ -32,7 +32,12 @@
     </variant>
     <variant frequency="1" name="scale-2c">
       <textures>
-        <texture file="skeletal/pers/scale_02_d.png" name="baseTex"/>
+        <texture file="skeletal/pers/scale_02_04.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="scale-2f">
+      <textures>
+        <texture file="skeletal/pers/scale_02_06.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -54,19 +59,19 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-	<variant file="biped/attack_ranged_archer.xml">
-		<props>
-			<prop actor="" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_archer.xml">
+      <props>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/arrow_front.xml" attachpoint="projectile"/>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="loaded-projectile"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_archer.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
