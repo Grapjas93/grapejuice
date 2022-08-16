@@ -8,40 +8,39 @@
         <prop actor="props/units/heads/new/head_iber_isl_b.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-        <prop actor="props/units/shields/iberian_buckler_basic.xml" attachpoint="shield"/>
-		<prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
+        <prop actor="props/units/shields/iber_round_small_01_basic.xml" attachpoint="shield"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="Tunic-1a">
+    <variant frequency="1" name="Iber-Tunic-01-01">
       <textures>
         <texture file="skeletal/iber/tunic_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Tunic-1b">
+    <variant frequency="1" name="Iber-Tunic-01-02">
       <textures>
         <texture file="skeletal/iber/tunic_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Tunic-1c">
+    <variant frequency="1" name="Iber-Tunic-01-03">
       <textures>
         <texture file="skeletal/iber/tunic_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Tunic-1d">
+    <variant frequency="1" name="Iber-Tunic-01-04">
       <textures>
-        <texture file="skeletal/iber/tunic_01_d.png" name="baseTex"/>
+        <texture file="skeletal/iber/tunic_01_04.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Tunic-1e">
+    <variant frequency="1" name="Iber-Tunic-01-05">
       <textures>
-        <texture file="skeletal/iber/tunic_01_e.png" name="baseTex"/>
+        <texture file="skeletal/iber/tunic_01_05.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
   <group>
-    <variant file="biped/base_skirmisher_fast.xml" name="Skirmisher-Shield-Fast" frequency="1"/>
+    <variant file="biped/base_skirmisher_fast.xml" frequency="1" name="Skirmisher-Shield-Fast"/>
     <variant file="biped/carry_food.xml"/>
     <variant file="biped/carry_meat.xml"/>
     <variant file="biped/carry_wood.xml"/>
@@ -58,20 +57,8 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
-    <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>

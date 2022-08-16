@@ -6,44 +6,44 @@
       <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_iber_basic.xml" attachpoint="head"/>
-        <prop actor="props/units/helmets/old/iber_helmet_01.xml" attachpoint="head"/>
-        <prop actor="props/units/shields/iberian_buckler_adv.xml" attachpoint="shield"/>
-		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/helmets/iber_helmet_01.xml" attachpoint="head"/>
+        <prop actor="props/units/shields/iber_round_small_01_advanced.xml" attachpoint="shield"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_02_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="slinger-quilted-1a">
+    <variant frequency="1" name="Iber-Padded-Quilted-Slinger-01-01">
       <textures>
-        <texture file="skeletal/iber/padded_slinger_01_01.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_quilted_slinger_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="slinger-quilted-1b">
+    <variant frequency="1" name="Iber-Padded-Quilted-Slinger-01-02">
       <textures>
-        <texture file="skeletal/iber/padded_slinger_01_02.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_quilted_slinger_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="slinger-quilted-1c">
+    <variant frequency="1" name="Iber-Padded-Quilted-Slinger-01-03">
       <textures>
-        <texture file="skeletal/iber/padded_slinger_01_03.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_quilted_slinger_01_03.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="slinger-quilted-2a">
+    <variant frequency="1" name="Iber-Padded-Quilted-Slinger-02-01">
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber/padded_slinger_02_01.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_quilted_slinger_02_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="slinger-quilted-2b">
+    <variant frequency="1" name="Iber-Padded-Quilted-Slinger-02-02">
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber/padded_slinger_02_02.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_quilted_slinger_02_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="slinger-quilted-2c">
+    <variant frequency="1" name="Iber-Padded-Quilted-Slinger-02-03">
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/iber/padded_slinger_02_03.png" name="baseTex"/>
+        <texture file="skeletal/iber/padded_quilted_slinger_02_03.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
@@ -67,13 +67,18 @@
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
-    <variant file="biped/attack_ranged_slinger.xml"/>
+    <variant file="biped/attack_ranged_slinger.xml">
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/gather_tree.xml"/>
     <variant file="biped/gather_grain.xml"/>
     <variant file="biped/gather_fruit.xml"/>

@@ -6,18 +6,18 @@
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_iber_adv.xml" attachpoint="head"/>
-        <prop actor="props/units/helmets/old/iber_helmet_02.xml" attachpoint="head"/>
-		<prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_02_L"/>
+        <prop actor="props/units/helmets/iber_helmet_02.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/sheath_falcata.xml" attachpoint="sheath_02_L"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="tunic-slinger-1a">
+    <variant frequency="1" name="tunic_slinger_01_01">
       <textures>
         <texture file="skeletal/iber/tunic_slinger_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="tunic-slinger-1b">
+    <variant frequency="1" name="tunic_slinger_01_02">
       <textures>
         <texture file="skeletal/iber/tunic_slinger_01_02.png" name="baseTex"/>
       </textures>
@@ -43,13 +43,18 @@
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
-    <variant file="biped/attack_ranged_slinger.xml"/>
+    <variant file="biped/attack_ranged_slinger.xml">
+      <props>
+        <prop actor="props/units/weapons/sling.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/slingrock.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
     <variant file="biped/attack_melee_slinger.xml">
-		<props>
-			<prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/falcata.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_falcata_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/gather_tree.xml"/>
     <variant file="biped/gather_grain.xml"/>
     <variant file="biped/gather_fruit.xml"/>
