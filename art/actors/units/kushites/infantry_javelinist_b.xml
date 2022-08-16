@@ -9,15 +9,14 @@
         <prop actor="props/units/shields/kush_nubian_hex_b.xml" attachpoint="shield"/>
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		<prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
   <group>
     <variant name="Kushite Basic Javelinist Infantry 01">
       <textures>
-        <texture file="skeletal/kush/iar_02_01.png" name="baseTex"/>
-        <texture file="skeletal/kush/iar_02_01_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/naked_male_nubian_01.png" name="baseTex"/>
+        <texture file="skeletal/kush/naked_male_nubian_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -40,20 +39,8 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_capture.xml"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
-    <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
     <variant file="biped/gather_grain.xml"/>

@@ -18,21 +18,15 @@
   <group>
     <variant name="Kushite Advanced Archer Infantry 01">
       <textures>
-        <texture file="skeletal/kush/iar_01_01.png" name="baseTex"/>
-        <texture file="skeletal/kush/iar_01_01_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant name="Kushite Advanced Archer Infantry 02">
-      <textures>
-        <texture file="skeletal/ptol/iar_01.png" name="baseTex"/>
-        <texture file="skeletal/ptol/iar_01_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/skirt_lion_01.png" name="baseTex"/>
+        <texture file="skeletal/kush/skirt_lion_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant name="Kushite Advanced Archer Infantry 03">
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/kush/basic_nubian.png" name="baseTex"/>
-        <texture file="skeletal/kush/basic_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/skirt_leopard_01_medium.png" name="baseTex"/>
+        <texture file="skeletal/kush/skirt_leopard_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -55,19 +49,13 @@
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_capture.xml"/>
-    <variant file="biped/attack_ranged_archer_hip.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
+    <variant file="biped/attack_ranged_archer_hip.xml"/>
     <variant file="biped/attack_melee_archer_hip.xml">
-		<props>
-			<prop actor="props/units/weapons/spatha.xml" attachpoint="weapon_R"/>
-        <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/spatha.xml" attachpoint="weapon_R"/>
+          <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
     <variant file="biped/gather_grain.xml"/>

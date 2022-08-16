@@ -5,8 +5,8 @@
     <variant file="biped/base_healer_male.xml">
       <mesh>skeletal/new/m_tunic_long.dae</mesh>
       <textures>
-        <texture file="skeletal/kush/healer.png" name="baseTex"/>
-        <texture file="skeletal/kush/healer_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/robes_healer_01.png" name="baseTex"/>
+        <texture file="skeletal/kush/robes_healer_01_spec.png" name="specTex"/>
       </textures>
       <props>
         <prop actor="props/units/heads/head_kush_healer.xml" attachpoint="head"/>
@@ -15,14 +15,11 @@
     </variant>
   </group>
   <group>
-    <variant file="biped/base_swordsman_shield_fast.xml"/>
-   </group>
-  <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_capture.xml"/>
-    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/attack_melee_archer.xml"/>
     <variant file="biped/build.xml"/>
-    <variant file="biped/build_farm.xml"/>
+    <variant file="biped/gather_praise.xml"/>
+    <variant file="biped/death_infantry.xml"/>
   </group>
   <material>player_trans_spec.xml</material>
 </actor>

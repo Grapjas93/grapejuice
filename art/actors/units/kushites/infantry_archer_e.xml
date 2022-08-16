@@ -3,7 +3,6 @@
   <castshadow/>
   <group>
     <variant frequency="1" name="Base">
-      <mesh>skeletal/new/m_tunic_long.dae</mesh>
       <props>
         <prop actor="props/units/heads/head_kush_nubian.xml" attachpoint="head"/>
         <prop actor="props/units/heads/kush_dread_hair.xml" attachpoint="head"/>
@@ -12,26 +11,23 @@
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_bamboo_long.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/kush_quiver_hip.xml" attachpoint="sheath_L"/>
+        <prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_02_L"/>
       </props>
     </variant>
   </group>
   <group>
     <variant frequency="1" name="Kushite Elite Archer Infantry Leather 01">
+      <mesh>skeletal/new/m_tunic_long.dae</mesh>
       <textures>
-        <texture file="skeletal/kush/iar_e_01.png" name="baseTex"/>
-        <texture file="skeletal/kush/iar_e_01_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/skirt_leather_01.png" name="baseTex"/>
+        <texture file="skeletal/kush/skirt_leather_01_spec.png" name="specTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="Kushite Elite Archer Infantry Cloth 01">
+    <variant frequency="1" name="Kushite Elite Archer Infantry Leather 02">
+      <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <textures>
-        <texture file="skeletal/kush/merc_03avalry_r_01.png" name="baseTex"/>
-        <texture file="skeletal/kush/merc_03avalry_r_01_spec.png" name="specTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="Kushite Elite Archer Infantry Cloth 02">
-      <textures>
-        <texture file="skeletal/kush/merc_03avalry_r_02.png" name="baseTex"/>
-        <texture file="skeletal/kush/merc_03avalry_r_02_spec.png" name="specTex"/>
+        <texture file="skeletal/kush/skirt_leather_02.png" name="baseTex"/>
+        <texture file="skeletal/kush/skirt_leather_01_spec.png" name="specTex"/>
       </textures>
     </variant>
   </group>
@@ -55,6 +51,12 @@
     <variant frequency="1" name="Idle"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_ranged_archer_hip.xml"/>
+    <variant file="biped/attack_melee_archer_hip.xml">
+      <props>
+        <prop actor="props/units/weapons/spatha.xml" attachpoint="weapon_R"/>
+          <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
+      </props>
+    </variant>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
     <variant file="biped/gather_grain.xml"/>
