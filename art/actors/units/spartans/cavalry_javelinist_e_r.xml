@@ -8,11 +8,8 @@
         <prop actor="props/units/heads/new/head_spart_e.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/capes/rider/cape_med_player.xml" attachpoint="root"/>
-		<prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
+        <prop actor="props/units/weapons/sheath_xiphos.xml" attachpoint="sheath_01_L"/>
       </props>
-      <textures>
-        <texture file="skeletal/hele/cjv_e_01.dds" name="baseTex"/>
-      </textures>
     </variant>
   </group>
   <group>
@@ -28,28 +25,60 @@
     </variant>
   </group>
   <group>
+    <variant frequency="1" name="scale-old">
+      <textures>
+        <texture file="skeletal/hele/scale_06_01.png" name="baseTex"/>
+        <texture file="skeletal/hele/scale_06_spec.png" name="specTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="scale-1-a">
+      <textures>
+        <texture file="skeletal/hele/scale_01_01.png" name="baseTex"/>
+        <texture file="skeletal/hele/scale_01_spec.png" name="specTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="lamellar-1a">
+      <textures>
+        <texture file="skeletal/hele/lamellar_01_01.png" name="baseTex"/>
+        <texture file="skeletal/hele/lamellar_01_spec.png" name="specTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="linothorax-lamellar-1a">
+      <textures>
+        <texture file="skeletal/hele/linothorax_lamellar_01_01.png" name="baseTex"/>
+        <texture file="skeletal/hele/linothorax_lamellar_01_spec.png" name="specTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="linothorax-lamellar-1b">
+      <textures>
+        <texture file="skeletal/hele/linothorax_lamellar_01_02.png" name="baseTex"/>
+        <texture file="skeletal/hele/linothorax_lamellar_01_spec.png" name="specTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
     <variant file="biped/rider/cavalry/base_javelin_relax.xml" name="Javelinist-Relax" frequency="1"/>
     <variant file="biped/rider/carry_meat.xml"/>
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
     <variant file="biped/rider/cavalry/attack_ranged_javelin.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-		</props>
-	</variant>	
+      <props>
+        <prop attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
+        <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
+      </props>
+    </variant>
     <variant file="biped/rider/cavalry/attack_melee_javelin.xml">
-		<props>
-			<prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
-		</props>
-	</variant>	
+      <props>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/sheath_xiphos_e.xml" attachpoint="sheath_01_L"/>
+      </props>
+    </variant>
     <variant file="biped/rider/promotion_shield.xml" />
     <variant file="biped/rider/attack_slaughter_shield_spart.xml"/>
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_spec.xml</material>
 </actor>

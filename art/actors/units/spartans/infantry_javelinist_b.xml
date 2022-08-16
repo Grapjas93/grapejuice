@@ -6,32 +6,26 @@
       <mesh>skeletal/new/m_tunic_short.dae</mesh>
       <props>
         <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
-        <prop actor="props/units/helmets/headband_color.xml" attachpoint="helmet"/>
+        <prop actor="props/units/helmets/headband_generic.xml" attachpoint="helmet"/>
         <prop actor="props/units/shields/pelta_spart_basic.xml" attachpoint="shield_arm"/>
         <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
         <prop actor="props/units/capes/cape_med_pelt_skirmisher.xml" attachpoint="root"/>
-        <prop actor="props/units/weapons/spear.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>
   <group>
-    <variant frequency="1" name="hele-tunic">
-      <textures>
-        <texture file="skeletal/hele/tunic.dds" name="baseTex"/>
-      </textures>
-    </variant>
-    <variant frequency="1" name="hele-tunic-fur-1-a">
+    <variant frequency="1" name="tunic_fur_01_01">
       <textures>
         <texture file="skeletal/hele/tunic_fur_01_01.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="hele-tunic-fur-1-b">
+    <variant frequency="1" name="tunic_fur_01_02">
       <textures>
         <texture file="skeletal/hele/tunic_fur_01_02.png" name="baseTex"/>
       </textures>
     </variant>
-    <variant frequency="1" name="hele-tunic-fur-1-c">
+    <variant frequency="1" name="tunic_fur_01_03">
       <textures>
         <texture file="skeletal/hele/tunic_fur_01_03.png" name="baseTex"/>
       </textures>
@@ -55,20 +49,8 @@
   </group>
   <group>
     <variant frequency="1" name="Idle"/>
-    <variant file="biped/attack_ranged_javelinist.xml">
-		<props>
-			<prop attachpoint="weapon_R"/>
-			<prop actor="props/units/weapons/jav_loaded.xml" attachpoint="loaded-weapon_R"/>
-			<prop actor="props/units/weapons/jav_projectile.xml" attachpoint="projectile"/>
-			<prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
-		</props>
-	</variant>	
-    <variant file="biped/attack_melee_javelinist.xml">
-		<props>
-			<prop actor="props/units/weapons/spear.xml" attachpoint="weapon_R"/>
-			<prop actor="" attachpoint="back"/>
-		</props>
-	</variant>
+    <variant file="biped/attack_ranged_javelinist.xml"/>
+    <variant file="biped/attack_melee_javelinist.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_tree.xml"/>
