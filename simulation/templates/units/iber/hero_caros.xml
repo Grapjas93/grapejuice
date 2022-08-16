@@ -3,19 +3,19 @@
    <UnitMotion>
        <WalkSpeed> 10.7 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 575 </PrepareTime>
            <RepeatTime> 725 </RepeatTime>
-       </Melee>  
+       </Melee>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2025 </RepeatTime>
-       </Ranged> 
-   </Attack> 
+       </Ranged>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -23,9 +23,9 @@
                <Hack> 3 </Hack>
                <Pierce> 3 </Pierce>
             </Damage>
-         </Entity>
+        </Entity>
    </Resistance>
-   <Auras datatype="tokens">
+  <Auras datatype="tokens">
     units/heroes/iber_hero_caros_1
     units/heroes/iber_hero_caros_2
   </Auras>

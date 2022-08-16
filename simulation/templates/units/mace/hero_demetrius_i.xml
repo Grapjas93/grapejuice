@@ -3,19 +3,19 @@
    <UnitMotion>
        <WalkSpeed> 8.6 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 950 </PrepareTime>
            <RepeatTime> 1100 </RepeatTime>
-       </Melee>  
+       </Melee>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2400 </RepeatTime>
-       </Ranged> 
-   </Attack> 
+       </Ranged>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -25,7 +25,7 @@
             </Damage>
          </Entity>
    </Resistance>
-   <Auras datatype="tokens">
+  <Auras datatype="tokens">
     units/heroes/mace_hero_demetrius_i
   </Auras>
   <Identity>

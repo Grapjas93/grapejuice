@@ -3,19 +3,19 @@
    <UnitMotion>
        <WalkSpeed> 9.25 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 825 </PrepareTime>
            <RepeatTime> 975 </RepeatTime>
-       </Melee>  
+       </Melee>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2275 </RepeatTime>
-       </Ranged> 
-   </Attack> 
+       </Ranged>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -25,7 +25,7 @@
             </Damage>
          </Entity>
    </Resistance>
-   <Auras datatype="tokens">
+  <Auras datatype="tokens">
     units/heroes/iber_hero_viriato_1
     units/heroes/iber_hero_viriato_2
   </Auras>

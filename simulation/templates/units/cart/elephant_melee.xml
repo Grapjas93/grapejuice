@@ -3,14 +3,14 @@
    <UnitMotion>
        <WalkSpeed> 9 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Tusk </AttackName>
            <PrepareTime> 1250 </PrepareTime>
            <RepeatTime> 1400 </RepeatTime>
-       </Melee> 
-   </Attack>       
+       </Melee>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
