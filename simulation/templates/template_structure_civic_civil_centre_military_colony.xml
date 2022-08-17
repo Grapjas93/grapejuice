@@ -38,6 +38,7 @@
     <stone>40</stone>
     <metal>40</metal>
   </Loot>
+  <ProductionQueue/>
   <Researcher>
     <Technologies datatype="tokens">
       -phase_town_{civ}

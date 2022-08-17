@@ -2,6 +2,7 @@
 <Entity parent="template_unit_champion_elephant_melee">
   <Attack>
     <Melee>
+      <Energy>150</Energy>
       <Damage>
         <Pierce>120</Pierce>
         <Crush>20</Crush>
@@ -9,6 +10,9 @@
       <MaxRange>5</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
   <Cost>
     <Resources>
       <food>1000</food>

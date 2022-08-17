@@ -12,6 +12,9 @@
       </Projectile>
     </Ranged>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

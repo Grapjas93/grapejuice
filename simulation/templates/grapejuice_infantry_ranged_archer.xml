@@ -3,8 +3,8 @@
   <Attack>
     <Ranged>
       <Ammo>24</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>18</Pierce>
       </Damage>
@@ -14,7 +14,7 @@
         <Spread>4.25</Spread>
       </Projectile>
     </Ranged>
-	<Melee>
+    <Melee>
       <Damage>
         <Hack>5.5</Hack>
       </Damage>

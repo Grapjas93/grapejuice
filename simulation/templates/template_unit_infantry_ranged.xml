@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_infantry_ranged">
+<Entity parent="template_unit_infantry">
   <Health>
     <Max>50</Max>
   </Health>
   <Attack>
     <Melee>
+      <AttackName>Bow</AttackName>
       <Energy>100</Energy>
     </Melee>
   </Attack>

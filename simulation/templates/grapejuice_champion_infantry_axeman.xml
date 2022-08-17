@@ -2,6 +2,7 @@
 <Entity parent="template_unit_champion_infantry_axeman">
   <Attack>
     <Melee>
+      <Energy>100</Energy>
       <Damage>
         <Hack>12</Hack>
         <Crush>4</Crush>
@@ -9,6 +10,9 @@
       <MaxRange>3</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

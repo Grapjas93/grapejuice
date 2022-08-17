@@ -3,7 +3,7 @@
    <UnitMotion>
        <WalkSpeed> 12 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Resistance>
         <Entity>
             <Damage>
@@ -46,7 +46,7 @@
     <Max>50</Max>
   </Health>
   <Identity>
-    <Classes datatype="tokens">-ConquestCritical</Classes>
+    <Classes datatype="tokens">ConquestCritical</Classes>
     <VisibleClasses datatype="tokens">Healer</VisibleClasses>
     <GenericName>Healer</GenericName>
     <SelectionGroupName>template_unit_support_healer</SelectionGroupName>

@@ -25,13 +25,12 @@
             </Damage>
          </Entity>
    </Resistance>
-    <Identity>
+  <Identity>
     <Civ>pers</Civ>
     <Lang>persian</Lang>
     <GenericName>Bactrian Heavy Cavalry Archer</GenericName>
     <SpecificName>Asabāra Baxtriš</SpecificName>
-    <Icon>units/pers_champion_cavalry.png</Icon>
-	<Rank>Champion</Rank>
+    <Icon>units/pers_champion_cavalry_archer.png</Icon>
   </Identity>
   <Promotion disable=""/>
   <VisualActor>

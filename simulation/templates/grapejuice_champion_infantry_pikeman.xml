@@ -2,12 +2,24 @@
 <Entity parent="template_unit_champion_infantry_pikeman">
   <Attack>
     <Melee>
+      <Energy>100</Energy>
       <Damage>
         <Pierce>10</Pierce>
       </Damage>
       <MaxRange>8</MaxRange>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
     </Melee>
   </Attack>
+  <Identity>
+    <GenericName>Champion Pikeman</GenericName>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
+    <VisibleClasses datatype="tokens">Melee Pikeman Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

@@ -659,7 +659,7 @@ GuiInterface.prototype.GetTemplateData = function(player, data)
 	let aurasTemplate = {};
 
 	if (!template.Auras)
-		return GetTemplateDataHelper(template, owner, aurasTemplate);
+		return GetTemplateDataHelper(template, owner, aurasTemplate, Resources);
 
 	let auraNames = template.Auras._string.split(/\s+/);
 
@@ -672,7 +672,7 @@ GuiInterface.prototype.GetTemplateData = function(player, data)
 			aurasTemplate[name] = auraTemplate;
 	}
 
-	return GetTemplateDataHelper(template, owner, aurasTemplate);
+	return GetTemplateDataHelper(template, owner, aurasTemplate, Resources);
 };
 
 GuiInterface.prototype.IsTechnologyResearched = function(player, data)
@@ -719,36 +719,35 @@ GuiInterface.prototype.GetBattleState = function(player)
 
 	return cmpBattleDetection.GetState();
 };
-
 /**
  * @returns {string} the 'active', 'defeated' or 'won' state of the player.
  */
-GuiInterface.prototype.GetState = function(player)
-{
-	const cmpPlayer = QueryPlayerIDInterface(player, IID_Player);
-	if (!cmpPlayer)
-		return false;
+ GuiInterface.prototype.GetState = function(player)
+ {
+	 const cmpPlayer = QueryPlayerIDInterface(player, IID_Player);
+	 if (!cmpPlayer)
+		 return false;
 
-	return cmpPlayer.GetState();
-};
+	 return cmpPlayer.GetState();
+ };
 
-/**
- * @returns {array} - of all players seen by exploring (fogging)
- */
-GuiInterface.prototype.GetSeenPlayers = function(player)
-{
-	const cmpPlayer = QueryPlayerIDInterface(player, IID_Player);
-	return cmpPlayer.GetSeenPlayers();
-};
+ /**
+  * @returns {array} - of all players seen by exploring (fogging)
+  */
+ GuiInterface.prototype.GetSeenPlayers = function(player)
+ {
+	 const cmpPlayer = QueryPlayerIDInterface(player, IID_Player);
+	 return cmpPlayer.GetSeenPlayers();
+ };
 
-/**
- * @param {number} - playerID
- * @returns {bool} - checks if the player has the spy tech
- */
-GuiInterface.prototype.HasSpyTech = function(player)
-{
-	return QueryPlayerIDInterface(player).HasSpyTech();
-};
+ /**
+  * @param {number} - playerID
+  * @returns {bool} - checks if the player has the spy tech
+  */
+ GuiInterface.prototype.HasSpyTech = function(player)
+ {
+	 return QueryPlayerIDInterface(player).HasSpyTech();
+ };
 
 /**
  * Returns a list of ongoing attacks against the player.
@@ -2143,13 +2142,14 @@ let exposedFunctions = {
 	"CheckTechnologyRequirements": 1,
 	"GetStartedResearch": 1,
 	"GetBattleState": 1,
-	"GetState": 1,
-	"GetSeenPlayers": 1,
-	"HasSpyTech": 1,
 	"GetIncomingAttacks": 1,
 	"GetNeededResources": 1,
 	"GetNotifications": 1,
 	"GetTimeNotifications": 1,
+
+	"GetState": 1,
+	"GetSeenPlayers": 1,
+	"HasSpyTech": 1,
 
 	"GetAvailableFormations": 1,
 	"GetFormationRequirements": 1,

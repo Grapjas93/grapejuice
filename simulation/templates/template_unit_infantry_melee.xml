@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_infantry_melee">
-  <Attack>
-  <Melee>
-  <Energy>100</Energy>
-  </Melee>
-  </Attack>
+<Entity parent="template_unit_infantry">
   <Health>
     <Max>100</Max>
   </Health>
+  <Attack>
+    <Melee>
+      <AttackName>Sword</AttackName>
+      <Energy>100</Energy>
+    </Melee>
+  </Attack>
   <Identity>
     <GenericName>Melee Infantry</GenericName>
     <VisibleClasses datatype="tokens">Melee Charger</VisibleClasses>
+  </Identity>
+  <UnitAI>
     <Formations datatype="tokens">
       special/formations/testudo
     </Formations>
-  </Identity>
+  </UnitAI>
 </Entity>

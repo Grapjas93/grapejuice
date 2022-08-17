@@ -109,6 +109,7 @@
   <TerritoryDecay>
     <DecayRate op="mul">2</DecayRate>
   </TerritoryDecay>
+  <ProductionQueue/>
   <Trainer>
     <BatchTimeModifier>0.7</BatchTimeModifier>
     <Entities datatype="tokens">

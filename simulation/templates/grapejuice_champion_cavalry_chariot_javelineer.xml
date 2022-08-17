@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_champion_cavalry_javelineer">
   <Attack>
+    <Melee>
+      <Energy>150</Energy>
+      <AttackName>Pike</AttackName>
+      <Damage>
+        <Pierce>10</Pierce>
+      </Damage>
+      <MaxRange>8</MaxRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>2000</RepeatTime>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
     <Ranged>
       <Ammo>3</Ammo>
 	  <RefillAmount>0</RefillAmount>
@@ -15,6 +32,11 @@
       </Projectile>
     </Ranged>
   </Attack>
+  <Identity>
+    <GenericName>Champion Pikeman</GenericName>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
+    <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>
