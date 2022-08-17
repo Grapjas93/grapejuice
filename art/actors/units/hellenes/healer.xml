@@ -30,6 +30,7 @@
     <variant file="biped/attack_melee_archer.xml"/>
     <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_infantry.xml"/>
+    <variant file="biped/build.xml"/>
   </group>
   <material>player_trans.xml</material>
 </actor>
