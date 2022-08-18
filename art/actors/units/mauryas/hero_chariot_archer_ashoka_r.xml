@@ -11,6 +11,7 @@
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_long_indian.xml" attachpoint="weapon_L"/>
         <prop actor="props/units/quiver_back_bamboo.xml" attachpoint="back"/>
+        <prop actor="props/units/weapons/sarissa.xml" attachpoint="back"/>
       </props>
       <textures>
         <texture file="skeletal/maur/skirt_royal_01.png" name="baseTex"/>

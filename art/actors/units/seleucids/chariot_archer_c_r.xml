@@ -10,6 +10,7 @@
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/capes/rider/bow_chariot_hip.xml" attachpoint="root"/>
+        <prop actor="props/units/weapons/sarissa.xml" attachpoint="back"/>
       </props>
     </variant>
   </group>

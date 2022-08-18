@@ -11,6 +11,7 @@
         <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
         <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="weapon_bow"/>
         <prop actor="props/units/kush_quiver_hip.xml" attachpoint="sheath_L"/>
+        <prop actor="props/units/weapons/sarissa.xml" attachpoint="back"/>
       </props>
       <textures>
         <texture file="skeletal/kush/scale_royal_female_01.png" name="baseTex"/>
