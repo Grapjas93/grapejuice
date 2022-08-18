@@ -14,7 +14,21 @@
         <Spread>4</Spread>
       </Projectile>
     </Ranged>
+    <Melee>
+      <Energy>150</Energy>
+      <AttackName>Sword</AttackName>
+      <Damage>
+        <Hack>13</Hack>
+      </Damage>
+      <MaxRange>4</MaxRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>2000</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

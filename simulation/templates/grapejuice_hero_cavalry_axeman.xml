@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_cavalry_axeman">
   <Attack>
     <Melee>
+      <Energy>150</Energy>
       <Damage>
         <Hack>13.8</Hack>
         <Crush>4.6</Crush>
@@ -9,6 +10,9 @@
      <MaxRange>4</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

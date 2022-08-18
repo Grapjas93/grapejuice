@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_hero_infantry_swordsman">
   <Attack>
-		<Melee>
-		  <Damage>
+	<Melee>
+      	<Energy>100</Energy>
+		<Damage>
 			<Hack>11</Hack>
 			<Pierce>0</Pierce>
 			<Crush>0</Crush>
-		  </Damage>
-		  <MaxRange>3</MaxRange>
-		</Melee>
-		<Ranged>
-		  <Ammo>1</Ammo>
-		  <RefillAmount>0</RefillAmount>
-		  <RefillTime>0</RefillTime>
-		  <Damage>
-			<Pierce>60</Pierce>
-		  </Damage>
-		  <MaxRange>30</MaxRange>
-		  <Projectile>
+		</Damage>
+		<MaxRange>3</MaxRange>
+	</Melee>
+	<Ranged>
+		<Ammo>1</Ammo>
+		<RefillAmount>0</RefillAmount>
+		<RefillTime>0</RefillTime>
+		<Damage>
+		<Pierce>60</Pierce>
+		</Damage>
+		<MaxRange>30</MaxRange>
+		<Projectile>
 			<Speed>70</Speed>
 			<Spread>1.5</Spread>
-		  </Projectile>
-		</Ranged>
+			<Gravity>35</Gravity>
+			<FriendlyFire>false</FriendlyFire>
+			<LaunchPoint y="3"/>
+		</Projectile>
+	</Ranged>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

@@ -16,12 +16,15 @@
     </Ranged>
     <Melee>
       <Damage>
-        <Hack>2</Hack>
+        <Energy>100</Energy>
         <Pierce>9</Pierce>
       </Damage>
       <MaxRange>4</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

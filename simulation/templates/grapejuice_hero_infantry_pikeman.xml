@@ -2,12 +2,16 @@
 <Entity parent="template_unit_hero_infantry_pikeman">
   <Attack>
     <Melee>
+      <Energy>100</Energy>
       <Damage>
         <Pierce>10</Pierce>
       </Damage>
       <MaxRange>8</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

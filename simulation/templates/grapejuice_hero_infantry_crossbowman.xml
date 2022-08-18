@@ -14,7 +14,19 @@
         <Spread>4</Spread>
       </Projectile>
     </Ranged>
+    <Melee>
+      <Energy>100</Energy>
+      <Damage>
+      <Hack>11</Hack>
+      <Pierce>0</Pierce>
+      <Crush>0</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+    </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

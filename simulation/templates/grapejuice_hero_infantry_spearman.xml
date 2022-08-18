@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_infantry_spearman">
   <Attack>
     <Melee>
+      <Energy>100</Energy>
       <Damage>
         <Hack>2</Hack>
         <Pierce>9</Pierce>
@@ -9,6 +10,9 @@
       <MaxRange>4</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
   <Resistance>
     <Entity>
       <Damage>

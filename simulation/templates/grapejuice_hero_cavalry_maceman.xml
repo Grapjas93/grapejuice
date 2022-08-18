@@ -2,10 +2,14 @@
 <Entity parent="template_unit_hero_cavalry_maceman">
   <Attack>
     <Melee>
+      <Energy>150</Energy>
       <Damage>
         <Crush>16</Crush>
       </Damage>
       <MaxRange>4</MaxRange>
     </Melee>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
 </Entity>
