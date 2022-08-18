@@ -10,7 +10,7 @@
         <prop actor="props/units/weapons/spear_bamboo.xml" attachpoint="weapon_R"/>
       </props>
       <textures>
-        <texture file="skeletal/maur/isw_01.png" name="baseTex"/>
+        <texture file="skeletal/maur/tunic_leather_01_01.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

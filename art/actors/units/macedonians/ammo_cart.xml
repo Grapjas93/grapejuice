@@ -18,7 +18,7 @@
         <prop actor="props/special/eyecandy/barrel_a.xml" attachpoint="goodsb"/>
       </props>
       <textures>
-        <texture file="structural/rome/ram.png" name="baseTex"/>
+        <texture file="structural/rome_ram.png" name="baseTex"/>
       </textures>
     </variant>
   </group>

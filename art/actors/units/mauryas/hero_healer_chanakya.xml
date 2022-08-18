@@ -17,7 +17,7 @@
   <group>
     <variant name="Idle" frequency="1"/>
     <variant file="biped/attack_melee_archer.xml"/>
-    <variant file="biped/attack_builder.xml"/>
+    <variant file="biped/build.xml"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/death_infantry.xml"/>
