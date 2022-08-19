@@ -3,7 +3,7 @@
    <UnitMotion>
        <WalkSpeed> 12 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Resistance>
         <Entity>
             <Damage>
@@ -24,7 +24,7 @@
       <Damage>
         <Hack>2</Hack>
         <Pierce>0</Pierce>
-        <Crush>10</Crush>
+        <Crush>5</Crush>
       </Damage>
       <MaxRange>2</MaxRange>
       <PrepareTime>500</PrepareTime>
