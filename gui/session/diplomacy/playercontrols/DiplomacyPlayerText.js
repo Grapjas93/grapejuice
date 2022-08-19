@@ -50,8 +50,6 @@ DiplomacyDialogPlayerControl.prototype.DiplomacyPlayerText = class
 		this.seenPlayers = Engine.GuiInterfaceCall("GetSeenPlayers", { "player": g_ViewedPlayer });
 		this.HasEpionageTech = Engine.GuiInterfaceCall("HasSpyTech", { "player": g_ViewedPlayer });
 
-		warn(uneval(`DIPLOMACY VIEW PERMISSION <SeenPlayers = ${this.seenPlayers}>`));
-
 		if (this.HasEpionageTech || this.playerID == g_ViewedPlayer || g_Players[this.playerID].isAlly[g_ViewedPlayer])
 		{
 			this.diplomacyPlayer.sprite = "color:" + g_DiplomacyColors.getPlayerColor(this.playerID, 32);

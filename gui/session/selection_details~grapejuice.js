@@ -13,14 +13,11 @@ function CheckViewPermission(entState)
 	// observers
 	if (playerID == -1 || playerState != 'active')
 	{
-		warn(`SELECTION VIEW PERMISSION ${ playerID == -1 || playerState != 'active' } <isObserver = ${ playerID == -1 || playerState != 'active' }>`);
 		return true;
 	}
 
 	const entityPlayerID = entState.player;
 	const technologyEnabled = Engine.GuiInterfaceCall("HasSpyTech", { "player": playerID });
-
-	warn(`SELECTION VIEW PERMISSION ${ (technologyEnabled || Engine.GuiInterfaceCall("GetState", { "player": playerID }) != "active" || g_Players[entityPlayerID].isAlly[playerID] || playerID == entityPlayerID || !!entState.resourceSupply) }   <hasSpyTech = ${ technologyEnabled }> <isAlly = ${ g_Players[entityPlayerID].isAlly[playerID] }> <isViewedPlayer = ${ playerID == entityPlayerID }> <isObserver = false> <isResource = ${ !!entState.resourceSupply }> `);
 
 	// If the player has the tech no need to check further, full permission granted.
 	if (technologyEnabled)

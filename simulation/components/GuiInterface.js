@@ -1032,8 +1032,6 @@ GuiInterface.prototype.CheckStatusBarsViewPermission = function(player, ent)
 	const HasSpyTech = cmpPlayer ? cmpPlayer.HasSpyTech() : false;
 	const isAlly = cmpPlayer ? cmpPlayer.IsAlly(entPlayer) : false;
 
-	warn(uneval(`STATUSBAR VIEW PERMISSION ${ (player == entPlayer || HasSpyTech || isResource || isAlly || isObserver) } <hasSpyTech = ${ HasSpyTech }> <isAlly = ${ isAlly }> <isViewedPlayer = ${ player == entPlayer }> <isObserver = ${ isObserver }> <isResource = ${ isResource }>`));
-
 	if (player == entPlayer || HasSpyTech || isResource || isAlly || isObserver)
 		return true;
 

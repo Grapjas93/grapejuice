@@ -113,6 +113,7 @@
              "targetIsDomesticAnimal": notification.targetIsDomesticAnimal
          });
      },
+     // grapejuice
      "discovered": function(notification, player)
      {
          if (player != g_ViewedPlayer)
@@ -232,7 +233,8 @@
      }
  };
 
- g_NotificationsTypes["myCameraMoveTo"] = function (notification, player)
+// grapejuice
+g_NotificationsTypes["myCameraMoveTo"] = function (notification, player)
 {
 	if (player === Engine.GetPlayerID()) {
     let [x, y] = [notification.positionX, notification.positionY]

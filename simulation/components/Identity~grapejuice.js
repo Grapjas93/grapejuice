@@ -1,4 +1,4 @@
-// Added champion rank into schema
+// grapejuice, Added champion rank into schema
 Identity.prototype.Schema =
 "<a:help>Specifies various names and values associated with the entity, typically for GUI display to users.</a:help>" +
 "<a:example>" +

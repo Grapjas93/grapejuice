@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice_siege_stonethrower">
+  <Attack>
+    <Ranged>
+      <Damage>
+        <Crush>150</Crush>
+      </Damage>
+      <MaxRange>75</MaxRange>
+      <MinRange>25</MinRange>
+      <PrepareTime>3700</PrepareTime>
+      <RepeatTime>5000</RepeatTime>
+    </Ranged>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>300</wood>
+      <stone>100</stone>
+    </Resources>
+  </Cost>
+  <Footprint replace="">
+    <Square width="9.0" depth="15.0"/>
+    <Height>5.0</Height>
+  </Footprint>
+  <Identity>
+    <Civ>rome</Civ>
+    <SpecificName>Onager</SpecificName>
+    <Icon>units/rome_siege_onager.png</Icon>
+  </Identity>
+  <Pack disable=""/>
+  <UnitMotion>
+    <WalkSpeed>0.001</WalkSpeed>
+  </UnitMotion>
+  <Vision>
+    <Range>88</Range>
+  </Vision>
+  <VisualActor>
+    <Actor>units/romans/siege_onager_pivot.xml</Actor>
+  </VisualActor>
+</Entity>
