@@ -19,14 +19,23 @@ var g_MainMenuItems = [
 			},
 			{
 				"caption": translate("Tutorial"),
-				"tooltip": translate("Start the economic tutorial."),
+				"tooltip": translate("Start the introductory tutorial."),
 				"onPress": () => {
 					Engine.SwitchGuiPage("page_autostart.xml", {
-						"mapType": "scenario",
-						"map": "maps/tutorials/starting_economy_walkthrough",
-						"settings": {
-							"CheatsEnabled": true
-						}
+						"attribs": {
+							"mapType": "scenario",
+							"map": "maps/tutorials/introductory_tutorial",
+							"settings": {
+								"CheatsEnabled": true
+							},
+						},
+						"playerAssignments": {
+							"local": {
+								"player": 1,
+								"name": Engine.ConfigDB_GetValue("user", "playername.singleplayer") || Engine.GetSystemUsername()
+							}
+						},
+						"storeReplay": true
 					});
 				}
 			},
