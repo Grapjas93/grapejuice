@@ -33,6 +33,7 @@
     </Melee>
   </Attack>
   <Identity>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
     <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
   </Identity>
   <Resistance>
