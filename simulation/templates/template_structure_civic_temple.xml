@@ -29,6 +29,7 @@
     <GenericName>Temple</GenericName>
     <SelectionGroupName>template_structure_civic_temple</SelectionGroupName>
     <Tooltip>Train Healers and research healing technologies.</Tooltip>
+    <Classes datatype="tokens">ConquestCritical</Classes>
     <VisibleClasses datatype="tokens">Town Temple</VisibleClasses>
     <Icon>structures/temple.png</Icon>
     <RequiredTechnology>phase_town</RequiredTechnology>

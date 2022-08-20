@@ -6,8 +6,6 @@ class CivSelectDropdown
 		const playerID = Engine.GetPlayerID();
 		this.hasViewPermission = Engine.GuiInterfaceCall("HasSpyTech", { "player": playerID }) || Engine.GuiInterfaceCall("GetState", { "player": playerID }) != "active";
 
-		warn(`hasSpyTech = ${ Engine.GuiInterfaceCall("HasSpyTech", { "player": playerID }) } isObserver = ${ Engine.GuiInterfaceCall("GetState", { "player": playerID }) != "active" }`);
-
 		let civList = Object.keys(civData).map(civ => ({
 			"name": civData[civ].Name,
 			"code": civ,

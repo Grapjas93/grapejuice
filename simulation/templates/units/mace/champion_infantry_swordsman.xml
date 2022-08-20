@@ -3,19 +3,19 @@
    <UnitMotion>
        <WalkSpeed> 8.9 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Rhomphaia </AttackName>
            <PrepareTime> 1050 </PrepareTime>
            <RepeatTime> 1200 </RepeatTime>
-       </Melee>  
+       </Melee>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2500 </RepeatTime>
-       </Ranged> 
-   </Attack> 
+       </Ranged>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -34,6 +34,6 @@
     <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
   </Identity>
   <VisualActor>
-    <Actor>units/hellenes/infantry_swordsman_c_thracian_blackcloak.xml</Actor>
+    <Actor>units/macedonians/infantry_swordsman_c_thracian.xml</Actor>
   </VisualActor>
 </Entity>

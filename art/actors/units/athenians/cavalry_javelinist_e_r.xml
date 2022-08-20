@@ -40,7 +40,7 @@
     </variant>
     <variant frequency="1" name="athen-linothorax-1d">
       <textures>
-        <texture file="skeletal/athen/linothorax_01_d.png" name="baseTex"/>
+        <texture file="skeletal/athen/linothorax_01_04.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
