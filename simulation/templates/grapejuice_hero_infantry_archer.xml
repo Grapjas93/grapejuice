@@ -3,8 +3,8 @@
   <Attack>
     <Ranged>
       <Ammo>24</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>18</Pierce>
       </Damage>
@@ -15,6 +15,7 @@
       </Projectile>
     </Ranged>
     <Melee>
+      <AttackName>Sword</AttackName>
       <Energy>100</Energy>
       <Damage>
       <Hack>11</Hack>

@@ -3,8 +3,10 @@
   <Attack>
     <Ranged>
       <Ammo>3</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
+      <PrepareTime>625</PrepareTime>
+      <RepeatTime>1250</RepeatTime>
       <Damage>
         <Pierce>75</Pierce>
       </Damage>
@@ -14,13 +16,17 @@
         <Spread>1.5</Spread>
       </Projectile>
     </Ranged>
-	<Melee>
+    <Melee>
+      <AttackName>Spear</AttackName>
+      <Energy>100</Energy>
       <Damage>
-        <Hack>1.0</Hack>
-        <Pierce>4.5</Pierce>     
-       <Crush>0</Crush>
+        <Hack>1</Hack>
+        <Pierce>4.5</Pierce>
       </Damage>
       <MaxRange>3</MaxRange>
+      <PrepareTime>625</PrepareTime>
+      <RepeatTime>1250</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Melee>
   </Attack>
   <Resistance>
