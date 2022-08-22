@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_cavalry_axeman">
   <Attack>
     <Melee>
+      <AttackName>Axe</AttackName>
       <Energy>150</Energy>
       <Damage>
         <Hack>13.8</Hack>

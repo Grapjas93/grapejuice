@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_infantry_swordsman">
   <Attack>
 	<Melee>
+      	<AttackName>Sword</AttackName>
       	<Energy>100</Energy>
 		<Damage>
 			<Hack>11</Hack>
@@ -11,6 +12,7 @@
 		<MaxRange>3</MaxRange>
 	</Melee>
 	<Ranged>
+		<AttackName>Javelin</AttackName>
 		<Ammo>1</Ammo>
 		<RefillAmount>0</RefillAmount>
 		<RefillTime>0</RefillTime>

@@ -2,9 +2,10 @@
 <Entity parent="template_unit_infantry_ranged_slinger">
   <Attack>
     <Ranged>
+      <AttackName>Sling</AttackName>
       <Ammo>40</Ammo>
-	  <RefillAmount>1</RefillAmount>
-	  <RefillTime>6000</RefillTime>
+      <RefillAmount>1</RefillAmount>
+      <RefillTime>6000</RefillTime>
       <Damage>
         <Pierce>5</Pierce>
         <Crush>5</Crush>
@@ -16,6 +17,7 @@
       </Projectile>
     </Ranged>
     <Melee>
+      <AttackName>Sword</AttackName>
       <Damage>
         <Hack>5.5</Hack>
         <Pierce>0</Pierce>

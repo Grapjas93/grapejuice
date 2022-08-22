@@ -2,6 +2,7 @@
 <Entity parent="template_unit_champion_infantry_axeman">
   <Attack>
     <Melee>
+      <AttackName>Axe</AttackName>
       <Energy>100</Energy>
       <Damage>
         <Hack>12</Hack>

@@ -11,6 +11,7 @@
    </Resistance>
   <Attack>
     <Melee>
+      <AttackName>Bite</AttackName>
       <Damage>
         <Pierce>15</Pierce>
       </Damage>

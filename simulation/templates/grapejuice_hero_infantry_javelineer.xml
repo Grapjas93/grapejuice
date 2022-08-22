@@ -2,9 +2,10 @@
 <Entity parent="template_unit_hero_infantry_javelineer">
   <Attack>
     <Ranged>
+      <AttackName>Javelin</AttackName>
       <Ammo>3</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>75</Pierce>
       </Damage>
@@ -15,6 +16,7 @@
       </Projectile>
     </Ranged>
     <Melee>
+      <AttackName>Spear</AttackName>
       <Damage>
         <Energy>100</Energy>
         <Pierce>9</Pierce>

@@ -19,9 +19,10 @@
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Melee>
     <Ranged>
+      <AttackName>Javelin</AttackName>
       <Ammo>3</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>0</RefillTime>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>75</Pierce>
       </Damage>

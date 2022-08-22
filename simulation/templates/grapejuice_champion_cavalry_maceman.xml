@@ -2,6 +2,7 @@
 <Entity parent="template_unit_champion_cavalry_maceman">
   <Attack>
     <Melee>
+      <AttackName>Mace</AttackName>
       <Energy>150</Energy>
       <Damage>
         <Crush>16</Crush>

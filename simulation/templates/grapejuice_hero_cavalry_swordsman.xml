@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_cavalry_swordsman">
   <Attack>
     <Melee>
+      <AttackName>Sword</AttackName>
       <Energy>150</Energy>
       <Damage>
         <Hack>13</Hack>

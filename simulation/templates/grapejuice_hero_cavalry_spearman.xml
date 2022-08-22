@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_cavalry_spearman">
   <Attack>
     <Melee>
+      <AttackName>Spear</AttackName>
       <Energy>150</Energy>
       <Damage>
         <Hack>2</Hack>

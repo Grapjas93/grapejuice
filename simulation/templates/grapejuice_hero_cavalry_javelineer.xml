@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_cavalry_javelineer">
   <Attack>
     <Ranged>
+      <AttackName>Javelin</AttackName>
       <Ammo>3</Ammo>
       <RefillAmount>0</RefillAmount>
       <RefillTime>0</RefillTime>

@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_infantry_archer">
   <Attack>
     <Ranged>
+      <AttackName>Bow</AttackName>
       <Ammo>24</Ammo>
       <RefillAmount>0</RefillAmount>
       <RefillTime>0</RefillTime>

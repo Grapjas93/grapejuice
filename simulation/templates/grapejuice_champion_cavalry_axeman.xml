@@ -2,6 +2,7 @@
 <Entity parent="template_unit_champion_cavalry_axeman">
   <Attack>
     <Melee>
+      <AttackName>Axe</AttackName>
       <Damage>
         <Hack>13.8</Hack>
         <Crush>4.6</Crush>

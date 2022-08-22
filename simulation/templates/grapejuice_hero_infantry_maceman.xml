@@ -2,6 +2,7 @@
 <Entity parent="template_unit_hero_infantry_maceman">
   <Attack>
     <Melee>
+      <AttackName>Mace</AttackName>
       <Energy>100</Energy>
       <Damage>
         <Crush>14</Crush>

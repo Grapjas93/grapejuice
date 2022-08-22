@@ -2,6 +2,7 @@
 <Entity parent="template_unit_infantry_melee_swordsman">
   <Attack>
     <Melee>
+      <AttackName>Sword</AttackName>
       <Damage>
         <Hack>5.5</Hack>
       </Damage>

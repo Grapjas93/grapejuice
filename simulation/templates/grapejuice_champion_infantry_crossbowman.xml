@@ -2,6 +2,7 @@
 <Entity parent="template_unit_champion_infantry_crossbowman">
   <Attack>
     <Ranged>
+      <AttackName>Crossbow</AttackName>
       <Damage>
         <Pierce>40</Pierce>
       </Damage>
