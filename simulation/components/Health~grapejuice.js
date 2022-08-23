@@ -8,7 +8,7 @@ Health.prototype.Reduce = function(amount)
 	// (The entity will exist a little while after calling DestroyEntity so this
 	// might get called multiple times)
 	// Likewise if the amount is 0.
-	if (!amount || !this.hitpoints )
+	if (!amount || !this.hitpoints)
 		return { "healthChange": 0 };
 
 	// Before changing the value, activate Fogging if necessary to hide changes
@@ -42,15 +42,15 @@ Health.prototype.Reduce = function(amount)
 	{
 		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
 		let currentHp = cmpHealth.GetHitpoints();
-		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
+		let treshold = cmpHealth.GetMaxHitpoints() / 3;
 		if( currentHp <= treshold ) {
 			let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
-			
+
 			if (cmpAttack)
 			{
 				cmpAttack.energy = 0;
 				cmpAttack.wounded = true;
-				
+
 				var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 				cmpModifiersManager.AddModifiers("CriticallyWounded", {
 					"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": 0.80 }],
@@ -60,7 +60,8 @@ Health.prototype.Reduce = function(amount)
 			}
 		}
 	}
-		return { "healthChange": this.hitpoints - oldHitpoints };
+
+	return { "healthChange": this.hitpoints - oldHitpoints };
 };
 
 Health.prototype.Increase = function(amount)
@@ -94,20 +95,20 @@ Health.prototype.Increase = function(amount)
 	{
 		let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
 		let currentHp = cmpHealth.GetHitpoints();
-		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
+		let treshold = cmpHealth.GetMaxHitpoints() / 3;
 		if( currentHp > treshold ) {
 			let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
 			if (cmpAttack)
 			{
 				cmpAttack.wounded = false;
-				
+
 				var cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 				cmpModifiersManager.RemoveAllModifiers("CriticallyWounded", this.entity);
 			}
 		}
 	}
-	return { "old": old, "new": this.hitpoints };
 
+	return { "old": old, "new": this.hitpoints };
 };
 
 Engine.ReRegisterComponentType(IID_Health, "Health", Health);

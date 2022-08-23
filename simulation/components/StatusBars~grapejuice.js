@@ -3,7 +3,7 @@ const g_NaturalColor = "255 255 255 255"; // pure white
 StatusBars.prototype.RemoveAuraSource = function(source, auraName)
 {
 	let names = this.auraSources.get(source);
-	if (!names)
+	if (!names)  // grapejuice
 		return;
 	names.splice(names.indexOf(auraName), 1);
 	this.RegenerateSprites();
@@ -26,10 +26,10 @@ StatusBars.prototype.Sprites = [
 	"EnergyBar",
 	"AuraIcons",
 	"RankIcon",
-	"WoundedIcon"
+	"WoundedIcon"  // grapejuice
 	];
 
-// Grapejuice ammoBar
+// grapejuice ammoBar
 StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 {
 	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
@@ -37,23 +37,23 @@ StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 		return 0;
 	if (!this.enabled)
 		return 0;
-		
+
 	if(Helpers.EntityMatchesClassList(this.entity, "Ram") && cmpAttack.maxEnergy == 0)
 		return 0;
-	
+
 	if(Helpers.EntityMatchesClassList(this.entity, "Charger"))
 	{
-		if(cmpAttack.wounded == true  || cmpAttack.chargeCooldown != 0) 
+		if(cmpAttack.wounded == true  || cmpAttack.chargeCooldown != 0)
 		{
-			return this.AddBar(cmpOverlayRenderer, yoffset, "energy", 0 / cmpAttack.maxEnergy, 2/3);	
+			return this.AddBar(cmpOverlayRenderer, yoffset, "energy", 0 / cmpAttack.maxEnergy, 2/3);
 		}
-			
-		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpAttack.energy / cmpAttack.maxEnergy, 2/3);	
+
+		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpAttack.energy / cmpAttack.maxEnergy, 2/3);
 	}
 
 };
 
-// Grapejuice ammoBar
+// grapejuice ammoBar
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
 	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege ArmyCamp"))
@@ -83,15 +83,15 @@ StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
 	if(Helpers.EntityMatchesClassList(this.entity, "Organic Siege") && cmpHealth != null)
 	{
 		let currentHp = cmpHealth.GetHitpoints();
-		let treshold = cmpHealth.GetMaxHitpoints() / 3; 
-		if( currentHp <= treshold  ) {		
+		let treshold = cmpHealth.GetMaxHitpoints() / 3;
+		if( currentHp <= treshold  ) {
 			cmpOverlayRenderer.AddSprite(
 			"art/textures/ui/session/icons/status_effects/wounded.png",
 			{ "x": -iconSize / 2, "y": yoffset },
 			{ "x": iconSize / 2, "y": iconSize + yoffset },
 			{ "x": 0, "y": +this.template.HeightOffset + 0.4, "z": 0 },
 			g_NaturalColor);
-			}		
+			}
 	}
 
 

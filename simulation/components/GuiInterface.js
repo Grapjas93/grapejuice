@@ -2145,6 +2145,7 @@ let exposedFunctions = {
 	"GetNotifications": 1,
 	"GetTimeNotifications": 1,
 
+	// grapejuice
 	"GetState": 1,
 	"GetSeenPlayers": 1,
 	"HasSpyTech": 1,

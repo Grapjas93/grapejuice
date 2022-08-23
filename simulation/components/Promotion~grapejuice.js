@@ -1,9 +1,14 @@
 
+
+Promotion.prototype.Init = function()
+{
+	this.currentXp = 0;
+	this.ComputeTrickleRate();
+	this.currentAmmo; // grapejuice
+};
+
 Promotion.prototype.Promote = function(promotedTemplateName)
 {
-	// Store ammo before promotion
-	let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
-	let currentAmmo = cmpAttack.ammo;
 
 	// If the unit is dead, don't promote it
 	let cmpHealth = Engine.QueryInterface(this.entity, IID_Health);
@@ -13,21 +18,25 @@ Promotion.prototype.Promote = function(promotedTemplateName)
 		return;
 	}
 
-	// Save the entity id.
+	// Store ammo before promotion / grapejuice
+	let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
+	this.currentAmmo = cmpAttack.ammo;
+
+	// Save the entity id. / grapejuice
 	this.promotedUnitEntity = ChangeEntityTemplate(this.entity, promotedTemplateName);
-	
-	// Apply ammo after promotion
+
+	// Apply ammo after promotion / grapejuice
 	cmpAttack = Engine.QueryInterface(this.promotedUnitEntity, IID_Attack);
-	cmpAttack.ammo = currentAmmo;
-	
-	// Check for new targets if ammo is 0, otherwise unit would perform ranged attacks without ammo
-	if (currentAmmo == 0)
+	cmpAttack.ammo = this.currentAmmo;
+
+	// Check for new targets if ammo is 0, otherwise unit would perform ranged attacks without ammo / grapejuice
+	if (this.currentAmmo == 0)
 	{
 		let cmpUnitAI = Engine.QueryInterface(this.promotedUnitEntity, IID_UnitAI);
-		cmpUnitAI.Stop();	
+		cmpUnitAI.Stop();
 	}
-	
-	// promoted units regain some health
+
+	// promoted units regain some health / grapejuice
 	cmpHealth = Engine.QueryInterface(this.promotedUnitEntity, IID_Health);
 	cmpHealth.Increase(10);
 };

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_support_trader">
+<Entity parent="template_unit_support">
    <UnitMotion>
        <WalkSpeed> 9 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Resistance>
         <Entity>
             <Damage>
@@ -29,7 +29,6 @@
     <GenericName>Trader</GenericName>
     <SelectionGroupName>template_unit_support_trader</SelectionGroupName>
     <Tooltip>Trade resources between your own markets and those of your allies.</Tooltip>
-    <Formations disable=""/>
   </Identity>
   <Loot>
     <xp>10</xp>
@@ -59,6 +58,7 @@
   <UnitAI>
     <CanGuard>false</CanGuard>
     <CanPatrol>false</CanPatrol>
+    <Formations disable=""/>
   </UnitAI>
   <Vision>
     <Range>60</Range>

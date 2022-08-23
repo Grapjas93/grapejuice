@@ -1,189 +1,190 @@
+var g_AttackTypes = ["Melee", "Ranged", "Capture"];
 
 // grapejuice, added <Ammo>, <RefillTime>, <RefillAmount> <Energy>
 Attack.prototype.Schema =
-"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
-"<a:example>" +
-	"<Melee>" +
-		"<AttackName>Spear</AttackName>" +
-		"<Damage>" +
-			"<Hack>10.0</Hack>" +
-			"<Pierce>0.0</Pierce>" +
-			"<Crush>5.0</Crush>" +
-		"</Damage>" +
-		"<MaxRange>4.0</MaxRange>" +
-		"<RepeatTime>1000</RepeatTime>" +
-		"<Bonuses>" +
-			"<Bonus1>" +
-				"<Civ>pers</Civ>" +
-				"<Classes>Infantry</Classes>" +
-				"<Multiplier>1.5</Multiplier>" +
-			"</Bonus1>" +
-			"<BonusCavMelee>" +
-				"<Classes>Cavalry Melee</Classes>" +
-				"<Multiplier>1.5</Multiplier>" +
-			"</BonusCavMelee>" +
-		"</Bonuses>" +
-		"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
-		"<PreferredClasses datatype=\"tokens\">Cavalry Infantry</PreferredClasses>" +
-	"</Melee>" +
-	"<Ranged>" +
-		"<AttackName>Bow</AttackName>" +
-		"<Damage>" +
-			"<Hack>0.0</Hack>" +
-			"<Pierce>10.0</Pierce>" +
-			"<Crush>0.0</Crush>" +
-		"</Damage>" +
-		"<MaxRange>44.0</MaxRange>" +
-		"<MinRange>20.0</MinRange>" +
-		"<Origin>" +
-			"<X>0</X>" +
-			"<Y>10.0</Y>" +
-			"<Z>0</Z>" +
-		"</Origin>" +
-		"<PrepareTime>800</PrepareTime>" +
-		"<RepeatTime>1600</RepeatTime>" +
-		"<EffectDelay>1000</EffectDelay>" +
-		"<Bonuses>" +
-			"<Bonus1>" +
-				"<Classes>Cavalry</Classes>" +
-				"<Multiplier>2</Multiplier>" +
-			"</Bonus1>" +
-		"</Bonuses>" +
-		"<Projectile>" +
-			"<Speed>50.0</Speed>" +
-			"<Spread>2.5</Spread>" +
-			"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
-			"<ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>" +
-			"<ImpactAnimationLifetime>0.1</ImpactAnimationLifetime>" +
-			"<FriendlyFire>false</FriendlyFire>" +
-		"</Projectile>" +
-		"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
-		"<Splash>" +
-			"<Shape>Circular</Shape>" +
-			"<Range>20</Range>" +
-			"<FriendlyFire>false</FriendlyFire>" +
+	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
+	"<a:example>" +
+		"<Melee>" +
+			"<AttackName>Spear</AttackName>" +
+			"<Damage>" +
+				"<Hack>10.0</Hack>" +
+				"<Pierce>0.0</Pierce>" +
+				"<Crush>5.0</Crush>" +
+			"</Damage>" +
+			"<MaxRange>4.0</MaxRange>" +
+			"<RepeatTime>1000</RepeatTime>" +
+			"<Bonuses>" +
+				"<Bonus1>" +
+					"<Civ>pers</Civ>" +
+					"<Classes>Infantry</Classes>" +
+					"<Multiplier>1.5</Multiplier>" +
+				"</Bonus1>" +
+				"<BonusCavMelee>" +
+					"<Classes>Cavalry Melee</Classes>" +
+					"<Multiplier>1.5</Multiplier>" +
+				"</BonusCavMelee>" +
+			"</Bonuses>" +
+			"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
+			"<PreferredClasses datatype=\"tokens\">Cavalry Infantry</PreferredClasses>" +
+		"</Melee>" +
+		"<Ranged>" +
+			"<AttackName>Bow</AttackName>" +
 			"<Damage>" +
 				"<Hack>0.0</Hack>" +
 				"<Pierce>10.0</Pierce>" +
 				"<Crush>0.0</Crush>" +
 			"</Damage>" +
-		"</Splash>" +
-	"</Ranged>" +
-	"<Slaughter>" +
-		"<Damage>" +
-			"<Hack>1000.0</Hack>" +
-			"<Pierce>0.0</Pierce>" +
-			"<Crush>0.0</Crush>" +
-		"</Damage>" +
-		"<RepeatTime>1000</RepeatTime>" +
-		"<MaxRange>4.0</MaxRange>" +
-	"</Slaughter>" +
-"</a:example>" +
-"<oneOrMore>" +
-	"<element>" +
-		"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
-		"<interleave>" +
-			"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
-			"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
-			"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
-			"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
-			"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
+			"<MaxRange>44.0</MaxRange>" +
+			"<MinRange>20.0</MinRange>" +
+			"<Origin>" +
+				"<X>0</X>" +
+				"<Y>10.0</Y>" +
+				"<Z>0</Z>" +
+			"</Origin>" +
+			"<PrepareTime>800</PrepareTime>" +
+			"<RepeatTime>1600</RepeatTime>" +
+			"<EffectDelay>1000</EffectDelay>" +
+			"<Bonuses>" +
+				"<Bonus1>" +
+					"<Classes>Cavalry</Classes>" +
+					"<Multiplier>2</Multiplier>" +
+				"</Bonus1>" +
+			"</Bonuses>" +
+			"<Projectile>" +
+				"<Speed>50.0</Speed>" +
+				"<Spread>2.5</Spread>" +
+				"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
+				"<ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>" +
+				"<ImpactAnimationLifetime>0.1</ImpactAnimationLifetime>" +
+				"<FriendlyFire>false</FriendlyFire>" +
+			"</Projectile>" +
+			"<RestrictedClasses datatype=\"tokens\">Champion</RestrictedClasses>" +
+			"<Splash>" +
+				"<Shape>Circular</Shape>" +
+				"<Range>20</Range>" +
+				"<FriendlyFire>false</FriendlyFire>" +
+				"<Damage>" +
+					"<Hack>0.0</Hack>" +
+					"<Pierce>10.0</Pierce>" +
+					"<Crush>0.0</Crush>" +
+				"</Damage>" +
+			"</Splash>" +
+		"</Ranged>" +
+		"<Slaughter>" +
+			"<Damage>" +
+				"<Hack>1000.0</Hack>" +
+				"<Pierce>0.0</Pierce>" +
+				"<Crush>0.0</Crush>" +
+			"</Damage>" +
+			"<RepeatTime>1000</RepeatTime>" +
+			"<MaxRange>4.0</MaxRange>" +
+		"</Slaughter>" +
+	"</a:example>" +
+	"<oneOrMore>" +
+		"<element>" +
+			"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
+			"<interleave>" +
+				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
+				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
+					"<optional>" +
+						"<attribute name='context'>" +
+							"<text/>" +
+						"</attribute>" +
+					"</optional>" +
+					"<text/>" +
+				"</element>" +
+				AttackHelper.BuildAttackEffectsSchema() +
+				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
 				"<optional>" +
-					"<attribute name='context'>" +
-						"<text/>" +
-					"</attribute>" +
+					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
 				"</optional>" +
-				"<text/>" +
-			"</element>" +
-			AttackHelper.BuildAttackEffectsSchema() +
-			"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
-			"<optional>" +
-				"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
-			"</optional>" +
-			"<optional>"+
-				"<element name='Origin' a:help='The offset from which the attack occurs, relative to the entity position. Defaults to {0,0,0}.'>" +
-					"<interleave>" +
-						"<element name='X'>" +
-							"<ref name='nonNegativeDecimal'/>" +
-						"</element>" +
-						"<element name='Y'>" +
-							"<ref name='nonNegativeDecimal'/>" +
-						"</element>" +
-						"<element name='Z'>" +
-							"<ref name='nonNegativeDecimal'/>" +
-						"</element>" +
-					"</interleave>" +
-				"</element>" +
-			"</optional>" +
-			"<optional>" +
-				"<element name='RangeOverlay'>" +
-					"<interleave>" +
-						"<element name='LineTexture'><text/></element>" +
-						"<element name='LineTextureMask'><text/></element>" +
-						"<element name='LineThickness'><ref name='nonNegativeDecimal'/></element>" +
-					"</interleave>" +
-				"</element>" +
-			"</optional>" +
-			"<optional>" +
-				"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation. Defaults to 0.'>" +
-					"<data type='nonNegativeInteger'/>" +
-				"</element>" +
-			"</optional>" +
-			"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
-				"<data type='positiveInteger'/>" +
-			"</element>" +
-			"<optional>" +
-				"<element name='EffectDelay' a:help='Delay of applying the effects, in milliseconds after the attack has landed. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
-			"</optional>" +
-			"<optional>" +
-				"<element name='Splash'>" +
-					"<interleave>" +
-						"<element name='Shape' a:help='Shape of the splash damage, can be circular or linear'><text/></element>" +
-						"<element name='Range' a:help='Size of the area affected by the splash'><ref name='nonNegativeDecimal'/></element>" +
-						"<element name='FriendlyFire' a:help='Whether the splash damage can hurt non enemy units'><data type='boolean'/></element>" +
-						AttackHelper.BuildAttackEffectsSchema() +
-					"</interleave>" +
-				"</element>" +
-			"</optional>" +
-			"<optional>" +
-				"<element name='Projectile'>" +
-					"<interleave>" +
-						"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
-							"<ref name='positiveDecimal'/>" +
-						"</element>" +
-						"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
-						"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
-							"<ref name='nonNegativeDecimal'/>" +
-						"</element>" +
-						"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
-						"<optional>" +
-							"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
-								"<attribute name='y'>" +
-									"<data type='decimal'/>" +
-								"</attribute>" +
+				"<optional>"+
+					"<element name='Origin' a:help='The offset from which the attack occurs, relative to the entity position. Defaults to {0,0,0}.'>" +
+						"<interleave>" +
+							"<element name='X'>" +
+								"<ref name='nonNegativeDecimal'/>" +
 							"</element>" +
-						"</optional>" +
-						"<optional>" +
-							"<element name='ActorName' a:help='actor of the projectile animation.'>" +
-								"<text/>" +
+							"<element name='Y'>" +
+								"<ref name='nonNegativeDecimal'/>" +
 							"</element>" +
-						"</optional>" +
-						"<optional>" +
-							"<element name='ImpactActorName' a:help='actor of the projectile impact animation'>" +
-								"<text/>" +
+							"<element name='Z'>" +
+								"<ref name='nonNegativeDecimal'/>" +
 							"</element>" +
-							"<element name='ImpactAnimationLifetime' a:help='length of the projectile impact animation.'>" +
+						"</interleave>" +
+					"</element>" +
+				"</optional>" +
+				"<optional>" +
+					"<element name='RangeOverlay'>" +
+						"<interleave>" +
+							"<element name='LineTexture'><text/></element>" +
+							"<element name='LineTextureMask'><text/></element>" +
+							"<element name='LineThickness'><ref name='nonNegativeDecimal'/></element>" +
+						"</interleave>" +
+					"</element>" +
+				"</optional>" +
+				"<optional>" +
+					"<element name='PrepareTime' a:help='Time from the start of the attack command until the attack actually occurs (in milliseconds). This value relative to RepeatTime should closely match the \"event\" point in the actor&apos;s attack animation. Defaults to 0.'>" +
+						"<data type='nonNegativeInteger'/>" +
+					"</element>" +
+				"</optional>" +
+				"<element name='RepeatTime' a:help='Time between attacks (in milliseconds). The attack animation will be stretched to match this time'>" + // TODO: it shouldn't be stretched
+					"<data type='positiveInteger'/>" +
+				"</element>" +
+				"<optional>" +
+					"<element name='EffectDelay' a:help='Delay of applying the effects, in milliseconds after the attack has landed. Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
+				"</optional>" +
+				"<optional>" +
+					"<element name='Splash'>" +
+						"<interleave>" +
+							"<element name='Shape' a:help='Shape of the splash damage, can be circular or linear'><text/></element>" +
+							"<element name='Range' a:help='Size of the area affected by the splash'><ref name='nonNegativeDecimal'/></element>" +
+							"<element name='FriendlyFire' a:help='Whether the splash damage can hurt non enemy units'><data type='boolean'/></element>" +
+							AttackHelper.BuildAttackEffectsSchema() +
+						"</interleave>" +
+					"</element>" +
+				"</optional>" +
+				"<optional>" +
+					"<element name='Projectile'>" +
+						"<interleave>" +
+							"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
 								"<ref name='positiveDecimal'/>" +
 							"</element>" +
-						"</optional>" +
-					"</interleave>" +
-				"</element>" +
-			"</optional>" +
-			Attack.prototype.preferredClassesSchema +
-			Attack.prototype.restrictedClassesSchema +
-		"</interleave>" +
-	"</element>" +
-"</oneOrMore>";
+							"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
+							"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
+								"<ref name='nonNegativeDecimal'/>" +
+							"</element>" +
+							"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
+							"<optional>" +
+								"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
+									"<attribute name='y'>" +
+										"<data type='decimal'/>" +
+									"</attribute>" +
+								"</element>" +
+							"</optional>" +
+							"<optional>" +
+								"<element name='ActorName' a:help='actor of the projectile animation.'>" +
+									"<text/>" +
+								"</element>" +
+							"</optional>" +
+							"<optional>" +
+								"<element name='ImpactActorName' a:help='actor of the projectile impact animation'>" +
+									"<text/>" +
+								"</element>" +
+								"<element name='ImpactAnimationLifetime' a:help='length of the projectile impact animation.'>" +
+									"<ref name='positiveDecimal'/>" +
+								"</element>" +
+							"</optional>" +
+						"</interleave>" +
+					"</element>" +
+				"</optional>" +
+				Attack.prototype.preferredClassesSchema +
+				Attack.prototype.restrictedClassesSchema +
+			"</interleave>" +
+		"</element>" +
+	"</oneOrMore>";
 
 // grapejuice
 Attack.prototype.Init = function()
@@ -593,7 +594,7 @@ Attack.prototype.PerformAttack = function(type, target)
 		"target": target,
 	};
 
-	let delay = +(this.template[type].Delay || 0);
+	let delay = +(this.template[type].EffectDelay || 0);
 
 	// grapejuice
 	if (type == "Ranged")
@@ -797,7 +798,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 };
 
 /**
- * Returns null if we have no preference or the lowest index of a preferred class.
+ * Returns undefined if we have no preference or the lowest index of a preferred class.
  */
 Attack.prototype.GetPreference = function(target)
 {
@@ -807,7 +808,7 @@ Attack.prototype.GetPreference = function(target)
 
 	let targetClasses = cmpIdentity.GetClassesList();
 
-	let minPref = null;
+	let minPref;
 	for (let type of this.GetAttackTypes())
 	{
 		let preferredClasses = this.GetPreferredClasses(type);
@@ -827,8 +828,7 @@ Attack.prototype.GetPreference = function(target)
 					cmpUnitAI.RespondToTargetedEntities([target]);
 					return pref;
 				}
-
-				if ((minPref === null || minPref > pref))
+				if ((minPref === undefined || minPref > pref))
 					minPref = pref;
 			}
 		}

@@ -1,7 +1,6 @@
 Player.prototype.Init = function()
 {
 	this.playerID = undefined;
-	this.hasSeenPlayers = [];
 	this.color = undefined;
 	this.diplomacyColor = undefined;
 	this.displayDiplomacyColor = false;
@@ -24,7 +23,8 @@ Player.prototype.Init = function()
 	this.cheatsEnabled = false;
 	this.panelEntities = [];
 	this.resourceNames = {};
-	this.hasSpyTech = false;
+	this.hasSeenPlayers = []; // grapejuice
+	this.hasSpyTech = false; // grapejuice
 	this.disabledTemplates = {};
 	this.disabledTechnologies = {};
 	this.spyCostMultiplier = +this.template.SpyCostMultiplier;

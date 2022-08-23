@@ -35,8 +35,8 @@ BuildingAI.prototype.FireArrows = function()
 		arrowsToFire = this.arrowsLeft;
 	else
 		arrowsToFire = Math.min(
-		    randIntInclusive(0, 2 * this.GetArrowCount() / roundCount),
-		    this.arrowsLeft
+			randIntInclusive(0, 2 * this.GetArrowCount() / roundCount),
+			this.arrowsLeft
 		);
 
 	// grapejuice, if the garrisoned entity has no ammo, don't shoot arrows

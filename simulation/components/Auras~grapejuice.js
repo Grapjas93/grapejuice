@@ -14,7 +14,7 @@ Auras.prototype.ApplyAura = function(name, ents)
 	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
 	{
 		let length = ents.length;
-		for (let i = 0; i < length; i++) 
+		for (let i = 0; i < length; i++)
 		{
 			let entity = ents.pop();
 			let entPlayer = Helpers.GetOwner(entity);
@@ -25,8 +25,8 @@ Auras.prototype.ApplyAura = function(name, ents)
 				let cmpAttack = Engine.QueryInterface(entity, IID_Attack);
 				if (cmpAttack != null){
 					cmpAttack.ReArmAura();
-				} 
-			} 
+				}
+			}
 			else
 			return 0;
 		}
@@ -94,7 +94,7 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 	for (let ent of ents)
 		for (let modifierPath in derivedModifiers)
 			cmpModifiersManager.RemoveModifier(modifierPath, modifName, ent);
-	
+
 	// re-arm aura
 	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
 	{
