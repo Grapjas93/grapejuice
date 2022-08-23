@@ -203,8 +203,8 @@ SkirmishRandomizer.Randomize = function(civilCentrePositions, g_atlasEditor, g_g
 		}
 
 		// Make iber defenses if playerCiv is === iber
-		let cmpIdentity = Engine.QueryInterface(g_parseSelectCC, IID_Identity);
-		let getPlayerCiv = cmpIdentity.GetCiv();
+		g_cmpPlayer = QueryPlayerIDInterface(g_selectedPlayer);
+		let getPlayerCiv = g_cmpPlayer.civ;
 		if (getPlayerCiv === "iber" && g_grapjasIber === "true"){
 
 			let shiftAngle = [];

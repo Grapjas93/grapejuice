@@ -1,6 +1,7 @@
 Player.prototype.Init = function()
 {
 	this.playerID = undefined;
+	this.civ = Engine.QueryInterface(this.entity, IID_Identity).GetCiv();
 	this.color = undefined;
 	this.diplomacyColor = undefined;
 	this.displayDiplomacyColor = false;
