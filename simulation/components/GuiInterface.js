@@ -737,7 +737,10 @@ GuiInterface.prototype.GetBattleState = function(player)
  GuiInterface.prototype.GetSeenPlayers = function(player)
  {
 	 const cmpPlayer = QueryPlayerIDInterface(player, IID_Player);
-	 return cmpPlayer.GetSeenPlayers();
+	 if (!cmpPlayer)
+	 return;
+
+  return cmpPlayer.GetSeenPlayers();
  };
 
  /**
@@ -746,7 +749,11 @@ GuiInterface.prototype.GetBattleState = function(player)
   */
  GuiInterface.prototype.HasSpyTech = function(player)
  {
-	 return QueryPlayerIDInterface(player).HasSpyTech();
+	const cmpPlayer = QueryPlayerIDInterface(player, IID_Player);
+	if (!cmpPlayer)
+	return;
+
+   	return cmpPlayer.HasSpyTech();
  };
 
 /**

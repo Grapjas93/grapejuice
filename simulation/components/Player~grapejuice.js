@@ -88,8 +88,6 @@ Player.prototype.AddSeenPlayer = function(player, ent)
 	});
 
 	this.hasSeenPlayers.push(player);
-	Engine.QueryInterface(SYSTEM_ENTITY, IID_SoundManager).PlaySoundGroupForPlayer("interface/alarm/alarm_discovered_player.xml", this.GetPlayerID());
-	warn(uneval(`DETECTED NEW PLAYER <player = ${this.GetPlayerID()}> <playerFound = ${player}> <HasSeenPlayers = ${this.GetSeenPlayers()}> <diplomacy = ${diplomacy}>`));
 
 };
 

@@ -1,7 +1,14 @@
-PETRA.Config = function(difficulty, behavior)
+// These integers must be sequential
+PETRA.DIFFICULTY_SANDBOX = 0;
+PETRA.DIFFICULTY_VERY_EASY = 1;
+PETRA.DIFFICULTY_EASY = 2;
+PETRA.DIFFICULTY_MEDIUM = 3;
+PETRA.DIFFICULTY_HARD = 4;
+PETRA.DIFFICULTY_VERY_HARD = 5;
+
+PETRA.Config = function(difficulty = PETRA.DIFFICULTY_MEDIUM, behavior)
 {
-	// 0 is sandbox, 1 is very easy, 2 is easy, 3 is medium, 4 is hard and 5 is very hard.
-	this.difficulty = difficulty !== undefined ? difficulty : 3;
+	this.difficulty = difficulty;
 
 	// for instance "balanced", "aggressive" or "defensive"
 	this.behavior = behavior || "random";
@@ -56,7 +63,7 @@ PETRA.Config = function(difficulty, behavior)
 	this.buildings =
 	{
 		"default": [
-		"structures/{civ}/camp"
+			"structures/{civ}/camp"
 		],
 		"athen": [
 			"structures/{civ}/gymnasium",
@@ -71,6 +78,9 @@ PETRA.Config = function(difficulty, behavior)
 		],
 		"gaul": [
 			"structures/{civ}/assembly"
+		],
+		"han": [
+			"structures/{civ}/academy"
 		],
 		"iber": [
 			"structures/{civ}/monument"
@@ -161,11 +171,17 @@ PETRA.Config = function(difficulty, behavior)
 	};
 
 	this.garrisonHealthLevel = { "low": 0.4, "medium": 0.55, "high": 0.7 };
+
+	this.unusedNoAllyTechs = [
+		"Player/sharedLos",
+		"Market/InternationalBonus",
+		"Player/sharedDropsites"
+	];
 };
 
 PETRA.Config.prototype.setConfig = function(gameState)
 {
-	if (this.difficulty > 0)
+	if (this.difficulty > PETRA.DIFFICULTY_SANDBOX)
 	{
 		// Setup personality traits according to the user choice:
 		// The parameter used to define the personality is basically the aggressivity or (1-defensiveness)
@@ -208,21 +224,23 @@ PETRA.Config.prototype.setConfig = function(gameState)
 	this.Military.fortressLapseTime = Math.round(this.Military.fortressLapseTime * (1.1 - 0.2 * this.personality.defensive));
 	this.priorities.defenseBuilding = Math.round(this.priorities.defenseBuilding * (0.9 + 0.2 * this.personality.defensive));
 
-	if (this.difficulty < 2)
+	if (this.difficulty < PETRA.DIFFICULTY_EASY)
 	{
+		this.popScaling = 0.5;
 		this.Economy.supportRatio = 0.5;
 		this.Economy.provisionFields = 1;
 		this.Military.numSentryTowers = this.personality.defensive > this.personalityCut.strong ? 1 : 0;
 	}
-	else if (this.difficulty < 3)
+	else if (this.difficulty < PETRA.DIFFICULTY_MEDIUM)
 	{
+		this.popScaling = 0.7;
 		this.Economy.supportRatio = 0.4;
 		this.Economy.provisionFields = 1;
 		this.Military.numSentryTowers = this.personality.defensive > this.personalityCut.strong ? 1 : 0;
 	}
 	else
 	{
-		if (this.difficulty == 3)
+		if (this.difficulty == PETRA.DIFFICULTY_MEDIUM)
 			this.Military.numSentryTowers = 1;
 		else
 			this.Military.numSentryTowers = 2;
@@ -240,9 +258,9 @@ PETRA.Config.prototype.setConfig = function(gameState)
 	}
 
 	let maxPop = gameState.getPopulationMax();
-	if (this.difficulty < 2)
+	if (this.difficulty < PETRA.DIFFICULTY_EASY)
 		this.Economy.targetNumWorkers = Math.max(1, Math.min(40, maxPop));
-	else if (this.difficulty < 3)
+	else if (this.difficulty < PETRA.DIFFICULTY_MEDIUM)
 		this.Economy.targetNumWorkers = Math.max(1, Math.min(60, Math.floor(maxPop/2)));
 	else
 		this.Economy.targetNumWorkers = Math.max(1, Math.min(120, Math.floor(maxPop/3)));
@@ -256,20 +274,19 @@ PETRA.Config.prototype.setConfig = function(gameState)
 	}
 
 	if (maxPop < 300)
-	{
-		this.popScaling = Math.sqrt(maxPop / 300);
-		this.Military.popForBarracks1 = Math.min(Math.max(Math.floor(this.Military.popForBarracks1 * this.popScaling), 12), Math.floor(maxPop/5));
-		this.Military.popForBarracks2 = Math.min(Math.max(Math.floor(this.Military.popForBarracks2 * this.popScaling), 45), Math.floor(maxPop*2/3));
-		this.Military.popForForge = Math.min(Math.max(Math.floor(this.Military.popForForge * this.popScaling), 30), Math.floor(maxPop/2));
-		this.Economy.popPhase2 = Math.min(Math.max(Math.floor(this.Economy.popPhase2 * this.popScaling), 20), Math.floor(maxPop/2));
-		this.Economy.workPhase3 = Math.min(Math.max(Math.floor(this.Economy.workPhase3 * this.popScaling), 40), Math.floor(maxPop*2/3));
-		this.Economy.workPhase4 = Math.min(Math.max(Math.floor(this.Economy.workPhase4 * this.popScaling), 45), Math.floor(maxPop*2/3));
-		this.Economy.targetNumTraders = Math.round(this.Economy.targetNumTraders * this.popScaling);
-	}
+		this.popScaling *= Math.sqrt(maxPop / 300);
+
+	this.Military.popForBarracks1 = Math.min(Math.max(Math.floor(this.Military.popForBarracks1 * this.popScaling), 12), Math.floor(maxPop/5));
+	this.Military.popForBarracks2 = Math.min(Math.max(Math.floor(this.Military.popForBarracks2 * this.popScaling), 45), Math.floor(maxPop*2/3));
+	this.Military.popForForge = Math.min(Math.max(Math.floor(this.Military.popForForge * this.popScaling), 30), Math.floor(maxPop/2));
+	this.Economy.popPhase2 = Math.min(Math.max(Math.floor(this.Economy.popPhase2 * this.popScaling), 20), Math.floor(maxPop/2));
+	this.Economy.workPhase3 = Math.min(Math.max(Math.floor(this.Economy.workPhase3 * this.popScaling), 40), Math.floor(maxPop*2/3));
+	this.Economy.workPhase4 = Math.min(Math.max(Math.floor(this.Economy.workPhase4 * this.popScaling), 45), Math.floor(maxPop*2/3));
+	this.Economy.targetNumTraders = Math.round(this.Economy.targetNumTraders * this.popScaling);
 	this.Economy.targetNumWorkers = Math.max(this.Economy.targetNumWorkers, this.Economy.popPhase2);
 	this.Economy.workPhase3 = Math.min(this.Economy.workPhase3, this.Economy.targetNumWorkers);
 	this.Economy.workPhase4 = Math.min(this.Economy.workPhase4, this.Economy.targetNumWorkers);
-	if (this.difficulty < 2)
+	if (this.difficulty < PETRA.DIFFICULTY_EASY)
 		this.Economy.workPhase3 = Infinity;	// prevent the phasing to city phase
 
 	if (this.debug < 2)

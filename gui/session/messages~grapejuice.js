@@ -134,6 +134,8 @@
          if (Engine.ConfigDB_GetValue("user", "gui.session.notifications.discovered") !== "true")
              return;
 
+        Engine.PlayUISound("audio/interface/alarm/alarm_discovered_player.ogg", false);
+
          addChatMessage({
              "type": "discovered",
              "player": player,
