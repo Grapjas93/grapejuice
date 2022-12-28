@@ -1,10 +1,5 @@
-# grapejuice
-Last tested build: SVN June 8, 2021 (25816)
+# Grapejuice
 
-Branch to prepare the mod for the next release.
+![github_full](https://user-images.githubusercontent.com/81101825/209804600-9fbbc57e-d37f-412e-b9bc-53515300ff5a.png)
 
-Changes so far:
-- Enemy player info is hidden in the diplomacy panel.
-    - Players will get a clickable notification (location) if they meet an undiscovered player (building), this will fill in some info at the diplomacy panel. Notification can be disabled at settings > game settings.
-- Chariots have a melee attack aswell: Pike, with a counter against cavalry as usual.
-
+[Mod.io](https://mod.io/g/0ad/m/grapejuice) | [Forum](https://wildfiregames.com/forum/topic/35914-mod-grapejuice) | [Rebalance sheet](https://docs.google.com/spreadsheets/d/1g1GSy4thCCHUi5xWPgrDzG91Ty0kjowU_7ZluccuqoA/edit#gid=522316158) | [A path beyond II (8)](https://wildfiregames.com/forum/topic/35913-skirmish-map-a-path-beyond-ii) | [X (8)](https://wildfiregames.com/forum/topic/31711-skirmish-map-x-~balanced)
