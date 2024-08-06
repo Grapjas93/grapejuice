@@ -587,11 +587,9 @@ Attack.prototype.PerformAttack = function(type, target)
 	};
 
 	let delay = +(this.template[type].EffectDelay || 0);
-
 	// grapejuice
 	if (type == "Ranged")
 	{
-
 		if (!!this.template["Ranged"].Ammo)
 		{
 			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
@@ -769,32 +767,15 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 
 	// grapejuice
 	let rangeIndex = types.indexOf("Ranged");
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
+	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && this.ammo != 0 && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+		return "Ranged";
+	else
 	{
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || (Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false))
-			{
-				warn('melee')
-				types.splice(rangeIndex, 1);
-			}
-
-			else
-			{
-				warn('ranged')
-				types.splice(rangeIndex, -1);
-			}
+		this.StopCanChargeTimer();
+		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+		this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
+		return "Melee";
 	}
-
-	let targetClasses = cmpIdentity.GetClassesList();
-	let isPreferred = attackType => MatchesClassList(targetClasses, this.GetPreferredClasses(attackType));
-
-	this.StopCanChargeTimer();
-
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
-
-	return types.sort((a, b) =>
-		(types.indexOf(a) + (isPreferred(a) ? types.length : 0)) -
-		(types.indexOf(b) + (isPreferred(b) ? types.length : 0))).pop();
 };
 
 /**
