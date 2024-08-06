@@ -51,6 +51,8 @@ Attack.prototype.Schema =
 				"</Bonus1>" +
 			"</Bonuses>" +
 			"<Projectile>" +
+				"<Gravity>50.0</Gravity>" +
+				"<GravArcMult>0.5</GravArcMult>" +
 				"<Speed>50.0</Speed>" +
 				"<Spread>2.5</Spread>" +
 				"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
@@ -156,6 +158,11 @@ Attack.prototype.Schema =
 							"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
 								"<ref name='nonNegativeDecimal'/>" +
 							"</element>" +
+							"<optional>" +
+								"<element name='GravArcMult' a:help='Adjust the projectile arc strength with this multiplier.'>" +
+									"<ref name='nonNegativeDecimal'/>" +
+								"</element>" +
+							"</optional>" +
 							"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
 							"<optional>" +
 								"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
@@ -632,9 +639,10 @@ Attack.prototype.PerformAttack = function(type, target)
 		let maxRange = range.max + spread;
 		let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
 		let speed = +this.template[type].Projectile.Speed;
+		let gravArcMult = +this.template[type].Projectile.GravArcMult || 1;
 		let gravity = +this.template[type].Projectile.Gravity * (maxRange / distance);
 		// Compute the horizontal speed for a given gravity and assuming initial angle of pi/4 for maximum range.
-		let horizSpeed = maxRange * Math.sqrt(gravity / ((1.5 * (distance / maxRange)) * Math.max(maxRange  + targetPosition.y - selfPosition.y, 1)));
+		let horizSpeed = maxRange * Math.sqrt(gravity / ((2 * gravArcMult) * Math.max(maxRange  + targetPosition.y - selfPosition.y, 1)));
 
 		// We will try to estimate the position of the target, where we can hit it.
 		// We first estimate the time-till-hit by extrapolating linearly the movement

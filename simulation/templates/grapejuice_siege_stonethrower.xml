@@ -25,7 +25,7 @@
       <Projectile>
         <Speed>40</Speed>
         <Spread>3</Spread>
-        <Gravity>180</Gravity>
+        <Gravity>60</Gravity>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
         <ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>

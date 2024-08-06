@@ -26,6 +26,7 @@
         <Speed>150</Speed>
         <Spread>1</Spread>
         <Gravity>250</Gravity>
+        <GravArcMult>0.1</GravArcMult>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
       </Projectile>
