@@ -551,16 +551,8 @@ Attack.prototype.ReArmAura = function()
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
 Attack.prototype.CheckTargetIsInMeleeRange = function(target)
 {
-	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
-
-	if (!cmpVision)
-		return false;
-
-	let range = cmpVision.GetRange() / 6.5;
 	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
-	let result = distance < range;
-
-	return distance < range;
+	return distance < 12;
 };
 
 /**
@@ -635,9 +627,16 @@ Attack.prototype.PerformAttack = function(type, target)
 		//  * Obstacles like trees could reduce the probability of the target being hit
 		//  * Obstacles like walls should block projectiles entirely
 
-		let horizSpeed = +this.template[type].Projectile.Speed;
-		let gravity = +this.template[type].Projectile.Gravity;
-		// horizSpeed /= 2; gravity /= 2; // slow it down for testing
+
+		// Credits to @BB for the arcing projectiles code
+		let spread = ApplyValueModificationsToEntity("Attack/Ranged/Spread", +this.template[type].Projectile.Spread, this.entity);
+		let range = this.GetRange(type);
+		let maxRange = range.max + spread;
+		let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
+		let speed = +this.template[type].Projectile.Speed;
+		let gravity = +this.template[type].Projectile.Gravity * (maxRange / distance);
+		// Compute the horizontal speed for a given gravity and assuming initial angle of pi/4 for maximum range.
+		let horizSpeed = maxRange * Math.sqrt(gravity / ((1.5 * (distance / maxRange)) * Math.max(maxRange  + targetPosition.y - selfPosition.y, 1)));
 
 		// We will try to estimate the position of the target, where we can hit it.
 		// We first estimate the time-till-hit by extrapolating linearly the movement
@@ -676,8 +675,7 @@ Attack.prototype.PerformAttack = function(type, target)
 		let predictedHeight = cmpTargetPosition.GetHeightAt(predictedPosition.x, predictedPosition.z);
 
 		// Add inaccuracy based on spread.
-		let distanceModifiedSpread = ApplyValueModificationsToEntity("Attack/" + type + "/Spread", +this.template[type].Projectile.Spread, this.entity) *
-			predictedPosition.horizDistanceTo(selfPosition) / 100;
+		let distanceModifiedSpread = spread * predictedPosition.horizDistanceTo(selfPosition) / 100;
 
 		let randNorm = randomNormal2D();
 		let offsetX = randNorm[0] * distanceModifiedSpread;
@@ -773,13 +771,15 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	let rangeIndex = types.indexOf("Ranged");
 	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
 	{
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false)
+		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || (Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false))
 			{
+				warn('melee')
 				types.splice(rangeIndex, 1);
 			}
 
 			else
 			{
+				warn('ranged')
 				types.splice(rangeIndex, -1);
 			}
 	}

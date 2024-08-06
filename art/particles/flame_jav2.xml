@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<particles>
+
+    <texture>art/textures/particles/flame2.png</texture>
+    <blend mode="add"/>
+
+    <constant name="emissionrate" value="200.0"/>
+    <uniform name="lifetime" min="0.01" max="0.05"/>
+
+    <uniform name="size" min="0.5" max="0.9"/>
+
+    <uniform name="color.r" min="0.8" max="1.0"/>
+    <copy name="color.g" from="color.r"/>
+    <copy name="color.b" from="color.r"/>
+
+</particles>

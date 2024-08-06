@@ -687,6 +687,12 @@ GuiInterface.prototype.IsTechnologyResearched = function(player, data)
 	return cmpTechnologyManager.IsTechnologyResearched(data.tech);
 };
 
+GuiInterface.prototype.AreRequirementsMet = function(player, data)
+{
+	return !data.requirements || RequirementsHelper.AreRequirementsMet(data.requirements,
+		data.player !== undefined ? data.player : player);
+};
+
 /**
  * Checks whether the requirements for this technology have been met.
  */
@@ -2144,6 +2150,7 @@ let exposedFunctions = {
 	"GetAverageRangeForBuildings": 1,
 	"GetTemplateData": 1,
 	"IsTechnologyResearched": 1,
+	"AreRequirementsMet": 1,
 	"CheckTechnologyRequirements": 1,
 	"GetStartedResearch": 1,
 	"GetBattleState": 1,

@@ -15,7 +15,8 @@
 			"Title": "Contributors",
 			"List": [
 				{ "nick": "Langbart - grapejuice map filter, bug fix" },
-				{ "nick": "Stan - champion rank icon" }
+				{ "nick": "Stan - champion rank icon" },
+				{ "nick": "BB - for the arcing projectile trajectories code" }
 			]
 		}
 	]

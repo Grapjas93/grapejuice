@@ -13,6 +13,7 @@
       </Damage>
       <MaxRange>30</MaxRange>
       <Projectile>
+        <Gravity>160</Gravity>
         <Speed>70</Speed>
         <Spread>1.5</Spread>
       </Projectile>

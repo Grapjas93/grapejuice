@@ -5,7 +5,7 @@
   </Health>
   <Attack>
     <Melee>
-      <AttackName>Bow</AttackName>
+      <AttackName>Sword</AttackName>
       <Energy>100</Energy>
     </Melee>
   </Attack>
