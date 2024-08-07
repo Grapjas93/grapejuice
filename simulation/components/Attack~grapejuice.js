@@ -219,12 +219,6 @@ Attack.prototype.Init = function()
 		this.maxAmmo = +this.template["Ranged"].Ammo;
 	}
 
-	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
-	{
-		this.ammo = +this.template["Melee"].Ammo;
-		this.maxAmmo = +this.template["Melee"].Ammo;
-	}
-
 	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
 	{
 		this.energy = this.template["Melee"].Energy;
@@ -639,10 +633,10 @@ Attack.prototype.PerformAttack = function(type, target)
 		let maxRange = range.max + spread;
 		let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
 		let speed = +this.template[type].Projectile.Speed;
-		let gravArcMult = +this.template[type].Projectile.GravArcMult || 1;
+		let GravArcMult = +this.template[type].Projectile.GravArcMult || 1;
 		let gravity = +this.template[type].Projectile.Gravity * (maxRange / distance);
 		// Compute the horizontal speed for a given gravity and assuming initial angle of pi/4 for maximum range.
-		let horizSpeed = maxRange * Math.sqrt(gravity / ((2 * gravArcMult) * Math.max(maxRange  + targetPosition.y - selfPosition.y, 1)));
+		let horizSpeed = maxRange * Math.sqrt(gravity / ((2 * GravArcMult) * Math.max(maxRange  + targetPosition.y - selfPosition.y, 1)));
 
 		// We will try to estimate the position of the target, where we can hit it.
 		// We first estimate the time-till-hit by extrapolating linearly the movement
