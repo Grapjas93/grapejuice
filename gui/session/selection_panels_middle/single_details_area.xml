@@ -90,7 +90,7 @@
 				<object size="0 0 50% 12" name="ammoLabel" type="text" style="StatsTextLeft" ghost="true">
 					<translatableAttribute id="tooltip">Ammo</translatableAttribute>
 				</object>
-				<object size="0 0 50% 12" name="ammoStats" type="text" style="StatsTextLeft" ghost="true"/>
+				<object size="-5 0 55% 12" name="ammoStats" type="text" style="StatsTextLeft" ghost="true"/>
 
 				<object size="1 14 48% 21" name="ammo" type="image" tooltip_style="sessionToolTip">
 					<object type="image" sprite="barBorder" ghost="true" name="ammoBorder" size="0 0 100% 8"/>
