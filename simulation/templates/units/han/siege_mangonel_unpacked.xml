@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/han/siege_mangonel_packed">
+  <Attack>
+    <Ranged>
+      <Projectile>
+        <LaunchPoint y="5"/>
+      </Projectile>
+    </Ranged>
+  </Attack>
+  <Footprint replace="">
+    <Square width="8.0" depth="19.0"/>
+    <Height>8.0</Height>
+  </Footprint>
+  <Identity>
+    <Icon>units/han/siege_mangonel.png</Icon>
+  </Identity>
+  <Pack>
+    <Entity>units/han/siege_mangonel_packed</Entity>
+    <State>unpacked</State>
+  </Pack>
+  <UnitMotion>
+    <WalkSpeed>0.001</WalkSpeed>
+  </UnitMotion>
+  <VisualActor>
+    <Actor>units/han/siege_mangonel.xml</Actor>
+  </VisualActor>
+</Entity>

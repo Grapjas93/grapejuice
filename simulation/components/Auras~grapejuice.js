@@ -10,28 +10,6 @@ Auras.prototype.ApplyAura = function(name, ents)
 	if (!this[name].isApplied)
 		return;
 
-	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
-	{
-		let length = ents.length;
-		for (let i = 0; i < length; i++)
-		{
-			let entity = ents.pop();
-			let entPlayer = Helpers.GetOwner(entity);
-			let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
-			// If player has no forge, entities will not re-arm
-			if(hasForge.length >= 1)
-			{
-				let cmpAttack = Engine.QueryInterface(entity, IID_Attack);
-				if (cmpAttack != null){
-					cmpAttack.ReArmAura();
-				}
-			}
-			else
-			return 0;
-		}
-	}
-
 	// update status bars if this has an icon
 	if (this.GetOverlayIcon(name))
 		for (let ent of validEnts)
@@ -45,6 +23,25 @@ Auras.prototype.ApplyAura = function(name, ents)
 	// so stop after icons have been applied.
 	if (this.IsGlobalAura(name))
 		return;
+
+	// re-arm aura
+	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
+	{
+		let entPlayer = Helpers.GetOwner(this.entity);
+		// If player has no forge, entities will not re-arm
+		let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
+		for (let ent of validEnts)
+		{
+			let cmpAttack = Engine.QueryInterface(ent, IID_Attack);
+			if(hasForge.length >= 1)
+			{
+				let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+				cmpAttack.ammoReffilTimer = cmpTimer.SetInterval(ent, IID_Attack, "SetAmmo", cmpAttack.refillTime, cmpAttack.refillTime, this.entity);
+			}
+			else
+				return 0;
+		}
+	}
 
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 
@@ -83,6 +80,11 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 	if (this.IsGlobalAura(name))
 		return;
 
+	// re-arm aura
+	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
+		for (let ent of validEnts)
+			Engine.QueryInterface(ent, IID_Attack).StopReArming();
+
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 
 	let derivedModifiers = DeriveModificationsFromTech({
@@ -95,18 +97,6 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 		for (let modifierPath in derivedModifiers)
 			cmpModifiersManager.RemoveModifier(modifierPath, modifName, ent);
 
-	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
-	{
-		let length = ents.length;
-		for (let i = 0; i < length; i++) {
-			let entity = ents.pop();
-			let cmpAttack = Engine.QueryInterface(entity, IID_Attack);
-			if (cmpAttack != null){
-				cmpAttack.ReArmAura();
-			}
-		}
-	}
 };
 
 Engine.ReRegisterComponentType(IID_Auras, "Auras", Auras);

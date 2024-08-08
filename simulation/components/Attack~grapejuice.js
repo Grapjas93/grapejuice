@@ -90,6 +90,7 @@ Attack.prototype.Schema =
 				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
 				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
 				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillCostMult'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
 					"<optional>" +
 						"<attribute name='context'>" +
@@ -207,16 +208,25 @@ Attack.prototype.Init = function()
 	this.CanRechargeEnergyTimer = undefined;
 	this.RechargeEnergyTimer = undefined;
 
-	this.ammo = 0;
+	this.ammo = undefined;
 	this.maxAmmo = 0;
 	this.refillTime = 3000;
 	this.refillAmount = 0;
 	this.ammoReffilTimer = undefined;
+	this.refillCostMult = undefined;
 
 	if (!!this.template["Ranged"] && !!this.template["Ranged"].Ammo)
 	{
 		this.ammo = +this.template["Ranged"].Ammo;
 		this.maxAmmo = +this.template["Ranged"].Ammo;
+		this.refillCostMult = +this.template["Ranged"].RefillCostMult || 1;
+	}
+
+	// for ammo carts but i honestly should just make an ammo component and clean this up nicely
+	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
+	{
+		this.ammo = +this.template["Melee"].Ammo;
+		this.maxAmmo = +this.template["Melee"].Ammo;
 	}
 
 	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
@@ -306,13 +316,13 @@ Attack.prototype.Charge = function(target)
 		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
 		{
 			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-			let multiplier = 1 + cmpGarrisonHolder.OccupiedSlots() / 10;
+			let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
 
 			this.energy = this.energy - 5;
 			cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
-			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
+			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
+			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
 			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
 			}, this.entity);
@@ -450,8 +460,6 @@ Attack.prototype.AutoRefill = function()
 // grapejuice, called by ReArmAura()
 Attack.prototype.SetAmmo = function(ammoGiver)
 {
-	let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
-	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
 
 	// if the entity is the ammoGiver, don't reload and stop the timer
 	if (ammoGiver == this.entity)
@@ -460,10 +468,12 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 		return;
 	}
 
+	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
+
 	// if the entity reloads from ammoGiver, draw ammo from ammoGiver ammo pool
 	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
 	{
-		let ammoNeeded = this.maxAmmo - this.ammo;
+		let ammoNeeded = (this.maxAmmo - this.ammo)*this.refillCostMult;
 
 		// if the ammoGiver has no ammo, stop timer
 		if (cmpAmmoGiver.ammo == 0)
@@ -501,53 +511,6 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	this.RefreshStatusbars(this.entity);
 }
 
-// grapejuice, called by ReArmAura() and the Auras component
-Attack.prototype.CheckIsInAuraRange = function()
-{
-	let entityOwner = Helpers.GetOwner(this.entity);
-	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal Supply");
-	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Fortress ArmyCamp Colony");
-	let length = range30.length;
-
-	for (let i = 0; i < length; i++)
-	{
-		let pop = range30.pop();
-		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
-		if (distance < 30)
-		{
-			return pop;
-		}
-	}
-	length = range60.length;
-	for (let i = 0; i < length; i++)
-	{
-		let pop = range60.pop();
-		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
-		if (distance < 60)
-		{
-			return pop;
-		}
-	}
-	return false;
-};
-
-// grapejuice, called by PerformAttack()
-Attack.prototype.ReArmAura = function()
-{
-	if (this.CheckIsInAuraRange() == false || this.ammo == this.maxAmmo)
-	{
-		this.StopReArming();
-		return;
-	}
-
-	else
-	{
-		let ammoGiver = this.CheckIsInAuraRange();
-		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-		cmpTimer.SetTimeout(this.entity, IID_Attack, "SetAmmo", this.refillTime, ammoGiver);
-		return;
-	}
-}
 
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
 Attack.prototype.CheckTargetIsInMeleeRange = function(target)
@@ -607,7 +570,6 @@ Attack.prototype.PerformAttack = function(type, target)
 				cmpUnitAI.RespondToTargetedEntities([target]);
 			}
 		}
-		this.ReArmAura();
 	}
 
 	// grapejuice
@@ -769,7 +731,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 
 	// grapejuice
 	let rangeIndex = types.indexOf("Ranged");
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && this.ammo != 0 && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && this.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
 		return "Ranged";
 	else
 	{
@@ -799,18 +761,8 @@ Attack.prototype.GetPreference = function(target)
 		{
 			if (MatchesClassList(targetClasses, preferredClasses[pref]))
 			{
-				// grapejuice
 				if (pref === 0)
-				{
-					if (Helpers.EntityMatchesClassList(this.entity, "Structure Siege") == true)
-					{
-						return minPref;
-					}
-
-					let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-					cmpUnitAI.RespondToTargetedEntities([target]);
 					return pref;
-				}
 				if ((minPref === undefined || minPref > pref))
 					minPref = pref;
 			}

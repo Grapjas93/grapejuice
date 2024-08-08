@@ -14,6 +14,7 @@
       <Ammo>20</Ammo>
       <RefillAmount>0</RefillAmount>
       <RefillTime>0</RefillTime>
+      <RefillCostMult>10</RefillCostMult>
       <AttackName>Stone</AttackName>
       <Damage>
         <Crush>210</Crush>

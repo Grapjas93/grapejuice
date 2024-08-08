@@ -11,8 +11,8 @@
   </GarrisonHolder>
   <Identity>
     <GenericName>Military Structure</GenericName>
-    <Classes datatype="tokens">ConquestCritical</Classes>
-    <VisibleClasses datatype="tokens">Military</VisibleClasses>
+    <Classes datatype="tokens">ConquestCritical AmmoSupply</Classes>
+    <VisibleClasses datatype="tokens">Military AmmoSupply</VisibleClasses>
   </Identity>
   <Resistance>
     <Entity>

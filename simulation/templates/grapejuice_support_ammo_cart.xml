@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit">
   <Auras datatype="tokens">
-    structures/refill_ammo_30range
+    units/mobile_rearm
   </Auras>
    <Attack>
-       <Melee>
+    <Melee>
       <Ammo>300</Ammo>
-	  <RefillAmount>0</RefillAmount>
-	  <RefillTime>3000</RefillTime>
-          <AttackName> Spear </AttackName>
-           <PrepareTime> 925 </PrepareTime>
-           <RepeatTime> 1075 </RepeatTime>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>3000</RefillTime>
+      <AttackName> Spear </AttackName>
+      <PrepareTime> 925 </PrepareTime>
+      <RepeatTime> 1075 </RepeatTime>
       <Damage>
         <Hack>1</Hack>
         <Pierce>4.5</Pierce>
       </Damage>
       <MaxRange>4</MaxRange>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
-       </Melee>
+   </Melee>
    </Attack>
    <UnitMotion>
        <WalkSpeed> 9 </WalkSpeed>
@@ -44,10 +44,10 @@
     <Max>180</Max>
   </Health>
   <Identity>
-    <Classes datatype="tokens">-ConquestCritical Supply Support Ammo</Classes>
-    <VisibleClasses datatype="tokens">Supply Support Organic Ammo</VisibleClasses>
+    <Classes datatype="tokens">-ConquestCritical Supply Support AmmoSupply</Classes>
+    <VisibleClasses datatype="tokens">Supply Support Organic AmmoSupply</VisibleClasses>
     <GenericName>Ammo Cart</GenericName>
-    <Tooltip>A mobile resupply point for units that require ammo.</Tooltip>
+    <Tooltip>A mobile resupply point for units that require ammo. Cannot be re-supplied by mobile re-arm auras.</Tooltip>
     <Formations disable=""/>
     <Icon>units/ammo_cart.png</Icon>
   </Identity>

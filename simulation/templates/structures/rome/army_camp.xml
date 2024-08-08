@@ -28,7 +28,7 @@
     </Ranged>
   </Attack>
   <Auras datatype="tokens">
-    structures/refill_ammo_60range
+    units/mobile_rearm
   </Auras>
   <BuildRestrictions>
     <Territory>neutral enemy</Territory>
@@ -78,8 +78,9 @@
     <GenericName>Army Camp</GenericName>
     <SpecificName>Castra</SpecificName>
     <Tooltip>Build in neutral or enemy territory. Train Advanced Melee Infantry. Construct Rams. Garrison Soldiers for additional arrows.</Tooltip>
-    <Classes datatype="tokens">ConquestCritical CivSpecific</Classes>
-    <VisibleClasses datatype="tokens">City ArmyCamp</VisibleClasses>
+    <Classes datatype="tokens">ConquestCritical CivSpecific AmmoSupply</Classes>
+    <Tooltip>Cannot be re-supplied by mobile re-arm auras.</Tooltip>
+    <VisibleClasses datatype="tokens">City ArmyCamp AmmoSupply</VisibleClasses>
     <Icon>structures/roman_camp.png</Icon>
     <RequiredTechnology>phase_city</RequiredTechnology>
   </Identity>
