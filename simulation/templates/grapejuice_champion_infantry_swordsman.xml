@@ -21,7 +21,6 @@
 		</Damage>
 		<MaxRange>25</MaxRange>
 		<Projectile>
-			<Speed>70</Speed>
 			<Spread>1.5</Spread>
 			<Gravity>35</Gravity>
 			<FriendlyFire>false</FriendlyFire>

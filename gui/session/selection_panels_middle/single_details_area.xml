@@ -59,9 +59,6 @@
 
 			<!-- Energy bar -->
 			<object name="energySection">
-				<object size="0 0 50% 12" name="energyLabel" type="text" style="StatsTextRight" ghost="true">
-					<translatableAttribute id="tooltip">Energy</translatableAttribute>
-				</object>
 				<object size="0 0 100% 12" name="energyStats" type="text" style="StatsTextRight" ghost="true"/>
 
 				<object size="124 14 50% 21" name="energy" type="image" tooltip_style="sessionToolTip">
@@ -87,9 +84,6 @@
 
 			<!-- Ammo bar -->
 			<object name="ammoSection">
-				<object size="0 0 50% 12" name="ammoLabel" type="text" style="StatsTextLeft" ghost="true">
-					<translatableAttribute id="tooltip">Ammo</translatableAttribute>
-				</object>
 				<object size="-5 0 55% 12" name="ammoStats" type="text" style="StatsTextLeft" ghost="true"/>
 
 				<object size="1 14 48% 21" name="ammo" type="image" tooltip_style="sessionToolTip">

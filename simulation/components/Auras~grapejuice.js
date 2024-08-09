@@ -33,7 +33,7 @@ Auras.prototype.ApplyAura = function(name, ents)
 		for (let ent of validEnts)
 		{
 			let cmpAttack = Engine.QueryInterface(ent, IID_Attack);
-			if(hasForge.length >= 1)
+			if(hasForge.length >= 1 && cmpAttack)
 			{
 				let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 				cmpAttack.ammoReffilTimer = cmpTimer.SetInterval(ent, IID_Attack, "SetAmmo", cmpAttack.refillTime, cmpAttack.refillTime, this.entity);

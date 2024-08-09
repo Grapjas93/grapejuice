@@ -13,10 +13,16 @@
       <Projectile>
         <Gravity>160</Gravity>
         <GravArcMult>0.5</GravArcMult>
-        <Speed>120</Speed>
         <Spread>4</Spread>
       </Projectile>
     </Ranged>
+    <Melee>
+      <Energy>100</Energy>
+      <Damage>
+        <Crush>7</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+    </Melee>
   </Attack>
   <Resistance>
     <Entity>

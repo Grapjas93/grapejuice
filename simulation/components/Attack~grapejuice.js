@@ -53,7 +53,6 @@ Attack.prototype.Schema =
 			"<Projectile>" +
 				"<Gravity>50.0</Gravity>" +
 				"<GravArcMult>0.5</GravArcMult>" +
-				"<Speed>50.0</Speed>" +
 				"<Spread>2.5</Spread>" +
 				"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
 				"<ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>" +
@@ -152,9 +151,11 @@ Attack.prototype.Schema =
 				"<optional>" +
 					"<element name='Projectile'>" +
 						"<interleave>" +
-							"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
-								"<ref name='positiveDecimal'/>" +
-							"</element>" +
+							"<optional>" +
+								"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
+									"<ref name='positiveDecimal'/>" +
+								"</element>" +
+							"</optional>" +
 							"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
 							"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
 								"<ref name='nonNegativeDecimal'/>" +
@@ -457,20 +458,12 @@ Attack.prototype.AutoRefill = function()
 
 };
 
-// grapejuice, called by ReArmAura()
+// grapejuice, called by Auras)
 Attack.prototype.SetAmmo = function(ammoGiver)
 {
-
-	// if the entity is the ammoGiver, don't reload and stop the timer
-	if (ammoGiver == this.entity)
-	{
-		this.StopReArming();
-		return;
-	}
-
 	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
 
-	// if the entity reloads from ammoGiver, draw ammo from ammoGiver ammo pool
+	// if the entity reloads from ammoGiver with ammo, draw ammo from ammoGiver ammo pool
 	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
 	{
 		let ammoNeeded = (this.maxAmmo - this.ammo)*this.refillCostMult;
@@ -594,7 +587,6 @@ Attack.prototype.PerformAttack = function(type, target)
 		let range = this.GetRange(type);
 		let maxRange = range.max + spread;
 		let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
-		let speed = +this.template[type].Projectile.Speed;
 		let GravArcMult = +this.template[type].Projectile.GravArcMult || 1;
 		let gravity = +this.template[type].Projectile.Gravity * (maxRange / distance);
 		// Compute the horizontal speed for a given gravity and assuming initial angle of pi/4 for maximum range.
@@ -740,6 +732,9 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 		this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
 		return "Melee";
 	}
+
+	return undefined;
+
 };
 
 /**

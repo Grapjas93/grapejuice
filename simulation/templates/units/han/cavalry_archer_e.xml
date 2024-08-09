@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/han/cavalry_archer_a">
+  <UnitMotion>
+       <WalkSpeed> 16.15 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1900 </PrepareTime>
+           <RepeatTime> 2050 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1300 </PrepareTime>
+           <RepeatTime> 1450 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
   <Identity>
     <Rank>Elite</Rank>
   </Identity>

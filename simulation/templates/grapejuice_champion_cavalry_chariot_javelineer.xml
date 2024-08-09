@@ -28,7 +28,6 @@
       </Damage>
       <MaxRange>30</MaxRange>
       <Projectile>
-        <Speed>70</Speed>
         <Spread>2.5</Spread>
       </Projectile>
     </Ranged>

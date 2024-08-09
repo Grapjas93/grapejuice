@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_infantry_crossbowman">
+<Entity parent="template_unit_cavalry_ranged_crossbowman">
   <Attack>
     <Ranged>
+      <AttackName>Crossbow</AttackName>
       <Ammo>30</Ammo>
       <RefillAmount>0</RefillAmount>
       <RefillTime>0</RefillTime>
-      <AttackName>Crossbow</AttackName>
       <Damage>
-        <Pierce>40</Pierce>
+        <Pierce>35</Pierce>
       </Damage>
-      <MaxRange>60</MaxRange>
+      <MaxRange>50</MaxRange>
+      <PrepareTime>600</PrepareTime>
+      <RepeatTime>3500</RepeatTime>
       <Projectile>
         <Gravity>160</Gravity>
         <GravArcMult>0.5</GravArcMult>
@@ -17,9 +19,10 @@
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="5"/>
       </Projectile>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Ranged>
     <Melee>
-      <Energy>100</Energy>
+      <Energy>150</Energy>
       <Damage>
         <Crush>14</Crush>
       </Damage>
@@ -29,12 +32,4 @@
   <Identity>
     <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
   </Identity>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">-2</Hack>
-        <Pierce op="add">-2</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
 </Entity>

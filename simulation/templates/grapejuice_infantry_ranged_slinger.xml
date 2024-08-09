@@ -14,7 +14,6 @@
       <Projectile>
         <Gravity>180</Gravity>
         <GravArcMult>0.3</GravArcMult>
-        <Speed>90</Speed>
         <Spread>2.5</Spread>
       </Projectile>
     </Ranged>

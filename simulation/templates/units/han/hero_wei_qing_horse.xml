@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice_hero_cavalry_crossbowman">
+  <Attack>
+       <Melee>
+           <AttackName> Mace </AttackName>
+           <PrepareTime> 1200 </PrepareTime>
+           <RepeatTime> 1350 </RepeatTime>
+       </Melee>
+   </Attack>
+    <UnitMotion>
+       <WalkSpeed> 15.6 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Auras datatype="tokens">
+    units/heroes/han_hero_wei_qing_1
+    units/heroes/han_hero_wei_qing_2
+  </Auras>
+  <Identity>
+    <Civ>han</Civ>
+    <SpecificName>Wèi Qīng</SpecificName>
+    <Icon>units/han/hero_wei_qing.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/han/hero_cavalry_crossbowman_wei_qing_m.xml</Actor>
+  </VisualActor>
+</Entity>

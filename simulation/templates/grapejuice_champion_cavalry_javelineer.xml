@@ -13,7 +13,6 @@
       <Projectile>
         <Gravity>160</Gravity>
         <GravArcMult>0.1</GravArcMult>
-        <Speed>70</Speed>
         <Spread>2.5</Spread>
       </Projectile>
     </Ranged>

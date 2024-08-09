@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/han/infantry_crossbowman_a">
+   <UnitMotion>
+       <WalkSpeed> 10.15 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Mace </AttackName>
+           <PrepareTime> 700 </PrepareTime>
+           <RepeatTime> 850 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
   <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+  <Promotion>
+    <Entity>units/han/infantry_crossbowman_c</Entity>
+  </Promotion>
   <VisualActor>
     <Actor>units/han/infantry_crossbowman_e.xml</Actor>
   </VisualActor>
