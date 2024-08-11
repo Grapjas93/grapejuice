@@ -10,4 +10,5 @@ Changes so far:
 - walls can be built on top of tree's (tree's will be destroyed upon completion)
 - improved tooltips (added ammo and energy stats to them aswell)
 - resistance corrections
+- pikeman and spearman cav bonus fixed
 
