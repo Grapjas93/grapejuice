@@ -722,19 +722,19 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	}
 
 	// grapejuice
-	let rangeIndex = types.indexOf("Ranged");
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && this.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+	let hasRanged = !!this.template["Ranged"];
+	let hasMelee = !!this.template["Melee"];
+	if (hasRanged && this.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
 		return "Ranged";
-	else
+	else if (hasMelee)
 	{
 		this.StopCanChargeTimer();
 		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 		this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
 		return "Melee";
 	}
-
-	return undefined;
-
+	else
+		return undefined;
 };
 
 /**
