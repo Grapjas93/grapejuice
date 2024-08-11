@@ -10,8 +10,8 @@
         <Pierce>4.5</Pierce>
       </Damage>
       <MaxRange>4</MaxRange>
-       </Melee>  
-   </Attack> 
+       </Melee>
+   </Attack>
    <Resistance>
         <Entity>
             <Damage>
@@ -21,6 +21,9 @@
             </Damage>
          </Entity>
    </Resistance>
+   <Health>
+    <Max>250</Max>
+   </Health>
   <Footprint replace="">
     <Square width="6" depth="12"/>
     <Height>4</Height>
