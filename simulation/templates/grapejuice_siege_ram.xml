@@ -44,7 +44,7 @@
   </Health>
   <Identity>
     <GenericName>Battering Ram</GenericName>
-    <Tooltip>Cannot attack Fields or Organic Units.</Tooltip>
+    <Tooltip>Rams become faster, stronger, have more energy and a stronger charge attack depending on how many units are inside. Cannot attack Fields or Organic Units.</Tooltip>
     <VisibleClasses datatype="tokens">Melee Ram Charger</VisibleClasses>
   </Identity>
   <Loot>

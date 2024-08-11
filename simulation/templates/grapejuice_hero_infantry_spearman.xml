@@ -14,12 +14,4 @@
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
   </Identity>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">4</Hack>
-        <Pierce op="add">4</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
 </Entity>

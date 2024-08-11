@@ -31,12 +31,4 @@
   <Identity>
     <VisibleClasses datatype="tokens">Ammo Charger</VisibleClasses>
   </Identity>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">-2</Hack>
-        <Pierce op="add">-2</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
 </Entity>

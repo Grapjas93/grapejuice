@@ -6,6 +6,7 @@ Attack.prototype.Schema =
 	"<a:example>" +
 		"<Melee>" +
 			"<AttackName>Spear</AttackName>" +
+			"<Energy>150</Energy>" +
 			"<Damage>" +
 				"<Hack>10.0</Hack>" +
 				"<Pierce>0.0</Pierce>" +
@@ -29,6 +30,10 @@ Attack.prototype.Schema =
 		"</Melee>" +
 		"<Ranged>" +
 			"<AttackName>Bow</AttackName>" +
+			"<Ammo>30</Ammo>" +
+			"<RefillTime>3000</RefillTime>" +
+			"<RefillAmount>0</RefillAmount>" +
+			"<RefillCostMult>1</RefillCostMult>" +
 			"<Damage>" +
 				"<Hack>0.0</Hack>" +
 				"<Pierce>10.0</Pierce>" +
@@ -85,11 +90,6 @@ Attack.prototype.Schema =
 		"<element>" +
 			"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
 			"<interleave>" +
-				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillCostMult'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
 					"<optional>" +
 						"<attribute name='context'>" +
@@ -99,6 +99,11 @@ Attack.prototype.Schema =
 					"<text/>" +
 				"</element>" +
 				AttackHelper.BuildAttackEffectsSchema() +
+				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillCostMult'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
 				"<optional>" +
 					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +

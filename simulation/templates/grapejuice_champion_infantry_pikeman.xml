@@ -21,13 +21,4 @@
     <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
     <VisibleClasses datatype="tokens">Melee Pikeman Charger</VisibleClasses>
   </Identity>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Hack op="add">8</Hack>
-        <Pierce op="add">8</Pierce>
-        <Crush>20</Crush>
-      </Damage>
-    </Entity>
-  </Resistance>
 </Entity>

@@ -455,6 +455,28 @@ function attackEffectsDetails(attackTypeTemplate)
 	return effects.filter(effect => effect).join(commaFont(translate(", ")));
 }
 
+function GetEnergyDetails(attackTypeTemplate)
+{
+	if (!attackTypeTemplate)
+		return "";
+
+	return sprintf("%(energyAmount)s", {
+		"energyAmount": headerFont("Energy: ") + attackTypeTemplate.energy + ", ",
+	});
+}
+
+
+function GetAmmoDetails(attackTypeTemplate)
+{
+	if (!attackTypeTemplate)
+		return "";
+
+	return sprintf("%(ammoAmount)s %(RefillCostMult)s", {
+		"ammoAmount": headerFont("Ammo: ") + attackTypeTemplate.ammo,
+		"RefillCostMult": attackTypeTemplate.refillCostMult != 0 ? ", " + headerFont("Refill Cost Multiplier: ") + attackTypeTemplate.refillCostMult : ""
+	});
+}
+
 function getAttackTooltip(template)
 {
 	if (!template.attack)
@@ -487,13 +509,15 @@ function getAttackTooltip(template)
 				statusEffectsDetails.push("\n" + g_Indent + g_Indent + getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
 		statusEffectsDetails = statusEffectsDetails.join("");
 
-		tooltips.push(sprintf(translate("%(attackLabel)s: %(effects)s, %(range)s, %(rate)s%(statusEffects)s%(splash)s"), {
+		tooltips.push(sprintf(translate("%(attackLabel)s: %(effects)s, %(range)s, %(rate)s%(statusEffects)s%(splash)s %(energy)s %(ammo)s"), {
 			"attackLabel": attackLabel,
 			"effects": attackEffectsDetails(attackTypeTemplate),
 			"range": rangeDetails(attackTypeTemplate),
 			"rate": attackRateDetails(attackTypeTemplate.repeatTime, projectiles),
 			"splash": splashTemplate ? "\n" + g_Indent + g_Indent + splashDetails(splashTemplate) : "",
-			"statusEffects": statusEffectsDetails
+			"statusEffects": statusEffectsDetails,
+			"energy": attackType == "Melee" ? GetEnergyDetails(attackTypeTemplate) : "",
+			"ammo": attackType == "Ranged" ? GetAmmoDetails(attackTypeTemplate) : ""
 		}));
 	}
 

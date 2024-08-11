@@ -10,11 +10,4 @@
       <MaxRange>4</MaxRange>
     </Melee>
   </Attack>
-  <Resistance>
-    <Entity>
-      <Damage>
-        <Pierce op="add">2</Pierce>
-      </Damage>
-    </Entity>
-  </Resistance>
 </Entity>

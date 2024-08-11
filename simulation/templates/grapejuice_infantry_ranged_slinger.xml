@@ -35,4 +35,7 @@
       </Damage>
     </Entity>
   </Resistance>
+  <Identity>
+    <Tooltip>Slingers slowly regain ammo over time.</Tooltip>
+  </Identity>
 </Entity>
