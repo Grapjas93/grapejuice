@@ -25,7 +25,7 @@ Auras.prototype.ApplyAura = function(name, ents)
 		return;
 
 	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
+	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range")
 	{
 		let entPlayer = Helpers.GetOwner(this.entity);
 		// If player has no forge, entities will not re-arm
