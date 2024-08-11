@@ -81,7 +81,7 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 		return;
 
 	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
+	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range")
 	{
 		for (let ent of validEnts)
 		{
