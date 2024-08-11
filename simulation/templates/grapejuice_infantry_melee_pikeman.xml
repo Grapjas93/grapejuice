@@ -8,6 +8,12 @@
         <Pierce>3</Pierce>
       </Damage>
       <MaxRange>8</MaxRange>
+      <Bonuses replace="">
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
     </Melee>
   </Attack>
   <Resistance replace="">
@@ -18,4 +24,7 @@
       </Damage>
     </Entity>
   </Resistance>
+  <Identity>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
+  </Identity>
 </Entity>

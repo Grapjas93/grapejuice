@@ -8,6 +8,7 @@
         <Pierce>4.5</Pierce>
       </Damage>
       <MaxRange>4</MaxRange>
+      <Bonuses replace=""></Bonuses>
     </Melee>
   </Attack>
   <Resistance replace="">
@@ -18,4 +19,7 @@
       </Damage>
     </Entity>
   </Resistance>
+  <Identity>
+    <Tooltip replace=""></Tooltip>
+  </Identity>
 </Entity>

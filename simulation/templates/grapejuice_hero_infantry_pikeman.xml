@@ -8,9 +8,16 @@
         <Pierce>10</Pierce>
       </Damage>
       <MaxRange>8</MaxRange>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
     </Melee>
   </Attack>
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
   </Identity>
 </Entity>

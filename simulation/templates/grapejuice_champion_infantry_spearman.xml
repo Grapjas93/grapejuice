@@ -9,9 +9,11 @@
         <Pierce>9</Pierce>
       </Damage>
       <MaxRange>4</MaxRange>
+      <Bonuses replace=""></Bonuses>
     </Melee>
   </Attack>
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+    <Tooltip replace=""></Tooltip>
   </Identity>
 </Entity>
