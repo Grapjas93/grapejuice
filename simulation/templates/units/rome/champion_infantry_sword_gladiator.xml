@@ -30,7 +30,7 @@
 		  <PreferredClasses datatype="tokens">Human</PreferredClasses>
        </Ranged>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 3 </Crush>

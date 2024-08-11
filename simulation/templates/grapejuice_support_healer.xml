@@ -45,7 +45,7 @@
   <Promotion>
     <RequiredXp>150</RequiredXp>
   </Promotion>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 0 </Crush>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_dog">
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 0 </Crush>

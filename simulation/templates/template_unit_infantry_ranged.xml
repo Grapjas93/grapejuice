@@ -13,7 +13,7 @@
     <VisibleClasses datatype="tokens">Ranged Ammo Charger</VisibleClasses>
     <GenericName>Ranged</GenericName>
   </Identity>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>1</Hack>

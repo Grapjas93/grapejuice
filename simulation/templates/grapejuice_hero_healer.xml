@@ -17,7 +17,7 @@
   <Position>
     <Anchor>upright</Anchor>
   </Position>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>4</Hack>

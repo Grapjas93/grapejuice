@@ -3,15 +3,15 @@
    <UnitMotion>
        <WalkSpeed> 16.2 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 1050 </PrepareTime>
            <RepeatTime> 1200 </RepeatTime>
-       </Melee> 
-   </Attack>       
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 4 </Crush>

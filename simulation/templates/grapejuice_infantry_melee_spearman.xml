@@ -10,7 +10,7 @@
       <MaxRange>4</MaxRange>
     </Melee>
   </Attack>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>5</Hack>

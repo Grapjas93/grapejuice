@@ -11,7 +11,7 @@
            <RepeatTime> 2150 </RepeatTime>
        </Ranged>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 5 </Crush>

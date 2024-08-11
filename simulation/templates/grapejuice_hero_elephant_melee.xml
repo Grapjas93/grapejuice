@@ -14,7 +14,7 @@
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
   </Identity>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>10</Hack>

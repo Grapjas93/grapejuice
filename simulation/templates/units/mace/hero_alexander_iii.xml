@@ -3,7 +3,7 @@
    <UnitMotion>
        <WalkSpeed> 16.95 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
@@ -15,9 +15,9 @@
 			  <Multiplier>1.2</Multiplier>
 			</Herocide>
 		  </Bonuses>
-      </Melee> 
-   </Attack>       
-   <Resistance>
+      </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 4 </Crush>

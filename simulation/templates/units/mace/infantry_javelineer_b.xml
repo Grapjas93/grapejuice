@@ -16,7 +16,7 @@
            <RepeatTime> 775 </RepeatTime>
        </Melee>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 1 </Crush>

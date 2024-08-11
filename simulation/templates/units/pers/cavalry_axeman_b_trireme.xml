@@ -3,15 +3,15 @@
    <UnitMotion>
        <WalkSpeed> 17 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Axe </AttackName>
            <PrepareTime> 925 </PrepareTime>
            <RepeatTime> 1075 </RepeatTime>
-       </Melee> 
-   </Attack>       
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 7 </Crush>
@@ -19,7 +19,7 @@
                <Pierce> 3 </Pierce>
             </Damage>
          </Entity>
-   </Resistance>  
+   </Resistance>
   <Identity>
     <RequiredTechnology>equine_transports</RequiredTechnology>
   </Identity>

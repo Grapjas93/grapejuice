@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_siege_boltshooter">
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 3 </Crush>

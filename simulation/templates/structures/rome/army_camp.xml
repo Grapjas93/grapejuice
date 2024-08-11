@@ -89,7 +89,7 @@
   <Obstruction>
     <Static width="36.0" depth="36.0"/>
   </Obstruction>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>15</Hack>

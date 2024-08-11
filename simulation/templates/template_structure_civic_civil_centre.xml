@@ -107,7 +107,7 @@
       hellenistic_metropolis
     </Technologies>
   </Researcher>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack op="add">5</Hack>

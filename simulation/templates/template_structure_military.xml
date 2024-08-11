@@ -14,7 +14,7 @@
     <Classes datatype="tokens">ConquestCritical AmmoSupply</Classes>
     <VisibleClasses datatype="tokens">Military AmmoSupply</VisibleClasses>
   </Identity>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>20</Hack>

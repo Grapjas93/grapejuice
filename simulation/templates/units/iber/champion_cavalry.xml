@@ -3,7 +3,7 @@
    <UnitMotion>
        <WalkSpeed> 15.4 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Ranged>
            <AttackName> Javelin </AttackName>
@@ -19,7 +19,7 @@
 			   <Duration>9000</Duration>
 			 </Burning>
 		   </ApplyStatus>
-       </Ranged>  
+       </Ranged>
        <Melee>
 		<AttackName> Sword </AttackName>
 		<PrepareTime> 500 </PrepareTime>
@@ -31,7 +31,7 @@
       <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
     </Melee>
   </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 3 </Crush>
@@ -39,7 +39,7 @@
                <Pierce> 7 </Pierce>
             </Damage>
          </Entity>
-   </Resistance>  
+   </Resistance>
   <Identity>
     <VisibleClasses datatype="tokens">Raider</VisibleClasses>
     <Civ>iber</Civ>

@@ -3,15 +3,15 @@
    <UnitMotion>
        <WalkSpeed> 11 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Mace </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 650 </RepeatTime>
-       </Melee> 
-   </Attack>       
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 1 </Crush>

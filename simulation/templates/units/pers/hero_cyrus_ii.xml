@@ -26,7 +26,7 @@
       <time>1.0</time>
     </TechCostMultiplier>
   </Researcher>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Crush> 10 </Crush>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_siege_tower">
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 3 </Crush>
@@ -98,7 +98,7 @@
   <StatusBars>
     <HeightOffset>12.0</HeightOffset>
   </StatusBars>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Pierce>50</Pierce>

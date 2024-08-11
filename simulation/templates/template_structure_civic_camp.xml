@@ -29,7 +29,7 @@
 	garrison_heal_field_camp
     </Technologies>
   </Researcher>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>5</Hack>

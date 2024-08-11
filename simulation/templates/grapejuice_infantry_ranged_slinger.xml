@@ -27,7 +27,7 @@
       <MaxRange>3</MaxRange>
     </Melee>
   </Attack>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>1</Hack>

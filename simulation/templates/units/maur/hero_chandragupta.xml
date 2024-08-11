@@ -3,8 +3,8 @@
    <UnitMotion>
        <WalkSpeed> 11.3 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
-   <Resistance>
+   </UnitMotion>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 2 </Crush>

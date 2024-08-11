@@ -31,7 +31,7 @@
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Melee>
   </Attack>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>1</Hack>

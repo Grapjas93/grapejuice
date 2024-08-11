@@ -12,7 +12,7 @@
       <MaxRange>4</MaxRange>
        </Melee>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 4 </Crush>
