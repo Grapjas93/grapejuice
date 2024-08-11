@@ -23,7 +23,7 @@
       </RangeOverlay>
     </Ranged>
   </Attack>
-  <Auras datatype="tokens">
+  <Auras datatype="tokens" replace="">
     structures/refill_ammo_60range
   </Auras>
   <BuildRestrictions>
