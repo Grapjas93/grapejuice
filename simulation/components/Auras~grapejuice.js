@@ -82,8 +82,14 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 
 	// re-arm aura
 	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "units/mobile_rearm")
+	{
 		for (let ent of validEnts)
-			Engine.QueryInterface(ent, IID_Attack).StopReArming();
+		{
+			let cmpAttack = Engine.QueryInterface(ent, IID_Attack);
+			if (cmpAttack)
+				cmpAttack.StopReArming()
+		}
+	}
 
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 
