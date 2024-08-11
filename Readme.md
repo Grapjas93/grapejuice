@@ -7,4 +7,5 @@ Changes so far:
 - Numerous prop & animation fixes
 - Code cleanup
 - Better flaming projectiles
+- Walls can be built on top of tree's (tree's will be destroyed upon completion)
 
