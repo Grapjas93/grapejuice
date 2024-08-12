@@ -468,7 +468,7 @@ function GetEnergyDetails(attackTypeTemplate)
 
 function GetAmmoDetails(attackTypeTemplate)
 {
-	if (!attackTypeTemplate)
+	if (!attackTypeTemplate && attackTypeTemplate.ammo)
 		return "";
 
 	return sprintf("%(ammoAmount)s %(RefillCostMult)s", {
