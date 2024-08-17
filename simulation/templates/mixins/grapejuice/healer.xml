@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Auras datatype="tokens">
+    units/combat_priest_1
+    units/combat_priest_2
+  </Auras>
+  <Attack>
+    <Melee>
+      <AttackName>Mace</AttackName>
+      <Damage>
+        <Hack>2</Hack>
+        <Pierce>0</Pierce>
+        <Crush>2</Crush>
+      </Damage>
+      <MaxRange>2</MaxRange>
+      <PrepareTime>800</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+    </Melee>
+  </Attack>
+  <Builder>
+    <Rate>0.50</Rate>
+    <Entities datatype="tokens">
+      structures/{civ}/camp
+    </Entities>
+  </Builder>
+  <Heal replace=""></Heal>
+  <Health>
+    <Max>50</Max>
+  </Health>
+  <Identity>
+    <Tooltip>Treats wounded units inside buildings. Can also build field camps.</Tooltip>
+  </Identity>
+  <UnitMotion>
+      <WalkSpeed> 12 </WalkSpeed>
+      <RunMultiplier>1.50</RunMultiplier>
+  </UnitMotion>
+</Entity>

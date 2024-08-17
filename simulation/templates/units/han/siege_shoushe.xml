@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_siege_boltshooter">
+<Entity parent="grapejuice/siege_boltshooter|template_unit_siege_boltshooter">
   <Footprint replace="">
     <Square depth="8.0" width="5.0"/>
     <Height>5.0</Height>

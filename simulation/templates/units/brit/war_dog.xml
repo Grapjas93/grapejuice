@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_dog">
+<Entity parent="grapejuice/wardog|template_unit_dog">
   <Identity>
     <Civ>brit</Civ>
     <SpecificName>Agrocuna</SpecificName>

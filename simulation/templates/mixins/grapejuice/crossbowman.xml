@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Attack>
+    <Ranged>
+      <AttackName>Crossbow</AttackName>
+      <Ammo>30</Ammo>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
+      <Damage>
+        <Pierce>35</Pierce>
+      </Damage>
+      <MaxRange>60</MaxRange>
+      <Projectile>
+        <Gravity>160</Gravity>
+        <GravArcMult>0.5</GravArcMult>
+        <Spread>4</Spread>
+      </Projectile>
+    </Ranged>
+    <Melee>
+      <AttackName>Mace</AttackName>
+      <Energy>100</Energy>
+      <Damage>
+        <Crush>7</Crush>
+      </Damage>
+      <MaxRange>3</MaxRange>
+    </Melee>
+  </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ranged Ammo Charger</VisibleClasses>
+  </Identity>
+</Entity>

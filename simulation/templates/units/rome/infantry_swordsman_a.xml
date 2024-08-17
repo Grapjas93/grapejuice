@@ -10,11 +10,6 @@
            <PrepareTime> 925 </PrepareTime>
            <RepeatTime> 1075 </RepeatTime>
        </Melee>
-       <Ranged>
-           <AttackName> Javelin </AttackName>
-           <PrepareTime> 500 </PrepareTime>
-           <RepeatTime> 2375 </RepeatTime>
-       </Ranged>
    </Attack>
    <Resistance replace="">
         <Entity>

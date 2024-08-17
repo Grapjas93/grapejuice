@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="units/rome/infantry_swordsman_a">
+<Entity parent="grapejuice/swordsman_jav|units/rome/infantry_swordsman_a">
    <UnitMotion>
        <WalkSpeed> 8.7 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
