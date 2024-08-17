@@ -3,9 +3,16 @@
   <Attack>
     <Melee>
       <Energy> 100 </Energy>
+      <Damage>
+        <Hack> 2 </Hack>
+        <Pierce> 3 </Pierce>
+        <Crush> 0 </Crush>
+      </Damage>
+      <Bonuses replace=""></Bonuses>
     </Melee>
   </Attack>
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+    <Tooltip replace=""></Tooltip>
   </Identity>
 </Entity>

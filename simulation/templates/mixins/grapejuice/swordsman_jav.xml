@@ -28,4 +28,7 @@
       </Projectile>
     </Ranged>
   </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
 </Entity>

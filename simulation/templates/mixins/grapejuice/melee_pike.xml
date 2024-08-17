@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Attack>
+    <Melee>
+      <Energy> 100 </Energy>
+      <Damage>
+        <Hack> 0 </Hack>
+        <Pierce> 6 </Pierce>
+        <Crush> 0 </Crush>
+      </Damage>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>5.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
+    </Melee>
+  </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+    <Tooltip>Counters: 5x against cavalry.</Tooltip>
+  </Identity>
+</Entity>

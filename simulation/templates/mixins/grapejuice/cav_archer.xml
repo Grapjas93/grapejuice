@@ -17,6 +17,7 @@
     </Ranged>
     <Melee>
       <AttackName>Sword</AttackName>
+      <Energy>150</Energy>
       <Damage>
         <Hack>6.5</Hack>
         <Pierce>0</Pierce>

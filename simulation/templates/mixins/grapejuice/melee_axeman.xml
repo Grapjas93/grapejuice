@@ -3,6 +3,11 @@
   <Attack>
     <Melee>
       <Energy> 100 </Energy>
+      <Damage>
+        <Hack> 0 </Hack>
+        <Pierce> 6 </Pierce>
+        <Crush> 2 </Crush>
+      </Damage>
     </Melee>
   </Attack>
   <Identity>
