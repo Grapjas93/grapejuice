@@ -1,0 +1,7 @@
+{
+	"applierTooltip": "This unit causes bleed damage.",
+	"code": "Bleeding",
+	"icon": "bleeding",
+	"statusName": "Bleeding",
+	"receiverTooltip": "This unit is bleeding."
+}

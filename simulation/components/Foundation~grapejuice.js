@@ -19,7 +19,7 @@ Foundation.prototype.Init = function()
 
 Foundation.prototype.IsFinished = function()
 {
-	if (this.GetBuildProgress() == 1.0)
+	if (this.GetBuildProgress() == 1.0 && this.entsToDestroy)
 		for (let ent of this.entsToDestroy)
 			Engine.DestroyEntity(ent);
 

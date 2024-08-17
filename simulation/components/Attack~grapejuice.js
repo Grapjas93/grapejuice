@@ -326,21 +326,21 @@ Attack.prototype.Charge = function(target)
 
 			this.energy = this.energy - 5;
 			cmpModifiersManager.AddModifiers("ChargeAttack", {
-			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
-			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
-			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
-			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
+				"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
+				"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
+				"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
+				"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
+				"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
 			}, this.entity);
 			return;
 		}
 
 		this.energy = this.energy - 5;
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
-		"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
-		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
-		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
+			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
+			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
+			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
+			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
 
 		cmpUnitAI.SetSpeedMultiplier(cmpUnitAI.GetRunMultiplier());
