@@ -33,7 +33,4 @@
       <RestrictedClasses datatype="tokens">!Domestic</RestrictedClasses>
     </Slaughter>
   </Attack>
-  <Health>
-    <Max>50</Max>
-  </Health>
 </Entity>

@@ -23,10 +23,6 @@
       structures/{civ}/camp
     </Entities>
   </Builder>
-  <Heal replace=""></Heal>
-  <Health>
-    <Max>50</Max>
-  </Health>
   <Identity>
     <Tooltip>Treats wounded units inside buildings. Can also build field camps.</Tooltip>
   </Identity>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/swordsman_jav|units/rome/champion_infantry_swordsman">
+<Entity parent="grapejuice/hp_inf|grapejuice/swordsman_jav|units/rome/champion_infantry_swordsman">
   <Identity>
     <Civ>rome</Civ>
     <Lang>latin</Lang>

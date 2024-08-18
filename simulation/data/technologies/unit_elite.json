@@ -20,5 +20,5 @@
 		{ "value": "Loot/xp", "multiply": 1.2 },
 		{ "value": "ResourceGatherer/BaseSpeed", "multiply": 0.7 }
 	],
-	"affects": ["Elite Unit"]
+	"affects": ["Elite Unit", "Champion Unit", "Hero Unit"]
 }
