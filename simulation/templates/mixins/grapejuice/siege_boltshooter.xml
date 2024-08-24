@@ -19,6 +19,7 @@
         <Gravity>250</Gravity>
         <GravArcMult>0.1</GravArcMult>
         <FriendlyFire>false</FriendlyFire>
+        <ActorName>props/units/weapons/bolt.xml</ActorName>
         <LaunchPoint y="3"/>
       </Projectile>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
@@ -35,6 +36,16 @@
           <Pierce>80</Pierce>
         </Damage>
       </Splash>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
     </Ranged>
   </Attack>
   <Identity>

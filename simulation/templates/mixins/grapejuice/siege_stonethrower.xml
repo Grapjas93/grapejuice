@@ -19,6 +19,7 @@
         <Gravity>60</Gravity>
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
+        <ActorName>props/units/weapons/rock.xml</ActorName>
         <ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>
         <ImpactAnimationLifetime>0.1</ImpactAnimationLifetime>
       </Projectile>
@@ -28,6 +29,16 @@
         <LineTextureMask>outline_border_mask.png</LineTextureMask>
         <LineThickness>0.175</LineThickness>
       </RangeOverlay>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
     </Ranged>
   </Attack>
   <Identity>

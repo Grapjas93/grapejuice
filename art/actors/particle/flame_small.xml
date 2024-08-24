@@ -2,7 +2,7 @@
 <actor version="1">
   <group>
     <variant name="Base">
-      <particles file="flame_jav3.xml"/>
+      <particles file="flame_small.xml"/>
     </variant>
   </group>
   <material>basic_trans.xml</material>

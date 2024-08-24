@@ -258,6 +258,16 @@ Attack.prototype.Init = function()
 
 };
 
+Attack.prototype.GetActorName = function()
+{
+	let actorName = "";
+
+	if (this.template.Ranged.Projectile.ActorName)
+		actorName = this.template.Ranged.Projectile.ActorName;
+
+	return ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", actorName, this.entity);
+};
+
 // grapejuice, called by Charge()
 Attack.prototype.CanCharge = function(target)
 {
@@ -648,7 +658,9 @@ Attack.prototype.PerformAttack = function(type, target)
 
 		data.direction = Vector3D.sub(data.position, selfPosition).div(realHorizDistance);
 
-		let actorName = this.template[type].Projectile.ActorName || "";
+		let actorName = this.GetActorName();
+		warn(this.GetActorName())
+
 		let impactActorName = this.template[type].Projectile.ImpactActorName || "";
 		let impactAnimationLifetime = this.template[type].Projectile.ImpactAnimationLifetime || 0;
 

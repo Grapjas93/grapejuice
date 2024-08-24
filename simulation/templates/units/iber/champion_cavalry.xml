@@ -9,7 +9,7 @@
            <AttackName> Javelin </AttackName>
            <PrepareTime> 1900 </PrepareTime>
            <RepeatTime> 2050 </RepeatTime>
-		   <ApplyStatus>
+      <ApplyStatus>
 			 <Burning>
 			   <Interval>3000</Interval>
 			   <Damage>
@@ -18,7 +18,7 @@
 			   <Stackability>Stack</Stackability>
 			   <Duration>9000</Duration>
 			 </Burning>
-		   </ApplyStatus>
+      </ApplyStatus>
     </Ranged>
     <Melee>
 		<AttackName> Sword </AttackName>

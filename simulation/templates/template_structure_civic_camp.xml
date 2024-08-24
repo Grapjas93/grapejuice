@@ -26,7 +26,7 @@
   <ProductionQueue/>
   <Researcher>
     <Technologies datatype="tokens">
-	garrison_heal_field_camp
+      garrison_heal_field_camp
     </Technologies>
   </Researcher>
   <Resistance replace="">

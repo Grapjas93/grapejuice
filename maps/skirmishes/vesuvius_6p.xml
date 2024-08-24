@@ -288,55 +288,55 @@
 			<Actor seed="10674"/>
 		</Entity>
 		<Entity uid="51">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="545.64954" z="671.07953"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="6446"/>
 		</Entity>
 		<Entity uid="52">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="546.36579" z="671.03351"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="46066"/>
 		</Entity>
 		<Entity uid="53">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="551.0727" z="672.46583"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="32988"/>
 		</Entity>
 		<Entity uid="54">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="550.2013" z="612.71485"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="8796"/>
 		</Entity>
 		<Entity uid="55">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="554.02643" z="607.64551"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="1418"/>
 		</Entity>
 		<Entity uid="56">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="550.82197" z="635.42536"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="58336"/>
 		</Entity>
 		<Entity uid="57">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="517.95551" z="712.48145"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="38040"/>
 		</Entity>
 		<Entity uid="58">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="518.02942" z="704.66395"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="29982"/>
 		</Entity>
 		<Entity uid="59">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="497.34339" z="664.32667"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="63972"/>
@@ -37294,13 +37294,13 @@
 			<Actor seed="15260"/>
 		</Entity>
 		<Entity uid="5645">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="60.08681" z="542.1413"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="39768"/>
 		</Entity>
 		<Entity uid="5646">
-			<Template>actor|particle/flame_jav.xml</Template>
+			<Template>actor|particle/flame_small.xml</Template>
 			<Position x="33.9817" z="533.5832"/>
 			<Orientation y="2.35621"/>
 			<Actor seed="25824"/>

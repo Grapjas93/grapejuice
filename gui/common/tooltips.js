@@ -434,6 +434,8 @@ function applyStatusDetails(applyStatusTemplate)
 {
 	if (!applyStatusTemplate)
 		return "";
+	if (applyStatusTemplate.Burning.Interval == 0)
+		return "";
 
 	return sprintf(translate("gives %(name)s"), {
 		"name": Object.keys(applyStatusTemplate).map(x =>
@@ -506,7 +508,7 @@ function getAttackTooltip(template)
 		let statusEffectsDetails = [];
 		if (attackTypeTemplate.ApplyStatus)
 			for (let status in attackTypeTemplate.ApplyStatus)
-				statusEffectsDetails.push("\n" + g_Indent + g_Indent + getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
+				statusEffectsDetails.push(getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
 		statusEffectsDetails = statusEffectsDetails.join("");
 
 		tooltips.push(sprintf(translate("%(attackLabel)s: %(effects)s, %(range)s, %(rate)s%(statusEffects)s%(splash)s %(energy)s %(ammo)s"), {
@@ -537,8 +539,10 @@ function getStatusEffectsTooltip(statusCode, template, applier)
 	if (template.Damage || template.Capture)
 		tooltipAttributes.push(attackEffectsDetails(template));
 
-	if (template.Interval)
+	if (template.Interval && template.Interval != 0)
 		tooltipAttributes.push(attackRateDetails(+template.Interval));
+	else
+		return
 
 	if (template.Duration)
 		tooltipAttributes.push(getStatusEffectDurationTooltip(template));
@@ -549,12 +553,12 @@ function getStatusEffectsTooltip(statusCode, template, applier)
 		tooltipAttributes.push(translateWithContext("status effect", statusData.receiverTooltip));
 
 	if (applier)
-		return sprintf(translate("%(statusName)s: %(statusInfo)s %(stackability)s"), {
+		return sprintf(translate("\n" + g_Indent + g_Indent + "%(statusName)s: %(statusInfo)s %(stackability)s"), {
 			"statusName": headerFont(translateWithContext("status effect", statusData.statusName)),
 			"statusInfo": tooltipAttributes.join(commaFont(translate(", "))),
 			"stackability": getStatusEffectStackabilityTooltip(template)
 		});
-	return sprintf(translate("%(statusName)s: %(statusInfo)s"), {
+	return sprintf(translate("\n" + g_Indent + g_Indent + "%(statusName)s: %(statusInfo)s"), {
 		"statusName": headerFont(translateWithContext("status effect", statusData.statusName)),
 		"statusInfo": tooltipAttributes.join(commaFont(translate(", ")))
 	});

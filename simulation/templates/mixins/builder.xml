@@ -36,6 +36,7 @@
       structures/{civ}/theater
       structures/{civ}/apadana
       structures/{civ}/wonder
+      brazier_init
     </Entities>
   </Builder>
   <Identity>
