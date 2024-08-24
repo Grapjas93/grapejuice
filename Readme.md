@@ -1,6 +1,7 @@
 # grapejuice
 
 Changes so far:
+- new structure: Braziers! Ranged units near it will shoot flaming projectiles and apply burning. Can be toggled on or off, while on it consumes 1 wood per second.
 - han civilization is working
 - arcing projectiles! (thanks to @BB code)
 - improved rearm aura code
