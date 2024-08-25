@@ -5,6 +5,7 @@
     <variant>
       <mesh>props/projectile-bolt.dae</mesh>
       <props>
+        <prop actor="particle/smoke_jav.xml" attachpoint="root"/>
         <prop actor="particle/flame_small2.xml" attachpoint="root"/>
       </props>
     </variant>

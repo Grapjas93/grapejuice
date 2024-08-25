@@ -14,6 +14,16 @@
         <GravArcMult>0.1</GravArcMult>
         <Spread>2.5</Spread>
       </Projectile>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
     </Ranged>
     <Melee>
       <Energy>100</Energy>

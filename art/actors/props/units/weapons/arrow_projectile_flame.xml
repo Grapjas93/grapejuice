@@ -5,7 +5,7 @@
     <variant frequency="100" name="Base">
       <mesh>props/weap_arrow_front.dae</mesh>
       <props>
-        <prop actor="particle/arrow_trail.xml" attachpoint="root"/>
+        <prop actor="particle/smoke_jav.xml" attachpoint="root"/>
         <prop actor="particle/flame_small.xml" attachpoint="root"/>
       </props>
       <textures>

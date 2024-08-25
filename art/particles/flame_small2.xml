@@ -5,7 +5,7 @@
     <blend mode="add"/>
 
     <constant name="emissionrate" value="200.0"/>
-    <uniform name="lifetime" min="0.01" max="0.05"/>
+    <uniform name="lifetime" min="0.01" max="0.15"/>
 
     <uniform name="size" min="0.5" max="0.9"/>
 

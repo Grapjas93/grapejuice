@@ -15,6 +15,16 @@
         <GravArcMult>0.5</GravArcMult>
         <Spread>4</Spread>
       </Projectile>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
     </Ranged>
     <Melee>
       <AttackName>Mace</AttackName>

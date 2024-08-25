@@ -258,14 +258,18 @@ Attack.prototype.Init = function()
 
 };
 
-Attack.prototype.GetActorName = function()
+// returns object containing the ActorName, ImpactActorName and ImpactAnimationLifetime
+Attack.prototype.GetProjectileActors = function()
 {
-	let actorName = "";
+	let actorName = this.template.Ranged.Projectile.ActorName ? this.template.Ranged.Projectile.ActorName : "";
+	let impactActorName = this.template.Ranged.Projectile.ImpactActorName ? this.template.Ranged.Projectile.ImpactActorName : "";
+	let impactAnimationLifetime = this.template.Ranged.Projectile.ImpactAnimationLifetime ? this.template.Ranged.Projectile.ImpactAnimationLifetime : 0;
 
-	if (this.template.Ranged.Projectile.ActorName)
-		actorName = this.template.Ranged.Projectile.ActorName;
-
-	return ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", actorName, this.entity);
+	return {
+		"actorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", actorName, this.entity),
+		"impactActorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", impactActorName, this.entity),
+		"impactAnimationLifetime": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", impactAnimationLifetime, this.entity),
+	};
 };
 
 // grapejuice, called by Charge()
@@ -658,11 +662,10 @@ Attack.prototype.PerformAttack = function(type, target)
 
 		data.direction = Vector3D.sub(data.position, selfPosition).div(realHorizDistance);
 
-		let actorName = this.GetActorName();
-		warn(this.GetActorName())
-
-		let impactActorName = this.template[type].Projectile.ImpactActorName || "";
-		let impactAnimationLifetime = this.template[type].Projectile.ImpactAnimationLifetime || 0;
+		let projectileActors = this.GetProjectileActors();
+		let actorName = projectileActors.actorName;
+		let impactActorName = projectileActors.impactActorName;
+		let impactAnimationLifetime = projectileActors.impactAnimationLifetime;
 
 		// TODO: Use unit rotation to implement x/z offsets.
 		let deltaLaunchPoint = new Vector3D(0, +this.template[type].Projectile.LaunchPoint["@y"], 0);
