@@ -1,19 +1,19 @@
 [font="sans-bold-20"]About Grapejuice[font="sans-bold-12"] [color="235 184 0"] v3.1.6 [font="sans-14"][color="255 255 255"]
 
-This mod aims to bring interesting new mechanics to the player, and- to some extend- increase realism. It started out simple with just adding 2 maps and randomnization. Then quickly became quite larger. 
+This mod aims to bring interesting new mechanics to the player, and- to some extend- increase realism. It started out simple with just adding 2 maps and randomnization. Then quickly became quite larger.
 
-The name mods name "Grapejuice" is inspired by people that misunderstand my nickname Grapjas for Grapejuice or think it's in any way related to it. Even though it's not i think it's quite a funny misunderstanding to me, so i embrace it. Grapjas is a Dutch word and means "Joker" (not as in batman joker though, lol). 
+The name mods name "Grapejuice" is inspired by people that misunderstand my nickname Grapjas for Grapejuice or think it's in any way related to it. Even though it's not i think it's quite a funny misunderstanding to me, so i embrace it. Grapjas is a Dutch word and means "Joker" (not as in batman joker though, lol).
 
-No doubt about it, this mod has much room for improvement, and may run things in an suboptimal way because i'm still learning alot. But i'll try to improve. 
+No doubt about it, this mod has much room for improvement, and may run things in an suboptimal way because i'm still learning alot. But i'll try to improve.
 
 [font="sans-bold-14"][color="134 0 48"]Please report any issues you may find on the forum or open a new issue on Github.[font="sans-14"][color="255 255 255"]
 
 
 [font="sans-bold-14"]TL;DR version of what Grapejuice adds: [font="sans-14"]
-•    Total rebalance of all units, per civ and even per rank. 
+•    Total rebalance of all units, per civ and even per rank.
 •    Ranged units have ammo.
-•    With the new ammo feature, theres a new re-arm aura at military buildings.  
-•    Units can charge the enemy for bonus damage. 
+•    With the new ammo feature, theres a new re-arm aura at military buildings.
+•    Units can charge the enemy for bonus damage.
 •    Units enter a wounded state when their health is low.
 •    Various units have secondary weapons.
 •    Espionage tech has been reworked.
@@ -23,6 +23,11 @@ No doubt about it, this mod has much room for improvement, and may run things in
 •    Some particle effects have been added and others have been reworked.
 •    2 New skirmish maps.
 •    Player position randomnization for supported skirmish maps.
+•    New structure: Braziers! Ranged units near it will shoot flaming projectiles and apply burning. Can be toggled on or off, while on it consumes 1 wood per second.
+•    Arcing projectiles! (thanks to @BB code)
+•    Walls can be built on top of tree's (tree's will be destroyed upon completion)
+•    Add bleed status effect to the game (dogs have this now)
+
 
 For the more detailed version of these changes read further down below (in the same order).
 
@@ -30,48 +35,48 @@ For the more detailed version of these changes read further down below (in the s
 [font="sans-bold-20"]Total Rebalance[font="sans-14"]
 
 Every single unit has received individual balance changes based on their appearance ingame. The result of this is that civilizations feel much more unique. It makes Mauryans the quick moving and agile attackers, the Romans the well equipped but less mobile force and so on.
-In short the balance goes as follows: 
-•    [font="sans-bold-14"]Lightweight units[font="sans-14"] have low armor, but are fast movers and attackers. 
-•    [font="sans-bold-14"]Heavyweight units[font="sans-14"] move and attack slow but can endure much more damage. 
-The weight of weapons and shield size is being taken into account aswell. For the full in-dept view of the rebalance click on the balance sheet button. 
+In short the balance goes as follows:
+•    [font="sans-bold-14"]Lightweight units[font="sans-14"] have low armor, but are fast movers and attackers.
+•    [font="sans-bold-14"]Heavyweight units[font="sans-14"] move and attack slow but can endure much more damage.
+The weight of weapons and shield size is being taken into account aswell. For the full in-dept view of the rebalance click on the balance sheet button.
 
 [font="sans-bold-16"]There are however, also some general balance changes:[font="sans-14"]
 •    [font="sans-bold-14"]Pikemen[font="sans-14"] got their hack damage removed and now have a 5x cavalry bonus damage instead of 3x.
 •    [font="sans-bold-14"]Spearmen[font="sans-14"] got their cavalry bonus damage removed. Increased their piercing damage and lowered their hack damage.
 •    [font="sans-bold-14"]Soldier melee cavalry[font="sans-14"] got their health reduced by 40 hp.
-•    [font="sans-bold-14"]Support units:[font="sans-14"] 
-    •    Females now have twice as much health. 
-    •    Females/priests/traders have the defense/speed of an unarmored unit. 
+•    [font="sans-bold-14"]Support units:[font="sans-14"]
+    •    Females now have twice as much health.
+    •    Females/priests/traders have the defense/speed of an unarmored unit.
     •    War dogs have much less health now, though still very fast and gave them more attack.
-•    [font="sans-bold-14"]Siege changes:[font="sans-14"] 
-    •    Rams only cost (alot) of wood, siege towers/throwers/shooters mostly cost wood and some stone/metal. 
-    •    All types of elephants can be trained at the town phase and only cost (alot) of food. 
-         Melee elephants are no longer siege units like they were but more of a shock unit with high pierce damage. 
-         Elephant archers have much more ammo than horse archers. 
-    •    Siege tower now shoots equal amount of arrows to number of garrisoned RANGED units (was capped before) and have an ammo pool. 
-    •    All siege units now have much less pierce ressistance, because human ranged units (and also defense structures) 
+•    [font="sans-bold-14"]Siege changes:[font="sans-14"]
+    •    Rams only cost (alot) of wood, siege towers/throwers/shooters mostly cost wood and some stone/metal.
+    •    All types of elephants can be trained at the town phase and only cost (alot) of food.
+         Melee elephants are no longer siege units like they were but more of a shock unit with high pierce damage.
+         Elephant archers have much more ammo than horse archers.
+    •    Siege tower now shoots equal amount of arrows to number of garrisoned RANGED units (was capped before) and have an ammo pool.
+    •    All siege units now have much less pierce ressistance, because human ranged units (and also defense structures)
          can't attack siege with ranged weapons anymore.
-    •    Bolt shooters can now quite effectively counter siege units (as intended). 
+    •    Bolt shooters can now quite effectively counter siege units (as intended).
     •    Mechanical siege units received some hack ressistance buffs, making it equal to the new pierce ressistance.
-•    [font="sans-bold-14"]Ranged units[font="sans-14"]  will recieve 10% weapon damage bonus for both weapons per rank. 
-     Melee units will receive 20% weapon damage bonus per rank. 
+•    [font="sans-bold-14"]Ranged units[font="sans-14"]  will recieve 10% weapon damage bonus for both weapons per rank.
+     Melee units will receive 20% weapon damage bonus per rank.
      Elephant archers regain 20% of their ammo back on rank up.
-•    [font="sans-bold-14"]Ranged units attack damage changes:[font="sans-14"] 
-    •    Javelin: Very high attack, low range, low ammo, low projectile speed, low spread - Cavalry have increased spread. 
-    •    Bow: Good attack, high range, decent ammo, very high projectile speed, high spread - cavalry have less range. 
+•    [font="sans-bold-14"]Ranged units attack damage changes:[font="sans-14"]
+    •    Javelin: Very high attack, low range, low ammo, low projectile speed, low spread - Cavalry have increased spread.
+    •    Bow: Good attack, high range, decent ammo, very high projectile speed, high spread - cavalry have less range.
     •    Slingers: Low attack, medium-high range, plenty ammo, medium-high projectile speed, medium spread.
-•    Heroes and champions now have the same attack damage per weapon type. 
+•    Heroes and champions now have the same attack damage per weapon type.
 
 
 [font="sans-bold-20"]Ammo[font="sans-14"]
 
-Ranged units, including siege units, have ammo and will need to reload their ammo at the new re-arm aura. Slingers will regain ammo slowly anywhere. 
+Ranged units, including siege units, have ammo and will need to reload their ammo at the new re-arm aura. Slingers will regain ammo slowly anywhere.
 The pink statusbar represents the unit ammo.
 
 
 [font="sans-bold-20"]Re-Arm Aura[font="sans-14"]
 
-Military buildings and also the forge have the new re-arm aura. Ranged units inside it will fully restock their ammo every 3s. You need to have at least 1 forge on the field for the aura to work, meaning that the forge now plays a very important role and capturing it can severely weaken the enemy. Some military buildings have a bigger aura than others. 
+Military buildings and also the forge have the new re-arm aura. Ranged units inside it will fully restock their ammo every 3s. You need to have at least 1 forge on the field for the aura to work, meaning that the forge now plays a very important role and capturing it can severely weaken the enemy. Some military buildings have a bigger aura than others.
 
 
 [font="sans-bold-20"]Charge Attack[font="sans-14"]
@@ -125,14 +130,14 @@ Arrows now have slightly visible trails. Flaming projectiles like javelins, arro
 
 [font="sans-bold-20"]Player Position Randomnization[font="sans-14"]
 
-Supported maps can be found under the grapejuice filter, or you can simply check if they have my mod logo on them in the preview. Normally, skirmish map positions are always divided the same. For example: If you would always be in slot 2 at the game setup, you would always get the same starting position on that map. 
+Supported maps can be found under the grapejuice filter, or you can simply check if they have my mod logo on them in the preview. Normally, skirmish map positions are always divided the same. For example: If you would always be in slot 2 at the game setup, you would always get the same starting position on that map.
 
 The new randomnization aims to make a change to that. No matter in which slot you are, players will be randomly placed across the available starting positions. It will keep teams together and it will NOT break the maps design (for instance if a map has 2 islands, it will make sure the teams are divided correctly between the islands).
 
 
 [font="sans-bold-20"]Outro[font="sans-14"]
 
-Hopefully, you'll have fun playing the mod. 
+Hopefully, you'll have fun playing the mod.
 There are some changes i didn't  mention here, i guess you just have to play and find out for yourself :)
 
 Once again, if you encounter any bugs/issues (i'm sure there are some) please be sure to report them to me on the forum. I'll do my best to fix them.

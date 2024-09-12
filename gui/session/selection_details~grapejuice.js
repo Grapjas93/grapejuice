@@ -594,7 +594,7 @@ function displayMultiple(entStates)
 		energySize.rtop = 100 - 100 * Math.max(0, Math.min(1, averageEnergy / maxEnergy));
 		unitEnergyBar.size = energySize;
 
-		Engine.GetGUIObjectByName("energyMultiple").tooltip = getcurrentEnergyTooltip({
+		Engine.GetGUIObjectByName("energyMultiple").tooltip = getCurrentEnergyTooltip({
 			"hitpoints": averageEnergy,
 			"maxHitpoints": maxEnergy
 		});
