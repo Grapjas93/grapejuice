@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_hero_cavalry_spearman">
+<Entity parent="grapejuice/hp_inf|grapejuice/hp_cav|grapejuice/hp_inf|grapejuice/melee_spearman|template_unit_hero_cavalry_spearman">
   <Attack>
     <Melee>
       <AttackName> Spear </AttackName>
@@ -26,7 +26,7 @@
       <time>1.0</time>
     </TechCostMultiplier>
   </Researcher>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Crush> 10 </Crush>

@@ -65,6 +65,7 @@
   "TriggerScripts": [
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
+    "scripts/Sandstorm.js",
     "skirmishes/butana_steppe_2p.js"
   ],
   "VictoryConditions": [

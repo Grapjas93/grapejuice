@@ -7,7 +7,7 @@
       <food>400</food>
     </Resources>
   </Cost>
-  <Resistance>
+  <Resistance replace="">
     <Entity>
       <Damage>
         <Hack>0</Hack>

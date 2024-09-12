@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_siege_boltshooter">
+<Entity parent="grapejuice/siege_boltshooter|template_unit_siege_boltshooter">
   <Identity>
     <Civ>mace</Civ>
     <SpecificName>Oxybelḗs</SpecificName>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice_support_ammo_cart">
+  <UnitMotion>
+       <WalkSpeed> 9.15 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+        <AttackName> Spear </AttackName>
+        <PrepareTime> 850 </PrepareTime>
+        <RepeatTime> 1000 </RepeatTime>
+        <Damage>
+          <Hack>1</Hack>
+          <Pierce>4.5</Pierce>
+        </Damage>
+        <MaxRange>4</MaxRange>
+      </Melee>
+   </Attack>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 6 </Crush>
+               <Hack> 7 </Hack>
+               <Pierce> 8 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Footprint replace="">
+    <Square width="5" depth="10"/>
+    <Height>4</Height>
+  </Footprint>
+  <Identity>
+    <Civ>han</Civ>
+    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
+  </Identity>
+  <VisualActor>
+    <Actor>units/han/ammo_cart.xml</Actor>
+  </VisualActor>
+</Entity>

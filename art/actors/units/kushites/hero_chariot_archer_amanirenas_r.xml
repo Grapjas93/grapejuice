@@ -27,7 +27,7 @@
     <variant file="biped/attack_ranged_archer.xml"/>
     <variant file="biped/base_elephant_turret_pikeman_relax.xml" name="attack_melee">
       <props>
-        <prop actor="" attachpoint="back"/>
+        <prop actor="props/units/weapons/bow_recurve.xml" attachpoint="back"/>
         <prop actor="props/units/weapons/sarissa.xml" attachpoint="weapon_R"/>
       </props>
     </variant>

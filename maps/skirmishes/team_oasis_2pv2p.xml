@@ -81,7 +81,8 @@
   "TriggerScripts": [
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
-    "skirmishes/team_oasis_2pv2p.js"
+    "skirmishes/team_oasis_2pv2p.js",
+    "scripts/Sandstorm.js"
   ],
   "VictoryConditions": [
     "conquest"

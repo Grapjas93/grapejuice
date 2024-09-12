@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="civ/athen|grapejuice_siege_ram">
+<Entity parent="civ/athen|grapejuice/siege_ram|template_unit_siege_ram">
   <Identity>
     <SpecificName>Krios</SpecificName>
     <Icon>units/athen_siege_ram.png</Icon>

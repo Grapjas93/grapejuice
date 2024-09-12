@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure">
+  <Capturable disable=""/>
+  <Footprint>
+    <Square width="4" depth="4"/>
+    <Height>4.0</Height>
+  </Footprint>
+  <Identity>
+    <Icon>technologies/cauldron.png</Icon>
+    <GenericName>Brazier</GenericName>
+    <Tooltip></Tooltip>
+    <Classes datatype="tokens">Brazier</Classes>
+    <VisibleClasses datatype="tokens">Brazier</VisibleClasses>
+    <RequiredTechnology>phase_city</RequiredTechnology>
+  </Identity>
+  <Obstruction>
+    <Static width="4.0" depth="4.0"/>
+  </Obstruction>
+  <ProductionQueue/>
+  <VisualActor>
+    <Actor>props/special/eyecandy/brazier_off.xml</Actor>
+    <FoundationActor>structures/fndn_1x1.xml</FoundationActor>
+  </VisualActor>
+  <Cost>
+    <BuildTime>10</BuildTime>
+    <Resources>
+      <wood>200</wood>
+      <metal>20</metal>
+    </Resources>
+  </Cost>
+  <Health>
+    <Max>200</Max>
+    <SpawnEntityOnDeath>decay|rubble/rubble_stone_2x2</SpawnEntityOnDeath>
+  </Health>
+  <RallyPoint disable=""/>
+  <Resistance replace="">
+    <Entity>
+      <Damage>
+        <Hack>5</Hack>
+        <Pierce>25</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+    </Entity>
+    <Foundation>
+      <Damage>
+        <Hack>1</Hack>
+        <Pierce>5</Pierce>
+        <Crush>0</Crush>
+      </Damage>
+    </Foundation>
+  </Resistance>
+  <TerritoryDecay disable=""/>
+  <TerritoryInfluence disable=""/>
+  <Trainer>
+    <Entities datatype="tokens">
+      brazier_lit
+    </Entities>
+  </Trainer>
+  <StatusBars>
+    <HeightOffset>4.0</HeightOffset>
+  </StatusBars>
+</Entity>

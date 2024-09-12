@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military_elephant_stable">
+  <Identity>
+    <Civ>maur</Civ>
+    <SpecificName>Vāraṇaśālā</SpecificName>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Classes datatype="tokens">CivSpecific</Classes>
+    <VisibleClasses datatype="tokens">-City Town</VisibleClasses>
+  </Identity>
+  <VisualActor>
+    <Actor>structures/mauryas/stable_elephant.xml</Actor>
+  </VisualActor>
+  <Trainer>
+    <BatchTimeModifier>0.7</BatchTimeModifier>
+    <Entities replace="" datatype="tokens">
+      units/{civ}/support_elephant
+      units/{civ}/elephant_archer_b
+      units/{civ}/elephant_melee
+    </Entities>
+  </Trainer>
+</Entity>

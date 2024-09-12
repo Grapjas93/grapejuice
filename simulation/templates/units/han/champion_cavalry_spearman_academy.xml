@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/hp_cav|grapejuice/melee_spearman|template_unit_champion_cavalry_spearman">
+   <UnitMotion>
+       <WalkSpeed> 16.95 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 950 </PrepareTime>
+           <RepeatTime> 1100 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 3 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Identity>
+    <Civ>han</Civ>
+    <SpecificName>Wu Wei Yin Cao Cao Guard</SpecificName>
+    <SelectionGroupName>units/han/champion_cavalry</SelectionGroupName>
+    <Icon>units/han/champion_cavalry_spearman.png</Icon>
+    <RequiredTechnology>phase_city</RequiredTechnology>
+  </Identity>
+  <VisualActor>
+    <Actor>units/han/cavalry_spearman_c_m.xml</Actor>
+  </VisualActor>
+</Entity>

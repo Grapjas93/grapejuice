@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/hp_cav|grapejuice/crossbowman|template_unit_cavalry_ranged_crossbowman">
+   <UnitMotion>
+       <WalkSpeed> 18 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Mace </AttackName>
+           <PrepareTime> 750 </PrepareTime>
+           <RepeatTime> 900 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Identity>
+    <Civ>han</Civ>
+    <SelectionGroupName>units/han/cavalry_crossbowman_b</SelectionGroupName>
+    <SpecificName>Han Cavalry Crossbowman</SpecificName>
+    <Icon>units/han/cavalry_crossbowman.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Promotion>
+    <Entity>units/han/cavalry_crossbowman_a</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/han/cavalry_crossbowman_b_m.xml</Actor>
+  </VisualActor>
+</Entity>

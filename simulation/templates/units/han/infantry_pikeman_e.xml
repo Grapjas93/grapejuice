@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/han/infantry_pikeman_a">
+  <UnitMotion>
+       <WalkSpeed> 8.1 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Pike </AttackName>
+           <PrepareTime> 1300 </PrepareTime>
+           <RepeatTime> 1450 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 7 </Crush>
+               <Hack> 9 </Hack>
+               <Pierce> 10 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+  <Promotion disable=""/>
+  <VisualActor>
+    <Actor>units/han/infantry_halberdman_e.xml</Actor>
+  </VisualActor>
+</Entity>

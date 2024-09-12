@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_infantry_melee_swordsman">
+<Entity parent="grapejuice/hp_inf|grapejuice/melee_swordsman|template_unit_infantry_melee_swordsman">
    <UnitMotion>
        <WalkSpeed> 11.5 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 425 </PrepareTime>
            <RepeatTime> 575 </RepeatTime>
-       </Melee> 
-   </Attack>       
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 1 </Crush>

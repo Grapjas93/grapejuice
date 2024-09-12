@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_champion_infantry_javelineer">
+<Entity parent="grapejuice/hp_inf|grapejuice/jav|template_unit_champion_infantry_javelineer">
 <Attack>
     <Melee>
       <AttackName>Spear</AttackName>
@@ -11,12 +11,6 @@
       <MaxRange>4</MaxRange>
       <PrepareTime>500</PrepareTime>
       <RepeatTime>900</RepeatTime>
-      <Bonuses>
-        <BonusCavMelee>
-          <Classes>Cavalry</Classes>
-          <Multiplier>3.0</Multiplier>
-        </BonusCavMelee>
-      </Bonuses>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
     </Melee>
 </Attack>

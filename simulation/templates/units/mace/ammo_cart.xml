@@ -16,9 +16,9 @@
           <Multiplier>5.0</Multiplier>
         </BonusCavMelee>
       </Bonuses>
-     </Melee>  
-   </Attack> 
-   <Resistance>
+     </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 4 </Crush>

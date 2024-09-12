@@ -51,6 +51,7 @@
   ],
   "Preview": "sahel_scenario.png",
   "TriggerScripts": [
+    "scripts/Sandstorm.js",
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
     "skirmishes/sahel_4p.js"

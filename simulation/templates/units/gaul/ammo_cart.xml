@@ -10,9 +10,9 @@
         <Pierce>4.5</Pierce>
       </Damage>
       <MaxRange>4</MaxRange>
-       </Melee>  
-   </Attack> 
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 7 </Crush>

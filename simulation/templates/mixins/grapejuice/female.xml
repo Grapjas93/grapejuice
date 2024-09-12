@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+   <UnitMotion>
+       <WalkSpeed> 12 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Attack>
+    <Melee>
+      <AttackName>Dagger</AttackName>
+      <Damage>
+        <Hack>2</Hack>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+    </Melee>
+    <Slaughter>
+      <AttackName>Slaughter</AttackName>
+      <Damage>
+        <Hack>1000</Hack>
+      </Damage>
+      <MaxRange>2</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">!Domestic</RestrictedClasses>
+    </Slaughter>
+  </Attack>
+</Entity>

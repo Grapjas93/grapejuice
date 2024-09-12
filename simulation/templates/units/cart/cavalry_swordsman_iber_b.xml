@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="merc_cav|template_unit_cavalry_melee_swordsman">
+<Entity parent="grapejuice/hp_cav|grapejuice/melee_swordsman|merc_cav|template_unit_cavalry_melee_swordsman">
    <UnitMotion>
        <WalkSpeed> 17 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
@@ -11,7 +11,7 @@
            <RepeatTime> 1050 </RepeatTime>
        </Melee>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 1 </Crush>

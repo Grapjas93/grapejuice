@@ -434,6 +434,8 @@ function applyStatusDetails(applyStatusTemplate)
 {
 	if (!applyStatusTemplate)
 		return "";
+	if (applyStatusTemplate.Burning.Interval == 0)
+		return "";
 
 	return sprintf(translate("gives %(name)s"), {
 		"name": Object.keys(applyStatusTemplate).map(x =>
@@ -453,6 +455,31 @@ function attackEffectsDetails(attackTypeTemplate)
 		applyStatusDetails(attackTypeTemplate.ApplyStatus || undefined)
 	];
 	return effects.filter(effect => effect).join(commaFont(translate(", ")));
+}
+
+function GetEnergyDetails(attackTypeTemplate)
+{
+	if (!attackTypeTemplate.maxEnergy)
+		return "";
+
+	let text = attackTypeTemplate.currentEnergy ? `${attackTypeTemplate.currentEnergy}/${attackTypeTemplate.maxEnergy}` : attackTypeTemplate.maxEnergy
+	return sprintf("%(energyAmount)s", {
+		"energyAmount": headerFont("Energy: ") + text + ", ",
+	});
+}
+
+
+function GetAmmoDetails(attackTypeTemplate)
+{
+	if (!attackTypeTemplate.maxAmmo)
+		return "";
+
+	let ammoText = attackTypeTemplate.currentAmmo ? `${attackTypeTemplate.currentAmmo}/${attackTypeTemplate.maxAmmo}` : attackTypeTemplate.maxAmmo
+	let refillCostText = attackTypeTemplate.refillCostMult ? ", " +  headerFont("Refill Cost Multiplier: ") + attackTypeTemplate.refillCostMult : ""
+	return sprintf("%(ammoAmount)s %(refillCostMult)s", {
+		"ammoAmount": headerFont("Ammo: ") + ammoText,
+		"refillCostMult": refillCostText
+	});
 }
 
 function getAttackTooltip(template)
@@ -484,16 +511,18 @@ function getAttackTooltip(template)
 		let statusEffectsDetails = [];
 		if (attackTypeTemplate.ApplyStatus)
 			for (let status in attackTypeTemplate.ApplyStatus)
-				statusEffectsDetails.push("\n" + g_Indent + g_Indent + getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
+				statusEffectsDetails.push(getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
 		statusEffectsDetails = statusEffectsDetails.join("");
 
-		tooltips.push(sprintf(translate("%(attackLabel)s: %(effects)s, %(range)s, %(rate)s%(statusEffects)s%(splash)s"), {
+		tooltips.push(sprintf(translate("%(attackLabel)s: %(effects)s, %(range)s, %(rate)s%(statusEffects)s%(splash)s %(energy)s %(ammo)s"), {
 			"attackLabel": attackLabel,
 			"effects": attackEffectsDetails(attackTypeTemplate),
 			"range": rangeDetails(attackTypeTemplate),
 			"rate": attackRateDetails(attackTypeTemplate.repeatTime, projectiles),
 			"splash": splashTemplate ? "\n" + g_Indent + g_Indent + splashDetails(splashTemplate) : "",
-			"statusEffects": statusEffectsDetails
+			"statusEffects": statusEffectsDetails,
+			"energy": attackType == "Melee" ? GetEnergyDetails(attackTypeTemplate) : "",
+			"ammo": attackType == "Ranged" ? GetAmmoDetails(attackTypeTemplate) : ""
 		}));
 	}
 
@@ -513,8 +542,10 @@ function getStatusEffectsTooltip(statusCode, template, applier)
 	if (template.Damage || template.Capture)
 		tooltipAttributes.push(attackEffectsDetails(template));
 
-	if (template.Interval)
+	if (template.Interval && template.Interval != 0)
 		tooltipAttributes.push(attackRateDetails(+template.Interval));
+	else
+		return
 
 	if (template.Duration)
 		tooltipAttributes.push(getStatusEffectDurationTooltip(template));
@@ -525,12 +556,12 @@ function getStatusEffectsTooltip(statusCode, template, applier)
 		tooltipAttributes.push(translateWithContext("status effect", statusData.receiverTooltip));
 
 	if (applier)
-		return sprintf(translate("%(statusName)s: %(statusInfo)s %(stackability)s"), {
+		return sprintf(translate("\n" + g_Indent + g_Indent + "%(statusName)s: %(statusInfo)s %(stackability)s"), {
 			"statusName": headerFont(translateWithContext("status effect", statusData.statusName)),
 			"statusInfo": tooltipAttributes.join(commaFont(translate(", "))),
 			"stackability": getStatusEffectStackabilityTooltip(template)
 		});
-	return sprintf(translate("%(statusName)s: %(statusInfo)s"), {
+	return sprintf(translate("\n" + g_Indent + g_Indent + "%(statusName)s: %(statusInfo)s"), {
 		"statusName": headerFont(translateWithContext("status effect", statusData.statusName)),
 		"statusInfo": tooltipAttributes.join(commaFont(translate(", ")))
 	});

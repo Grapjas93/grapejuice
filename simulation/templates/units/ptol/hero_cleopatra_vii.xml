@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_hero_infantry_archer">
+<Entity parent="grapejuice/hp_inf|grapejuice/archer|template_unit_hero_infantry_archer">
    <UnitMotion>
        <WalkSpeed> 12 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Ranged>
            <AttackName> Bow </AttackName>
            <PrepareTime> 1550 </PrepareTime>
            <RepeatTime> 1700 </RepeatTime>
-       </Ranged>  
+       </Ranged>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 550 </PrepareTime>
            <RepeatTime> 700 </RepeatTime>
-       </Melee> 
-   </Attack> 
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 0 </Crush>

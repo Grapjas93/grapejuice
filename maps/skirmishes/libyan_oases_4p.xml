@@ -51,6 +51,7 @@
   ],
   "Preview": "oasis_4.png",
   "TriggerScripts": [
+    "scripts/Sandstorm.js",
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
     "skirmishes/libyan_oases_4p.js"

@@ -113,29 +113,29 @@ function displaySingle(entState)
 
 
     // grapejuice, energy
-	let	CurrentEnergy = 0;
-	let	MaxEnergy = 0;
-	if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].MaxEnergy)
+	let	currentEnergy = 0;
+	let	maxEnergy = 0;
+	if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxEnergy)
 	{
-		CurrentEnergy = entState.attack["Melee"].CurrentEnergy;
-		MaxEnergy = entState.attack["Melee"].MaxEnergy;
-		showEnergy = entState.attack["Melee"].MaxEnergy;
+		currentEnergy = entState.attack["Melee"].currentEnergy;
+		maxEnergy = entState.attack["Melee"].maxEnergy;
+		showEnergy = entState.attack["Melee"].maxEnergy;
 	}
 
 	// grapejuice, ammo
 	let	currentAmmo = 0;
 	let	maxAmmo = 0;
-	if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
+	if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].maxAmmo)
 	{
-		currentAmmo = entState.attack["Ranged"].ammoLeft;
-		maxAmmo = entState.attack["Ranged"].ammoMax;
-		showAmmo = entState.attack["Ranged"].ammoMax;
+		currentAmmo = entState.attack["Ranged"].currentAmmo;
+		maxAmmo = entState.attack["Ranged"].maxAmmo;
+		showAmmo = entState.attack["Ranged"].maxAmmo;
 	}
-	else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].ammoMax)
+	else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxAmmo)
 	{
-		currentAmmo = entState.attack["Melee"].ammoLeft;
-		maxAmmo = entState.attack["Melee"].ammoMax;
-		showAmmo = entState.attack["Melee"].ammoMax;
+		currentAmmo = entState.attack["Melee"].currentAmmo;
+		maxAmmo = entState.attack["Melee"].maxAmmo;
+		showAmmo = entState.attack["Melee"].maxAmmo;
 	}
 
 	let energySection = Engine.GetGUIObjectByName("energySection");
@@ -237,16 +237,16 @@ function displaySingle(entState)
 
 		if (showAmmo)
 		{
-			energySize.rright = hasViewPermission ? 100 * Math.max(0, Math.min(1, entState.attack["Melee"].CurrentEnergy / entState.attack["Melee"].MaxEnergy)) : 100;
+			energySize.rright = hasViewPermission ? 100 * Math.max(0, Math.min(1, entState.attack["Melee"].currentEnergy / entState.attack["Melee"].maxEnergy)) : 100;
 		}
 		else
 		{
-			energySize.rright = hasViewPermission ? 196 * Math.max(0, Math.min(1, entState.attack["Melee"].CurrentEnergy / entState.attack["Melee"].MaxEnergy)) : 196;
+			energySize.rright = hasViewPermission ? 196 * Math.max(0, Math.min(1, entState.attack["Melee"].currentEnergy / entState.attack["Melee"].maxEnergy)) : 196;
 		}
 		unitEnergyBar.size = energySize;
-		Engine.GetGUIObjectByName("energyStats").caption = sprintf(translate("%(CurrentEnergy)s / %(MaxEnergy)s"), {
-			"CurrentEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].CurrentEnergy) : "?",
-			"MaxEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].MaxEnergy) : "?"
+		Engine.GetGUIObjectByName("energyStats").caption = sprintf(translate("%(currentEnergy)s / %(maxEnergy)s"), {
+			"currentEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].currentEnergy) : "?",
+			"maxEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].maxEnergy) : "?"
 		});
 		energySection.size = sectionPosBottom.size;
 		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
@@ -515,20 +515,20 @@ function displayMultiple(entStates)
 			averageHealth += entState.hitpoints;
 			maxHealth += entState.maxHitpoints;
 		}
-		if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].ammoMax)
+		if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].maxAmmo)
 		{
-			averageAmmo += entState.attack["Ranged"].ammoLeft;
-			maxAmmo += entState.attack["Ranged"].ammoMax;
+			averageAmmo += entState.attack["Ranged"].currentAmmo;
+			maxAmmo += entState.attack["Ranged"].maxAmmo;
 		}
-		else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].ammoMax)
+		else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxAmmo)
 		{
-			averageAmmo += entState.attack["Melee"].ammoLeft;
-			maxAmmo += entState.attack["Melee"].ammoMax;
+			averageAmmo += entState.attack["Melee"].currentAmmo;
+			maxAmmo += entState.attack["Melee"].maxAmmo;
 		}
-		if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].MaxEnergy)
+		if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxEnergy)
 		{
-			averageEnergy += entState.attack["Melee"].CurrentEnergy;
-			maxEnergy += entState.attack["Melee"].MaxEnergy;
+			averageEnergy += entState.attack["Melee"].currentEnergy;
+			maxEnergy += entState.attack["Melee"].maxEnergy;
 		}
 		if (entState.capturePoints)
 		{

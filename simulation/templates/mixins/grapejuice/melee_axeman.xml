@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Attack>
+    <Melee>
+      <Energy> 100 </Energy>
+      <Damage>
+        <Hack> 0 </Hack>
+        <Pierce> 6 </Pierce>
+        <Crush> 2 </Crush>
+      </Damage>
+    </Melee>
+  </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Charger</VisibleClasses>
+  </Identity>
+</Entity>

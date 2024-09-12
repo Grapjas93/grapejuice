@@ -3,20 +3,20 @@
    <UnitMotion>
        <WalkSpeed> 15.7 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Ranged>
            <AttackName> Javelin </AttackName>
            <PrepareTime> 1850 </PrepareTime>
            <RepeatTime> 2000 </RepeatTime>
-       </Ranged>  
+       </Ranged>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 1350 </PrepareTime>
            <RepeatTime> 1500 </RepeatTime>
-       </Melee> 
-   </Attack> 
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 8 </Crush>

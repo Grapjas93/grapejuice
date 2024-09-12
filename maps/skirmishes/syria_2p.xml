@@ -51,7 +51,8 @@
   "TriggerScripts": [
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
-    "skirmishes/syria_2p.js"
+    "skirmishes/syria_2p.js",
+    "scripts/Sandstorm.js"
   ],
   "VictoryConditions": [
     "conquest"

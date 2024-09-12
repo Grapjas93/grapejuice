@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_infantry_ranged_javelineer">
+<Entity parent="grapejuice/hp_inf|grapejuice/jav|template_unit_infantry_ranged_javelineer">
    <UnitMotion>
        <WalkSpeed> 11.5 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
@@ -16,7 +16,7 @@
            <RepeatTime> 775 </RepeatTime>
        </Melee>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 1 </Crush>

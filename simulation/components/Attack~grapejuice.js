@@ -6,6 +6,7 @@ Attack.prototype.Schema =
 	"<a:example>" +
 		"<Melee>" +
 			"<AttackName>Spear</AttackName>" +
+			"<Energy>150</Energy>" +
 			"<Damage>" +
 				"<Hack>10.0</Hack>" +
 				"<Pierce>0.0</Pierce>" +
@@ -29,6 +30,10 @@ Attack.prototype.Schema =
 		"</Melee>" +
 		"<Ranged>" +
 			"<AttackName>Bow</AttackName>" +
+			"<Ammo>30</Ammo>" +
+			"<RefillTime>3000</RefillTime>" +
+			"<RefillAmount>0</RefillAmount>" +
+			"<RefillCostMult>1</RefillCostMult>" +
 			"<Damage>" +
 				"<Hack>0.0</Hack>" +
 				"<Pierce>10.0</Pierce>" +
@@ -51,7 +56,8 @@ Attack.prototype.Schema =
 				"</Bonus1>" +
 			"</Bonuses>" +
 			"<Projectile>" +
-				"<Speed>50.0</Speed>" +
+				"<Gravity>50.0</Gravity>" +
+				"<GravArcMult>0.5</GravArcMult>" +
 				"<Spread>2.5</Spread>" +
 				"<ActorName>props/units/weapons/rock_flaming.xml</ActorName>" +
 				"<ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>" +
@@ -84,10 +90,6 @@ Attack.prototype.Schema =
 		"<element>" +
 			"<anyName a:help='Currently one of Melee, Ranged, Capture or Slaughter.'/>" +
 			"<interleave>" +
-				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='AttackName' a:help='Name of the attack, to be displayed in the GUI. Optionally includes a translate context attribute.'>" +
 					"<optional>" +
 						"<attribute name='context'>" +
@@ -97,6 +99,11 @@ Attack.prototype.Schema =
 					"<text/>" +
 				"</element>" +
 				AttackHelper.BuildAttackEffectsSchema() +
+				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
+				"<optional><element name='RefillCostMult'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
 				"<optional>" +
 					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
@@ -149,13 +156,20 @@ Attack.prototype.Schema =
 				"<optional>" +
 					"<element name='Projectile'>" +
 						"<interleave>" +
-							"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
-								"<ref name='positiveDecimal'/>" +
-							"</element>" +
+							"<optional>" +
+								"<element name='Speed' a:help='Speed of projectiles (in meters per second).'>" +
+									"<ref name='positiveDecimal'/>" +
+								"</element>" +
+							"</optional>" +
 							"<element name='Spread' a:help='Standard deviation of the bivariate normal distribution of hits at 100 meters. A disk at 100 meters from the attacker with this radius (2x this radius, 3x this radius) is expected to include the landing points of 39.3% (86.5%, 98.9%) of the rounds.'><ref name='nonNegativeDecimal'/></element>" +
 							"<element name='Gravity' a:help='The gravity affecting the projectile. This affects the shape of the flight curve.'>" +
 								"<ref name='nonNegativeDecimal'/>" +
 							"</element>" +
+							"<optional>" +
+								"<element name='GravArcMult' a:help='Adjust the projectile arc strength with this multiplier.'>" +
+									"<ref name='nonNegativeDecimal'/>" +
+								"</element>" +
+							"</optional>" +
 							"<element name='FriendlyFire' a:help='Whether stray missiles can hurt non enemy units.'><data type='boolean'/></element>" +
 							"<optional>" +
 								"<element name='LaunchPoint' a:help='Delta from the unit position where to launch the projectile.'>" +
@@ -200,18 +214,21 @@ Attack.prototype.Init = function()
 	this.CanRechargeEnergyTimer = undefined;
 	this.RechargeEnergyTimer = undefined;
 
-	this.ammo = 0;
+	this.ammo = undefined;
 	this.maxAmmo = 0;
 	this.refillTime = 3000;
 	this.refillAmount = 0;
 	this.ammoReffilTimer = undefined;
+	this.refillCostMult = undefined;
 
 	if (!!this.template["Ranged"] && !!this.template["Ranged"].Ammo)
 	{
 		this.ammo = +this.template["Ranged"].Ammo;
 		this.maxAmmo = +this.template["Ranged"].Ammo;
+		this.refillCostMult = +this.template["Ranged"].RefillCostMult || 1;
 	}
 
+	// for ammo carts but i honestly should just make an ammo component and clean this up nicely
 	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
 	{
 		this.ammo = +this.template["Melee"].Ammo;
@@ -239,6 +256,20 @@ Attack.prototype.Init = function()
 		cmpTimer.SetInterval(this.entity, IID_Attack, "AutoRefill", 0, this.refillTime, {});
 	}
 
+};
+
+// returns object containing the ActorName, ImpactActorName and ImpactAnimationLifetime
+Attack.prototype.GetProjectileActors = function()
+{
+	let actorName = this.template.Ranged.Projectile.ActorName ? this.template.Ranged.Projectile.ActorName : "";
+	let impactActorName = this.template.Ranged.Projectile.ImpactActorName ? this.template.Ranged.Projectile.ImpactActorName : "";
+	let impactAnimationLifetime = this.template.Ranged.Projectile.ImpactAnimationLifetime ? +this.template.Ranged.Projectile.ImpactAnimationLifetime : 0;
+
+	return {
+		"actorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", actorName, this.entity),
+		"impactActorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ImpactActorName", impactActorName, this.entity),
+		"impactAnimationLifetime": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ImpactAnimationLifetime", impactAnimationLifetime, this.entity),
+	};
 };
 
 // grapejuice, called by Charge()
@@ -305,25 +336,25 @@ Attack.prototype.Charge = function(target)
 		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
 		{
 			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-			let multiplier = 1 + cmpGarrisonHolder.OccupiedSlots() / 10;
+			let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
 
 			this.energy = this.energy - 5;
 			cmpModifiersManager.AddModifiers("ChargeAttack", {
-			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
-			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
-			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
-			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
+				"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
+				"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
+				"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
+				"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
+				"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
 			}, this.entity);
 			return;
 		}
 
 		this.energy = this.energy - 5;
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
-		"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
-		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
-		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
+			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
+			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
+			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
+			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
 
 		cmpUnitAI.SetSpeedMultiplier(cmpUnitAI.GetRunMultiplier());
@@ -446,23 +477,15 @@ Attack.prototype.AutoRefill = function()
 
 };
 
-// grapejuice, called by ReArmAura()
+// grapejuice, called by Auras)
 Attack.prototype.SetAmmo = function(ammoGiver)
 {
-	let cmpStatusBars = Engine.QueryInterface(this.entity, IID_StatusBars);
 	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
 
-	// if the entity is the ammoGiver, don't reload and stop the timer
-	if (ammoGiver == this.entity)
-	{
-		this.StopReArming();
-		return;
-	}
-
-	// if the entity reloads from ammoGiver, draw ammo from ammoGiver ammo pool
+	// if the entity reloads from ammoGiver with ammo, draw ammo from ammoGiver ammo pool
 	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
 	{
-		let ammoNeeded = this.maxAmmo - this.ammo;
+		let ammoNeeded = (this.maxAmmo - this.ammo)*this.refillCostMult;
 
 		// if the ammoGiver has no ammo, stop timer
 		if (cmpAmmoGiver.ammo == 0)
@@ -500,67 +523,12 @@ Attack.prototype.SetAmmo = function(ammoGiver)
 	this.RefreshStatusbars(this.entity);
 }
 
-// grapejuice, called by ReArmAura() and the Auras component
-Attack.prototype.CheckIsInAuraRange = function()
-{
-	let entityOwner = Helpers.GetOwner(this.entity);
-	let range30 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Forge Barracks Stable Arsenal Supply");
-	let range60 = TriggerHelper.GetPlayerEntitiesByClass(entityOwner, "Fortress ArmyCamp Colony");
-	let length = range30.length;
-
-	for (let i = 0; i < length; i++)
-	{
-		let pop = range30.pop();
-		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
-		if (distance < 30)
-		{
-			return pop;
-		}
-	}
-	length = range60.length;
-	for (let i = 0; i < length; i++)
-	{
-		let pop = range60.pop();
-		let distance = PositionHelper.DistanceBetweenEntities(pop, this.entity);
-		if (distance < 60)
-		{
-			return pop;
-		}
-	}
-	return false;
-};
-
-// grapejuice, called by PerformAttack()
-Attack.prototype.ReArmAura = function()
-{
-	if (this.CheckIsInAuraRange() == false || this.ammo == this.maxAmmo)
-	{
-		this.StopReArming();
-		return;
-	}
-
-	else
-	{
-		let ammoGiver = this.CheckIsInAuraRange();
-		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-		cmpTimer.SetTimeout(this.entity, IID_Attack, "SetAmmo", this.refillTime, ammoGiver);
-		return;
-	}
-}
 
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
 Attack.prototype.CheckTargetIsInMeleeRange = function(target)
 {
-	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
-
-	if (!cmpVision)
-		return false;
-
-	let range = cmpVision.GetRange() / 6.5;
 	let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
-	let result = distance < range;
-
-	return distance < range;
+	return distance < 12;
 };
 
 /**
@@ -595,11 +563,9 @@ Attack.prototype.PerformAttack = function(type, target)
 	};
 
 	let delay = +(this.template[type].EffectDelay || 0);
-
 	// grapejuice
 	if (type == "Ranged")
 	{
-
 		if (!!this.template["Ranged"].Ammo)
 		{
 			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
@@ -616,7 +582,6 @@ Attack.prototype.PerformAttack = function(type, target)
 				cmpUnitAI.RespondToTargetedEntities([target]);
 			}
 		}
-		this.ReArmAura();
 	}
 
 	// grapejuice
@@ -635,9 +600,16 @@ Attack.prototype.PerformAttack = function(type, target)
 		//  * Obstacles like trees could reduce the probability of the target being hit
 		//  * Obstacles like walls should block projectiles entirely
 
-		let horizSpeed = +this.template[type].Projectile.Speed;
-		let gravity = +this.template[type].Projectile.Gravity;
-		// horizSpeed /= 2; gravity /= 2; // slow it down for testing
+
+		// Credits to @BB for the arcing projectiles code
+		let spread = ApplyValueModificationsToEntity("Attack/Ranged/Spread", +this.template[type].Projectile.Spread, this.entity);
+		let range = this.GetRange(type);
+		let maxRange = range.max + spread;
+		let distance = PositionHelper.DistanceBetweenEntities(this.entity, target);
+		let GravArcMult = +this.template[type].Projectile.GravArcMult || 1;
+		let gravity = +this.template[type].Projectile.Gravity * (maxRange / distance);
+		// Compute the horizontal speed for a given gravity and assuming initial angle of pi/4 for maximum range.
+		let horizSpeed = maxRange * Math.sqrt(gravity / ((2 * GravArcMult) * Math.max(maxRange  + targetPosition.y - selfPosition.y, 1)));
 
 		// We will try to estimate the position of the target, where we can hit it.
 		// We first estimate the time-till-hit by extrapolating linearly the movement
@@ -676,8 +648,7 @@ Attack.prototype.PerformAttack = function(type, target)
 		let predictedHeight = cmpTargetPosition.GetHeightAt(predictedPosition.x, predictedPosition.z);
 
 		// Add inaccuracy based on spread.
-		let distanceModifiedSpread = ApplyValueModificationsToEntity("Attack/" + type + "/Spread", +this.template[type].Projectile.Spread, this.entity) *
-			predictedPosition.horizDistanceTo(selfPosition) / 100;
+		let distanceModifiedSpread = spread * predictedPosition.horizDistanceTo(selfPosition) / 100;
 
 		let randNorm = randomNormal2D();
 		let offsetX = randNorm[0] * distanceModifiedSpread;
@@ -691,9 +662,13 @@ Attack.prototype.PerformAttack = function(type, target)
 
 		data.direction = Vector3D.sub(data.position, selfPosition).div(realHorizDistance);
 
-		let actorName = this.template[type].Projectile.ActorName || "";
-		let impactActorName = this.template[type].Projectile.ImpactActorName || "";
-		let impactAnimationLifetime = this.template[type].Projectile.ImpactAnimationLifetime || 0;
+
+		let projectileActors = this.GetProjectileActors();
+		let actorName = projectileActors.actorName;
+		let impactActorName = projectileActors.impactActorName;
+		let impactAnimationLifetime = projectileActors.impactAnimationLifetime;
+
+		data.impactAnimationLifetime = impactAnimationLifetime;
 
 		// TODO: Use unit rotation to implement x/z offsets.
 		let deltaLaunchPoint = new Vector3D(0, +this.template[type].Projectile.LaunchPoint["@y"], 0);
@@ -770,31 +745,19 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	}
 
 	// grapejuice
-	let rangeIndex = types.indexOf("Ranged");
-	if (rangeIndex != -1 && !!this.template["Ranged"].Ammo && Helpers.EntityMatchesClassList(this.entity, "Siege") == false)
+	let hasRanged = !!this.template["Ranged"];
+	let hasMelee = !!this.template["Melee"];
+	if (hasRanged && this.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+		return "Ranged";
+	else if (hasMelee)
 	{
-		if (this.ammo == 0 || this.CheckTargetIsInMeleeRange(target) || Helpers.EntityMatchesClassList(target, "Siege Structure") == true && Helpers.EntityMatchesClassList(this.entity, "Raider") == false)
-			{
-				types.splice(rangeIndex, 1);
-			}
-
-			else
-			{
-				types.splice(rangeIndex, -1);
-			}
+		this.StopCanChargeTimer();
+		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+		this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
+		return "Melee";
 	}
-
-	let targetClasses = cmpIdentity.GetClassesList();
-	let isPreferred = attackType => MatchesClassList(targetClasses, this.GetPreferredClasses(attackType));
-
-	this.StopCanChargeTimer();
-
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
-
-	return types.sort((a, b) =>
-		(types.indexOf(a) + (isPreferred(a) ? types.length : 0)) -
-		(types.indexOf(b) + (isPreferred(b) ? types.length : 0))).pop();
+	else
+		return undefined;
 };
 
 /**
@@ -816,18 +779,8 @@ Attack.prototype.GetPreference = function(target)
 		{
 			if (MatchesClassList(targetClasses, preferredClasses[pref]))
 			{
-				// grapejuice
 				if (pref === 0)
-				{
-					if (Helpers.EntityMatchesClassList(this.entity, "Structure Siege") == true)
-					{
-						return minPref;
-					}
-
-					let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-					cmpUnitAI.RespondToTargetedEntities([target]);
 					return pref;
-				}
 				if ((minPref === undefined || minPref > pref))
 					minPref = pref;
 			}

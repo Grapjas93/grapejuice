@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_infantry_melee_pikeman">
+<Entity parent="grapejuice/hp_inf|grapejuice/melee_pike|template_unit_infantry_melee_pikeman">
    <UnitMotion>
        <WalkSpeed> 9.7 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> Pike </AttackName>
            <PrepareTime> 1000 </PrepareTime>
            <RepeatTime> 1150 </RepeatTime>
-       </Melee> 
-   </Attack>       
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 5 </Crush>

@@ -1,0 +1,18 @@
+{
+	"type": "range",
+	"radius": 20,
+	"affects": ["Ranged"],
+	"modifications": [
+		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/rock_flaming.xml", "affects": "StoneThrower" },
+		{ "value": "Attack/Ranged/Projectile/ImpactActorName", "replace": "props/units/weapons/rock_explosion_fire.xml", "affects": "StoneThrower" },
+		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/jav_projectile_flame.xml", "affects": "Javelineer" },
+		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/arrow_projectile_flame.xml", "affects": "Archer" },
+		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/arrow_projectile_flame.xml", "affects": "Crossbowman" },
+		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/bolt_projectile_flame.xml", "affects": "BoltShooter" },
+		{ "value": "Attack/Ranged/Projectile/ImpactAnimationLifetime", "replace": 3.0 },
+		{ "value": "Attack/Ranged/ApplyStatus/Burning/Interval", "replace": 3000 },
+		{ "value": "Attack/Ranged/ApplyStatus/Burning/Damage/Fire", "multiply": 10.0, "affects": "StoneThrower" }
+	],
+	"auraName": "Brazier",
+	"auraDescription": "Projectiles shot from while in range apply burning."
+}

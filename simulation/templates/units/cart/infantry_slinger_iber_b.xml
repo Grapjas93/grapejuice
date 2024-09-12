@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="merc_inf|grapejuice_infantry_ranged_slinger">
+<Entity parent="merc_inf|grapejuice/hp_inf|grapejuice/slinger|template_unit_infantry_ranged_slinger">
    <UnitMotion>
        <WalkSpeed> 12 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Ranged>
            <AttackName> Slinger </AttackName>
            <PrepareTime> 1500 </PrepareTime>
            <RepeatTime> 1650 </RepeatTime>
-       </Ranged>  
+       </Ranged>
        <Melee>
            <AttackName> Sword </AttackName>
            <PrepareTime> 550 </PrepareTime>
            <RepeatTime> 700 </RepeatTime>
-       </Melee> 
-   </Attack> 
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 0 </Crush>

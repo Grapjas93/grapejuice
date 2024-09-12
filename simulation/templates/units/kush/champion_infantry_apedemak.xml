@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_champion_infantry_axeman">
+<Entity parent="grapejuice/hp_inf|grapejuice/melee_axeman|template_unit_champion_infantry_axeman">
    <UnitMotion>
        <WalkSpeed> 10.2 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
-   </UnitMotion> 
+   </UnitMotion>
    <Attack>
        <Melee>
            <AttackName> FALSE </AttackName>
            <PrepareTime> 650 </PrepareTime>
            <RepeatTime> 800 </RepeatTime>
-       </Melee> 
-   </Attack>       
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 2 </Crush>

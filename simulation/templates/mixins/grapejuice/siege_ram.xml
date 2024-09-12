@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Attack>
+    <Melee>
+	  <Energy>0</Energy>
+      <AttackName>Ram</AttackName>
+      <Damage>
+        <Crush>150</Crush>
+      </Damage>
+      <MaxRange>6.5</MaxRange>
+      <PrepareTime>750</PrepareTime>
+      <RepeatTime>1500</RepeatTime>
+      <PreferredClasses datatype="tokens">Structure</PreferredClasses>
+      <RestrictedClasses datatype="tokens">Field Organic</RestrictedClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <BuildTime>30</BuildTime>
+    <Resources>
+      <wood>750</wood>
+      <food>0</food>
+      <metal>0</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Tooltip>Rams become faster, stronger, have more energy and a stronger charge attack depending on how many units are inside. Cannot attack Fields or Organic Units.</Tooltip>
+    <VisibleClasses datatype="tokens">Melee Ram Charger</VisibleClasses>
+  </Identity>
+</Entity>

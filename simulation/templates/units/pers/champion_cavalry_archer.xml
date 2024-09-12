@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_champion_cavalry_archer">
+<Entity parent="grapejuice/hp_cav|grapejuice/cav_archer|template_unit_champion_cavalry_archer">
    <UnitMotion>
        <WalkSpeed> 15.1 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
@@ -16,7 +16,7 @@
            <RepeatTime> 1625 </RepeatTime>
        </Melee>
    </Attack>
-   <Resistance>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 9 </Crush>

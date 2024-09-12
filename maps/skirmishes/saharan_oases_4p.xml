@@ -51,6 +51,7 @@
   ],
   "Preview": "saharan_oases_scenario.png",
   "TriggerScripts": [
+    "scripts/Sandstorm.js",
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
     "skirmishes/saharan_oases_4p.js"

@@ -9,9 +9,9 @@
 			  <Hack>5.5</Hack>
 		  </Damage>
 		  <MaxRange>3</MaxRange>
-       </Melee>  
-   </Attack> 
-   <Resistance>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
         <Entity>
             <Damage>
                <Crush> 4 </Crush>

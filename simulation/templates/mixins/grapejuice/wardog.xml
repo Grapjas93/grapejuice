@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Attack>
+    <Melee>
+      <Energy>200</Energy>
+		   <ApplyStatus>
+        <Bleeding>
+          <Interval>3000</Interval>
+          <Damage>
+            <Bleed>1</Bleed>
+          </Damage>
+          <Stackability>Stack</Stackability>
+          <Duration>9000</Duration>
+        </Bleeding>
+		   </ApplyStatus>
+      <AttackName>Fangs</AttackName>
+      <Damage>
+        <Hack>7</Hack>
+        <Pierce>2</Pierce>
+      </Damage>
+      <MaxRange>3</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure Ship Siege</RestrictedClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <BuildTime>15</BuildTime>
+    <Population>0</Population>
+    <Resources>
+      <food>100</food>
+    </Resources>
+  </Cost>
+  <Health>
+    <Max>60</Max>
+  </Health>
+  <Identity>
+    <Tooltip>Applies bleeding when attack units. Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
+    <Classes datatype="tokens">Human FastMoving Charger</Classes>
+    <VisibleClasses datatype="tokens">Dog Melee Charger</VisibleClasses>
+  </Identity>
+</Entity>

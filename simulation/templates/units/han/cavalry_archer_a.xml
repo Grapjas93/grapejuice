@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/han/cavalry_archer_b">
+  <UnitMotion>
+       <WalkSpeed> 17.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1700 </PrepareTime>
+           <RepeatTime> 1850 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1100 </PrepareTime>
+           <RepeatTime> 1250 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance replace="">
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 2 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Identity>
+    <Rank>Advanced</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/han/cavalry_archer_e</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/han/cavalry_archer_a_m.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -496,15 +496,17 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 			// grapejuice
 			if (cmpAttack.maxEnergy != undefined)
 			{
-				ret.attack[type].CurrentEnergy = cmpAttack.energy;
-				ret.attack[type].MaxEnergy = cmpAttack.maxEnergy;
+				ret.attack[type].currentEnergy = cmpAttack.energy;
+				ret.attack[type].maxEnergy = cmpAttack.maxEnergy;
 			}
 
 			// grapejuice
 			if (cmpAttack.maxAmmo != undefined)
 			{
-				ret.attack[type].ammoLeft = cmpAttack.ammo;
-				ret.attack[type].ammoMax = cmpAttack.maxAmmo;
+				ret.attack[type].currentAmmo = cmpAttack.ammo;
+				ret.attack[type].maxAmmo = cmpAttack.maxAmmo;
+				if (cmpAttack.RefillCostMult)
+					ret.attack[type].refillCostMult = cmpAttack.RefillCostMult;
 			}
 
 			if (type != "Ranged")
@@ -685,6 +687,12 @@ GuiInterface.prototype.IsTechnologyResearched = function(player, data)
 		return false;
 
 	return cmpTechnologyManager.IsTechnologyResearched(data.tech);
+};
+
+GuiInterface.prototype.AreRequirementsMet = function(player, data)
+{
+	return !data.requirements || RequirementsHelper.AreRequirementsMet(data.requirements,
+		data.player !== undefined ? data.player : player);
 };
 
 /**
@@ -2144,6 +2152,7 @@ let exposedFunctions = {
 	"GetAverageRangeForBuildings": 1,
 	"GetTemplateData": 1,
 	"IsTechnologyResearched": 1,
+	"AreRequirementsMet": 1,
 	"CheckTechnologyRequirements": 1,
 	"GetStartedResearch": 1,
 	"GetBattleState": 1,
