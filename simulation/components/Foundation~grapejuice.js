@@ -14,12 +14,12 @@ Foundation.prototype.Init = function()
 	this.buildTimeModifier = +this.template.BuildTimeModifier;
 
 	this.previewEntity = INVALID_ENTITY;
-	this.entsToDestroy;
+	this.entsToDestroy = [];
 };
 
 Foundation.prototype.IsFinished = function()
 {
-	if (this.GetBuildProgress() == 1.0 && this.entsToDestroy)
+	if (this.GetBuildProgress() == 1.0 && this.entsToDestroy.length)
 		for (let ent of this.entsToDestroy)
 			Engine.DestroyEntity(ent);
 
@@ -31,6 +31,7 @@ Foundation.prototype.IsFinished = function()
  */
 Foundation.prototype.Commit = function()
 {
+	//warn("commit")
 	if (this.committed)
 		return false;
 
@@ -41,13 +42,24 @@ Foundation.prototype.Commit = function()
 		this.entsToDestroy = cmpObstruction.GetEntitiesDeletedUponConstruction();
 
 		let collisions = cmpObstruction.GetEntitiesBlockingConstruction();
+		let movableCollisions = [];
 		if (collisions.length)
 		{
 			for (let ent of collisions)
 			{
 				let cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
 				if (cmpUnitAI)
+				{
 					cmpUnitAI.LeaveFoundation(this.entity);
+					movableCollisions.push(ent)
+					//warn(uneval(movableCollisions))
+				}
+				let cmpResourceSupply = Engine.QueryInterface(ent, IID_ResourceSupply);
+				if (cmpResourceSupply && cmpResourceSupply.GetType().generic == "wood")
+				{
+					this.entsToDestroy.push(ent)
+					//warn(uneval(this.entsToDestroy))
+				}
 
 				// TODO: What if an obstruction has no UnitAI?
 			}
@@ -55,7 +67,8 @@ Foundation.prototype.Commit = function()
 			// TODO: maybe we should tell the builder to use a special
 			// animation to indicate they're waiting for people to get
 			// out the way
-
+			if (movableCollisions.length)
+				return false
 		}
 	}
 

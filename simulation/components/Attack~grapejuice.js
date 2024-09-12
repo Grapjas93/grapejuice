@@ -263,7 +263,7 @@ Attack.prototype.GetProjectileActors = function()
 {
 	let actorName = this.template.Ranged.Projectile.ActorName ? this.template.Ranged.Projectile.ActorName : "";
 	let impactActorName = this.template.Ranged.Projectile.ImpactActorName ? this.template.Ranged.Projectile.ImpactActorName : "";
-	let impactAnimationLifetime = this.template.Ranged.Projectile.ImpactAnimationLifetime ? this.template.Ranged.Projectile.ImpactAnimationLifetime : 0;
+	let impactAnimationLifetime = this.template.Ranged.Projectile.ImpactAnimationLifetime ? +this.template.Ranged.Projectile.ImpactAnimationLifetime : 0;
 
 	return {
 		"actorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", actorName, this.entity),

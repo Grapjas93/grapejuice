@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Attack>
+    <Ranged>
+      <Ammo>60</Ammo>
+      <RefillAmount>0</RefillAmount>
+      <RefillTime>0</RefillTime>
+      <AttackName>Bow</AttackName>
+      <Projectile>
+        <Spread>4</Spread>
+        <Gravity>60</Gravity>
+      </Projectile>
+    </Ranged>
+  </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo</VisibleClasses>
+  </Identity>
+</Entity>

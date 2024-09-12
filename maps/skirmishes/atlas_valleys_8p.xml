@@ -59,6 +59,7 @@
   "TriggerScripts": [
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
+    "scripts/Sandstorm.js",
     "skirmishes/atlas_valleys_8p.js"
   ],
   "VictoryConditions": [

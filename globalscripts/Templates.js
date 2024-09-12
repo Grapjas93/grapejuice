@@ -236,12 +236,12 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 
 			if (type == "Melee")
 			{
-				ret.attack[type].energy = getAttackStat("Energy")
+				ret.attack[type].maxEnergy = getAttackStat("Energy")
 			}
 
 			if (type == "Ranged")
 			{
-				ret.attack[type].ammo = getAttackStat("Ammo")
+				ret.attack[type].maxAmmo = getAttackStat("Ammo")
 				ret.attack[type].refillTime = getAttackStat("RefillTime")
 				ret.attack[type].refillAmount = getAttackStat("RefillAmount")
 				ret.attack[type].refillCostMult = getAttackStat("RefillCostMult")

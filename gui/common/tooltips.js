@@ -459,23 +459,26 @@ function attackEffectsDetails(attackTypeTemplate)
 
 function GetEnergyDetails(attackTypeTemplate)
 {
-	if (!attackTypeTemplate)
+	if (!attackTypeTemplate.maxEnergy)
 		return "";
 
+	let text = attackTypeTemplate.currentEnergy ? `${attackTypeTemplate.currentEnergy}/${attackTypeTemplate.maxEnergy}` : attackTypeTemplate.maxEnergy
 	return sprintf("%(energyAmount)s", {
-		"energyAmount": headerFont("Energy: ") + attackTypeTemplate.energy + ", ",
+		"energyAmount": headerFont("Energy: ") + text + ", ",
 	});
 }
 
 
 function GetAmmoDetails(attackTypeTemplate)
 {
-	if (!attackTypeTemplate && attackTypeTemplate.ammo)
+	if (!attackTypeTemplate.maxAmmo)
 		return "";
 
-	return sprintf("%(ammoAmount)s %(RefillCostMult)s", {
-		"ammoAmount": headerFont("Ammo: ") + attackTypeTemplate.ammo,
-		"RefillCostMult": attackTypeTemplate.refillCostMult != 0 ? ", " + headerFont("Refill Cost Multiplier: ") + attackTypeTemplate.refillCostMult : ""
+	let ammoText = attackTypeTemplate.currentAmmo ? `${attackTypeTemplate.currentAmmo}/${attackTypeTemplate.maxAmmo}` : attackTypeTemplate.maxAmmo
+	let refillCostText = attackTypeTemplate.refillCostMult ? ", " +  headerFont("Refill Cost Multiplier: ") + attackTypeTemplate.refillCostMult : ""
+	return sprintf("%(ammoAmount)s %(refillCostMult)s", {
+		"ammoAmount": headerFont("Ammo: ") + ammoText,
+		"refillCostMult": refillCostText
 	});
 }
 

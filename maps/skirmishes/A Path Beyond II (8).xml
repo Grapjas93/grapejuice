@@ -40,7 +40,7 @@
 {
   "AISeed": 0,
   "Description": "A map with many shores and lots of strategic possibilities. ",
-  "Keywords": [	
+  "Keywords": [
   "grapejuice"
   ],
   "LockTeams": false,
@@ -61,7 +61,8 @@
   "TriggerScripts": [
     "scripts/SkirmishRandomizer.js",
     "scripts/TriggerHelper.js",
-    "skirmishes/A Path Beyond II (8).js"
+    "skirmishes/A Path Beyond II (8).js",
+    "scripts/Sandstorm.js"
   ],
   "VictoryConditions": [
     "conquest"

@@ -496,15 +496,17 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 			// grapejuice
 			if (cmpAttack.maxEnergy != undefined)
 			{
-				ret.attack[type].CurrentEnergy = cmpAttack.energy;
-				ret.attack[type].MaxEnergy = cmpAttack.maxEnergy;
+				ret.attack[type].currentEnergy = cmpAttack.energy;
+				ret.attack[type].maxEnergy = cmpAttack.maxEnergy;
 			}
 
 			// grapejuice
 			if (cmpAttack.maxAmmo != undefined)
 			{
-				ret.attack[type].ammoLeft = cmpAttack.ammo;
-				ret.attack[type].ammoMax = cmpAttack.maxAmmo;
+				ret.attack[type].currentAmmo = cmpAttack.ammo;
+				ret.attack[type].maxAmmo = cmpAttack.maxAmmo;
+				if (cmpAttack.RefillCostMult)
+					ret.attack[type].refillCostMult = cmpAttack.RefillCostMult;
 			}
 
 			if (type != "Ranged")

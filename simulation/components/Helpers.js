@@ -1,5 +1,12 @@
 function Helpers() {}
 
+Helpers.getRandomInt = function(min, max)
+{
+	const minCeiled = Math.ceil(min);
+	const maxFloored = Math.floor(max);
+	return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+}
+
 Helpers.EntityMatchesClassList = function(entity, classes)
 {
 	let cmpIdentity = Engine.QueryInterface(entity, IID_Identity);
