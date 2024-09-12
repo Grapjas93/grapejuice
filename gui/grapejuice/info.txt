@@ -24,7 +24,7 @@ No doubt about it, this mod has much room for improvement, and may run things in
 •    2 New skirmish maps.
 •    Player position randomnization for supported skirmish maps.
 •    New structure: Braziers! Ranged units near it will shoot flaming projectiles and apply burning. Can be toggled on or off, while on it consumes 1 wood per second.
-•    envoirementals like sandstorms! (just sandstorm for now)
+•    Envoirementals like sandstorms! (just sandstorms for now)
 •    Arcing projectiles! (thanks to @BB code)
 •    Walls can be built on top of tree's (tree's will be destroyed upon completion)
 •    Add bleed status effect to the game (dogs have this now)
