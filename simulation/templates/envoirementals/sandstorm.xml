@@ -26,6 +26,12 @@
        <WalkSpeed> 10 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
    </UnitMotion>
+  <Visibility>
+    <RetainInFog>true</RetainInFog>
+    <AlwaysVisible>true</AlwaysVisible>
+    <Corpse>false</Corpse>
+    <Preview>false</Preview>
+  </Visibility>
   <Vision>
     <Range>20</Range>
   </Vision>

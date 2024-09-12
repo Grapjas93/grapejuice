@@ -267,8 +267,8 @@ Attack.prototype.GetProjectileActors = function()
 
 	return {
 		"actorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", actorName, this.entity),
-		"impactActorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", impactActorName, this.entity),
-		"impactAnimationLifetime": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ActorName", impactAnimationLifetime, this.entity),
+		"impactActorName": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ImpactActorName", impactActorName, this.entity),
+		"impactAnimationLifetime": ApplyValueModificationsToEntity("Attack/Ranged/Projectile/ImpactAnimationLifetime", impactAnimationLifetime, this.entity),
 	};
 };
 
@@ -662,10 +662,13 @@ Attack.prototype.PerformAttack = function(type, target)
 
 		data.direction = Vector3D.sub(data.position, selfPosition).div(realHorizDistance);
 
+
 		let projectileActors = this.GetProjectileActors();
 		let actorName = projectileActors.actorName;
 		let impactActorName = projectileActors.impactActorName;
 		let impactAnimationLifetime = projectileActors.impactAnimationLifetime;
+
+		data.impactAnimationLifetime = impactAnimationLifetime;
 
 		// TODO: Use unit rotation to implement x/z offsets.
 		let deltaLaunchPoint = new Vector3D(0, +this.template[type].Projectile.LaunchPoint["@y"], 0);

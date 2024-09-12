@@ -24,6 +24,7 @@ No doubt about it, this mod has much room for improvement, and may run things in
 •    2 New skirmish maps.
 •    Player position randomnization for supported skirmish maps.
 •    New structure: Braziers! Ranged units near it will shoot flaming projectiles and apply burning. Can be toggled on or off, while on it consumes 1 wood per second.
+•    envoirementals like sandstorms! (just sandstorm for now)
 •    Arcing projectiles! (thanks to @BB code)
 •    Walls can be built on top of tree's (tree's will be destroyed upon completion)
 •    Add bleed status effect to the game (dogs have this now)
@@ -66,6 +67,14 @@ The weight of weapons and shield size is being taken into account aswell. For th
     •    Bow: Good attack, high range, decent ammo, very high projectile speed, high spread - cavalry have less range.
     •    Slingers: Low attack, medium-high range, plenty ammo, medium-high projectile speed, medium spread.
 •    Heroes and champions now have the same attack damage per weapon type.
+
+
+[font="sans-bold-20"]Envoirementals[font="sans-14"]
+
+•    Sandstorm: Does light but continuous damage to organic units caught within and heavily reduces vision range. Sandstorms randomly spawn and move around the map and dissapear after some time.
+     • sandstorm maps: atlas valleys, butana steppe, crocodilopolis, death canyon, egypt, golden oasis, hindu kush, libyan oasis (2p, 4p), median oasis (2p, 4p), saharan oasis (2p, 4p), sahel, syria, team oasis, tarim basin (2p, 4p)
+
+More types of envoirementals will be added!
 
 
 [font="sans-bold-20"]Ammo[font="sans-14"]

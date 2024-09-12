@@ -91,8 +91,10 @@ DelayedDamage.prototype.Hit = function(data, lateness)
 		break;
 	}
 
-	// Remove projectile on impact / Grapejuice
-	cmpProjectileManager.RemoveProjectile(data.projectileId);
+	// Remove projectile when impactAnimationLifetime finished / Grapejuice
+	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+	cmpTimer.SetTimeout(SYSTEM_ENTITY, IID_ProjectileManager, "RemoveProjectile", data.impactAnimationLifetime*1000, data.projectileId);
+
 };
 
 Engine.RegisterSystemComponentType(IID_DelayedDamage, "DelayedDamage", DelayedDamage);
