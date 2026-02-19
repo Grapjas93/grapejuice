@@ -9,4 +9,29 @@
   <VisualActor>
     <Actor>units/germans/infantry_slinger_a.xml</Actor>
   </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 11.5 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Slinger </AttackName>
+           <PrepareTime> 1575 </PrepareTime>
+           <RepeatTime> 1725 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 625 </PrepareTime>
+           <RepeatTime> 775 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 1 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>

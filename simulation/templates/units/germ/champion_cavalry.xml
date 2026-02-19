@@ -16,4 +16,24 @@
   <VisualActor>
     <Actor>units/germans/cavalry_swordsman_c_m.xml</Actor>
   </VisualActor>
+<UnitMotion>
+       <WalkSpeed> 16.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1050 </PrepareTime>
+           <RepeatTime> 1200 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>

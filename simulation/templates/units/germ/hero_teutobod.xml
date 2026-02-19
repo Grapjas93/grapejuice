@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_hero_infantry_swordsman">
+<Entity parent="grapejuice/hp_inf|grapejuice/swordsman_jav|template_unit_hero_infantry_swordsman">
   <Auras datatype="tokens">
     units/heroes/germ_hero_teutobod_1
-    units/heroes/germ_hero_teutobod_2
   </Auras>
-  <Health>
-    <Max op="add">500</Max>
-  </Health>
   <Identity>
     <Civ>germ</Civ>
     <SpecificName>Teutobod</SpecificName>
@@ -15,7 +11,29 @@
   <VisualActor>
     <Actor>units/germans/hero_infantry_swordsman_teutobod.xml</Actor>
   </VisualActor>
-  <UnitMotion>
-    <WalkSpeed op="mul">1.25</WalkSpeed>
-  </UnitMotion>
+<UnitMotion>
+       <WalkSpeed> 10.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 550 </PrepareTime>
+           <RepeatTime> 700 </RepeatTime>
+       </Melee>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 500 </PrepareTime>
+           <RepeatTime> 2000 </RepeatTime>
+       </Ranged>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 4 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_champion_support_healer">
+<Entity parent="grapejuice/hp_inf|grapejuice_champion_healer">
   <Auras datatype="tokens">
     units/germ_seer_1
     units/germ_seer_2
-    units/germ_seer_1_buff
   </Auras>
   <Identity>
     <Civ>germ</Civ>

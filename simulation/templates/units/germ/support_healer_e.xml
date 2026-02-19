@@ -3,7 +3,9 @@
   <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+  <Promotion>
+    <Entity>units/germ/support_healer_c</Entity>
+  </Promotion>
   <VisualActor>
     <Actor>units/germans/healer_e.xml</Actor>
   </VisualActor>

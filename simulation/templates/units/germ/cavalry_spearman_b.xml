@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="template_unit_cavalry_melee_spearman">
+<Entity parent="grapejuice/hp_cav|grapejuice/melee_spearman|template_unit_cavalry_melee_spearman">
   <Identity>
     <Civ>germ</Civ>
     <GenericName>Cimbrian Spear Cavalry</GenericName>
@@ -16,4 +16,24 @@
   <VisualActor>
     <Actor>units/germans/cavalry_spearman_b_m.xml</Actor>
   </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 18 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 750 </PrepareTime>
+           <RepeatTime> 900 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 0 </Crush>
+               <Hack> 0 </Hack>
+               <Pierce> 0 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>

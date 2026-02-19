@@ -35,7 +35,7 @@
     <Max>60</Max>
   </Health>
   <Identity>
-    <Tooltip>Applies bleeding when attack units. Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
+    <Tooltip>Applies bleeding when attacking units. Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
     <Classes datatype="tokens">Human FastMoving Charger</Classes>
     <VisibleClasses datatype="tokens">Dog Melee Charger</VisibleClasses>
   </Identity>

@@ -7,4 +7,29 @@
   <VisualActor>
     <Actor>units/germans/cavalry_javelinist_e_m.xml</Actor>
   </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 15.95 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1800 </PrepareTime>
+           <RepeatTime> 1950 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 1300 </PrepareTime>
+           <RepeatTime> 1450 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 5 </Hack>
+               <Pierce> 6 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>

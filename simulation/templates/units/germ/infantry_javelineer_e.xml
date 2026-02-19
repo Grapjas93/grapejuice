@@ -7,4 +7,29 @@
   <VisualActor>
     <Actor>units/germans/infantry_javelinist_e.xml</Actor>
   </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 10.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1750 </PrepareTime>
+           <RepeatTime> 1900 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 850 </PrepareTime>
+           <RepeatTime> 1000 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>

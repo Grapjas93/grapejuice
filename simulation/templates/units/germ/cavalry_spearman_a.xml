@@ -9,4 +9,24 @@
   <VisualActor>
     <Actor>units/germans/cavalry_spearman_a_m.xml</Actor>
   </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 17.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 800 </PrepareTime>
+           <RepeatTime> 950 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 3 </Crush>
+               <Hack> 1 </Hack>
+               <Pierce> 1 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
 </Entity>
