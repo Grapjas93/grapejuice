@@ -439,7 +439,7 @@ function splashDetails(splashTemplate)
 
 function applyStatusDetails(applyStatusTemplate)
 {
-	if (!applyStatusTemplate)
+	if (!applyStatusTemplate || applyStatusTemplate.Burning?.Interval == 0)
 		return "";
 
 	return sprintf(translate("gives %(name)s"), {
