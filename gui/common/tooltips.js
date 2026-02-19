@@ -516,7 +516,8 @@ function getAttackTooltip(template)
 		let statusEffectsDetails = [];
 		if (attackTypeTemplate.ApplyStatus)
 			for (const status in attackTypeTemplate.ApplyStatus)
-				statusEffectsDetails.push("\n" + g_Indent + g_Indent + getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
+				if (attackTypeTemplate.ApplyStatus[status].interval > 0)
+					statusEffectsDetails.push("\n" + g_Indent + g_Indent + getStatusEffectsTooltip(status, attackTypeTemplate.ApplyStatus[status], true));
 		statusEffectsDetails = statusEffectsDetails.join("");
 
 		tooltips.push(sprintf(translate("%(attackLabel)s: %(effects)s, %(range)s, %(rate)s%(statusEffects)s%(splash)s"), {
