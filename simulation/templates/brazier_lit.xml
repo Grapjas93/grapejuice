@@ -14,7 +14,7 @@
     <Icon>technologies/cauldron_lit.png</Icon>
     <GenericName>Brazier (lit)</GenericName>
     <Tooltip>Nearby units shoot flaming projectiles and apply burining. Lit braziers costs 1 wood per second.</Tooltip>
-    <Requirements>
+    <Requirements  replace="">
       <Techs datatype="tokens">phase_village</Techs>
     </Requirements>
   </Identity>

@@ -13,7 +13,7 @@
   </Cost>
   <Identity>
     <Tooltip>Extinguish(ed) brazier.</Tooltip>
-    <Requirements>
+    <Requirements replace="">
       <Techs datatype="tokens">phase_village</Techs>
     </Requirements>
   </Identity>
