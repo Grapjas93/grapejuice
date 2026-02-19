@@ -25,17 +25,26 @@
   </group>
   <group>
     <variant name="texture a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="structural/maur_chariot_a.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="texture b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="structural/maur_chariot_b.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="texture c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="structural/maur_chariot_c.png" name="baseTex"/>
       </textures>
     </variant>
@@ -48,5 +57,5 @@
       </props>
     </variant>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

@@ -12,7 +12,7 @@ ChatMessageFormatSimulation.attack = class
 		if (msg.player != g_ViewedPlayer)
 			return "";
 
-		let message = msg.targetIsDomesticAnimal ?
+		const message = msg.targetIsDomesticAnimal ?
 			translate("%(icon)sYour livestock has been attacked by %(attacker)s!") :
 			translate("%(icon)sYou have been attacked by %(attacker)s!");
 
@@ -59,10 +59,10 @@ ChatMessageFormatSimulation.barter = class
 		if (!g_IsObserver || Engine.ConfigDB_GetValue("user", "gui.session.notifications.barter") != "true")
 			return "";
 
-		let amountGiven = {};
+		const amountGiven = {};
 		amountGiven[msg.resourceGiven] = msg.amountGiven;
 
-		let amountGained = {};
+		const amountGained = {};
 		amountGained[msg.resourceGained] = msg.amountGained;
 
 		return {
@@ -121,7 +121,7 @@ ChatMessageFormatSimulation.phase = class
 {
 	parse(msg)
 	{
-		let notifyPhase = Engine.ConfigDB_GetValue("user", "gui.session.notifications.phase");
+		const notifyPhase = Engine.ConfigDB_GetValue("user", "gui.session.notifications.phase");
 		if (notifyPhase == "none" || msg.player != g_ViewedPlayer && !g_IsObserver && !g_Players[msg.player].isMutualAlly[g_ViewedPlayer])
 			return "";
 
@@ -156,8 +156,8 @@ ChatMessageFormatSimulation.playerstate = class
 				})
 			};
 
-		let mPlayers = msg.players.map(playerID => colorizePlayernameByID(playerID));
-		let lastPlayer = mPlayers.pop();
+		const mPlayers = msg.players.map(playerID => colorizePlayernameByID(playerID));
+		const lastPlayer = mPlayers.pop();
 
 		return {
 			"text": sprintf(translatePlural(msg.message.message, msg.message.pluralMessage, msg.message.pluralCount), {
@@ -194,6 +194,37 @@ ChatMessageFormatSimulation.tribute = class
 				"player2": colorizePlayernameByID(msg.targetPlayer),
 				"amounts": getLocalizedResourceAmounts(msg.amounts)
 			})
+		};
+	}
+};
+
+ChatMessageFormatSimulation.flare = class
+{
+	// We don't need to check whether the player is supposed to see the flare as this function is only ever called in that case.
+	parse(msg)
+	{
+		switch (Engine.ConfigDB_GetValue("user", "gui.session.notifications.flare"))
+		{
+		case "never":
+			return "";
+
+		case "observer":
+			if (!g_IsObserver)
+				return "";
+			break;
+		default:
+			break;
+		}
+
+		return {
+			"text": sprintf(translate("%(icon)s%(player)s has sent a flare."), {
+				"icon": "[icon=\"icon_focusflare\" displace=\"0 1\"]",
+				"player": colorizePlayernameByGUID(msg.guid)
+			}),
+			"callback": ((position) => function() {
+				Engine.CameraMoveTo(position.x, position.z);
+			})(msg.position),
+			"tooltip": translate("Click to focus on the flare's location.")
 		};
 	}
 };

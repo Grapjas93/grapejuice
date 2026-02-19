@@ -5,16 +5,19 @@
 >
 
 	<!-- Names and civilization emblem etc. (This must come before the attack and resistance icon to avoid clipping issues.) -->
-	<object size="0 92 100% 100%" name="statsArea" type="image" sprite="edgedPanelShader">
+	<object size="0 96 100% 100%" name="statsArea" type="image" sprite="edgedPanelShader">
 		<!-- Civilization tooltip. -->
 		<object size="0 38 100% 62" tooltip_style="sessionToolTip">
 			<!-- Civilization emblem. -->
 			<object size="50%-64 50%-10 50%+64 50%+10" name="playerCivIcon" type="image" ghost="true"/>
 			<!-- Player color band. -->
 			<object name="playerColorBackground" type="image" sprite="playerColorBackground" ghost="true"/>
+			<!-- Phase emblems. -->
+			<object size="0 0 100% 100%" name="phaseEmblems" type="image" ghost="true"/>
 			<object type="image" sprite="bottomEdgedPanelShader" ghost="true"/>
 			<!-- Player name. -->
 			<object size="0 50%-10 100% 50%+10" name="player" type="text" style="largeCenteredOutlinedText"/>
+			<object name="civilizationTooltip" type="image" tooltip_style="sessionToolTip" />
 		</object>
 
 		<!-- Primary and secondary names. -->
@@ -25,20 +28,17 @@
 	</object>
 
 	<!-- Stats Bars -->
-	<object size= "0 0 100% 96" type="image" tooltip_style="sessionToolTip">
+	<object size= "0 0 100% 100" type="image" tooltip_style="sessionToolTip">
 
-		<object size="0 0 100% 60" type="image" sprite="topEdgedPanelShader">
+		<object size="0 0 100% 65" type="image" sprite="topEdgedPanelShader">
 
 			<!-- Placeholders storing the position for the bars. -->
-			<object size="96 1 100% 24" name="sectionPosTop" hidden="true"/>
-			<object size="96 11 100% 34" name="sectionPosMiddle" hidden="true"/>
-			<object size="96 32 100% 55" name="sectionPosBottom" hidden="true"/>
+			<object size="96 2 100% 24" name="sectionPosTop" hidden="true"/>
+			<object size="96 12 100% 34" name="sectionPosMiddle" hidden="true"/>
+			<object size="96 35 100% 55" name="sectionPosBottom" hidden="true"/>
 
 			<!-- Health bar -->
 			<object name="healthSection">
-				<object size="0 0 100% 12" name="healthLabel" type="text" style="StatsTextLeft" ghost="true">
-					<translatableAttribute id="tooltip">Health</translatableAttribute>
-				</object>
 				<object size="0 0 100% 12" name="healthStats" type="text" style="StatsTextRight" ghost="true"/>
 				<object size="1 14 100% 21" name="health" type="image" tooltip_style="sessionToolTip">
 					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
@@ -46,14 +46,17 @@
 					<object type="image" sprite="healthForeground" ghost="true" name="healthBar"/>
 					<object type="image" sprite="statsBarShaderHorizontal" ghost="true"/>
 				</object>
+				<object type="image" tooltip_style="sessionToolTip">
+					<translatableAttribute id="tooltip">Health</translatableAttribute>
+				</object>
 			</object>
 
 			<!-- border section used by ammo, energy, capture sections -->
 			<object name="borderSection">
 				<object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
-					<object type="image" sprite="barBorder" name="barBorderFull" ghost="true"/>
-					<object type="image" sprite="barBorder" name="barBorderSplit1" size="0 0 48% 7" ghost="true"/>
-					<object type="image" sprite="barBorder" name="barBorderSplit2" size="122 0 50% 7" ghost="true"/>
+					<object type="image" sprite="barBorder" name="barBorderFull" size="95 33 100% 42" ghost="true"/>
+					<object type="image" sprite="barBorder" name="barBorderSplit1" size="95 33 155 42" ghost="true"/>
+					<object type="image" sprite="barBorder" name="barBorderSplit2" size="157 33 100% 42" ghost="true"/>
 				</object>
 			</object>
 
@@ -73,13 +76,14 @@
 					<translatableAttribute id="tooltip">Capture points</translatableAttribute>
 				</object>
 				<object size="0 0 100% 12" name="captureStats" type="text" style="StatsTextRight" ghost="true"/>
-				<object size="1 14 100% 21" name="capture" type="image" tooltip_style="sessionToolTip">
+				<object size="1 14 100% 21" name="capture" type="image">
 					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
 					<repeat count="9">
 						<object type="image" sprite="playerColorBackground" ghost="true" name="captureBar[n]" hidden="true"/>
 					</repeat>
 					<object type="image" sprite="statsBarShaderHorizontal" ghost="true"/>
 				</object>
+				<object type="image" name="captureTooltip" tooltip_style="sessionToolTip"/>
 			</object>
 
 			<!-- Ammo bar -->
@@ -96,9 +100,9 @@
 			<!-- shader section used by ammo, energy, capture sections -->
 			<object name="shaderSection">
 				<object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
-					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderFull" ghost="true"/>
-					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit1" size="0 0 48% 7" ghost="true"/>
-					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit2" size="122 0 50% 7" ghost="true"/>
+					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderFull" size="95 33 100% 42" ghost="true"/>
+					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit1" size="95 33 155 42" ghost="true"/>
+					<object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit2" size="157 33 100% 42" ghost="true"/>
 				</object>
 			</object>
 
@@ -115,15 +119,15 @@
 			</object>
 		</object>
 
-		<object size="0 59 100% 95" type="image" sprite="edgedPanelShader">
+		<object size="0 63 100% 98" type="image" sprite="edgedPanelShader">
 			<!-- Attack and Resistance -->
-			<object size="96 0 128 32" name="attackAndResistanceStats" type="image" sprite="stretched:session/icons/stances/defensive.png" tooltip_style="sessionToolTipInstantly">
+			<object size="97 0 129 32" name="attackAndResistanceStats" type="image" sprite="stretched:session/icons/stances/defensive.png" tooltip_style="sessionToolTipInstantly">
 				<translatableAttribute id="tooltip">Attack and Resistance</translatableAttribute>
 			</object>
 
 			<!-- Resource carrying icon/counter -->
 			<!-- Used also for number of gatherers/builders -->
-			<object size="100%-96 0 100%-36 32" type="text" name="resourceCarryingText" style="CarryingTextRight"/>
+			<object size="100%-96 0 100%-33 32" type="text" name="resourceCarryingText" style="CarryingTextRight"/>
 			<object size="100%-32 0 100% 32" type="image" name="resourceCarryingIcon" tooltip_style="sessionToolTip"/>
 		</object>
 

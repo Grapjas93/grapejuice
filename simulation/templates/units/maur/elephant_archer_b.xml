@@ -5,8 +5,10 @@
     <GenericName>Elephant Archer</GenericName>
     <SpecificName>Vachii Gaja</SpecificName>
     <SelectionGroupName>units/maur/elephant_archer_b</SelectionGroupName>
-    <Icon>units/maur_elephant_archer.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/maur/elephant_archer.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/maur/elephant_archer_a</Entity>

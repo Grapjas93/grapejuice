@@ -14,17 +14,26 @@
   </group>
   <group>
     <variant frequency="2" name="hele-tunic-2a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/tunic_02_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="hele-tunic-2b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/tunic_02_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="3" name="hele-tunic-2c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/tunic_02_03.png" name="baseTex"/>
       </textures>
     </variant>
@@ -40,5 +49,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

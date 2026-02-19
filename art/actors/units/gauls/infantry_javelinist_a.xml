@@ -45,23 +45,35 @@
   <group>
     <variant frequency="1" name="gaul-naked_01">
       <mesh>skeletal/new/m_naked.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/naked_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="gaul-naked_02">
       <mesh>skeletal/new/m_naked.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/naked_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="gaul-pants-basic-04">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/pants_basic_04.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="gaul-pants-basic-06">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/pants_basic_06.png" name="baseTex"/>
       </textures>
     </variant>
@@ -111,5 +123,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

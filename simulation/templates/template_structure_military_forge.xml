@@ -25,10 +25,12 @@
     <GenericName>Forge</GenericName>
     <SelectionGroupName>template_structure_military_forge</SelectionGroupName>
     <Tooltip>Research attack damage and damage resistance technologies.</Tooltip>
-    <Classes datatype="tokens">ConquestCritical</Classes>
+    <Classes datatype="tokens">-ConquestCritical</Classes>
     <VisibleClasses datatype="tokens">Town Forge</VisibleClasses>
     <Icon>structures/blacksmith.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <wood>40</wood>

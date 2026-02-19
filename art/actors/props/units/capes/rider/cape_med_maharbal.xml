@@ -4,7 +4,10 @@
   <group>
     <variant>
       <mesh>props/new/capes/m_cape_medium.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/cape_kart_maharbal.dds" name="baseTex"/>
       </textures>
     </variant>

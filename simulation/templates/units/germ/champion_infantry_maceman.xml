@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_maceman">
+  <Builder disable=""/>
+  <Cost>
+    <Resources>
+      <food>50</food>
+      <wood>30</wood>
+      <stone>20</stone>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Civ>germ</Civ>
+    <GenericName>Cimbrian Clubman</GenericName>
+    <SpecificName>Kulbawigô</SpecificName>
+    <VisibleClasses datatype="tokens">Champion</VisibleClasses>
+    <Requirements>
+      <Techs datatype="tokens">phase_village</Techs>
+    </Requirements>
+    <Icon>units/germ/infantry_clubman.png</Icon>
+  </Identity>
+  <Promotion disable=""/>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">-1</Hack>
+        <Pierce op="add">-1</Pierce>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <ResourceGatherer disable=""/>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>256x256/arrow.png</MainTexture>
+        <MainTextureMask>256x256/arrow_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <UnitMotion>
+    <WalkSpeed op="mul">1.2</WalkSpeed>
+  </UnitMotion>
+  <VisualActor>
+    <Actor>units/germans/infantry_clubman.xml</Actor>
+  </VisualActor>
+</Entity>

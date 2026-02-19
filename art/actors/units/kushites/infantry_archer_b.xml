@@ -17,37 +17,55 @@
   </group>
   <group>
     <variant frequency="1" name="kush_barechested_01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/skirt_basic_01_01.png" name="baseTex"/>
         <texture file="skeletal/kush/skirt_basic_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="kush_barechested_02_lightskin">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/skirt_basic_01_02.png" name="baseTex"/>
         <texture file="skeletal/kush/skirt_basic_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="kush_barechested_03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/skirt_basic_01_03.png" name="baseTex"/>
         <texture file="skeletal/kush/skirt_basic_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="kush_barechested_04_lightskin">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/skirt_basic_01_04.png" name="baseTex"/>
         <texture file="skeletal/kush/skirt_basic_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="kush_barechested_05_lightskin">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/skirt_basic_01_05.png" name="baseTex"/>
         <texture file="skeletal/kush/skirt_basic_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="kush_barechested_06">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/skirt_basic_01_06.png" name="baseTex"/>
         <texture file="skeletal/kush/skirt_basic_01_spec.png" name="specTex"/>
       </textures>
@@ -92,5 +110,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

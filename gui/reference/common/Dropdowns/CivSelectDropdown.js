@@ -6,13 +6,14 @@ class CivSelectDropdown
 		const playerID = Engine.GetPlayerID();
 		this.hasViewPermission = Engine.GuiInterfaceCall("HasSpyTech", { "player": playerID }) || Engine.GuiInterfaceCall("GetState", { "player": playerID }) != "active";
 
-		let civList = Object.keys(civData).map(civ => ({
+		const civList = Object.keys(civData).map(civ => ({
 			"name": civData[civ].Name,
 			"code": civ,
 		})).sort(sortNameIgnoreCase);
+
 		this.civSelectionHeading = Engine.GetGUIObjectByName("civSelectionHeading");
-		const defaultcivSelectionHeadingSize = this.civSelectionHeading["size"];
 		this.civSelectionHeading.caption = this.hasViewPermission ? this.Caption : translate("Espionage tech (civic center) is required to view other civilizations");
+		const defaultcivSelectionHeadingSize = this.civSelectionHeading["size"];
 		this.civSelectionHeading["size"] = this.hasViewPermission ? defaultcivSelectionHeadingSize : "0 10 100% 48";
 
 		this.civSelection = Engine.GetGUIObjectByName("civSelection");
@@ -24,9 +25,9 @@ class CivSelectDropdown
 
 	onSelectionChange()
 	{
-		let civCode = this.civSelection.list_data[this.civSelection.selected];
+		const civCode = this.civSelection.list_data[this.civSelection.selected];
 
-		for (let handler of this.handlers)
+		for (const handler of this.handlers)
 			handler(civCode);
 	}
 
@@ -50,7 +51,7 @@ class CivSelectDropdown
 		if (!civCode)
 			return;
 
-		let index = this.civSelection.list_data.indexOf(civCode);
+		const index = this.civSelection.list_data.indexOf(civCode);
 		if (index == -1)
 			return;
 

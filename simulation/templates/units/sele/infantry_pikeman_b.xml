@@ -26,7 +26,7 @@
     <SelectionGroupName>units/sele/infantry_pikeman_b</SelectionGroupName>
     <GenericName>Phalangite</GenericName>
     <SpecificName>Phalangitēs</SpecificName>
-    <Icon>units/sele_infantry_spearman.png</Icon>
+    <Icon>units/sele/infantry_spearman.png</Icon>
   </Identity>
   <Promotion>
     <Entity>units/sele/infantry_pikeman_a</Entity>

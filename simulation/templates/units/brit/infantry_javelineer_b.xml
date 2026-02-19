@@ -36,8 +36,10 @@
     <Civ>brit</Civ>
     <SelectionGroupName>units/brit/infantry_javelineer_b</SelectionGroupName>
     <SpecificName>Adretos</SpecificName>
-    <Icon>units/brit_infantry_javelinist.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/brit/infantry_javelinist.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/brit/infantry_javelineer_a</Entity>

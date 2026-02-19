@@ -32,8 +32,10 @@
     <GenericName>Syrian Archer</GenericName>
     <SpecificName>Toxótēs Syrías</SpecificName>
     <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
-    <Icon>units/sele_infantry_archer.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/sele/infantry_archer.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/sele/infantry_archer_merc_a</Entity>

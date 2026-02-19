@@ -2,7 +2,7 @@
 <Entity parent="grapejuice/siege_stonethrower|template_unit_siege_stonethrower">
   <Identity>
     <SpecificName>Lithobólos</SpecificName>
-    <Icon>units/hele_siege_lithobolos_packed.png</Icon>
+    <Icon>units/hele/siege_lithobolos_packed.png</Icon>
   </Identity>
   <Pack>
     <Entity>units/athen/siege_lithobolos_unpacked</Entity>

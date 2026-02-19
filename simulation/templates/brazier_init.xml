@@ -8,10 +8,12 @@
   <Identity>
     <Icon>technologies/cauldron.png</Icon>
     <GenericName>Brazier</GenericName>
-    <Tooltip></Tooltip>
+    <Tooltip>Can be lit. While lit, nearby units shoot flaming projectiles and apply burining. Lit braziers costs 1 wood per second.</Tooltip>
     <Classes datatype="tokens">Brazier</Classes>
     <VisibleClasses datatype="tokens">Brazier</VisibleClasses>
-    <RequiredTechnology>phase_city</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_city</Techs>
+    </Requirements>
   </Identity>
   <Obstruction>
     <Static width="4.0" depth="4.0"/>

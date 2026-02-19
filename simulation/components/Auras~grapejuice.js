@@ -1,4 +1,26 @@
 
+
+//Auras.prototype.CanApply = function(name)
+//{
+//	if (!AuraTemplates.Get(name).requiredTechnology)
+//		return true;
+//
+//	let cmpTechnologyManager = QueryOwnerInterface(this.entity, IID_TechnologyManager);
+//	if (!cmpTechnologyManager)
+//		return false;
+//
+//	// re-arm aura
+//	if (cmpTechnologyManager.IsTechnologyResearched(AuraTemplates.Get(name).requiredTechnology) && (name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range"))
+//	{
+//		let entPlayer = Helpers.GetOwner(this.entity);
+//		// If player has no forge, entities will not re-arm
+//		let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
+//		return hasForge.length >= 1;
+//	}
+//
+//	return cmpTechnologyManager.IsTechnologyResearched(AuraTemplates.Get(name).requiredTechnology);
+//};
+
 Auras.prototype.ApplyAura = function(name, ents)
 {
 	var validEnts = this.GiveMembersWithValidClass(name, ents);

@@ -27,7 +27,7 @@
 <Identity>
   <Civ>han</Civ>
   <SpecificName>Liú Bāng</SpecificName>
-  <Icon>units/han/hero_liu_bang.png</Icon>
+  <Icon>units/han//hero_liu_bang.png</Icon>
 </Identity>
 <Promotion disable=""/>
 <VisualActor>

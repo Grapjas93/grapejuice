@@ -24,7 +24,7 @@
     <Civ>mace</Civ>
     <Lang>greek</Lang>
     <SpecificName>Gastraphetophoros</SpecificName>
-    <Icon>units/mace_champion_infantry_crossbowman.png</Icon>
+    <Icon>units/mace/champion_infantry_crossbowman.png</Icon>
   </Identity>
    <UnitMotion>
        <WalkSpeed> 10.70 </WalkSpeed>

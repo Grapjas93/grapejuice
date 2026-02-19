@@ -6,7 +6,7 @@
 
 
 
-	"version": "r12",
+	"version": "12",
 
 
 
@@ -18,7 +18,7 @@
 
 
 
-	"dependencies": ["0ad=0.0.26"]
+	"dependencies": ["0ad=0.28.0"]
 
 
 

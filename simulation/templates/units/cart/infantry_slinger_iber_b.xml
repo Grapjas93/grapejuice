@@ -38,8 +38,10 @@
     <GenericName>Balearic Slinger</GenericName>
     <SpecificName>Qallāʿ Ibušimi</SpecificName>
     <SelectionGroupName>units/cart/infantry_slinger_iber_b</SelectionGroupName>
-    <Icon>units/cart_infantry_slinger.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/cart/infantry_slinger.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/cart/infantry_slinger_iber_a</Entity>

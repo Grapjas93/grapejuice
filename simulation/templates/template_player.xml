@@ -13,25 +13,31 @@
     <AlertnessPeaceThreshold>0</AlertnessPeaceThreshold>
     <AlertnessMax>8</AlertnessMax>
   </BattleDetection>
+  <Diplomacy>
+    <SharedLosTech>unlock_shared_los</SharedLosTech>
+    <SharedDropsitesTech>unlock_shared_dropsites</SharedDropsitesTech>
+  </Diplomacy>
   <EntityLimits>
     <Limits>
-      <FieldCamp>3</FieldCamp>
       <Animal>50</Animal>
       <CivilCentre>1</CivilCentre>
       <Gladiator>0</Gladiator>
       <Hero>1</Hero>
       <Juggernaut>1</Juggernaut>
+      <Kennel>2</Kennel>
       <Library>1</Library>
       <Lighthouse>1</Lighthouse>
       <Monument>5</Monument>
-      <Palace>2</Palace>
+      <Palace>1</Palace>
       <Pillar>0</Pillar>
       <PyramidLarge>2</PyramidLarge>
       <TempleOfAmun>1</TempleOfAmun>
+      <TempleOfIsis>1</TempleOfIsis>
       <TempleOfVesta>1</TempleOfVesta>
       <Theater>1</Theater>
       <Yakhchal>5</Yakhchal>
-      <WarDog>20</WarDog>
+      <WarDog>0</WarDog>
+      <Centurion>8</Centurion>
       <Wonder>1</Wonder>
     </Limits>
     <LimitChangers>
@@ -44,6 +50,9 @@
       <Pillar>
         <Ashoka>5</Ashoka>
       </Pillar>
+      <WarDog>
+        <Kennel>10</Kennel>
+      </WarDog>
     </LimitChangers>
     <LimitRemovers>
       <CivilCentre>
@@ -70,8 +79,6 @@
         <metal>1.0</metal>
       </Sell>
     </BarterMultiplier>
-    <SharedLosTech>unlock_shared_los</SharedLosTech>
-    <SharedDropsitesTech>unlock_shared_dropsites</SharedDropsitesTech>
     <SpyCostMultiplier>1.0</SpyCostMultiplier>
     <Formations datatype="tokens">
       special/formations/null
@@ -84,6 +91,9 @@
       special/formations/battle_line
       special/formations/skirmish
       special/formations/wedge
+      special/formations/ships/line_staggered
+      special/formations/ships/flank
+      special/formations/ships/column
     </Formations>
   </Player>
   <ResourceTrickle>
@@ -115,6 +125,7 @@
       Ship
       Siege
       Trader
+      Unit
       Worker
     </UnitClasses>
     <StructureClasses datatype="tokens">
@@ -124,6 +135,7 @@
       House
       Military
       Outpost
+      Structure
       Wonder
     </StructureClasses>
   </StatisticsTracker>

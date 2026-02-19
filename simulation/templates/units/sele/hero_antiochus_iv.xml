@@ -28,7 +28,7 @@
     <Lang>greek</Lang>
     <GenericName>Antiochus IV</GenericName>
     <SpecificName>Antiokhos D' Epiphanēs</SpecificName>
-    <Icon>units/sele_hero_antiochus_the_righteous.png</Icon>
+    <Icon>units/sele/hero_antiochus_the_righteous.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/ptolemies/hero_cavalry_swordsman_ptolemy_IV_m.xml</Actor>

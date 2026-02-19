@@ -4,7 +4,7 @@
     <Lang>greek</Lang>
     <GenericName>Thracian Black Cloak</GenericName>
     <SpecificName>Rhomphaiophoros</SpecificName>
-    <Icon>units/sele_infantry_swordsman.png</Icon>
+    <Icon>units/sele/infantry_swordsman.png</Icon>
 	<Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>

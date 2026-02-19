@@ -11,12 +11,18 @@
   </group>
   <group>
     <variant frequency="1" name="Pelt Brown">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/cape_hd_pelt_brown.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Pelt Gray">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/cape_hd_pelt_gray.png" name="baseTex"/>
       </textures>
     </variant>

@@ -10,7 +10,10 @@
         <prop actor="props/units/shields/samn_scutum_adv.xml" attachpoint="shield"/>
         <prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
@@ -49,22 +52,34 @@
   </group>
   <group>
     <variant frequency="1" name="ital-linothorax-1a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ital/linothorax_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="ital-linothorax-1b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ital/linothorax_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="ital-linothorax-1c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ital/linothorax_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="ital-linothorax-1d">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ital/linothorax_01_04.png" name="baseTex"/>
       </textures>
     </variant>
@@ -93,5 +108,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

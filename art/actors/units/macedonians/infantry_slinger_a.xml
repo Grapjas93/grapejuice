@@ -15,32 +15,50 @@
   </group>
   <group>
     <variant frequency="1" name="illy-tunic-basic-01-d">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/tunic_basic_02_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="illy-tunic-basic-01-e">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/tunic_basic_02_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="illy-tunic-basic-01-f">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/tunic_basic_02_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_marine_01_01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/tunic_marine_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_marine_01_02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/tunic_marine_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_marine_01_03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/tunic_marine_01_03.png" name="baseTex"/>
       </textures>
     </variant>
@@ -90,5 +108,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

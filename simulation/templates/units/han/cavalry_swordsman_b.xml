@@ -24,7 +24,7 @@
     <Civ>han</Civ>
     <SelectionGroupName>units/han/cavalry_swordsman_b</SelectionGroupName>
     <SpecificName>Dāo Qíbīng</SpecificName>
-    <Icon>units/han/cavalry_swordsman.png</Icon>
+    <Icon>units/han//cavalry_swordsman.png</Icon>
   </Identity>
   <Promotion>
     <Entity>units/han/cavalry_swordsman_a</Entity>

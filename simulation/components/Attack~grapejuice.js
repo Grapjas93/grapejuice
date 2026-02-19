@@ -299,7 +299,7 @@ Attack.prototype.StopCanChargeTimer = function()
 	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
 
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	cmpUnitAI.ResetSpeedMultiplier();
+	cmpUnitAI.SetSpeedMultiplier(1);
 };
 
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
@@ -314,7 +314,7 @@ Attack.prototype.Charge = function(target)
 	if (this.CanCharge(target) == false)
 	{
 		cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
-		cmpUnitAI.ResetSpeedMultiplier();
+		cmpUnitAI.SetSpeedMultiplier(1);
 
 		// workaround fix for sprinting attacking soldiers in formation
 		if (cmpUnitAI.IsFormationMember())
@@ -357,7 +357,7 @@ Attack.prototype.Charge = function(target)
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
 
-		cmpUnitAI.SetSpeedMultiplier(cmpUnitAI.GetRunMultiplier());
+		cmpUnitAI.Run();
 
 		// workaround fix for sprinting attacking soldiers in formation
 		if (cmpUnitAI.IsFormationMember())

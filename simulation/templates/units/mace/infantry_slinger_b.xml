@@ -32,8 +32,10 @@
     <GenericName>Rhodian Slinger</GenericName>
     <SpecificName>Sphendonḗtēs Rhódios</SpecificName>
     <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
-    <Icon>units/mace_infantry_slinger.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/mace/infantry_slinger.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/mace/infantry_slinger_a</Entity>

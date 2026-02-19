@@ -50,6 +50,9 @@
     <Tooltip>A mobile resupply point for units that require ammo. Cannot be re-supplied by mobile re-arm auras.</Tooltip>
     <Formations disable=""/>
     <Icon>units/ammo_cart.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_city</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <xp>10</xp>

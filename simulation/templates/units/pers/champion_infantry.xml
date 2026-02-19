@@ -26,7 +26,7 @@
     <GenericName>Persian Immortal</GenericName>
     <SpecificName>Anušiya</SpecificName>
     <VisibleClasses datatype="tokens">Immortal</VisibleClasses>
-    <Icon>units/pers_champion_infantry.png</Icon>
+    <Icon>units/pers/champion_infantry.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/persians/infantry_spearman_c2.xml</Actor>

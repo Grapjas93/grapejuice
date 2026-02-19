@@ -4,7 +4,7 @@
     <Civ>han</Civ>
     <GenericName>Mangonel</GenericName>
     <SpecificName>Tóushí Chē</SpecificName>
-    <Icon>units/han/siege_mangonel_packed.png</Icon>
+    <Icon>units/han//siege_mangonel_packed.png</Icon>
   </Identity>
   <Pack>
     <Entity>units/han/siege_mangonel_unpacked</Entity>

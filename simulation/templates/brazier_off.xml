@@ -12,7 +12,10 @@
     </Resources>
   </Cost>
   <Identity>
-    <RequiredTechnology>phase_village</RequiredTechnology>
+    <Tooltip>Extinguish(ed) brazier.</Tooltip>
+    <Requirements>
+      <Techs datatype="tokens">phase_village</Techs>
+    </Requirements>
   </Identity>
   <Trainer>
     <Entities replace="" datatype="tokens">

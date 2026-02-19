@@ -27,7 +27,7 @@
   <Identity>
     <Civ>han</Civ>
     <SpecificName>Hán Xìn</SpecificName>
-    <Icon>units/han/hero_han_xin.png</Icon>
+    <Icon>units/han//hero_han_xin.png</Icon>
   </Identity>
   <Promotion disable=""/>
   <VisualActor>

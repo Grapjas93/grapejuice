@@ -30,7 +30,7 @@ function CheckViewPermission(entState)
 	return false;
 }
 
-// Fills out information that most entities have, unless the CheckViewPermission() returns false.
+// Fills out information that most entities have
 function displaySingle(entState)
 {
 	const hasViewPermission = CheckViewPermission(entState);
@@ -65,7 +65,7 @@ function displaySingle(entState)
 
 	// Rank
 	if (entState.identity && entState.identity.rank && entState.identity.classes && hasViewPermission)
-	{
+		{
 		const rankObj = GetTechnologyData(entState.identity.rankTechName, playerState.civ);
 		Engine.GetGUIObjectByName("rankIcon").tooltip = sprintf(translate("%(rank)s Rank"), {
 			"rank": translateWithContext("Rank", entState.identity.rank)
@@ -110,7 +110,6 @@ function displaySingle(entState)
 	let showCapture = entState.capturePoints;
 	let showEnergy = false;
 	let showAmmo = false;
-
 
     // grapejuice, energy
 	let	currentEnergy = 0;
@@ -195,14 +194,6 @@ function displaySingle(entState)
 		barBorderSplit2.hidden = true;
 	}
 
-	borderSection.size = sectionPosBottom.size;
-	captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
-	resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
-
-	shaderSection.size = sectionPosBottom.size;
-	captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
-	resourceSection.size = showResource ? sectionPosBottom.size : sectionPosMiddle.size;
-
 	// grapejuice, ammo
 	ammoSection.hidden = !showAmmo;
 	if (showAmmo)
@@ -263,7 +254,7 @@ function displaySingle(entState)
 		unitHealthBar.size = healthSize;
 		Engine.GetGUIObjectByName("healthStats").caption = sprintf(translate("%(hitpoints)s / %(maxHitpoints)s"), {
 			"hitpoints": hasViewPermission ? Math.ceil(entState.hitpoints) : "?",
-			"maxHitpoints": hasViewPermission ? Math.ceil(entState.maxHitpoints) : "?"
+			"maxHitpoints": hasViewPermission ? Math.ceil(entState.maxHitpoints): "?"
 		});
 
 		healthSection.size = sectionPosTop.size;
@@ -288,7 +279,6 @@ function displaySingle(entState)
 			sizeObj.rleft = startSize;
 
 			let size = 100 * Math.max(0, Math.min(1, entState.capturePoints[playerID] / entState.maxCapturePoints));
-
 			sizeObj.rright = startSize + size;
 			unitCaptureBar.size = sizeObj;
 			unitCaptureBar.sprite = "color:" + g_DiplomacyColors.getPlayerColor(playerID, 128);
@@ -310,7 +300,7 @@ function displaySingle(entState)
 
 		let showSmallCapture = showResource && showHealth;
 		Engine.GetGUIObjectByName("captureStats").caption = showSmallCapture ? "" : captureText;
-		Engine.GetGUIObjectByName("capture").tooltip = showSmallCapture ? captureText : "";
+		Engine.GetGUIObjectByName("captureTooltip").tooltip = showSmallCapture ? getCurrentCaptureTooltip(entState) : translate("Capture Points");
 	}
 
 	// Experience
@@ -441,16 +431,46 @@ function displaySingle(entState)
 		});
 	secondaryObject.hidden = hideSecondary;
 
-	let isGaia = playerState.civ == "gaia";
+	const isGaia = playerState.civ == "gaia";
 	Engine.GetGUIObjectByName("playerCivIcon").sprite = isGaia ? "" : "cropped:1.0, 0.15625 center:grayscale:" + civEmblem;
-	Engine.GetGUIObjectByName("player").tooltip = isGaia ? "" : civName;
+
+	if (isGaia)
+	{
+		Engine.GetGUIObjectByName("phaseEmblems").sprite = "";
+		Engine.GetGUIObjectByName("civilizationTooltip").tooltip = "";
+	}
+	else
+	{
+		let civilizationTooltip = hasViewPermission ? civName : "?";
+		let civPhaseEmblems = "session/panel_phase_emblems_hidden.png";
+
+		// Reveal phases to mutual allies and observers
+		if (g_ViewedPlayer == -1 || playerState.isMutualAlly[g_ViewedPlayer])
+		{
+			const civPhase = g_SimState.players[entState.player].phase
+			civPhaseEmblems = "session/panel_phase_emblems_" + civPhase + ".png";
+			const civPhaseData = GetTechnologyData("phase_" + civPhase + "_" + playerState.civ, playerState.civ) ||
+				GetTechnologyData("phase_" + civPhase, playerState.civ);
+			civilizationTooltip += " — " + getEntityNames(civPhaseData);
+		}
+		Engine.GetGUIObjectByName("phaseEmblems").sprite = "cropped:1.0, 1.0 center:" + civPhaseEmblems;
+		Engine.GetGUIObjectByName("civilizationTooltip").tooltip = civilizationTooltip;
+	}
 
 	// TODO: we should require all entities to have icons
 	Engine.GetGUIObjectByName("icon").sprite = template.icon ? ("stretched:session/portraits/" + template.icon) : "BackgroundBlack";
 	if (template.icon)
-		Engine.GetGUIObjectByName("iconBorder").onPressRight = () => {
+	{
+		const iconBorder = Engine.GetGUIObjectByName("iconBorder");
+
+		iconBorder.onPress = () => {
+			setCameraFollow(entState.id);
+		};
+
+		iconBorder.onPressRight = () => {
 			hasViewPermission ? showTemplateDetails(entState.template, playerState.civ) : '';
 		};
+	}
 
 	let detailedTooltip = [
 		getAttackTooltip,
@@ -467,7 +487,7 @@ function displaySingle(entState)
 		getLootTooltip
 	].map(func => func(entState)).filter(tip => tip).join("\n");
 	if (detailedTooltip && hasViewPermission)
-	{
+		{
 		Engine.GetGUIObjectByName("attackAndResistanceStats").hidden = false;
 		Engine.GetGUIObjectByName("attackAndResistanceStats").tooltip = detailedTooltip;
 	}
@@ -481,9 +501,11 @@ function displaySingle(entState)
 		getVisibleEntityClassesFormatted,
 		getAurasTooltip,
 		getEntityTooltip,
-		getTreasureTooltip,
-		showTemplateViewerOnRightClickTooltip
-	].map(func => func(template))) : iconTooltips.concat([].map(func => func(template)));
+		getTreasureTooltip
+	].map(func => func(template))) : iconTooltips.concat([].map(func => func(template)));;
+
+	const leftClickTooltip = hasClass(entState, "Unit") ? getFollowOnLeftClickTooltip() : getFocusOnLeftClickTooltip();
+	iconTooltips.push(leftClickTooltip + " " + getTemplateViewerOnRightClickTooltip());
 
 	Engine.GetGUIObjectByName("iconBorder").tooltip = iconTooltips.filter(tip => tip).join("\n");
 

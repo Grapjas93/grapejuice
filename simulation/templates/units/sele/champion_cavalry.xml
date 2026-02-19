@@ -25,7 +25,7 @@
     <Lang>greek</Lang>
     <GenericName>Seleucid Cataphract</GenericName>
     <SpecificName>Seleukidón Kataphraktos</SpecificName>
-    <Icon>units/sele_champion_cavalry.png</Icon>
+    <Icon>units/sele/champion_cavalry.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/seleucids/cavalry_spearman_c_m.xml</Actor>

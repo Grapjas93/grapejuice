@@ -26,31 +26,46 @@
   </group>
   <group>
     <variant frequency="1" name="scale-old">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/scale_06_01.png" name="baseTex"/>
         <texture file="skeletal/hele/scale_06_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="scale-1-a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/scale_01_01.png" name="baseTex"/>
         <texture file="skeletal/hele/scale_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="lamellar-1a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/lamellar_01_01.png" name="baseTex"/>
         <texture file="skeletal/hele/lamellar_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-lamellar-1a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/linothorax_lamellar_01_01.png" name="baseTex"/>
         <texture file="skeletal/hele/linothorax_lamellar_01_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="linothorax-lamellar-1b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/linothorax_lamellar_01_02.png" name="baseTex"/>
         <texture file="skeletal/hele/linothorax_lamellar_01_spec.png" name="specTex"/>
       </textures>
@@ -80,5 +95,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

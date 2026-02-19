@@ -11,7 +11,10 @@
         <prop actor="props/units/quiver_back.xml" attachpoint="back"/>
         <prop actor="props/units/weapons/sheath_celt_iron.xml" attachpoint="sheath_02_L"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ptol/dress_cleopatra.png" name="baseTex"/>
       </textures>
     </variant>
@@ -29,5 +32,5 @@
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

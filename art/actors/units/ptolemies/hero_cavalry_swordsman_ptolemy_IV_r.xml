@@ -12,7 +12,10 @@
         <prop actor="props/units/capes/rider/cape_long_player.xml" attachpoint="root"/>
         <prop actor="props/units/weapons/sheath_celt_iron_e.xml" attachpoint="sheath_02_L"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ptol/cuirass_gold_01.png" name="baseTex"/>
         <texture file="skeletal/mace/cuirass_vergina_01_spec.png" name="specTex"/>
       </textures>
@@ -22,5 +25,5 @@
     <variant file="biped/rider/cavalry/base_swordsman_ready_shield_aspis.xml" name="Swordsman-Ready-Shield-Aspis" frequency="1"/>
     <variant file="biped/rider/death_aspis.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

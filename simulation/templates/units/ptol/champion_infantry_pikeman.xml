@@ -25,8 +25,10 @@
     <Lang>greek</Lang>
     <GenericName>Royal Guard Infantry</GenericName>
     <SpecificName>Phalangitès Agema</SpecificName>
-    <Icon>units/ptol_champion_infantry.png</Icon>
-    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+    <Icon>units/ptol/champion_infantry.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">unlock_champion_infantry</Techs>
+    </Requirements>
   </Identity>
   <VisualActor>
     <Actor>units/ptolemies/infantry_pikeman_c.xml</Actor>

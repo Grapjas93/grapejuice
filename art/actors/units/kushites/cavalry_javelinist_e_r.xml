@@ -16,25 +16,37 @@
   </group>
   <group>
     <variant frequency="1" name="Kushite Elite Javelin Cavalry 01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/padded_05_02.png" name="baseTex"/>
         <texture file="skeletal/kush/padded_05_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Kushite Elite Javelin Cavalry 02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/padded_04_01.png" name="baseTex"/>
         <texture file="skeletal/kush/padded_04_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Kushite Elite Javelin Cavalry 03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/padded_05_03.png" name="baseTex"/>
         <texture file="skeletal/kush/padded_05_spec.png" name="specTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Kushite Elite Javelin Cavalry 04">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/kush/padded_05_01.png" name="baseTex"/>
         <texture file="skeletal/kush/padded_05_spec.png" name="specTex"/>
       </textures>
@@ -76,5 +88,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

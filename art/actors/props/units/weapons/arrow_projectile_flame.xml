@@ -14,7 +14,10 @@
         <prop actor="particle/flame_small2.xml" attachpoint="root"/>
         <prop actor="particle/flame_small3.xml" attachpoint="root"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/prop_weap.dds" name="baseTex"/>
       </textures>
     </variant>

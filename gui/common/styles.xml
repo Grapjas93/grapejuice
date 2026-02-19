@@ -71,6 +71,19 @@
 		sound_pressed="audio/interface/ui/ui_button_click.ogg"
 	/>
 
+	<style name="BrownButton"
+		sprite="BrownButton"
+		sprite_disabled="BrownButtonDisabled"
+		sprite_over="BrownButtonOver"
+		sprite_pressed="BrownButtonPressed"
+		font="sans-bold-stroke-14"
+		textcolor="white"
+		textcolor_disabled="210 210 210 160"
+		text_align="center"
+		text_valign="center"
+		sound_pressed="audio/interface/ui/ui_button_click.ogg"
+	/>
+
 	<style name="StoneButtonFancy"
 		sprite="StoneButton"
 		sprite_disabled="StoneButtonDisabled"

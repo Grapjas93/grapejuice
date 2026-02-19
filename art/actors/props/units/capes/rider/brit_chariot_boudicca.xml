@@ -4,7 +4,10 @@
   <group>
     <variant file="biped/base_jav_chariot_ready.xml">
       <mesh>props/new/capes/f_cape_long.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/cape_celt_boudicca.dds" name="baseTex"/>
       </textures>
     </variant>
@@ -17,5 +20,5 @@
     <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_cape.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

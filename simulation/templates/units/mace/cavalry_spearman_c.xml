@@ -5,7 +5,7 @@
     <Lang>greek</Lang>
     <GenericName>Companion Cavalry</GenericName>
     <SpecificName>Hetaîros</SpecificName>
-    <Icon>units/mace_champion_cavalry.png</Icon>
+    <Icon>units/mace/champion_cavalry.png</Icon>
     <SelectionGroupName>units/mace/champion_cavalry</SelectionGroupName>
 	<Rank>Champion</Rank>
   </Identity>

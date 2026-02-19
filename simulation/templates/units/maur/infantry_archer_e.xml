@@ -27,7 +27,7 @@
    </Resistance>
    <Identity>
 <Rank>Elite</Rank>
-<Icon>units/maur_infantry_archer.png</Icon>
+<Icon>units/maur/infantry_archer.png</Icon>
 </Identity>
  <Promotion disable=""/>
   <VisualActor>

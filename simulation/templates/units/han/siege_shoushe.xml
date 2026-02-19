@@ -7,7 +7,7 @@
   <Identity>
     <Civ>han</Civ>
     <SpecificName>Nǔ Chē</SpecificName>
-    <Icon>units/han/siege_boltshooter.png</Icon>
+    <Icon>units/han//siege_boltshooter.png</Icon>
   </Identity>
   <Pack disable=""/>
   <Promotion disable=""/>

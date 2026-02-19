@@ -31,7 +31,9 @@
     <GenericName>Halberdier</GenericName>
     <SpecificName>Jǐ Bīng</SpecificName>
     <Icon>units/han/infantry_halberdman.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/han/infantry_pikeman_a</Entity>

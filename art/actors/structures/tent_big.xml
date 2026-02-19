@@ -7,7 +7,10 @@
       <props>
         <prop actor="props/structures/decals/dirt_2x2.xml" attachpoint="root"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 		<texture file="structural/tent_big.png" name="baseTex"/>
 		<texture file="structural/tent_big_norm.png" name="normTex"/>
         <texture file="structural/tent_big_spec.png" name="specTex"/>
@@ -18,5 +21,5 @@
   <group>
     <variant frequency="100" name="Idle"/>
   </group>
-  <material>player_trans_ao_parallax_spec.xml</material>
+  <material>player_trans_norm_spec_ao_parallax_spec.xml</material>
 </actor>

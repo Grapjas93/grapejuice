@@ -56,7 +56,7 @@ DelayedDamage.prototype.Hit = function(data, lateness)
 
 	// Since we can't damage mirages, replace a miraged target by the real target.
 	let target = data.target;
-	let cmpMirage = Engine.QueryInterface(data.target, IID_Mirage);
+	const cmpMirage = Engine.QueryInterface(data.target, IID_Mirage);
 	if (cmpMirage)
 		target = cmpMirage.GetParent();
 
@@ -66,7 +66,7 @@ DelayedDamage.prototype.Hit = function(data, lateness)
 		return;
 	}
 
-	let cmpProjectileManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ProjectileManager);
+	const cmpProjectileManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ProjectileManager);
 
 	// Deal direct damage if we hit the main target
 	// and we could handle the attack.
@@ -78,10 +78,10 @@ DelayedDamage.prototype.Hit = function(data, lateness)
 	}
 
 	// If we didn't hit the main target look for nearby units.
-	let ents = PositionHelper.EntitiesNearPoint(Vector2D.from3D(data.position), this.MISSILE_HIT_RADIUS,
+	const ents = PositionHelper.EntitiesNearPoint(Vector2D.from3D(data.position), this.MISSILE_HIT_RADIUS,
 		AttackHelper.GetPlayersToDamage(data.attackerOwner, data.friendlyFire));
 
-	for (let ent of ents)
+	for (const ent of ents)
 	{
 		if (!PositionHelper.TestCollision(ent, data.position, lateness) ||
 			!AttackHelper.HandleAttackEffects(ent, data))

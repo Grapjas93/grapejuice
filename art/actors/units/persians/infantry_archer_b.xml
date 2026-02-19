@@ -16,27 +16,42 @@
   </group>
   <group>
     <variant frequency="1" name="scyth-tunic-coat-01-01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/scyth/tunic_coat_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="scyth-tunic-coat-01-02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/scyth/tunic_coat_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="scyth-tunic-coat-01-03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/scyth/tunic_coat_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="3" name="tunic-basic-1g">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/tunic_basic_01_07.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="3" name="tunic-basic-1h">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/tunic_basic_01_08.png" name="baseTex"/>
       </textures>
     </variant>
@@ -86,5 +101,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

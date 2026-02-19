@@ -8,7 +8,10 @@
         <prop actor="props/units/heads/new/head_kart_priestess.xml" attachpoint="head"/>
         <prop actor="props/units/weapons/kart_healer_staff.xml" attachpoint="weapon_L"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/dress_female_01.png" name="baseTex"/>
       </textures>
     </variant>
@@ -19,5 +22,5 @@
     <variant file="biped/attack_melee_archer.xml"/>
     <variant file="biped/build.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

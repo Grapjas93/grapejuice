@@ -6,17 +6,17 @@
  */
 function loadCivFiles(selectableOnly)
 {
-	let propertyNames = [
+	const propertyNames = [
 		"Code", "Culture", "Music", "CivBonuses", "StartEntities",
 		"AINames", "SkirmishReplacements", "SelectableInGameSetup"];
 
-	let civData = {};
+	const civData = {};
 
-	for (let filename of Engine.ListDirectoryFiles("simulation/data/civs/", "*.json", false))
+	for (const filename of Engine.ListDirectoryFiles("simulation/data/civs/", "*.json", false))
 	{
-		let data = Engine.ReadJSONFile(filename);
+		const data = Engine.ReadJSONFile(filename);
 
-		for (let prop of propertyNames)
+		for (const prop of propertyNames)
 			if (data[prop] === undefined)
 				throw new Error(filename + " doesn't contain " + prop);
 
@@ -86,16 +86,16 @@ function MatchesClassList(classes, match)
 	if (!match || !classes)
 		return undefined;
 	// Transform the string to an array
-	if (typeof match == "string")
+	if (typeof match === "string")
 		match = match.split(/\s+/);
 
 	for (let sublist of match)
 	{
 		// If the elements are still strings, split them by space or by '+'
-		if (typeof sublist == "string")
+		if (typeof sublist === "string")
 			sublist = sublist.split(/[+\s]+/);
-		if (sublist.every(c => (c[0] == "!" && classes.indexOf(c.substr(1)) == -1) ||
-		                       (c[0] != "!" && classes.indexOf(c) != -1)))
+		if (sublist.every(c => (c[0] === "!" && classes.indexOf(c.substr(1)) === -1) ||
+		                       (c[0] !== "!" && classes.indexOf(c) !== -1)))
 			return true;
 	}
 
@@ -113,7 +113,7 @@ function MatchesClassList(classes, match)
 function GetBaseTemplateDataValue(template, value_path, default_value)
 {
 	let current_value = template;
-	for (let property of value_path.split("/"))
+	for (const property of value_path.split("/"))
 		current_value = current_value[property] || default_value;
 	return +current_value;
 }
@@ -169,7 +169,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 		return GetModifiedTemplateDataValue(template, value_path, mod_key, player, modifiers, default_value);
 	};
 
-	let ret = {};
+	const ret = {};
 
 	if (template.Resistance)
 	{
@@ -180,7 +180,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 			if (template.Resistance.Entity.Damage)
 			{
 				ret.resistance.Damage = {};
-				for (let damageType in template.Resistance.Entity.Damage)
+				for (const damageType in template.Resistance.Entity.Damage)
 					ret.resistance.Damage[damageType] = getEntityValue("Resistance/Entity/Damage/" + damageType);
 			}
 			if (template.Resistance.Entity.Capture)
@@ -188,7 +188,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 			if (template.Resistance.Entity.ApplyStatus)
 			{
 				ret.resistance.ApplyStatus = {};
-				for (let statusEffect in template.Resistance.Entity.ApplyStatus)
+				for (const statusEffect in template.Resistance.Entity.ApplyStatus)
 					ret.resistance.ApplyStatus[statusEffect] = {
 						"blockChance": getEntityValue("Resistance/Entity/ApplyStatus/" + statusEffect + "/BlockChance"),
 						"duration": getEntityValue("Resistance/Entity/ApplyStatus/" + statusEffect + "/Duration")
@@ -197,15 +197,15 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 		}
 	}
 
-	let getAttackEffects = (temp, path) => {
-		let effects = {};
+	const getAttackEffects = (temp, path) => {
+		const effects = {};
 		if (temp.Capture)
 			effects.Capture = getEntityValue(path + "/Capture");
 
 		if (temp.Damage)
 		{
 			effects.Damage = {};
-			for (let damageType in temp.Damage)
+			for (const damageType in temp.Damage)
 				effects.Damage[damageType] = getEntityValue(path + "/Damage/" + damageType);
 		}
 
@@ -218,9 +218,9 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 	if (template.Attack)
 	{
 		ret.attack = {};
-		for (let type in template.Attack)
+		for (const type in template.Attack)
 		{
-			let getAttackStat = function(stat) {
+			const getAttackStat = function(stat) {
 				return getEntityValue("Attack/" + type + "/" + stat);
 			};
 
@@ -279,7 +279,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 	if (template.Auras && auraTemplates)
 	{
 		ret.auras = {};
-		for (let auraID of template.Auras._string.split(/\s+/))
+		for (const auraID of template.Auras._string.split(/\s+/))
 			ret.auras[auraID] = GetAuraDataHelper(auraTemplates[auraID]);
 	}
 
@@ -326,7 +326,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 	if (template.Cost)
 	{
 		ret.cost = {};
-		for (let resCode in template.Cost.Resources)
+		for (const resCode in template.Cost.Resources)
 			ret.cost[resCode] = getEntityValue("Cost/Resources/" + resCode);
 
 		if (template.Cost.Population)
@@ -376,8 +376,8 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 	if (template.ResourceGatherer)
 	{
 		ret.resourceGatherRates = {};
-		let baseSpeed = getEntityValue("ResourceGatherer/BaseSpeed");
-		for (let type in template.ResourceGatherer.Rates)
+		const baseSpeed = getEntityValue("ResourceGatherer/BaseSpeed");
+		for (const type in template.ResourceGatherer.Rates)
 			ret.resourceGatherRates[type] = getEntityValue("ResourceGatherer/Rates/"+ type) * baseSpeed;
 	}
 
@@ -392,14 +392,14 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 			"interval": +template.ResourceTrickle.Interval,
 			"rates": {}
 		};
-		for (let type in template.ResourceTrickle.Rates)
+		for (const type in template.ResourceTrickle.Rates)
 			ret.resourceTrickle.rates[type] = getEntityValue("ResourceTrickle/Rates/" + type);
 	}
 
 	if (template.Loot)
 	{
 		ret.loot = {};
-		for (let type in template.Loot)
+		for (const type in template.Loot)
 			ret.loot[type] = getEntityValue("Loot/"+ type);
 	}
 
@@ -454,7 +454,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 		};
 		ret.icon = template.Identity.Icon;
 		ret.tooltip = template.Identity.Tooltip;
-		ret.requiredTechnology = template.Identity.RequiredTechnology;
+		ret.requirements = template.Identity.Requirements;
 		ret.visibleIdentityClasses = GetVisibleIdentityClasses(template.Identity);
 		ret.nativeCiv = template.Identity.Civ;
 	}
@@ -474,13 +474,13 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 	if (template.Upgrade)
 	{
 		ret.upgrades = [];
-		for (let upgradeName in template.Upgrade)
+		for (const upgradeName in template.Upgrade)
 		{
-			let upgrade = template.Upgrade[upgradeName];
+			const upgrade = template.Upgrade[upgradeName];
 
-			let cost = {};
+			const cost = {};
 			if (upgrade.Cost)
-				for (let res in upgrade.Cost)
+				for (const res in upgrade.Cost)
 					cost[res] = getEntityValue("Upgrade/" + upgradeName + "/Cost/" + res, "Upgrade/Cost/" + res);
 			if (upgrade.Time)
 				cost.time = getEntityValue("Upgrade/" + upgradeName + "/Time", "Upgrade/Time");
@@ -489,8 +489,8 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 				"entity": upgrade.Entity,
 				"tooltip": upgrade.Tooltip,
 				"cost": cost,
-				"icon": upgrade.Icon || undefined,
-				"requiredTechnology": upgrade.RequiredTechnology || undefined
+				"icon": upgrade.Icon,
+				"requirements": upgrade.Requirements
 			});
 		}
 	}
@@ -513,7 +513,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 			"collectTime": getEntityValue("Treasure/CollectTime"),
 			"resources": {}
 		};
-		for (let resource in template.Treasure.Resources)
+		for (const resource in template.Treasure.Resources)
 			ret.treasure.resources[resource] = getEntityValue("Treasure/Resources/" + resource);
 	}
 
@@ -528,7 +528,7 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 			"interval": +template.Upkeep.Interval,
 			"rates": {}
 		};
-		for (let type in template.Upkeep.Rates)
+		for (const type in template.Upkeep.Rates)
 			ret.upkeep.rates[type] = getEntityValue("Upkeep/Rates/" + type);
 	}
 
@@ -591,13 +591,13 @@ function GetTechnologyBasicDataHelper(template, civ)
  */
 function GetTechnologyDataHelper(template, civ, resources)
 {
-	let ret = GetTechnologyBasicDataHelper(template, civ);
+	const ret = GetTechnologyBasicDataHelper(template, civ);
 
 	if (template.specificName)
 		ret.name.specific = template.specificName[civ] || template.specificName.generic;
 
 	ret.cost = { "time": template.researchTime ? +template.researchTime : 0 };
-	for (let type of resources.GetCodes())
+	for (const type of resources.GetCodes())
 		ret.cost[type] = +(template.cost && template.cost[type] || 0);
 
 	ret.tooltip = template.tooltip;
@@ -627,7 +627,7 @@ function calculateCarriedResources(carriedResources, tradingGoods)
 	var resources = {};
 
 	if (carriedResources)
-		for (let resource of carriedResources)
+		for (const resource of carriedResources)
 			resources[resource.type] = (resources[resource.type] || 0) + resource.amount;
 
 	if (tradingGoods && tradingGoods.amount)

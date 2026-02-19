@@ -41,8 +41,10 @@
     <GenericName>Noba Skirmisher</GenericName>
     <SpecificName>nhw ʿhȝw Noba</SpecificName>
     <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
-    <Icon>units/kush_infantry_javelinist.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/kush/infantry_javelinist.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/kush/infantry_javelineer_merc_a</Entity>

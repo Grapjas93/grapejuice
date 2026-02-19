@@ -5,8 +5,10 @@
     <Lang>napatan</Lang>
     <GenericName>Noble Archer</GenericName>
     <SpecificName>Hry pdty</SpecificName>
-    <Icon>units/kush_champion_archer.png</Icon>
-    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+    <Icon>units/kush/champion_archer.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">unlock_champion_infantry</Techs>
+    </Requirements>
 	<Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>

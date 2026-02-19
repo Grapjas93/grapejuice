@@ -15,7 +15,10 @@
     		<animation file="mechanical/chariot_idle.dae" name="attack_melee" speed="80"/>
       </animations>
       <mesh>structural/han_chariot.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="structural/chariot_01.png" name="baseTex"/>
         <texture file="structural/chariot_01_norm.png" name="normTex"/>
         <texture file="structural/chariot_01_spec.png" name="specTex"/>

@@ -81,7 +81,9 @@
     <Tooltip>Cannot be re-supplied by mobile re-arm auras.</Tooltip>
     <VisibleClasses datatype="tokens">City ArmyCamp AmmoSupply</VisibleClasses>
     <Icon>structures/roman_camp.png</Icon>
-    <RequiredTechnology>phase_city</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_city</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <wood>100</wood>

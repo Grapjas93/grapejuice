@@ -1,6 +1,7 @@
 [
 	{
 		"label": "General",
+		"tooltip": "Change general options.",
 		"options":
 		[
 			{
@@ -25,66 +26,8 @@
 			{
 				"type": "boolean",
 				"label": "Enable welcome screen",
-				"tooltip": "If you disable it, the welcome screen will still appear once, each time a new version is available. You can always launch it from the main menu.",
+				"tooltip": "If you disable it, the welcome screen will still appear, each time a new version is available. You can always launch it from the main menu.",
 				"config": "gui.splashscreen.enable"
-			},
-			{
-				"type": "boolean",
-				"label": "FPS overlay",
-				"tooltip": "Show frames per second in top right corner.",
-				"config": "overlay.fps"
-			},
-			{
-				"type": "boolean",
-				"label": "Real time overlay",
-				"tooltip": "Show current system time in top right corner.",
-				"config": "overlay.realtime"
-			},
-			{
-				"type": "boolean",
-				"label": "Game time overlay",
-				"tooltip": "Show current simulation time in top right corner.",
-				"config": "gui.session.timeelapsedcounter"
-			},
-			{
-				"type": "boolean",
-				"label": "Ceasefire time overlay",
-				"tooltip": "Always show the remaining ceasefire time.",
-				"config": "gui.session.ceasefirecounter"
-			},
-			{
-				"type": "boolean",
-				"label": "Chat timestamp",
-				"tooltip": "Display the time at which a chat message was posted.",
-				"config": "chat.timestamp"
-			},
-			{
-				"type": "dropdown",
-				"label": "Naming of entities.",
-				"tooltip": "How to show entity names.",
-				"config": "gui.session.howtoshownames",
-				"list": [
-					{
-						"value": 0,
-						"label": "Specific names first",
-						"tooltip": "Display specific names before generic names."
-					},
-					{
-						"value": 1,
-						"label": "Generic names first",
-						"tooltip": "Display generic names before specific names."
-					},
-					{
-						"value": 2,
-						"label": "Only specific names",
-						"tooltip": "Display only specific names for entities."
-					},
-					{
-						"value": 3,
-						"label": "Only generic names",
-						"tooltip": "Display only generic names for entities."
-					}
-				]
 			}
 		]
 	},
@@ -96,7 +39,7 @@
 			{
 				"type": "boolean",
 				"label": "Windowed mode",
-				"tooltip": "Start 0 A.D. in a window.",
+				"tooltip": "Start 0 A.D. in a window.",
 				"config": "windowed"
 			},
 			{
@@ -110,6 +53,35 @@
 				"label": "Post-processing",
 				"tooltip": "Use screen-space post-processing filters (HDR, Bloom, DOF, etc).",
 				"config": "postproc"
+			},
+			{
+				"type": "dropdownNumber",
+				"label": "Resolution scale",
+				"tooltip": "A smaller scale makes rendering faster but produces a more blurry picture, a large scale makes rendering slower but produces a better picture.",
+				"dependencies": ["postproc"],
+				"config": "renderer.scale",
+				"list": [
+					{ "value": 0.5, "label": "50%" },
+					{ "value": 0.75, "label": "75%" },
+					{ "value": 0.875, "label": "87.5%" },
+					{ "value": 1.00, "label": "100%" },
+					{ "value": 1.25, "label": "125%" },
+					{ "value": 1.50, "label": "150%" },
+					{ "value": 1.75, "label": "175%" },
+					{ "value": 2.00, "label": "200%" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "Upscale technique",
+				"tooltip": "Technique defines performance and quality of upscaling process.",
+				"dependencies": ["postproc", { "config": "renderer.scale", "op": "<", "value": 1.0 }],
+				"config": "renderer.upscale.technique",
+				"list": [
+					{ "value": "fsr", "label": "FidelityFX Super Resolution 1.0", "tooltip": "Advanced upscale technique. For better results, use FSR with antialiasing enabled. Using it with the OpenGL backend may have some issues, consider using Vulkan backend instead." },
+					{ "value": "bilinear", "label": "Bilinear", "tooltip": "Bilinear upscale technique. Produces a slightly blurry picture depending on the scale." },
+					{ "value": "pixelated", "label": "Pixelated", "tooltip": "Simplest upscale technique. Used mostly for stylized effect." }
+				]
 			},
 			{
 				"type": "boolean",
@@ -176,22 +148,49 @@
 				"config": "gui.session.dragdelta",
 				"min": "1",
 				"max": "200"
+			},
+			{
+				"type": "boolean",
+				"label": "Mouse pan inverted",
+				"tooltip": "Invert middle-click drag pan direction.",
+				"config": "view.drag.inverted"
+			},
+			{
+				"type": "slider",
+				"label": "Mouse pan speed",
+				"tooltip": "Speed mouse pans the map when holding middle-click and dragging.",
+				"config": "view.drag.speed",
+				"min": 0.01,
+				"max": 0.6
+			},
+			{
+				"type": "boolean",
+				"label": "Mouse grab in fullscreen",
+				"tooltip": "Constrain mouse in the fullscreen mode to the window boundaries. It's used to avoid mouse going out of a display in case of multiple displays.",
+				"config": "window.mousegrabinfullscreen"
+			},
+			{
+				"type": "boolean",
+				"label": "Mouse grab in window mode",
+				"tooltip": "Constrain mouse in the window mode to the window boundaries.",
+				"config": "window.mousegrabinwindowmode"
 			}
 		]
 	},
 	{
 		"label": "Graphics (advanced)",
-		"tooltip": "More specific rendering settings.",
+		"tooltip": "Adjust advanced graphic options.",
 		"options":
 		[
 			{
 				"type": "dropdown",
 				"label": "Renderer backend",
-				"tooltip": "Choose the renderer's backend. REQUIRES GAME RESTART",
+				"tooltip": "Choose the renderer's backend. It's recommended to use Vulkan if supported. REQUIRES GAME RESTART",
 				"config": "rendererbackend",
 				"list": [
 					{ "value": "gl", "label": "OpenGL", "tooltip": "Default OpenGL backend with GLSL. REQUIRES GAME RESTART" },
-					{ "value": "glarb", "label": "OpenGL ARB", "tooltip": "Legacy OpenGL backend with ARB shaders. REQUIRES GAME RESTART" }
+					{ "value": "glarb", "label": "OpenGL ARB (Deprecated)", "tooltip": "Legacy OpenGL backend with ARB shaders. It's deprecated and it's going to be removed in future versions of the game. REQUIRES GAME RESTART" },
+					{ "value": "vulkan", "label": "Vulkan", "tooltip": "Modern API, requires up-to-date drivers. REQUIRES GAME RESTART" }
 				]
 			},
 			{
@@ -200,6 +199,15 @@
 				"tooltip": "Enable fog.",
 				"dependencies": [{ "config": "rendererbackend", "op": "!=", "value": "glarb" }],
 				"config": "fog"
+			},
+			{
+				"type": "boolean",
+				"label": "GPU skinning",
+				"tooltip": "Use GPU to update geometry for animated models. It reduces a CPU load during rendering especially on a modern hardware.",
+				"dependencies": [
+					{ "config": "rendererbackend", "op": "!=", "value": "glarb" }
+				],
+				"config": "gpuskinning"
 			},
 			{
 				"type": "boolean",
@@ -236,7 +244,7 @@
 			{
 				"type": "slider",
 				"label": "Sharpness factor",
-				"tooltip": "The sharpness of the choosen pass.",
+				"tooltip": "The sharpness of the chosen pass.",
 				"dependencies": [
 					"postproc",
 					{ "config": "rendererbackend", "op": "!=", "value": "glarb" },
@@ -303,20 +311,20 @@
 				"config": "shadowpcf"
 			},
 			{
-				"type": "slider",
-				"label": "Cutoff distance",
-				"tooltip": "Hides shadows beyond a certain distance from a camera.",
-				"dependencies": ["shadows"],
-				"config": "shadowscutoffdistance",
-				"min": 100,
-				"max": 1500
-			},
-			{
 				"type": "boolean",
 				"label": "Cover whole map",
 				"tooltip": "When ON shadows cover the whole map and shadows cutoff distance is ignored. Useful for making screenshots of a whole map.",
 				"dependencies": ["shadows"],
 				"config": "shadowscovermap"
+			},
+			{
+				"type": "slider",
+				"label": "Cutoff distance",
+				"tooltip": "Hides shadows beyond a certain distance from a camera.",
+				"dependencies": ["shadows", { "config": "shadowscovermap", "value": "false" }],
+				"config": "shadowscutoffdistance",
+				"min": 100,
+				"max": 1500
 			},
 			{
 				"type": "boolean",
@@ -380,6 +388,7 @@
 	},
 	{
 		"label": "Sound",
+		"tooltip": "Make changes to the sound options.",
 		"options":
 		[
 			{
@@ -443,6 +452,7 @@
 	},
 	{
 		"label": "Game Setup",
+		"tooltip": "Change options relevant on the game setup page.",
 		"options":
 		[
 			{
@@ -516,7 +526,7 @@
 	},
 	{
 		"label": "Networking / Lobby",
-		"tooltip": "These settings only affect the multiplayer.",
+		"tooltip": "Change multiplayer options.",
 		"options":
 		[
 			{
@@ -580,47 +590,14 @@
 		]
 	},
 	{
-		"label": "Game Session",
-		"tooltip": "Change options regarding the in-game settings.",
-		"options":
-		[
-			{
-				"type": "slider",
-				"label": "Wounded unit health",
-				"tooltip": "The wounded unit hotkey considers the selected units as wounded if their health percentage falls below this number.",
-				"config": "gui.session.woundedunithotkeythreshold",
-				"min": 0,
-				"max": 100
-			},
-			{
-				"type": "number",
-				"label": "Batch training size",
-				"tooltip": "Number of units trained per batch by default.",
-				"config": "gui.session.batchtrainingsize",
-				"min": 1,
-				"max": 20
-			},
-			{
-				"type": "slider",
-				"label": "Scroll batch increment ratio",
-				"tooltip": "Number of times you have to scroll to increase/decrease the batchsize by 1.",
-				"config": "gui.session.scrollbatchratio",
-				"min": 0.1,
-				"max": 30
-			},
-			{
-				"type": "slider",
-				"label": "Flare display duration",
-				"tooltip": "How long the flare markers on the minimap are displayed in seconds.",
-				"config": "gui.session.flarelifetime",
-				"min": 0,
-				"max": 60
-			},
+		"label": "Chat & Notifications",
+		"tooltip": "Configure the in-game chat.",
+		"options": [
 			{
 				"type": "boolean",
-				"label": "Minimap icons",
-				"tooltip": "Show special icons for some entities on the minimap.",
-				"config": "gui.session.minimap.icons.enabled"
+				"label": "Chat timestamp",
+				"tooltip": "Display the time when a chat message was posted.",
+				"config": "chat.timestamp"
 			},
 			{
 				"type": "boolean",
@@ -648,6 +625,17 @@
 			},
 			{
 				"type": "dropdown",
+				"label": "Chat notification flare",
+				"tooltip": "Show a chat notification when a player sends a flare.",
+				"config": "gui.session.notifications.flare",
+				"list": [
+					{ "value": "never", "label": "Never", "tooltip": "Disable flare chat notifications."},
+					{ "value": "observer", "label": "Only as observer", "tooltip": "Only show flare chat notifications when you are observer."},
+					{ "value": "always", "label": "Always", "tooltip": "Always show flare chat notifications – as player and as observer."}
+				]
+			},
+			{
+				"type": "dropdown",
 				"label": "Chat notification phase",
 				"tooltip": "Show a chat notification if you or an ally have started, aborted or completed a new phase, and phases of all players in observer mode.",
 				"config": "gui.session.notifications.phase",
@@ -656,6 +644,108 @@
 					{ "value": "completed", "label": "Completed" },
 					{ "value": "all", "label": "All displayed" }
 				]
+			}
+		]
+	},
+	{
+		"label": "Display",
+		"tooltip": "Customize the in-game display.",
+		"options":
+		[
+			{
+				"type": "boolean",
+				"label": "Detailed tooltips",
+				"tooltip": "Show detailed tooltips for trainable units in structures.",
+				"config": "showdetailedtooltips"
+			},
+			{
+				"type": "dropdown",
+				"label": "Naming of entities",
+				"tooltip": "How to show entity names.",
+				"config": "gui.session.howtoshownames",
+				"list": [
+					{
+						"value": 0,
+						"label": "Specific names first",
+						"tooltip": "Display specific names before generic names."
+					},
+					{
+						"value": 1,
+						"label": "Generic names first",
+						"tooltip": "Display generic names before specific names."
+					},
+					{
+						"value": 2,
+						"label": "Only specific names",
+						"tooltip": "Display only specific names for entities."
+					},
+					{
+						"value": 3,
+						"label": "Only generic names",
+						"tooltip": "Display only generic names for entities."
+					}
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "Sort resources and population tooltip",
+				"tooltip": "Dynamically sort players in the resources and population tooltip by value.",
+				"config": "gui.session.respoptooltipsort",
+				"list": [
+					{ "value": 0, "label": "Unordered" },
+					{ "value": -1, "label": "Ascending" },
+					{ "value": 1, "label": "Descending" }
+				]
+			},
+			{
+				"type": "boolean",
+				"label": "FPS overlay",
+				"tooltip": "Show frames per second in top right corner.",
+				"config": "overlay.fps"
+			},
+			{
+				"type": "boolean",
+				"label": "Real time overlay",
+				"tooltip": "Show current system time in top right corner.",
+				"config": "overlay.realtime"
+			},
+			{
+				"type": "boolean",
+				"label": "Game time overlay",
+				"tooltip": "Show current simulation time in top right corner.",
+				"config": "gui.session.timeelapsedcounter"
+			},
+			{
+				"type": "boolean",
+				"label": "Ceasefire time overlay",
+				"tooltip": "Always show the remaining ceasefire time.",
+				"config": "gui.session.ceasefirecounter"
+			},
+			{
+				"type": "slider",
+				"label": "Flare display duration",
+				"tooltip": "How long the flare markers on the minimap are displayed in seconds.",
+				"config": "gui.session.flarelifetime",
+				"min": 0,
+				"max": 60
+			},
+			{
+				"type": "boolean",
+				"label": "Minimap icons",
+				"tooltip": "Show special icons for some entities on the minimap.",
+				"config": "gui.session.minimap.icons.enabled"
+			},
+			{
+				"type": "boolean",
+				"label": "Rank icon above status bar",
+				"tooltip": "Show rank icons above status bars.",
+				"config": "gui.session.rankabovestatusbar"
+			},
+			{
+				"type": "boolean",
+				"label": "Experience status bar",
+				"tooltip": "Show an experience status bar above each selected unit.",
+				"config": "gui.session.experiencestatusbar"
 			},
 			{
 				"type": "boolean",
@@ -674,35 +764,6 @@
 				"label": "Heal range visualization",
 				"tooltip": "Display the healing range of selected units. (It can also be toggled with the hotkey during a game).",
 				"config": "gui.session.healrange"
-			},
-			{
-				"type": "boolean",
-				"label": "Rank icon above status bar",
-				"tooltip": "Show rank icons above status bars.",
-				"config": "gui.session.rankabovestatusbar"
-			},
-			{
-				"type": "boolean",
-				"label": "Experience status bar",
-				"tooltip": "Show an experience status bar above each selected unit.",
-				"config": "gui.session.experiencestatusbar"
-			},
-			{
-				"type": "boolean",
-				"label": "Detailed tooltips",
-				"tooltip": "Show detailed tooltips for trainable units in unit-producing structures.",
-				"config": "showdetailedtooltips"
-			},
-			{
-				"type": "dropdown",
-				"label": "Sort resources and population tooltip",
-				"tooltip": "Dynamically sort players in the resources and population tooltip by value.",
-				"config": "gui.session.respoptooltipsort",
-				"list": [
-					{ "value": 0, "label": "Unordered" },
-					{ "value": -1, "label": "Ascending" },
-					{ "value": 1, "label": "Descending" }
-				]
 			},
 			{
 				"type": "color",
@@ -727,7 +788,39 @@
 				"label": "Diplomacy colors: enemy",
 				"tooltip": "Color of enemies when diplomacy colors are enabled.",
 				"config": "gui.session.diplomacycolors.enemy"
+			}
+		]
+	},
+	{
+		"label": "Gameplay",
+		"tooltip": "Change options affecting the gameplay.",
+		"options":
+		[
+			{
+				"type": "slider",
+				"label": "Wounded unit health",
+				"tooltip": "The wounded unit hotkey considers the selected units as wounded if their health percentage falls below this number.",
+				"config": "gui.session.woundedunithotkeythreshold",
+				"min": 0,
+				"max": 100
 			},
+			{
+				"type": "number",
+				"label": "Batch training size",
+				"tooltip": "Number of units trained per batch by default.",
+				"config": "gui.session.batchtrainingsize",
+				"min": 1,
+				"max": 20
+			},
+			{
+				"type": "slider",
+				"label": "Scroll batch increment ratio",
+				"tooltip": "Number of times you have to scroll to increase/decrease the batchsize by 1.",
+				"config": "gui.session.scrollbatchratio",
+				"min": 0.1,
+				"max": 30
+			},
+
 			{
 				"type": "dropdown",
 				"label": "Snap to edges",

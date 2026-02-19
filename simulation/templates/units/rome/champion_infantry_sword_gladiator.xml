@@ -59,8 +59,10 @@
     <GenericName>Gladiator Swordsman</GenericName>
     <SpecificName>Murmillo</SpecificName>
     <Rank>Elite</Rank>
-    <Icon>units/rome_champion_infantry_gladiator_sword.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/rome/champion_infantry_gladiator_sword.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion disable=""/>
   <TrainingRestrictions>

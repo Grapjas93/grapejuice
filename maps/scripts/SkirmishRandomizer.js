@@ -54,7 +54,8 @@ SkirmishRandomizer.Randomize = function(civilCentrePositions, g_atlasEditor, g_g
 	for (let i = 0; i < g_numPlayersIsNumLoops; i++) {
 		g_selectedPlayer = g_maxPlayers.shift();
 		g_cmpPlayer = QueryPlayerIDInterface(g_selectedPlayer);
-		let playerTeam = g_cmpPlayer.GetTeam(g_selectedPlayer);
+		const cmpDiplomacy = QueryPlayerIDInterface(g_selectedPlayer, IID_Diplomacy);
+		let playerTeam = cmpDiplomacy.GetTeam(g_selectedPlayer);
 		playerTeam = playerTeam+1;
 		if (playerTeam == 0) {
 				g_team0.push(g_selectedPlayer);

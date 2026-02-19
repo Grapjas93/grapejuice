@@ -15,22 +15,34 @@
   </group>
   <group>
     <variant frequency="1" name="healer-outfit-1">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/celt/druid_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="healer-outfit-2">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/celt/druid_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="healer-outfit-3">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/celt/druid_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="healer-outfit-4">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/celt/druid_04.png" name="baseTex"/>
       </textures>
     </variant>
@@ -43,5 +55,5 @@
     <variant file="biped/death_infantry.xml"/>
     <variant file="biped/build.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>
