@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/kush/champion_infantry_amun">
   <Identity>
-    <Civ>kush</Civ>
-    <Lang>napatan</Lang>
-    <Classes datatype="tokens">AmunGuard</Classes>
-    <GenericName>Napatan Temple Guard</GenericName>
-    <SpecificName>rs ʿImn</SpecificName>
-    <Icon>units/kush/champion_amun.png</Icon>
-	<Rank>Champion</Rank>
+    <Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>
   <VisualActor>

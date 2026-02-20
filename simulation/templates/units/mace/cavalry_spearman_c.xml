@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/mace/champion_cavalry">
   <Identity>
-    <Civ>mace</Civ>
-    <Lang>greek</Lang>
-    <GenericName>Companion Cavalry</GenericName>
-    <SpecificName>Hetaîros</SpecificName>
-    <Icon>units/mace/champion_cavalry.png</Icon>
-    <SelectionGroupName>units/mace/champion_cavalry</SelectionGroupName>
-	<Rank>Champion</Rank>
+    <Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>
   <VisualActor>

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/iber/champion_infantry_swordsman">
   <Identity>
-    <Civ>iber</Civ>
-    <SpecificName>Leial Ezpatari</SpecificName>
-    <Icon>units/iber/champion_infantry.png</Icon>
-    <Requirements>
-      <Techs datatype="tokens">unlock_champion_infantry</Techs>
-    </Requirements>
-	<Rank>Champion</Rank>
+    <Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>
   <VisualActor>

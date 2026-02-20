@@ -32,7 +32,7 @@
     <SpecificName>Thorakitès Rhomaïkós</SpecificName>
     <Icon>units/sele/champion_swordsman.png</Icon>
     <Requirements>
-      <Techs datatype="tokens">reformed_army_sele</Techs>
+      <Techs datatype="tokens">-phase_city reformed_army_sele</Techs>
     </Requirements>
   </Identity>
   <VisualActor>

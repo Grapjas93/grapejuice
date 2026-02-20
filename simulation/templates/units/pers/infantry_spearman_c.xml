@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/pers/champion_infantry">
   <Identity>
-    <Civ>pers</Civ>
-    <Lang>persian</Lang>
-    <GenericName>Persian Immortal</GenericName>
-    <SpecificName>Anušiya</SpecificName>
-    <VisibleClasses datatype="tokens">Immortal</VisibleClasses>
-    <Icon>units/pers/champion_infantry.png</Icon>
-	<Rank>Champion</Rank>
+    <Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>
   <VisualActor>

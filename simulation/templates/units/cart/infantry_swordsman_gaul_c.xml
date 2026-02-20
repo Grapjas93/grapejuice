@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/gaul/champion_infantry_swordsman">
   <Identity>
-    <Civ>gaul</Civ>
-    <SpecificName>Soliduros</SpecificName>
-    <Icon>units/gaul/champion_infantry.png</Icon>
-    <Requirements>
-      <Techs datatype="tokens">unlock_champion_infantry</Techs>
-    </Requirements>
     <Rank>Champion</Rank>
   </Identity>
   <Promotion disable=""/>

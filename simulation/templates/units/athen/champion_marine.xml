@@ -32,7 +32,7 @@
     <SpecificName>Epibátēs Athēnaîos</SpecificName>
     <Icon>units/athen/champion_marine.png</Icon>
     <Requirements>
-      <Techs datatype="tokens">iphicratean_reforms</Techs>
+      <Techs datatype="tokens">-phase_city phase_town</Techs>
     </Requirements>
   </Identity>
   <VisualActor>
