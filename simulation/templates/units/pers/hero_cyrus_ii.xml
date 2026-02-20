@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|grapejuice/hp_cav|grapejuice/hp_inf|grapejuice/melee_spearman|template_unit_hero_cavalry_spearman">
-  <Attack>
-    <Melee>
-      <AttackName> Spear </AttackName>
-      <PrepareTime> 1125 </PrepareTime>
-      <RepeatTime> 1275 </RepeatTime>
-    </Melee>
-  </Attack>
+<Entity parent="grapejuice/hp_cav|grapejuice/melee_spearman|template_unit_hero_cavalry_spearman">
   <Auras datatype="tokens">
     units/heroes/pers_hero_cyrus_ii
   </Auras>
@@ -17,15 +10,7 @@
     <SpecificName>Kuruš</SpecificName>
     <Icon>units/pers/hero_cyrus.png</Icon>
   </Identity>
-  <Researcher>
-    <TechCostMultiplier>
-      <food>1.0</food>
-      <wood>1.0</wood>
-      <stone>1.0</stone>
-      <metal>1.0</metal>
-      <time>1.0</time>
-    </TechCostMultiplier>
-  </Researcher>
+  <ProductionQueue/>
   <Resistance replace="">
     <Entity>
       <Damage>
