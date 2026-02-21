@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|template_unit_support_civilian">
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_civilian">
   <Identity>
     <Civ>germ</Civ>
     <GenericName>Germanic Worker</GenericName>

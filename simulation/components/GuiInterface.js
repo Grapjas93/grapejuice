@@ -472,6 +472,16 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 	const cmpRangeManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_RangeManager);
 	ret.visibility = cmpRangeManager.GetLosVisibility(ent, player);
 
+	const cmpAmmo = Engine.QueryInterface(ent, IID_Ammo);
+	if (cmpAmmo)
+	{
+		ret.ammo = {
+			"currAmmo": cmpAmmo.ammo,
+			"maxAmmo": cmpAmmo.maxAmmo,
+			"RefillCost": 1*cmpAmmo.refillCostMult
+		};
+	}
+
 	const cmpAttack = Engine.QueryInterface(ent, IID_Attack);
 	if (cmpAttack)
 	{
@@ -505,15 +515,6 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 			{
 				ret.attack[type].currentEnergy = cmpAttack.energy;
 				ret.attack[type].maxEnergy = cmpAttack.maxEnergy;
-			}
-
-			// grapejuice
-			if (cmpAttack.maxAmmo != undefined)
-			{
-				ret.attack[type].currentAmmo = cmpAttack.ammo;
-				ret.attack[type].maxAmmo = cmpAttack.maxAmmo;
-				if (cmpAttack.RefillCostMult)
-					ret.attack[type].refillCostMult = cmpAttack.RefillCostMult;
 			}
 
 			if (type != "Ranged")

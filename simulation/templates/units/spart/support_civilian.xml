@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_civilian">
+  <Attack>
+    <Melee>
+      <Damage>
+        <Hack op="mul">1.5</Hack>
+      </Damage>
+    </Melee>
+  </Attack>
+  <Builder>
+    <Entities datatype="tokens">
+      structures/spart/gerousia
+      structures/spart/syssiton
+      -structures/{civ}/wallset_stone
+    </Entities>
+  </Builder>
+  <Health>
+    <Max op="mul">1.4</Max>
+  </Health>
+  <Loot>
+    <xp op="add">1</xp>
+  </Loot>
+  <Identity>
+    <Civ>spart</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Helot</GenericName>
+    <SpecificName>Heilōs</SpecificName>
+    <Icon>units/spart/support_civilian.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/spartans/citizen_{phenotype}.xml</Actor>
+  </VisualActor>
+</Entity>

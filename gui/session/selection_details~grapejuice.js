@@ -124,17 +124,11 @@ function displaySingle(entState)
 	// grapejuice, ammo
 	let	currentAmmo = 0;
 	let	maxAmmo = 0;
-	if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].maxAmmo)
+	if (!!entState.ammo)
 	{
-		currentAmmo = entState.attack["Ranged"].currentAmmo;
-		maxAmmo = entState.attack["Ranged"].maxAmmo;
-		showAmmo = entState.attack["Ranged"].maxAmmo;
-	}
-	else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxAmmo)
-	{
-		currentAmmo = entState.attack["Melee"].currentAmmo;
-		maxAmmo = entState.attack["Melee"].maxAmmo;
-		showAmmo = entState.attack["Melee"].maxAmmo;
+		currentAmmo = entState.ammo.currAmmo;
+		maxAmmo = entState.ammo.maxAmmo;
+		showAmmo = entState.ammo.maxAmmo;
 	}
 
 	let energySection = Engine.GetGUIObjectByName("energySection");
@@ -210,7 +204,7 @@ function displaySingle(entState)
 			ammoSize.rright = hasViewPermission ?  210 * Math.max(0, Math.min(1, currentAmmo / maxAmmo)) : 210;
 		}
 		unitAmmoBar.size = ammoSize;
-		Engine.GetGUIObjectByName("ammoStats").caption = sprintf(translate("%(CurrentAmmo)s / %(MaxAmmo)s"), {
+		Engine.GetGUIObjectByName("ammoLabel").caption = sprintf(translate("%(CurrentAmmo)s / %(MaxAmmo)s"), {
 			"CurrentAmmo": hasViewPermission ? Math.ceil(currentAmmo) : "?",
 			"MaxAmmo": hasViewPermission ? Math.ceil(maxAmmo) : "?"
 		});
@@ -235,7 +229,7 @@ function displaySingle(entState)
 			energySize.rright = hasViewPermission ? 196 * Math.max(0, Math.min(1, entState.attack["Melee"].currentEnergy / entState.attack["Melee"].maxEnergy)) : 196;
 		}
 		unitEnergyBar.size = energySize;
-		Engine.GetGUIObjectByName("energyStats").caption = sprintf(translate("%(currentEnergy)s / %(maxEnergy)s"), {
+		Engine.GetGUIObjectByName("energyLabel").caption = sprintf(translate("%(currentEnergy)s / %(maxEnergy)s"), {
 			"currentEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].currentEnergy) : "?",
 			"maxEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].maxEnergy) : "?"
 		});
@@ -537,15 +531,10 @@ function displayMultiple(entStates)
 			averageHealth += entState.hitpoints;
 			maxHealth += entState.maxHitpoints;
 		}
-		if (!!entState.attack && !!entState.attack["Ranged"] && !!entState.attack["Ranged"].maxAmmo)
+		if (!!entState.ammo)
 		{
-			averageAmmo += entState.attack["Ranged"].currentAmmo;
-			maxAmmo += entState.attack["Ranged"].maxAmmo;
-		}
-		else if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxAmmo)
-		{
-			averageAmmo += entState.attack["Melee"].currentAmmo;
-			maxAmmo += entState.attack["Melee"].maxAmmo;
+			averageAmmo += entState.ammo.currAmmo;
+			maxAmmo += entState.ammo.maxAmmo;
 		}
 		if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxEnergy)
 		{

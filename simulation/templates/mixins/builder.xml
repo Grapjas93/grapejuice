@@ -6,6 +6,7 @@
       structures/{civ}/civil_centre
       structures/{civ}/crannog
       structures/{civ}/military_colony
+      structures/{civ}/encampment
       structures/{civ}/house
       structures/{civ}/ice_house
       structures/{civ}/pyramid_small
@@ -16,8 +17,10 @@
       structures/{civ}/camp
       structures/{civ}/corral
       structures/{civ}/dock
+      structures/{civ}/kennel
       structures/{civ}/barracks
       structures/{civ}/stable
+      structures/{civ}/great_hall
       structures/{civ}/elephant_stable
       structures/{civ}/forge
       structures/{civ}/temple
@@ -34,9 +37,8 @@
       structures/{civ}/wallset_siege
       structures/{civ}/wallset_stone
       structures/{civ}/theater
-      structures/{civ}/apadana
+      structures/{civ}/tachara
       structures/{civ}/wonder
-      brazier_init
     </Entities>
   </Builder>
   <Identity>

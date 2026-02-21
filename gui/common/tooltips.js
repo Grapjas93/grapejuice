@@ -177,6 +177,17 @@ function getCurrentHealthTooltip(entState, label)
 	});
 }
 
+function getAmmoTooltip(template)
+{
+	if (!template.ammo)
+		return "";
+
+	return sprintf(translate("%(label)s %(details)s"), {
+		"label": headerFont(translate("Ammo:")),
+		"details": Math.round(template.ammo.maxAmmo)
+	});
+}
+
 function getCurrentAmmoTooltip(entState, label)
 {
 	if (!entState.maxHitpoints)
@@ -474,13 +485,13 @@ function GetEnergyDetails(attackTypeTemplate)
 }
 
 
-function GetAmmoDetails(attackTypeTemplate)
+function GetAmmoDetails(template)
 {
-	if (!attackTypeTemplate.maxAmmo)
+	if (!template.ammo.maxAmmo)
 		return "";
 
-	let ammoText = attackTypeTemplate.currentAmmo ? `${attackTypeTemplate.currentAmmo}/${attackTypeTemplate.maxAmmo}` : attackTypeTemplate.maxAmmo
-	let refillCostText = attackTypeTemplate.refillCostMult ? ", " +  headerFont("Refill Cost Multiplier: ") + attackTypeTemplate.refillCostMult : ""
+	let ammoText = template.ammo.currAmmo ? `${template.ammo.currentAmmo}/${template.ammo.maxAmmo}` : template.ammo.maxAmmo
+	let refillCostText = template.ammo.refillCostMult ? ", " +  headerFont("Refill Cost Multiplier: ") + template.ammo.refillCostMult : ""
 	return sprintf("%(ammoAmount)s %(refillCostMult)s", {
 		"ammoAmount": headerFont("Ammo: ") + ammoText,
 		"refillCostMult": refillCostText
@@ -527,8 +538,7 @@ function getAttackTooltip(template)
 			"rate": attackRateDetails(attackTypeTemplate.repeatTime, projectiles),
 			"splash": splashTemplate ? "\n" + g_Indent + g_Indent + splashDetails(splashTemplate) : "",
 			"statusEffects": statusEffectsDetails,
-			"energy": attackType == "Melee" ? GetEnergyDetails(attackTypeTemplate) : "",
-			"ammo": attackType == "Ranged" ? GetAmmoDetails(attackTypeTemplate) : ""
+			"energy": attackType == "Melee" ? GetEnergyDetails(attackTypeTemplate) : ""
 		}));
 	}
 

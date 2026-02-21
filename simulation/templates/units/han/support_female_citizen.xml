@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|grapejuice/female|template_unit_support_female_citizen">
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_female_citizen">
   <Builder>
     <Entities datatype="tokens">
       -structures/wallset_palisade
@@ -8,7 +8,7 @@
   <Identity>
     <Civ>han</Civ>
     <SpecificName>Fù Nǚ</SpecificName>
-    <Icon>units/han//support_female_citizen.png</Icon>
+    <Icon>units/han/support_female_citizen.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/han/female_citizen.xml</Actor>

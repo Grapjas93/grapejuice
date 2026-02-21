@@ -239,14 +239,6 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 				ret.attack[type].maxEnergy = getAttackStat("Energy")
 			}
 
-			if (type == "Ranged")
-			{
-				ret.attack[type].maxAmmo = getAttackStat("Ammo")
-				ret.attack[type].refillTime = getAttackStat("RefillTime")
-				ret.attack[type].refillAmount = getAttackStat("RefillAmount")
-				ret.attack[type].refillCostMult = getAttackStat("RefillCostMult")
-			}
-
 			ret.attack[type].elevationAdaptedRange = Math.sqrt(ret.attack[type].maxRange *
 				(2 * ret.attack[type].yOrigin + ret.attack[type].maxRange));
 
@@ -265,6 +257,15 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 				Object.assign(ret.attack[type].splash, getAttackEffects(template.Attack[type].Splash, "Attack/" + type + "/Splash"));
 			}
 		}
+	}
+
+	if (template.Ammo)
+	{
+		ret.ammo = {
+			"currAmmo": getEntityValue("Ammo/CurrAmmo"),
+			"maxAmmo": getEntityValue("Ammo/MaxAmmo"),
+			"RefillCost": 1*getEntityValue("Ammo/RefillCostMult")
+		};
 	}
 
 	if (template.DeathDamage)

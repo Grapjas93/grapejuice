@@ -22,8 +22,8 @@ StatusBars.prototype.Sprites = [
 	"ResourceSupplyBar",
 	"CaptureBar",
 	"HealthBar",
-	"AmmoBar",
-	"EnergyBar",
+	"AmmoBar", // grapejuice
+	"EnergyBar", // grapejuice
 	"AuraIcons",
 	"RankIcon",
 	"WoundedIcon"  // grapejuice
@@ -49,15 +49,15 @@ StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 // grapejuice ammoBar
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
-	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
-	if(cmpAttack && cmpAttack.maxAmmo)
+	let cmpAmmo = QueryMiragedInterface(this.entity, IID_Ammo);
+	if(cmpAmmo && cmpAmmo.maxAmmo)
 	{
 		if (!this.enabled)
 			return 0;
-		if(cmpAttack.maxAmmo == "0")
+		if(cmpAmmo.maxAmmo == "0")
 			return 0;
-		if (cmpAttack.maxAmmo > "0"){
-			return this.AddBar(cmpOverlayRenderer, yoffset, "ammo", cmpAttack.ammo / cmpAttack.maxAmmo, 2/3);
+		if (cmpAmmo.maxAmmo > "0"){
+			return this.AddBar(cmpOverlayRenderer, yoffset, "ammo", cmpAmmo.ammo / cmpAmmo.maxAmmo, 2/3);
 		}
 	}
 	return 0;
@@ -90,6 +90,12 @@ StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
 	}
 
 
+};
+
+StatusBars.prototype.OnAmmoChanged = function(msg)
+{
+	if (this.enabled)
+		this.RegenerateSprites();
 };
 
 Engine.ReRegisterComponentType(IID_StatusBars, "StatusBars", StatusBars);

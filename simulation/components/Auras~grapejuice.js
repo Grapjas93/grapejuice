@@ -1,26 +1,3 @@
-
-
-//Auras.prototype.CanApply = function(name)
-//{
-//	if (!AuraTemplates.Get(name).requiredTechnology)
-//		return true;
-//
-//	let cmpTechnologyManager = QueryOwnerInterface(this.entity, IID_TechnologyManager);
-//	if (!cmpTechnologyManager)
-//		return false;
-//
-//	// re-arm aura
-//	if (cmpTechnologyManager.IsTechnologyResearched(AuraTemplates.Get(name).requiredTechnology) && (name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range"))
-//	{
-//		let entPlayer = Helpers.GetOwner(this.entity);
-//		// If player has no forge, entities will not re-arm
-//		let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
-//		return hasForge.length >= 1;
-//	}
-//
-//	return cmpTechnologyManager.IsTechnologyResearched(AuraTemplates.Get(name).requiredTechnology);
-//};
-
 Auras.prototype.ApplyAura = function(name, ents)
 {
 	var validEnts = this.GiveMembersWithValidClass(name, ents);
@@ -34,9 +11,9 @@ Auras.prototype.ApplyAura = function(name, ents)
 
 	// update status bars if this has an icon
 	if (this.GetOverlayIcon(name))
-		for (let ent of validEnts)
+		for (const ent of validEnts)
 		{
-			let cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
+			const cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
 			if (cmpStatusBars)
 				cmpStatusBars.AddAuraSource(this.entity, name);
 		}
@@ -46,35 +23,32 @@ Auras.prototype.ApplyAura = function(name, ents)
 	if (this.IsGlobalAura(name))
 		return;
 
-	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range")
-	{
-		let entPlayer = Helpers.GetOwner(this.entity);
-		// If player has no forge, entities will not re-arm
-		let hasForge = Helpers.GetPlayerEntitiesByClass(entPlayer, "Forge");
-		for (let ent of validEnts)
-		{
-			let cmpAttack = Engine.QueryInterface(ent, IID_Attack);
-			if(hasForge.length >= 1 && cmpAttack)
-			{
-				let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-				cmpAttack.ammoReffilTimer = cmpTimer.SetInterval(ent, IID_Attack, "SetAmmo", cmpAttack.refillTime, cmpAttack.refillTime, this.entity);
-			}
-			else
-				return 0;
-		}
-	}
+	const cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-
-	let derivedModifiers = DeriveModificationsFromTech({
+	const derivedModifiers = DeriveModificationsFromTech({
 		"modifications": this.GetModifications(name),
 		"affects": this.GetClasses(name)
 	});
 
-	let modifName = this.GetModifierIdentifier(name);
-	for (let ent of validEnts)
+	const modifName = this.GetModifierIdentifier(name);
+	for (const ent of validEnts)
+	{
 		cmpModifiersManager.AddModifiers(modifName, derivedModifiers, ent);
+		// grapejuice, register ammoGiver for the cmpAmmo so that we can handle limited ammo refills
+		if(name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range")
+		{
+			let cmpAmmo = Engine.QueryInterface(ent, IID_Ammo);
+			if (cmpAmmo)
+				cmpAmmo.ammoGiver = this.entity
+		}
+		else if (name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range")
+		{
+			let cmpAmmo = Engine.QueryInterface(ent, IID_Ammo);
+			if (cmpAmmo)
+				cmpAmmo.hasInfAmmoGiver = true
+		}
+	}
+
 };
 
 Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
@@ -90,9 +64,9 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 
 	// update status bars if this has an icon
 	if (this.GetOverlayIcon(name))
-		for (let ent of validEnts)
+		for (const ent of validEnts)
 		{
-			let cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
+			const cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
 			if (cmpStatusBars)
 				cmpStatusBars.RemoveAuraSource(this.entity, name);
 		}
@@ -102,29 +76,32 @@ Auras.prototype.RemoveAura = function(name, ents, skipModifications = false)
 	if (this.IsGlobalAura(name))
 		return;
 
-	// re-arm aura
-	if(name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range" || name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range")
-	{
-		for (let ent of validEnts)
-		{
-			let cmpAttack = Engine.QueryInterface(ent, IID_Attack);
-			if (cmpAttack)
-				cmpAttack.StopReArming()
-		}
-	}
+	const cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-
-	let derivedModifiers = DeriveModificationsFromTech({
+	const derivedModifiers = DeriveModificationsFromTech({
 		"modifications": this.GetModifications(name),
 		"affects": this.GetClasses(name)
 	});
 
-	let modifName = this.GetModifierIdentifier(name);
-	for (let ent of ents)
-		for (let modifierPath in derivedModifiers)
+	const modifName = this.GetModifierIdentifier(name);
+	for (const ent of ents)
+	{
+		// grapejuice, register ammoGiver for the cmpAmmo so that we can handle limited ammo refills
+		if(name == "limited_refill_ammo_30range" || name == "limited_refill_ammo_60range")
+		{
+			let cmpAmmo = Engine.QueryInterface(ent, IID_Ammo);
+			if (cmpAmmo)
+				cmpAmmo.ammoGiver = undefined
+		}
+		else if (name == "structures/refill_ammo_30range" || name == "structures/refill_ammo_60range")
+		{
+			let cmpAmmo = Engine.QueryInterface(ent, IID_Ammo);
+			if (cmpAmmo)
+				cmpAmmo.hasInfAmmoGiver = false
+		}
+		for (const modifierPath in derivedModifiers)
 			cmpModifiersManager.RemoveModifier(modifierPath, modifName, ent);
-
+	}
 };
 
 Engine.ReRegisterComponentType(IID_Auras, "Auras", Auras);

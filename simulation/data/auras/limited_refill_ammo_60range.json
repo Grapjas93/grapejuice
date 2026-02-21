@@ -3,6 +3,9 @@
 	"radius": 60,
 	"affects": ["Ammo"],
 	"auraName": "Limited Re-arm (large)",
+	"modifications": [
+		{ "value": "Ammo/RefillTime", "replace": 3000}
+	],
 	"auraDescription": "Units with ammo will fully re-arm every 3s. Be mindful of some units with the 'ammo refill multiplier' stat, they cost more to reload per projectile! Cannot re-supply units with the same 'Limited Re-Arm' aura.",
 	"overlayIcon": "art/textures/ui/session/auras/ammo.png"
 }

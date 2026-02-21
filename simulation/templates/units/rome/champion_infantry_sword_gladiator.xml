@@ -12,9 +12,6 @@
        </Melee>
        <Ranged>
 		  <AttackName>Javelin</AttackName>
-		  <Ammo>1</Ammo>
-		  <RefillAmount>0</RefillAmount>
-		  <RefillTime>0</RefillTime>
 		  <Damage>
 			<Pierce>75</Pierce>
 		  </Damage>

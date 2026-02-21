@@ -12,8 +12,8 @@ Pack.prototype.Init = function()
 Pack.prototype.PackProgress = function(data, lateness)
 {
 	// store current ammo
-	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
-	this.currentAmmo = cmpAttack.ammo;
+	let cmpAmmo = QueryMiragedInterface(this.entity, IID_Ammo);
+	this.currentAmmo = cmpAmmo.ammo;
 
 	if (this.elapsedTime < this.GetPackTime())
 	{
@@ -30,8 +30,8 @@ Pack.prototype.PackProgress = function(data, lateness)
 	let newEntity = ChangeEntityTemplate(this.entity, this.template.Entity);
 
 	// apply ammo to new entity
-	cmpAttack = QueryMiragedInterface(newEntity, IID_Attack);
-	cmpAttack.ammo = this.currentAmmo;
+	cmpAmmo = QueryMiragedInterface(newEntity, IID_Ammo);
+	cmpAmmo.ammo = this.currentAmmo;
 
 	if (newEntity)
 		PlaySound(this.packed ? "packed" : "unpacked", newEntity);

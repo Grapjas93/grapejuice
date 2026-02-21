@@ -19,22 +19,27 @@ Promotion.prototype.Promote = function(promotedTemplateName)
 	}
 
 	// Store ammo before promotion / grapejuice
-	let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
-	this.currentAmmo = cmpAttack.ammo;
-
-	// Save the entity id. / grapejuice
-	this.promotedUnitEntity = ChangeEntityTemplate(this.entity, promotedTemplateName);
-
-	// Apply ammo after promotion / grapejuice
-	cmpAttack = Engine.QueryInterface(this.promotedUnitEntity, IID_Attack);
-	cmpAttack.ammo = this.currentAmmo;
-
-	// Check for new targets if ammo is 0, otherwise unit would perform ranged attacks without ammo / grapejuice
-	if (this.currentAmmo == 0)
+	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
+	if (cmpAmmo)
 	{
-		let cmpUnitAI = Engine.QueryInterface(this.promotedUnitEntity, IID_UnitAI);
-		cmpUnitAI.Stop();
+		this.currentAmmo = cmpAmmo.ammo;
+
+		// Save the entity id. / grapejuice
+		this.promotedUnitEntity = ChangeEntityTemplate(this.entity, promotedTemplateName);
+
+		// Apply ammo after promotion / grapejuice
+		cmpAmmo = Engine.QueryInterface(this.promotedUnitEntity, IID_Ammo);
+		cmpAmmo.ammo = this.currentAmmo;
+
+		// Check for new targets if ammo is 0, otherwise unit would perform ranged attacks without ammo / grapejuice
+		if (this.currentAmmo == 0)
+		{
+			let cmpUnitAI = Engine.QueryInterface(this.promotedUnitEntity, IID_UnitAI);
+			cmpUnitAI.Stop();
+		}
 	}
+	else
+		this.promotedUnitEntity = ChangeEntityTemplate(this.entity, promotedTemplateName);
 
 	// promoted units regain some health / grapejuice
 	cmpHealth = Engine.QueryInterface(this.promotedUnitEntity, IID_Health);

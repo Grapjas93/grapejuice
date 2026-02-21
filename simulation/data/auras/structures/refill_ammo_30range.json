@@ -2,6 +2,9 @@
 	"type": "range",
 	"radius": 30,
 	"affects": ["Ammo", "AmmoSupply"],
+	"modifications": [
+		{ "value": "Ammo/RefillTime", "replace": 3000}
+	],
 	"auraName": "Re-arm (small)",
 	"auraDescription": "Units with ammo will fully re-arm every 3s (Forge required).",
 	"overlayIcon": "art/textures/ui/session/auras/ammo.png"

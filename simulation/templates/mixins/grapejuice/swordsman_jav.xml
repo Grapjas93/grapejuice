@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Ammo>
+      <CurrAmmo>1</CurrAmmo>
+      <MaxAmmo>1</MaxAmmo>
+      <RefillTime>0</RefillTime>
+      <RefillAmount>1</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
   <Attack>
     <Melee>
       <AttackName>Sword</AttackName>
@@ -13,9 +20,6 @@
     </Melee>
     <Ranged>
       <AttackName>Javelin</AttackName>
-      <Ammo>1</Ammo>
-      <RefillAmount>0</RefillAmount>
-      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>60</Pierce>
       </Damage>

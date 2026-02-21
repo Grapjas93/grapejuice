@@ -1,6 +1,6 @@
 var g_AttackTypes = ["Melee", "Ranged", "Capture"];
 
-// grapejuice, added <Ammo>, <RefillTime>, <RefillAmount> <Energy>
+// grapejuice, added <Energy>
 Attack.prototype.Schema =
 	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
 	"<a:example>" +
@@ -30,10 +30,6 @@ Attack.prototype.Schema =
 		"</Melee>" +
 		"<Ranged>" +
 			"<AttackName>Bow</AttackName>" +
-			"<Ammo>30</Ammo>" +
-			"<RefillTime>3000</RefillTime>" +
-			"<RefillAmount>0</RefillAmount>" +
-			"<RefillCostMult>1</RefillCostMult>" +
 			"<Damage>" +
 				"<Hack>0.0</Hack>" +
 				"<Pierce>10.0</Pierce>" +
@@ -100,10 +96,6 @@ Attack.prototype.Schema =
 				"</element>" +
 				AttackHelper.BuildAttackEffectsSchema() +
 				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillCostMult'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
 				"<optional>" +
 					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
@@ -214,27 +206,6 @@ Attack.prototype.Init = function()
 	this.CanRechargeEnergyTimer = undefined;
 	this.RechargeEnergyTimer = undefined;
 
-	this.ammo = undefined;
-	this.maxAmmo = 0;
-	this.refillTime = 3000;
-	this.refillAmount = 0;
-	this.ammoReffilTimer = undefined;
-	this.refillCostMult = undefined;
-
-	if (!!this.template["Ranged"] && !!this.template["Ranged"].Ammo)
-	{
-		this.ammo = +this.template["Ranged"].Ammo;
-		this.maxAmmo = +this.template["Ranged"].Ammo;
-		this.refillCostMult = +this.template["Ranged"].RefillCostMult || 1;
-	}
-
-	// for ammo carts but i honestly should just make an ammo component and clean this up nicely
-	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
-	{
-		this.ammo = +this.template["Melee"].Ammo;
-		this.maxAmmo = +this.template["Melee"].Ammo;
-	}
-
 	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
 	{
 		this.energy = this.template["Melee"].Energy;
@@ -242,18 +213,6 @@ Attack.prototype.Init = function()
 		this.energy = +this.energy;
 		this.maxEnergy = +this.maxEnergy;
 
-	}
-
-	// start the automatic refill timer for units that regain ammo anywhere (slingers for now)
-	if (this.ammo == 40)
-	{
-		if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillTime)
-		{
-			this.refillTime = +this.template["Ranged"].RefillTime;
-		}
-
-		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-		cmpTimer.SetInterval(this.entity, IID_Attack, "AutoRefill", 0, this.refillTime, {});
 	}
 
 };
@@ -451,77 +410,11 @@ Attack.prototype.RechargeEnergy = function()
 };
 
 // grapejuice
-Attack.prototype.StopReArming = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	cmpTimer.CancelTimer(this.ammoReffilTimer);
-	this.ammoReffilTimer =	undefined;
-	return;
-};
-
-// grapejuice
 Attack.prototype.RefreshStatusbars = function(ent)
 {
 	let cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
 	cmpStatusBars.RegenerateSprites();
 };
-
-// grapejuice, called by Init. Used by units that regain ammo slowly anywhere
-Attack.prototype.AutoRefill = function()
-{
-	if (this.ammo != this.maxAmmo)
-	{
-		this.ammo = this.ammo + 1;
-		this.RefreshStatusbars(this.entity);
-	}
-
-};
-
-// grapejuice, called by Auras)
-Attack.prototype.SetAmmo = function(ammoGiver)
-{
-	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
-
-	// if the entity reloads from ammoGiver with ammo, draw ammo from ammoGiver ammo pool
-	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
-	{
-		let ammoNeeded = (this.maxAmmo - this.ammo)*this.refillCostMult;
-
-		// if the ammoGiver has no ammo, stop timer
-		if (cmpAmmoGiver.ammo == 0)
-		{
-			this.StopReArming();
-			return;
-		}
-
-		// if the ammoGiver can't do a full reload for the unit, give all remaining ammo to unit
-		if (cmpAmmoGiver.ammo < ammoNeeded)
-		{
-			this.ammo = this.ammo + cmpAmmoGiver.ammo;
-			this.RefreshStatusbars(this.entity);
-
-			cmpAmmoGiver.ammo = 0;
-			this.RefreshStatusbars(ammoGiver);
-
-			this.StopReArming();
-			return;
-		}
-		else
-		{
-			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
-			this.ammo = this.maxAmmo;
-
-			this.RefreshStatusbars(this.entity);
-			this.RefreshStatusbars(ammoGiver);
-
-			return;
-		}
-	}
-
-	// other buildings have infinite stock, simply reload the unit fully
-	this.ammo = this.maxAmmo;
-	this.RefreshStatusbars(this.entity);
-}
 
 
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
@@ -563,15 +456,15 @@ Attack.prototype.PerformAttack = function(type, target)
 	};
 
 	let delay = +(this.template[type].EffectDelay || 0);
+	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
 	// grapejuice
 	if (type == "Ranged")
 	{
-		if (!!this.template["Ranged"].Ammo)
+		if (cmpAmmo)
 		{
-			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
+			if (cmpAmmo.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
 			{
-				this.ammo--;
-				this.RefreshStatusbars(this.entity);
+				cmpAmmo.Reduce(1);
 			}
 			else
 			{
@@ -745,9 +638,9 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	}
 
 	// grapejuice
-	let hasRanged = !!this.template["Ranged"];
 	let hasMelee = !!this.template["Melee"];
-	if (hasRanged && this.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
+	if (cmpAmmo && cmpAmmo.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
 		return "Ranged";
 	else if (hasMelee)
 	{

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Ammo>
+      <CurrAmmo>70</CurrAmmo>
+      <MaxAmmo>70</MaxAmmo>
+      <RefillTime>0</RefillTime>
+      <RefillAmount>70</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
   <Attack>
     <Ranged>
       <AttackName>Bow</AttackName>
-      <Ammo>70</Ammo>
-      <RefillAmount>0</RefillAmount>
-      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>18</Pierce>
       </Damage>
