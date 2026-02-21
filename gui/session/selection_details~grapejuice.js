@@ -118,7 +118,7 @@ function displaySingle(entState)
 	{
 		currentEnergy = entState.attack["Melee"].currentEnergy;
 		maxEnergy = entState.attack["Melee"].maxEnergy;
-		showEnergy = entState.attack["Melee"].maxEnergy;
+		showEnergy = true;
 	}
 
 	// grapejuice, ammo
@@ -128,7 +128,7 @@ function displaySingle(entState)
 	{
 		currentAmmo = entState.ammo.currAmmo;
 		maxAmmo = entState.ammo.maxAmmo;
-		showAmmo = entState.ammo.maxAmmo;
+		showAmmo = true;
 	}
 
 	let energySection = Engine.GetGUIObjectByName("energySection");
@@ -143,12 +143,40 @@ function displaySingle(entState)
 	let sectionPosMiddle = Engine.GetGUIObjectByName("sectionPosMiddle");
 	let sectionPosBottom = Engine.GetGUIObjectByName("sectionPosBottom");
 
-	if (!showEnergy && !showAmmo && !showCapture)
+	let activeBars = 0
+	if (showEnergy)
+		activeBars++
+	else if (showAmmo)
+		activeBars++
+	else if (showCapture)
+		activeBars++
+
+	warn(activeBars)
+	if (activeBars == 0)
 	{
 		borderSection.hidden = true;
 		shaderSection.hidden = true;
 	}
-	else if (showEnergy && showAmmo || showAmmo && showCapture)
+	else if (activeBars == 1)
+	{
+		borderSection.hidden = false;
+		shaderSection.hidden = false;
+
+		let barShaderFull = Engine.GetGUIObjectByName("barShaderFull");
+		barShaderFull.hidden = false;
+		let barShaderSplit1 = Engine.GetGUIObjectByName("barShaderSplit1");
+		barShaderSplit1.hidden = true;
+		let barShaderSplit2 = Engine.GetGUIObjectByName("barShaderSplit2");
+		barShaderSplit2.hidden = true;
+
+		let barBorderFull = Engine.GetGUIObjectByName("barBorderFull");
+		barBorderFull.hidden = false;
+		let barBorderSplit1 = Engine.GetGUIObjectByName("barBorderSplit1");
+		barBorderSplit1.hidden = true;
+		let barBorderSplit2 = Engine.GetGUIObjectByName("barBorderSplit2");
+		barBorderSplit2.hidden = true;
+	}
+	else if (activeBars == 2)
 	{
 		borderSection.hidden = false;
 		shaderSection.hidden = false;
@@ -168,31 +196,13 @@ function displaySingle(entState)
 		barBorderSplit2.hidden = false;
 
 	}
-	else
-	{
-		borderSection.hidden = false;
-		shaderSection.hidden = false;
-
-		let barShaderFull = Engine.GetGUIObjectByName("barShaderFull");
-		barShaderFull.hidden = false;
-		let barShaderSplit1 = Engine.GetGUIObjectByName("barShaderSplit1");
-		barShaderSplit1.hidden = true;
-		let barShaderSplit2 = Engine.GetGUIObjectByName("barShaderSplit2");
-		barShaderSplit2.hidden = true;
-
-		let barBorderFull = Engine.GetGUIObjectByName("barBorderFull");
-		barBorderFull.hidden = false;
-		let barBorderSplit1 = Engine.GetGUIObjectByName("barBorderSplit1");
-		barBorderSplit1.hidden = true;
-		let barBorderSplit2 = Engine.GetGUIObjectByName("barBorderSplit2");
-		barBorderSplit2.hidden = true;
-	}
 
 	// grapejuice, ammo
 	ammoSection.hidden = !showAmmo;
 	if (showAmmo)
 	{
 		let unitAmmoBar = Engine.GetGUIObjectByName("ammoBar");
+		let unitAmmoBarBG = Engine.GetGUIObjectByName("ammoBarBG");
 		let ammoSize = unitAmmoBar.size;
 
 		if (showEnergy || showCapture)
@@ -204,6 +214,7 @@ function displaySingle(entState)
 			ammoSize.rright = hasViewPermission ?  210 * Math.max(0, Math.min(1, currentAmmo / maxAmmo)) : 210;
 		}
 		unitAmmoBar.size = ammoSize;
+		unitAmmoBarBG.size = ammoSize;
 		Engine.GetGUIObjectByName("ammoLabel").caption = sprintf(translate("%(CurrentAmmo)s / %(MaxAmmo)s"), {
 			"CurrentAmmo": hasViewPermission ? Math.ceil(currentAmmo) : "?",
 			"MaxAmmo": hasViewPermission ? Math.ceil(maxAmmo) : "?"
@@ -218,6 +229,7 @@ function displaySingle(entState)
 	if (showEnergy)
 	{
 		let unitEnergyBar = Engine.GetGUIObjectByName("energyBar");
+		let unitEnergyBarBG = Engine.GetGUIObjectByName("energyBarBG");
 		let energySize = unitEnergyBar.size;
 
 		if (showAmmo)
@@ -229,6 +241,7 @@ function displaySingle(entState)
 			energySize.rright = hasViewPermission ? 196 * Math.max(0, Math.min(1, entState.attack["Melee"].currentEnergy / entState.attack["Melee"].maxEnergy)) : 196;
 		}
 		unitEnergyBar.size = energySize;
+		unitEnergyBarBG.size = energySize;
 		Engine.GetGUIObjectByName("energyLabel").caption = sprintf(translate("%(currentEnergy)s / %(maxEnergy)s"), {
 			"currentEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].currentEnergy) : "?",
 			"maxEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].maxEnergy) : "?"

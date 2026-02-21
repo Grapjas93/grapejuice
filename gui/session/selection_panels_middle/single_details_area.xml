@@ -64,7 +64,7 @@
 			<object name="energySection">
 				<object size="0 0 100% 12" name="energyLabel" type="text" style="StatsTextRight" ghost="true" />
 				<object size="124 14 50% 21" name="energy" type="image" tooltip_style="sessionToolTip">
-					<object type="image" sprite="energyBackground" ghost="true"/>
+					<object type="image" sprite="energyBackground" ghost="true" name="energyBarBG"/>
 					<object type="image" sprite="energyForeground" ghost="true" name="energyBar"/>
 				</object>
 				<object type="image" tooltip_style="sessionToolTip">
@@ -79,11 +79,9 @@
 				</object>
 				<object size="0 0 100% 12" name="captureStats" type="text" style="StatsTextRight" ghost="true"/>
 				<object size="1 14 100% 21" name="capture" type="image">
-					<object type="image" sprite="barBorder" ghost="true" size="-1 -1 100%+1 100%+1"/>
 					<repeat count="9">
 						<object type="image" sprite="playerColorBackground" ghost="true" name="captureBar[n]" hidden="true"/>
 					</repeat>
-					<object type="image" sprite="statsBarShaderHorizontal" ghost="true"/>
 				</object>
 				<object type="image" name="captureTooltip" tooltip_style="sessionToolTip"/>
 			</object>
@@ -92,8 +90,7 @@
 			<object name="ammoSection">
 				<object size="0 0 55% 12" name="ammoLabel" type="text" style="StatsTextLeft" ghost="true"/>
 				<object size="1 14 48% 21" name="ammo" type="image" tooltip_style="sessionToolTip">
-					<object type="image" sprite="barBorder" ghost="true" name="ammoBorder" size="0 0 100% 8"/>
-					<object type="image" sprite="ammoBackground" ghost="true"/>
+					<object type="image" sprite="ammoBackground" ghost="true" name="ammoBarBG"/>
 					<object type="image" sprite="ammoForeground" ghost="true" name="ammoBar"/>
 				</object>
 				<object size="0 0 55% 12" type="image" tooltip_style="sessionToolTip">
