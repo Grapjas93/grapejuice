@@ -14,5 +14,6 @@
 		{ "value": "Attack/Ranged/ApplyStatus/Burning/Damage/Fire", "multiply": 10.0, "affects": "StoneThrower" }
 	],
 	"auraName": "Brazier",
-	"auraDescription": "Projectiles shot from while in range apply burning."
+	"auraDescription": "Projectiles shot from while in range apply burning.",
+	"overlayIcon": "art/textures/ui/session/auras/flaming_projectiles.png"
 }
