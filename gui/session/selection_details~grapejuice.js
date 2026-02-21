@@ -151,7 +151,6 @@ function displaySingle(entState)
 	else if (showCapture)
 		activeBars++
 
-	warn(activeBars)
 	if (activeBars == 0)
 	{
 		borderSection.hidden = true;
