@@ -40,7 +40,8 @@ BuildingAI.prototype.FireArrows = function()
 		);
 
 	// grapejuice, if the garrisoned entity has no ammo, don't shoot arrows
-	if (Helpers.EntityMatchesClassList(this.entity, "ArmyCamp SiegeTower") && cmpAttack.ammo == 0)
+	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
+	if (cmpAmmo && cmpAmmo.ammo == 0)
 	{
 		arrowsToFire = 0;
 	}
