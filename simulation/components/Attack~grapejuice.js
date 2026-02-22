@@ -195,7 +195,7 @@ Attack.prototype.Init = function()
 {
 	this.chargeCooldown = 0;
 
-	this.canChargeTimer = 0;
+	this.canChargeTimer = undefined;
 };
 
 // returns object containing the ActorName, ImpactActorName and ImpactAnimationLifetime
@@ -215,8 +215,6 @@ Attack.prototype.GetProjectileActors = function()
 // grapejuice, called by Charge()
 Attack.prototype.CanCharge = function(target)
 {
-		warn('called')
-
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
 	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
 		return false;
@@ -232,7 +230,7 @@ Attack.prototype.CanCharge = function(target)
 Attack.prototype.StopCanChargeTimer = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	cmpTimer.CancelTimer(this.canChargeTimer);
+	this.canChargeTimer = cmpTimer.CancelTimer(this.canChargeTimer);
 
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
@@ -321,6 +319,7 @@ Attack.prototype.CheckTargetIsInMeleeRange = function(target)
  */
 Attack.prototype.PerformAttack = function(type, target)
 {
+
 	let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
 	if (!cmpPosition || !cmpPosition.IsInWorld())
 		return;
@@ -528,27 +527,32 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	}
 
 	// grapejuice
-	let hasMelee = !!this.template["Melee"];
 	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
-	if (cmpAmmo && cmpAmmo.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+	if (cmpAmmo
+		&& cmpAmmo.ammo != 0
+		&& this.CheckTargetIsInMeleeRange(target) == false
+		&& (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true
+		|| Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
 		return "Ranged";
-	else if (hasMelee)
-	{
-		this.StopCanChargeTimer();
-		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-		this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
+	else if (types.includes("Melee"))
 		return "Melee";
-	}
 	else
 		return undefined;
 };
 
-
-Attack.prototype.OnUnitAIStateChanged = function(msg)
+Attack.prototype.OnUnitAIOrderDataChanged = function(msg)
 {
-	if (!msg.to.includes("COMBAT.APPROACHING") && !msg.to.includes("COMBAT.ATTACKING"))
+	let currentOrder = msg.to.shift()
+	if (currentOrder && currentOrder.attackType == "Melee")
+	{
+		if (!this.canChargeTimer)
+		{
+			let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+			this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, currentOrder.target);
+		}
+	}
+	else
 		this.StopCanChargeTimer();
 };
-
 
 Engine.ReRegisterComponentType(IID_Attack, "Attack", Attack);

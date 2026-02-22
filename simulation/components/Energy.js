@@ -130,7 +130,7 @@ Energy.prototype.OnUnitAIOrderDataChanged = function(msg)
 
 Energy.prototype.OnUnitAIStateChanged = function(msg)
 {
-	warn(uneval(msg))
+	//warn(uneval(msg))
 	if (msg.to.includes("WALKING") || msg.to.includes("COMBAT"))
 		this.isIdle = false;
 	else
