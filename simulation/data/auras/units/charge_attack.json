@@ -1,0 +1,6 @@
+{
+	"stackable": false,
+	"affects": ["Unit"],
+	"auraName": "Charge Attack",
+	"auraDescription": "When coming close to a targeted unit this unit will charge, dealing bonus damage on it's first attack if it had any energy left (yellow bar)"
+}

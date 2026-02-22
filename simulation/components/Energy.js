@@ -123,6 +123,22 @@ Energy.prototype.OnWoundedChanged = function(msg)
 		this.preventRegen = false;
 };
 
+Energy.prototype.OnUnitAIOrderDataChanged = function(msg)
+{
+	//warn(uneval(msg))
+};
+
+Energy.prototype.OnUnitAIStateChanged = function(msg)
+{
+	warn(uneval(msg))
+	if (msg.to.includes("WALKING") || msg.to.includes("COMBAT"))
+		this.isIdle = false;
+	else
+		this.isIdle = true;
+
+	this.CheckRegenTimer();
+};
+
 Energy.prototype.OnValueModification = function(msg)
 {
 	if (msg.component == "Energy")

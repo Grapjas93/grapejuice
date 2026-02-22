@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Auras datatype="tokens"> <!--grapejuice-->
+    units/charge_attack
+  </Auras>
   <Ammo>
       <CurrAmmo>40</CurrAmmo>
       <MaxAmmo>40</MaxAmmo>

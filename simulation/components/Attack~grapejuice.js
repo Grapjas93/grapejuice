@@ -215,6 +215,8 @@ Attack.prototype.GetProjectileActors = function()
 // grapejuice, called by Charge()
 Attack.prototype.CanCharge = function(target)
 {
+		warn('called')
+
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
 	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
 		return false;
@@ -541,33 +543,12 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 		return undefined;
 };
 
-/**
- * Returns undefined if we have no preference or the lowest index of a preferred class.
- */
-Attack.prototype.GetPreference = function(target)
+
+Attack.prototype.OnUnitAIStateChanged = function(msg)
 {
-	let cmpIdentity = Engine.QueryInterface(target, IID_Identity);
-	if (!cmpIdentity)
-		return undefined;
-
-	let targetClasses = cmpIdentity.GetClassesList();
-
-	let minPref;
-	for (let type of this.GetAttackTypes())
-	{
-		let preferredClasses = this.GetPreferredClasses(type);
-		for (let pref = 0; pref < preferredClasses.length; ++pref)
-		{
-			if (MatchesClassList(targetClasses, preferredClasses[pref]))
-			{
-				if (pref === 0)
-					return pref;
-				if ((minPref === undefined || minPref > pref))
-					minPref = pref;
-			}
-		}
-	}
-	return minPref;
+	if (!msg.to.includes("COMBAT.APPROACHING") && !msg.to.includes("COMBAT.ATTACKING"))
+		this.StopCanChargeTimer();
 };
+
 
 Engine.ReRegisterComponentType(IID_Attack, "Attack", Attack);
