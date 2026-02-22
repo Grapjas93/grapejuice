@@ -242,9 +242,13 @@ Attack.prototype.StopCanChargeTimer = function()
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
 Attack.prototype.Charge = function(target)
 {
+	warn('called charge()')
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
 	if (!cmpEnergy || (cmpEnergy && cmpEnergy.GetEnergy() <= 0))
+	{
+		this.StopCanChargeTimer();
 		return;
+	}
 
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
