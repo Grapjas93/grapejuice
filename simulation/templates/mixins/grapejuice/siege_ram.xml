@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Energy>
+    <CurrEnergy>0</CurrEnergy>
+    <MaxEnergy>0</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
    <Resistance replace="">
         <Entity>
             <Damage>
@@ -11,7 +17,6 @@
    </Resistance>
   <Attack>
     <Melee>
-	  <Energy>0</Energy>
       <AttackName>Ram</AttackName>
       <Damage>
         <Crush>150</Crush>

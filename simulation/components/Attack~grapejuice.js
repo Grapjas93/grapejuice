@@ -1,12 +1,11 @@
 var g_AttackTypes = ["Melee", "Ranged", "Capture"];
 
-// grapejuice, added <Energy>
+// grapejuice
 Attack.prototype.Schema =
 	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
 	"<a:example>" +
 		"<Melee>" +
 			"<AttackName>Spear</AttackName>" +
-			"<Energy>150</Energy>" +
 			"<Damage>" +
 				"<Hack>10.0</Hack>" +
 				"<Pierce>0.0</Pierce>" +
@@ -95,7 +94,6 @@ Attack.prototype.Schema =
 					"<text/>" +
 				"</element>" +
 				AttackHelper.BuildAttackEffectsSchema() +
-				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
 				"<optional>" +
 					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
@@ -196,25 +194,11 @@ Attack.prototype.Schema =
 Attack.prototype.Init = function()
 {
 	this.chargeCooldown = 0;
-	this.maxEnergy = undefined;
-	this.energy = undefined;
 
 	// changed by the health component
 	this.wounded = false;
 
 	this.canChargeTimer = 0;
-	this.CanRechargeEnergyTimer = undefined;
-	this.RechargeEnergyTimer = undefined;
-
-	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
-	{
-		this.energy = this.template["Melee"].Energy;
-		this.maxEnergy = this.template["Melee"].Energy;
-		this.energy = +this.energy;
-		this.maxEnergy = +this.maxEnergy;
-
-	}
-
 };
 
 // returns object containing the ActorName, ImpactActorName and ImpactAnimationLifetime
@@ -234,7 +218,8 @@ Attack.prototype.GetProjectileActors = function()
 // grapejuice, called by Charge()
 Attack.prototype.CanCharge = function(target)
 {
-	if (this.energy <= 0)
+	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
 		return false;
 
 	// if the unit is wounded it cant charge
@@ -264,7 +249,8 @@ Attack.prototype.StopCanChargeTimer = function()
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
 Attack.prototype.Charge = function(target)
 {
-	if (this.energy == undefined)
+	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
 		return;
 
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
@@ -286,8 +272,7 @@ Attack.prototype.Charge = function(target)
 	{
 		if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
 		{
-			this.energy = this.energy - 5;
-			this.RefreshStatusbars(this.entity);
+			cmpEnergy.Reduce(5);
 			return;
 		}
 
@@ -297,7 +282,7 @@ Attack.prototype.Charge = function(target)
 			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
 			let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
 
-			this.energy = this.energy - 5;
+			cmpEnergy.Reduce(5);
 			cmpModifiersManager.AddModifiers("ChargeAttack", {
 				"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
 				"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
@@ -308,7 +293,7 @@ Attack.prototype.Charge = function(target)
 			return;
 		}
 
-		this.energy = this.energy - 5;
+		cmpEnergy.Reduce(5);
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
 			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
@@ -326,96 +311,6 @@ Attack.prototype.Charge = function(target)
 	}
 
 };
-
-// grapejuice, called by UnitAI~grapejuice.
-// it will call RechargeEnergy() after 1s, but the timer is reset after a new unit order.
-Attack.prototype.CanRechargeEnergy = function()
-{
-	if (this.energy == undefined)
-		return;
-
-	if (this.wounded)
-	return;
-
-	// quick return if we already have a valid running timer
-	if (this.CanRechargeEnergyTimer != undefined)
-		return;
-
-	this.StopRechargingEnergy();
-
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.CanRechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 1000, {});
-};
-
-// grapejuice, called by UnitAI~grapejuice, any unit order that is not "Stop" will stop the recharge timer
-Attack.prototype.StopRechargingEnergy = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-
-	cmpTimer.CancelTimer(this.RechargeEnergyTimer);
-	cmpTimer.CancelTimer(this.CanRechargeEnergyTimer);
-
-	this.RechargeEnergyTimer = undefined;
-	this.CanRechargeEnergyTimer = undefined;
-};
-
-// grapejuice, called by CanRechargeEnergy()
-Attack.prototype.RechargeEnergy = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-
-
-	if (this.wounded)
-	{
-		this.StopRechargingEnergy();
-		return;
-	}
-
-	if (!(this.energy >= this.maxEnergy))
-	{
-		if (this.energy < 0)
-			this.energy = 0;
-
-		if (this.energy + 5 > this.maxEnergy || this.energy > this.maxEnergy)
-		{
-			this.energy = this.maxEnergy;
-			this.RefreshStatusbars(this.entity);
-			this.StopRechargingEnergy();
-			return;
-		}
-
-		// make sure that the ram regen rate increases the more units are garrisoned in it
-		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
-		{
-			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-			if (this.energy + 5 * cmpGarrisonHolder.OccupiedSlots() > this.maxEnergy)
-			{
-				this.energy = this.maxEnergy;
-				this.RefreshStatusbars(this.entity);
-				this.StopRechargingEnergy();
-			}
-			else
-			{
-				this.energy += 5 * cmpGarrisonHolder.OccupiedSlots();
-			}
-		}
-		else
-		{
-			this.energy = this.energy + 5;
-		}
-		this.RechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 500, {});
-		this.RefreshStatusbars(this.entity);
-	}
-
-};
-
-// grapejuice
-Attack.prototype.RefreshStatusbars = function(ent)
-{
-	let cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
-	cmpStatusBars.RegenerateSprites();
-};
-
 
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
 Attack.prototype.CheckTargetIsInMeleeRange = function(target)
@@ -478,11 +373,11 @@ Attack.prototype.PerformAttack = function(type, target)
 	}
 
 	// grapejuice
-	if (type == "Melee" && this.maxEnergy != undefined)
+	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+	if (type == "Melee" && cmpEnergy)
 	{
-		this.energy = 0;
+		cmpEnergy.SetEnergy(0);
 		this.StopCanChargeTimer();
-		this.RefreshStatusbars(this.entity);
 	}
 
 	if (this.template[type].Projectile)

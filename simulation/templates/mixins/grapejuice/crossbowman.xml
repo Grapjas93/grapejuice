@@ -7,6 +7,12 @@
       <RefillAmount>30</RefillAmount>
       <RefillCostMult>1</RefillCostMult>
   </Ammo>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Ranged>
       <AttackName>Crossbow</AttackName>
@@ -32,7 +38,6 @@
     </Ranged>
     <Melee>
       <AttackName>Mace</AttackName>
-      <Energy>100</Energy>
       <Damage>
         <Crush>7</Crush>
       </Damage>

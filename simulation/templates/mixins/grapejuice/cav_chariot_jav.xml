@@ -7,6 +7,12 @@
       <RefillAmount>3</RefillAmount>
       <RefillCostMult>1</RefillCostMult>
   </Ammo>
+  <Energy>
+    <CurrEnergy>150</CurrEnergy>
+    <MaxEnergy>150</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Ranged>
       <Damage>
@@ -30,7 +36,6 @@
       </ApplyStatus>
     </Ranged>
     <Melee>
-      <Energy>150</Energy>
       <AttackName>Pike</AttackName>
       <Damage>
         <Pierce>10</Pierce>

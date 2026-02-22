@@ -7,6 +7,12 @@
       <RefillAmount>1</RefillAmount>
       <RefillCostMult>1</RefillCostMult>
   </Ammo>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Ranged>
       <AttackName>Sling</AttackName>
@@ -23,7 +29,6 @@
     </Ranged>
     <Melee>
       <AttackName>Sword</AttackName>
-      <Energy>100</Energy>
       <Damage>
         <Hack>5.5</Hack>
         <Pierce>0</Pierce>

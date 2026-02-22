@@ -15,6 +15,7 @@
 				<object name="mainMenuButton[7]" type="button" style="StoneButtonFancy" tooltip_style="pgToolTip"/>
 				<object name="mainMenuButton[8]" type="button" style="StoneButtonFancy" tooltip_style="pgToolTip"/>
 				<object name="mainMenuButton[9]" type="button" style="StoneButtonFancy" tooltip_style="pgToolTip"/>
+				<object name="mainMenuButton[10]" type="button" style="StoneButtonFancy" tooltip_style="pgToolTip"/>
 		</object>
 
 		<!-- These are used to make the right side blend in with the submenu -->

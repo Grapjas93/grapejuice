@@ -7,6 +7,12 @@
       <RefillAmount>3</RefillAmount>
       <RefillCostMult>1</RefillCostMult>
   </Ammo>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Ranged>
       <Damage>
@@ -30,7 +36,6 @@
       </ApplyStatus>
     </Ranged>
     <Melee>
-      <Energy>100</Energy>
       <Damage>
         <Hack>6.5</Hack>
       </Damage>

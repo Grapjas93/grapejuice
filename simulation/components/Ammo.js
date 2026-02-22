@@ -115,8 +115,9 @@ Ammo.prototype.ExecuteRegeneration = function()
  */
 Ammo.prototype.CheckRegenTimer = function()
 {
+	let refillTime = this.GetRegenRate()
 	// check if we need a timer
-	if (this.GetRegenRate() == 0)
+	if (refillTime == 0)
 	{
 		// we don't need a timer, disable if one exists
 		if (this.ammoReffilTimer)
@@ -129,7 +130,7 @@ Ammo.prototype.CheckRegenTimer = function()
 		return;
 
 	const cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.ammoReffilTimer = cmpTimer.SetInterval(this.entity, IID_Ammo, "ExecuteRegeneration", this.refillTime, this.refillTime, null);
+	this.ammoReffilTimer = cmpTimer.SetInterval(this.entity, IID_Ammo, "ExecuteRegeneration", refillTime, refillTime, null);
 };
 
 Ammo.prototype.GetRegenRate = function()
@@ -167,7 +168,7 @@ Ammo.prototype.SetAmmo = function(value)
 		cmpFogging.Activate();
 
 	const old = this.ammo;
-	this.ammo = Math.max(1, Math.min(this.GetMaxAmmo(), value));
+	this.ammo = Math.max(0, Math.min(this.GetMaxAmmo(), value));
 
 	this.RegisterAmmoChanged(old);
 };
@@ -185,50 +186,5 @@ Ammo.prototype.RecalculateValues = function()
 	if (this.refillTime > 0)
 		this.CheckRegenTimer();
 };
-
-Ammo.prototype.SetAmmo = function(ammoGiver)
-{
-	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Ammo);
-
-	// if the entity reloads from ammoGiver with ammo, draw ammo from ammoGiver ammo pool
-	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
-	{
-		let ammoNeeded = (this.maxAmmo - this.ammo)*this.refillCostMult;
-
-		// if the ammoGiver has no ammo, stop timer
-		if (cmpAmmoGiver.ammo == 0)
-		{
-			this.StopReArming();
-			return;
-		}
-
-		// if the ammoGiver can't do a full reload for the unit, give all remaining ammo to unit
-		if (cmpAmmoGiver.ammo < ammoNeeded)
-		{
-			this.ammo = this.ammo + cmpAmmoGiver.ammo;
-			this.RefreshStatusbars(this.entity);
-
-			cmpAmmoGiver.ammo = 0;
-			this.RefreshStatusbars(ammoGiver);
-
-			this.StopReArming();
-			return;
-		}
-		else
-		{
-			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
-			this.ammo = this.maxAmmo;
-
-			this.RefreshStatusbars(this.entity);
-			this.RefreshStatusbars(ammoGiver);
-
-			return;
-		}
-	}
-
-	// other buildings have infinite stock, simply reload the unit fully
-	this.ammo = this.maxAmmo;
-	this.RefreshStatusbars(this.entity);
-}
 
 Engine.RegisterComponentType(IID_Ammo, "Ammo", Ammo);

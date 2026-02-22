@@ -32,16 +32,13 @@ StatusBars.prototype.Sprites = [
 // grapejuice ammoBar
 StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 {
-	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
-	if(cmpAttack && cmpAttack.maxEnergy)
+	let cmpEnergy = QueryMiragedInterface(this.entity, IID_Energy);
+	if(cmpEnergy)
 	{
 		if (!this.enabled)
 			return 0;
 
-		if(cmpAttack.wounded == true  || cmpAttack.chargeCooldown != 0)
-			return 0;
-
-		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpAttack.energy / cmpAttack.maxEnergy, 2/3);
+		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpEnergy.energy / cmpEnergy.maxEnergy, 2/3);
 	}
 	return 0;
 };

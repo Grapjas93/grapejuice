@@ -114,10 +114,10 @@ function displaySingle(entState)
     // grapejuice, energy
 	let	currentEnergy = 0;
 	let	maxEnergy = 0;
-	if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxEnergy)
+	if (!!entState.energy)
 	{
-		currentEnergy = entState.attack["Melee"].currentEnergy;
-		maxEnergy = entState.attack["Melee"].maxEnergy;
+		currentEnergy = entState.energy.currEnergy;
+		maxEnergy = entState.energy.maxEnergy;
 		showEnergy = true;
 	}
 
@@ -233,17 +233,17 @@ function displaySingle(entState)
 
 		if (showAmmo)
 		{
-			energySize.rright = hasViewPermission ? 100 * Math.max(0, Math.min(1, entState.attack["Melee"].currentEnergy / entState.attack["Melee"].maxEnergy)) : 100;
+			energySize.rright = hasViewPermission ? 100 * Math.max(0, Math.min(1, currentEnergy / maxEnergy)) : 100;
 		}
 		else
 		{
-			energySize.rright = hasViewPermission ? 196 * Math.max(0, Math.min(1, entState.attack["Melee"].currentEnergy / entState.attack["Melee"].maxEnergy)) : 196;
+			energySize.rright = hasViewPermission ? 196 * Math.max(0, Math.min(1, currentEnergy / maxEnergy)) : 196;
 		}
 		unitEnergyBar.size = energySize;
 		unitEnergyBarBG.size = energySize;
 		Engine.GetGUIObjectByName("energyLabel").caption = sprintf(translate("%(currentEnergy)s / %(maxEnergy)s"), {
-			"currentEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].currentEnergy) : "?",
-			"maxEnergy": hasViewPermission ? Math.ceil(entState.attack["Melee"].maxEnergy) : "?"
+			"currentEnergy": hasViewPermission ? Math.ceil(currentEnergy) : "?",
+			"maxEnergy": hasViewPermission ? Math.ceil(maxEnergy) : "?"
 		});
 		energySection.size = sectionPosBottom.size;
 		captureSection.size = showResource ? sectionPosMiddle.size : sectionPosBottom.size;
@@ -548,10 +548,10 @@ function displayMultiple(entStates)
 			averageAmmo += entState.ammo.currAmmo;
 			maxAmmo += entState.ammo.maxAmmo;
 		}
-		if (!!entState.attack && !!entState.attack["Melee"] && !!entState.attack["Melee"].maxEnergy)
+		if (!!entState.energy)
 		{
-			averageEnergy += entState.attack["Melee"].currentEnergy;
-			maxEnergy += entState.attack["Melee"].maxEnergy;
+			averageEnergy += entState.energy.currEnergy;
+			maxEnergy += entState.energy.maxEnergy;
 		}
 		if (entState.capturePoints)
 		{

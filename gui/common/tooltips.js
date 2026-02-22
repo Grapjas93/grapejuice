@@ -177,6 +177,29 @@ function getCurrentHealthTooltip(entState, label)
 	});
 }
 
+function getEnergyTooltip(template)
+{
+	if (!template.energy)
+		return "";
+
+	return sprintf(translate("%(label)s %(details)s"), {
+		"label": headerFont(translate("Energy:")),
+		"details": Math.round(template.energy.maxEnergy)
+	});
+}
+
+function getCurrentEnergyTooltip(entState, label)
+{
+	if (!entState.maxHitpoints)
+		return "";
+
+	return sprintf(translate("%(energyLabel)s %(current)s / %(max)s"), {
+		"energyLabel": headerFont(label || translate("Energy:")),
+		"current": Math.round(entState.hitpoints),
+		"max": Math.round(entState.maxHitpoints)
+	});
+}
+
 function getAmmoTooltip(template)
 {
 	if (!template.ammo)
@@ -195,18 +218,6 @@ function getCurrentAmmoTooltip(entState, label)
 
 	return sprintf(translate("%(ammoLabel)s %(current)s / %(max)s"), {
 		"ammoLabel": headerFont(label || translate("Ammo:")),
-		"current": Math.round(entState.hitpoints),
-		"max": Math.round(entState.maxHitpoints)
-	});
-}
-
-function getCurrentEnergyTooltip(entState, label)
-{
-	if (!entState.maxHitpoints)
-		return "";
-
-	return sprintf(translate("%(energyLabel)s %(current)s / %(max)s"), {
-		"energyLabel": headerFont(label || translate("Energy:")),
 		"current": Math.round(entState.hitpoints),
 		"max": Math.round(entState.maxHitpoints)
 	});
@@ -473,14 +484,15 @@ function attackEffectsDetails(attackTypeTemplate)
 	return effects.filter(effect => effect).join(commaFont(translate(", ")));
 }
 
-function GetEnergyDetails(attackTypeTemplate)
+
+function GetEnergyDetails(template)
 {
-	if (!attackTypeTemplate.maxEnergy)
+	if (!template.energy.maxEnergy)
 		return "";
 
-	let text = attackTypeTemplate.currentEnergy ? `${attackTypeTemplate.currentEnergy}/${attackTypeTemplate.maxEnergy}` : attackTypeTemplate.maxEnergy
+	let energyText = template.energy.currEnergy ? `${template.energy.currEnergy}/${template.energy.maxEnergy}` : template.energy.maxEnergy
 	return sprintf("%(energyAmount)s", {
-		"energyAmount": headerFont("Energy: ") + text + ", ",
+		"energyAmount": headerFont("Energy: ") + energyText
 	});
 }
 
@@ -537,8 +549,7 @@ function getAttackTooltip(template)
 			"range": rangeDetails(attackTypeTemplate),
 			"rate": attackRateDetails(attackTypeTemplate.repeatTime, projectiles),
 			"splash": splashTemplate ? "\n" + g_Indent + g_Indent + splashDetails(splashTemplate) : "",
-			"statusEffects": statusEffectsDetails,
-			"energy": attackType == "Melee" ? GetEnergyDetails(attackTypeTemplate) : ""
+			"statusEffects": statusEffectsDetails
 		}));
 	}
 

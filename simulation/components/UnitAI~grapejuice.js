@@ -30,25 +30,21 @@ UnitAI.prototype.SetNextState = function(state)
 	this.UnitFsm.SetNextState(this, state);
 
 	// grapejuice
-	let cmpAttack = Engine.QueryInterface(this.entity, IID_Attack);
-	if (!cmpAttack)
-	return;
+	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+	if (!cmpEnergy)
+		return;
 
 	if (this.IsFormationController() == false)
 	{
 		if (state == "IDLE" || state == "FORMATIONMEMBER.IDLE" || state == "ROAMING" || state == "LINGERING")
 		{
-			cmpAttack.CanRechargeEnergy();
-			cmpAttack.StopCanChargeTimer();
-		}
-		else if (state == "INDIVIDUAL.COMBAT.APPROACHING")
-		{
-			cmpAttack.StopRechargingEnergy();
+			cmpEnergy.isIdle = true;
+			cmpEnergy.CheckRegenTimer();
 		}
 		else
 		{
-			cmpAttack.StopRechargingEnergy();
-			cmpAttack.StopCanChargeTimer();
+			cmpEnergy.isIdle = false;
+			cmpEnergy.CheckRegenTimer();
 		}
 	}
 };

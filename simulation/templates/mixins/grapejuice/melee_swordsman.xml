@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Melee>
-      <Energy> 100 </Energy>
       <Damage>
         <Hack> 5.5 </Hack>
         <Pierce> 0 </Pierce>

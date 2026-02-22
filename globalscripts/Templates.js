@@ -234,11 +234,6 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 				"yOrigin": getAttackStat("Origin/Y")
 			};
 
-			if (type == "Melee")
-			{
-				ret.attack[type].maxEnergy = getAttackStat("Energy")
-			}
-
 			ret.attack[type].elevationAdaptedRange = Math.sqrt(ret.attack[type].maxRange *
 				(2 * ret.attack[type].yOrigin + ret.attack[type].maxRange));
 
@@ -257,6 +252,14 @@ function GetTemplateDataHelper(template, player, auraTemplates, resources, modif
 				Object.assign(ret.attack[type].splash, getAttackEffects(template.Attack[type].Splash, "Attack/" + type + "/Splash"));
 			}
 		}
+	}
+
+	if (template.Energy)
+	{
+		ret.energy = {
+			"currEnergy": getEntityValue("Energy/CurrEnergy"),
+			"maxEnergy": getEntityValue("Energy/MaxEnergy")
+		};
 	}
 
 	if (template.Ammo)

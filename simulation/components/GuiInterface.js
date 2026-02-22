@@ -482,6 +482,15 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 		};
 	}
 
+	const cmpEnergy = Engine.QueryInterface(ent, IID_Energy);
+	if (cmpEnergy)
+	{
+		ret.energy = {
+			"currEnergy": cmpEnergy.energy,
+			"maxEnergy": cmpEnergy.maxEnergy
+		};
+	}
+
 	const cmpAttack = Engine.QueryInterface(ent, IID_Attack);
 	if (cmpAttack)
 	{
@@ -509,13 +518,6 @@ GuiInterface.prototype.GetEntityState = function(player, ent)
 			const timers = cmpAttack.GetTimers(type);
 			ret.attack[type].prepareTime = timers.prepare;
 			ret.attack[type].repeatTime = timers.repeat;
-
-			// grapejuice
-			if (cmpAttack.maxEnergy != undefined)
-			{
-				ret.attack[type].currentEnergy = cmpAttack.energy;
-				ret.attack[type].maxEnergy = cmpAttack.maxEnergy;
-			}
 
 			if (type != "Ranged")
 			{
