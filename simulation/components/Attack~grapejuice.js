@@ -195,9 +195,6 @@ Attack.prototype.Init = function()
 {
 	this.chargeCooldown = 0;
 
-	// changed by the health component
-	this.wounded = false;
-
 	this.canChargeTimer = 0;
 };
 
@@ -220,10 +217,6 @@ Attack.prototype.CanCharge = function(target)
 {
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
 	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
-		return false;
-
-	// if the unit is wounded it cant charge
-	if (this.wounded)
 		return false;
 
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
@@ -250,7 +243,7 @@ Attack.prototype.StopCanChargeTimer = function()
 Attack.prototype.Charge = function(target)
 {
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
-	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
+	if (!cmpEnergy || (cmpEnergy && cmpEnergy.GetEnergy() <= 0))
 		return;
 
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);

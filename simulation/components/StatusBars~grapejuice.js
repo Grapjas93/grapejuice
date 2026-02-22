@@ -26,7 +26,6 @@ StatusBars.prototype.Sprites = [
 	"EnergyBar", // grapejuice
 	"AuraIcons",
 	"RankIcon",
-	"WoundedIcon"  // grapejuice
 	];
 
 // grapejuice ammoBar
@@ -60,35 +59,6 @@ StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 		}
 	}
 	return 0;
-};
-
-// grapejuice wounded state icon
-StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
-{
-	let cmpUnitMotion = QueryMiragedInterface(this.entity, IID_UnitMotion);
-	let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
-
-	if(cmpUnitMotion && cmpHealth != null)
-	{
-		if (!this.enabled)
-			return 0;
-
-		let iconSize = +this.template.BarWidth / 2;
-		let currentHp = cmpHealth.GetHitpoints();
-		let treshold = cmpHealth.GetMaxHitpoints() / 3;
-		if( currentHp <= treshold  )
-		{
-			cmpOverlayRenderer.AddSprite(
-			"art/textures/ui/session/icons/status_effects/wounded.png",
-			{ "x": -iconSize / 2, "y": yoffset },
-			{ "x": iconSize / 2, "y": iconSize + yoffset },
-			{ "x": 0, "y": +this.template.HeightOffset + 0.4, "z": 0 },
-			g_NaturalColor);
-		}
-		return iconSize + this.template.BarHeight / 2;
-	}
-
-
 };
 
 StatusBars.prototype.OnAmmoChanged = function(msg)

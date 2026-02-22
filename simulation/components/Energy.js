@@ -22,6 +22,7 @@ Energy.prototype.Init = function()
 	this.regenAmount = +this.template.RegenAmount;
 	this.regenTimer = undefined;
 	this.isIdle = true;
+	this.preventRegen = false;
 }
 
 Energy.prototype.StopRegen = function()
@@ -83,7 +84,7 @@ Energy.prototype.ExecuteRegeneration = function()
 Energy.prototype.CheckRegenTimer = function()
 {
 	// check if we need a timer
-	if (!this.isIdle)
+	if (!this.isIdle || this.preventRegen)
 	{
 		// we don't need a timer, disable if one exists
 		if (this.regenTimer)
@@ -108,6 +109,18 @@ Energy.prototype.GetRegenRate = function()
 Energy.prototype.GetRegenAmount = function()
 {
 	return this.regenAmount;
+};
+
+Energy.prototype.OnWoundedChanged = function(msg)
+{
+	if (msg.to == true)
+	{
+		this.SetEnergy(0);
+		this.StopRegen();
+		this.preventRegen = true;
+	}
+	else if (msg.to == false)
+		this.preventRegen = false;
 };
 
 Energy.prototype.OnValueModification = function(msg)

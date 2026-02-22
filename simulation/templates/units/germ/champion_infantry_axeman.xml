@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="spec_champ|template_unit_champion_infantry_axeman">
+<Entity parent="grapejuice/hp_inf|grapejuice/melee_axeman|spec_champ|template_unit_champion_infantry_axeman">
   <Cost>
     <Resources>
       <food op="add">-20</food>
@@ -35,7 +35,7 @@
    </UnitMotion>
    <Attack>
        <Melee>
-           <AttackName> Sword </AttackName>
+           <AttackName> Axe </AttackName>
            <PrepareTime> 1050 </PrepareTime>
            <RepeatTime> 1200 </RepeatTime>
        </Melee>
