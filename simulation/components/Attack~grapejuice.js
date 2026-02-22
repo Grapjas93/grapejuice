@@ -216,7 +216,7 @@ Attack.prototype.GetProjectileActors = function()
 Attack.prototype.CanCharge = function(target)
 {
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
-	if (cmpEnergy && cmpEnergy.GetEnergy() <= 0)
+	if (!cmpEnergy || (cmpEnergy && cmpEnergy.GetEnergy() <= 0))
 		return false;
 
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
@@ -232,65 +232,60 @@ Attack.prototype.StopCanChargeTimer = function()
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
 	this.canChargeTimer = cmpTimer.CancelTimer(this.canChargeTimer);
 
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
+	this.RemoveChargeModifier();
 
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 	cmpUnitAI.SetSpeedMultiplier(1);
+	if (cmpUnitAI.IsFormationMember())
+		cmpUnitAI.SetSpeedMultiplier(0.5);
+
 };
 
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
 Attack.prototype.Charge = function(target)
 {
-	warn('called charge()')
-	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
-	if (!cmpEnergy || (cmpEnergy && cmpEnergy.GetEnergy() <= 0))
+	if (this.CanCharge(target) == false)
 	{
+		warn('stop charging', this.entity)
 		this.StopCanChargeTimer();
 		return;
 	}
-
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-
-	if (this.CanCharge(target) == false)
+	else if (this.CanCharge(target) == true)
 	{
-		cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
-		cmpUnitAI.SetSpeedMultiplier(1);
-
-		// workaround fix for sprinting attacking soldiers in formation
-		if (cmpUnitAI.IsFormationMember())
-		cmpUnitAI.SetSpeedMultiplier(0.5);
-
-		return;
+		warn('start charging', this.entity)
+		this.AddChargeModifier();
+		let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+		cmpEnergy.Reduce(5);
 	}
+};
 
+Attack.prototype.RemoveChargeModifier = function()
+{
+	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
+}
+
+Attack.prototype.AddChargeModifier = function()
+{
+	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+	if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
+		return;
+	
+	if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
+	{
+		let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
+		let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
+
+		cmpModifiersManager.AddModifiers("ChargeAttack", {
+			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
+			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
+			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
+			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
+			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
+		}, this.entity);
+	}
 	else
 	{
-		if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
-		{
-			cmpEnergy.Reduce(5);
-			return;
-		}
-
-		// rams have multipliers based on how many are garrisoned
-		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
-		{
-			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-			let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
-
-			cmpEnergy.Reduce(5);
-			cmpModifiersManager.AddModifiers("ChargeAttack", {
-				"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-				"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
-				"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
-				"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
-				"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
-			}, this.entity);
-			return;
-		}
-
-		cmpEnergy.Reduce(5);
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
 			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
@@ -298,15 +293,13 @@ Attack.prototype.Charge = function(target)
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
 
+		let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 		cmpUnitAI.Run();
 
 		// workaround fix for sprinting attacking soldiers in formation
 		if (cmpUnitAI.IsFormationMember())
-		cmpUnitAI.SetSpeedMultiplier(1);
-
-		return;
+			cmpUnitAI.SetSpeedMultiplier(1);
 	}
-
 };
 
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
