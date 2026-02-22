@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
   <Energy>
-    <CurrEnergy>0</CurrEnergy>
-    <MaxEnergy>0</MaxEnergy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
     <RegenRate>1000</RegenRate>
     <RegenAmount>5</RegenAmount>
   </Energy>

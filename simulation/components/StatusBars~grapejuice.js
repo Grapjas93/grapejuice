@@ -33,12 +33,14 @@ StatusBars.prototype.Sprites = [
 StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 {
 	let cmpEnergy = QueryMiragedInterface(this.entity, IID_Energy);
-	if(cmpEnergy)
+	if(cmpEnergy && cmpEnergy.maxEnergy)
 	{
 		if (!this.enabled)
 			return 0;
-
-		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpEnergy.energy / cmpEnergy.maxEnergy, 2/3);
+		if(cmpEnergy.maxEnergy == "0")
+			return 0;
+		if (cmpEnergy.maxEnergy > "0")
+			return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpEnergy.energy / cmpEnergy.maxEnergy, 2/3);
 	}
 	return 0;
 };
@@ -90,6 +92,12 @@ StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
 };
 
 StatusBars.prototype.OnAmmoChanged = function(msg)
+{
+	if (this.enabled)
+		this.RegenerateSprites();
+};
+
+StatusBars.prototype.OnEnergyChanged = function(msg)
 {
 	if (this.enabled)
 		this.RegenerateSprites();

@@ -1,0 +1,17 @@
+{
+	"type": "garrison",
+	"stackable": true,
+	"affects": ["Ram"],
+	"affectedPlayers": ["Player", "MutualAlly"],
+	"modifications": [
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 1.025 },
+		{ "value": "UnitMotion/Acceleration", "multiply": 1.025 },
+		{ "value": "Attack/Melee/PrepareTime", "multiply": 0.975},
+		{ "value": "Attack/Melee/RepeatTime", "multiply": 0.975 },
+		{ "value": "Attack/Melee/Damage/Hack", "multiply": 1.025 },
+		{ "value": "Attack/Melee/Damage/Pierce", "multiply": 1.025 },
+		{ "value": "Attack/Melee/Damage/Crush", "multiply": 1.025 }
+	],
+	"auraName": "Battering Team",
+	"auraDescription": "Battering Rams +2.5% bonus to movement speed, attack speed and damage for each garrisoned soldier."
+}

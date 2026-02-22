@@ -110,7 +110,6 @@ Energy.prototype.GetRegenAmount = function()
 	return this.regenAmount;
 };
 
-
 Energy.prototype.OnValueModification = function(msg)
 {
 	if (msg.component == "Energy")
