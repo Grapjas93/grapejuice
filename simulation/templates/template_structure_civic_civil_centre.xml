@@ -38,7 +38,7 @@
     </Distance>
   </BuildRestrictions>
   <BuildingAI>
-    <DefaultArrowCount>6</DefaultArrowCount>
+    <DefaultArrowCount>0</DefaultArrowCount>
     <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
     <GarrisonArrowClasses>Soldier</GarrisonArrowClasses>
   </BuildingAI>

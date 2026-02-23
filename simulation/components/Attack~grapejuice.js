@@ -473,8 +473,12 @@ Attack.prototype.PerformAttack = function(type, target)
 		Engine.QueryInterface(SYSTEM_ENTITY, IID_DelayedDamage).Hit(data, 0);
 
 	// cancel next attack if we have no ammo, otherwise it would do the whole animation until actually shooting and cancel the attack
-	if (type == "Ranged" && (cmpAmmo.ammo == 0 || isInMeleeRange == true))
-		Engine.QueryInterface(this.entity, IID_UnitAI).RespondToTargetedEntities([target]);
+	if (type == "Ranged" && (cmpAmmo && cmpAmmo.ammo == 0 || isInMeleeRange == true))
+	{
+		let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+		if(cmpUnitAI)
+			cmpUnitAI.RespondToTargetedEntities([target]);
+	}
 };
 
 /**
