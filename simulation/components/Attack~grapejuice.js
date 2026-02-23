@@ -246,13 +246,11 @@ Attack.prototype.Charge = function(target)
 {
 	if (this.CanCharge(target) == false)
 	{
-		warn('stop charging', this.entity)
 		this.StopCanChargeTimer();
 		return;
 	}
 	else if (this.CanCharge(target) == true)
 	{
-		warn('start charging', this.entity)
 		this.AddChargeModifier();
 		let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
 		cmpEnergy.Reduce(5);
@@ -343,25 +341,12 @@ Attack.prototype.PerformAttack = function(type, target)
 
 	let delay = +(this.template[type].EffectDelay || 0);
 	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
+	let isInMeleeRange = this.CheckTargetIsInMeleeRange(target)
 	// grapejuice
 	if (type == "Ranged")
-	{
 		if (cmpAmmo)
-		{
-			if (cmpAmmo.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
-			{
+			if (cmpAmmo.ammo > 0 && isInMeleeRange == false)
 				cmpAmmo.Reduce(1);
-			}
-			else
-			{
-				let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-				if(!cmpUnitAI)
-					return;
-
-				cmpUnitAI.RespondToTargetedEntities([target]);
-			}
-		}
-	}
 
 	// grapejuice
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
@@ -486,6 +471,10 @@ Attack.prototype.PerformAttack = function(type, target)
 	}
 	else
 		Engine.QueryInterface(SYSTEM_ENTITY, IID_DelayedDamage).Hit(data, 0);
+
+	// cancel next attack if we have no ammo, otherwise it would do the whole animation until actually shooting and cancel the attack
+	if (type == "Ranged" && (cmpAmmo.ammo == 0 || isInMeleeRange == true))
+		Engine.QueryInterface(this.entity, IID_UnitAI).RespondToTargetedEntities([target]);
 };
 
 /**

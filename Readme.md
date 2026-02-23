@@ -11,3 +11,4 @@ Changes so far:
 + Rewrote the energy system, should expect performance increase and less bugs
 + rams don't get extra energy from garrisons anymore, they have their own standalone pool. Each garrisoned soldier adds to attack speed, damage and walkspeed as described in the "battering rams" aura tooltip.
 + new icons for: re-arm aura, brazier flaming projectiles aura
++ Units swap weapons much smoother now when out of ammo. Before, units would do the whole ranged attack animation until actually shooting to realise it's out of ammo, now they swap instantly after being out of ammo

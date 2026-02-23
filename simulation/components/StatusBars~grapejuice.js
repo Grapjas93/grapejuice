@@ -1,5 +1,3 @@
-const g_NaturalColor = "255 255 255 255"; // pure white
-
 StatusBars.prototype.RemoveAuraSource = function(source, auraName)
 {
 	let names = this.auraSources.get(source);
