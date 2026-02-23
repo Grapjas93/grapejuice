@@ -270,7 +270,7 @@ Attack.prototype.AddChargeModifier = function()
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
 		return;
-	
+
 	if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
 	{
 		let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
@@ -539,7 +539,7 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 
 Attack.prototype.OnUnitAIOrderDataChanged = function(msg)
 {
-	let currentOrder = msg.to.shift()
+	let currentOrder = msg.to[1]
 	if (currentOrder && currentOrder.attackType == "Melee")
 	{
 		if (!this.canChargeTimer)
