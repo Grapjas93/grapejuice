@@ -15,7 +15,7 @@
       structures/{civ}/farmstead
       structures/{civ}/field
       structures/{civ}/camp
-      brazier_init
+      brazier_off
       structures/{civ}/corral
       structures/{civ}/dock
       structures/{civ}/kennel

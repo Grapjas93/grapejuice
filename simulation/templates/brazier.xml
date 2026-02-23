@@ -12,7 +12,7 @@
     <Classes datatype="tokens">Brazier</Classes>
     <VisibleClasses datatype="tokens">Brazier</VisibleClasses>
     <Requirements>
-      <Techs datatype="tokens">phase_city</Techs>
+      <Techs datatype="tokens">phase_town</Techs>
     </Requirements>
   </Identity>
   <Obstruction>
@@ -53,11 +53,6 @@
   </Resistance>
   <TerritoryDecay disable=""/>
   <TerritoryInfluence disable=""/>
-  <Trainer>
-    <Entities datatype="tokens">
-      brazier_lit
-    </Entities>
-  </Trainer>
   <StatusBars>
     <HeightOffset>4.0</HeightOffset>
   </StatusBars>

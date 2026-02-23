@@ -1,7 +1,6 @@
 import { aiWarn } from "simulation/ai/common-api/utils.js";
 import * as difficultyLevel from "simulation/ai/petra/difficultyLevel.js";
 
-warn("rwaraw")
 export function Config(difficulty = difficultyLevel.MEDIUM, behavior)
 {
 	this.difficulty = difficulty;
