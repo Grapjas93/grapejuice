@@ -51,6 +51,7 @@
       soldier_resistance_01
       soldier_resistance_02
       archer_attack_spread
+      flaming_projectiles
     </Technologies>
   </Researcher>
   <Sound>

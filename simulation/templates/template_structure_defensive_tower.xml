@@ -16,6 +16,16 @@
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
       </Projectile>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
       <RangeOverlay>
         <LineTexture>outline_border.png</LineTexture>

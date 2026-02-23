@@ -1,0 +1,19 @@
+{
+	"genericName": "Flaming Arrows",
+	"description": "Arrows dipped in oil and lit on fire.",
+	"cost": {
+		"metal": 1000
+	},
+	"requirements": { "tech": "phase_city" },
+	"requirementsTooltip": "Unlocked in City Phase.",
+	"icon": "flaming_projectiles.png",
+	"researchTime": 40,
+	"tooltip": "Stone towers and Fortresses shoot flaming arrows that apply burning.",
+	"modifications": [
+		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/arrow_projectile_flame.xml"},
+		{ "value": "Attack/Ranged/Projectile/ImpactAnimationLifetime", "replace": 3.0 },
+		{ "value": "Attack/Ranged/ApplyStatus/Burning/Interval", "replace": 3000 }
+	],
+	"affects": ["StoneTower", "Fortress"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

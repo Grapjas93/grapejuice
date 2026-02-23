@@ -13,3 +13,4 @@ Changes so far:
 + new icons for: re-arm aura, brazier flaming projectiles aura
 + Units swap weapons much smoother now when out of ammo. Before, units would do the whole ranged attack animation until actually shooting to realise it's out of ammo, now they swap instantly after being out of ammo
 + civic center shoots no arrows by default, only when garrisoned, to motivate players to build actual defense structures like towers and fortresses
++ new tech at forge, upgrade stone towers and fortresses to shoot flaming arrows that apply burning
