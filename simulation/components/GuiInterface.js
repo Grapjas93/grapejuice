@@ -1034,13 +1034,28 @@ GuiInterface.prototype.GetEntitiesWithStatusBars = function()
 	return Array.from(this.entsWithAuraAndStatusBars);
 };
 
+GuiInterface.prototype.CheckStatusBarsViewPermission = function(player, ent)
+{
+	const cmpPlayer = QueryPlayerIDInterface(player);
+	const isResource = Engine.QueryInterface(ent, IID_ResourceSupply) ? true : false;
+	const isObserver = cmpPlayer ? false : true;
+	const HasSpyTech = cmpPlayer ? cmpPlayer.HasSpyTech() : false;
+	const isAlly = IsOwnedByMutualAllyOfPlayer(player, ent);
+	warn()
+
+	if (isAlly || HasSpyTech || isResource || isObserver)
+		return true;
+
+	return false;
+};
+
 GuiInterface.prototype.SetStatusBars = function(player, cmd)
 {
 	const affectedEnts = new Set();
 	for (const ent of cmd.entities)
 	{
 		const cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
-		if (!cmpStatusBars)
+		if (!cmpStatusBars || !this.CheckStatusBarsViewPermission(player, ent))
 			continue;
 		cmpStatusBars.SetEnabled(cmd.enabled, cmd.showRank, cmd.showExperience);
 
