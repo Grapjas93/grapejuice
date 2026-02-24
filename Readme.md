@@ -15,3 +15,4 @@ Changes so far:
 + civic center shoots no arrows by default, only when garrisoned, to motivate players to build actual defense structures like towers and fortresses
 + new tech at forge, upgrade stone towers and fortresses to shoot flaming arrows that apply burning
 + added 3x damage bonus to spearman cavalry against cavalry
++ Units attack a random unit in sight instead of the closest one, meaning the battles are (imo) much more realistic and damage isnt wasted by dumping 20 arrows into 1 unit for example. Probably needs further tweaking as units can get stuck in big battles (vanilla has this issue too though), and sometimes a unit decides to attack a unit all the way in the back, possibly passing alot of perfectly fine units to attack which can look weird. For a ranged unit it's not that much of an issue but if a melee unit does it makes no sense honestly.
