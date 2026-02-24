@@ -217,12 +217,12 @@ Attack.prototype.CanCharge = function(target)
 {
 	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
 	if (!cmpEnergy || (cmpEnergy && cmpEnergy.GetEnergy() <= 0))
-		return false;
+		return {"status": false, "reason":"no_energy"};
 
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
-		return false;
+		return {"status": false, "reason":"out_of_range"};
 
-	return true;
+	return {"status": true, "reason":undefined};
 
 };
 
@@ -244,12 +244,14 @@ Attack.prototype.StopCanChargeTimer = function()
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
 Attack.prototype.Charge = function(target)
 {
-	if (this.CanCharge(target) == false)
+	let canCharge = this.CanCharge(target)
+	warn(uneval(canCharge))
+	if (canCharge.status == false && canCharge.reason == "no_energy")
 	{
 		this.StopCanChargeTimer();
 		return;
 	}
-	else if (this.CanCharge(target) == true)
+	else if (canCharge.status == true)
 	{
 		this.AddChargeModifier();
 		let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
@@ -290,7 +292,7 @@ Attack.prototype.AddChargeModifier = function()
 			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
-
+		warn('run')
 		let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 		cmpUnitAI.Run();
 
@@ -532,13 +534,13 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 
 Attack.prototype.OnUnitAIOrderDataChanged = function(msg)
 {
-	let currentOrder = msg.to[1]
+	let currentOrder = msg.to[0]
 	if (currentOrder && currentOrder.attackType == "Melee")
 	{
 		if (!this.canChargeTimer)
 		{
 			let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-			this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, currentOrder.target);
+			this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 500, currentOrder.target);
 		}
 	}
 	else
