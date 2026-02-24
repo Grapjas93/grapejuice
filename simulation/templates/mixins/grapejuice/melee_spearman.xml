@@ -16,6 +16,12 @@
         <Pierce> 3 </Pierce>
         <Crush> 0 </Crush>
       </Damage>
+      <Bonuses>
+        <BonusCavMelee>
+          <Classes>Cavalry</Classes>
+          <Multiplier>3.0</Multiplier>
+        </BonusCavMelee>
+      </Bonuses>
       <Bonuses replace=""></Bonuses>
     </Melee>
   </Attack>
