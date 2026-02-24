@@ -47,42 +47,28 @@ UnitAI.prototype.AttackEntitiesByPreference = function(ents)
 		if (!attackfilter(ent))
 			continue;
 		const pref = cmpAttack.GetPreference(ent);
-		// If we match our best preference, we can try responding right away.
-		// This makes some common cases fast, like most soldiers having 'Human' as best preference,
-		// or ships having 'Ship'. And if there are no such targets, this doesn't do much more work.
 		if (pref === null || pref === undefined)
 			entsWithoutPref.push(ent);
 		else
             preferences.push(ent);
 	}
 
+	// both the prefences and entsWithoutPref arrays are already filtered by whether we can attack them or not we don't need to check it again
+	// i have a theory that the ents delivered to this function are sorted by range, [0] would be closest and growing in range from there on out
+	// so we cap the rng number to 15 to try and focus fire a bit to closer targets and to not wander of to soldier #200 who is standing in narnia
 	if (preferences.length)
 	{
-        let randomIndex = Math.floor(Math.random() * preferences.length)
-        while (preferences.length > 0 && !this.CanAttack(preferences[randomIndex]))
-        {
-            preferences.splice(randomIndex, 1);
-            randomIndex = Math.floor(Math.random() * preferences.length)
-        }
-        if (preferences.length > 0)
-        {
-            this.RespondToTargetedEntities([preferences[randomIndex]])
-            return true;
-        }
+		let targets = preferences.length > 15 ? 15 : preferences.length
+        let randomIndex = Math.floor(Math.random() * targets)
+		this.RespondToTargetedEntities([preferences[randomIndex]])
+		return true;
 	}
-    else
+    else if (entsWithoutPref.length)
     {
-        let randomIndex = Math.floor(Math.random() * entsWithoutPref.length)
-        while (entsWithoutPref.length > 0 && !this.CanAttack(entsWithoutPref[randomIndex]))
-        {
-            entsWithoutPref.splice(randomIndex, 1);
-            randomIndex = Math.floor(Math.random() * entsWithoutPref.length)
-        }
-        if (entsWithoutPref.length > 0)
-        {
-            this.RespondToTargetedEntities([entsWithoutPref[randomIndex]])
-            return true;
-        }
+		let targets = entsWithoutPref.length > 15 ? 15 : entsWithoutPref.length
+        let randomIndex = Math.floor(Math.random() * targets)
+		this.RespondToTargetedEntities([entsWithoutPref[randomIndex]])
+		return true;
     }
 
 	return false;
