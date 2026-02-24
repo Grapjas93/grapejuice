@@ -43,7 +43,7 @@ The weight of weapons and shield size is being taken into account aswell. For th
 
 [font="sans-bold-16"]There are however, also some general balance changes:[font="sans-14"]
 •    [font="sans-bold-14"]Pikemen[font="sans-14"] got their hack damage removed and now have a 5x cavalry bonus damage instead of 3x.
-•    [font="sans-bold-14"]Spearmen[font="sans-14"] got their cavalry bonus damage removed. Increased their piercing damage and lowered their hack damage.
+•    [font="sans-bold-14"]Spearmen[font="sans-14"] 3x bonus damage against cavalry. Increased their piercing damage and lowered their hack damage.
 •    [font="sans-bold-14"]Soldier melee cavalry[font="sans-14"] got their health reduced by 40 hp.
 •    [font="sans-bold-14"]Support units:[font="sans-14"]
     •    Females now have twice as much health.

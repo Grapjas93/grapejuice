@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object
+	size="4 4 100%-4 100%-44"
+>
+	<object size= "0 0 100% 100" type="image" tooltip_style="sessionToolTip">
+
+        <!-- border section used by ammo, energy, capture sections -->
+        <object name="borderSection">
+            <object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
+                <object type="image" sprite="barBorder" name="barBorderFull" size="95 33 100% 42" ghost="true"/>
+                <object type="image" sprite="barBorder" name="barBorderSplit1" size="95 33 155 42" ghost="true"/>
+                <object type="image" sprite="barBorder" name="barBorderSplit2" size="157 33 100% 42" ghost="true"/>
+            </object>
+        </object>
+
+        <!-- Energy bar -->
+        <object name="energySection">
+            <object size="0 0 100% 12" name="energyLabel" type="text" style="StatsTextRight" ghost="true" />
+            <object size="124 14 50% 21" name="energy" type="image" tooltip_style="sessionToolTip">
+                <object type="image" sprite="energyBackground" ghost="true" name="energyBarBG"/>
+                <object type="image" sprite="energyForeground" ghost="true" name="energyBar"/>
+            </object>
+            <object type="image" tooltip_style="sessionToolTip">
+                <translatableAttribute id="tooltip">Energy</translatableAttribute>
+            </object>
+        </object>
+
+        <!-- Capture bar -->
+        <object name="captureSection_gj">
+            <object size="0 0 100% 12" name="captureLabel_gj" type="text" style="StatsTextLeft" ghost="true">
+                <translatableAttribute id="tooltip">Capture points</translatableAttribute>
+            </object>
+            <object size="0 0 100% 12" name="captureStats_gj" type="text" style="StatsTextRight" ghost="true"/>
+            <object size="1 14 100% 21" name="capture_gj" type="image">
+                <repeat count="9">
+                    <object type="image" sprite="playerColorBackground" ghost="true" name="captureBar_gj[n]" hidden="true"/>
+                </repeat>
+            </object>
+            <object type="image" tooltip_style="sessionToolTip">
+                <translatableAttribute id="tooltip">Capture Points</translatableAttribute>
+            </object>
+        </object>
+
+        <!-- Ammo bar -->
+        <object name="ammoSection">
+            <object size="0 0 55% 12" name="ammoLabel" type="text" style="StatsTextLeft" ghost="true"/>
+            <object size="1 14 48% 21" name="ammo" type="image" tooltip_style="sessionToolTip">
+                <object type="image" sprite="ammoBackground" ghost="true" name="ammoBarBG"/>
+                <object type="image" sprite="ammoForeground" ghost="true" name="ammoBar"/>
+            </object>
+            <object size="0 0 55% 12" type="image" tooltip_style="sessionToolTip">
+                <translatableAttribute id="tooltip">Ammo</translatableAttribute>
+            </object>
+        </object>
+
+        <!-- shader section used by ammo, energy, capture sections -->
+        <object name="shaderSection">
+            <object size="1 14 100% 21" type="image" tooltip_style="sessionToolTip">
+                <object type="image" sprite="statsBarShaderHorizontal" name="barShaderFull" size="95 33 100% 42" ghost="true"/>
+                <object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit1" size="95 33 155 42" ghost="true"/>
+                <object type="image" sprite="statsBarShaderHorizontal" name="barShaderSplit2" size="157 33 100% 42" ghost="true"/>
+            </object>
+        </object>
+
+    </object>
+</object>

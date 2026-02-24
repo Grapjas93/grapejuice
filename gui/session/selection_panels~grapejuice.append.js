@@ -1,110 +1,44 @@
-g_SelectionPanels.Training = {
-	"getMaxNumberOfItems": function()
+const trainingPanel = g_SelectionPanels.Training;
+
+if (!trainingPanel._grapejuicePatched)
+{
+	const _origSetupButton = trainingPanel.setupButton;
+
+	trainingPanel.setupButton = function(data)
 	{
-		return 40 - getNumberOfRightPanelButtons();
-	},
-	"rowLength": 10,
-	"getItems": function()
-	{
-		return getAllTrainableEntitiesFromSelection();
-	},
-	"setupButton": function(data)
-	{
+		const result = _origSetupButton.apply(this, arguments);
+		if (!result)
+			return result;
+
+		if (Engine.ConfigDB_GetValue("user", "showdetailedtooltips") !== "true")
+			return result;
+
 		const template = GetTemplateData(data.item, data.player);
 		if (!template)
-			return false;
+			return result;
 
-		const requirementsMet = Engine.GuiInterfaceCall("AreRequirementsMet", {
-			"requirements": template.requirements,
-			"player": data.player
-		});
+		const energy = getEnergyTooltip(template);
+		const ammo   = getAmmoTooltip(template);
 
-		const unitIds = data.unitEntStates.map(status => status.id);
-		const [buildingsCountToTrainFullBatch, fullBatchSize, remainderBatch] =
-			getTrainingStatus(unitIds, data.item, data.playerState);
+		if (!energy && !ammo)
+			return result;
 
-		const trainNum = buildingsCountToTrainFullBatch * fullBatchSize + remainderBatch;
+		let lines = data.button.tooltip.split("\n");
 
-		let neededResources;
-		if (template.cost)
-			neededResources = Engine.GuiInterfaceCall("GetNeededResources", {
-				"cost": multiplyEntityCosts(template, trainNum),
-				"player": data.player
-			});
+		const healthIndex = lines.findIndex(line =>
+			line.includes(translate("Health")) ||
+			line.includes("Health")
+		);
 
-		data.button.onPress = function() {
-			if (!neededResources)
-				addTrainingToQueue(unitIds, data.item, data.playerState);
-		};
-
-		const showTemplateFunc = () => { showTemplateDetails(data.item, data.playerState.civ); };
-		data.button.onPressRight = showTemplateFunc;
-		data.button.onPressRightDisabled = showTemplateFunc;
-
-		data.countDisplay.caption = trainNum > 1 ? trainNum : "";
-
-		let tooltips = [
-			"[font=\"sans-bold-16\"]" +
-				colorizeHotkey("%(hotkey)s", "session.queueunit." + (data.i + 1)) +
-				"[/font]" + " " + getEntityNamesFormatted(template),
-			getVisibleEntityClassesFormatted(template),
-			getAurasTooltip(template),
-			getEntityTooltip(template),
-			getEntityCostTooltip(template, data.player, unitIds[0], buildingsCountToTrainFullBatch, fullBatchSize, remainderBatch)
-		];
-		const limits = getEntityLimitAndCount(data.playerState, data.item);
-		tooltips.push(formatLimitString(limits.entLimit, limits.entCount, limits.entLimitChangers),
-			formatMatchLimitString(limits.matchLimit, limits.matchCount, limits.type));
-
-		if (Engine.ConfigDB_GetValue("user", "showdetailedtooltips") === "true")
-			tooltips = tooltips.concat([
-				getHealthTooltip,
-				getEnergyTooltip, //grapejuice
-				getAmmoTooltip, //grapejuice
-				getAttackTooltip,
-				getHealerTooltip,
-				getResistanceTooltip,
-				getGarrisonTooltip,
-				getTurretsTooltip,
-				getProjectilesTooltip,
-				getSpeedTooltip,
-				getResourceDropsiteTooltip
-			].map(func => func(template)));
-
-		tooltips.push(getTemplateViewerOnRightClickTooltip());
-		tooltips.push(
-			formatBatchTrainingString(buildingsCountToTrainFullBatch, fullBatchSize, remainderBatch),
-			getRequirementsTooltip(requirementsMet, template.requirements, GetSimState().players[data.player].civ),
-			getNeededResourcesTooltip(neededResources));
-
-		data.button.tooltip = tooltips.filter(tip => tip).join("\n");
-
-		let modifier = "";
-		if (!requirementsMet || limits.canBeAddedCount == 0)
+		if (healthIndex !== -1)
 		{
-			data.button.enabled = false;
-			modifier = "color:0 0 0 127:grayscale:";
-		}
-		else
-		{
-			data.button.enabled = controlsPlayer(data.player);
-			if (neededResources)
-				modifier = resourcesToAlphaMask(neededResources) + ":";
+			const insert = [energy, ammo].filter(Boolean);
+			lines.splice(healthIndex + 1, 0, ...insert);
+			data.button.tooltip = lines.join("\n");
 		}
 
-		if (data.unitEntStates.every(state => state.upgrade && state.upgrade.isUpgrading))
-		{
-			data.button.enabled = false;
-			modifier = "color:0 0 0 127:grayscale:";
-			data.button.tooltip += "\n" + objectionFont(translate("Cannot train while upgrading."));
-		}
+		return result;
+	};
 
-		if (template.icon)
-			data.icon.sprite = modifier + "stretched:session/portraits/" + template.icon;
-
-		const index = data.i + getNumberOfRightPanelButtons();
-		setPanelObjectPosition(data.button, index, data.rowLength);
-
-		return true;
-	}
-};
+	trainingPanel._grapejuicePatched = true;
+}
