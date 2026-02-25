@@ -9,6 +9,24 @@ No doubt about it, this mod has much room for improvement, and may run things in
 [font="sans-bold-14"][color="134 0 48"]Please report any issues you may find on the forum or open a new issue on Github.[font="sans-14"][color="255 255 255"]
 
 
+[font="sans-bold-14"]New With This Version: [font="sans-14"]
+•    update to A28
+•    Germans got the grapejuice balance overhaul
+•    Fixed missing and wrong templates
+•    Some animations were missing, fixed
+•    Obstruction walls were selectable, they shouldn't be
+•    Exclude slingers from the brazier buff
+•    Rewrote the ammo system, should expect performance increase and less bugs
+•    Rewrote the energy system, should expect performance increase and less bugs
+•    rams don't get extra energy from garrisons anymore, they have their own standalone pool. Each garrisoned soldier adds to attack speed, damage and walkspeed as described in the "battering rams" aura tooltip.
+•    new icons for: re-arm aura, brazier flaming projectiles aura
+•    Units swap weapons much smoother now when out of ammo. Before, units would do the whole ranged attack animation until actually shooting to realise it's out of ammo, now they swap instantly after being out of ammo
+•    civic center shoots no arrows by default, only when garrisoned, to motivate players to build actual defense structures like towers and fortresses
+•    new tech at forge, upgrade stone towers and fortresses to shoot flaming arrows that apply burning
+•    added 3x damage bonus to spearman cavalry against cavalry
+•    ★ Units attack a random unit out of max 15 closest units in sight instead of just the closest one, meaning the battles- espcially big ones- are (imo) much more realistic and damage and ammo isnt wasted by dumping 20 arrows into 1 unit for example. Probably needs further tweaking as units can get stuck in big battles (vanilla has this issue too though), and sometimes a unit decides to attack a unit all the way in the back (though not as much with picking one of 15 closest targets), possibly passing alot of perfectly fine units to attack which can look weird. For a ranged unit it's not that much of an issue but if a melee unit does it makes no sense honestly.
+
+
 [font="sans-bold-14"]TL;DR version of what Grapejuice adds: [font="sans-14"]
 •    Total rebalance of all units, per civ and even per rank.
 •    Ranged units have ammo.

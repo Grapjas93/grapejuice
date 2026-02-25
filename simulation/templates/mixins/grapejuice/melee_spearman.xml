@@ -27,6 +27,6 @@
   </Attack>
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
-    <Tooltip replace=""></Tooltip>
+    <Tooltip>Counters: 3× vs Cavalry.</Tooltip>
   </Identity>
 </Entity>

@@ -245,7 +245,6 @@ Attack.prototype.StopCanChargeTimer = function()
 Attack.prototype.Charge = function(target)
 {
 	let canCharge = this.CanCharge(target)
-	warn(uneval(canCharge))
 	if (canCharge.status == false && canCharge.reason == "no_energy")
 	{
 		this.StopCanChargeTimer();
@@ -274,7 +273,8 @@ Attack.prototype.AddChargeModifier = function()
 	if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
 	{
 		let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-		let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
+		// 1.4 bonus for german rams (that have no garrison)
+		let multiplier = cmpGarrisonHolder ? 1 + (cmpGarrisonHolder.OccupiedSlots() / 10) : 1.4;
 
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
@@ -292,7 +292,6 @@ Attack.prototype.AddChargeModifier = function()
 			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
-		warn('run')
 		let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
 		cmpUnitAI.Run();
 
