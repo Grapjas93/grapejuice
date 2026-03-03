@@ -21,6 +21,7 @@ DiplomacyDialogPlayerControl
 		this.diplomacyPlayer.sprite = "color:" + g_DiplomacyColors.getPlayerColor(this.playerID, 32);
 
 		this.diplomacyPlayerName.caption = colorizePlayernameByID(this.playerID);
+		this.diplomacyPlayerCiv.caption = g_CivData[g_Players[this.playerID].civ].Name;
 
 		this.diplomacyPlayerTeam.caption =
 			g_Players[this.playerID].team >= 0 ?
@@ -43,6 +44,9 @@ DiplomacyDialogPlayerControl
 	}
 	else
 	{
+		this.diplomacyPlayerName.caption = g_Players[this.playerID].name;
+		this.diplomacyPlayer.sprite = "color:" + "255 255 255 1";
+		this.diplomacyPlayerCiv.caption = "?";
 		this.diplomacyPlayerTeam.caption = "?";
 		this.diplomacyPlayerTheirs.caption = "?";
 	}
