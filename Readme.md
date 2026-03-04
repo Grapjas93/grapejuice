@@ -1,5 +1,5 @@
 # Grapejuice
-
+<div align="center">
 <img width="700" height="100" alt="header" src="https://github.com/user-attachments/assets/270c9ce6-c4df-4377-96e8-7cc44f554757" />
 <img width="700" height="400" alt="position randomnization" src="https://github.com/user-attachments/assets/a9dcb182-bbc2-4dd8-b6af-027a3ddece3e" />
 <img width="700" height="400" alt="ammo" src="https://github.com/user-attachments/assets/49185ebd-d5b1-4153-ab9e-9ed2297105c6" />
@@ -18,3 +18,4 @@ For example, some units are able to promote to champions from elite.
 _______________________________________________________________________________________ 
 
 [Mod.io](https://mod.io/g/0ad/m/grapejuice) | [Forum](https://wildfiregames.com/forum/topic/35914-mod-grapejuice) | [Rebalance sheet](https://docs.google.com/spreadsheets/d/1g1GSy4thCCHUi5xWPgrDzG91Ty0kjowU_7ZluccuqoA/edit#gid=522316158) | [A path beyond II (8)](https://wildfiregames.com/forum/topic/35913-skirmish-map-a-path-beyond-ii) | [X (8)](https://wildfiregames.com/forum/topic/31711-skirmish-map-x-~balanced)
+</div>
