@@ -13,6 +13,7 @@
 <img width="700" height="400" alt="a path beyond II" src="https://github.com/user-attachments/assets/4a94d275-6be8-45fa-be6a-62663b333326" />
 
 There are many other smaller gameplay changes to grapejuice, i guess you have to find them out by playing :) 
+
 For example, some units are able to promote to champions from elite.
 
 _______________________________________________________________________________________ 
