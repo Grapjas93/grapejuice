@@ -3,7 +3,7 @@
   <Identity>
     <Rank>Champion</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/macedonians/cavalry_spearman_c_m.xml</Actor>
   </VisualActor>

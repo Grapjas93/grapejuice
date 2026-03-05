@@ -33,7 +33,7 @@
     <SpecificName>Centuriō</SpecificName>
     <Icon>units/rome/champion_legion_centurio.png</Icon>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/romans/infantry_swordsman_c4.xml</Actor>
   </VisualActor>

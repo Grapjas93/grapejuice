@@ -3,7 +3,7 @@
   <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/germans/infantry_javelinist_e.xml</Actor>
   </VisualActor>

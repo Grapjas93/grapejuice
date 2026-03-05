@@ -29,7 +29,7 @@
 <Rank>Elite</Rank>
 <Icon>units/maur/infantry_archer.png</Icon>
 </Identity>
- <Promotion disable=""/>
+
   <VisualActor>
 <Actor>units/mauryas/infantry_archer_e.xml</Actor>
 </VisualActor>

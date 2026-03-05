@@ -12,6 +12,7 @@
       <AttackName>Bow</AttackName>
       <Damage>
         <Pierce>12</Pierce>
+        <Crush replace="">0</Crush>
       </Damage>
       <MaxRange>55</MaxRange>
       <Origin>

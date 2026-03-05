@@ -23,7 +23,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/kushites/infantry_pikeman_e.xml</Actor>
   </VisualActor>

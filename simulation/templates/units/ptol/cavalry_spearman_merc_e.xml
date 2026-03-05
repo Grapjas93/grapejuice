@@ -23,7 +23,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/ptolemies/cavalry_spearman_e_m.xml</Actor>
   </VisualActor>

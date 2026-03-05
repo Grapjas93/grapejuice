@@ -3,7 +3,7 @@
   <Identity>
     <Rank>Champion</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/ptolemies/infantry_pikeman_c.xml</Actor>
   </VisualActor>

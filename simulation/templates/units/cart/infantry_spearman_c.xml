@@ -7,7 +7,7 @@
     <Icon>units/cart/champion_infantry.png</Icon>
     <Rank>Champion</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/carthaginians/infantry_spearman_c.xml</Actor>
   </VisualActor>

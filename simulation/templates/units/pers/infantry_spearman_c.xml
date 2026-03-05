@@ -3,7 +3,7 @@
   <Identity>
     <Rank>Champion</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/persians/infantry_spearman_c2.xml</Actor>
   </VisualActor>

@@ -23,7 +23,7 @@
   <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/han/infantry_swordsman_e.xml</Actor>
   </VisualActor>

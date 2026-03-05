@@ -3,7 +3,7 @@
   <Identity>
     <Rank>Champion</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/macedonians/infantry_swordsman_c_thracian.xml</Actor>
   </VisualActor>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|grapejuice/melee_axeman|template_unit_infantry_melee_maceman">
+<Entity parent="grapejuice/hp_inf|grapejuice/melee_maceman|template_unit_infantry_melee_maceman">
   <Builder disable=""/>
   <Cost>
     <Resources>
@@ -18,7 +18,7 @@
     </Requirements>
     <Icon>units/germ/infantry_clubman.png</Icon>
   </Identity>
-  <Promotion disable=""/>
+
   <ResourceGatherer disable=""/>
   <Selectable>
     <Overlay>
@@ -37,7 +37,7 @@
    </UnitMotion>
    <Attack>
        <Melee>
-           <AttackName> Sword </AttackName>
+           <AttackName> Mace </AttackName>
            <PrepareTime> 1050 </PrepareTime>
            <RepeatTime> 1200 </RepeatTime>
        </Melee>

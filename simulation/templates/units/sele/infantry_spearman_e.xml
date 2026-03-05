@@ -23,7 +23,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/seleucids/infantry_spearman_e.xml</Actor>
   </VisualActor>

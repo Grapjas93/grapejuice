@@ -2,7 +2,7 @@ ChatMessageFormatSimulation.discovered = class
 {
 	parse(msg)
 	{
-		if (msg.player != g_ViewedPlayer || Engine.ConfigDB_GetValue("user", "gui.session.notifications.discovered") != "true")
+		if (msg.player != g_ViewedPlayer)
 			return "";
 
 		const message = translate("%(icon)s %(playerFound)s (%(diplomacy)s) has been spotted!");

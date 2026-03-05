@@ -7,13 +7,16 @@ Pack.prototype.Init = function()
 	this.timer = undefined;
 
 	this.currentAmmo = "";
+	this.currentLevel;
 };
 
 Pack.prototype.PackProgress = function(data, lateness)
 {
 	// store current ammo
+	let cmpPromotion = QueryMiragedInterface(this.entity, IID_Promotion);
 	let cmpAmmo = QueryMiragedInterface(this.entity, IID_Ammo);
 	this.currentAmmo = cmpAmmo.ammo;
+	this.currentLevel = cmpPromotion.currentLevel;
 
 	if (this.elapsedTime < this.GetPackTime())
 	{
@@ -32,6 +35,9 @@ Pack.prototype.PackProgress = function(data, lateness)
 	// apply ammo to new entity
 	cmpAmmo = QueryMiragedInterface(newEntity, IID_Ammo);
 	cmpAmmo.ammo = this.currentAmmo;
+	cmpPromotion = QueryMiragedInterface(newEntity, IID_Promotion);
+	cmpPromotion.currentLevel = this.currentLevel;
+	cmpPromotion.ApplyRankModification(newEntity)
 
 	if (newEntity)
 		PlaySound(this.packed ? "packed" : "unpacked", newEntity);

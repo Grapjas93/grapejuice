@@ -8,6 +8,7 @@
     <Civ>germ</Civ>
     <SpecificName>Boiorix</SpecificName>
     <Icon>units/germ/hero_boiorix.png</Icon>
+    <Rank>Basic</Rank>
   </Identity>
   <VisualActor>
     <Actor>units/germans/hero_cavalry_swordsman_boiorix_m.xml</Actor>

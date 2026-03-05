@@ -45,7 +45,7 @@
       <Techs datatype="tokens">phase_town</Techs>
     </Requirements>
   </Identity>
-  <Promotion disable=""/>
+
   <TrainingRestrictions>
     <Category>Gladiator</Category>
   </TrainingRestrictions>

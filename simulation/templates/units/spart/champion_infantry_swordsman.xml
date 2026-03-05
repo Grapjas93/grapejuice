@@ -45,7 +45,7 @@
   <Loot>
     <metal op="add">3</metal>
   </Loot>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/spartans/infantry_swordsman_c.xml</Actor>
   </VisualActor>

@@ -106,7 +106,7 @@ function commaFont(text)
 function getSecondsString(seconds)
 {
 	return sprintf(translatePlural("%(time)s %(second)s", "%(time)s %(second)s", seconds), {
-		"time": seconds,
+		"time": seconds.toFixed(2),
 		"second": unitFont(translatePlural("second", "seconds", seconds))
 	});
 }

@@ -12,9 +12,9 @@
   <Attack>
     <Melee>
       <Damage>
-        <Hack> 5.5 </Hack>
-        <Pierce> 0 </Pierce>
-        <Crush> 0 </Crush>
+        <Hack>5.5</Hack>
+        <Pierce>0</Pierce>
+        <Crush>0</Crush>
       </Damage>
     </Melee>
   </Attack>

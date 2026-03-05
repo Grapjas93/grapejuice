@@ -27,7 +27,7 @@
     <SpecificName>Hypaspistḗs Argyraspídi</SpecificName>
     <Icon>units/mace/argyraspidai.png</Icon>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/macedonians/infantry_spearman_c_e.xml</Actor>
   </VisualActor>

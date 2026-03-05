@@ -23,7 +23,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/persians/cavalry_axeman_e_m.xml</Actor>
   </VisualActor>

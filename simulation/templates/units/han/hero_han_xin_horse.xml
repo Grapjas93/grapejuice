@@ -29,7 +29,7 @@
     <SpecificName>Hán Xìn</SpecificName>
     <Icon>units/han//hero_han_xin.png</Icon>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/han/hero_cavalry_spearman_han_xin_m.xml</Actor>
   </VisualActor>

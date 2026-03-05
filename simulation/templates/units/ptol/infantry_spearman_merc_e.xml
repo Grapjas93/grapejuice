@@ -22,7 +22,7 @@
    </Resistance>  <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/ptolemies/infantry_spearman_e.xml</Actor>
   </VisualActor>

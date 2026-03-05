@@ -40,7 +40,7 @@
     <SpecificName>Servus</SpecificName>
     <Icon>units/rome/infantry_swordsman.png</Icon>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/romans/infantry_swordsman_servus.xml</Actor>
   </VisualActor>

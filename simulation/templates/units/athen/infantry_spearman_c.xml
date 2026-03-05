@@ -6,7 +6,7 @@
     <Icon>units/athen/champion_infantry.png</Icon>
 	<Rank>Champion</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/athenians/infantry_spearman_c.xml</Actor>
   </VisualActor>

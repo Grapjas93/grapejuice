@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="spec_champ|template_unit_champion_cavalry_swordsman">
+<Entity parent="grapejuice/hp_cav|grapejuice/melee_swordsman|spec_champ|template_unit_champion_cavalry_swordsman">
   <Identity>
     <Civ>germ</Civ>
     <GenericName>Cimbrian Noble Cavalry</GenericName>

@@ -69,6 +69,10 @@
     <FloatDepth>0.0</FloatDepth>
     <TurnRate>14</TurnRate>
   </Position>
+  <Promotion>
+    <Entity></Entity>
+    <RequiredXp>300</RequiredXp>
+  </Promotion>
   <RangeOverlayManager/>
   <RangeOverlayRenderer/>
   <Resistance>
