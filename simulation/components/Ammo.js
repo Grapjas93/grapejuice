@@ -135,20 +135,16 @@ Ammo.prototype.CheckRegenTimer = function()
 
 Ammo.prototype.GetRegenRate = function()
 {
+	this.refillTime = ApplyValueModificationsToEntity("Ammo/RefillTime", +this.template.RefillTime, this.entity)
 	return this.refillTime;
 };
 
 Ammo.prototype.GetRegenAmount = function()
 {
+	this.refillAmount = ApplyValueModificationsToEntity("Ammo/RefillAmount", +this.template.RefillAmount, this.entity)
 	return this.refillAmount;
 };
 
-
-Ammo.prototype.OnValueModification = function(msg)
-{
-	if (msg.component == "Ammo")
-		this.RecalculateValues();
-};
 
 Ammo.prototype.GetAmmo = function()
 {
@@ -173,6 +169,14 @@ Ammo.prototype.SetAmmo = function(value)
 	this.RegisterAmmoChanged(old);
 };
 
+Ammo.prototype.OnValueModification = function(msg)
+{
+	if (msg.component != "Ammo")
+		return
+
+	this.RecalculateValues();
+};
+
 Ammo.prototype.RegisterAmmoChanged = function(from)
 {
 	this.CheckRegenTimer();
@@ -181,11 +185,11 @@ Ammo.prototype.RegisterAmmoChanged = function(from)
 
 Ammo.prototype.RecalculateValues = function()
 {
-	this.ammo = ApplyValueModificationsToEntity("Ammo/CurrAmmo", +this.template.CurrAmmo, this.entity)
+	//this.ammo = ApplyValueModificationsToEntity("Ammo/CurrAmmo", +this.template.CurrAmmo, this.entity)
 	this.maxAmmo = ApplyValueModificationsToEntity("Ammo/MaxAmmo", +this.template.MaxAmmo, this.entity)
 	this.refillTime = ApplyValueModificationsToEntity("Ammo/RefillTime", +this.template.RefillTime, this.entity)
 	this.refillAmount = ApplyValueModificationsToEntity("Ammo/RefillAmount", +this.template.RefillAmount, this.entity)
-	this.refillCostMult = ApplyValueModificationsToEntity("Ammo/RefillAmount", +this.template.RefillCostMult, this.entity)
+	this.refillCostMult = ApplyValueModificationsToEntity("Ammo/RefillCostMult", +this.template.RefillCostMult, this.entity)
 
 	this.StopReArming()
 	if (this.refillTime > 0)

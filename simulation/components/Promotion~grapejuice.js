@@ -101,6 +101,7 @@ Promotion.prototype.ApplyRankModification = function()
 		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
 		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
 		"Ammo/MaxAmmo": [{ "affects": ["Javelineer"], "add": rank+1 }],
+		"Ammo/RefillAmount": [{ "affects": ["Javelineer"], "add": rank+1 }],
 		"Health/Max": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
 		"Loot/food": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
 		"Loot/wood": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],

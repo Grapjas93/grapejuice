@@ -3969,15 +3969,8 @@
 			<Orientation y="2.35621"/>
 			<Actor seed="15061"/>
 		</Entity>
-		<Entity uid="4367">
-			<Template>brazier_init</Template>
-			<Player>1</Player>
-			<Position x="475.63108" z="240.76365"/>
-			<Orientation y="2.35621"/>
-			<Actor seed="6245"/>
-		</Entity>
 		<Entity uid="4368">
-			<Template>brazier_lit</Template>
+			<Template>brazier_off</Template>
 			<Player>1</Player>
 			<Position x="479.1042" z="237.82493"/>
 			<Orientation y="2.35621"/>
