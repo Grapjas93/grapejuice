@@ -17,7 +17,8 @@ if (!globalThis._grapejuiceDisplaySinglePatched)
 
 		Engine.GetGUIObjectByName("captureSection").hidden = true;
 
-		Engine.GetGUIObjectByName("rankIcon").tooltip = "Unit gains the following bonuses per rank (stacks): \n+5% Attack speed \n+10% melee attack damage (5% for ranged units) \n+10% max health \n5% less spread (ranged) \n+5% gathering speed \n+10% buildspeed \n+10% more loot \nHeroes and Champions have a 20% baseline buff to these stats. \nRanks in order: Basic, Advanced, Elite, Champion, Hero, Hero I, Hero II, Hero III, Hero IV, Hero V"
+		Engine.GetGUIObjectByName("rankIcon").tooltip = '[color="252 186 3"]Current Rank: ' + translateWithContext("Rank", entState.identity.rank) + '[color="255 255 255"]\nUnit gains the following bonuses per rank (stacks): \n+5% Attack speed \n+10% melee attack damage (5% for ranged units) \n+10% max health \n5% less spread (ranged) \n+5% gathering speed \n+10% buildspeed \n+10% more loot \nHeroes and Champions have a 20% baseline buff to these stats. \nRanks in order: Basic, Advanced, Elite, Champion, Hero, Hero I, Hero II, Hero III, Hero IV, Hero V'
+		Engine.GetGUIObjectByName("rankIcon").size = "0 0 32 32"
 
 		let energySection = Engine.GetGUIObjectByName("energySection");
 		let ammoSection = Engine.GetGUIObjectByName("ammoSection");
