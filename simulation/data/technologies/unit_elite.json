@@ -1,8 +1,7 @@
 {
 	"autoResearch": true,
-	"icon": "upgrade_elite.png",
-	"tooltip": "Elite units +20% training time, +25% health, +0.8 capture attack strength, +20% loot, and −30% gather speed; Melee +20% attack strength.; Elephant archers receive 20% max ammo back.",
+	"tooltip": "",
 	"modifications": [
 	],
-	"affects": ["Elite Unit", "Champion Unit", "Hero Unit"]
+	"affects": ["None"]
 }

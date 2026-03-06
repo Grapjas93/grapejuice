@@ -1,8 +1,7 @@
 {
 	"autoResearch": true,
-	"icon": "upgrade_champion.png",
-	"tooltip": "Melee +20% attack strength, soldiers with 2 weapons +10% strength each. Elephant archers receive 20% max ammo back.",
+	"tooltip": "",
 	"modifications": [
 	],
-	"affects": ["Champion Unit", "Hero Unit"]
+	"affects": ["None"]
 }
