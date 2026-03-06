@@ -42,7 +42,7 @@ if (!globalThis._grapejuiceDisplaySinglePatched)
 					Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${isRanged ? 5*rank : 10*rank}% Melee Attack Damage`
 			}
 			Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${10*rank}% Max Health`
-			if (isRanged)
+			if (isJav)
 				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${1*(rank+1)} Max Ammo`
 			if (isRanged)
 				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*rank}% Accuracy`
