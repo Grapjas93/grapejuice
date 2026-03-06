@@ -181,8 +181,13 @@ Ammo.prototype.RegisterAmmoChanged = function(from)
 
 Ammo.prototype.RecalculateValues = function()
 {
-	this.StopReArming()
+	this.ammo = ApplyValueModificationsToEntity("Ammo/CurrAmmo", +this.template.CurrAmmo, this.entity)
+	this.maxAmmo = ApplyValueModificationsToEntity("Ammo/MaxAmmo", +this.template.MaxAmmo, this.entity)
 	this.refillTime = ApplyValueModificationsToEntity("Ammo/RefillTime", +this.template.RefillTime, this.entity)
+	this.refillAmount = ApplyValueModificationsToEntity("Ammo/RefillAmount", +this.template.RefillAmount, this.entity)
+	this.refillCostMult = ApplyValueModificationsToEntity("Ammo/RefillAmount", +this.template.RefillCostMult, this.entity)
+
+	this.StopReArming()
 	if (this.refillTime > 0)
 		this.CheckRegenTimer();
 };

@@ -85,6 +85,7 @@ Promotion.prototype.ApplyRankModification = function()
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	let cmpPromotion = Engine.QueryInterface(this.entity, IID_Promotion);
 
+	let rank = cmpPromotion.currentLevel
 	let multiplier = cmpPromotion.currentLevel / 10
 
 	// give heroes and champions a 20% buff to stats
@@ -96,10 +97,10 @@ Promotion.prototype.ApplyRankModification = function()
 	cmpModifiersManager.RemoveAllModifiers("rankup", this.entity);
 	cmpModifiersManager.AddModifiers("rankup", {
 		"Attack/Capture/Capture": [{ "affects": ["Unit Soldier"], "multiply": baseMult+multiplier }],
-		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit Soldier"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
-		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Soldier"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
-		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Soldier"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
-		"Attack/Ranged/Ammo": [{ "affects": ["Unit Elephant"], "multiply": baseMult+multiplier }],
+		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
+		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
+		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
+		"Ammo/MaxAmmo": [{ "affects": ["Javelineer"], "add": rank+1 }],
 		"Health/Max": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
 		"Loot/food": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
 		"Loot/wood": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
@@ -111,15 +112,15 @@ Promotion.prototype.ApplyRankModification = function()
 		"Attack/Ranged/RepeatTime": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
 		"Attack/Melee/PrepareTime": [{ "affects": ["Unit Melee"], "multiply": baseMult-(multiplier/2) }],
 		"Attack/Melee/RepeatTime": [{ "affects": ["Unit Melee"], "multiply": baseMult-(multiplier/2) }],
-		"ResourceGatherer/BaseSpeed": [{ "affects": ["Unit Civilian"], "multiply": baseMult-(multiplier/2) }],
-		"Builder/Rate": [{ "affects": ["Unit Builder"], "replace": baseMult+multiplier }],
+		"ResourceGatherer/BaseSpeed": [{ "affects": ["Unit Worker !Mercenary"], "multiply": baseMult+(multiplier/2) }],
+		"Builder/Rate": [{ "affects": ["Unit Worker !Mercenary"], "replace": baseMult+multiplier }],
 	}, this.entity);
 };
 
 Promotion.prototype.GetPromotedTemplateName = function()
 {
 	let cmpTemplateManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_TemplateManager);
-
+	// if unit has not a specified template to promote to, simply return the current template to promote
 	return this.template.Entity || cmpTemplateManager.GetCurrentTemplateName(this.entity);
 };
 
