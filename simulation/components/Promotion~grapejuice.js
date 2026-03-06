@@ -2,15 +2,15 @@
 
 Promotion.prototype.Init = function()
 {
-	this.currentLevel = 1;
+	this.currentLevel = 0;
 	if (Helpers.EntityMatchesClassList(this.entity, "Hero"))
-		this.currentLevel = 5
-	else if (Helpers.EntityMatchesClassList(this.entity, "Champion"))
 		this.currentLevel = 4
-	else if (Helpers.EntityMatchesClassList(this.entity, "Elite"))
+	else if (Helpers.EntityMatchesClassList(this.entity, "Champion"))
 		this.currentLevel = 3
-	else if (Helpers.EntityMatchesClassList(this.entity, "Advanced"))
+	else if (Helpers.EntityMatchesClassList(this.entity, "Elite"))
 		this.currentLevel = 2
+	else if (Helpers.EntityMatchesClassList(this.entity, "Advanced"))
+		this.currentLevel = 1
 	this.ApplyRankModification(this.entity)
 	this.currentXp = 0;
 	this.ComputeTrickleRate();
@@ -29,9 +29,9 @@ Promotion.prototype.Promote = function(promotedTemplateName)
 
 	// allow units to regain some health even though they are max rank / grapejuice
 	let cmpTemplateManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_TemplateManager);
-	if (this.currentLevel == 10
-		|| (Helpers.EntityMatchesClassList(this.entity, "Siege Ship Citizen") && this.currentLevel == 3 && promotedTemplateName == cmpTemplateManager.GetCurrentTemplateName(this.entity))
-		|| (Helpers.EntityMatchesClassList(this.entity, "Champion") && this.currentLevel == 4))
+	if (this.currentLevel == 9
+		|| (Helpers.EntityMatchesClassList(this.entity, "Support Civilian Siege Ship Citizen") && this.currentLevel == 2 && promotedTemplateName == cmpTemplateManager.GetCurrentTemplateName(this.entity))
+		|| (Helpers.EntityMatchesClassList(this.entity, "Champion") && this.currentLevel == 3))
 	{
 		if (Helpers.EntityMatchesClassList(this.entity, "Organic"))
 			cmpHealth.Increase(10);
@@ -84,8 +84,11 @@ Promotion.prototype.ApplyRankModification = function()
 {
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
 	let cmpPromotion = Engine.QueryInterface(this.entity, IID_Promotion);
+
 	let multiplier = cmpPromotion.currentLevel / 10
-	let baseMult = 1
+
+	// give heroes and champions a 20% buff to stats
+	let baseMult = Helpers.EntityMatchesClassList(this.entity, "Hero Champion") ? 1.2 : 1
 
 	// ranged units get less melee damage buff
 	let isRangedUnit = Helpers.EntityMatchesClassList(this.entity, "Ranged")
@@ -93,9 +96,9 @@ Promotion.prototype.ApplyRankModification = function()
 	cmpModifiersManager.RemoveAllModifiers("rankup", this.entity);
 	cmpModifiersManager.AddModifiers("rankup", {
 		"Attack/Capture/Capture": [{ "affects": ["Unit Soldier"], "multiply": baseMult+multiplier }],
-		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit Melee"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
-		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Melee"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
-		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Melee"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
+		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit Soldier"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
+		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Soldier"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
+		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Soldier"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
 		"Attack/Ranged/Ammo": [{ "affects": ["Unit Elephant"], "multiply": baseMult+multiplier }],
 		"Health/Max": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
 		"Loot/food": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],

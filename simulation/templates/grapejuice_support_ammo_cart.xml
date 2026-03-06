@@ -48,7 +48,7 @@
     <Max>180</Max>
   </Health>
   <Identity>
-    <Classes datatype="tokens">-ConquestCritical Supply Support AmmoSupply</Classes>
+    <Classes datatype="tokens">-ConquestCritical Supply Support AmmoSupply Soldier</Classes>
     <VisibleClasses datatype="tokens">Supply Support Organic AmmoSupply</VisibleClasses>
     <GenericName>Ammo Cart</GenericName>
     <Tooltip>A mobile resupply point for units that require ammo. Cannot be re-supplied by mobile re-arm auras.</Tooltip>

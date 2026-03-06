@@ -9,6 +9,14 @@
            <AttackName> Rhomphaia </AttackName>
            <PrepareTime> 1050 </PrepareTime>
            <RepeatTime> 1200 </RepeatTime>
+            <Splash>
+                <Shape>Circular</Shape>
+                <Range>2</Range>
+                <FriendlyFire>false</FriendlyFire>
+                <Damage>
+                <Hack>3</Hack>
+                </Damage>
+            </Splash>
        </Melee>
    </Attack>
    <Resistance replace="">

@@ -16,6 +16,7 @@
         <Pierce>0</Pierce>
         <Crush>0</Crush>
       </Damage>
+    <MaxRange>3</MaxRange>
     </Melee>
   </Attack>
   <Identity>

@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/cart/champion_infantry">
-  <Identity>
-    <Civ>cart</Civ>
-    <GenericName>Sacred Band Infantry</GenericName>
-    <SpecificName>Sacred Band of Ba'al</SpecificName>
-    <Icon>units/cart/champion_infantry.png</Icon>
-    <Rank>Champion</Rank>
-  </Identity>
-
-  <VisualActor>
-    <Actor>units/carthaginians/infantry_spearman_c.xml</Actor>
-  </VisualActor>
 </Entity>
