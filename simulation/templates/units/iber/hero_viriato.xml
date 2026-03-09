@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="grapejuice/hp_inf|grapejuice/jav|template_unit_hero_infantry_javelineer">
   <Ammo>
-    <CurrAmmo>8</CurrAmmo>
-    <RefillAmount>8</RefillAmount>
+    <CurrAmmo>7</CurrAmmo>
+    <RefillAmount>7</RefillAmount>
   </Ammo>
    <UnitMotion>
        <WalkSpeed> 9.25 </WalkSpeed>

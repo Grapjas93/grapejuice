@@ -80,7 +80,7 @@ StatusBars.prototype.AddRankIcon = function(cmpOverlayRenderer, yoffset)
 	if (!cmpIdentity || !cmpIdentity.GetRank())
 		return 0;
 
-	const iconSize = +this.template.BarWidth / 1.2;
+	const iconSize = +this.template.BarWidth / 1.2; // make rank icons bigger / grapejuice
 	cmpOverlayRenderer.AddSprite(
 		"art/textures/ui/session/icons/ranks/" + cmpIdentity.GetRank() + ".png",
 		{ "x": -iconSize / 2, "y": yoffset },

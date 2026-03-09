@@ -32,24 +32,24 @@ if (!globalThis._grapejuiceDisplaySinglePatched)
 			for (let index = 0; index < ranks.length; index++) {
 				const unitClass = ranks[index];
 				if (unitClass == entState.identity.rank)
-					rank += baseMult+index
+					rank += index
 			}
 			Engine.GetGUIObjectByName("rankIcon").tooltip += `\nCurrent Rank Bonus: `
 			if (!isSupport)
 			{
-				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*rank}% Attack Speed`
+				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*(baseMult+rank)}% Attack Speed`
 				if (!isSiege)
-					Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${isRanged ? 5*rank : 10*rank}% Melee Attack Damage`
+					Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${isRanged ? 5*(baseMult+rank) : 10*(baseMult+rank)}% Melee Attack Damage`
 			}
-			Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${10*rank}% Max Health`
+			Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${10*(baseMult+rank)}% Max Health`
 			if (isJav)
-				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${1*(rank+1)} Max Ammo`
+				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${1*(rank)} Max Ammo`
 			if (isRanged)
-				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*rank}% Accuracy`
+				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*(baseMult+rank)}% Accuracy`
 			if (isWorker)
-				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*rank}% gathering speed \n+${10*rank}% Build Speed`
+				Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${5*(baseMult+rank)}% gathering speed \n+${10*(baseMult+rank)}% Build Speed`
 
-			Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${10*rank}% Loot`
+			Engine.GetGUIObjectByName("rankIcon").tooltip += `\n+${10*(baseMult+rank)}% Loot`
 		}
 		Engine.GetGUIObjectByName("rankIcon").tooltip += `\nRanks in order: Basic, Advanced, Elite, Champion, Hero, Hero I, Hero II, Hero III, Hero IV, Hero V`
 		Engine.GetGUIObjectByName("rankIcon").size = "0 0 32 32"

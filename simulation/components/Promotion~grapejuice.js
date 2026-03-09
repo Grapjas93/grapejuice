@@ -94,28 +94,31 @@ Promotion.prototype.ApplyRankModification = function()
 	// ranged units get less melee damage buff
 	let isRangedUnit = Helpers.EntityMatchesClassList(this.entity, "Ranged")
 
-	cmpModifiersManager.RemoveAllModifiers("rankup", this.entity);
-	cmpModifiersManager.AddModifiers("rankup", {
-		"Attack/Capture/Capture": [{ "affects": ["Unit Soldier"], "multiply": baseMult+multiplier }],
-		"Attack/Melee/Damage/Hack": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
-		"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
-		"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
-		"Ammo/MaxAmmo": [{ "affects": ["Javelineer"], "add": rank+1 }],
-		"Ammo/RefillAmount": [{ "affects": ["Javelineer"], "add": rank+1 }],
-		"Health/Max": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
-		"Loot/food": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
-		"Loot/wood": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
-		"Loot/stone": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
-		"Loot/metal": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
-		"Loot/xp": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
-		"Attack/Ranged/Spread": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
-		"Attack/Ranged/PrepareTime": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
-		"Attack/Ranged/RepeatTime": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
-		"Attack/Melee/PrepareTime": [{ "affects": ["Unit Melee"], "multiply": baseMult-(multiplier/2) }],
-		"Attack/Melee/RepeatTime": [{ "affects": ["Unit Melee"], "multiply": baseMult-(multiplier/2) }],
-		"ResourceGatherer/BaseSpeed": [{ "affects": ["Unit Worker !Mercenary"], "multiply": baseMult+(multiplier/2) }],
-		"Builder/Rate": [{ "affects": ["Unit Worker !Mercenary"], "replace": baseMult+multiplier }],
-	}, this.entity);
+	if (rank > 0)
+	{
+		cmpModifiersManager.RemoveAllModifiers("rankup", this.entity);
+		cmpModifiersManager.AddModifiers("rankup", {
+			"Attack/Capture/Capture": [{ "affects": ["Unit Soldier"], "multiply": baseMult+multiplier }],
+			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
+			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier}],
+			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit Soldier", "Ram"], "multiply": isRangedUnit ? baseMult+(multiplier/2) : baseMult+multiplier }],
+			"Ammo/MaxAmmo": [{ "affects": ["Javelineer"], "add": rank }],
+			"Ammo/RefillAmount": [{ "affects": ["Javelineer"], "add": rank }],
+			"Health/Max": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
+			"Loot/food": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
+			"Loot/wood": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
+			"Loot/stone": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
+			"Loot/metal": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
+			"Loot/xp": [{ "affects": ["Unit"], "multiply": baseMult+multiplier }],
+			"Attack/Ranged/Spread": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
+			"Attack/Ranged/PrepareTime": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
+			"Attack/Ranged/RepeatTime": [{ "affects": ["Unit Ranged"], "multiply": baseMult-(multiplier/2) }],
+			"Attack/Melee/PrepareTime": [{ "affects": ["Unit Melee"], "multiply": baseMult-(multiplier/2) }],
+			"Attack/Melee/RepeatTime": [{ "affects": ["Unit Melee"], "multiply": baseMult-(multiplier/2) }],
+			"ResourceGatherer/BaseSpeed": [{ "affects": ["Unit Worker !Mercenary"], "multiply": baseMult+(multiplier/2) }],
+			"Builder/Rate": [{ "affects": ["Unit Worker !Mercenary"], "replace": baseMult+multiplier }],
+		}, this.entity);
+	}
 };
 
 Promotion.prototype.GetPromotedTemplateName = function()
