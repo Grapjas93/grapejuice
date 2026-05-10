@@ -18,47 +18,74 @@
   <group>
     <variant frequency="1" name="basic-hellenistic-1">
       <mesh>skeletal/new/m_tunic_long.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ptol/tunic_thureophoros_a_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_01_01.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_01_02.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_01_03.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-d">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_01_04.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-2a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_02_01.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-2b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_02_02.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-2c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_02_03.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="Tunic-Sleeveless-2d">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/mace/tunic_hellenistic_b_02_04.png" name="baseTex"/>
 	  </textures>
     </variant>
@@ -109,5 +136,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

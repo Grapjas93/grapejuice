@@ -21,7 +21,10 @@
         <prop actor="units/kushites/hero_chariot_archer_amanirenas_r.xml" attachpoint="rider4"/>
         <prop actor="units/kushites/hero_chariot_archer_d.xml" attachpoint="driver4"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="structural/kush_chariot.png" name="baseTex"/>
       </textures>
     </variant>
@@ -34,5 +37,5 @@
       </props>
     </variant>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

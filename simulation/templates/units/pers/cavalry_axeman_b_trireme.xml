@@ -21,7 +21,9 @@
          </Entity>
    </Resistance>
   <Identity>
-    <RequiredTechnology>equine_transports</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">equine_transports</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/pers/cavalry_axeman_a_trireme</Entity>

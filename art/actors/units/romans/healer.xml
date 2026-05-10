@@ -15,7 +15,10 @@
       <props>
         <prop actor="props/units/heads/hele_hood_priest.xml" attachpoint="helmet"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/rome/robes_healer_01.png" name="baseTex"/>
       </textures>
     </variant>
@@ -26,5 +29,5 @@
     <variant file="biped/build.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

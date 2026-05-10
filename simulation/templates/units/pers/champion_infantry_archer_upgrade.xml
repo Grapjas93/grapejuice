@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/hp_inf|grapejuice/archer|template_unit_champion_infantry_archer">
+<UnitMotion>
+       <WalkSpeed> 11.3 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Bow </AttackName>
+           <PrepareTime> 1675 </PrepareTime>
+           <RepeatTime> 1825 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 675 </PrepareTime>
+           <RepeatTime> 825 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 2 </Hack>
+               <Pierce> 1.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+  <Identity>
+    <Civ>pers</Civ>
+    <Lang>persian</Lang>
+    <GenericName>Persian Immortal</GenericName>
+    <SpecificName>Anušiya</SpecificName>
+    <VisibleClasses datatype="tokens">Immortal</VisibleClasses>
+    <Icon>units/pers/champion_infantry_archer.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">-phase_city unlock_champion_infantry</Techs>
+    </Requirements>
+  </Identity>
+  <Cost>
+    <Resources>
+      <food>50</food>
+      <wood>30</wood>
+      <metal>50</metal>
+    </Resources>
+  </Cost>
+  <Loot>
+    <food>5</food>
+    <wood>3</wood>
+    <metal>5</metal>
+  </Loot>
+  <Resistance>
+    <Entity>
+      <Damage>
+        <Hack op="add">-1</Hack>
+      </Damage>
+    </Entity>
+  </Resistance>
+  <Upgrade>
+    <Immortal_spearman>
+      <Entity>units/pers/champion_infantry</Entity>
+      <Tooltip>Switch to using a spear and shield.</Tooltip>
+      <Variant>upgrading</Variant>
+      <Time>4</Time>
+    </Immortal_spearman>
+  </Upgrade>
+  <VisualActor>
+    <Actor>units/persians/infantry_archer_c.xml</Actor>
+  </VisualActor>
+</Entity>

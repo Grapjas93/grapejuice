@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|grapejuice/swordsman_jav|template_unit_hero_infantry_swordsman">
+<Entity parent="grapejuice/hp_inf|grapejuice/jav|template_unit_hero_infantry_javelineer">
+  <Ammo>
+    <CurrAmmo>7</CurrAmmo>
+    <RefillAmount>7</RefillAmount>
+  </Ammo>
    <UnitMotion>
        <WalkSpeed> 9.25 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
    </UnitMotion>
    <Attack>
        <Melee>
-           <AttackName> Sword </AttackName>
+           <AttackName> Spear </AttackName>
            <PrepareTime> 825 </PrepareTime>
            <RepeatTime> 975 </RepeatTime>
        </Melee>
@@ -14,6 +18,21 @@
            <AttackName> Javelin </AttackName>
            <PrepareTime> 500 </PrepareTime>
            <RepeatTime> 2275 </RepeatTime>
+            <ApplyStatus>
+              <Burning>
+                <Interval>3000</Interval>
+                <Damage>
+                <Fire>2</Fire>
+                </Damage>
+                <Stackability>Stack</Stackability>
+                <Duration>9000</Duration>
+              </Burning>
+            </ApplyStatus>
+            <Projectile>
+              <ActorName>props/units/weapons/jav_projectile_flame.xml</ActorName>
+              <ImpactActorName>props/units/weapons/jav_projectile_flame.xml</ImpactActorName>
+              <ImpactAnimationLifetime>3.0</ImpactAnimationLifetime>
+            </Projectile>
        </Ranged>
    </Attack>
    <Resistance replace="">
@@ -32,7 +51,7 @@
   <Identity>
     <Civ>iber</Civ>
     <SpecificName>Viriato</SpecificName>
-    <Icon>units/iber_hero_viriato.png</Icon>
+    <Icon>units/iber/hero_viriato.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/iberians/hero_infantry_swordsman_viriato.xml</Actor>

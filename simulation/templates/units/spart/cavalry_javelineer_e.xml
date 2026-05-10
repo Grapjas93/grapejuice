@@ -28,7 +28,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/spartans/cavalry_javelinist_e_m.xml</Actor>
   </VisualActor>

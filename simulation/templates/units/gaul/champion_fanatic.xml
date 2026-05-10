@@ -37,8 +37,10 @@
     <Civ>gaul</Civ>
     <GenericName>Naked Fanatic</GenericName>
     <SpecificName>Bariogaisatos</SpecificName>
-    <Icon>units/gaul_champion_fanatic.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/gaul/champion_fanatic.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">-phase_city phase_town</Techs>
+    </Requirements>
   </Identity>
   <VisualActor>
     <Actor>units/gauls/infantry_spearman_c.xml</Actor>

@@ -23,7 +23,7 @@ var g_PanelData = [];
 /**
  * Vertical size of a tab button.
  */
-var g_TabButtonHeight = 35;
+var g_TabButtonHeight = 34;
 
 /**
  * Vertical space between two tab buttons.
@@ -33,15 +33,18 @@ var g_TabButtonDist = 5;
 function init()
 {
 	// Load credits list from the disk and parse them
-	for (let category of g_OrderTabNames)
+	for (const category of g_OrderTabNames)
 	{
-		let json = Engine.ReadJSONFile("gui/credits/texts/" + category + ".json");
+		const json = Engine.ReadJSONFile("gui/credits/texts/" + category + ".json");
 		if (!json || !json.Content)
 		{
-			error("Could not load credits for " + category + "!");
+			if (category == "translators")
+				warn("Translators credits are not present, pull translations from the nightly build to get them.");
+			else
+				error("Could not load credits for " + category + "!");
 			continue;
 		}
-		translateObjectKeys(json, ["Title", "Subtitle"]);
+		translateObjectKeys(json, ["Title", "Subtitle", "LangName"]);
 		g_PanelData.push({
 			"label": json.Title || category,
 			"content": parseHelper(json.Content)
@@ -57,6 +60,10 @@ function init()
 		category => {
 			Engine.GetGUIObjectByName("creditsText").caption = g_PanelData[category].content;
 		});
+
+	return new Promise(closePageCallback => {
+		Engine.GetGUIObjectByName("closeButton").onPress = closePageCallback;
+	});
 }
 
 // Run through a "Content" list and parse elements for formatting and translation
@@ -64,7 +71,7 @@ function parseHelper(list)
 {
 	let result = "";
 
-	for (let object of list)
+	for (const object of list)
 	{
 		if (object.LangName)
 			result += setStringTags(object.LangName + "\n", { "font": "sans-bold-stroke-14" });
@@ -77,7 +84,7 @@ function parseHelper(list)
 
 		if (object.List)
 		{
-			for (let element of object.List)
+			for (const element of object.List)
 			{
 				let credit;
 				if (element.nick && element.name)

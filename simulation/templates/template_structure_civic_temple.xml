@@ -3,6 +3,9 @@
   <Auras datatype="tokens">
     structures/temple_heal
   </Auras>
+  <Capturable>
+    <RegenRate>15.0</RegenRate>
+  </Capturable>
   <Cost>
     <BuildTime>200</BuildTime>
     <Resources>
@@ -29,10 +32,11 @@
     <GenericName>Temple</GenericName>
     <SelectionGroupName>template_structure_civic_temple</SelectionGroupName>
     <Tooltip>Train Healers and research healing technologies.</Tooltip>
-    <Classes datatype="tokens">ConquestCritical</Classes>
     <VisibleClasses datatype="tokens">Town Temple</VisibleClasses>
     <Icon>structures/temple.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <stone>60</stone>

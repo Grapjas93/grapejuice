@@ -24,7 +24,10 @@
         <prop actor="units/persians/chariot_archer_e_r.xml" attachpoint="rider1"/>
         <prop actor="units/persians/chariot_archer_e_d.xml" attachpoint="driver1"/>
       </props>
-      <textures><texture file="structural/pers_chariot_e.png" name="baseTex"/></textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+<texture file="structural/pers_chariot_e.png" name="baseTex"/></textures>
     </variant>
   </group>
   <group>
@@ -35,5 +38,5 @@
       </props>
     </variant>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

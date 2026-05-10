@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|grapejuice/female|template_unit_support_female_citizen">
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_female_citizen">
   <Builder>
     <Entities datatype="tokens">
       structures/cart/super_dock
@@ -12,7 +12,7 @@
     <Civ>cart</Civ>
     <SpecificName>Aštāh</SpecificName>
     <GenericName>Carthaginian Woman</GenericName>
-    <Icon>units/cart_support_female_citizen.png</Icon>
+    <Icon>units/cart/support_female_citizen.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/carthaginians/female_citizen.xml</Actor>

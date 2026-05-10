@@ -3,6 +3,9 @@
   <Auras datatype="tokens">
     structures/refill_ammo_30range
   </Auras>
+  <Capturable>
+    <RegenRate>10.0</RegenRate>
+  </Capturable>
   <GarrisonHolder>
     <EjectHealth>0.1</EjectHealth>
     <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
@@ -14,10 +17,10 @@
     <Classes datatype="tokens">ConquestCritical AmmoSupply</Classes>
     <VisibleClasses datatype="tokens">Military AmmoSupply</VisibleClasses>
   </Identity>
-  <Resistance replace="">
+  <Resistance>
     <Entity>
       <Damage>
-        <Hack>20</Hack>
+        <Hack>24</Hack>
         <Pierce>35</Pierce>
         <Crush>3</Crush>
       </Damage>

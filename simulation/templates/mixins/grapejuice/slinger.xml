@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Auras datatype="tokens"> <!--grapejuice-->
+    units/charge_attack
+  </Auras>
+  <Ammo>
+      <CurrAmmo>40</CurrAmmo>
+      <MaxAmmo>40</MaxAmmo>
+      <RefillTime>6000</RefillTime>
+      <RefillAmount>1</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Ranged>
       <AttackName>Sling</AttackName>
-      <Ammo>40</Ammo>
-      <RefillAmount>1</RefillAmount>
-      <RefillTime>6000</RefillTime>
       <Damage>
         <Pierce>5</Pierce>
         <Crush>5</Crush>
@@ -19,7 +32,6 @@
     </Ranged>
     <Melee>
       <AttackName>Sword</AttackName>
-      <Energy>100</Energy>
       <Damage>
         <Hack>5.5</Hack>
         <Pierce>0</Pierce>

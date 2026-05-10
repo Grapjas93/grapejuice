@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_support_ammo_cart">
+<Entity parent="grapejuice/melee_pike|grapejuice_support_ammo_cart">
+  <Energy disable="" />
    <Attack>
        <Melee>
       <AttackName>Pike</AttackName>
@@ -9,13 +10,6 @@
         <Hack>2</Hack>
         <Pierce>3</Pierce>
       </Damage>
-      <MaxRange>8</MaxRange>
-      <Bonuses>
-        <BonusCavMelee>
-          <Classes>Cavalry</Classes>
-          <Multiplier>5.0</Multiplier>
-        </BonusCavMelee>
-      </Bonuses>
      </Melee>
    </Attack>
    <Resistance replace="">
@@ -33,7 +27,6 @@
   </Footprint>
   <Identity>
     <Civ>mace</Civ>
-    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
   </Identity>
   <VisualActor>
     <Actor>units/macedonians/ammo_cart.xml</Actor>

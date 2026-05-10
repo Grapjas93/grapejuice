@@ -1,5 +1,3 @@
-const g_NaturalColor = "255 255 255 255"; // pure white
-
 StatusBars.prototype.RemoveAuraSource = function(source, auraName)
 {
 	let names = this.auraSources.get(source);
@@ -22,26 +20,24 @@ StatusBars.prototype.Sprites = [
 	"ResourceSupplyBar",
 	"CaptureBar",
 	"HealthBar",
-	"AmmoBar",
-	"EnergyBar",
+	"AmmoBar", // grapejuice
+	"EnergyBar", // grapejuice
 	"AuraIcons",
 	"RankIcon",
-	"WoundedIcon"  // grapejuice
 	];
 
 // grapejuice ammoBar
 StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 {
-	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
-	if(cmpAttack && cmpAttack.maxEnergy)
+	let cmpEnergy = QueryMiragedInterface(this.entity, IID_Energy);
+	if(cmpEnergy && cmpEnergy.maxEnergy)
 	{
 		if (!this.enabled)
 			return 0;
-
-		if(cmpAttack.wounded == true  || cmpAttack.chargeCooldown != 0)
+		if(cmpEnergy.maxEnergy == "0")
 			return 0;
-
-		return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpAttack.energy / cmpAttack.maxEnergy, 2/3);
+		if (cmpEnergy.maxEnergy > "0")
+			return this.AddBar(cmpOverlayRenderer, yoffset, "energy", cmpEnergy.energy / cmpEnergy.maxEnergy, 2/3);
 	}
 	return 0;
 };
@@ -49,47 +45,50 @@ StatusBars.prototype.AddEnergyBar = function(cmpOverlayRenderer, yoffset)
 // grapejuice ammoBar
 StatusBars.prototype.AddAmmoBar = function(cmpOverlayRenderer, yoffset)
 {
-	let cmpAttack = QueryMiragedInterface(this.entity, IID_Attack);
-	if(cmpAttack && cmpAttack.maxAmmo)
+	let cmpAmmo = QueryMiragedInterface(this.entity, IID_Ammo);
+	if(cmpAmmo && cmpAmmo.maxAmmo)
 	{
 		if (!this.enabled)
 			return 0;
-		if(cmpAttack.maxAmmo == "0")
+		if(cmpAmmo.maxAmmo == "0")
 			return 0;
-		if (cmpAttack.maxAmmo > "0"){
-			return this.AddBar(cmpOverlayRenderer, yoffset, "ammo", cmpAttack.ammo / cmpAttack.maxAmmo, 2/3);
+		if (cmpAmmo.maxAmmo > "0"){
+			return this.AddBar(cmpOverlayRenderer, yoffset, "ammo", cmpAmmo.ammo / cmpAmmo.maxAmmo, 2/3);
 		}
 	}
 	return 0;
 };
 
-// grapejuice wounded state icon
-StatusBars.prototype.AddWoundedIcon = function(cmpOverlayRenderer, yoffset)
+StatusBars.prototype.OnAmmoChanged = function(msg)
 {
-	let cmpUnitMotion = QueryMiragedInterface(this.entity, IID_UnitMotion);
-	let cmpHealth = QueryMiragedInterface(this.entity, IID_Health);
+	if (this.enabled)
+		this.RegenerateSprites();
+};
 
-	if(cmpUnitMotion && cmpHealth != null)
-	{
-		if (!this.enabled)
-			return 0;
+StatusBars.prototype.OnEnergyChanged = function(msg)
+{
+	if (this.enabled)
+		this.RegenerateSprites();
+};
 
-		let iconSize = +this.template.BarWidth / 2;
-		let currentHp = cmpHealth.GetHitpoints();
-		let treshold = cmpHealth.GetMaxHitpoints() / 3;
-		if( currentHp <= treshold  )
-		{
-			cmpOverlayRenderer.AddSprite(
-			"art/textures/ui/session/icons/status_effects/wounded.png",
-			{ "x": -iconSize / 2, "y": yoffset },
-			{ "x": iconSize / 2, "y": iconSize + yoffset },
-			{ "x": 0, "y": +this.template.HeightOffset + 0.4, "z": 0 },
-			g_NaturalColor);
-		}
-		return iconSize + this.template.BarHeight / 2;
-	}
+StatusBars.prototype.AddRankIcon = function(cmpOverlayRenderer, yoffset)
+{
+	if (!this.enabled || !this.showRank)
+		return 0;
 
+	const cmpIdentity = Engine.QueryInterface(this.entity, IID_Identity);
+	if (!cmpIdentity || !cmpIdentity.GetRank())
+		return 0;
 
+	const iconSize = +this.template.BarWidth / 1.2; // make rank icons bigger / grapejuice
+	cmpOverlayRenderer.AddSprite(
+		"art/textures/ui/session/icons/ranks/" + cmpIdentity.GetRank() + ".png",
+		{ "x": -iconSize / 2, "y": yoffset },
+		{ "x": iconSize / 2, "y": iconSize + yoffset },
+		{ "x": 0, "y": +this.template.HeightOffset + 0.1, "z": 0 },
+		"255 255 255 255");
+
+	return iconSize + this.template.BarHeight / 2;
 };
 
 Engine.ReRegisterComponentType(IID_StatusBars, "StatusBars", StatusBars);

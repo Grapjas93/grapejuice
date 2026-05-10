@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_civilian">
+  <Builder>
+    <Entities datatype="tokens">
+      structures/cart/super_dock
+      structures/cart/embassy_celtic
+      structures/cart/embassy_iberian
+      structures/cart/embassy_italic
+    </Entities>
+  </Builder>
+  <Identity>
+    <Civ>cart</Civ>
+    <GenericName>Carthaginian Artisan</GenericName>
+    <SpecificName>Ḥaroš</SpecificName>
+    <Icon>units/cart/support_civilian.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/carthaginians/citizen_{phenotype}.xml</Actor>
+  </VisualActor>
+</Entity>

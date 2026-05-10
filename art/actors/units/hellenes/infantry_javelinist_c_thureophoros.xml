@@ -16,22 +16,34 @@
   </group>
   <group>
     <variant name="hele-tunic-3-psiloi-b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/tunic_03_psiloi_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-epilektoi-2">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-epilektoi-6">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_06.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="hele-epilektoi-8">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_08.png" name="baseTex"/>
       </textures>
     </variant>
@@ -73,5 +85,5 @@
     <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

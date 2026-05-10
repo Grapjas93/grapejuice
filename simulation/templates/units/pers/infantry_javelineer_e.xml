@@ -28,7 +28,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/persians/infantry_javelinist_e.xml</Actor>
   </VisualActor>

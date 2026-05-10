@@ -3,7 +3,7 @@
   <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/mauryas/elephantry_archer_e_m.xml</Actor>
   </VisualActor>

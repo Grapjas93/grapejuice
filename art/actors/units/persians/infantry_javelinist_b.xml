@@ -15,12 +15,18 @@
   </group>
   <group>
     <variant frequency="1" name="tunic-basic-1g">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/tunic_basic_01_07.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-basic-1h">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/tunic_basic_01_08.png" name="baseTex"/>
       </textures>
     </variant>
@@ -70,5 +76,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

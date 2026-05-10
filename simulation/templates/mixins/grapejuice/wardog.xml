@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Auras datatype="tokens"> <!--grapejuice-->
+    units/charge_attack
+  </Auras>
+  <Energy>
+    <CurrEnergy>200</CurrEnergy>
+    <MaxEnergy>200</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Melee>
-      <Energy>200</Energy>
 		   <ApplyStatus>
         <Bleeding>
           <Interval>3000</Interval>
@@ -35,7 +43,7 @@
     <Max>60</Max>
   </Health>
   <Identity>
-    <Tooltip>Applies bleeding when attack units. Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
+    <Tooltip>Applies bleeding when attacking units. Cannot attack Structures, Ships, or Siege Engines.</Tooltip>
     <Classes datatype="tokens">Human FastMoving Charger</Classes>
     <VisibleClasses datatype="tokens">Dog Melee Charger</VisibleClasses>
   </Identity>

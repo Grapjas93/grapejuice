@@ -11,7 +11,10 @@
         <prop actor="props/units/shields/samn_scutum_basic.xml" attachpoint="shield"/>
         <prop actor="props/units/weapons/sheath_gladius.xml" attachpoint="sheath_01_R"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/ital/tunic_belt_spec.png" name="specTex"/>
       </textures>
     </variant>
@@ -50,27 +53,42 @@
   </group>
   <group>
     <variant frequency="1" name="tunic_pattern_01_a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/ital/tunic_pattern_01_01.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="tunic_pattern_01_b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/ital/tunic_pattern_01_02.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="tunic_pattern_01_c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/ital/tunic_pattern_01_03.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="tunic_pattern_01_d">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/ital/tunic_pattern_01_04.png" name="baseTex"/>
 	  </textures>
     </variant>
     <variant frequency="1" name="tunic_pattern_01_e">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 	    <texture file="skeletal/ital/tunic_pattern_01_05.png" name="baseTex"/>
 	  </textures>
     </variant>
@@ -99,5 +117,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

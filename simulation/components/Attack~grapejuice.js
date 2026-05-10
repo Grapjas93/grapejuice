@@ -1,12 +1,11 @@
 var g_AttackTypes = ["Melee", "Ranged", "Capture"];
 
-// grapejuice, added <Ammo>, <RefillTime>, <RefillAmount> <Energy>
+// grapejuice
 Attack.prototype.Schema =
 	"<a:help>Controls the attack abilities and strengths of the unit.</a:help>" +
 	"<a:example>" +
 		"<Melee>" +
 			"<AttackName>Spear</AttackName>" +
-			"<Energy>150</Energy>" +
 			"<Damage>" +
 				"<Hack>10.0</Hack>" +
 				"<Pierce>0.0</Pierce>" +
@@ -30,10 +29,6 @@ Attack.prototype.Schema =
 		"</Melee>" +
 		"<Ranged>" +
 			"<AttackName>Bow</AttackName>" +
-			"<Ammo>30</Ammo>" +
-			"<RefillTime>3000</RefillTime>" +
-			"<RefillAmount>0</RefillAmount>" +
-			"<RefillCostMult>1</RefillCostMult>" +
 			"<Damage>" +
 				"<Hack>0.0</Hack>" +
 				"<Pierce>10.0</Pierce>" +
@@ -99,11 +94,6 @@ Attack.prototype.Schema =
 					"<text/>" +
 				"</element>" +
 				AttackHelper.BuildAttackEffectsSchema() +
-				"<optional><element name='Energy'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='Ammo'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillTime'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillAmount'><data type='nonNegativeInteger'/></element></optional>" +
-				"<optional><element name='RefillCostMult'><data type='nonNegativeInteger'/></element></optional>" +
 				"<element name='MaxRange' a:help='Maximum attack range (in metres)'><ref name='nonNegativeDecimal'/></element>" +
 				"<optional>" +
 					"<element name='MinRange' a:help='Minimum attack range (in metres). Defaults to 0.'><ref name='nonNegativeDecimal'/></element>" +
@@ -204,58 +194,8 @@ Attack.prototype.Schema =
 Attack.prototype.Init = function()
 {
 	this.chargeCooldown = 0;
-	this.maxEnergy = undefined;
-	this.energy = undefined;
 
-	// changed by the health component
-	this.wounded = false;
-
-	this.canChargeTimer = 0;
-	this.CanRechargeEnergyTimer = undefined;
-	this.RechargeEnergyTimer = undefined;
-
-	this.ammo = undefined;
-	this.maxAmmo = 0;
-	this.refillTime = 3000;
-	this.refillAmount = 0;
-	this.ammoReffilTimer = undefined;
-	this.refillCostMult = undefined;
-
-	if (!!this.template["Ranged"] && !!this.template["Ranged"].Ammo)
-	{
-		this.ammo = +this.template["Ranged"].Ammo;
-		this.maxAmmo = +this.template["Ranged"].Ammo;
-		this.refillCostMult = +this.template["Ranged"].RefillCostMult || 1;
-	}
-
-	// for ammo carts but i honestly should just make an ammo component and clean this up nicely
-	if (!!this.template["Melee"] && !!this.template["Melee"].Ammo)
-	{
-		this.ammo = +this.template["Melee"].Ammo;
-		this.maxAmmo = +this.template["Melee"].Ammo;
-	}
-
-	if (!!this.template["Melee"] && !!this.template["Melee"].Energy)
-	{
-		this.energy = this.template["Melee"].Energy;
-		this.maxEnergy = this.template["Melee"].Energy;
-		this.energy = +this.energy;
-		this.maxEnergy = +this.maxEnergy;
-
-	}
-
-	// start the automatic refill timer for units that regain ammo anywhere (slingers for now)
-	if (this.ammo == 40)
-	{
-		if (!!this.template["Ranged"] && !!this.template["Ranged"].RefillTime)
-		{
-			this.refillTime = +this.template["Ranged"].RefillTime;
-		}
-
-		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-		cmpTimer.SetInterval(this.entity, IID_Attack, "AutoRefill", 0, this.refillTime, {});
-	}
-
+	this.canChargeTimer = undefined;
 };
 
 // returns object containing the ActorName, ImpactActorName and ImpactAnimationLifetime
@@ -275,17 +215,14 @@ Attack.prototype.GetProjectileActors = function()
 // grapejuice, called by Charge()
 Attack.prototype.CanCharge = function(target)
 {
-	if (this.energy <= 0)
-		return false;
-
-	// if the unit is wounded it cant charge
-	if (this.wounded)
-		return false;
+	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+	if (!cmpEnergy || (cmpEnergy && cmpEnergy.GetEnergy() <= 0))
+		return {"status": false, "reason":"no_energy"};
 
 	if (PositionHelper.DistanceBetweenEntities(this.entity, target) > 27)
-		return false;
+		return {"status": false, "reason":"out_of_range"};
 
-	return true;
+	return {"status": true, "reason":undefined};
 
 };
 
@@ -293,236 +230,76 @@ Attack.prototype.CanCharge = function(target)
 Attack.prototype.StopCanChargeTimer = function()
 {
 	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	cmpTimer.CancelTimer(this.canChargeTimer);
+	this.canChargeTimer = cmpTimer.CancelTimer(this.canChargeTimer);
 
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
+	this.RemoveChargeModifier();
 
 	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	cmpUnitAI.ResetSpeedMultiplier();
+	cmpUnitAI.SetSpeedMultiplier(1);
+	if (cmpUnitAI.IsFormationMember())
+		cmpUnitAI.SetSpeedMultiplier(0.5);
+
 };
 
 // grapejuice, called by a timer in GetBestAttackAgainst() with a 500ms interval
 Attack.prototype.Charge = function(target)
 {
-	if (this.energy == undefined)
-		return;
-
-	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-	let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-
-	if (this.CanCharge(target) == false)
+	let canCharge = this.CanCharge(target)
+	if (canCharge.status == false && canCharge.reason == "no_energy")
 	{
-		cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
-		cmpUnitAI.ResetSpeedMultiplier();
-
-		// workaround fix for sprinting attacking soldiers in formation
-		if (cmpUnitAI.IsFormationMember())
-		cmpUnitAI.SetSpeedMultiplier(0.5);
-
+		this.StopCanChargeTimer();
 		return;
 	}
+	else if (canCharge.status == true)
+	{
+		this.AddChargeModifier();
+		let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+		cmpEnergy.Reduce(5);
+	}
+};
 
+Attack.prototype.RemoveChargeModifier = function()
+{
+	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+	cmpModifiersManager.RemoveAllModifiers("ChargeAttack", this.entity);
+}
+
+Attack.prototype.AddChargeModifier = function()
+{
+	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
+	if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
+		return;
+
+	if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
+	{
+		let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
+		// 1.4 bonus for german rams (that have no garrison)
+		let multiplier = cmpGarrisonHolder ? 1 + (cmpGarrisonHolder.OccupiedSlots() / 10) : 1.4;
+
+		cmpModifiersManager.AddModifiers("ChargeAttack", {
+			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
+			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
+			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
+			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
+			"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
+		}, this.entity);
+	}
 	else
 	{
-		if (cmpModifiersManager.HasAnyModifier("ChargeAttack", this.entity) == true)
-		{
-			this.energy = this.energy - 5;
-			this.RefreshStatusbars(this.entity);
-			return;
-		}
-
-		// rams have multipliers based on how many are garrisoned
-		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
-		{
-			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-			let multiplier = 1 + (cmpGarrisonHolder.OccupiedSlots() / 10);
-
-			this.energy = this.energy - 5;
-			cmpModifiersManager.AddModifiers("ChargeAttack", {
-				"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
-				"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": multiplier }],
-				"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": multiplier}],
-				"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": multiplier }],
-				"UnitMotion/WalkSpeed": [{ "affects": ["Unit"], "multiply": multiplier }]
-			}, this.entity);
-			return;
-		}
-
-		this.energy = this.energy - 5;
 		cmpModifiersManager.AddModifiers("ChargeAttack", {
 			"Attack/Melee/PrepareTime": [{ "affects": ["Unit"], "replace": 100 }],
 			"Attack/Melee/Damage/Hack": [{ "affects": ["Unit"], "multiply": 1.2 }],
 			"Attack/Melee/Damage/Pierce": [{ "affects": ["Unit"], "multiply": 1.5 }],
 			"Attack/Melee/Damage/Crush": [{ "affects": ["Unit"], "multiply": 1.3}]
 		}, this.entity);
-
-		cmpUnitAI.SetSpeedMultiplier(cmpUnitAI.GetRunMultiplier());
+		let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+		cmpUnitAI.Run();
 
 		// workaround fix for sprinting attacking soldiers in formation
 		if (cmpUnitAI.IsFormationMember())
-		cmpUnitAI.SetSpeedMultiplier(1);
-
-		return;
+			cmpUnitAI.SetSpeedMultiplier(1);
 	}
-
 };
-
-// grapejuice, called by UnitAI~grapejuice.
-// it will call RechargeEnergy() after 1s, but the timer is reset after a new unit order.
-Attack.prototype.CanRechargeEnergy = function()
-{
-	if (this.energy == undefined)
-		return;
-
-	if (this.wounded)
-	return;
-
-	// quick return if we already have a valid running timer
-	if (this.CanRechargeEnergyTimer != undefined)
-		return;
-
-	this.StopRechargingEnergy();
-
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	this.CanRechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 1000, {});
-};
-
-// grapejuice, called by UnitAI~grapejuice, any unit order that is not "Stop" will stop the recharge timer
-Attack.prototype.StopRechargingEnergy = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-
-	cmpTimer.CancelTimer(this.RechargeEnergyTimer);
-	cmpTimer.CancelTimer(this.CanRechargeEnergyTimer);
-
-	this.RechargeEnergyTimer = undefined;
-	this.CanRechargeEnergyTimer = undefined;
-};
-
-// grapejuice, called by CanRechargeEnergy()
-Attack.prototype.RechargeEnergy = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-
-
-	if (this.wounded)
-	{
-		this.StopRechargingEnergy();
-		return;
-	}
-
-	if (!(this.energy >= this.maxEnergy))
-	{
-		if (this.energy < 0)
-			this.energy = 0;
-
-		if (this.energy + 5 > this.maxEnergy || this.energy > this.maxEnergy)
-		{
-			this.energy = this.maxEnergy;
-			this.RefreshStatusbars(this.entity);
-			this.StopRechargingEnergy();
-			return;
-		}
-
-		// make sure that the ram regen rate increases the more units are garrisoned in it
-		if (Helpers.EntityMatchesClassList(this.entity, "Ram"))
-		{
-			let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
-			if (this.energy + 5 * cmpGarrisonHolder.OccupiedSlots() > this.maxEnergy)
-			{
-				this.energy = this.maxEnergy;
-				this.RefreshStatusbars(this.entity);
-				this.StopRechargingEnergy();
-			}
-			else
-			{
-				this.energy += 5 * cmpGarrisonHolder.OccupiedSlots();
-			}
-		}
-		else
-		{
-			this.energy = this.energy + 5;
-		}
-		this.RechargeEnergyTimer = cmpTimer.SetTimeout(this.entity, IID_Attack, "RechargeEnergy", 500, {});
-		this.RefreshStatusbars(this.entity);
-	}
-
-};
-
-// grapejuice
-Attack.prototype.StopReArming = function()
-{
-	let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-	cmpTimer.CancelTimer(this.ammoReffilTimer);
-	this.ammoReffilTimer =	undefined;
-	return;
-};
-
-// grapejuice
-Attack.prototype.RefreshStatusbars = function(ent)
-{
-	let cmpStatusBars = Engine.QueryInterface(ent, IID_StatusBars);
-	cmpStatusBars.RegenerateSprites();
-};
-
-// grapejuice, called by Init. Used by units that regain ammo slowly anywhere
-Attack.prototype.AutoRefill = function()
-{
-	if (this.ammo != this.maxAmmo)
-	{
-		this.ammo = this.ammo + 1;
-		this.RefreshStatusbars(this.entity);
-	}
-
-};
-
-// grapejuice, called by Auras)
-Attack.prototype.SetAmmo = function(ammoGiver)
-{
-	let cmpAmmoGiver = Engine.QueryInterface(ammoGiver, IID_Attack);
-
-	// if the entity reloads from ammoGiver with ammo, draw ammo from ammoGiver ammo pool
-	if (Helpers.EntityMatchesClassList(ammoGiver, "ArmyCamp Supply"))
-	{
-		let ammoNeeded = (this.maxAmmo - this.ammo)*this.refillCostMult;
-
-		// if the ammoGiver has no ammo, stop timer
-		if (cmpAmmoGiver.ammo == 0)
-		{
-			this.StopReArming();
-			return;
-		}
-
-		// if the ammoGiver can't do a full reload for the unit, give all remaining ammo to unit
-		if (cmpAmmoGiver.ammo < ammoNeeded)
-		{
-			this.ammo = this.ammo + cmpAmmoGiver.ammo;
-			this.RefreshStatusbars(this.entity);
-
-			cmpAmmoGiver.ammo = 0;
-			this.RefreshStatusbars(ammoGiver);
-
-			this.StopReArming();
-			return;
-		}
-		else
-		{
-			cmpAmmoGiver.ammo = cmpAmmoGiver.ammo - ammoNeeded;
-			this.ammo = this.maxAmmo;
-
-			this.RefreshStatusbars(this.entity);
-			this.RefreshStatusbars(ammoGiver);
-
-			return;
-		}
-	}
-
-	// other buildings have infinite stock, simply reload the unit fully
-	this.ammo = this.maxAmmo;
-	this.RefreshStatusbars(this.entity);
-}
-
 
 // grapejuice, called by GetBestAttackAgainst() and PerformAttack()
 Attack.prototype.CheckTargetIsInMeleeRange = function(target)
@@ -538,6 +315,7 @@ Attack.prototype.CheckTargetIsInMeleeRange = function(target)
  */
 Attack.prototype.PerformAttack = function(type, target)
 {
+
 	let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
 	if (!cmpPosition || !cmpPosition.IsInWorld())
 		return;
@@ -563,33 +341,20 @@ Attack.prototype.PerformAttack = function(type, target)
 	};
 
 	let delay = +(this.template[type].EffectDelay || 0);
+	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
+	let isInMeleeRange = this.CheckTargetIsInMeleeRange(target)
 	// grapejuice
 	if (type == "Ranged")
-	{
-		if (!!this.template["Ranged"].Ammo)
-		{
-			if (this.ammo > 0 && this.CheckTargetIsInMeleeRange(target) == false)
-			{
-				this.ammo--;
-				this.RefreshStatusbars(this.entity);
-			}
-			else
-			{
-				let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-				if(!cmpUnitAI)
-					return;
-
-				cmpUnitAI.RespondToTargetedEntities([target]);
-			}
-		}
-	}
+		if (cmpAmmo)
+			if (cmpAmmo.ammo > 0 && isInMeleeRange == false)
+				cmpAmmo.Reduce(1);
 
 	// grapejuice
-	if (type == "Melee" && this.maxEnergy != undefined)
+	let cmpEnergy = Engine.QueryInterface(this.entity, IID_Energy);
+	if (type == "Melee" && cmpEnergy)
 	{
-		this.energy = 0;
+		cmpEnergy.SetEnergy(0);
 		this.StopCanChargeTimer();
-		this.RefreshStatusbars(this.entity);
 	}
 
 	if (this.template[type].Projectile)
@@ -707,6 +472,14 @@ Attack.prototype.PerformAttack = function(type, target)
 	}
 	else
 		Engine.QueryInterface(SYSTEM_ENTITY, IID_DelayedDamage).Hit(data, 0);
+
+	// cancel next attack if we have no ammo, otherwise it would do the whole animation until actually shooting and cancel the attack
+	if (type == "Ranged" && (cmpAmmo && cmpAmmo.ammo == 0 || isInMeleeRange == true))
+	{
+		let cmpUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+		if(cmpUnitAI)
+			cmpUnitAI.RespondToTargetedEntities([target]);
+	}
 };
 
 /**
@@ -745,48 +518,32 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 	}
 
 	// grapejuice
-	let hasRanged = !!this.template["Ranged"];
-	let hasMelee = !!this.template["Melee"];
-	if (hasRanged && this.ammo != 0 && this.CheckTargetIsInMeleeRange(target) == false && (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true || Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
+	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
+	if (cmpAmmo
+		&& cmpAmmo.ammo != 0
+		&& this.CheckTargetIsInMeleeRange(target) == false
+		&& (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true
+		|| Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
 		return "Ranged";
-	else if (hasMelee)
-	{
-		this.StopCanChargeTimer();
-		let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-		this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 100, target);
+	else if (types.includes("Melee"))
 		return "Melee";
-	}
 	else
 		return undefined;
 };
 
-/**
- * Returns undefined if we have no preference or the lowest index of a preferred class.
- */
-Attack.prototype.GetPreference = function(target)
+Attack.prototype.OnUnitAIOrderDataChanged = function(msg)
 {
-	let cmpIdentity = Engine.QueryInterface(target, IID_Identity);
-	if (!cmpIdentity)
-		return undefined;
-
-	let targetClasses = cmpIdentity.GetClassesList();
-
-	let minPref;
-	for (let type of this.GetAttackTypes())
+	let currentOrder = msg.to[0]
+	if (currentOrder && currentOrder.attackType == "Melee")
 	{
-		let preferredClasses = this.GetPreferredClasses(type);
-		for (let pref = 0; pref < preferredClasses.length; ++pref)
+		if (!this.canChargeTimer)
 		{
-			if (MatchesClassList(targetClasses, preferredClasses[pref]))
-			{
-				if (pref === 0)
-					return pref;
-				if ((minPref === undefined || minPref > pref))
-					minPref = pref;
-			}
+			let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+			this.canChargeTimer = cmpTimer.SetInterval(this.entity, IID_Attack, "Charge", 0, 500, currentOrder.target);
 		}
 	}
-	return minPref;
+	else
+		this.StopCanChargeTimer();
 };
 
 Engine.ReRegisterComponentType(IID_Attack, "Attack", Attack);

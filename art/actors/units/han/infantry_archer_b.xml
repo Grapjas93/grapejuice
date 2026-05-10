@@ -17,17 +17,26 @@
   </group>
   <group>
     <variant name="Han-Tunic-01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/han/tunic_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="Han-Tunic-02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/han/tunic_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="Han-Tunic-03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/han/tunic_01_03.png" name="baseTex"/>
       </textures>
     </variant>
@@ -41,7 +50,6 @@
     <variant file="biped/carry_metal.xml"/>
     <variant file="biped/approach_tree.xml"/>
     <variant file="biped/approach_grain_han.xml"/>
-    <variant file="biped/approach_rice.xml"/>
     <variant file="biped/approach_fruit.xml"/>
     <variant file="biped/approach_meat.xml"/>
     <variant file="biped/approach_rock.xml"/>
@@ -72,5 +80,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

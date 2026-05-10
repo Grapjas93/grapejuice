@@ -1,0 +1,1 @@
+PanelEntity.prototype.Tooltips.unshift(getCurrentEnergyTooltip, getCurrentAmmoTooltip)

@@ -16,6 +16,16 @@
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
       </Projectile>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
       <RangeOverlay>
         <LineTexture>outline_border.png</LineTexture>
@@ -25,7 +35,7 @@
     </Ranged>
   </Attack>
   <BuildingAI>
-    <DefaultArrowCount>1</DefaultArrowCount>
+    <DefaultArrowCount>2</DefaultArrowCount>
     <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
     <GarrisonArrowClasses>Infantry</GarrisonArrowClasses>
   </BuildingAI>
@@ -36,6 +46,9 @@
       <MinDistance>60</MinDistance>
     </Distance>
   </BuildRestrictions>
+  <Capturable>
+    <RegenRate>10.0</RegenRate>
+  </Capturable>
   <GarrisonHolder>
     <EjectHealth>0.1</EjectHealth>
     <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>

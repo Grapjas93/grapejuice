@@ -13,27 +13,42 @@
   </group>
   <group>
     <variant frequency="1" name="Celtic-Tunic-Sleeveles-01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/tunic_sleeveless_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Celtic-Tunic-Sleeveles-02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/tunic_sleeveless_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Celtic-Tunic-Sleeveles-03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/tunic_sleeveless_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Celtic-Tunic-Sleeveles-04">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/tunic_sleeveless_01_04.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="Celtic-Tunic-Sleeveles-05">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/gaul/tunic_sleeveless_01_05.png" name="baseTex"/>
       </textures>
     </variant>
@@ -83,5 +98,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

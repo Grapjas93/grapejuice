@@ -8,7 +8,10 @@
 	    <prop actor="props/structures/hellenes/tent_greek_props.xml" attachpoint="root"/>
         <prop actor="props/structures/decals/dirt_2x2.xml" attachpoint="root"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 		<texture file="structural/tent_athen.png" name="baseTex"/>
 		<texture file="structural/tent_greek_norm.png" name="normTex"/>
         <texture file="structural/tent_greek_spec.png" name="specTex"/>

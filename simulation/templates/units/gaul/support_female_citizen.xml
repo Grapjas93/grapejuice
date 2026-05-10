@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice/hp_inf|grapejuice/female|template_unit_support_female_citizen">
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_female_citizen">
   <Builder>
     <Entities datatype="tokens">
       structures/gaul/assembly
@@ -9,7 +9,7 @@
     <Civ>gaul</Civ>
     <GenericName>Celtic Woman</GenericName>
     <SpecificName>Bena</SpecificName>
-    <Icon>units/celt_support_female_citizen.png</Icon>
+    <Icon>units/celt/support_female_citizen.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/celts/female_citizen.xml</Actor>

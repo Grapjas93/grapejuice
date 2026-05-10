@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="brazier_init">
+<Entity parent="brazier">
   <Auras datatype="tokens" replace="">
     structures/brazier
   </Auras>
-  <Cost>
-    <BuildTime>10</BuildTime>
-    <Resources>
-      <wood>0</wood>
-      <metal>0</metal>
-    </Resources>
-  </Cost>
   <Identity>
     <Icon>technologies/cauldron_lit.png</Icon>
     <GenericName>Brazier (lit)</GenericName>
-    <Tooltip>Lit braziers costs 1 wood per second.</Tooltip>
-    <RequiredTechnology>phase_village</RequiredTechnology>
+    <Tooltip></Tooltip>
   </Identity>
   <ResourceTrickle>
     <Rates>
@@ -22,13 +14,16 @@
     </Rates>
     <Interval>1000</Interval>
   </ResourceTrickle>
+  <Upgrade>
+    <Brazier_off>
+      <Entity>brazier_off</Entity>
+      <Tooltip>Extinguish the brazier.</Tooltip>
+      <Variant>upgrading</Variant>
+      <Time>10</Time>
+    </Brazier_off>
+  </Upgrade>
   <VisualActor>
     <Actor>props/special/eyecandy/brazier.xml</Actor>
     <FoundationActor>structures/fndn_1x1.xml</FoundationActor>
   </VisualActor>
-  <Trainer>
-    <Entities replace="" datatype="tokens">
-      brazier_off
-    </Entities>
-  </Trainer>
 </Entity>

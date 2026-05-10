@@ -17,12 +17,18 @@
   </group>
   <group>
     <variant frequency="3" name="padded_brasidas_01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/spart/padded_brasidas_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="2" name="padded_brasidas_02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/spart/padded_brasidas_02.png" name="baseTex"/>
       </textures>
     </variant>
@@ -43,5 +49,5 @@
     <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

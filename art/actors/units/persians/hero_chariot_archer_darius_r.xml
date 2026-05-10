@@ -14,7 +14,10 @@
         <prop actor="props/units/capes/rider/bow_chariot_hip.xml" attachpoint="root"/>
         <prop actor="props/units/weapons/sarissa.xml" attachpoint="back"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_kardakes_01_02.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_kardakes_01_spec.png" name="specTex"/>
       </textures>
@@ -37,5 +40,5 @@
       </props>
     </variant>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

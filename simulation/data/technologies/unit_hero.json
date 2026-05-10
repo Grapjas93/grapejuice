@@ -1,22 +1,7 @@
 {
 	"autoResearch": true,
-	"icon": "upgrade_hero.png",
-	"tooltip": "Melee +20% attack strength, soldiers with 2 weapons +10% strength each. Elephant archers receive 20% max ammo back.",
+	"tooltip": "",
 	"modifications": [
-		{ "value": "Attack/Capture/Capture", "add": 0.8 },
-		{ "value": "Attack/Melee/Damage/Hack", "multiply": 1.2, "affects": "Melee" },
-		{ "value": "Attack/Melee/Damage/Pierce", "multiply": 1.2, "affects": "Melee" },
-		{ "value": "Attack/Melee/Damage/Crush", "multiply": 1.2, "affects": "Melee" },
-		{ "value": "Attack/Melee/Damage/Hack", "multiply": 1.1, "affects": "Ranged" },
-		{ "value": "Attack/Melee/Damage/Pierce", "multiply": 1.1, "affects": "Ranged" },
-		{ "value": "Attack/Melee/Damage/Crush", "multiply": 1.1, "affects": "Ranged" },
-		{ "value": "Attack/Ranged/Ammo", "multiply": 1.1, "affects": "Elephant" },
-		{ "value": "Health/Max", "multiply": 1.25, "affects": "Human" },
-		{ "value": "Loot/food", "multiply": 1.2 },
-		{ "value": "Loot/wood", "multiply": 1.2 },
-		{ "value": "Loot/stone", "multiply": 1.2 },
-		{ "value": "Loot/metal", "multiply": 1.2 },
-		{ "value": "Loot/xp", "multiply": 1.2 }
 	],
-	"affects": ["Hero Unit"]
+	"affects": ["None"]
 }

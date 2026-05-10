@@ -1,10 +1,7 @@
 Player.prototype.Init = function()
 {
 	this.playerID = undefined;
-	this.civ = Engine.QueryInterface(this.entity, IID_Identity).GetCiv();
 	this.color = undefined;
-	this.diplomacyColor = undefined;
-	this.displayDiplomacyColor = false;
 	this.popUsed = 0; // Population of units owned or trained by this player.
 	this.popBonuses = 0; // Sum of population bonuses of player's entities.
 	this.maxPop = 300; // Maximum population.
@@ -12,16 +9,12 @@ Player.prototype.Init = function()
 	this.resourceCount = {};
 	this.resourceGatherers = {};
 	this.tradingGoods = []; // Goods for next trade-route and its probabilities * 100.
-	this.team = -1;	// Team number of the player, players on the same team will always have ally diplomatic status. Also this is useful for team emblems, scoring, etc.
-	this.teamsLocked = false;
-	this.state = "active"; // Game state. One of "active", "defeated", "won".
-	this.diplomacy = [];	// Array of diplomatic stances for this player with respect to other players (including gaia and self).
-	this.sharedDropsites = false;
+	this.state = this.STATE_ACTIVE;
 	this.formations = this.template.Formations._string.split(" ");
 	this.startCam = undefined;
 	this.controlAllUnits = false;
 	this.isAI = false;
-	this.cheatsEnabled = false;
+	this.isRemoved = false;
 	this.panelEntities = [];
 	this.resourceNames = {};
 	this.hasSeenPlayers = []; // grapejuice
@@ -36,18 +29,18 @@ Player.prototype.Init = function()
 	};
 
 	// Initial resources.
-	let resCodes = Resources.GetCodes();
-	for (let res of resCodes)
+	const resCodes = Resources.GetCodes();
+	for (const res of resCodes)
 	{
 		this.resourceCount[res] = 300;
 		this.resourceNames[res] = Resources.GetResource(res).name;
 		this.resourceGatherers[res] = 0;
 	}
 	// Trading goods probability in steps of 5.
-	let resTradeCodes = Resources.GetTradableCodes();
-	let quotient = Math.floor(20 / resTradeCodes.length);
-	let remainder = 20 % resTradeCodes.length;
-	for (let i in resTradeCodes)
+	const resTradeCodes = Resources.GetTradableCodes();
+	const quotient = Math.floor(20 / resTradeCodes.length);
+	const remainder = 20 % resTradeCodes.length;
+	for (const i in resTradeCodes)
 		this.tradingGoods.push({
 			"goods": resTradeCodes[i],
 			"proba": 5 * (quotient + (+i < remainder ? 1 : 0))
@@ -76,7 +69,7 @@ Player.prototype.AddSeenPlayer = function(player, ent)
 	if (this.HasSeenPlayer(player))
 		return;
 
-	const diplomacy = this.IsAlly(player) ? "Allied" : this.IsNeutral(player) ? "Neutral" : "Enemy";
+	const diplomacy = Engine.QueryInterface(this.entity, IID_Diplomacy).IsAlly(player) ? "Allied" : Engine.QueryInterface(this.entity, IID_Diplomacy).IsNeutral(player) ? "Neutral" : "Enemy";
 
 	Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface).PushNotification({
 		"type": "discovered",

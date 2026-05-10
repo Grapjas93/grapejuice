@@ -23,7 +23,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/carthaginians/cavalry_spearman_e_m.xml</Actor>
   </VisualActor>

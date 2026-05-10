@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/han/champion_infantry_crossbowman_academy">
-  <Identity>
-    <Rank>Champion</Rank>
-  </Identity>
-  <Promotion disable=""/>
 </Entity>

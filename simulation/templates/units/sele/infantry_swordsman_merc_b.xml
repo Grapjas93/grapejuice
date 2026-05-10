@@ -9,6 +9,14 @@
            <AttackName> Rhomphaia </AttackName>
            <PrepareTime> 700 </PrepareTime>
            <RepeatTime> 850 </RepeatTime>
+            <Splash>
+                <Shape>Circular</Shape>
+                <Range>2</Range>
+                <FriendlyFire>false</FriendlyFire>
+                <Damage>
+                <Hack>3</Hack>
+                </Damage>
+            </Splash>
        </Melee>
    </Attack>
    <Resistance replace="">
@@ -26,8 +34,10 @@
     <SelectionGroupName>units/sele/infantry_swordsman_merc_b</SelectionGroupName>
     <GenericName>Thracian Mercenary Swordsman</GenericName>
     <SpecificName>Rhomphaiaphoros Thrakikós</SpecificName>
-    <Icon>units/sele_infantry_swordsman.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/sele/infantry_swordsman.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/sele/infantry_swordsman_merc_a</Entity>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Ammo>
+      <CurrAmmo>500</CurrAmmo>
+      <MaxAmmo>500</MaxAmmo>
+      <RefillTime>0</RefillTime>
+      <RefillAmount>500</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ammo</VisibleClasses>
+  </Identity>
+</Entity>

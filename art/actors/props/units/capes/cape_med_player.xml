@@ -4,7 +4,10 @@
   <group>
     <variant frequency="1" name="Base">
       <mesh>props/new/capes/cape_hd_medium.dae</mesh>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/cape_hd.dds" name="baseTex"/>
       </textures>
     </variant>
@@ -72,5 +75,5 @@
     <variant file="biped/cape_build_farm.xml"/>
     <variant file="biped/death_cape.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

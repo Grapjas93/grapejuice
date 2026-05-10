@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Auras datatype="tokens"> <!--grapejuice-->
+    units/charge_attack
+  </Auras>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Melee>
-      <Energy> 100 </Energy>
       <Damage>
         <Hack> 0 </Hack>
         <Pierce> 6 </Pierce>
@@ -10,14 +18,15 @@
       </Damage>
       <Bonuses>
         <BonusCavMelee>
-          <Classes>Cavalry</Classes>
+          <Classes>Cavalry Elephant</Classes>
           <Multiplier>5.0</Multiplier>
         </BonusCavMelee>
       </Bonuses>
+    <MaxRange>8</MaxRange>
     </Melee>
   </Attack>
   <Identity>
     <VisibleClasses datatype="tokens">Charger</VisibleClasses>
-    <Tooltip>Counters: 5x against cavalry.</Tooltip>
+    <Tooltip>Counters: 5× against Cavalry and Elephants.</Tooltip>
   </Identity>
 </Entity>

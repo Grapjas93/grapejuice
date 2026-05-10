@@ -37,7 +37,7 @@
     <SelectionGroupName>units/rome/infantry_javelineer_b</SelectionGroupName>
     <GenericName>Roman Skirmisher</GenericName>
     <SpecificName>Vēles</SpecificName>
-    <Icon>units/rome_infantry_javelinist.png</Icon>
+    <Icon>units/rome/infantry_javelinist.png</Icon>
   </Identity>
   <Promotion>
     <Entity>units/rome/infantry_javelineer_a</Entity>

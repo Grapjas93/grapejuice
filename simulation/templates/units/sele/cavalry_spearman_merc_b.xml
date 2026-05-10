@@ -27,8 +27,10 @@
     <GenericName>Companion Cavalry</GenericName>
     <SpecificName>Hippos Hetairike</SpecificName>
     <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
-    <Icon>units/mace_cavalry_spearman_merc.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/mace/cavalry_spearman_merc.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/sele/cavalry_spearman_merc_a</Entity>

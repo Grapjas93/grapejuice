@@ -17,7 +17,10 @@
   </group>
   <group>
     <variant frequency="1" name="scale-armband-1a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_armband_01_01.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_armband_01_spec.png" name="specTex"/>
       </textures>
@@ -26,7 +29,10 @@
       </props>
     </variant>
     <variant frequency="1" name="scale-armband-1b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_armband_01_02.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_armband_01_spec.png" name="specTex"/>
       </textures>
@@ -35,7 +41,10 @@
       </props>
     </variant>
     <variant frequency="1" name="scale-armband-full-1a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_armband_full_01_01.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_armband_full_01_spec.png" name="specTex"/>
       </textures>
@@ -44,7 +53,10 @@
       </props>
     </variant>
     <variant frequency="1" name="scale-armband-full-1b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_armband_full_01_02.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_armband_full_01_spec.png" name="specTex"/>
       </textures>
@@ -53,7 +65,10 @@
       </props>
     </variant>
     <variant frequency="1" name="scale-sleeve-full-1a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_sleeve_full_01_01.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_sleeve_full_01_spec.png" name="specTex"/>
       </textures>
@@ -62,7 +77,10 @@
       </props>
     </variant>
     <variant frequency="1" name="scale-sleeve-full-1b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/scale_sleeve_full_01_02.png" name="baseTex"/>
         <texture file="skeletal/pers/scale_sleeve_full_01_spec.png" name="specTex"/>
       </textures>
@@ -85,5 +103,5 @@
     <variant name="carry_meat"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans_spec_helmet.xml</material>
+  <material>player_trans_norm_spec_helmet.xml</material>
 </actor>

@@ -3,11 +3,15 @@
   <Auras datatype="tokens">
     limited_refill_ammo_30range
   </Auras>
+  <Ammo>
+      <CurrAmmo>300</CurrAmmo>
+      <MaxAmmo>300</MaxAmmo>
+      <RefillTime>0</RefillTime>
+      <RefillAmount>300</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
    <Attack>
     <Melee>
-      <Ammo>300</Ammo>
-      <RefillAmount>0</RefillAmount>
-      <RefillTime>3000</RefillTime>
       <AttackName> Spear </AttackName>
       <PrepareTime> 925 </PrepareTime>
       <RepeatTime> 1075 </RepeatTime>
@@ -44,12 +48,15 @@
     <Max>180</Max>
   </Health>
   <Identity>
-    <Classes datatype="tokens">-ConquestCritical Supply Support AmmoSupply</Classes>
+    <Classes datatype="tokens">-ConquestCritical Supply Support AmmoSupply Soldier</Classes>
     <VisibleClasses datatype="tokens">Supply Support Organic AmmoSupply</VisibleClasses>
     <GenericName>Ammo Cart</GenericName>
     <Tooltip>A mobile resupply point for units that require ammo. Cannot be re-supplied by mobile re-arm auras.</Tooltip>
     <Formations disable=""/>
     <Icon>units/ammo_cart.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_city</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <xp>10</xp>

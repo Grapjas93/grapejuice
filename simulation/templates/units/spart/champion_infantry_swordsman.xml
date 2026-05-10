@@ -37,13 +37,15 @@
     <GenericName>Skiritai Commando</GenericName>
     <SpecificName>Ékdromos Skirítēs</SpecificName>
     <Rank>Elite</Rank>
-    <Icon>units/spart_champion_infantry_sword.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/spart/champion_infantry_sword.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <metal op="add">3</metal>
   </Loot>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/spartans/infantry_swordsman_c.xml</Actor>
   </VisualActor>

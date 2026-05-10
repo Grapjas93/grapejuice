@@ -1,0 +1,1 @@
+ReferencePage.prototype.StatsFunctions.unshift(getEnergyTooltip, getAmmoTooltip)

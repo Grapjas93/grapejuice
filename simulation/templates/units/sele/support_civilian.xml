@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_civilian">
+  <Identity>
+    <Civ>sele</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Syrian Laborer</GenericName>
+    <SpecificName>Geōrgos Syrikos</SpecificName>
+    <Icon>units/sele/support_civilian.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/seleucids/citizen_{phenotype}.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -27,9 +27,9 @@
 <Identity>
   <Civ>han</Civ>
   <SpecificName>Liú Bāng</SpecificName>
-  <Icon>units/han/hero_liu_bang.png</Icon>
+  <Icon>units/han//hero_liu_bang.png</Icon>
 </Identity>
-<Promotion disable=""/>
+
 <VisualActor>
   <Actor>units/han/hero_cavalry_swordsman_liu_bang_m.xml</Actor>
 </VisualActor>

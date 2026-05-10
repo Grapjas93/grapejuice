@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="brazier_init">
+<Entity parent="brazier">
   <VisualActor>
     <Actor>props/special/eyecandy/brazier_off.xml</Actor>
     <FoundationActor>structures/fndn_1x1.xml</FoundationActor>
   </VisualActor>
-  <Cost>
-    <BuildTime>10</BuildTime>
-    <Resources>
-      <wood>0</wood>
-      <metal>0</metal>
-    </Resources>
-  </Cost>
   <Identity>
-    <RequiredTechnology>phase_village</RequiredTechnology>
+    <GenericName>Brazier (Extinguished)</GenericName>
+    <Tooltip>Can be turned on. While on, nearby units shoot flaming projectiles that apply burning. Costs 1 wood per second while on.</Tooltip>
   </Identity>
-  <Trainer>
-    <Entities replace="" datatype="tokens">
-      brazier_lit
-    </Entities>
-  </Trainer>
+  <Upgrade>
+    <Brazier_li>
+      <Entity>brazier_lit</Entity>
+      <Tooltip>Light the brazier.</Tooltip>
+      <Time>10</Time>
+    </Brazier_li>
+  </Upgrade>
 </Entity>

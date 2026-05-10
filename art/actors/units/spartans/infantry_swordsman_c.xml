@@ -32,22 +32,34 @@
   </group>
   <group>
     <variant name="epilektoi-7">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_07.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="epilektoi-8">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_08.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="epilektoi-9">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_09.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="epilektoi-10">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/athen/epilektos_10.png" name="baseTex"/>
       </textures>
     </variant>
@@ -97,5 +109,5 @@
     <variant file="biped/build.xml"/>
     <variant file="biped/build_farm.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

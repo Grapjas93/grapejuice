@@ -31,8 +31,10 @@
     <SelectionGroupName>units/sele/infantry_javelineer_b</SelectionGroupName>
     <GenericName>Arab Javelineer</GenericName>
     <SpecificName>Pezakontistès Aravikós</SpecificName>
-    <Icon>units/pers_infantry_javelinist.png</Icon>
-    <RequiredTechnology>phase_village</RequiredTechnology>
+    <Icon>units/pers/infantry_javelinist.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_village</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/sele/infantry_javelineer_a</Entity>

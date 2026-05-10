@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="units/merc_black_cloak">
-  <Identity>
-    <Lang>greek</Lang>
-    <GenericName>Thracian Black Cloak</GenericName>
-    <SpecificName>Rhomphaiophoros</SpecificName>
-    <Icon>units/sele_infantry_swordsman.png</Icon>
-	<Rank>Champion</Rank>
-  </Identity>
-  <Promotion disable=""/>
-  <VisualActor>
-    <Actor>units/macedonians/infantry_swordsman_c_thracian.xml</Actor>
-  </VisualActor>
 </Entity>

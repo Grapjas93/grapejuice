@@ -18,7 +18,9 @@
     <Tooltip>A resting place for wounded soldiers.</Tooltip>
     <VisibleClasses datatype="tokens">Town Camp</VisibleClasses>
     <Icon>structures/camp.png</Icon>
-    <RequiredTechnology>phase_village</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_village</Techs>
+    </Requirements>
   </Identity>
   <Obstruction>
     <Static width="10.5" depth="10.0"/>

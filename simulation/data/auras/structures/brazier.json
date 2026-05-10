@@ -1,7 +1,7 @@
 {
 	"type": "range",
 	"radius": 20,
-	"affects": ["Ranged"],
+	"affects": ["Ranged !Slinger"],
 	"modifications": [
 		{ "value": "Attack/Ranged/Projectile/ActorName", "replace": "props/units/weapons/rock_flaming.xml", "affects": "StoneThrower" },
 		{ "value": "Attack/Ranged/Projectile/ImpactActorName", "replace": "props/units/weapons/rock_explosion_fire.xml", "affects": "StoneThrower" },
@@ -14,5 +14,6 @@
 		{ "value": "Attack/Ranged/ApplyStatus/Burning/Damage/Fire", "multiply": 10.0, "affects": "StoneThrower" }
 	],
 	"auraName": "Brazier",
-	"auraDescription": "Projectiles shot from while in range apply burning."
+	"auraDescription": "Projectiles shot from while in range apply burning.",
+	"overlayIcon": "art/textures/ui/session/auras/flaming_projectiles.png"
 }

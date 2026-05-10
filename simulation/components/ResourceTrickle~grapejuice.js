@@ -1,3 +1,4 @@
+// grapejuice - allows for resource trickle to be a negative number so we can subtract a resource with an aura
 ResourceTrickle.prototype.Schema =
 	"<a:help>Controls the resource trickle ability of the unit.</a:help>" +
 	"<element name='Rates' a:help='Trickle Rates'>" +

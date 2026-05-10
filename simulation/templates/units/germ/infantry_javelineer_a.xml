@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/germ/infantry_javelineer_b">
+  <Identity>
+    <Rank>Advanced</Rank>
+  </Identity>
+  <Promotion>
+    <Entity>units/germ/infantry_javelineer_e</Entity>
+  </Promotion>
+  <VisualActor>
+    <Actor>units/germans/infantry_javelinist_a.xml</Actor>
+  </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 10.75 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Ranged>
+           <AttackName> Javelin </AttackName>
+           <PrepareTime> 1650 </PrepareTime>
+           <RepeatTime> 1800 </RepeatTime>
+       </Ranged>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 750 </PrepareTime>
+           <RepeatTime> 900 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 4 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+</Entity>

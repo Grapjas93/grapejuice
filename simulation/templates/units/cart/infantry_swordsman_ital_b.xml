@@ -33,8 +33,10 @@
     <GenericName>Samnite Swordsman</GenericName>
     <SpecificName>Seḫīr Romaḥ</SpecificName>
     <SelectionGroupName>units/cart/infantry_swordsman_ital_b</SelectionGroupName>
-    <Icon>units/cart_infantry_swordsman_2.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/cart/infantry_swordsman_2.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/cart/infantry_swordsman_ital_a</Entity>

@@ -35,8 +35,10 @@
     <GenericName>Blemmye Desert Raider</GenericName>
     <SpecificName>nhw Bulahau gml</SpecificName>
     <VisibleClasses datatype="tokens">Camel Mercenary</VisibleClasses>
-    <Icon>units/kush_camel_javelinist.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/kush/camel_javelinist.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/kush/cavalry_javelineer_merc_a</Entity>

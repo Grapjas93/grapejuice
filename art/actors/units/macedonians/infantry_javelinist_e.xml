@@ -12,7 +12,10 @@
         <prop actor="props/units/capes/cape_long_player_skirmisher.xml" attachpoint="root"/>
         <prop actor="props/units/weapons/sarissa.xml" attachpoint="back"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/hele/linothorax_01_spec.png" name="specTex"/>
       </textures>
     </variant>
@@ -91,27 +94,42 @@
   </group>
   <group>
     <variant name="illy-linothorax-01-a">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/linothorax_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="illy-linothorax-01-b">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/linothorax_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="illy-linothorax-01-c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/linothorax_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="mace-linothora-1-h">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/mace/linothorax_01_08.png" name="baseTex"/>
       </textures>
     </variant>
     <variant name="mace-linothora-1-i">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/mace/linothorax_01_09.png" name="baseTex"/>
       </textures>
     </variant>
@@ -161,5 +179,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_cape_long.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

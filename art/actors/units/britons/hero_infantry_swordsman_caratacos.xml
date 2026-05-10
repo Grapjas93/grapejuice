@@ -13,7 +13,10 @@
         <prop actor="props/units/capes/cape_long_gaul.xml" attachpoint="root"/>
         <prop actor="props/units/weapons/jav_projectile.xml" attachpoint="ammo"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/brit/linothorax_caratacos_01_01.png" name="baseTex"/>
         <texture file="skeletal/brit/linothorax_caratacos_01_spec.png" name="specTex"/>
       </textures>
@@ -35,5 +38,5 @@
     <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_cape_gaul.xml"/>
   </group>
-  <material>player_trans_spec.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

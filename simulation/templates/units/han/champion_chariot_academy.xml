@@ -29,7 +29,9 @@
     <GenericName>Han War Chariot</GenericName>
     <SpecificName>Zhanche</SpecificName>
     <VisibleClasses datatype="tokens">Chariot</VisibleClasses>
-    <RequiredTechnology>phase_city</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">-unlock_champion_cavalry phase_city</Techs>
+    </Requirements>
     <Icon>units/han/chariot.png</Icon>
   </Identity>
   <VisualActor>

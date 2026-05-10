@@ -35,8 +35,10 @@
     <SelectionGroupName>units/kush/infantry_pikeman_b</SelectionGroupName>
     <GenericName>Meroitic Pikeman</GenericName>
     <SpecificName>siȝwrd</SpecificName>
-    <Icon>units/kush_infantry_pikeman.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/kush/infantry_pikeman.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/kush/infantry_pikeman_a</Entity>

@@ -18,10 +18,13 @@
         <prop actor="props/units/maur_trader_rein_right.xml" attachpoint="horseleft_rein"/>
         <prop actor="props/units/maur_trader_rein_left.xml" attachpoint="horseright_rein"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="props/maur_trader.png" name="baseTex"/>
       </textures>
     </variant>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

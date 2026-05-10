@@ -23,14 +23,13 @@
    <Auras datatype="tokens">
     units/heroes/kush_hero_arakamani_1
     units/heroes/kush_hero_arakamani_2
-    units/heroes/kush_hero_arakamani_3
   </Auras>
   <Identity>
     <Civ>kush</Civ>
     <Lang>napatan</Lang>
     <GenericName>Arakamani</GenericName>
     <SpecificName>I͗rk-k-I͗mn H̱nm-ı͗-Rʿ</SpecificName>
-    <Icon>units/kush_hero_arakamani.png</Icon>
+    <Icon>units/kush/hero_arakamani.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/kushites/hero_elephantry_arakamani_m.xml</Actor>

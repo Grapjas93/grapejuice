@@ -40,7 +40,7 @@
 {
   "CircularMap": true,
   "Description": "A map filled with impassable mountains and a great number of natural resources.",
-  "Keywords": [	
+  "Keywords": [
   "grapejuice"
   ],
   "Name": "Alpine Mountains (3)",
@@ -1543,28 +1543,28 @@
 			<Actor seed="22568"/>
 		</Entity>
 		<Entity uid="3180">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>1</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-2.4356"/>
 			<Actor seed="39104"/>
 		</Entity>
 		<Entity uid="3181">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>1</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-2.2882"/>
 			<Actor seed="25546"/>
 		</Entity>
 		<Entity uid="3182">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>1</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-2.29743"/>
 			<Actor seed="14958"/>
 		</Entity>
 		<Entity uid="3183">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>1</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-2.04863"/>
@@ -1620,28 +1620,28 @@
 			<Actor seed="5726"/>
 		</Entity>
 		<Entity uid="3191">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>3</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="2.02292"/>
 			<Actor seed="14188"/>
 		</Entity>
 		<Entity uid="3192">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>3</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="2.04673"/>
 			<Actor seed="26504"/>
 		</Entity>
 		<Entity uid="3193">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>3</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="2.1867"/>
 			<Actor seed="47594"/>
 		</Entity>
 		<Entity uid="3194">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>3</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="2.12752"/>
@@ -1718,28 +1718,28 @@
 			<Actor seed="45878"/>
 		</Entity>
 		<Entity uid="3207">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>2</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-1.5086"/>
 			<Actor seed="38374"/>
 		</Entity>
 		<Entity uid="3208">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>2</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-1.7163"/>
 			<Actor seed="25986"/>
 		</Entity>
 		<Entity uid="3209">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>2</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-1.71514"/>
 			<Actor seed="45162"/>
 		</Entity>
 		<Entity uid="3210">
-			<Template>skirmish/units/default_support_female_citizen</Template>
+			<Template>skirmish/units/default_support_civilian</Template>
 			<Player>2</Player>
 			<Position x="0" z="0"/>
 			<Orientation y="-1.58877"/>

@@ -26,6 +26,8 @@
          </Entity>
    </Resistance>
    <Identity>
-    <RequiredTechnology>equine_transports</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">equine_transports</Techs>
+    </Requirements>
   </Identity>
 </Entity>

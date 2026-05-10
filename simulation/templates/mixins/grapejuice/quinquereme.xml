@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Ammo>
+      <CurrAmmo>60</CurrAmmo>
+      <MaxAmmo>60</MaxAmmo>
+      <RefillTime>0</RefillTime>
+      <RefillAmount>60</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
   <Attack>
     <Ranged>
-      <Ammo>60</Ammo>
-      <RefillAmount>0</RefillAmount>
-      <RefillTime>0</RefillTime>
       <AttackName>Bow</AttackName>
       <Projectile>
         <Spread>4</Spread>

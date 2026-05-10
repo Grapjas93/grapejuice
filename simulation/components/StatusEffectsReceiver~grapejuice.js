@@ -12,6 +12,8 @@
 StatusEffectsReceiver.prototype.ApplyStatus = function(effectData, attacker, attackerOwner)
 {
 	for (let effect in effectData)
+		// Only apply statuseffect if it has an interval.
+		// We can activate/deactivate statuseffect attacks with an aura by changing interval from 0 to 0> (braziers for example) / grapejuice
 		if (effectData[effect].Interval > 0)
 			this.AddStatus(effect, effectData[effect], attacker, attackerOwner);
 

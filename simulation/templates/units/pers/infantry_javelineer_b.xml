@@ -36,8 +36,10 @@
     <SelectionGroupName>units/pers/infantry_javelineer_b</SelectionGroupName>
     <GenericName>Lydian Auxiliary</GenericName>
     <SpecificName>Pastiš Spardiya</SpecificName>
-    <Icon>units/pers_infantry_javelinist.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/pers/infantry_javelinist.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/pers/infantry_javelineer_a</Entity>

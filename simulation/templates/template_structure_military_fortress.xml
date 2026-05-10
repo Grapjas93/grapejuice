@@ -15,6 +15,16 @@
         <FriendlyFire>false</FriendlyFire>
         <LaunchPoint y="3"/>
       </Projectile>
+      <ApplyStatus>
+			 <Burning>
+			   <Interval>0</Interval>
+			   <Damage>
+				  <Fire>2</Fire>
+			   </Damage>
+			   <Stackability>Stack</Stackability>
+			   <Duration>9000</Duration>
+			 </Burning>
+      </ApplyStatus>
       <PreferredClasses datatype="tokens">Human</PreferredClasses>
       <RangeOverlay>
         <LineTexture>outline_border.png</LineTexture>
@@ -34,13 +44,13 @@
     </Distance>
   </BuildRestrictions>
   <BuildingAI>
-    <DefaultArrowCount>4</DefaultArrowCount>
+    <DefaultArrowCount>10</DefaultArrowCount>
     <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
     <GarrisonArrowClasses>Soldier</GarrisonArrowClasses>
   </BuildingAI>
   <Capturable>
     <CapturePoints op="mul">8</CapturePoints>
-    <RegenRate>10.0</RegenRate>
+    <RegenRate>45.0</RegenRate>
   </Capturable>
   <Cost>
     <BuildTime>450</BuildTime>
@@ -70,7 +80,9 @@
     <Classes datatype="tokens">GarrisonFortress</Classes>
     <VisibleClasses datatype="tokens">Defensive Fortress</VisibleClasses>
     <Icon>structures/fortress.png</Icon>
-    <RequiredTechnology>phase_city</RequiredTechnology>
+    <Requirements>
+      <Techs datatype="tokens">phase_city</Techs>
+    </Requirements>
   </Identity>
   <Loot>
     <wood>60</wood>
@@ -83,9 +95,12 @@
   <Researcher>
     <Technologies datatype="tokens">
       attack_soldiers_will
+      tower_murderholes
+      tower_garrison
       art_of_war
       poison_arrows
       poison_blades
+      roman_reforms
     </Technologies>
   </Researcher>
   <Sound>
@@ -107,9 +122,6 @@
     <Entities datatype="tokens">
       units/{civ}/ammo_cart
     </Entities>
-  </Trainer>
-  <Trainer>
-    <BatchTimeModifier>0.8</BatchTimeModifier>
   </Trainer>
   <Vision>
     <Range>90</Range>

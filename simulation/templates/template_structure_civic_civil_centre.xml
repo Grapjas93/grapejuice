@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_structure_civic">
   <AlertRaiser>
-    <List datatype="tokens">FemaleCitizen</List>
+    <List datatype="tokens">Civilian</List>
     <RaiseAlertRange>120</RaiseAlertRange>
     <EndOfAlertRange>180</EndOfAlertRange>
     <SearchRange>100</SearchRange>
@@ -38,20 +38,20 @@
     </Distance>
   </BuildRestrictions>
   <BuildingAI>
-    <DefaultArrowCount>3</DefaultArrowCount>
+    <DefaultArrowCount>0</DefaultArrowCount>
     <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
     <GarrisonArrowClasses>Soldier</GarrisonArrowClasses>
   </BuildingAI>
   <Capturable>
     <CapturePoints>2500</CapturePoints>
-    <RegenRate>5.0</RegenRate>
+    <RegenRate>30</RegenRate>
   </Capturable>
   <Cost>
     <BuildTime>500</BuildTime>
     <Resources>
-      <wood>500</wood>
-      <stone>500</stone>
-      <metal>500</metal>
+      <wood>300</wood>
+      <stone>300</stone>
+      <metal>250</metal>
     </Resources>
   </Cost>
   <Footprint>
@@ -73,15 +73,15 @@
   <Identity>
     <GenericName>Civic Center</GenericName>
     <SelectionGroupName>template_structure_civic_civil_centre</SelectionGroupName>
-    <Tooltip>Build in own or neutral territory. Acquire large tracts of territory. Territory root. Train Citizens and research technologies. Garrison Soldiers for additional arrows.</Tooltip>
+    <Tooltip>Build in own or neutral territory. Acquire large tracts of territory. Territory root. Train Civilians and research technologies. Garrison Soldiers for additional arrows.</Tooltip>
     <Classes datatype="tokens">CivCentre</Classes>
     <VisibleClasses datatype="tokens">Defensive CivilCentre</VisibleClasses>
     <Icon>structures/civic_centre.png</Icon>
   </Identity>
   <Loot>
-    <wood>100</wood>
-    <stone>100</stone>
-    <metal>100</metal>
+    <wood>60</wood>
+    <stone>60</stone>
+    <metal>50</metal>
   </Loot>
   <Minimap>
     <Type>structure</Type>
@@ -99,15 +99,15 @@
       phase_town_{civ}
       phase_city_{civ}
       unlock_shared_los
-      unlock_shared_dropsites
-      unlock_spies
-      spy_counter
       archery_tradition
       hoplite_tradition
       hellenistic_metropolis
+      roman_roads
+      unlock_spies
+      spy_counter
     </Technologies>
   </Researcher>
-  <Resistance replace="">
+  <Resistance>
     <Entity>
       <Damage>
         <Hack op="add">5</Hack>
@@ -138,7 +138,7 @@
   <Trainer>
     <BatchTimeModifier>0.8</BatchTimeModifier>
     <Entities datatype="tokens">
-      units/{civ}/support_female_citizen
+      units/{native}/support_civilian
     </Entities>
   </Trainer>
   <Vision>

@@ -31,8 +31,10 @@
     <GenericName>Tarantine Settler Cavalry</GenericName>
     <SpecificName>Hippeús Tarantînos</SpecificName>
     <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
-    <Icon>units/mace_cavalry_javelinist.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/mace/cavalry_javelinist.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/ptol/cavalry_javelineer_merc_a</Entity>

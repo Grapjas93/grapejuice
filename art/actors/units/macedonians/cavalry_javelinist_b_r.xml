@@ -15,42 +15,66 @@
   </group>
   <group>
     <variant frequency="1" name="tunic_advanced_01_03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/thrac/tunic_advanced_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_advanced_02_02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/thrac/tunic_advanced_02_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_advanced_04_03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/thrac/tunic_advanced_04_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_advanced_03_01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/thrac/tunic_advanced_03_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_advanced_04_02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/thrac/tunic_advanced_04_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-illyrian-advanced-01-c">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/tunic_advanced_01_03.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-illyrian-advanced-01-d">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/tunic_advanced_02_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic-illyrian-advanced-01-e">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/illy/tunic_advanced_02_02.png" name="baseTex"/>
       </textures>
     </variant>
@@ -79,5 +103,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

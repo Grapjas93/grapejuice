@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Auras datatype="tokens"> <!--grapejuice-->
+    units/charge_attack
+  </Auras>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
    <Resistance replace="">
         <Entity>
             <Damage>
@@ -11,7 +20,6 @@
    </Resistance>
   <Attack>
     <Melee>
-	  <Energy>0</Energy>
       <AttackName>Ram</AttackName>
       <Damage>
         <Crush>150</Crush>

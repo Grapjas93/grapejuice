@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/hp_inf|grapejuice/melee_axeman|spec_champ|template_unit_champion_infantry_axeman">
+  <Cost>
+    <Resources>
+      <food op="add">-20</food>
+      <metal op="add">20</metal>
+    </Resources>
+  </Cost>
+  <Health>
+    <Max op="add">-40</Max>
+  </Health>
+  <Identity>
+    <Civ>germ</Civ>
+    <GenericName>Cimbri Raider</GenericName>
+    <SpecificName>Slōgijanōz</SpecificName>
+    <VisibleClasses datatype="tokens">Guerilla</VisibleClasses>
+    <Icon>units/germ/champion_infantry_axeman.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">
+        -phase_city
+        phase_town
+      </Techs>
+    </Requirements>
+  </Identity>
+  <Loot>
+    <food op="add">-2</food>
+    <metal op="add">2</metal>
+  </Loot>
+  <VisualActor>
+    <Actor>units/germans/infantry_axeman_c.xml</Actor>
+  </VisualActor>
+   <UnitMotion>
+       <WalkSpeed> 16.2 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Axe </AttackName>
+           <PrepareTime> 1050 </PrepareTime>
+           <RepeatTime> 1200 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 2 </Crush>
+               <Hack> 4 </Hack>
+               <Pierce> 5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+</Entity>

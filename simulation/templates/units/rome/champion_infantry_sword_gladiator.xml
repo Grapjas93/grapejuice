@@ -12,9 +12,6 @@
        </Melee>
        <Ranged>
 		  <AttackName>Javelin</AttackName>
-		  <Ammo>1</Ammo>
-		  <RefillAmount>0</RefillAmount>
-		  <RefillTime>0</RefillTime>
 		  <Damage>
 			<Pierce>75</Pierce>
 		  </Damage>
@@ -59,10 +56,12 @@
     <GenericName>Gladiator Swordsman</GenericName>
     <SpecificName>Murmillo</SpecificName>
     <Rank>Elite</Rank>
-    <Icon>units/rome_champion_infantry_gladiator_sword.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/rome/champion_infantry_gladiator_sword.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
-  <Promotion disable=""/>
+
   <TrainingRestrictions>
     <Category>Gladiator</Category>
   </TrainingRestrictions>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/germ/cavalry_spearman_a">
+  <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+
+  <VisualActor>
+    <Actor>units/germans/cavalry_spearman_e_m.xml</Actor>
+  </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 17.05 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Spear </AttackName>
+           <PrepareTime> 925 </PrepareTime>
+           <RepeatTime> 1075 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 5 </Crush>
+               <Hack> 3 </Hack>
+               <Pierce> 2.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+</Entity>

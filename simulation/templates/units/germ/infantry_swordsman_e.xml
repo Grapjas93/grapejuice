@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/germ/infantry_swordsman_a">
+  <Identity>
+    <Rank>Elite</Rank>
+  </Identity>
+
+  <VisualActor>
+    <Actor>units/germans/infantry_swordsman_e.xml</Actor>
+  </VisualActor>
+  <UnitMotion>
+       <WalkSpeed> 9.5 </WalkSpeed>
+       <RunMultiplier>1.50</RunMultiplier>
+   </UnitMotion>
+   <Attack>
+       <Melee>
+           <AttackName> Sword </AttackName>
+           <PrepareTime> 775 </PrepareTime>
+           <RepeatTime> 925 </RepeatTime>
+       </Melee>
+   </Attack>
+   <Resistance>
+        <Entity>
+            <Damage>
+               <Crush> 4 </Crush>
+               <Hack> 6 </Hack>
+               <Pierce> 6.5 </Pierce>
+            </Damage>
+         </Entity>
+   </Resistance>
+</Entity>

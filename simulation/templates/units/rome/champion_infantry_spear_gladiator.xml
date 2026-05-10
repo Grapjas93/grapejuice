@@ -40,10 +40,12 @@
     <GenericName>Gladiator Spearman</GenericName>
     <SpecificName>Hoplomachus</SpecificName>
     <Rank>Elite</Rank>
-    <Icon>units/rome_champion_infantry_gladiator_spear.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/rome/champion_infantry_gladiator_spear.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
-  <Promotion disable=""/>
+
   <TrainingRestrictions>
     <Category>Gladiator</Category>
   </TrainingRestrictions>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="grapejuice/civilian|grapejuice/hp_inf|template_unit_support_civilian">
+  <Builder>
+    <Entities datatype="tokens">
+      structures/kush/pyramid_large
+      structures/kush/temple_amun
+      structures/kush/camp_blemmye
+      structures/kush/camp_noba
+    </Entities>
+  </Builder>
+  <Identity>
+    <Civ>kush</Civ>
+    <Lang>napatan</Lang>
+    <GenericName>Kushite Laborer</GenericName>
+    <SpecificName>Sḫtj</SpecificName>
+    <Icon>units/kush/support_civilian.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/kushites/citizen_{phenotype}.xml</Actor>
+  </VisualActor>
+</Entity>

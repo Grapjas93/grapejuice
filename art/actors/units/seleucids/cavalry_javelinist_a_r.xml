@@ -14,17 +14,26 @@
   </group>
   <group>
     <variant frequency="1" name="padded_02_01">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/padded_02_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="padded_02_02">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/padded_02_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="padded_02_03">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/pers/padded_02_03.png" name="baseTex"/>
       </textures>
     </variant>
@@ -53,5 +62,5 @@
     <variant file="biped/gather_meat.xml"/>
     <variant file="biped/rider/death_ranged.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

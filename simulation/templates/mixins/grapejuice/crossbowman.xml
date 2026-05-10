@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
+  <Auras datatype="tokens"> <!--grapejuice-->
+    units/charge_attack
+  </Auras>
+  <Ammo>
+      <CurrAmmo>30</CurrAmmo>
+      <MaxAmmo>30</MaxAmmo>
+      <RefillTime>0</RefillTime>
+      <RefillAmount>30</RefillAmount>
+      <RefillCostMult>1</RefillCostMult>
+  </Ammo>
+  <Energy>
+    <CurrEnergy>100</CurrEnergy>
+    <MaxEnergy>100</MaxEnergy>
+    <RegenRate>1000</RegenRate>
+    <RegenAmount>5</RegenAmount>
+  </Energy>
   <Attack>
     <Ranged>
       <AttackName>Crossbow</AttackName>
-      <Ammo>30</Ammo>
-      <RefillAmount>0</RefillAmount>
-      <RefillTime>0</RefillTime>
       <Damage>
         <Pierce>35</Pierce>
       </Damage>
@@ -28,7 +41,6 @@
     </Ranged>
     <Melee>
       <AttackName>Mace</AttackName>
-      <Energy>100</Energy>
       <Damage>
         <Crush>7</Crush>
       </Damage>

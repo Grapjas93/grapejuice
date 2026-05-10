@@ -9,6 +9,14 @@
            <AttackName> Rhomphaia </AttackName>
            <PrepareTime> 1050 </PrepareTime>
            <RepeatTime> 1200 </RepeatTime>
+            <Splash>
+                <Shape>Circular</Shape>
+                <Range>2</Range>
+                <FriendlyFire>false</FriendlyFire>
+                <Damage>
+                <Hack>3</Hack>
+                </Damage>
+            </Splash>
        </Melee>
        <Ranged>
            <AttackName> Javelin </AttackName>
@@ -30,8 +38,10 @@
     <Lang>greek</Lang>
     <GenericName>Thracian Black Cloak</GenericName>
     <SpecificName>Rhomphaiaphoros</SpecificName>
-    <Icon>units/thracian_rhomphaia.png</Icon>
-    <RequiredTechnology>unlock_champion_infantry</RequiredTechnology>
+    <Icon>units/thrac/champion_infantry_swordsman.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">-phase_city unlock_champion_infantry</Techs>
+    </Requirements>
   </Identity>
   <VisualActor>
     <Actor>units/macedonians/infantry_swordsman_c_thracian.xml</Actor>

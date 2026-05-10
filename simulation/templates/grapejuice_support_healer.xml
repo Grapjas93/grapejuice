@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_unit_support">
+  <Auras datatype="tokens">
+    units/combat_priest_1
+    units/combat_priest_2
+  </Auras>
   <Attack>
     <Melee>
       <AttackName>Mace</AttackName>
@@ -35,7 +39,6 @@
     <GenericName>Healer</GenericName>
     <SelectionGroupName>template_unit_support_healer</SelectionGroupName>
     <Rank>Basic</Rank>
-    <RequiredTechnology>phase_town</RequiredTechnology>
     <Tooltip>Treats wounded units inside buildings. Can also build field camps.</Tooltip>
   </Identity>
   <Loot>

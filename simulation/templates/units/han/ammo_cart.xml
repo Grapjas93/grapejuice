@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity parent="grapejuice_support_ammo_cart">
+<Entity parent="grapejuice/melee_spearman|grapejuice_support_ammo_cart">
+  <Energy disable="" />
   <UnitMotion>
        <WalkSpeed> 9.15 </WalkSpeed>
        <RunMultiplier>1.50</RunMultiplier>
@@ -13,7 +14,6 @@
           <Hack>1</Hack>
           <Pierce>4.5</Pierce>
         </Damage>
-        <MaxRange>4</MaxRange>
       </Melee>
    </Attack>
    <Resistance replace="">
@@ -31,7 +31,6 @@
   </Footprint>
   <Identity>
     <Civ>han</Civ>
-    <Tooltip>Counters: 5× vs Cavalry.</Tooltip>
   </Identity>
   <VisualActor>
     <Actor>units/han/ammo_cart.xml</Actor>

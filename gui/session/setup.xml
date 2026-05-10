@@ -8,4 +8,8 @@
 		sprite="stretched:session/icons/bell_level1.png"
 		size="14 14"
 	/>
+	<icon name="icon_focusflare"
+		sprite="stretched:session/icons/focus-flare.png"
+		size="14 14"
+	/>
 </setup>

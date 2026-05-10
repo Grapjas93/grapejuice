@@ -17,17 +17,26 @@
   </group>
   <group>
     <variant frequency="1" name="tunic_hellenistic_elite_1">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/mace/tunic_hellenistic_sleeveless_boots_01_01.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_hellenistic_elite_2">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/mace/tunic_hellenistic_sleeveless_boots_01_02.png" name="baseTex"/>
       </textures>
     </variant>
     <variant frequency="1" name="tunic_hellenistic_elite_3">
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
         <texture file="skeletal/mace/tunic_hellenistic_sleeveless_boots_01_03.png" name="baseTex"/>
       </textures>
     </variant>
@@ -77,5 +86,5 @@
     <variant file="biped/build_farm.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
-  <material>player_trans.xml</material>
+  <material>player_trans_norm_spec.xml</material>
 </actor>

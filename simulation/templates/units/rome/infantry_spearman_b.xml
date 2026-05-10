@@ -38,8 +38,10 @@
     <SelectionGroupName>units/rome/infantry_spearman_b</SelectionGroupName>
     <GenericName>Veteran Spearman</GenericName>
     <SpecificName>Triārius</SpecificName>
-    <Icon>units/rome_infantry_spearman.png</Icon>
-    <RequiredTechnology>phase_town</RequiredTechnology>
+    <Icon>units/rome/infantry_spearman.png</Icon>
+    <Requirements>
+      <Techs datatype="tokens">phase_town</Techs>
+    </Requirements>
   </Identity>
   <Promotion>
     <Entity>units/rome/infantry_spearman_a</Entity>

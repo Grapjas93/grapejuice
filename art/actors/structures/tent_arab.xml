@@ -7,7 +7,10 @@
       <props>
         <prop actor="props/structures/decals/dirt_2x2.xml" attachpoint="root"/>
       </props>
-      <textures>
+            <textures>
+        <texture file="default_norm.png" name="normTex"/>
+        <texture file="null_black.dds" name="specTex"/>
+
 		<texture file="structural/tent_arab.png" name="baseTex"/>
 		<texture file="structural/tent_arab_norm.png" name="normTex"/>
         <texture file="structural/tent_arab_spec.png" name="specTex"/>

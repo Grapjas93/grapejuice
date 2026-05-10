@@ -28,7 +28,7 @@
    <Identity>
     <Rank>Elite</Rank>
   </Identity>
-  <Promotion disable=""/>
+
   <VisualActor>
     <Actor>units/britons/infantry_slinger_e.xml</Actor>
   </VisualActor>

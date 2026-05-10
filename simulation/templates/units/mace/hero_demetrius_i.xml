@@ -33,7 +33,7 @@
     <Lang>greek</Lang>
     <GenericName>Demetrius I the Besieger</GenericName>
     <SpecificName>Dēmētrios Poliorkētēs</SpecificName>
-    <Icon>units/mace_hero_demetrius.png</Icon>
+    <Icon>units/mace/hero_demetrius.png</Icon>
   </Identity>
   <VisualActor>
     <Actor>units/macedonians/hero_infantry_swordsman_demetrius.xml</Actor>
