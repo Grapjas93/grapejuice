@@ -519,8 +519,9 @@ Attack.prototype.GetBestAttackAgainst = function(target, allowCapture)
 
 	// grapejuice
 	let cmpAmmo = Engine.QueryInterface(this.entity, IID_Ammo);
-	if (cmpAmmo
-		&& cmpAmmo.ammo != 0
+	if (
+		Helpers.EntityMatchesClassList(this.entity, "Ship") == true && Helpers.EntityMatchesClassList(this.entity, "Ranged") == true
+		|| cmpAmmo && cmpAmmo.ammo != 0
 		&& this.CheckTargetIsInMeleeRange(target) == false
 		&& (Helpers.EntityMatchesClassList(this.entity, "Raider Siege Structure") == true
 		|| Helpers.EntityMatchesClassList(target, "Siege Structure") == false))
